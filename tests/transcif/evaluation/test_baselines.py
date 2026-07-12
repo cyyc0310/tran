@@ -4,18 +4,8 @@ import numpy as np
 import torch
 
 from transcif.models.encoder import DomainInvariantEncoder
-from transcif.training.train_source import train_source_domain
-from transcif.physics.cif import cif_from_shares, get_emission_factors
-from transcif.physics.residual import ResidualCorrectionHead, fit_residual_head
-from transcif.calibration.dominant_reweight import recompute_dominant_variable, reweight_lt_mwkc_alpha
-from transcif.calibration.conformal import (
-    compute_nonconformity_scores,
-    conformal_interval_halfwidth,
-    predict_with_interval,
-    empirical_coverage,
-)
-from transcif.evaluation.metrics import mae, cross_domain_degradation_rate
-from transcif.evaluation.baselines import naive_transfer_predict
+from transcif.physics.cif import get_emission_factors
+from transcif.evaluation.baselines import naive_transfer_predict, run_end_to_end_smoke_test
 
 
 SEQ_LEN = 48
@@ -68,40 +58,13 @@ def test_end_to_end_pipeline_on_synthetic_source_and_target_domains():
 
     x_source, y_source = _synthetic_region_batch(num_samples=32, renew_baseline=0.2, seed=10)
     encoder = DomainInvariantEncoder(num_variables=3, horizon=HORIZON, lt_feature_dim=16, cv_feature_dim=8)
-    losses = train_source_domain(encoder, x_source, y_source, epochs=25, lr=5e-3, consistency_weight=0.05)
-    assert losses[-1] < losses[0]
-
     x_calib, y_calib_share = _synthetic_region_batch(num_samples=20, renew_baseline=0.75, seed=20)
-    with torch.no_grad():
-        renew_share_pred, _ = encoder(x_calib)
 
-    renew_factor, nonrenew_factor = get_emission_factors("AU_SA")
-    ci_pred_physics_only = cif_from_shares(renew_share_pred.numpy(), renew_factor, nonrenew_factor)
-    ci_true = cif_from_shares(y_calib_share.numpy(), renew_factor, nonrenew_factor)
-
-    dominant_idx = recompute_dominant_variable(encoder, x_calib)
-    reweight_lt_mwkc_alpha(encoder, dominant_idx, boost=1.5)
-
-    residual_head = ResidualCorrectionHead(input_dim=1, hidden_dim=8)
-    calib_features = torch.tensor(renew_share_pred.numpy().reshape(-1, 1), dtype=torch.float32)
-    calib_targets = torch.tensor((ci_true - ci_pred_physics_only).reshape(-1), dtype=torch.float32)
-    fit_residual_head(residual_head, calib_features, calib_targets, epochs=100, lr=1e-2)
-
-    with torch.no_grad():
-        delta = residual_head(calib_features).numpy().reshape(ci_pred_physics_only.shape)
-    ci_pred_corrected = ci_pred_physics_only + delta
-
-    nonconformity = compute_nonconformity_scores(ci_true.reshape(-1), ci_pred_corrected.reshape(-1))
-    halfwidth = conformal_interval_halfwidth(nonconformity, coverage=0.9)
-    lower, upper = predict_with_interval(ci_pred_corrected.reshape(-1), halfwidth)
-    coverage = empirical_coverage(ci_true.reshape(-1), lower, upper)
-
-    assert halfwidth >= 0.0
-    assert 0.0 <= coverage <= 1.0
-
-    corrected_mae = mae(ci_true.reshape(-1), ci_pred_corrected.reshape(-1))
-    physics_only_mae = mae(ci_true.reshape(-1), ci_pred_physics_only.reshape(-1))
-    degradation = cross_domain_degradation_rate(
-        in_domain_metric=max(physics_only_mae, 1e-6), cross_domain_metric=corrected_mae
+    result = run_end_to_end_smoke_test(
+        encoder, x_source, y_source, x_calib, y_calib_share, target_region_code="AU_SA",
     )
-    assert isinstance(degradation, float)
+
+    assert result["losses"][-1] < result["losses"][0]
+    assert result["halfwidth"] >= 0.0
+    assert 0.0 <= result["coverage"] <= 1.0
+    assert isinstance(result["degradation"], float)
