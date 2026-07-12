@@ -3,6 +3,8 @@
 import numpy as np
 import pandas as pd
 
+MIN_ROLLING_PERIODS = 24
+
 
 def compute_renew_share(renew_out: np.ndarray, nonrenew_out: np.ndarray) -> np.ndarray:
     """RenewShare_t = RenewOut_t / (RenewOut_t + NonRenewOut_t). NaN when total output is zero."""
@@ -23,7 +25,7 @@ def compute_load_norm(load: np.ndarray, window: int = 720, quantile: float = 0.9
     filled window and are backfilled from the first fully-populated value).
     """
     load_series = pd.Series(load, dtype=float)
-    rolling_q = load_series.rolling(window=window, min_periods=24).quantile(quantile)
+    rolling_q = load_series.rolling(window=window, min_periods=MIN_ROLLING_PERIODS).quantile(quantile)
     rolling_q = rolling_q.bfill()
     return (load_series / rolling_q).to_numpy()
 
