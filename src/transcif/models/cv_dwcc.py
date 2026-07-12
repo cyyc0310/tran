@@ -79,3 +79,43 @@ def local_weighted_r2_and_dominant(
 
     dominant_idx = r2_single.argmax(dim=-1).reshape(batch, valid_len)
     return r2_joint.clamp(min=0.0, max=1.0), dominant_idx
+
+
+class CVDWCC(nn.Module):
+    """Computes multi-scale cross-variable correlation + dominant-variable maps for every
+    variable (regressed against all others), then fuses them with a 2D conv over the
+    (scale, correlation||dominant) representation (Eq. F_P = Conv2D([C_P || D_P], K_CV))."""
+
+    def __init__(self, num_variables: int, scales: tuple = ((15, 3.0), (25, 6.0)), feature_dim: int = 16):
+        super().__init__()
+        self.num_variables = num_variables
+        self.scales = scales
+        self.fuse = nn.Conv2d(in_channels=2, out_channels=feature_dim, kernel_size=1)
+
+    def forward(self, x: torch.Tensor) -> tuple:
+        batch, _, num_variables = x.shape
+        corr_per_scale = []
+        dominant_per_scale = []
+
+        for window, bandwidth in self.scales:
+            r2_per_variable = []
+            dominant_per_variable = []
+            for variable_idx in range(num_variables):
+                target = x[..., variable_idx]
+                predictors = torch.cat([x[..., :variable_idx], x[..., variable_idx + 1:]], dim=-1)
+                r2, dominant_idx = local_weighted_r2_and_dominant(target, predictors, window, bandwidth)
+                r2_per_variable.append(r2)
+                dominant_per_variable.append(dominant_idx)
+            corr_per_scale.append(torch.stack(r2_per_variable, dim=1))
+            dominant_per_scale.append(torch.stack(dominant_per_variable, dim=1))
+
+        min_len = min(corr.shape[-1] for corr in corr_per_scale)
+        corr = torch.stack([corr[..., :min_len] for corr in corr_per_scale], dim=1)
+        dominant = torch.stack([dom[..., :min_len] for dom in dominant_per_scale], dim=1)
+
+        two_channel = torch.stack([corr, dominant.float()], dim=1)
+        batch_size, channels, num_scales, num_vars, valid_len = two_channel.shape
+        conv_input = two_channel.reshape(batch_size, channels, num_scales, num_vars * valid_len)
+        fused = self.fuse(conv_input)
+        fused = fused.reshape(batch_size, -1, num_scales, num_vars, valid_len)
+        return fused, dominant

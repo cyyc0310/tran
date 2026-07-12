@@ -35,3 +35,26 @@ def test_local_weighted_r2_valid_length():
     assert r2.shape == (1, expected_len)
     assert dominant_idx.shape == (1, expected_len)
     assert torch.all(dominant_idx >= 0) and torch.all(dominant_idx < 3)
+
+
+from transcif.models.cv_dwcc import CVDWCC
+
+
+def test_cvdwcc_output_shapes():
+    model = CVDWCC(num_variables=3, scales=((15, 3.0), (21, 5.0)), feature_dim=8)
+    x = torch.randn(2, 60, 3)
+    fused, dominant_idx = model(x)
+
+    min_valid_len = 60 - 21 + 1
+    assert fused.shape == (2, 8, 2, 3, min_valid_len)
+    assert dominant_idx.shape == (2, 2, 3, min_valid_len)
+    assert torch.all(dominant_idx >= 0) and torch.all(dominant_idx < 2)
+
+
+def test_cvdwcc_gradients_flow_to_input():
+    model = CVDWCC(num_variables=3, scales=((15, 3.0),), feature_dim=4)
+    x = torch.randn(1, 40, 3, requires_grad=True)
+    fused, _ = model(x)
+    fused.pow(2).mean().backward()
+    assert x.grad is not None
+    assert torch.any(x.grad != 0)
