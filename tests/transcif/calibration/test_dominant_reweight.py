@@ -42,3 +42,22 @@ def test_reweight_lt_mwkc_alpha_only_changes_targeted_branch():
 
     assert not torch.allclose(before_first, after_first)
     torch.testing.assert_close(before_last, after_last)
+
+
+def test_reweight_lt_mwkc_alpha_changes_model_output():
+    """Regression guard for the final-review finding that reweighting used to change
+    predictions by at most ~1.4e-4 on a [0, 1] scale — numerically present but
+    scientifically inert. 1e-3 is deliberately an order of magnitude above that inert
+    baseline, so this fails if the fusion-weight fix regresses back to near-inertness."""
+    torch.manual_seed(11)
+    encoder = DomainInvariantEncoder(num_variables=3, horizon=6, lt_feature_dim=8, cv_feature_dim=4)
+    x = torch.randn(4, 48, 3)
+
+    with torch.no_grad():
+        before, _ = encoder(x)
+    reweight_lt_mwkc_alpha(encoder, dominant_variable_idx=0, boost=3.0)
+    with torch.no_grad():
+        after, _ = encoder(x)
+
+    assert not torch.allclose(before, after)
+    assert (after - before).abs().max().item() > 1e-3

@@ -3,17 +3,18 @@ from transcif.models.encoder import DomainInvariantEncoder
 from transcif.training.consistency import synthetic_perturb, consistency_loss
 
 
-def test_synthetic_perturb_keeps_renew_share_in_unit_interval():
+def test_synthetic_perturb_keeps_renew_share_and_load_norm_in_unit_interval():
     x = torch.rand(4, 30, 3)
-    perturbed = synthetic_perturb(x, renew_share_idx=0, scale_range=(0.7, 1.3))
+    perturbed = synthetic_perturb(x, renew_share_idx=0, load_norm_idx=1, scale_range=(0.7, 1.3))
     assert perturbed.shape == x.shape
     assert torch.all(perturbed[..., 0] >= 0.0) and torch.all(perturbed[..., 0] <= 1.0)
+    assert torch.all(perturbed[..., 1] >= 0.0) and torch.all(perturbed[..., 1] <= 1.0)
 
 
-def test_synthetic_perturb_leaves_other_channels_untouched():
+def test_synthetic_perturb_leaves_untargeted_channel_untouched():
     x = torch.rand(2, 20, 3)
-    perturbed = synthetic_perturb(x, renew_share_idx=0, scale_range=(0.5, 1.5))
-    torch.testing.assert_close(perturbed[..., 1:], x[..., 1:])
+    perturbed = synthetic_perturb(x, renew_share_idx=0, load_norm_idx=1, scale_range=(0.5, 1.5))
+    torch.testing.assert_close(perturbed[..., 2:], x[..., 2:])
 
 
 def test_consistency_loss_is_nonnegative_and_differentiable():

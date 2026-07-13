@@ -44,10 +44,15 @@ def reweight_lt_mwkc_alpha(
 ) -> None:
     """Boost the short-kernel (high-frequency) branch when RenewShare dominates (regions
     with volatile renewable output need fine-grained temporal resolution); otherwise boost
-    the long-kernel (low-frequency) branch (load/temperature-driven regions are smoother)."""
-    if dominant_variable_idx == RENEW_SHARE_CHANNEL_IDX:
-        branch = encoder.lt_mwkc.branches[0]
-    else:
-        branch = encoder.lt_mwkc.branches[-1]
+    the long-kernel (low-frequency) branch (load/temperature-driven regions are smoother).
+
+    Boosts both the targeted branch's intra-branch wavelet-family weights (`branch.alpha`)
+    and LTMWKC's own inter-branch fusion weight (`branch_alpha`) for that branch, so the
+    reweight actually shifts which branch dominates the fused LT-MWKC output rather than
+    only reshuffling weights inside a branch whose contribution to the fusion was fixed."""
+    lt_mwkc = encoder.lt_mwkc
+    branch_idx = 0 if dominant_variable_idx == RENEW_SHARE_CHANNEL_IDX else -1
+    branch = lt_mwkc.branches[branch_idx]
     with torch.no_grad():
         branch.alpha.mul_(boost)
+        lt_mwkc.branch_alpha[branch_idx].mul_(boost)

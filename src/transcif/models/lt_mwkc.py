@@ -48,7 +48,9 @@ class MultiWaveletConv1D(nn.Module):
 
 class LTMWKC(nn.Module):
     """Runs MultiWaveletConv1D at several kernel sizes in parallel, truncates all branches
-    to the shortest output length, averages, and projects to a fixed feature dimension."""
+    to the shortest output length, fuses them with a learnable softmax-weighted sum
+    (mirroring MultiWaveletConv1D's intra-branch fusion), and projects to a fixed feature
+    dimension."""
 
     def __init__(
         self,
@@ -67,9 +69,11 @@ class LTMWKC(nn.Module):
         )
         branch_channels = in_channels * out_channels_per_wavelet
         self.project = nn.Conv1d(branch_channels, feature_dim, kernel_size=1)
+        self.branch_alpha = nn.Parameter(torch.ones(len(kernel_sizes)) / len(kernel_sizes))
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         min_len = x.shape[-1] - max(self.kernel_sizes) + 1
         branch_outputs = [branch(x)[..., :min_len] for branch in self.branches]
-        fused = sum(branch_outputs) / len(branch_outputs)
+        weights = torch.softmax(self.branch_alpha, dim=0)
+        fused = sum(weight * output for weight, output in zip(weights, branch_outputs))
         return self.project(fused)
