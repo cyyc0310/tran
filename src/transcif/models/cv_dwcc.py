@@ -28,7 +28,7 @@ def local_weighted_r2_and_dominant(
     predictors: torch.Tensor,
     window: int = 25,
     bandwidth: float = 6.0,
-) -> tuple:
+) -> tuple[torch.Tensor, torch.Tensor]:
     """Local weighted multivariate regression (Eq. L_s, R_s^2, varphi_{X,s}(j)).
 
     Returns (r2_joint, dominant_idx), both of shape (batch, T - window + 1):
@@ -56,6 +56,9 @@ def local_weighted_r2_and_dominant(
     design_flat = weighted_design.reshape(batch * valid_len, window, num_predictors + 1)
     target_flat = weighted_target.reshape(batch * valid_len, window, 1)
 
+    # CPU-only: torch.linalg.lstsq defaults to driver 'gelsy' (pivoted, rank-deficient-safe)
+    # on CPU but 'gels' (undefined behavior on rank-deficient input) on CUDA — safe as long
+    # as this module runs on CPU only; revisit before enabling GPU training.
     solution = torch.linalg.lstsq(design_flat, target_flat).solution
     prediction_flat = torch.bmm(design_flat, solution).squeeze(-1)
     residual = target_flat.squeeze(-1) - prediction_flat
@@ -92,7 +95,7 @@ class CVDWCC(nn.Module):
         self.scales = scales
         self.fuse = nn.Conv2d(in_channels=2, out_channels=feature_dim, kernel_size=1)
 
-    def forward(self, x: torch.Tensor) -> tuple:
+    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
         batch, _, num_variables = x.shape
         corr_per_scale = []
         dominant_per_scale = []

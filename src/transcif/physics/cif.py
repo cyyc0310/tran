@@ -22,7 +22,7 @@ def cif_from_shares(renew_share: np.ndarray, renew_factor: float, nonrenew_facto
     return renew_share * renew_factor + nonrenew_share * nonrenew_factor
 
 
-def get_emission_factors(region_code: str) -> tuple:
+def get_emission_factors(region_code: str) -> tuple[float, float]:
     """Look up (renewable_factor, nonrenewable_factor) for a region code. Raises KeyError
     for unknown region codes rather than silently defaulting."""
     table = EMISSION_FACTOR_TABLES[region_code]

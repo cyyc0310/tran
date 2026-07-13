@@ -28,7 +28,7 @@ class DomainInvariantEncoder(nn.Module):
             nn.Sigmoid(),
         )
 
-    def forward(self, x: torch.Tensor) -> tuple:
+    def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
         lt_input = x.permute(0, 2, 1)
         lt_features = self.lt_mwkc(lt_input).mean(dim=-1)
 

@@ -58,3 +58,42 @@ def test_cvdwcc_gradients_flow_to_input():
     fused.pow(2).mean().backward()
     assert x.grad is not None
     assert torch.any(x.grad != 0)
+
+
+def test_fuse_reshape_preserves_positional_correspondence():
+    """Regression guard for CVDWCC.forward's Conv2d(kernel_size=1) invariant: the
+    reshape (num_vars, valid_len) -> (num_vars * valid_len) -> Conv2d -> reshape back
+    must return each scale/variable/timestep to its original position. A change to
+    `fuse`'s kernel_size, or any reshape reordering, would silently mix values across
+    variables or timesteps without changing tensor shapes, so this compares against the
+    actual pre-fuse (corr, dominant) tensors via an identity-weight probe rather than
+    trusting shapes alone."""
+    from transcif.models.cv_dwcc import CVDWCC, local_weighted_r2_and_dominant
+
+    torch.manual_seed(5)
+    num_variables = 3
+    model = CVDWCC(num_variables=num_variables, scales=((15, 3.0), (25, 6.0)), feature_dim=2)
+
+    with torch.no_grad():
+        model.fuse.weight.zero_()
+        model.fuse.weight[0, 0, 0, 0] = 1.0  # output channel 0 = identity copy of the corr channel
+        model.fuse.weight[1, 1, 0, 0] = 1.0  # output channel 1 = identity copy of the dominant channel
+        model.fuse.bias.zero_()
+
+    x = torch.rand(2, 40, num_variables)
+    fused, dominant = model(x)
+
+    corr_per_scale = []
+    for window, bandwidth in model.scales:
+        r2_per_variable = []
+        for variable_idx in range(num_variables):
+            target = x[..., variable_idx]
+            predictors = torch.cat([x[..., :variable_idx], x[..., variable_idx + 1:]], dim=-1)
+            r2, _ = local_weighted_r2_and_dominant(target, predictors, window, bandwidth)
+            r2_per_variable.append(r2)
+        corr_per_scale.append(torch.stack(r2_per_variable, dim=1))
+    min_len = min(corr.shape[-1] for corr in corr_per_scale)
+    expected_corr = torch.stack([corr[..., :min_len] for corr in corr_per_scale], dim=1)
+
+    torch.testing.assert_close(fused[:, 0], expected_corr)
+    torch.testing.assert_close(fused[:, 1], dominant.float())

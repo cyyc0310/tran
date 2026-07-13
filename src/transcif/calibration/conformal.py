@@ -19,7 +19,7 @@ def conformal_interval_halfwidth(nonconformity_scores: np.ndarray, coverage: flo
     return float(np.quantile(nonconformity_scores, q_level, method="higher"))
 
 
-def predict_with_interval(point_pred: np.ndarray, halfwidth: float) -> tuple:
+def predict_with_interval(point_pred: np.ndarray, halfwidth: float) -> tuple[np.ndarray, np.ndarray]:
     return point_pred - halfwidth, point_pred + halfwidth
 
 
