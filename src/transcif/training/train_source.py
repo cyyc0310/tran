@@ -2,18 +2,18 @@
 consistency regularization, trained once on the single source region."""
 
 import torch
+import torch.nn as nn
 
-from transcif.models.encoder import DomainInvariantEncoder
 from transcif.training.consistency import consistency_loss
 
 
 def train_source_domain(
-    encoder: DomainInvariantEncoder,
+    encoder: nn.Module,
     x_train: torch.Tensor,
     y_train: torch.Tensor,
-    epochs: int = 20,
-    lr: float = 1e-3,
-    consistency_weight: float = 0.1,
+    epochs: int = 150,
+    lr: float = 5e-3,
+    consistency_weight: float = 0.05,
 ) -> list:
     optimizer = torch.optim.Adam(encoder.parameters(), lr=lr)
     mse_loss = torch.nn.MSELoss()

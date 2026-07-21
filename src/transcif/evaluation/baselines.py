@@ -5,8 +5,8 @@ variable reweighting."""
 
 import numpy as np
 import torch
+import torch.nn as nn
 
-from transcif.models.encoder import DomainInvariantEncoder
 from transcif.physics.cif import cif_from_shares, get_emission_factors
 from transcif.training.train_source import train_source_domain
 from transcif.physics.residual import ResidualCorrectionHead, fit_residual_head
@@ -21,7 +21,7 @@ from transcif.evaluation.metrics import mae, cross_domain_degradation_rate
 
 
 def naive_transfer_predict(
-    encoder: DomainInvariantEncoder,
+    encoder: nn.Module,
     x_target: torch.Tensor,
     source_region_code: str,
 ) -> np.ndarray:
@@ -32,13 +32,13 @@ def naive_transfer_predict(
 
 
 def run_end_to_end_smoke_test(
-    encoder: DomainInvariantEncoder,
+    encoder: nn.Module,
     x_source: torch.Tensor,
     y_source: torch.Tensor,
     x_calib: torch.Tensor,
     y_calib_share: torch.Tensor,
     target_region_code: str,
-    train_epochs: int = 25,
+    train_epochs: int = 150,
     train_lr: float = 5e-3,
     consistency_weight: float = 0.05,
     residual_hidden_dim: int = 8,

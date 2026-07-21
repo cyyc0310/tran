@@ -6,3 +6,10 @@ __pycache__/
 htmlcov/
 data/raw/
 data/processed/
+
+# macOS
+.DS_Store
+
+# Local tooling state
+.claude/
+.superpowers/

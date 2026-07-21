@@ -4,12 +4,15 @@ prediction target from Stage 1."""
 
 import numpy as np
 
-# NOTE: placeholder figures (gCO2/kWh) for pipeline development and testing only.
-# MUST be replaced with sourced values (IPCC / EIA / ElectricityMaps) before running
-# real experiments — see the data-acquisition follow-up plan referenced in the design doc.
+# AU_* figures (gCO2/kWh) are sourced from real 2023 AEMO/NEM dispatch data via NEMED
+# (generator-level Plant_Emissions_Intensity, generation-weighted per region, threshold
+# 0.02 tCO2/MWh for the renewable/non-renewable split). EU_*/US_* remain placeholder
+# figures pending the same real-data treatment — do not use them for reported results.
 EMISSION_FACTOR_TABLES = {
-    "AU_NSW": {"renewable": 24.0, "nonrenewable": 850.0},
-    "AU_SA": {"renewable": 30.0, "nonrenewable": 700.0},
+    "AU_NSW": {"renewable": 0.09, "nonrenewable": 875.23},
+    "AU_SA": {"renewable": 0.00, "nonrenewable": 490.43},
+    "AU_QLD": {"renewable": 0.00, "nonrenewable": 841.59},
+    "AU_VIC": {"renewable": 0.00, "nonrenewable": 1160.12},
     "EU_ES": {"renewable": 35.0, "nonrenewable": 550.0},
     "EU_DE": {"renewable": 30.0, "nonrenewable": 750.0},
     "US_EPE": {"renewable": 40.0, "nonrenewable": 490.0},

@@ -6,13 +6,12 @@ reweight the already-trained wavelet fusion coefficients accordingly — no othe
 weights are touched."""
 
 import torch
-
-from transcif.models.encoder import DomainInvariantEncoder
+import torch.nn as nn
 
 RENEW_SHARE_CHANNEL_IDX = 0
 
 
-def recompute_dominant_variable(encoder: DomainInvariantEncoder, calibration_x: torch.Tensor) -> int:
+def recompute_dominant_variable(encoder: nn.Module, calibration_x: torch.Tensor) -> int:
     """Run CV-DWCC's dominant-predictor identification on the calibration set and tally
     votes for the true global channel that wins most often.
 
@@ -38,7 +37,7 @@ def recompute_dominant_variable(encoder: DomainInvariantEncoder, calibration_x: 
 
 
 def reweight_lt_mwkc_alpha(
-    encoder: DomainInvariantEncoder,
+    encoder: nn.Module,
     dominant_variable_idx: int,
     boost: float = 2.0,
 ) -> None:

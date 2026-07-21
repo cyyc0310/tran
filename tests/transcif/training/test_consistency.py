@@ -5,7 +5,7 @@ from transcif.training.consistency import synthetic_perturb, consistency_loss
 
 def test_synthetic_perturb_keeps_renew_share_and_load_norm_in_unit_interval():
     x = torch.rand(4, 30, 3)
-    perturbed = synthetic_perturb(x, renew_share_idx=0, load_norm_idx=1, scale_range=(0.7, 1.3))
+    perturbed = synthetic_perturb(x, channel_indices=(0, 1))
     assert perturbed.shape == x.shape
     assert torch.all(perturbed[..., 0] >= 0.0) and torch.all(perturbed[..., 0] <= 1.0)
     assert torch.all(perturbed[..., 1] >= 0.0) and torch.all(perturbed[..., 1] <= 1.0)
@@ -13,8 +13,28 @@ def test_synthetic_perturb_keeps_renew_share_and_load_norm_in_unit_interval():
 
 def test_synthetic_perturb_leaves_untargeted_channel_untouched():
     x = torch.rand(2, 20, 3)
-    perturbed = synthetic_perturb(x, renew_share_idx=0, load_norm_idx=1, scale_range=(0.5, 1.5))
+    perturbed = synthetic_perturb(x, channel_indices=(0, 1))
     torch.testing.assert_close(perturbed[..., 2:], x[..., 2:])
+
+
+def test_synthetic_perturb_defaults_to_perturbing_every_channel():
+    x = torch.rand(2, 20, 4)
+    perturbed = synthetic_perturb(x)
+    for channel_idx in range(4):
+        assert not torch.allclose(perturbed[..., channel_idx], x[..., channel_idx])
+
+
+def test_synthetic_perturb_can_retarget_a_low_mean_window_to_a_high_mean_region():
+    """The old multiplicative-only perturbation could never move a QLD1-like window
+    (mean ~0.18) anywhere near SA1's real ~0.69 mean. Retargeting to an explicit (mean,
+    std) pair must be able to reach that range."""
+    torch.manual_seed(3)
+    x = torch.rand(200, 30, 2) * 0.1 + 0.13  # mimics a QLD1-like low-mean window
+    perturbed = synthetic_perturb(
+        x, channel_indices=(0, 1),
+        target_mean_range=(0.65, 0.70), target_std_range=(0.2, 0.25),
+    )
+    assert perturbed[..., 0].mean().item() > 0.5
 
 
 def test_consistency_loss_is_nonnegative_and_differentiable():
