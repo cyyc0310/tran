@@ -7,9 +7,10 @@ htmlcov/
 data/raw/
 data/processed/
 
-# macOS
+# macOS / editor / agent junk
 .DS_Store
-
-# Local tooling state
 .claude/
 .superpowers/
+
+# accidental nested project copy
+未命名/

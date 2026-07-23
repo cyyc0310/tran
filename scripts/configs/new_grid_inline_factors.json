@@ -1,0 +1,26 @@
+{
+  "_comment": "Template for onboarding a BRAND-NEW grid. The target carries its own measured emission factors INLINE (emission_renewable / emission_nonrenewable, gCO2/kWh), so no edit to physics/cif.py's EMISSION_FACTOR_TABLES is needed. REPLACE the placeholder factors and paths below with the new region's real measured values before reporting any results -- inline factors intentionally bypass the placeholder EU_*/US_* table rows that cif.py warns against.",
+  "target": {
+    "name": "NEW_REGION",
+    "hourly_csv": "/path/to/new_region_hourly.csv",
+    "temperature_csv": "/path/to/new_region_temperature.csv",
+    "emission_renewable": 0.0,
+    "emission_nonrenewable": 500.0
+  },
+  "sources": [
+    {"name": "QLD1", "factor_code": "AU_QLD", "hourly_csv": "/tmp/nemed_output/nem_2023_hourly_QLD1.csv", "temperature_csv": "/tmp/nemed_output/temperature_2023_QLD1.csv"},
+    {"name": "NSW1", "factor_code": "AU_NSW", "hourly_csv": "/tmp/nemed_output/nem_2023_hourly_NSW1.csv", "temperature_csv": "/tmp/nemed_output/temperature_2023_NSW1.csv"},
+    {"name": "VIC1", "factor_code": "AU_VIC", "hourly_csv": "/tmp/nemed_output/nem_2023_hourly_VIC1.csv", "temperature_csv": "/tmp/nemed_output/temperature_2023_VIC1.csv"}
+  ],
+  "seq_len": 48,
+  "horizon": 12,
+  "stride": 6,
+  "calib_fraction": 0.7,
+  "include_generation": true,
+  "include_temperature": true,
+  "gate_conditioning": true,
+  "mldg_weighted": true,
+  "fine_tune": true,
+  "coral": true,
+  "seed": 42
+}
