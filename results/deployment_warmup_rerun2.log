@@ -1,0 +1,76 @@
+================================================================================
+Phase 3.4: Deployment Case Study — Warm-Up Curve
+================================================================================
+
+Scenario: New region comes online. Only config available.
+Question: How quickly can predictions be made?
+Answer: Immediately (zero-shot). No waiting for data accumulation.
+
+Loaded: 29 regions
+Targets: ['QLD1', 'NSW1', 'VIC1', 'SA1', 'UK_07_South_Wales', 'UK_01_North_Scotland', 'US_ERCO', 'US_BPAT']
+Evaluation windows: [1, 3, 7, 14, 30, 60, 90] days
+
+--- PART 1: Zero-Shot Stability ---
+Region            1d     3d     7d    14d    30d    60d    90d   (MAE)
+----------------------------------------------------------------------
+QLD1              N/A   N/A   N/A   N/A  50.1  54.7  53.7
+  +calibrated     N/A   N/A   N/A   N/A  24.2  27.6  27.2
+NSW1              N/A   N/A   N/A   N/A  54.3  51.5  48.6
+  +calibrated     N/A   N/A   N/A   N/A  54.9  48.2  46.2
+VIC1              N/A   N/A   N/A   N/A 129.3 102.7 102.1
+  +calibrated     N/A   N/A   N/A   N/A 135.8 102.7 101.7
+SA1               N/A   N/A   N/A   N/A  65.4  60.0  64.3
+  +calibrated     N/A   N/A   N/A   N/A  65.5  59.0  62.1
+UK_07_South_Wales   N/A   N/A   N/A   N/A  86.9  73.9  73.5
+  +calibrated     N/A   N/A   N/A   N/A  88.2  73.7  70.7
+UK_01_North_Scotland   N/A   N/A   N/A   N/A  35.6  48.5  45.5
+  +calibrated     N/A   N/A   N/A   N/A  25.7  40.0  34.1
+US_ERCO           N/A   N/A   N/A   N/A  47.6  59.7  59.0
+  +calibrated     N/A   N/A   N/A   N/A  53.9  61.2  60.2
+US_BPAT           N/A   N/A   N/A   N/A  10.1   8.3   8.6
+  +calibrated     N/A   N/A   N/A   N/A   8.2   7.2   6.2
+
+
+--- PART 2: Supervised Fine-Tuning Curve ---
+(Days of target data needed for supervised model to match zero-shot)
+Region          ZS MAE       7d    14d    30d    60d    90d   180d   270d 
+--------------------------------------------------------------------------------
+QLD1            53.7         N/A     N/A   38.3 *  40.4 *  41.5 *  40.3 *  36.5 *
+NSW1            48.6         N/A     N/A   60.6    63.0    60.1    63.8    62.8  
+VIC1            102.1        N/A     N/A  110.5   100.2 *  99.0 *  94.9 *  94.5 *
+SA1             64.3         N/A     N/A   63.9 *  60.0 *  59.7 *  58.0 *  59.7 *
+UK_07_South_Wales 73.5         N/A     N/A   94.8    92.2    87.9    85.9    79.9  
+UK_01_North_Scotland 45.5         N/A     N/A   40.3 *  34.0 *  33.8 *  34.0 *  34.1 *
+US_ERCO         59.0         N/A     N/A   61.8    61.2    60.8    56.9 *  56.9 *
+US_BPAT         8.6          N/A     N/A    8.5 *   8.4 *   8.5 *   8.0 *   8.2 *
+
+Total time: 0.2 min
+* = supervised matches or beats zero-shot
+
+================================================================================
+DEPLOYMENT SUMMARY
+================================================================================
+
+Region               ZS ready at  Sup matches at  ZS advantage
+------------------------------------------------------------
+QLD1                 Day 0        30 days         30 days saved
+NSW1                 Day 0        >270 days       Sup never matches
+VIC1                 Day 0        60 days         60 days saved
+SA1                  Day 0        30 days         30 days saved
+UK_07_South_Wales    Day 0        >270 days       Sup never matches
+UK_01_North_Scotland Day 0        30 days         30 days saved
+US_ERCO              Day 0        180 days        180 days saved
+US_BPAT              Day 0        30 days         30 days saved
+
+Mean crossover: 60 days
+Median crossover: 30 days
+Regions where supervised NEVER matches: 2/8
+
+Results saved: /Users/cyyc0310/Downloads/transcif/results/deployment_warmup.json
+
+--- GENERATING FIGURE ---
+  Figure saved: /Users/cyyc0310/Downloads/transcif/figures/deployment_warmup.png
+
+✓ Phase 3.4 Deployment Case Study complete!
+  Key finding: Zero-shot provides instant predictions from Day 0,
+  while supervised models need weeks-months of data to match.

@@ -1,0 +1,19 @@
+Region                      stored    N3 base    P1 k28   P2 g1.5   P3 g2.5    P4 +wk    P5 k35  Persist
+--------------------------------------------------------------------------------------------------------
+UK_13_London                 53.02      51.70     51.68     51.66     51.75     53.97     51.67    52.74
+UK_14_South_East_England     51.16      49.58     49.57     49.57     49.61     50.67     49.60    50.70
+US_MISO                      52.80      47.89     48.02     48.03     47.75     46.29     48.01    55.60
+VIC1                        112.37     101.61    101.56    101.81    101.42    101.58    101.65   116.79
+SA1                          66.42      61.56     61.38     61.56     61.58     62.44     61.45    68.07
+QLD1                         28.47      26.96     26.95     26.99     26.95     27.60     26.96    29.11
+US_FPL                       13.19      13.00     12.97     13.08     12.95     13.55     12.98    13.39
+UK_11_South_West_England     50.34      49.05     49.13     49.03     49.09     50.64     49.14    53.04
+UK_07_South_Wales            72.91      70.42     70.45     70.33     70.51     72.01     70.28    76.20
+US_CISO                      26.37      25.61     25.41     25.58     25.63     26.18     25.40    27.43
+--------------------------------------------------------------------------------------------------------
+N3 base      beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9526
+P1 k28       beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9517
+P2 g1.5      beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9535
+P3 g2.5      beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9523
+P4 +wk       beat-persist 8/10  improved-vs-stored 7/10  mean-ratio-vs-stored 0.9712
+P5 k35       beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9518

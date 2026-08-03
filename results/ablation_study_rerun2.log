@@ -1,0 +1,202 @@
+================================================================================
+Phase 2.3: Complete Ablation Study (FULL)
+================================================================================
+Loaded: 29 regions
+Targets: ['US_FPL', 'US_MISO', 'QLD1', 'NSW1', 'VIC1', 'SA1', 'UK_07_South_Wales', 'UK_01_North_Scotland', 'US_BPAT']
+Seeds: [0, 1, 2, 3, 4]
+Configs: ['Full model', 'w/o adaptive gate', 'w/o config bias', 'w/o decomposition', 'w/o weighted sampling', 'Direct CIF (oracle)']
+Total evaluations: 270
+
+[1/9] US_FPL (rs=0.057)
+  Full model                MAE=35.3 ± 5.4
+  w/o adaptive gate         MAE=48.6 ± 1.7
+  w/o config bias           MAE=50.4 ± 8.5
+  w/o decomposition         MAE=38.0 ± 4.2
+  w/o weighted sampling     MAE=38.7 ± 5.4
+  Direct CIF (oracle)       MAE=13.3 ± 0.3
+
+[2/9] US_MISO (rs=0.180)
+  Full model                MAE=53.4 ± 1.9
+  w/o adaptive gate         MAE=60.1 ± 0.9
+  w/o config bias           MAE=59.9 ± 4.9
+  w/o decomposition         MAE=55.3 ± 2.0
+  w/o weighted sampling     MAE=68.8 ± 5.4
+  Direct CIF (oracle)       MAE=50.8 ± 4.0
+
+[3/9] QLD1 (rs=0.183)
+  Full model                MAE=48.7 ± 9.8
+  w/o adaptive gate         MAE=72.6 ± 2.0
+  w/o config bias           MAE=68.0 ± 12.4
+  w/o decomposition         MAE=54.2 ± 6.5
+  w/o weighted sampling     MAE=75.3 ± 14.9
+  Direct CIF (oracle)       MAE=29.9 ± 1.2
+
+[4/9] NSW1 (rs=0.292)
+  Full model                MAE=49.8 ± 1.0
+  w/o adaptive gate         MAE=48.5 ± 0.2
+  w/o config bias           MAE=48.8 ± 0.3
+  w/o decomposition         MAE=51.3 ± 0.9
+  w/o weighted sampling     MAE=58.8 ± 5.1
+  Direct CIF (oracle)       MAE=49.7 ± 2.2
+
+[5/9] VIC1 (rs=0.342)
+  Full model                MAE=103.2 ± 2.8
+  w/o adaptive gate         MAE=100.1 ± 0.8
+  w/o config bias           MAE=103.0 ± 1.5
+  w/o decomposition         MAE=103.0 ± 1.5
+  w/o weighted sampling     MAE=116.0 ± 4.0
+  Direct CIF (oracle)       MAE=105.2 ± 7.4
+
+[6/9] SA1 (rs=0.687)
+  Full model                MAE=65.0 ± 0.3
+  w/o adaptive gate         MAE=65.1 ± 0.4
+  w/o config bias           MAE=64.9 ± 0.6
+  w/o decomposition         MAE=64.3 ± 0.4
+  w/o weighted sampling     MAE=68.2 ± 1.1
+  Direct CIF (oracle)       MAE=63.7 ± 2.4
+
+[7/9] UK_07_South_Wales (rs=0.290)
+  Full model                MAE=73.3 ± 1.1
+  w/o adaptive gate         MAE=76.0 ± 0.3
+  w/o config bias           MAE=75.4 ± 1.8
+  w/o decomposition         MAE=75.0 ± 0.8
+  w/o weighted sampling     MAE=75.0 ± 1.1
+  Direct CIF (oracle)       MAE=72.6 ± 2.0
+
+[8/9] UK_01_North_Scotland (rs=0.906)
+  Full model                MAE=44.5 ± 2.1
+  w/o adaptive gate         MAE=48.7 ± 0.4
+  w/o config bias           MAE=47.6 ± 2.5
+  w/o decomposition         MAE=45.3 ± 1.5
+  w/o weighted sampling     MAE=55.9 ± 5.1
+  Direct CIF (oracle)       MAE=36.2 ± 0.7
+
+[9/9] US_BPAT (rs=0.782)
+  Full model                MAE=8.7 ± 0.2
+  w/o adaptive gate         MAE=8.9 ± 0.1
+  w/o config bias           MAE=8.8 ± 0.2
+  w/o decomposition         MAE=8.7 ± 0.1
+  w/o weighted sampling     MAE=14.4 ± 1.2
+  Direct CIF (oracle)       MAE=6.2 ± 0.3
+
+================================================================================
+ZS+ CALIBRATION COMPONENT ABLATION (anchor / residual / self-validation)
+================================================================================
+
+[1/9] US_FPL
+  ZS+ (full calib)          MAE=12.9 ± 0.0
+  ZS+ w/o anchor            MAE=13.1 ± 0.0
+  ZS+ w/o residual          MAE=13.2 ± 0.0
+  ZS+ w/o self-val          MAE=19.4 ± 0.2
+  ZS+ w/o rolling selection MAE=12.9 ± 0.0
+  ZS+ legacy 2-branch fusion MAE=13.2 ± 0.1
+  Raw ZS (no calib)         MAE=35.7 ± 3.8
+
+[2/9] US_MISO
+  ZS+ (full calib)          MAE=46.7 ± 0.1
+  ZS+ w/o anchor            MAE=46.5 ± 0.1
+  ZS+ w/o residual          MAE=46.5 ± 0.1
+  ZS+ w/o self-val          MAE=51.1 ± 0.1
+  ZS+ w/o rolling selection MAE=47.9 ± 0.1
+  ZS+ legacy 2-branch fusion MAE=52.8 ± 0.1
+  Raw ZS (no calib)         MAE=54.2 ± 0.7
+
+[3/9] QLD1
+  ZS+ (full calib)          MAE=26.9 ± 0.0
+  ZS+ w/o anchor            MAE=27.0 ± 0.0
+  ZS+ w/o residual          MAE=26.9 ± 0.0
+  ZS+ w/o self-val          MAE=33.4 ± 0.1
+  ZS+ w/o rolling selection MAE=26.9 ± 0.0
+  ZS+ legacy 2-branch fusion MAE=28.5 ± 0.1
+  Raw ZS (no calib)         MAE=48.8 ± 2.8
+
+[4/9] NSW1
+  ZS+ (full calib)          MAE=46.4 ± 0.2
+  ZS+ w/o anchor            MAE=45.9 ± 0.1
+  ZS+ w/o residual          MAE=46.5 ± 0.1
+  ZS+ w/o self-val          MAE=50.2 ± 0.4
+  ZS+ w/o rolling selection MAE=46.3 ± 0.1
+  ZS+ legacy 2-branch fusion MAE=51.2 ± 0.2
+  Raw ZS (no calib)         MAE=49.5 ± 0.3
+
+[5/9] VIC1
+  ZS+ (full calib)          MAE=98.2 ± 0.2
+  ZS+ w/o anchor            MAE=97.8 ± 0.2
+  ZS+ w/o residual          MAE=98.3 ± 0.2
+  ZS+ w/o self-val          MAE=110.0 ± 0.9
+  ZS+ w/o rolling selection MAE=101.5 ± 0.3
+  ZS+ legacy 2-branch fusion MAE=112.6 ± 0.6
+  Raw ZS (no calib)         MAE=103.7 ± 1.8
+
+[6/9] SA1
+  ZS+ (full calib)          MAE=60.5 ± 0.0
+  ZS+ w/o anchor            MAE=61.3 ± 0.1
+  ZS+ w/o residual          MAE=60.7 ± 0.0
+  ZS+ w/o self-val          MAE=66.7 ± 0.1
+  ZS+ w/o rolling selection MAE=61.4 ± 0.1
+  ZS+ legacy 2-branch fusion MAE=66.6 ± 0.1
+  Raw ZS (no calib)         MAE=64.2 ± 0.3
+
+[7/9] UK_07_South_Wales
+  ZS+ (full calib)          MAE=71.7 ± 0.2
+  ZS+ w/o anchor            MAE=71.5 ± 0.1
+  ZS+ w/o residual          MAE=71.6 ± 0.1
+  ZS+ w/o self-val          MAE=71.7 ± 0.1
+  ZS+ w/o rolling selection MAE=70.6 ± 0.1
+  ZS+ legacy 2-branch fusion MAE=73.1 ± 0.2
+  Raw ZS (no calib)         MAE=72.8 ± 0.6
+
+[8/9] UK_01_North_Scotland
+  ZS+ (full calib)          MAE=34.4 ± 0.1
+  ZS+ w/o anchor            MAE=36.7 ± 0.2
+  ZS+ w/o residual          MAE=34.6 ± 0.0
+  ZS+ w/o self-val          MAE=33.3 ± 0.1
+  ZS+ w/o rolling selection MAE=35.5 ± 0.1
+  ZS+ legacy 2-branch fusion MAE=33.8 ± 0.1
+  Raw ZS (no calib)         MAE=43.6 ± 0.7
+
+[9/9] US_BPAT
+  ZS+ (full calib)          MAE=6.1 ± 0.0
+  ZS+ w/o anchor            MAE=6.0 ± 0.0
+  ZS+ w/o residual          MAE=6.5 ± 0.0
+  ZS+ w/o self-val          MAE=6.3 ± 0.0
+  ZS+ w/o rolling selection MAE=6.1 ± 0.0
+  ZS+ legacy 2-branch fusion MAE=6.2 ± 0.0
+  Raw ZS (no calib)         MAE=8.4 ± 0.1
+
+Total time: 1.6 min
+Results saved: /Users/cyyc0310/Downloads/transcif/results/ablation_full.json
+
+==========================================================================================
+ABLATION SUMMARY (Mean MAE across all targets and seeds)
+==========================================================================================
+
+Config                    US_FPL     US_MISO    QLD1       NSW1       VIC1       SA1        UK_07_South_Wales UK_01_North_Scotland US_BPAT    MEAN    
+---------------------------------------------------------------------------------------------------------------------------
+Full model                35.3       53.4       48.7       49.8       103.2      65.0       73.3       44.5       8.7        53.6    
+w/o adaptive gate         48.6       60.1       72.6       48.5       100.1      65.1       76.0       48.7       8.9        58.7    
+w/o config bias           50.4       59.9       68.0       48.8       103.0      64.9       75.4       47.6       8.8        58.5    
+w/o decomposition         38.0       55.3       54.2       51.3       103.0      64.3       75.0       45.3       8.7        55.0    
+w/o weighted sampling     38.7       68.8       75.3       58.8       116.0      68.2       75.0       55.9       14.4       63.5    
+Direct CIF (oracle)       13.3       50.8       29.9       49.7       105.2      63.7       72.6       36.2       6.2        47.5    
+
+Relative to Full (%)      US_FPL     US_MISO    QLD1       NSW1       VIC1       SA1        UK_07_South_Wales UK_01_North_Scotland US_BPAT    MEAN    
+---------------------------------------------------------------------------------------------------------------------------
+w/o adaptive gate         ↑37.5    % ↑12.4    % ↑49.1    % ↓2.7     % ↓2.9     % ↑0.2     % ↑3.6     % ↑9.5     % ↑1.9     % ↑12.1   %
+w/o config bias           ↑42.7    % ↑12.1    % ↑39.6    % ↓2.1     % ↓0.1     % ↓0.2     % ↑2.8     % ↑6.9     % ↑0.9     % ↑11.4   %
+w/o decomposition         ↑7.5     % ↑3.4     % ↑11.2    % ↑3.0     % ↓0.2     % ↓1.1     % ↑2.3     % ↑1.8     % ↓0.5     % ↑3.1    %
+w/o weighted sampling     ↑9.7     % ↑28.7    % ↑54.7    % ↑18.1    % ↑12.5    % ↑4.9     % ↑2.3     % ↑25.6    % ↑65.2    % ↑24.6   %
+Direct CIF (oracle)       ↓62.4    % ↓4.9     % ↓38.5    % ↓0.3     % ↑2.0     % ↓2.0     % ↓0.9     % ↓18.7    % ↓28.6    % ↓17.2   %
+
+==========================================================================================
+ZS+ CALIBRATION ABLATION SUMMARY (Mean MAE across targets and seeds)
+==========================================================================================
+ZS+ (full calib)          mean MAE=44.9     vs full: +0.0%
+ZS+ w/o anchor            mean MAE=45.1     vs full: +0.6%
+ZS+ w/o residual          mean MAE=45.0     vs full: +0.8%
+ZS+ w/o self-val          mean MAE=49.1     vs full: +12.7%
+ZS+ w/o rolling selection mean MAE=45.5     vs full: +1.0%
+ZS+ legacy 2-branch fusion mean MAE=48.7     vs full: +6.3%
+Raw ZS (no calib)         mean MAE=53.4     vs full: +39.8%
+
+✓ Ablation study complete!

@@ -1,0 +1,392 @@
+######## START carboncast_analysis 14:29:33 ########
+######## END carboncast_analysis 14:38:34 ########
+######## START conformal_prediction 14:38:34 ########
+================================================================================
+Phase 3.1: Conformal Prediction Extension (FULL)
+================================================================================
+Loaded: 29 regions
+Targets: 29 regions
+Seeds: [42]
+
+Region          MAE      Cov90%   Cov95%   Width90   Width95   CRPS90  
+----------------------------------------------------------------------
+NSW1            51.6     0.943    0.965    288.2     326.3     89.5    
+QLD1            30.6     0.909    0.937    141.4     184.6     46.5    
+SA1             67.4     0.932    0.949    388.0     458.0     110.8   
+UK_01_North_Scotland 34.0     0.964    0.992    359.1     448.7     105.7   
+UK_02_South_Scotland 21.7     0.940    0.985    155.1     206.1     50.6    
+UK_03_North_West_England 22.7     0.999    1.000    230.5     268.2     72.7    
+UK_05_Yorkshire 44.5     0.980    0.994    286.9     331.8     97.6    
+UK_06_North_Wales_Merseyside 44.9     0.981    0.998    396.1     460.8     122.9   
+UK_07_South_Wales 62.5     0.979    0.985    463.9     520.2     132.4   
+UK_08_West_Midlands 56.5     1.000    1.000    614.6     687.7     178.9   
+UK_09_East_Midlands 58.3     1.000    1.000    675.7     823.5     224.7   
+UK_10_East_England 50.3     0.998    1.000    403.4     465.1     127.4   
+UK_11_South_West_England 53.6     0.916    0.964    275.4     370.4     119.9   
+UK_12_South_England 53.5     0.959    0.978    355.7     421.2     119.8   
+UK_13_London    51.4     0.965    0.983    320.7     373.3     120.5   
+UK_14_South_East_England 53.5     0.899    0.961    256.2     341.5     99.7    
+UK_15_England   39.8     0.999    1.000    344.4     375.1     115.2   
+UK_16_Scotland  35.2     0.898    0.959    243.4     316.0     88.3    
+UK_17_Wales     60.2     0.966    0.998    455.5     532.3     149.9   
+UK_18_GB        37.7     1.000    1.000    333.1     376.6     113.4   
+US_BPAT         4.4      1.000    1.000    44.0      53.9      16.3    
+US_CISO         20.3     0.997    0.998    272.5     342.5     81.8    
+US_ERCO         64.5     0.927    0.952    319.5     368.4     121.9   
+US_FPL          13.4     0.882    0.913    114.9     155.6     28.7    
+US_ISNE         15.6     0.938    0.964    73.9      88.4      23.4    
+US_MISO         50.8     0.948    0.962    247.2     266.4     89.2    
+US_NYIS         13.9     0.962    0.980    72.9      84.9      30.1    
+US_PJM          17.0     0.861    0.907    64.2      76.3      23.9    
+VIC1            108.2    0.972    0.993    659.0     766.2     252.6   
+
+Total time: 0.2 min
+
+================================================================================
+SUMMARY
+================================================================================
+
+90% Conformal Intervals:
+  Mean empirical coverage: 0.956 (target: 0.900)
+  Min coverage: 0.861
+  Regions with coverage ≥ 0.90: 25/29
+  Mean interval width: 305.4 gCO₂/kWh
+  Mean CRPS: 101.9 gCO₂/kWh
+
+95% Conformal Intervals:
+  Mean empirical coverage: 0.976 (target: 0.950)
+  Min coverage: 0.907
+  Regions with coverage ≥ 0.95: 25/29
+  Mean interval width: 361.7 gCO₂/kWh
+
+Sharpness ratio (width / MAE):
+  Mean: 7.37 (lower = more informative)
+
+Results saved: /Users/cyyc0310/Downloads/transcif/results/conformal_prediction.json
+
+--- GENERATING FIGURES ---
+  Figure saved: /Users/cyyc0310/Downloads/transcif/figures/conformal_prediction.png
+
+✓ Phase 3.1 Conformal Prediction complete!
+  Key result: Conformal intervals achieve valid coverage
+  (empirical coverage ≥ nominal level) across all regions.
+######## END conformal_prediction 14:38:46 ########
+######## START temporal_ood 14:38:46 ########
+================================================================================
+Phase 3.3: Temporal OOD Experiment
+================================================================================
+
+Test: Does the model generalize to unseen TIME periods?
+Compare: 80/20 (standard) vs 75/25 (last quarter) vs 50/50 (last half)
+
+Loaded: 29 regions
+Targets: ['US_FPL', 'US_MISO', 'QLD1', 'NSW1', 'VIC1', 'SA1', 'UK_07_South_Wales', 'UK_01_North_Scotland', 'US_BPAT']
+Splits: ['Standard (80/20)', '9-month (75/25)', '6-month (50/50)']
+Seeds: [0, 1, 2]
+
+Region          Standard (80   9-month (75/   6-month (50/  
+------------------------------------------------------------
+US_FPL          13.2  ±0.1   12.3  ±0.0   8.9   ±0.0  
+US_MISO         52.9  ±0.1   51.6  ±0.2   38.5  ±0.0  
+QLD1            28.4  ±0.1   28.4  ±0.1   27.4  ±0.1  
+NSW1            51.1  ±0.2   53.4  ±0.1   49.7  ±0.2  
+VIC1            112.6 ±0.6   116.3 ±0.6   112.8 ±0.7  
+SA1             66.5  ±0.2   64.7  ±0.1   81.7  ±0.2  
+UK_07_South_Wales 73.1  ±0.2   82.3  ±0.2   75.8  ±0.2  
+UK_01_North_Scotland 33.8  ±0.1   35.1  ±0.1   32.1  ±0.1  
+US_BPAT         6.2   ±0.0   5.9   ±0.0   5.9   ±0.0  
+
+Total time: 0.4 min
+
+================================================================================
+TEMPORAL OOD ANALYSIS
+================================================================================
+
+Region          Std MAE    75% MAE    50% MAE    75%/Std  50%/Std 
+-----------------------------------------------------------------
+US_FPL          13.2       12.3       8.9        0.936    0.679   
+US_MISO         52.9       51.6       38.5       0.976    0.729   
+QLD1            28.4       28.4       27.4       0.999    0.964   
+NSW1            51.1       53.4       49.7       1.045    0.972   
+VIC1            112.6      116.3      112.8      1.033    1.002   
+SA1             66.5       64.7       81.7       0.972    1.227   
+UK_07_South_Wales 73.1       82.3       75.8       1.125    1.037   
+UK_01_North_Scotland 33.8       35.1       32.1       1.037    0.950   
+US_BPAT         6.2        5.9        5.9        0.947    0.954   
+
+MEAN            —          —          —          1.008    0.946   
+
+Key finding:
+  75/25 split (last quarter): MAE ratio = 1.008 vs standard
+  50/50 split (last half): MAE ratio = 0.946 vs standard
+  → GOOD: Model generalizes well to unseen time periods (<15% degradation)
+
+Results saved: /Users/cyyc0310/Downloads/transcif/results/temporal_ood.json
+
+--- GENERATING FIGURE ---
+  Figure saved: /Users/cyyc0310/Downloads/transcif/figures/temporal_ood.png
+
+✓ Phase 3.3 Temporal OOD complete!
+######## END temporal_ood 14:39:14 ########
+######## START ablation_study 14:39:14 ########
+================================================================================
+Phase 2.3: Complete Ablation Study (FULL)
+================================================================================
+Loaded: 29 regions
+Targets: ['US_FPL', 'US_MISO', 'QLD1', 'NSW1', 'VIC1', 'SA1', 'UK_07_South_Wales', 'UK_01_North_Scotland', 'US_BPAT']
+Seeds: [0, 1, 2, 3, 4]
+Configs: ['Full model', 'w/o adaptive gate', 'w/o config bias', 'w/o decomposition', 'w/o weighted sampling', 'Direct CIF (oracle)']
+Total evaluations: 270
+
+[1/9] US_FPL (rs=0.057)
+  Full model                MAE=35.3 ± 5.4
+  w/o adaptive gate         MAE=48.6 ± 1.7
+  w/o config bias           MAE=50.4 ± 8.5
+  w/o decomposition         MAE=38.0 ± 4.2
+  w/o weighted sampling     MAE=38.7 ± 5.4
+  Direct CIF (oracle)       MAE=13.3 ± 0.3
+
+[2/9] US_MISO (rs=0.180)
+  Full model                MAE=53.4 ± 1.9
+  w/o adaptive gate         MAE=60.1 ± 0.9
+  w/o config bias           MAE=59.9 ± 4.9
+  w/o decomposition         MAE=55.3 ± 2.0
+  w/o weighted sampling     MAE=68.8 ± 5.4
+  Direct CIF (oracle)       MAE=50.8 ± 4.0
+
+[3/9] QLD1 (rs=0.183)
+  Full model                MAE=48.7 ± 9.8
+  w/o adaptive gate         MAE=72.6 ± 2.0
+  w/o config bias           MAE=68.0 ± 12.4
+  w/o decomposition         MAE=54.2 ± 6.5
+  w/o weighted sampling     MAE=75.3 ± 14.9
+  Direct CIF (oracle)       MAE=29.9 ± 1.2
+
+[4/9] NSW1 (rs=0.292)
+  Full model                MAE=49.8 ± 1.0
+  w/o adaptive gate         MAE=48.5 ± 0.2
+  w/o config bias           MAE=48.8 ± 0.3
+  w/o decomposition         MAE=51.3 ± 0.9
+  w/o weighted sampling     MAE=58.8 ± 5.1
+  Direct CIF (oracle)       MAE=49.7 ± 2.2
+
+[5/9] VIC1 (rs=0.342)
+  Full model                MAE=103.2 ± 2.8
+  w/o adaptive gate         MAE=100.1 ± 0.8
+  w/o config bias           MAE=103.0 ± 1.5
+  w/o decomposition         MAE=103.0 ± 1.5
+  w/o weighted sampling     MAE=116.0 ± 4.0
+  Direct CIF (oracle)       MAE=105.2 ± 7.4
+
+[6/9] SA1 (rs=0.687)
+  Full model                MAE=65.0 ± 0.3
+  w/o adaptive gate         MAE=65.1 ± 0.4
+  w/o config bias           MAE=64.9 ± 0.6
+  w/o decomposition         MAE=64.3 ± 0.4
+  w/o weighted sampling     MAE=68.2 ± 1.1
+  Direct CIF (oracle)       MAE=63.7 ± 2.4
+
+[7/9] UK_07_South_Wales (rs=0.290)
+  Full model                MAE=73.3 ± 1.1
+  w/o adaptive gate         MAE=76.0 ± 0.3
+  w/o config bias           MAE=75.4 ± 1.8
+  w/o decomposition         MAE=75.0 ± 0.8
+  w/o weighted sampling     MAE=75.0 ± 1.1
+  Direct CIF (oracle)       MAE=72.6 ± 2.0
+
+[8/9] UK_01_North_Scotland (rs=0.906)
+  Full model                MAE=44.5 ± 2.1
+  w/o adaptive gate         MAE=48.7 ± 0.4
+  w/o config bias           MAE=47.6 ± 2.5
+  w/o decomposition         MAE=45.3 ± 1.5
+  w/o weighted sampling     MAE=55.9 ± 5.1
+  Direct CIF (oracle)       MAE=36.2 ± 0.7
+
+[9/9] US_BPAT (rs=0.782)
+  Full model                MAE=8.7 ± 0.2
+  w/o adaptive gate         MAE=8.9 ± 0.1
+  w/o config bias           MAE=8.8 ± 0.2
+  w/o decomposition         MAE=8.7 ± 0.1
+  w/o weighted sampling     MAE=14.4 ± 1.2
+  Direct CIF (oracle)       MAE=6.2 ± 0.3
+
+================================================================================
+ZS+ CALIBRATION COMPONENT ABLATION (anchor / residual / self-validation)
+================================================================================
+
+[1/9] US_FPL
+  ZS+ (full calib)          MAE=13.2 ± 0.1
+  ZS+ w/o anchor            MAE=14.3 ± 0.0
+  ZS+ w/o residual          MAE=13.1 ± 0.0
+  ZS+ w/o self-val          MAE=19.4 ± 0.2
+  Raw ZS (no calib)         MAE=35.7 ± 3.8
+
+[2/9] US_MISO
+  ZS+ (full calib)          MAE=52.8 ± 0.1
+  ZS+ w/o anchor            MAE=51.4 ± 0.3
+  ZS+ w/o residual          MAE=52.4 ± 0.1
+  ZS+ w/o self-val          MAE=51.1 ± 0.1
+  Raw ZS (no calib)         MAE=54.2 ± 0.7
+
+[3/9] QLD1
+  ZS+ (full calib)          MAE=28.5 ± 0.1
+  ZS+ w/o anchor            MAE=29.5 ± 0.1
+  ZS+ w/o residual          MAE=28.4 ± 0.1
+  ZS+ w/o self-val          MAE=33.4 ± 0.1
+  Raw ZS (no calib)         MAE=48.8 ± 2.8
+
+[4/9] NSW1
+  ZS+ (full calib)          MAE=51.2 ± 0.2
+  ZS+ w/o anchor            MAE=49.9 ± 0.4
+  ZS+ w/o residual          MAE=51.5 ± 0.2
+  ZS+ w/o self-val          MAE=50.2 ± 0.4
+  Raw ZS (no calib)         MAE=49.5 ± 0.3
+
+[5/9] VIC1
+  ZS+ (full calib)          MAE=112.6 ± 0.6
+  ZS+ w/o anchor            MAE=108.5 ± 1.3
+  ZS+ w/o residual          MAE=112.8 ± 0.6
+  ZS+ w/o self-val          MAE=110.0 ± 0.9
+  Raw ZS (no calib)         MAE=103.7 ± 1.8
+
+[6/9] SA1
+  ZS+ (full calib)          MAE=66.6 ± 0.1
+  ZS+ w/o anchor            MAE=65.0 ± 0.2
+  ZS+ w/o residual          MAE=67.0 ± 0.1
+  ZS+ w/o self-val          MAE=66.7 ± 0.1
+  Raw ZS (no calib)         MAE=64.2 ± 0.3
+
+[7/9] UK_07_South_Wales
+  ZS+ (full calib)          MAE=73.1 ± 0.2
+  ZS+ w/o anchor            MAE=71.8 ± 0.1
+  ZS+ w/o residual          MAE=73.1 ± 0.2
+  ZS+ w/o self-val          MAE=71.7 ± 0.1
+  Raw ZS (no calib)         MAE=72.8 ± 0.6
+
+[8/9] UK_01_North_Scotland
+  ZS+ (full calib)          MAE=33.8 ± 0.1
+  ZS+ w/o anchor            MAE=36.3 ± 0.1
+  ZS+ w/o residual          MAE=34.0 ± 0.1
+  ZS+ w/o self-val          MAE=33.3 ± 0.1
+  Raw ZS (no calib)         MAE=43.6 ± 0.7
+
+[9/9] US_BPAT
+  ZS+ (full calib)          MAE=6.2 ± 0.0
+  ZS+ w/o anchor            MAE=6.0 ± 0.0
+  ZS+ w/o residual          MAE=6.4 ± 0.0
+  ZS+ w/o self-val          MAE=6.3 ± 0.0
+  Raw ZS (no calib)         MAE=8.4 ± 0.1
+
+Total time: 1.2 min
+Results saved: /Users/cyyc0310/Downloads/transcif/results/ablation_full.json
+
+==========================================================================================
+ABLATION SUMMARY (Mean MAE across all targets and seeds)
+==========================================================================================
+
+Config                    US_FPL     US_MISO    QLD1       NSW1       VIC1       SA1        UK_07_South_Wales UK_01_North_Scotland US_BPAT    MEAN    
+---------------------------------------------------------------------------------------------------------------------------
+Full model                35.3       53.4       48.7       49.8       103.2      65.0       73.3       44.5       8.7        53.6    
+w/o adaptive gate         48.6       60.1       72.6       48.5       100.1      65.1       76.0       48.7       8.9        58.7    
+w/o config bias           50.4       59.9       68.0       48.8       103.0      64.9       75.4       47.6       8.8        58.5    
+w/o decomposition         38.0       55.3       54.2       51.3       103.0      64.3       75.0       45.3       8.7        55.0    
+w/o weighted sampling     38.7       68.8       75.3       58.8       116.0      68.2       75.0       55.9       14.4       63.5    
+Direct CIF (oracle)       13.3       50.8       29.9       49.7       105.2      63.7       72.6       36.2       6.2        47.5    
+
+Relative to Full (%)      US_FPL     US_MISO    QLD1       NSW1       VIC1       SA1        UK_07_South_Wales UK_01_North_Scotland US_BPAT    MEAN    
+---------------------------------------------------------------------------------------------------------------------------
+w/o adaptive gate         ↑37.5    % ↑12.4    % ↑49.1    % ↓2.7     % ↓2.9     % ↑0.2     % ↑3.6     % ↑9.5     % ↑1.9     % ↑12.1   %
+w/o config bias           ↑42.7    % ↑12.1    % ↑39.6    % ↓2.1     % ↓0.1     % ↓0.2     % ↑2.8     % ↑6.9     % ↑0.9     % ↑11.4   %
+w/o decomposition         ↑7.5     % ↑3.4     % ↑11.2    % ↑3.0     % ↓0.2     % ↓1.1     % ↑2.3     % ↑1.8     % ↓0.5     % ↑3.1    %
+w/o weighted sampling     ↑9.7     % ↑28.7    % ↑54.7    % ↑18.1    % ↑12.5    % ↑4.9     % ↑2.3     % ↑25.6    % ↑65.2    % ↑24.6   %
+Direct CIF (oracle)       ↓62.4    % ↓4.9     % ↓38.5    % ↓0.3     % ↑2.0     % ↓2.0     % ↓0.9     % ↓18.7    % ↓28.6    % ↓17.2   %
+
+==========================================================================================
+ZS+ CALIBRATION ABLATION SUMMARY (Mean MAE across targets and seeds)
+==========================================================================================
+ZS+ (full calib)          mean MAE=48.7     vs full: +0.0%
+ZS+ w/o anchor            mean MAE=48.1     vs full: +0.3%
+ZS+ w/o residual          mean MAE=48.7     vs full: +0.4%
+ZS+ w/o self-val          mean MAE=49.1     vs full: +6.2%
+Raw ZS (no calib)         mean MAE=53.4     vs full: +32.8%
+
+✓ Ablation study complete!
+######## END ablation_study 14:40:27 ########
+######## START deployment_warmup 14:40:27 ########
+================================================================================
+Phase 3.4: Deployment Case Study — Warm-Up Curve
+================================================================================
+
+Scenario: New region comes online. Only config available.
+Question: How quickly can predictions be made?
+Answer: Immediately (zero-shot). No waiting for data accumulation.
+
+Loaded: 29 regions
+Targets: ['QLD1', 'NSW1', 'VIC1', 'SA1', 'UK_07_South_Wales', 'UK_01_North_Scotland', 'US_ERCO', 'US_BPAT']
+Evaluation windows: [1, 3, 7, 14, 30, 60, 90] days
+
+--- PART 1: Zero-Shot Stability ---
+Region            1d     3d     7d    14d    30d    60d    90d   (MAE)
+----------------------------------------------------------------------
+QLD1              N/A   N/A   N/A   N/A  50.1  54.7  53.7
+  +calibrated     N/A   N/A   N/A   N/A  25.2  28.9  28.4
+NSW1              N/A   N/A   N/A   N/A  54.3  51.5  48.6
+  +calibrated     N/A   N/A   N/A   N/A  61.0  53.1  50.7
+VIC1              N/A   N/A   N/A   N/A 129.3 102.7 102.1
+  +calibrated     N/A   N/A   N/A   N/A 146.0 113.7 112.0
+SA1               N/A   N/A   N/A   N/A  65.4  60.0  64.3
+  +calibrated     N/A   N/A   N/A   N/A  67.9  62.5  66.3
+UK_07_South_Wales   N/A   N/A   N/A   N/A  86.9  73.9  73.5
+  +calibrated     N/A   N/A   N/A   N/A  87.1  75.4  72.7
+UK_01_North_Scotland   N/A   N/A   N/A   N/A  35.6  48.5  45.5
+  +calibrated     N/A   N/A   N/A   N/A  25.2  39.3  33.6
+US_ERCO           N/A   N/A   N/A   N/A  47.6  59.7  59.0
+  +calibrated     N/A   N/A   N/A   N/A  54.4  61.7  61.7
+US_BPAT           N/A   N/A   N/A   N/A  10.1   8.3   8.6
+  +calibrated     N/A   N/A   N/A   N/A   7.9   7.3   6.2
+
+
+--- PART 2: Supervised Fine-Tuning Curve ---
+(Days of target data needed for supervised model to match zero-shot)
+Region          ZS MAE       7d    14d    30d    60d    90d   180d   270d 
+--------------------------------------------------------------------------------
+QLD1            53.7         N/A     N/A   38.3 *  40.4 *  41.5 *  40.3 *  36.5 *
+NSW1            48.6         N/A     N/A   60.6    63.0    60.1    63.8    62.8  
+VIC1            102.1        N/A     N/A  110.5   100.2 *  99.0 *  94.9 *  94.5 *
+SA1             64.3         N/A     N/A   63.9 *  60.0 *  59.7 *  58.0 *  59.7 *
+UK_07_South_Wales 73.5         N/A     N/A   94.8    92.2    87.9    85.9    79.9  
+UK_01_North_Scotland 45.5         N/A     N/A   40.3 *  34.0 *  33.8 *  34.0 *  34.1 *
+US_ERCO         59.0         N/A     N/A   61.8    61.2    60.8    56.9 *  56.9 *
+US_BPAT         8.6          N/A     N/A    8.5 *   8.4 *   8.5 *   8.0 *   8.2 *
+
+Total time: 0.1 min
+* = supervised matches or beats zero-shot
+
+================================================================================
+DEPLOYMENT SUMMARY
+================================================================================
+
+Region               ZS ready at  Sup matches at  ZS advantage
+------------------------------------------------------------
+QLD1                 Day 0        30 days         30 days saved
+NSW1                 Day 0        >270 days       Sup never matches
+VIC1                 Day 0        60 days         60 days saved
+SA1                  Day 0        30 days         30 days saved
+UK_07_South_Wales    Day 0        >270 days       Sup never matches
+UK_01_North_Scotland Day 0        30 days         30 days saved
+US_ERCO              Day 0        180 days        180 days saved
+US_BPAT              Day 0        30 days         30 days saved
+
+Mean crossover: 60 days
+Median crossover: 30 days
+Regions where supervised NEVER matches: 2/8
+
+Results saved: /Users/cyyc0310/Downloads/transcif/results/deployment_warmup.json
+
+--- GENERATING FIGURE ---
+  Figure saved: /Users/cyyc0310/Downloads/transcif/figures/deployment_warmup.png
+
+✓ Phase 3.4 Deployment Case Study complete!
+  Key finding: Zero-shot provides instant predictions from Day 0,
+  while supervised models need weeks-months of data to match.
+######## END deployment_warmup 14:40:38 ########

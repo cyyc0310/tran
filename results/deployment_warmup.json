@@ -1,0 +1,720 @@
+{
+  "zero_shot_warmup": {
+    "QLD1": [
+      {
+        "days": 1,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 3,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 7,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 14,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 30,
+        "n_windows": 16,
+        "zs_mae": 50.12372970581055,
+        "zsp_mae": 24.15589141845703,
+        "persist_mae": 29.08880615234375,
+        "zs_rmse": 60.982547760009766,
+        "persist_rmse": 39.966217041015625
+      },
+      {
+        "days": 60,
+        "n_windows": 46,
+        "zs_mae": 54.671630859375,
+        "zsp_mae": 27.614850997924805,
+        "persist_mae": 33.26785659790039,
+        "zs_rmse": 67.0291976928711,
+        "persist_rmse": 44.537288665771484
+      },
+      {
+        "days": 90,
+        "n_windows": 73,
+        "zs_mae": 53.66627883911133,
+        "zsp_mae": 27.197921752929688,
+        "persist_mae": 33.05059051513672,
+        "zs_rmse": 65.97932434082031,
+        "persist_rmse": 43.847190856933594
+      }
+    ],
+    "NSW1": [
+      {
+        "days": 1,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 3,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 7,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 14,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 30,
+        "n_windows": 16,
+        "zs_mae": 54.28794479370117,
+        "zsp_mae": 54.86128234863281,
+        "persist_mae": 64.45548248291016,
+        "zs_rmse": 68.83821105957031,
+        "persist_rmse": 82.04301452636719
+      },
+      {
+        "days": 60,
+        "n_windows": 46,
+        "zs_mae": 51.501285552978516,
+        "zsp_mae": 48.224098205566406,
+        "persist_mae": 57.48169708251953,
+        "zs_rmse": 65.31957244873047,
+        "persist_rmse": 74.88231658935547
+      },
+      {
+        "days": 90,
+        "n_windows": 73,
+        "zs_mae": 48.55347442626953,
+        "zsp_mae": 46.1734619140625,
+        "persist_mae": 54.577178955078125,
+        "zs_rmse": 62.188995361328125,
+        "persist_rmse": 71.40447235107422
+      }
+    ],
+    "VIC1": [
+      {
+        "days": 1,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 3,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 7,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 14,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 30,
+        "n_windows": 16,
+        "zs_mae": 129.2515411376953,
+        "zsp_mae": 135.772216796875,
+        "persist_mae": 152.05357360839844,
+        "zs_rmse": 162.78050231933594,
+        "persist_rmse": 193.56576538085938
+      },
+      {
+        "days": 60,
+        "n_windows": 46,
+        "zs_mae": 102.6897201538086,
+        "zsp_mae": 102.70159149169922,
+        "persist_mae": 119.24690246582031,
+        "zs_rmse": 131.83216857910156,
+        "persist_rmse": 154.54486083984375
+      },
+      {
+        "days": 90,
+        "n_windows": 73,
+        "zs_mae": 102.09220886230469,
+        "zsp_mae": 101.68883514404297,
+        "persist_mae": 117.68196868896484,
+        "zs_rmse": 131.6512451171875,
+        "persist_rmse": 153.16168212890625
+      }
+    ],
+    "SA1": [
+      {
+        "days": 1,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 3,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 7,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 14,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 30,
+        "n_windows": 16,
+        "zs_mae": 65.408447265625,
+        "zsp_mae": 65.53362274169922,
+        "persist_mae": 74.87820434570312,
+        "zs_rmse": 89.03351593017578,
+        "persist_rmse": 106.1296157836914
+      },
+      {
+        "days": 60,
+        "n_windows": 46,
+        "zs_mae": 59.973228454589844,
+        "zsp_mae": 59.033233642578125,
+        "persist_mae": 68.80256652832031,
+        "zs_rmse": 80.58732604980469,
+        "persist_rmse": 94.28533935546875
+      },
+      {
+        "days": 90,
+        "n_windows": 73,
+        "zs_mae": 64.34849548339844,
+        "zsp_mae": 62.05553436279297,
+        "persist_mae": 71.9524917602539,
+        "zs_rmse": 87.81218719482422,
+        "persist_rmse": 102.5349349975586
+      }
+    ],
+    "UK_07_South_Wales": [
+      {
+        "days": 1,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 3,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 7,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 14,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 30,
+        "n_windows": 16,
+        "zs_mae": 86.92413330078125,
+        "zsp_mae": 88.20897674560547,
+        "persist_mae": 92.7914810180664,
+        "zs_rmse": 105.91704559326172,
+        "persist_rmse": 124.82135772705078
+      },
+      {
+        "days": 60,
+        "n_windows": 46,
+        "zs_mae": 73.9254379272461,
+        "zsp_mae": 73.7468032836914,
+        "persist_mae": 79.77871704101562,
+        "zs_rmse": 93.9659423828125,
+        "persist_rmse": 110.37751007080078
+      },
+      {
+        "days": 90,
+        "n_windows": 72,
+        "zs_mae": 73.48783111572266,
+        "zsp_mae": 70.68145751953125,
+        "persist_mae": 76.20675659179688,
+        "zs_rmse": 93.92840576171875,
+        "persist_rmse": 107.14892578125
+      }
+    ],
+    "UK_01_North_Scotland": [
+      {
+        "days": 1,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 3,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 7,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 14,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 30,
+        "n_windows": 16,
+        "zs_mae": 35.59297561645508,
+        "zsp_mae": 25.696271896362305,
+        "persist_mae": 27.57078742980957,
+        "zs_rmse": 48.30829620361328,
+        "persist_rmse": 54.24418258666992
+      },
+      {
+        "days": 60,
+        "n_windows": 46,
+        "zs_mae": 48.47075653076172,
+        "zsp_mae": 40.002052307128906,
+        "persist_mae": 42.482666015625,
+        "zs_rmse": 66.9036636352539,
+        "persist_rmse": 73.96961212158203
+      },
+      {
+        "days": 90,
+        "n_windows": 72,
+        "zs_mae": 45.50346374511719,
+        "zsp_mae": 34.07204055786133,
+        "persist_mae": 35.89841079711914,
+        "zs_rmse": 62.607582092285156,
+        "persist_rmse": 68.28244018554688
+      }
+    ],
+    "US_ERCO": [
+      {
+        "days": 1,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 3,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 7,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 14,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 30,
+        "n_windows": 16,
+        "zs_mae": 47.646175384521484,
+        "zsp_mae": 53.85421371459961,
+        "persist_mae": 52.24735641479492,
+        "zs_rmse": 62.481449127197266,
+        "persist_rmse": 70.3603744506836
+      },
+      {
+        "days": 60,
+        "n_windows": 46,
+        "zs_mae": 59.68067932128906,
+        "zsp_mae": 61.154205322265625,
+        "persist_mae": 62.0510139465332,
+        "zs_rmse": 73.419921875,
+        "persist_rmse": 80.59807586669922
+      },
+      {
+        "days": 90,
+        "n_windows": 73,
+        "zs_mae": 59.00075912475586,
+        "zsp_mae": 60.157737731933594,
+        "persist_mae": 62.2009391784668,
+        "zs_rmse": 72.30517578125,
+        "persist_rmse": 80.4806900024414
+      }
+    ],
+    "US_BPAT": [
+      {
+        "days": 1,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 3,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 7,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 14,
+        "n_windows": 0,
+        "zs_mae": null,
+        "persist_mae": null
+      },
+      {
+        "days": 30,
+        "n_windows": 16,
+        "zs_mae": 10.135089874267578,
+        "zsp_mae": 8.155644416809082,
+        "persist_mae": 9.730511665344238,
+        "zs_rmse": 11.880790710449219,
+        "persist_rmse": 11.789764404296875
+      },
+      {
+        "days": 60,
+        "n_windows": 46,
+        "zs_mae": 8.33774471282959,
+        "zsp_mae": 7.243536472320557,
+        "persist_mae": 8.39576244354248,
+        "zs_rmse": 10.51339054107666,
+        "persist_rmse": 10.595422744750977
+      },
+      {
+        "days": 90,
+        "n_windows": 73,
+        "zs_mae": 8.554226875305176,
+        "zsp_mae": 6.174952983856201,
+        "persist_mae": 8.306087493896484,
+        "zs_rmse": 10.557002067565918,
+        "persist_rmse": 10.245036125183105
+      }
+    ]
+  },
+  "finetuning_curve": {
+    "QLD1": [
+      {
+        "days": 7,
+        "sup_mae": null
+      },
+      {
+        "days": 14,
+        "sup_mae": null
+      },
+      {
+        "days": 30,
+        "sup_mae": 38.27565002441406,
+        "n_train_windows": 61
+      },
+      {
+        "days": 60,
+        "sup_mae": 40.41617202758789,
+        "n_train_windows": 181
+      },
+      {
+        "days": 90,
+        "sup_mae": 41.460044860839844,
+        "n_train_windows": 301
+      },
+      {
+        "days": 180,
+        "sup_mae": 40.30998992919922,
+        "n_train_windows": 661
+      },
+      {
+        "days": 270,
+        "sup_mae": 36.468013763427734,
+        "n_train_windows": 1021
+      }
+    ],
+    "NSW1": [
+      {
+        "days": 7,
+        "sup_mae": null
+      },
+      {
+        "days": 14,
+        "sup_mae": null
+      },
+      {
+        "days": 30,
+        "sup_mae": 60.58721160888672,
+        "n_train_windows": 61
+      },
+      {
+        "days": 60,
+        "sup_mae": 62.979915618896484,
+        "n_train_windows": 181
+      },
+      {
+        "days": 90,
+        "sup_mae": 60.094417572021484,
+        "n_train_windows": 301
+      },
+      {
+        "days": 180,
+        "sup_mae": 63.83626174926758,
+        "n_train_windows": 661
+      },
+      {
+        "days": 270,
+        "sup_mae": 62.829620361328125,
+        "n_train_windows": 1021
+      }
+    ],
+    "VIC1": [
+      {
+        "days": 7,
+        "sup_mae": null
+      },
+      {
+        "days": 14,
+        "sup_mae": null
+      },
+      {
+        "days": 30,
+        "sup_mae": 110.48658752441406,
+        "n_train_windows": 61
+      },
+      {
+        "days": 60,
+        "sup_mae": 100.2077865600586,
+        "n_train_windows": 181
+      },
+      {
+        "days": 90,
+        "sup_mae": 99.00581359863281,
+        "n_train_windows": 301
+      },
+      {
+        "days": 180,
+        "sup_mae": 94.91619110107422,
+        "n_train_windows": 661
+      },
+      {
+        "days": 270,
+        "sup_mae": 94.45014953613281,
+        "n_train_windows": 1021
+      }
+    ],
+    "SA1": [
+      {
+        "days": 7,
+        "sup_mae": null
+      },
+      {
+        "days": 14,
+        "sup_mae": null
+      },
+      {
+        "days": 30,
+        "sup_mae": 63.930259704589844,
+        "n_train_windows": 61
+      },
+      {
+        "days": 60,
+        "sup_mae": 59.958580017089844,
+        "n_train_windows": 181
+      },
+      {
+        "days": 90,
+        "sup_mae": 59.653076171875,
+        "n_train_windows": 301
+      },
+      {
+        "days": 180,
+        "sup_mae": 57.987525939941406,
+        "n_train_windows": 661
+      },
+      {
+        "days": 270,
+        "sup_mae": 59.67106246948242,
+        "n_train_windows": 1021
+      }
+    ],
+    "UK_07_South_Wales": [
+      {
+        "days": 7,
+        "sup_mae": null
+      },
+      {
+        "days": 14,
+        "sup_mae": null
+      },
+      {
+        "days": 30,
+        "sup_mae": 94.81814575195312,
+        "n_train_windows": 61
+      },
+      {
+        "days": 60,
+        "sup_mae": 92.24849700927734,
+        "n_train_windows": 181
+      },
+      {
+        "days": 90,
+        "sup_mae": 87.90071868896484,
+        "n_train_windows": 301
+      },
+      {
+        "days": 180,
+        "sup_mae": 85.89840698242188,
+        "n_train_windows": 661
+      },
+      {
+        "days": 270,
+        "sup_mae": 79.85637664794922,
+        "n_train_windows": 1021
+      }
+    ],
+    "UK_01_North_Scotland": [
+      {
+        "days": 7,
+        "sup_mae": null
+      },
+      {
+        "days": 14,
+        "sup_mae": null
+      },
+      {
+        "days": 30,
+        "sup_mae": 40.322566986083984,
+        "n_train_windows": 61
+      },
+      {
+        "days": 60,
+        "sup_mae": 34.02698516845703,
+        "n_train_windows": 181
+      },
+      {
+        "days": 90,
+        "sup_mae": 33.827754974365234,
+        "n_train_windows": 301
+      },
+      {
+        "days": 180,
+        "sup_mae": 34.00121307373047,
+        "n_train_windows": 661
+      },
+      {
+        "days": 270,
+        "sup_mae": 34.145137786865234,
+        "n_train_windows": 1021
+      }
+    ],
+    "US_ERCO": [
+      {
+        "days": 7,
+        "sup_mae": null
+      },
+      {
+        "days": 14,
+        "sup_mae": null
+      },
+      {
+        "days": 30,
+        "sup_mae": 61.84128952026367,
+        "n_train_windows": 61
+      },
+      {
+        "days": 60,
+        "sup_mae": 61.2471809387207,
+        "n_train_windows": 181
+      },
+      {
+        "days": 90,
+        "sup_mae": 60.80825424194336,
+        "n_train_windows": 301
+      },
+      {
+        "days": 180,
+        "sup_mae": 56.8864631652832,
+        "n_train_windows": 661
+      },
+      {
+        "days": 270,
+        "sup_mae": 56.94535827636719,
+        "n_train_windows": 1021
+      }
+    ],
+    "US_BPAT": [
+      {
+        "days": 7,
+        "sup_mae": null
+      },
+      {
+        "days": 14,
+        "sup_mae": null
+      },
+      {
+        "days": 30,
+        "sup_mae": 8.53363037109375,
+        "n_train_windows": 61
+      },
+      {
+        "days": 60,
+        "sup_mae": 8.440077781677246,
+        "n_train_windows": 181
+      },
+      {
+        "days": 90,
+        "sup_mae": 8.52396297454834,
+        "n_train_windows": 301
+      },
+      {
+        "days": 180,
+        "sup_mae": 8.046984672546387,
+        "n_train_windows": 661
+      },
+      {
+        "days": 270,
+        "sup_mae": 8.237127304077148,
+        "n_train_windows": 1021
+      }
+    ]
+  },
+  "crossover_days": {
+    "QLD1": 30,
+    "NSW1": ">270",
+    "VIC1": 60,
+    "SA1": 30,
+    "UK_07_South_Wales": ">270",
+    "UK_01_North_Scotland": 30,
+    "US_ERCO": 180,
+    "US_BPAT": 30
+  }
+}

@@ -1,4 +1,6 @@
 .venv/
+.venv-nemed/
+.venv-nemed311/
 __pycache__/
 *.pyc
 .pytest_cache/
@@ -6,6 +8,12 @@ __pycache__/
 htmlcov/
 data/raw/
 data/processed/
+
+# large generated data & cache
+.nemed_cache/
+data_2023/
+data_2023_gen.log
+external/
 
 # macOS / editor / agent junk
 .DS_Store

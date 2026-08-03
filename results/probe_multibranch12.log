@@ -1,0 +1,19 @@
+Region                      stored    Q4 base    R1 +wc   AUTO m0   AUTO m1   AUTO m2   AUTO m3  Persist
+--------------------------------------------------------------------------------------------------------
+UK_13_London                 53.02      51.71     53.23     52.76     52.38     52.40     52.01    52.74
+UK_14_South_East_England     51.16      49.58     50.82     51.24     51.02     50.45     50.30    50.70
+US_MISO                      52.80      47.92     46.36     46.36     46.47     46.82     47.75    55.60
+VIC1                        112.37     101.36     98.13     98.13     98.13     98.13     99.27   116.79
+SA1                          66.42      61.34     59.86     60.07     60.34     60.94     61.20    68.07
+QLD1                         28.47      26.94     27.04     27.06     26.98     27.00     26.94    29.11
+US_FPL                       13.19      12.91     13.01     12.91     12.91     12.91     12.91    13.39
+UK_11_South_West_England     50.34      49.18     50.19     49.92     49.68     49.18     49.18    53.04
+UK_07_South_Wales            72.91      70.55     71.30     70.76     71.68     70.77     70.55    76.20
+US_CISO                      26.37      25.40     24.56     25.16     25.31     25.25     25.42    27.43
+--------------------------------------------------------------------------------------------------------
+Q4 base      beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9510
+R1 +wc       beat-persist 8/10  improved-vs-stored 9/10  mean-ratio-vs-stored 0.9493
+AUTO m0      beat-persist 8/10  improved-vs-stored 9/10  mean-ratio-vs-stored 0.9497
+AUTO m1      beat-persist 9/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9503
+AUTO m2      beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9484
+AUTO m3      beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9506

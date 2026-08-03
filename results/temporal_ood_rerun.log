@@ -1,0 +1,55 @@
+================================================================================
+Phase 3.3: Temporal OOD Experiment
+================================================================================
+
+Test: Does the model generalize to unseen TIME periods?
+Compare: 80/20 (standard) vs 75/25 (last quarter) vs 50/50 (last half)
+
+Loaded: 29 regions
+Targets: ['US_FPL', 'US_MISO', 'QLD1', 'NSW1', 'VIC1', 'SA1', 'UK_07_South_Wales', 'UK_01_North_Scotland', 'US_BPAT']
+Splits: ['Standard (80/20)', '9-month (75/25)', '6-month (50/50)']
+Seeds: [0, 1, 2]
+
+Region          Standard (80   9-month (75/   6-month (50/  
+------------------------------------------------------------
+US_FPL          14.4  ±0.0   13.4  ±0.0   9.9   ±0.0  
+US_MISO         52.9  ±0.1   51.6  ±0.2   38.5  ±0.0  
+QLD1            29.2  ±0.1   28.9  ±0.1   27.9  ±0.1  
+NSW1            51.0  ±0.2   53.3  ±0.1   49.7  ±0.2  
+VIC1            112.7 ±0.6   116.4 ±0.6   113.0 ±0.7  
+SA1             66.6  ±0.2   64.7  ±0.1   81.7  ±0.2  
+UK_07_South_Wales 73.2  ±0.2   82.4  ±0.2   75.9  ±0.2  
+UK_01_North_Scotland 33.9  ±0.1   35.2  ±0.1   32.2  ±0.1  
+US_BPAT         6.2   ±0.0   5.9   ±0.0   5.9   ±0.0  
+
+Total time: 0.7 min
+
+================================================================================
+TEMPORAL OOD ANALYSIS
+================================================================================
+
+Region          Std MAE    75% MAE    50% MAE    75%/Std  50%/Std 
+-----------------------------------------------------------------
+US_FPL          14.4       13.4       9.9        0.932    0.686   
+US_MISO         52.9       51.6       38.5       0.976    0.728   
+QLD1            29.2       28.9       27.9       0.988    0.954   
+NSW1            51.0       53.3       49.7       1.044    0.974   
+VIC1            112.7      116.4      113.0      1.033    1.002   
+SA1             66.6       64.7       81.7       0.971    1.228   
+UK_07_South_Wales 73.2       82.4       75.9       1.125    1.036   
+UK_01_North_Scotland 33.9       35.2       32.2       1.037    0.950   
+US_BPAT         6.2        5.9        5.9        0.951    0.959   
+
+MEAN            —          —          —          1.006    0.946   
+
+Key finding:
+  75/25 split (last quarter): MAE ratio = 1.006 vs standard
+  50/50 split (last half): MAE ratio = 0.946 vs standard
+  → GOOD: Model generalizes well to unseen time periods (<15% degradation)
+
+Results saved: /Users/cyyc0310/Downloads/transcif/results/temporal_ood.json
+
+--- GENERATING FIGURE ---
+  Figure saved: /Users/cyyc0310/Downloads/transcif/figures/temporal_ood.png
+
+✓ Phase 3.3 Temporal OOD complete!

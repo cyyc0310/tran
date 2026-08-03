@@ -1,0 +1,3674 @@
+[
+  {
+    "target": "US_FPL",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 38.93982696533203,
+    "rmse": 46.2159309387207,
+    "smape": 13.330536842346191
+  },
+  {
+    "target": "US_FPL",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 30.406986236572266,
+    "rmse": 37.7403450012207,
+    "smape": 10.266336441040039
+  },
+  {
+    "target": "US_FPL",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 36.861541748046875,
+    "rmse": 44.0716438293457,
+    "smape": 12.534180641174316
+  },
+  {
+    "target": "US_FPL",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 42.48084259033203,
+    "rmse": 49.62588882446289,
+    "smape": 14.602052688598633
+  },
+  {
+    "target": "US_FPL",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 27.956050872802734,
+    "rmse": 35.20832443237305,
+    "smape": 9.385772705078125
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 49.68806838989258,
+    "rmse": 56.68655776977539,
+    "smape": 17.36408233642578
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 47.16352081298828,
+    "rmse": 54.10847091674805,
+    "smape": 16.416698455810547
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 50.74742126464844,
+    "rmse": 57.67912673950195,
+    "smape": 17.700931549072266
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 46.228450775146484,
+    "rmse": 53.212806701660156,
+    "smape": 16.005996704101562
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 49.06670379638672,
+    "rmse": 55.8585090637207,
+    "smape": 17.02019500732422
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 45.64864730834961,
+    "rmse": 52.626399993896484,
+    "smape": 15.769463539123535
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 64.022216796875,
+    "rmse": 69.57904052734375,
+    "smape": 22.91238021850586
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 46.565494537353516,
+    "rmse": 53.42108917236328,
+    "smape": 16.113750457763672
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 40.055076599121094,
+    "rmse": 47.15679168701172,
+    "smape": 13.708892822265625
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 55.78227996826172,
+    "rmse": 62.042335510253906,
+    "smape": 19.625818252563477
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 30.38715362548828,
+    "rmse": 37.5318603515625,
+    "smape": 10.131217002868652
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 39.66617965698242,
+    "rmse": 46.520774841308594,
+    "smape": 13.42757797241211
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 36.61107635498047,
+    "rmse": 43.677913665771484,
+    "smape": 12.352808952331543
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 41.17903518676758,
+    "rmse": 48.39207458496094,
+    "smape": 13.982376098632812
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 42.053924560546875,
+    "rmse": 48.9649543762207,
+    "smape": 14.312216758728027
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 43.16812515258789,
+    "rmse": 50.410640716552734,
+    "smape": 14.899674415588379
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 33.07167053222656,
+    "rmse": 40.3493537902832,
+    "smape": 11.214757919311523
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 40.51125717163086,
+    "rmse": 47.6488037109375,
+    "smape": 13.868597030639648
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 45.185455322265625,
+    "rmse": 52.00394058227539,
+    "smape": 15.60503101348877
+  },
+  {
+    "target": "US_FPL",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 31.804203033447266,
+    "rmse": 38.890296936035156,
+    "smape": 10.706466674804688
+  },
+  {
+    "target": "US_FPL",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 13.183722496032715,
+    "rmse": 22.44679069519043,
+    "smape": 4.464763164520264
+  },
+  {
+    "target": "US_FPL",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 13.113057136535645,
+    "rmse": 22.34610366821289,
+    "smape": 4.44873046875
+  },
+  {
+    "target": "US_FPL",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 13.80032730102539,
+    "rmse": 23.053997039794922,
+    "smape": 4.6668314933776855
+  },
+  {
+    "target": "US_FPL",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 12.978196144104004,
+    "rmse": 23.470949172973633,
+    "smape": 4.464259624481201
+  },
+  {
+    "target": "US_FPL",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 13.385560989379883,
+    "rmse": 26.1756534576416,
+    "smape": 4.631091594696045
+  },
+  {
+    "target": "US_MISO",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 53.78456497192383,
+    "rmse": 65.72692108154297,
+    "smape": 12.632682800292969
+  },
+  {
+    "target": "US_MISO",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 53.1792106628418,
+    "rmse": 65.17206573486328,
+    "smape": 12.493186950683594
+  },
+  {
+    "target": "US_MISO",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 51.963165283203125,
+    "rmse": 63.12580871582031,
+    "smape": 12.166762351989746
+  },
+  {
+    "target": "US_MISO",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 56.77132034301758,
+    "rmse": 69.81993103027344,
+    "smape": 13.376140594482422
+  },
+  {
+    "target": "US_MISO",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 51.485294342041016,
+    "rmse": 62.25226593017578,
+    "smape": 12.035765647888184
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 59.810386657714844,
+    "rmse": 73.43341827392578,
+    "smape": 14.159867286682129
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 59.098690032958984,
+    "rmse": 72.58428192138672,
+    "smape": 13.980380058288574
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 60.39523696899414,
+    "rmse": 74.34554290771484,
+    "smape": 14.320439338684082
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 59.364444732666016,
+    "rmse": 73.04658508300781,
+    "smape": 14.037829399108887
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 61.61686706542969,
+    "rmse": 75.60215759277344,
+    "smape": 14.604188919067383
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 58.02515411376953,
+    "rmse": 71.4417724609375,
+    "smape": 13.707640647888184
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 67.10869598388672,
+    "rmse": 81.62222290039062,
+    "smape": 16.03711700439453
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 55.68778991699219,
+    "rmse": 68.3439712524414,
+    "smape": 13.102849960327148
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 54.51557540893555,
+    "rmse": 66.84062194824219,
+    "smape": 12.818217277526855
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 64.20603942871094,
+    "rmse": 78.62815856933594,
+    "smape": 15.293563842773438
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 51.338531494140625,
+    "rmse": 62.25157165527344,
+    "smape": 12.016403198242188
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 55.480098724365234,
+    "rmse": 68.1036376953125,
+    "smape": 13.050068855285645
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 56.93546676635742,
+    "rmse": 69.7479019165039,
+    "smape": 13.426385879516602
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 56.531280517578125,
+    "rmse": 69.07891082763672,
+    "smape": 13.31149673461914
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 56.01211929321289,
+    "rmse": 68.62235260009766,
+    "smape": 13.1917085647583
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 72.54144287109375,
+    "rmse": 88.11321258544922,
+    "smape": 17.579957962036133
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 64.05220031738281,
+    "rmse": 78.9649887084961,
+    "smape": 15.312390327453613
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 69.6518325805664,
+    "rmse": 85.12561798095703,
+    "smape": 16.795520782470703
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 76.16120910644531,
+    "rmse": 91.52436828613281,
+    "smape": 18.547945022583008
+  },
+  {
+    "target": "US_MISO",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 61.45634078979492,
+    "rmse": 76.06205749511719,
+    "smape": 14.6496000289917
+  },
+  {
+    "target": "US_MISO",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 48.796627044677734,
+    "rmse": 59.2865104675293,
+    "smape": 11.29513931274414
+  },
+  {
+    "target": "US_MISO",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 47.359771728515625,
+    "rmse": 56.59944534301758,
+    "smape": 10.963959693908691
+  },
+  {
+    "target": "US_MISO",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 46.704647064208984,
+    "rmse": 55.888362884521484,
+    "smape": 10.817214012145996
+  },
+  {
+    "target": "US_MISO",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 55.600685119628906,
+    "rmse": 68.07406616210938,
+    "smape": 12.895035743713379
+  },
+  {
+    "target": "US_MISO",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 55.600894927978516,
+    "rmse": 68.07442474365234,
+    "smape": 12.895088195800781
+  },
+  {
+    "target": "QLD1",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 48.93979263305664,
+    "rmse": 61.86338424682617,
+    "smape": 7.815586090087891
+  },
+  {
+    "target": "QLD1",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 43.17694091796875,
+    "rmse": 55.41178512573242,
+    "smape": 6.823963642120361
+  },
+  {
+    "target": "QLD1",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 48.16514587402344,
+    "rmse": 60.79410171508789,
+    "smape": 7.672327041625977
+  },
+  {
+    "target": "QLD1",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 66.22508239746094,
+    "rmse": 77.86151885986328,
+    "smape": 10.631938934326172
+  },
+  {
+    "target": "QLD1",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 36.88580322265625,
+    "rmse": 48.62337875366211,
+    "smape": 5.833923816680908
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 73.88750457763672,
+    "rmse": 85.5317153930664,
+    "smape": 12.044750213623047
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 71.67974090576172,
+    "rmse": 83.91960906982422,
+    "smape": 11.645315170288086
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 74.03717041015625,
+    "rmse": 85.68733978271484,
+    "smape": 12.013565063476562
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 68.95603942871094,
+    "rmse": 80.33979034423828,
+    "smape": 11.113784790039062
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 74.2973403930664,
+    "rmse": 86.04914855957031,
+    "smape": 12.068181037902832
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 63.52666473388672,
+    "rmse": 75.4253158569336,
+    "smape": 10.247746467590332
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 86.68570709228516,
+    "rmse": 97.14424896240234,
+    "smape": 14.272238731384277
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 63.800376892089844,
+    "rmse": 75.65181732177734,
+    "smape": 10.258398056030273
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 50.16927719116211,
+    "rmse": 62.653846740722656,
+    "smape": 8.000506401062012
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 75.66031646728516,
+    "rmse": 86.43819427490234,
+    "smape": 12.259000778198242
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 42.508811950683594,
+    "rmse": 52.81971740722656,
+    "smape": 6.431617736816406
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 51.83243179321289,
+    "rmse": 63.040584564208984,
+    "smape": 7.7986860275268555
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 56.86609649658203,
+    "rmse": 68.39651489257812,
+    "smape": 8.621490478515625
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 59.58073806762695,
+    "rmse": 70.15058135986328,
+    "smape": 9.082362174987793
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 59.967613220214844,
+    "rmse": 71.19434356689453,
+    "smape": 9.097298622131348
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 76.9547119140625,
+    "rmse": 88.26112365722656,
+    "smape": 12.568076133728027
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 61.61906051635742,
+    "rmse": 73.81948852539062,
+    "smape": 9.991573333740234
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 83.47955322265625,
+    "rmse": 93.65190887451172,
+    "smape": 13.627105712890625
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 97.74177551269531,
+    "rmse": 108.81136322021484,
+    "smape": 16.152996063232422
+  },
+  {
+    "target": "QLD1",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 56.79868698120117,
+    "rmse": 69.40042877197266,
+    "smape": 9.067299842834473
+  },
+  {
+    "target": "QLD1",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 32.225711822509766,
+    "rmse": 41.20529556274414,
+    "smape": 5.004195690155029
+  },
+  {
+    "target": "QLD1",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 28.6715145111084,
+    "rmse": 38.06574249267578,
+    "smape": 4.490878582000732
+  },
+  {
+    "target": "QLD1",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 29.78727149963379,
+    "rmse": 39.03485870361328,
+    "smape": 4.654512405395508
+  },
+  {
+    "target": "QLD1",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 29.771757125854492,
+    "rmse": 40.535091400146484,
+    "smape": 4.649136066436768
+  },
+  {
+    "target": "QLD1",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 29.113201141357422,
+    "rmse": 40.768062591552734,
+    "smape": 4.578866958618164
+  },
+  {
+    "target": "NSW1",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 49.81830978393555,
+    "rmse": 63.646671295166016,
+    "smape": 9.194815635681152
+  },
+  {
+    "target": "NSW1",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 50.01166915893555,
+    "rmse": 64.38169860839844,
+    "smape": 9.253022193908691
+  },
+  {
+    "target": "NSW1",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 49.73241424560547,
+    "rmse": 63.43294143676758,
+    "smape": 9.181376457214355
+  },
+  {
+    "target": "NSW1",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 48.248775482177734,
+    "rmse": 61.55641555786133,
+    "smape": 8.938556671142578
+  },
+  {
+    "target": "NSW1",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 51.32050323486328,
+    "rmse": 65.75655364990234,
+    "smape": 9.46941089630127
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 48.60957717895508,
+    "rmse": 61.898277282714844,
+    "smape": 8.984857559204102
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 48.42374038696289,
+    "rmse": 62.05491638183594,
+    "smape": 8.954832077026367
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 48.43562698364258,
+    "rmse": 62.16765594482422,
+    "smape": 8.980937957763672
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 48.24183654785156,
+    "rmse": 61.47832107543945,
+    "smape": 8.946873664855957
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 48.74302291870117,
+    "rmse": 62.04661178588867,
+    "smape": 9.04361343383789
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 48.799034118652344,
+    "rmse": 62.680702209472656,
+    "smape": 9.052438735961914
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 48.89628219604492,
+    "rmse": 61.98185348510742,
+    "smape": 9.046303749084473
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 48.48185729980469,
+    "rmse": 62.13417434692383,
+    "smape": 8.976649284362793
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 49.22172546386719,
+    "rmse": 63.46238708496094,
+    "smape": 9.12299633026123
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 48.40873718261719,
+    "rmse": 61.99161148071289,
+    "smape": 8.980669975280762
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 52.140403747558594,
+    "rmse": 67.47437286376953,
+    "smape": 9.680037498474121
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 52.40065002441406,
+    "rmse": 67.63098907470703,
+    "smape": 9.761873245239258
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 50.384979248046875,
+    "rmse": 64.85942077636719,
+    "smape": 9.350809097290039
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 50.05042266845703,
+    "rmse": 64.4080810546875,
+    "smape": 9.26760196685791
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 51.73756790161133,
+    "rmse": 66.5381851196289,
+    "smape": 9.60359001159668
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 57.87897872924805,
+    "rmse": 74.90442657470703,
+    "smape": 10.970954895019531
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 54.77006149291992,
+    "rmse": 71.71084594726562,
+    "smape": 10.387117385864258
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 60.33167266845703,
+    "rmse": 77.27420806884766,
+    "smape": 11.428338050842285
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 67.85292053222656,
+    "rmse": 85.13719177246094,
+    "smape": 12.931804656982422
+  },
+  {
+    "target": "NSW1",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 53.36471176147461,
+    "rmse": 70.06704711914062,
+    "smape": 10.050043106079102
+  },
+  {
+    "target": "NSW1",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 49.55779266357422,
+    "rmse": 62.47486877441406,
+    "smape": 9.171781539916992
+  },
+  {
+    "target": "NSW1",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 48.87010192871094,
+    "rmse": 61.64039611816406,
+    "smape": 9.073114395141602
+  },
+  {
+    "target": "NSW1",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 46.855690002441406,
+    "rmse": 60.45419692993164,
+    "smape": 8.751476287841797
+  },
+  {
+    "target": "NSW1",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 49.32701873779297,
+    "rmse": 63.65597152709961,
+    "smape": 9.15734577178955
+  },
+  {
+    "target": "NSW1",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 53.71515655517578,
+    "rmse": 70.66560363769531,
+    "smape": 9.991378784179688
+  },
+  {
+    "target": "VIC1",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 102.10096740722656,
+    "rmse": 132.28842163085938,
+    "smape": 13.826990127563477
+  },
+  {
+    "target": "VIC1",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 105.59700775146484,
+    "rmse": 136.4441375732422,
+    "smape": 14.335248947143555
+  },
+  {
+    "target": "VIC1",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 101.59944915771484,
+    "rmse": 131.04122924804688,
+    "smape": 13.754457473754883
+  },
+  {
+    "target": "VIC1",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 99.455810546875,
+    "rmse": 127.51657104492188,
+    "smape": 13.469573974609375
+  },
+  {
+    "target": "VIC1",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 107.15718078613281,
+    "rmse": 138.92630004882812,
+    "smape": 14.52027416229248
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 98.93380737304688,
+    "rmse": 127.017333984375,
+    "smape": 13.402631759643555
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 100.53160095214844,
+    "rmse": 128.57862854003906,
+    "smape": 13.648351669311523
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 101.35420227050781,
+    "rmse": 129.11846923828125,
+    "smape": 13.775603294372559
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 99.84497833251953,
+    "rmse": 127.97689819335938,
+    "smape": 13.52181625366211
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 100.04756927490234,
+    "rmse": 127.81298828125,
+    "smape": 13.566179275512695
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 103.86153411865234,
+    "rmse": 132.86822509765625,
+    "smape": 14.138968467712402
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 101.48966979980469,
+    "rmse": 128.42535400390625,
+    "smape": 13.781450271606445
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 102.0509033203125,
+    "rmse": 130.45904541015625,
+    "smape": 13.860079765319824
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 105.68132019042969,
+    "rmse": 136.12832641601562,
+    "smape": 14.375692367553711
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 102.11345672607422,
+    "rmse": 130.12380981445312,
+    "smape": 13.88212776184082
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 105.06581115722656,
+    "rmse": 135.96730041503906,
+    "smape": 14.226009368896484
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 101.21280670166016,
+    "rmse": 130.4305877685547,
+    "smape": 13.668460845947266
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 101.40332794189453,
+    "rmse": 130.5795135498047,
+    "smape": 13.719442367553711
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 103.23596954345703,
+    "rmse": 132.10008239746094,
+    "smape": 14.006118774414062
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 104.05912780761719,
+    "rmse": 133.21690368652344,
+    "smape": 14.149369239807129
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 115.70610046386719,
+    "rmse": 145.7667694091797,
+    "smape": 16.01856231689453
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 113.432373046875,
+    "rmse": 144.27674865722656,
+    "smape": 15.653761863708496
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 115.1343994140625,
+    "rmse": 144.74244689941406,
+    "smape": 15.922072410583496
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 123.67687225341797,
+    "rmse": 152.5350341796875,
+    "smape": 17.188386917114258
+  },
+  {
+    "target": "VIC1",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 112.2802963256836,
+    "rmse": 143.74087524414062,
+    "smape": 15.440990447998047
+  },
+  {
+    "target": "VIC1",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 98.41682434082031,
+    "rmse": 126.41320037841797,
+    "smape": 13.289441108703613
+  },
+  {
+    "target": "VIC1",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 100.59294891357422,
+    "rmse": 129.6707763671875,
+    "smape": 13.540464401245117
+  },
+  {
+    "target": "VIC1",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 98.94217681884766,
+    "rmse": 127.41027069091797,
+    "smape": 13.364082336425781
+  },
+  {
+    "target": "VIC1",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 111.23360443115234,
+    "rmse": 144.513916015625,
+    "smape": 15.00853443145752
+  },
+  {
+    "target": "VIC1",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 116.79244232177734,
+    "rmse": 152.71295166015625,
+    "smape": 15.833248138427734
+  },
+  {
+    "target": "SA1",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 65.27912902832031,
+    "rmse": 88.6911392211914,
+    "smape": 53.604854583740234
+  },
+  {
+    "target": "SA1",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 64.51846313476562,
+    "rmse": 89.57726287841797,
+    "smape": 52.743465423583984
+  },
+  {
+    "target": "SA1",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 64.99378204345703,
+    "rmse": 89.28838348388672,
+    "smape": 53.153114318847656
+  },
+  {
+    "target": "SA1",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 64.81968688964844,
+    "rmse": 85.92091369628906,
+    "smape": 54.38428497314453
+  },
+  {
+    "target": "SA1",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 65.4141616821289,
+    "rmse": 91.90670013427734,
+    "smape": 52.86048126220703
+  },
+  {
+    "target": "SA1",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 65.12397766113281,
+    "rmse": 85.72561645507812,
+    "smape": 54.613773345947266
+  },
+  {
+    "target": "SA1",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 65.02146911621094,
+    "rmse": 85.5828628540039,
+    "smape": 54.71931076049805
+  },
+  {
+    "target": "SA1",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 65.34154510498047,
+    "rmse": 85.86135864257812,
+    "smape": 54.792205810546875
+  },
+  {
+    "target": "SA1",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 65.6583251953125,
+    "rmse": 86.0825424194336,
+    "smape": 55.04191589355469
+  },
+  {
+    "target": "SA1",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 64.5299301147461,
+    "rmse": 85.09222412109375,
+    "smape": 54.311561584472656
+  },
+  {
+    "target": "SA1",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 64.33695220947266,
+    "rmse": 87.06963348388672,
+    "smape": 53.415775299072266
+  },
+  {
+    "target": "SA1",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 66.11978912353516,
+    "rmse": 85.65442657470703,
+    "smape": 55.649654388427734
+  },
+  {
+    "target": "SA1",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 64.58721160888672,
+    "rmse": 87.12764739990234,
+    "smape": 53.57752990722656
+  },
+  {
+    "target": "SA1",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 64.62600708007812,
+    "rmse": 88.90117645263672,
+    "smape": 53.067745208740234
+  },
+  {
+    "target": "SA1",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 64.58805084228516,
+    "rmse": 85.65959930419922,
+    "smape": 54.15304183959961
+  },
+  {
+    "target": "SA1",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 64.68572235107422,
+    "rmse": 89.73776245117188,
+    "smape": 52.83235168457031
+  },
+  {
+    "target": "SA1",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 64.99114990234375,
+    "rmse": 86.21725463867188,
+    "smape": 54.7799186706543
+  },
+  {
+    "target": "SA1",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 64.10250854492188,
+    "rmse": 85.83319854736328,
+    "smape": 54.05297088623047
+  },
+  {
+    "target": "SA1",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 64.02938842773438,
+    "rmse": 86.2286148071289,
+    "smape": 53.801536560058594
+  },
+  {
+    "target": "SA1",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 63.78776931762695,
+    "rmse": 86.00037384033203,
+    "smape": 53.552162170410156
+  },
+  {
+    "target": "SA1",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 68.98776245117188,
+    "rmse": 91.63150787353516,
+    "smape": 55.80522537231445
+  },
+  {
+    "target": "SA1",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 66.61361694335938,
+    "rmse": 91.24624633789062,
+    "smape": 53.86534881591797
+  },
+  {
+    "target": "SA1",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 68.5962905883789,
+    "rmse": 92.31407928466797,
+    "smape": 55.206459045410156
+  },
+  {
+    "target": "SA1",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 69.6017074584961,
+    "rmse": 89.65289306640625,
+    "smape": 57.28370666503906
+  },
+  {
+    "target": "SA1",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 67.29769897460938,
+    "rmse": 93.594482421875,
+    "smape": 53.62671661376953
+  },
+  {
+    "target": "SA1",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 63.995460510253906,
+    "rmse": 86.97876739501953,
+    "smape": 56.390499114990234
+  },
+  {
+    "target": "SA1",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 61.63502502441406,
+    "rmse": 83.95315551757812,
+    "smape": 53.97384262084961
+  },
+  {
+    "target": "SA1",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 61.19922637939453,
+    "rmse": 83.07748413085938,
+    "smape": 54.26637649536133
+  },
+  {
+    "target": "SA1",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 63.6138801574707,
+    "rmse": 84.22150421142578,
+    "smape": 56.204750061035156
+  },
+  {
+    "target": "SA1",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 68.06712341308594,
+    "rmse": 97.53356170654297,
+    "smape": 54.80662536621094
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 73.685546875,
+    "rmse": 94.62893676757812,
+    "smape": 35.682586669921875
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 72.37110900878906,
+    "rmse": 95.16474914550781,
+    "smape": 34.91361618041992
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 73.399658203125,
+    "rmse": 95.23458099365234,
+    "smape": 35.58382797241211
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 75.19902038574219,
+    "rmse": 94.2495346069336,
+    "smape": 36.38795852661133
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 71.9444580078125,
+    "rmse": 96.39470672607422,
+    "smape": 34.70705032348633
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 76.28093719482422,
+    "rmse": 94.4345703125,
+    "smape": 36.881370544433594
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 75.44196319580078,
+    "rmse": 93.55577850341797,
+    "smape": 36.485191345214844
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 76.08118438720703,
+    "rmse": 94.18131256103516,
+    "smape": 36.77074432373047
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 75.99469757080078,
+    "rmse": 94.12019348144531,
+    "smape": 36.7218017578125
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 76.0353012084961,
+    "rmse": 94.27485656738281,
+    "smape": 36.73588943481445
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 74.275634765625,
+    "rmse": 94.2791748046875,
+    "smape": 36.01192855834961
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 78.36521911621094,
+    "rmse": 95.33382415771484,
+    "smape": 37.758296966552734
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 74.42964935302734,
+    "rmse": 94.70134735107422,
+    "smape": 36.093685150146484
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 73.25383758544922,
+    "rmse": 94.86454772949219,
+    "smape": 35.474876403808594
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 76.55941772460938,
+    "rmse": 94.8439712524414,
+    "smape": 37.01234817504883
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 73.53551483154297,
+    "rmse": 95.79545593261719,
+    "smape": 35.59455108642578
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 75.74746704101562,
+    "rmse": 94.55037689208984,
+    "smape": 36.61224365234375
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 75.11222076416016,
+    "rmse": 94.80496978759766,
+    "smape": 36.27313232421875
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 75.29888153076172,
+    "rmse": 95.00008392333984,
+    "smape": 36.429954528808594
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 75.36648559570312,
+    "rmse": 95.05406188964844,
+    "smape": 36.45733642578125
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 75.22750854492188,
+    "rmse": 96.04096221923828,
+    "smape": 35.877403259277344
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 74.1825180053711,
+    "rmse": 96.62892150878906,
+    "smape": 35.53587341308594
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 75.35562133789062,
+    "rmse": 96.36524963378906,
+    "smape": 35.93000030517578
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 76.75371551513672,
+    "rmse": 95.79544830322266,
+    "smape": 36.39711380004883
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 73.47931671142578,
+    "rmse": 96.92683410644531,
+    "smape": 35.34192657470703
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 71.49185943603516,
+    "rmse": 91.3023681640625,
+    "smape": 35.05946350097656
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 71.13253784179688,
+    "rmse": 92.51368713378906,
+    "smape": 34.62424850463867
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 70.94254302978516,
+    "rmse": 92.05403900146484,
+    "smape": 34.50626754760742
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 73.39018249511719,
+    "rmse": 95.49440002441406,
+    "smape": 35.684791564941406
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 76.1998519897461,
+    "rmse": 106.9461898803711,
+    "smape": 37.73918533325195
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 45.00174331665039,
+    "rmse": 62.531517028808594,
+    "smape": 143.22157287597656
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 43.31129455566406,
+    "rmse": 62.52526092529297,
+    "smape": 143.3027801513672
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 44.43640899658203,
+    "rmse": 62.77992248535156,
+    "smape": 143.20010375976562
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 48.02072525024414,
+    "rmse": 62.94743728637695,
+    "smape": 143.82070922851562
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 41.75819396972656,
+    "rmse": 62.89531326293945,
+    "smape": 143.3890838623047
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 48.839996337890625,
+    "rmse": 63.325870513916016,
+    "smape": 143.94412231445312
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 49.27206802368164,
+    "rmse": 63.598018646240234,
+    "smape": 144.08795166015625
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 48.912967681884766,
+    "rmse": 63.483463287353516,
+    "smape": 144.08370971679688
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 48.15291213989258,
+    "rmse": 63.06169891357422,
+    "smape": 143.96478271484375
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 48.483497619628906,
+    "rmse": 63.21681213378906,
+    "smape": 143.79843139648438
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 46.504371643066406,
+    "rmse": 62.632225036621094,
+    "smape": 143.43919372558594
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 51.48294448852539,
+    "rmse": 64.60508728027344,
+    "smape": 144.69007873535156
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 46.993953704833984,
+    "rmse": 62.88915252685547,
+    "smape": 143.48773193359375
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 43.9615478515625,
+    "rmse": 62.42310333251953,
+    "smape": 143.2520294189453
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 48.92050552368164,
+    "rmse": 63.435489654541016,
+    "smape": 143.8426513671875
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 42.38505554199219,
+    "rmse": 62.73414611816406,
+    "smape": 143.40521240234375
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 46.16999053955078,
+    "rmse": 62.73505783081055,
+    "smape": 143.70761108398438
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 45.97651672363281,
+    "rmse": 62.650638580322266,
+    "smape": 143.5675811767578
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 45.92700958251953,
+    "rmse": 62.694541931152344,
+    "smape": 143.4290313720703
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 46.07041931152344,
+    "rmse": 62.588279724121094,
+    "smape": 143.43739318847656
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 58.35762023925781,
+    "rmse": 70.4654312133789,
+    "smape": 144.95819091796875
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 52.41339874267578,
+    "rmse": 67.2637710571289,
+    "smape": 143.72474670410156
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 55.569549560546875,
+    "rmse": 69.49452209472656,
+    "smape": 144.40902709960938
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 64.0464096069336,
+    "rmse": 73.4309310913086,
+    "smape": 145.94085693359375
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 49.07592010498047,
+    "rmse": 66.70824432373047,
+    "smape": 143.1797637939453
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 36.452274322509766,
+    "rmse": 60.85466003417969,
+    "smape": 148.0497283935547
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 36.20913314819336,
+    "rmse": 61.28080749511719,
+    "smape": 145.90615844726562
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 36.86366653442383,
+    "rmse": 59.89916229248047,
+    "smape": 147.04957580566406
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 34.85569381713867,
+    "rmse": 58.480377197265625,
+    "smape": 147.799072265625
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 36.42976379394531,
+    "rmse": 67.58988189697266,
+    "smape": 152.27442932128906
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Full model",
+    "seed": 0,
+    "mae": 8.760616302490234,
+    "rmse": 10.804086685180664,
+    "smape": 19.570953369140625
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Full model",
+    "seed": 1,
+    "mae": 8.3703031539917,
+    "rmse": 10.286565780639648,
+    "smape": 18.76280975341797
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Full model",
+    "seed": 2,
+    "mae": 9.07514476776123,
+    "rmse": 11.188056945800781,
+    "smape": 20.1999454498291
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Full model",
+    "seed": 3,
+    "mae": 8.755401611328125,
+    "rmse": 10.819753646850586,
+    "smape": 19.536190032958984
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Full model",
+    "seed": 4,
+    "mae": 8.732831001281738,
+    "rmse": 10.734701156616211,
+    "smape": 19.502466201782227
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o adaptive gate",
+    "seed": 0,
+    "mae": 8.839938163757324,
+    "rmse": 10.936881065368652,
+    "smape": 19.683712005615234
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o adaptive gate",
+    "seed": 1,
+    "mae": 8.961909294128418,
+    "rmse": 11.080312728881836,
+    "smape": 19.95545196533203
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o adaptive gate",
+    "seed": 2,
+    "mae": 9.006375312805176,
+    "rmse": 11.151264190673828,
+    "smape": 20.05031967163086
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o adaptive gate",
+    "seed": 3,
+    "mae": 8.810662269592285,
+    "rmse": 10.905569076538086,
+    "smape": 19.651432037353516
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o adaptive gate",
+    "seed": 4,
+    "mae": 8.91606330871582,
+    "rmse": 11.02736759185791,
+    "smape": 19.848386764526367
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o config bias",
+    "seed": 0,
+    "mae": 8.781465530395508,
+    "rmse": 10.84116268157959,
+    "smape": 19.603506088256836
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o config bias",
+    "seed": 1,
+    "mae": 9.049322128295898,
+    "rmse": 11.209219932556152,
+    "smape": 20.116844177246094
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o config bias",
+    "seed": 2,
+    "mae": 8.5582914352417,
+    "rmse": 10.560050010681152,
+    "smape": 19.145225524902344
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o config bias",
+    "seed": 3,
+    "mae": 8.698383331298828,
+    "rmse": 10.719499588012695,
+    "smape": 19.42976951599121
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o config bias",
+    "seed": 4,
+    "mae": 9.010034561157227,
+    "rmse": 11.148726463317871,
+    "smape": 20.063190460205078
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o decomposition",
+    "seed": 0,
+    "mae": 8.655068397521973,
+    "rmse": 10.647921562194824,
+    "smape": 19.406919479370117
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o decomposition",
+    "seed": 1,
+    "mae": 8.8325834274292,
+    "rmse": 10.905186653137207,
+    "smape": 19.778125762939453
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o decomposition",
+    "seed": 2,
+    "mae": 8.50142765045166,
+    "rmse": 10.500539779663086,
+    "smape": 19.079830169677734
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o decomposition",
+    "seed": 3,
+    "mae": 8.796262741088867,
+    "rmse": 10.836031913757324,
+    "smape": 19.6959228515625
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o decomposition",
+    "seed": 4,
+    "mae": 8.686870574951172,
+    "rmse": 10.7459135055542,
+    "smape": 19.476011276245117
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o weighted sampling",
+    "seed": 0,
+    "mae": 15.476900100708008,
+    "rmse": 17.848913192749023,
+    "smape": 31.425098419189453
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o weighted sampling",
+    "seed": 1,
+    "mae": 12.662797927856445,
+    "rmse": 15.019515037536621,
+    "smape": 26.7659969329834
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o weighted sampling",
+    "seed": 2,
+    "mae": 15.42530632019043,
+    "rmse": 17.732261657714844,
+    "smape": 31.29059600830078
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o weighted sampling",
+    "seed": 3,
+    "mae": 15.396154403686523,
+    "rmse": 17.851240158081055,
+    "smape": 31.338993072509766
+  },
+  {
+    "target": "US_BPAT",
+    "config": "w/o weighted sampling",
+    "seed": 4,
+    "mae": 13.238847732543945,
+    "rmse": 15.565890312194824,
+    "smape": 27.65070152282715
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Direct CIF (oracle)",
+    "seed": 0,
+    "mae": 5.974151134490967,
+    "rmse": 8.010493278503418,
+    "smape": 13.23388957977295
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Direct CIF (oracle)",
+    "seed": 1,
+    "mae": 6.118025779724121,
+    "rmse": 8.122000694274902,
+    "smape": 13.561010360717773
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Direct CIF (oracle)",
+    "seed": 2,
+    "mae": 6.1799421310424805,
+    "rmse": 8.192750930786133,
+    "smape": 13.663993835449219
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Direct CIF (oracle)",
+    "seed": 3,
+    "mae": 6.084554195404053,
+    "rmse": 8.175239562988281,
+    "smape": 13.445478439331055
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Direct CIF (oracle)",
+    "seed": 4,
+    "mae": 6.838627338409424,
+    "rmse": 8.994397163391113,
+    "smape": 15.030529975891113
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 12.905168533325195,
+    "rmse": 22.832653045654297,
+    "smape": 4.405475616455078
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 13.0960693359375,
+    "rmse": 23.231735229492188,
+    "smape": 4.478590488433838
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 13.155889511108398,
+    "rmse": 23.168710708618164,
+    "smape": 4.47553825378418
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 19.203495025634766,
+    "rmse": 26.81989288330078,
+    "smape": 6.408000946044922
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 12.905168533325195,
+    "rmse": 22.832653045654297,
+    "smape": 4.405475616455078
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 13.190033912658691,
+    "rmse": 23.59708023071289,
+    "smape": 4.524534702301025
+  },
+  {
+    "target": "US_FPL",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 39.49946594238281,
+    "rmse": 46.720008850097656,
+    "smape": 13.53929328918457
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 12.895182609558105,
+    "rmse": 22.8175048828125,
+    "smape": 4.401658535003662
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 13.133424758911133,
+    "rmse": 23.24412727355957,
+    "smape": 4.494245529174805
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 13.171287536621094,
+    "rmse": 23.129100799560547,
+    "smape": 4.481664180755615
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 19.276735305786133,
+    "rmse": 26.978252410888672,
+    "smape": 6.428832054138184
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 12.895182609558105,
+    "rmse": 22.8175048828125,
+    "smape": 4.401658535003662
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 13.19331169128418,
+    "rmse": 23.639097213745117,
+    "smape": 4.525675296783447
+  },
+  {
+    "target": "US_FPL",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 30.458908081054688,
+    "rmse": 37.717491149902344,
+    "smape": 10.277642250061035
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 12.84530258178711,
+    "rmse": 22.800846099853516,
+    "smape": 4.38286018371582
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 13.114709854125977,
+    "rmse": 23.255952835083008,
+    "smape": 4.486515045166016
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 13.195963859558105,
+    "rmse": 23.187929153442383,
+    "smape": 4.490106105804443
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 19.582414627075195,
+    "rmse": 27.180944442749023,
+    "smape": 6.512414455413818
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 12.84530258178711,
+    "rmse": 22.800846099853516,
+    "smape": 4.38286018371582
+  },
+  {
+    "target": "US_FPL",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 13.082813262939453,
+    "rmse": 23.558082580566406,
+    "smape": 4.483499526977539
+  },
+  {
+    "target": "US_FPL",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 37.29158401489258,
+    "rmse": 44.45210647583008,
+    "smape": 12.682058334350586
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 46.658416748046875,
+    "rmse": 55.605525970458984,
+    "smape": 10.80417537689209
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 46.47111511230469,
+    "rmse": 55.035545349121094,
+    "smape": 10.781906127929688
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 46.474388122558594,
+    "rmse": 55.1141357421875,
+    "smape": 10.77368450164795
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 51.18259048461914,
+    "rmse": 62.793548583984375,
+    "smape": 11.87035846710205
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 47.91933822631836,
+    "rmse": 57.408355712890625,
+    "smape": 11.110357284545898
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 52.800331115722656,
+    "rmse": 64.61653137207031,
+    "smape": 12.247475624084473
+  },
+  {
+    "target": "US_MISO",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 55.08760070800781,
+    "rmse": 67.57313537597656,
+    "smape": 12.965279579162598
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 46.80545425415039,
+    "rmse": 55.76820755004883,
+    "smape": 10.8373384475708
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 46.5185546875,
+    "rmse": 55.17502212524414,
+    "smape": 10.791449546813965
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 46.6871337890625,
+    "rmse": 55.31981658935547,
+    "smape": 10.822510719299316
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 51.25776672363281,
+    "rmse": 62.8662109375,
+    "smape": 11.88736343383789
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 48.02959060668945,
+    "rmse": 57.54283142089844,
+    "smape": 11.135591506958008
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 52.96860885620117,
+    "rmse": 64.83953857421875,
+    "smape": 12.285738945007324
+  },
+  {
+    "target": "US_MISO",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 53.883033752441406,
+    "rmse": 66.09638214111328,
+    "smape": 12.673330307006836
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 46.630516052246094,
+    "rmse": 55.60343551635742,
+    "smape": 10.797836303710938
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 46.38542938232422,
+    "rmse": 54.9541130065918,
+    "smape": 10.760546684265137
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 46.45731735229492,
+    "rmse": 55.105350494384766,
+    "smape": 10.769679069519043
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 50.93101501464844,
+    "rmse": 62.533203125,
+    "smape": 11.812498092651367
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 47.89329528808594,
+    "rmse": 57.399078369140625,
+    "smape": 11.104493141174316
+  },
+  {
+    "target": "US_MISO",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 52.71867752075195,
+    "rmse": 64.54837799072266,
+    "smape": 12.22799301147461
+  },
+  {
+    "target": "US_MISO",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 53.49205017089844,
+    "rmse": 65.39997863769531,
+    "smape": 12.559307098388672
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 26.956340789794922,
+    "rmse": 36.8676643371582,
+    "smape": 4.239469528198242
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 27.09275245666504,
+    "rmse": 37.37271499633789,
+    "smape": 4.261385917663574
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 26.885385513305664,
+    "rmse": 36.7970085144043,
+    "smape": 4.227689743041992
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 33.278926849365234,
+    "rmse": 42.90475845336914,
+    "smape": 5.1627631187438965
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 26.94293975830078,
+    "rmse": 36.923377990722656,
+    "smape": 4.240696430206299
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 28.46660804748535,
+    "rmse": 39.55091094970703,
+    "smape": 4.4820556640625
+  },
+  {
+    "target": "QLD1",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 50.61882781982422,
+    "rmse": 63.486324310302734,
+    "smape": 8.061103820800781
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 26.867971420288086,
+    "rmse": 36.86566162109375,
+    "smape": 4.225743293762207
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 27.025814056396484,
+    "rmse": 37.31643295288086,
+    "smape": 4.248355865478516
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 26.869169235229492,
+    "rmse": 36.8458366394043,
+    "smape": 4.224153995513916
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 33.383209228515625,
+    "rmse": 43.2196044921875,
+    "smape": 5.1687798500061035
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 26.91684913635254,
+    "rmse": 36.97933578491211,
+    "smape": 4.237057209014893
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 28.554771423339844,
+    "rmse": 39.73899459838867,
+    "smape": 4.496028900146484
+  },
+  {
+    "target": "QLD1",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 44.889041900634766,
+    "rmse": 57.27799987792969,
+    "smape": 7.100491046905518
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 26.8391170501709,
+    "rmse": 36.78702926635742,
+    "smape": 4.224121570587158
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 26.985124588012695,
+    "rmse": 37.194419860839844,
+    "smape": 4.243891716003418
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 26.832149505615234,
+    "rmse": 36.7685546875,
+    "smape": 4.2208147048950195
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 33.540679931640625,
+    "rmse": 43.33917999267578,
+    "smape": 5.207612991333008
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 26.8648681640625,
+    "rmse": 36.874053955078125,
+    "smape": 4.2314653396606445
+  },
+  {
+    "target": "QLD1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 28.3874454498291,
+    "rmse": 39.47051239013672,
+    "smape": 4.476454257965088
+  },
+  {
+    "target": "QLD1",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 50.99612808227539,
+    "rmse": 63.57889938354492,
+    "smape": 8.13766860961914
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 46.236427307128906,
+    "rmse": 60.59828567504883,
+    "smape": 8.596763610839844
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 45.71705627441406,
+    "rmse": 59.99531936645508,
+    "smape": 8.507709503173828
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 46.417808532714844,
+    "rmse": 60.67555618286133,
+    "smape": 8.620962142944336
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 49.99089431762695,
+    "rmse": 65.26361083984375,
+    "smape": 9.287725448608398
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 46.21982955932617,
+    "rmse": 60.86627197265625,
+    "smape": 8.599940299987793
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 51.029300689697266,
+    "rmse": 67.12397003173828,
+    "smape": 9.496414184570312
+  },
+  {
+    "target": "NSW1",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 49.21567153930664,
+    "rmse": 63.264095306396484,
+    "smape": 9.110142707824707
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 46.63255310058594,
+    "rmse": 60.95018768310547,
+    "smape": 8.666543006896973
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 46.06044387817383,
+    "rmse": 60.506004333496094,
+    "smape": 8.57427978515625
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 46.673160552978516,
+    "rmse": 60.883277893066406,
+    "smape": 8.668291091918945
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 50.75888442993164,
+    "rmse": 66.33975982666016,
+    "smape": 9.421550750732422
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 46.38275146484375,
+    "rmse": 61.14223098754883,
+    "smape": 8.629215240478516
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 51.50297927856445,
+    "rmse": 67.80831146240234,
+    "smape": 9.582498550415039
+  },
+  {
+    "target": "NSW1",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 49.90239715576172,
+    "rmse": 64.52265167236328,
+    "smape": 9.251646995544434
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 46.453731536865234,
+    "rmse": 60.649070739746094,
+    "smape": 8.63593864440918
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 45.90426254272461,
+    "rmse": 60.08250045776367,
+    "smape": 8.544793128967285
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 46.419395446777344,
+    "rmse": 60.65386962890625,
+    "smape": 8.621683120727539
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 49.91767120361328,
+    "rmse": 65.15960693359375,
+    "smape": 9.294049263000488
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 46.21433639526367,
+    "rmse": 60.82223892211914,
+    "smape": 8.60147762298584
+  },
+  {
+    "target": "NSW1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 50.953285217285156,
+    "rmse": 67.00714874267578,
+    "smape": 9.493285179138184
+  },
+  {
+    "target": "NSW1",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 49.36029815673828,
+    "rmse": 63.24836730957031,
+    "smape": 9.136542320251465
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 98.13468170166016,
+    "rmse": 127.13874816894531,
+    "smape": 13.224491119384766
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 97.83815002441406,
+    "rmse": 126.34221649169922,
+    "smape": 13.183868408203125
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 98.17778015136719,
+    "rmse": 127.1160888671875,
+    "smape": 13.230393409729004
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 109.55644989013672,
+    "rmse": 142.820556640625,
+    "smape": 14.864253997802734
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 101.35631561279297,
+    "rmse": 131.8313446044922,
+    "smape": 13.687090873718262
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 112.36582946777344,
+    "rmse": 146.82066345214844,
+    "smape": 15.23850154876709
+  },
+  {
+    "target": "VIC1",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 102.95474243164062,
+    "rmse": 133.10263061523438,
+    "smape": 13.9630126953125
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 98.44215393066406,
+    "rmse": 127.44283294677734,
+    "smape": 13.264269828796387
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 98.1241683959961,
+    "rmse": 126.65403747558594,
+    "smape": 13.227507591247559
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 98.48754119873047,
+    "rmse": 127.42143249511719,
+    "smape": 13.270587921142578
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 111.26866912841797,
+    "rmse": 144.7142333984375,
+    "smape": 15.101324081420898
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 101.82243347167969,
+    "rmse": 132.358642578125,
+    "smape": 13.749124526977539
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 113.47856140136719,
+    "rmse": 148.08755493164062,
+    "smape": 15.392647743225098
+  },
+  {
+    "target": "VIC1",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 106.2729263305664,
+    "rmse": 137.14312744140625,
+    "smape": 14.455549240112305
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 98.0707015991211,
+    "rmse": 126.92220306396484,
+    "smape": 13.217385292053223
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 97.54739379882812,
+    "rmse": 125.91061401367188,
+    "smape": 13.148432731628418
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 98.11968231201172,
+    "rmse": 126.90203857421875,
+    "smape": 13.224217414855957
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 109.3205795288086,
+    "rmse": 141.80673217773438,
+    "smape": 14.83303451538086
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 101.22111511230469,
+    "rmse": 131.50314331054688,
+    "smape": 13.67022705078125
+  },
+  {
+    "target": "VIC1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 112.08613586425781,
+    "rmse": 146.1902618408203,
+    "smape": 15.202214241027832
+  },
+  {
+    "target": "VIC1",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 101.96053314208984,
+    "rmse": 131.33119201660156,
+    "smape": 13.81521224975586
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 60.47648239135742,
+    "rmse": 83.29032135009766,
+    "smape": 52.1902961730957
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 61.16669464111328,
+    "rmse": 83.64635467529297,
+    "smape": 52.30231857299805
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 60.6175651550293,
+    "rmse": 83.44091796875,
+    "smape": 52.254356384277344
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 66.48753356933594,
+    "rmse": 92.84596252441406,
+    "smape": 57.41087341308594
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 61.34304428100586,
+    "rmse": 85.28470611572266,
+    "smape": 52.120948791503906
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 66.41962432861328,
+    "rmse": 94.1279296875,
+    "smape": 54.735286712646484
+  },
+  {
+    "target": "SA1",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 64.05410766601562,
+    "rmse": 88.09835815429688,
+    "smape": 52.794830322265625
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 60.59608840942383,
+    "rmse": 83.49581146240234,
+    "smape": 52.259521484375
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 61.24876403808594,
+    "rmse": 83.8228530883789,
+    "smape": 52.40235900878906
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 60.68318176269531,
+    "rmse": 83.63609313964844,
+    "smape": 52.30171585083008
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 66.8385238647461,
+    "rmse": 93.775146484375,
+    "smape": 56.90633773803711
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 61.5,
+    "rmse": 85.57801055908203,
+    "smape": 52.18915939331055
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 66.75041961669922,
+    "rmse": 94.79722595214844,
+    "smape": 54.83089828491211
+  },
+  {
+    "target": "SA1",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 64.00030517578125,
+    "rmse": 89.32524871826172,
+    "smape": 52.553016662597656
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 60.52385711669922,
+    "rmse": 83.40250396728516,
+    "smape": 52.2054557800293
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 61.384151458740234,
+    "rmse": 83.7233657836914,
+    "smape": 52.44524383544922
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 60.66212463378906,
+    "rmse": 83.54747772216797,
+    "smape": 52.272666931152344
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 66.67589569091797,
+    "rmse": 93.3707046508789,
+    "smape": 57.21983337402344
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 61.4273681640625,
+    "rmse": 85.44610595703125,
+    "smape": 52.168739318847656
+  },
+  {
+    "target": "SA1",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 66.5899429321289,
+    "rmse": 94.50286102294922,
+    "smape": 54.75823211669922
+  },
+  {
+    "target": "SA1",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 64.61566162109375,
+    "rmse": 89.12793731689453,
+    "smape": 52.88082504272461
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 71.54430389404297,
+    "rmse": 93.67932891845703,
+    "smape": 34.391326904296875
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 71.50161743164062,
+    "rmse": 93.06626892089844,
+    "smape": 34.26015853881836
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 71.59947967529297,
+    "rmse": 93.71622467041016,
+    "smape": 34.40398406982422
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 71.62635040283203,
+    "rmse": 97.83075714111328,
+    "smape": 35.35961151123047
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 70.54520416259766,
+    "rmse": 93.85639953613281,
+    "smape": 34.04949951171875
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 72.91302490234375,
+    "rmse": 101.47167205810547,
+    "smape": 35.872615814208984
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 73.42086029052734,
+    "rmse": 94.31843566894531,
+    "smape": 35.52469253540039
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 71.90638732910156,
+    "rmse": 94.23796081542969,
+    "smape": 34.52357482910156
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 71.44267272949219,
+    "rmse": 93.3568344116211,
+    "smape": 34.18949508666992
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 71.76180267333984,
+    "rmse": 94.0573959350586,
+    "smape": 34.445281982421875
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 71.85562896728516,
+    "rmse": 98.91656494140625,
+    "smape": 35.374908447265625
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 70.73470306396484,
+    "rmse": 94.25070190429688,
+    "smape": 34.101234436035156
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 73.34345245361328,
+    "rmse": 102.29846954345703,
+    "smape": 36.14553451538086
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 72.03314208984375,
+    "rmse": 94.86198425292969,
+    "smape": 34.7642707824707
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 71.61721801757812,
+    "rmse": 93.81412506103516,
+    "smape": 34.41259765625
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 71.59002685546875,
+    "rmse": 93.34272766113281,
+    "smape": 34.282169342041016
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 71.40245819091797,
+    "rmse": 93.596435546875,
+    "smape": 34.329132080078125
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 71.66031646728516,
+    "rmse": 98.19727325439453,
+    "smape": 35.339088439941406
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 70.63668060302734,
+    "rmse": 94.01414489746094,
+    "smape": 34.07674789428711
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 73.09129333496094,
+    "rmse": 101.77513122558594,
+    "smape": 35.986270904541016
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 73.08747100830078,
+    "rmse": 94.70824432373047,
+    "smape": 35.39787292480469
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 34.265254974365234,
+    "rmse": 63.552547454833984,
+    "smape": 123.7686996459961
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 36.50920867919922,
+    "rmse": 64.14979553222656,
+    "smape": 130.2870330810547
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 34.577484130859375,
+    "rmse": 63.73771667480469,
+    "smape": 116.2709732055664
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 33.17321014404297,
+    "rmse": 62.27132797241211,
+    "smape": 134.26895141601562
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 35.41616439819336,
+    "rmse": 61.86064147949219,
+    "smape": 141.7085418701172
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 33.74006652832031,
+    "rmse": 64.70431518554688,
+    "smape": 123.14224243164062
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 44.37740707397461,
+    "rmse": 62.3348503112793,
+    "smape": 143.212890625
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 34.56017303466797,
+    "rmse": 64.06576538085938,
+    "smape": 124.93551635742188
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 36.77975845336914,
+    "rmse": 64.7822494506836,
+    "smape": 130.73443603515625
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 34.59543228149414,
+    "rmse": 63.968727111816406,
+    "smape": 117.96800231933594
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 33.41596984863281,
+    "rmse": 62.96798324584961,
+    "smape": 135.3858642578125
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 35.57079315185547,
+    "rmse": 62.14661407470703,
+    "smape": 141.73788452148438
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 33.91999816894531,
+    "rmse": 65.17237091064453,
+    "smape": 124.25611114501953
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 42.721092224121094,
+    "rmse": 62.297218322753906,
+    "smape": 143.38986206054688
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 34.48981475830078,
+    "rmse": 63.94884490966797,
+    "smape": 124.06430053710938
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 36.86427307128906,
+    "rmse": 64.72069549560547,
+    "smape": 130.63865661621094
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 34.52751541137695,
+    "rmse": 63.84981155395508,
+    "smape": 116.32920837402344
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 33.30500793457031,
+    "rmse": 62.74542236328125,
+    "smape": 134.55128479003906
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 35.52086639404297,
+    "rmse": 62.06212615966797,
+    "smape": 141.25148010253906
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 33.846641540527344,
+    "rmse": 65.02483367919922,
+    "smape": 123.31780242919922
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 43.71121597290039,
+    "rmse": 62.47637176513672,
+    "smape": 143.22857666015625
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ (full calib)",
+    "seed": 0,
+    "mae": 6.147006511688232,
+    "rmse": 8.326894760131836,
+    "smape": 13.460829734802246
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o anchor",
+    "seed": 0,
+    "mae": 5.993833541870117,
+    "rmse": 8.168031692504883,
+    "smape": 13.051021575927734
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o residual",
+    "seed": 0,
+    "mae": 6.4711785316467285,
+    "rmse": 8.574678421020508,
+    "smape": 14.217366218566895
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o self-val",
+    "seed": 0,
+    "mae": 6.333267688751221,
+    "rmse": 8.527180671691895,
+    "smape": 13.78453540802002
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 0,
+    "mae": 6.147006511688232,
+    "rmse": 8.326894760131836,
+    "smape": 13.460829734802246
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 0,
+    "mae": 6.177942752838135,
+    "rmse": 8.50186824798584,
+    "smape": 13.512044906616211
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Raw ZS (no calib)",
+    "seed": 0,
+    "mae": 8.391679763793945,
+    "rmse": 10.333605766296387,
+    "smape": 18.788188934326172
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ (full calib)",
+    "seed": 1,
+    "mae": 6.149857521057129,
+    "rmse": 8.346091270446777,
+    "smape": 13.464186668395996
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o anchor",
+    "seed": 1,
+    "mae": 5.996124744415283,
+    "rmse": 8.201380729675293,
+    "smape": 13.055383682250977
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o residual",
+    "seed": 1,
+    "mae": 6.450772285461426,
+    "rmse": 8.51051139831543,
+    "smape": 14.143529891967773
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o self-val",
+    "seed": 1,
+    "mae": 6.349212646484375,
+    "rmse": 8.57187557220459,
+    "smape": 13.802713394165039
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 1,
+    "mae": 6.149857521057129,
+    "rmse": 8.346091270446777,
+    "smape": 13.464186668395996
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 1,
+    "mae": 6.1913557052612305,
+    "rmse": 8.526039123535156,
+    "smape": 13.53488540649414
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Raw ZS (no calib)",
+    "seed": 1,
+    "mae": 8.350659370422363,
+    "rmse": 10.263178825378418,
+    "smape": 18.70769500732422
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ (full calib)",
+    "seed": 2,
+    "mae": 6.152063369750977,
+    "rmse": 8.343758583068848,
+    "smape": 13.468301773071289
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o anchor",
+    "seed": 2,
+    "mae": 6.048972129821777,
+    "rmse": 8.244800567626953,
+    "smape": 13.227415084838867
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o residual",
+    "seed": 2,
+    "mae": 6.450448989868164,
+    "rmse": 8.512210845947266,
+    "smape": 14.14387035369873
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o self-val",
+    "seed": 2,
+    "mae": 6.352915287017822,
+    "rmse": 8.563419342041016,
+    "smape": 13.820253372192383
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ w/o rolling selection",
+    "seed": 2,
+    "mae": 6.152063369750977,
+    "rmse": 8.343758583068848,
+    "smape": 13.468301773071289
+  },
+  {
+    "target": "US_BPAT",
+    "config": "ZS+ legacy 2-branch fusion",
+    "seed": 2,
+    "mae": 6.191839218139648,
+    "rmse": 8.524949073791504,
+    "smape": 13.533954620361328
+  },
+  {
+    "target": "US_BPAT",
+    "config": "Raw ZS (no calib)",
+    "seed": 2,
+    "mae": 8.492673873901367,
+    "rmse": 10.463308334350586,
+    "smape": 19.015350341796875
+  }
+]

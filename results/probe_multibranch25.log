@@ -1,0 +1,20 @@
+Region                      stored     D3 m15   D4R r15    D4R r3   D5 w3r3 RAW force  Persist
+----------------------------------------------------------------------------------------------
+UK_13_London                 52.40      52.29     52.29     52.29     52.69     52.53    52.74
+UK_14_South_East_England     50.45      50.44     50.57     51.31     51.55     49.09    50.70
+US_MISO                      46.82      46.66     46.66     46.66     46.38     47.80    55.60
+VIC1                         98.13      98.13     98.13     98.13     98.33     99.99   116.79
+SA1                          60.94      60.48     60.48     60.48     60.48     61.36    68.07
+UK_01_North_Scotland         35.42      34.27     34.27     34.27     34.27     39.28    34.96
+US_ERCO                      59.63      59.76     59.96     59.76     59.76     59.13    64.79
+QLD1                         27.00      26.96     26.96     26.96     26.96     26.90    29.11
+US_FPL                       12.91      12.91     12.91     12.91     12.91     13.19    13.39
+UK_11_South_West_England     49.18      49.38     49.38     49.38     49.38     50.13    53.04
+UK_07_South_Wales            70.77      71.54     71.54     71.54     71.54     71.60    76.20
+US_CISO                      25.25      25.33     25.33     25.33     25.33     26.41    27.43
+----------------------------------------------------------------------------------------------
+D3 m15       beat-persist 12/12  improved-vs-stored 6/12  mean-ratio-vs-stored 0.9978
+D4R r15      beat-persist 12/12  improved-vs-stored 5/12  mean-ratio-vs-stored 0.9983
+D4R r3       beat-persist 11/12  improved-vs-stored 5/12  mean-ratio-vs-stored 0.9992
+D5 w3r3      beat-persist 11/12  improved-vs-stored 4/12  mean-ratio-vs-stored 0.9999
+RAW force    beat-persist 11/12  improved-vs-stored 3/12  mean-ratio-vs-stored 1.0182

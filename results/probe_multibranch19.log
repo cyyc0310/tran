@@ -1,0 +1,20 @@
+Region                      stored  AUTO2 cur      LOG3    RATIO3      MED3    RATIO2  Persist
+----------------------------------------------------------------------------------------------
+UK_13_London                 52.40      52.40     51.71     53.21     52.02     51.71    52.74
+UK_14_South_East_England     50.45      50.45     49.58     50.20     50.44     50.30    50.70
+US_MISO                      46.82      46.82     47.92     47.95     48.02     47.41    55.60
+VIC1                         98.13      98.13    101.36    100.41     98.30     98.87   116.79
+SA1                          60.94      60.94     61.34     60.76     60.27     60.56    68.07
+UK_01_North_Scotland         35.42      35.42     33.74     33.74     35.26     35.42    34.96
+US_ERCO                      59.63      59.63     59.63     60.99     59.05     59.63    64.79
+QLD1                         27.00      27.00     26.94     26.94     26.98     26.94    29.11
+US_FPL                       12.91      12.91     12.91     12.91     12.81     12.91    13.39
+UK_11_South_West_England     49.18      49.18     49.18     49.18     49.68     49.18    53.04
+UK_07_South_Wales            70.77      70.77     70.55     72.52     71.41     70.55    76.20
+US_CISO                      25.25      25.25     25.40     25.95     26.54     25.41    27.43
+----------------------------------------------------------------------------------------------
+AUTO2 cur    beat-persist 11/12  improved-vs-stored 0/12  mean-ratio-vs-stored 1.0000
+LOG3         beat-persist 12/12  improved-vs-stored 5/12  mean-ratio-vs-stored 0.9988
+RATIO3       beat-persist 11/12  improved-vs-stored 4/12  mean-ratio-vs-stored 1.0068
+MED3         beat-persist 11/12  improved-vs-stored 7/12  mean-ratio-vs-stored 1.0047
+RATIO2       beat-persist 11/12  improved-vs-stored 5/12  mean-ratio-vs-stored 0.9999

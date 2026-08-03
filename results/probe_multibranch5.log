@@ -1,0 +1,19 @@
+Region                      stored     M0 leg   M1 c-g2   M2 c-g8  M3 wc-g2  M4 wc-g8      AUTO  Persist
+--------------------------------------------------------------------------------------------------------
+UK_13_London                 53.02      53.02     51.74     52.92     53.96     54.94     53.96    52.74
+UK_14_South_East_England     51.16      51.16     49.68     50.92     50.69     51.95     50.69    50.70
+US_MISO                      52.80      52.80     48.07     47.62     46.49     47.69     48.07    55.60
+VIC1                        112.37     112.37    101.75    101.68    101.85    101.81    101.85   116.79
+SA1                          66.42      66.42     61.65     62.54     62.68     63.50     62.68    68.07
+QLD1                         28.47      28.47     27.01     27.63     27.58     27.80     27.01    29.11
+US_FPL                       13.19      13.19     12.96     13.07     13.57     13.46     13.19    13.39
+UK_11_South_West_England     50.34      50.34     49.16     49.94     50.96     51.84     50.96    53.04
+UK_07_South_Wales            72.91      72.91     70.58     72.21     71.84     72.65     70.58    76.20
+US_CISO                      26.37      26.37     25.56     26.13     26.32     26.60     26.37    27.43
+--------------------------------------------------------------------------------------------------------
+M0 leg       beat-persist 8/10  improved-vs-stored 5/10  mean-ratio-vs-stored 1.0000
+M1 c-g2      beat-persist 10/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9537
+M2 c-g8      beat-persist 8/10  improved-vs-stored 10/10  mean-ratio-vs-stored 0.9676
+M3 wc-g2     beat-persist 8/10  improved-vs-stored 7/10  mean-ratio-vs-stored 0.9732
+M4 wc-g8     beat-persist 7/10  improved-vs-stored 5/10  mean-ratio-vs-stored 0.9849
+AUTO         beat-persist 9/10  improved-vs-stored 7/10  mean-ratio-vs-stored 0.9698
