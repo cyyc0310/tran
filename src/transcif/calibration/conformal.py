@@ -7,7 +7,7 @@ P2 items from IMPROVEMENT_PLAN.md:
   - State-Conditioned Conformal: per-regime calibration
 
 Usage:
-    from transcif_conformal import (
+    from transcif.calibration.conformal import (
         split_conformal_calibrate,
         split_conformal_calibrate_per_horizon,
         AdaptiveOnlineConformal,

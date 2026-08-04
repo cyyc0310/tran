@@ -32,6 +32,7 @@ import numpy as np
 import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo scripts/ root
 from run_unified_eval import (
     DATA_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
     AU_REGIONS, US_REGIONS, UK_REGIONS,

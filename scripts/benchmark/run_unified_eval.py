@@ -10,8 +10,8 @@ Protocol:
 - Time split: first 80% train, last 20% test
 - All 29 regions: 4 AU + 17 UK + 8 US
 
-Model implementations live in transcif_model.py; pipeline utilities in
-transcif_pipeline.py.
+Model implementations and pipeline utilities live in the ``transcif`` package
+(src/transcif). This script is the DEFINITIVE experiment entry point.
 
 Usage: python scripts/run_unified_eval.py [--quick]
 """
@@ -23,23 +23,28 @@ from pathlib import Path
 
 import numpy as np
 
-# Import everything from the unified modules
-# Model class re-exported for backward compatibility
-from transcif_model import (  # noqa: F401
+# Re-export core symbols from the transcif package for backward compatibility
+# with scripts that historically imported them from this module.
+from transcif.models.base import (  # noqa: F401
     AdaptivePersistDLinear, RichConfigAdaptivePersist, ConfigEncoder,
 )
-
-# Import everything from the unified modules
-from transcif_pipeline import (
-    _DATA_DIR as DATA_DIR,
-    SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
+from transcif.config import (  # noqa: F401
+    DATA_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
     EPOCHS_SUPERVISED, EPOCHS_CARBONCAST, EPOCHS_ZERO_SHOT, BATCH_SIZE,
     AU_REGIONS, US_REGIONS, UK_REGIONS,
     SEEDS_FULL, SEEDS_QUICK,
-    discover_uk_regions, load_region_data, build_windows,
-    cif_from_shares, train_patchtst, train_zero_shot,
-    compute_metrics, zs_plus_predict, evaluate_target,
-    get_cosine_warmup_scheduler,
+)
+from transcif.data.loaders import (  # noqa: F401
+    discover_uk_regions, load_region_data,
+)
+from transcif.data.windows import build_windows  # noqa: F401
+from transcif.physics.decompose import cif_from_shares  # noqa: F401
+from transcif.models.patchtst import train_patchtst  # noqa: F401
+from transcif.models.zeroshot.base_zs import (  # noqa: F401
+    train_zero_shot, compute_metrics, zs_plus_predict, evaluate_target,
+)
+from transcif.training.schedulers import get_cosine_warmup_scheduler  # noqa: F401
+from transcif.calibration.zs_plus import (  # noqa: F401
     ANCHOR_WIN, RESID_WIN, WEEKLY_LAG, SELECT_DAYS, SELECT_MARGIN,
     SELECT_METRIC, SELECT_TOL, FUSION_MENU,
 )

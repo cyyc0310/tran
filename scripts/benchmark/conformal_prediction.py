@@ -41,11 +41,13 @@ from run_unified_eval import (
     DATA_DIR, RESULTS_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
     AU_REGIONS, US_REGIONS, UK_REGIONS,
 )
-from transcif_pipeline import (
-    discover_uk_regions, load_region_data, build_windows,
-    cif_from_shares, train_zero_shot, compute_metrics, zs_plus_predict,
+from transcif.data.loaders import discover_uk_regions, load_region_data
+from transcif.data.windows import build_windows
+from transcif.physics.decompose import cif_from_shares
+from transcif.models.zeroshot.base_zs import (
+    train_zero_shot, compute_metrics, zs_plus_predict,
 )
-from transcif_conformal import (
+from transcif.calibration.conformal import (
     split_conformal_calibrate,
     split_conformal_calibrate_per_horizon,
     AdaptiveOnlineConformal,
