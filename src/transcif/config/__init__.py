@@ -1,0 +1,41 @@
+"""Global constants and region configuration loaders for TransCIF."""
+
+from .constants import (
+    DATA_DIR,
+    SEQ_LEN,
+    HORIZON,
+    TRAIN_STRIDE,
+    TEST_STRIDE,
+    TRAIN_FRACTION,
+    EPOCHS_SUPERVISED,
+    EPOCHS_CARBONCAST,
+    EPOCHS_ZERO_SHOT,
+    BATCH_SIZE,
+    SEEDS_FULL,
+    SEEDS_QUICK,
+    AU_REGIONS,
+    US_REGIONS,
+    UK_REGIONS,
+    ALL_REGION_CONFIGS,
+    get_region_config,
+)
+
+__all__ = [
+    "DATA_DIR",
+    "SEQ_LEN",
+    "HORIZON",
+    "TRAIN_STRIDE",
+    "TEST_STRIDE",
+    "TRAIN_FRACTION",
+    "EPOCHS_SUPERVISED",
+    "EPOCHS_CARBONCAST",
+    "EPOCHS_ZERO_SHOT",
+    "BATCH_SIZE",
+    "SEEDS_FULL",
+    "SEEDS_QUICK",
+    "AU_REGIONS",
+    "US_REGIONS",
+    "UK_REGIONS",
+    "ALL_REGION_CONFIGS",
+    "get_region_config",
+]
