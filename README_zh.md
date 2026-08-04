@@ -89,10 +89,10 @@ source .venv-nemed311/bin/activate
 pip install nemed
 
 # 与测试夹具进行对比验证（SA1 区域）
-python scripts/generate_nemed_regions.py --validate
+python scripts/data/generate_nemed_regions.py --validate
 
 # 生成全部 5 个 NEM 区域的 2023 年逐小时数据
-python scripts/generate_nemed_regions.py --year 2023
+python scripts/data/generate_nemed_regions.py --year 2023
 ```
 
 生成文件：`data_2023/{QLD1,NSW1,VIC1,SA1,TAS1}_2023_hourly.csv`。TAS1 因物理上独立且非可再生排放因子为零而被排除在主要 29 区域基准之外，最终保留 4 个 AU 区域：QLD1、NSW1、VIC1、SA1。
@@ -104,7 +104,7 @@ python scripts/generate_nemed_regions.py --year 2023
 英国 Carbon Intensity API 无需密钥即可免费访问，提供全部 18 个 DNO 级别区域的发电组合与强度数据。脚本以 14 天为块按半小时分辨率抓取，再聚合为逐小时数据。
 
 ```bash
-python scripts/download_uk_regions.py
+python scripts/data/download_uk_regions.py
 ```
 
 生成文件：`data_2023/UK_{01..18}_{name}_2023_hourly.csv`。区域 ID 18（英国全国）为各 DNO 区域的汇总，因此排除出基准，最终保留 17 个 UK 区域。可再生分类包括：风能、太阳能、水电、核电和生物质。
@@ -114,7 +114,7 @@ python scripts/download_uk_regions.py
 [EIA-930](https://www.eia.gov/electricity/gridmonitor/) 数据集提供美国各平衡区域的按燃料类型逐小时发电量。脚本下载两份半年度批量 CSV，合并后使用 IPCC/EPA 燃料排放因子计算 renew_share 和 CIF。
 
 ```bash
-python scripts/download_eia930_data.py
+python scripts/data/download_eia930_data.py
 ```
 
 生成文件：`data_2023/US_{CISO,PJM,MISO,ERCO,ISNE,NYIS,FPL,BPAT}_2023_hourly.csv`，涵盖 8 个主要美国电网区域。各燃料类型排放因子（煤=980、天然气=410、石油=650 gCO2/kWh）来自 EPA eGRID 2022 和 IPCC AR6。脚本末尾会打印各区域估算的 ef_nr 值，供后续配置地区参数时使用。
@@ -124,7 +124,7 @@ python scripts/download_eia930_data.py
 下载完三个数据源后，运行统一校验以确认数据完整性：
 
 ```bash
-python scripts/validate_us_data.py
+python scripts/verify/validate_us_data.py
 ```
 
 该脚本加载所有区域，打印排序后的汇总表（区域、mean_rs、ef_nr、小时数、mean_CIF），并在 US 目标区域上运行快速零样本评估以验证数据管线端到端正常工作。
@@ -146,28 +146,47 @@ python scripts/validate_us_data.py
 
 ### 安装
 
+项目以可编辑包（`src/transcif`）安装，这样任意脚本或测试都能直接 `import transcif`。
+
 ```bash
 cd transcif
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -e .
+
+# 若还需运行澳洲 NEM 数据生成器：
+pip install nemed nemosis nempy
 ```
+
+依赖在 `pyproject.toml` 中声明。测试使用 `pythonpath = src`（在 `pytest.ini` 中配置）。
 
 ### 基础使用
 
-运行第一阶段完整实验管线（所有区域训练 + 评估）：
+快速评估（4 个澳洲区域，3 种子）：
 
 ```bash
-python scripts/run_phase1_complete.py
+source .venv/bin/activate
+
+# 快速版：4 个 AU 区域，3 种子
+python scripts/benchmark/run_unified_eval.py --quick
+
+# 完整版：29 区域，5 种子
+python scripts/benchmark/run_unified_eval.py
+
+# 开启各研究方向对比
+python scripts/benchmark/run_unified_eval.py --quick --phys-irm --causal
+
+# 单方向独立实验
+python scripts/experiments/run_phys_irm_eval.py --quick
+python scripts/experiments/run_causal_eval.py --quick
+python scripts/experiments/run_rag_eval.py      # 检索增强
+python scripts/experiments/run_icl_eval.py      # 上下文学习
+python scripts/experiments/run_hier_eval.py     # 层级去偏
 ```
 
-运行跨方法统一评估：
+> **注意**：训练管线需要 `data_2023/` 目录下的 2023 年逐小时数据文件。限于体积未纳入仓库，可通过 `scripts/data/download_*.py` 系列脚本从 AEMO、National Grid ESO 和 EIA-930 获取数据。
 
-```bash
-python scripts/run_unified_eval.py
-```
-
-> **注意**：训练管线需要 `data_2023/` 目录下的 2023 年逐小时数据文件。限于体积未纳入仓库，可通过 `scripts/download_*.py` 系列脚本从 AEMO、National Grid ESO 和 EIA-930 获取数据。
+> **说明**：所有入口脚本均从仓库根目录运行。`transcif` 包通过可编辑安装（`pip install -e .`）或 `pytest.ini` 中的 `pythonpath = src` 自动可发现，无需手动设置 `PYTHONPATH`。
 
 ---
 
@@ -175,40 +194,51 @@ python scripts/run_unified_eval.py
 
 ```
 transcif/
-├── scripts/                    # 实验脚本与模型定义
-│   ├── run_unified_eval.py     # 统一 LORO 评估（29 区域，5 种子）
-│   ├── run_phase1_complete.py  # 第一阶段完整管线（所有基线）
-│   ├── run_supervised_baselines.py   # 有监督基线（PatchTST, DLinear 等）
-│   ├── run_supervised_baselines_v2.py # 有监督基线 v2（直接 CIF 预测）
-│   ├── ablation_study.py       # 消融实验
-│   ├── conformal_prediction.py # 保形预测校准
-│   ├── theorem1_physics_bound.py   # 定理 1 验证
-│   ├── theorem2_transfer_bound.py  # 定理 2 验证
-│   ├── carboncast_analysis.py  # CarbonCast 跨域对比
-│   ├── deployment_warmup.py    # 部署预热分析
-│   ├── temporal_ood.py         # 时序分布偏移评估
-│   ├── optimize_weak_regions.py    # 弱区域优化
-│   ├── verify_paper_numbers.py     # 论文数字验证
-│   ├── probe_*.py              # 诊断探针（多分支、多种子、UK 区域）
-│   ├── make_*.py               # 图表生成
-│   ├── validate_us_data.py     # 美国数据验证
-│   ├── download_eia930_data.py # 美国 EIA-930 数据下载
-│   ├── download_uk_regions.py  # 英国 DNO 区域数据下载
-│   └── generate_nemed_regions.py   # 澳洲 NEM 数据生成
-├── tests/                      # pytest 测试套件
-│   └── fixtures/               # 测试夹具（真实 AEMO 样本）
-├── docs/                       # 文档
-│   ├── paper/                  # 论文草稿（中英文）
-│   ├── research/               # 研究笔记、Gap 分析、文献综述
-│   ├── experiments/            # 实验报告与发现
-│   └── theory/                 # 定理推导草稿
+├── src/transcif/               # 已安装的 Python 包（pip install -e .）
+│   ├── config/                 # 全局常量与区域配置（SEQ_LEN、HORIZON、regions、seeds）
+│   ├── data/                   # 数据加载（discover_uk_regions、load_region_data、windows、quality）
+│   ├── physics/                # 物理层（cif_from_shares）与定理 1/2 边界
+│   ├── models/
+│   │   ├── base.py             # 模型库（AdaptivePersistDLinear、PatchTSTFixed、registry）
+│   │   ├── patchtst.py         # 有监督 PatchTST 基线
+│   │   └── zeroshot/           # 研究方向模块
+│   │       ├── base_zs.py      # 基线 ZS / ZS+ 训练与 evaluate_target
+│   │       ├── rag.py          # 检索增强
+│   │       ├── phys_irm.py     # 物理 + IRM
+│   │       ├── causal.py       # 因果域 VAE
+│   │       ├── icl.py          # 上下文学习
+│   │       └── hier.py         # 层级去偏
+│   ├── calibration/            # ZS+ 分支融合（zs_plus）与保形预测
+│   ├── evaluation/             # compute_metrics（MAE/RMSE/sMAPE）
+│   └── training/               # 调度器、损失（ramp/huber）、数据增强
+├── scripts/                    # 一次性入口脚本，按职责分组
+│   ├── data/                   # 下载器：uk、eia930、nemed
+│   ├── verify/                 # theorem1/2、validate_us_data、verify_paper_numbers
+│   ├── figures/                # make_*_figures、carboncast_analysis
+│   ├── benchmark/              # 跨方法 / 29 区域对比与基线（专门做测试）
+│   │   ├── run_unified_eval.py        # 主 benchmark 编排器（29 区域 × 5 种子）
+│   │   ├── run_supervised_baselines.py / _v2.py
+│   │   ├── conformal_prediction.py     # 保形预测校准
+│   │   ├── ablation_study.py
+│   │   ├── temporal_ood.py
+│   │   ├── optimize_weak_regions.py
+│   │   └── run_downstream_chain.sh
+│   └── experiments/            # 单方向运行与诊断
+│       ├── run_{rag,phys_irm,causal,icl,hier}_eval.py
+│       ├── run_phase1_complete.py
+│       ├── probe_*.py
+│       └── deployment_warmup.py
+├── tests/                      # pytest 测试套件（config、physics、data、models）
+├── docs/                       # 文档（paper、research、experiments、theory）
 ├── results/                    # 实验结果（JSON + 日志）
 ├── figures/                    # 论文图表（PNG + PDF）
-├── requirements.txt
+├── pyproject.toml              # 包声明 + 依赖 + pytest 配置
 ├── pytest.ini
 ├── README.md                   # 英文文档
 └── README_zh.md                # 中文文档（本文件）
 ```
+
+> 可复用的库代码现已统一放在 `src/transcif/`（以 `transcif` 导入）；`scripts/` 仅保留可运行的入口脚本。原先平铺的 `transcif_*.py` 模块已并入该包。
 
 ---
 

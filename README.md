@@ -89,10 +89,10 @@ source .venv-nemed311/bin/activate
 pip install nemed
 
 # Validate against the test fixture (SA1)
-python scripts/generate_nemed_regions.py --validate
+python scripts/data/generate_nemed_regions.py --validate
 
 # Generate full 2023 hourly data for all 5 NEM regions
-python scripts/generate_nemed_regions.py --year 2023
+python scripts/data/generate_nemed_regions.py --year 2023
 ```
 
 This produces `data_2023/{QLD1,NSW1,VIC1,SA1,TAS1}_2023_hourly.csv`. TAS1 is excluded from the main 29-region benchmark (it is physically disconnected and has zero non-renewable emission factor), leaving 4 AU regions: QLD1, NSW1, VIC1, SA1.
@@ -104,7 +104,7 @@ This produces `data_2023/{QLD1,NSW1,VIC1,SA1,TAS1}_2023_hourly.csv`. TAS1 is exc
 The UK Carbon Intensity API provides free, no-key-required access to regional generation mix and intensity data for all 18 DNO-level zones. Data is fetched in 14-day chunks at half-hour resolution and aggregated to hourly.
 
 ```bash
-python scripts/download_uk_regions.py
+python scripts/data/download_uk_regions.py
 ```
 
 This produces `data_2023/UK_{01..18}_{name}_2023_hourly.csv`. Region ID 18 (Great Britain national) is excluded from the benchmark as it aggregates the DNO regions, leaving 17 UK regions. Renewable fuels are classified as wind, solar, hydro, nuclear, and biomass.
@@ -114,7 +114,7 @@ This produces `data_2023/UK_{01..18}_{name}_2023_hourly.csv`. Region ID 18 (Grea
 The [EIA-930](https://www.eia.gov/electricity/gridmonitor/) dataset provides hourly generation by fuel source for US Balancing Authorities. The script downloads two 6-month bulk CSVs, merges them, and computes renew_share and CIF using IPCC/EPA emission factors by fuel type.
 
 ```bash
-python scripts/download_eia930_data.py
+python scripts/data/download_eia930_data.py
 ```
 
 This produces `data_2023/US_{CISO,PJM,MISO,ERCO,ISNE,NYIS,FPL,BPAT}_2023_hourly.csv` for 8 major US grid operator regions. Emission factors per fuel type (coal=980, natural gas=410, petroleum=650 gCO2/kWh) are sourced from EPA eGRID 2022 and IPCC AR6. Estimated regional ef_nr values are printed at the end of the download script for copying into the region config.
@@ -124,7 +124,7 @@ This produces `data_2023/US_{CISO,PJM,MISO,ERCO,ISNE,NYIS,FPL,BPAT}_2023_hourly.
 After downloading all three data sources, run the unified validation to confirm data integrity:
 
 ```bash
-python scripts/validate_us_data.py
+python scripts/verify/validate_us_data.py
 ```
 
 This loads all regions, prints a sorted summary table (region, mean_rs, ef_nr, hours, mean_CIF), and runs a quick zero-shot evaluation on target US regions to verify the data pipeline works end-to-end.
@@ -144,12 +144,19 @@ The model supports an optional temperature anomaly channel for improved accuracy
 
 ### Installation
 
+The project is installed as an editable package (`src/transcif`) so that the `transcif` import works from any script or test.
+
 ```bash
 cd transcif
 python3 -m venv .venv-nemed
 source .venv-nemed/bin/activate
-pip install torch numpy pandas matplotlib scipy
+pip install -e .
+
+# If you also run the AU NEM data generator:
+pip install nemed nemosis nempy
 ```
+
+Dependencies are declared in `pyproject.toml`. Tests use `pythonpath = src` (configured in `pytest.ini`).
 
 ### Download data (3 sources → 29 regions)
 
@@ -158,13 +165,13 @@ source .venv-nemed/bin/activate
 
 # 1. AU NEM (4 regions) — requires nemed
 pip install nemed nemosis nempy
-python scripts/generate_nemed_regions.py --year 2023
+python scripts/data/generate_nemed_regions.py --year 2023
 
 # 2. UK DNO (17 regions) — free API, no key
-python scripts/download_uk_regions.py
+python scripts/data/download_uk_regions.py
 
 # 3. US EIA-930 (8 regions) — bulk download
-python scripts/download_eia930_data.py
+python scripts/data/download_eia930_data.py
 ```
 
 ### Basic Usage
@@ -174,23 +181,25 @@ Quick evaluation (4 AU regions, 3 seeds):
 source .venv-nemed/bin/activate
 
 # Quick: 4 AU regions, 3 seeds
-python scripts/run_unified_eval.py --quick
+python scripts/benchmark/run_unified_eval.py --quick
 
 # Full: 29 regions, 5 seeds
-python scripts/run_unified_eval.py
+python scripts/benchmark/run_unified_eval.py
 
 # With all research method comparisons
-python scripts/run_unified_eval.py --quick --phys-irm --causal
+python scripts/benchmark/run_unified_eval.py --quick --phys-irm --causal
 
 # Independent method experiments
-python scripts/run_phys_irm_eval.py --quick
-python scripts/run_causal_eval.py --quick
-python scripts/run_rag_eval.py      # retrieval-augmented
-python scripts/run_icl_eval.py      # in-context learning
-python scripts/run_hier_eval.py     # hierarchical debiased
+python scripts/experiments/run_phys_irm_eval.py --quick
+python scripts/experiments/run_causal_eval.py --quick
+python scripts/experiments/run_rag_eval.py      # retrieval-augmented
+python scripts/experiments/run_icl_eval.py      # in-context learning
+python scripts/experiments/run_hier_eval.py     # hierarchical debiased
 ```
 
-> **Data**: 2023 hourly CSVs under `data_2023/` (not in repo). Download via `scripts/download_*.py` or `scripts/generate_nemed_regions.py`.
+> **Data**: 2023 hourly CSVs under `data_2023/` (not in repo). Download via `scripts/data/download_*.py` or `scripts/data/generate_nemed_regions.py`.
+
+> **Note**: All entry-point scripts run from the repo root. The `transcif` package is auto-discoverable via the editable install (`pip install -e .`) or `pythonpath = src` in `pytest.ini`; no manual `PYTHONPATH` export is needed.
 
 ---
 
@@ -198,39 +207,50 @@ python scripts/run_hier_eval.py     # hierarchical debiased
 
 ```
 transcif/
-├── scripts/                    # Experiment scripts & model definitions
-│   ├── run_unified_eval.py     # Unified LORO evaluation (29 regions, 5 seeds)
-│   ├── run_phase1_complete.py  # Phase-1 complete pipeline (all baselines)
-│   ├── run_supervised_baselines.py   # Supervised baselines (PatchTST, DLinear, etc.)
-│   ├── run_supervised_baselines_v2.py # Supervised baselines v2 (direct CIF prediction)
-│   ├── ablation_study.py       # Ablation experiments
-│   ├── conformal_prediction.py # Conformal prediction calibration
-│   ├── theorem1_physics_bound.py   # Theorem 1 verification
-│   ├── theorem2_transfer_bound.py  # Theorem 2 verification
-│   ├── carboncast_analysis.py  # CarbonCast cross-domain comparison
-│   ├── deployment_warmup.py    # Deployment warmup analysis
-│   ├── temporal_ood.py         # Temporal OOD evaluation
-│   ├── optimize_weak_regions.py    # Weak region optimization
-│   ├── verify_paper_numbers.py     # Paper number verification
-│   ├── probe_*.py              # Diagnostic probes (multibranch, multiseed, UK)
-│   ├── make_*.py               # Figure generation
-│   ├── validate_us_data.py     # US data validation
-│   ├── download_eia930_data.py # US EIA-930 data downloader
-│   ├── download_uk_regions.py  # UK DNO data downloader
-│   └── generate_nemed_regions.py   # AU NEM data generator
-├── tests/                      # pytest test suite
-│   └── fixtures/               # Test fixtures (real AEMO samples)
-├── docs/                       # Documentation
-│   ├── paper/                  # Paper drafts (EN + ZH)
-│   ├── research/               # Research notes, gap analysis, literature review
-│   ├── experiments/            # Experiment reports and findings
-│   └── theory/                 # Theorem drafts and derivations
+├── src/transcif/               # Installed Python package (pip install -e .)
+│   ├── config/                 # Global constants & region configs (SEQ_LEN, HORIZON, regions, seeds)
+│   ├── data/                   # Data loaders (discover_uk_regions, load_region_data, windows, quality)
+│   ├── physics/                # Physics layer (cif_from_shares) & Theorem 1/2 bounds
+│   ├── models/
+│   │   ├── base.py             # Model zoo (AdaptivePersistDLinear, PatchTSTFixed, registry)
+│   │   ├── patchtst.py         # Supervised PatchTST baseline
+│   │   └── zeroshot/           # Research-direction modules
+│   │       ├── base_zs.py      # Baseline ZS / ZS+ training & evaluate_target
+│   │       ├── rag.py          # Retrieval-augmented
+│   │       ├── phys_irm.py     # Physics + IRM
+│   │       ├── causal.py       # Causal domain VAE
+│   │       ├── icl.py          # In-context learning
+│   │       └── hier.py         # Hierarchical debiased
+│   ├── calibration/            # ZS+ branch fusion (zs_plus) & conformal prediction
+│   ├── evaluation/             # compute_metrics (MAE/RMSE/sMAPE)
+│   └── training/               # Schedulers, losses (ramp/huber), augmentation
+├── scripts/                    # One-off entry-point scripts, grouped by role
+│   ├── data/                   # Downloaders: uk, eia930, nemed
+│   ├── verify/                 # theorem1/2, validate_us_data, verify_paper_numbers
+│   ├── figures/                # make_*_figures, carboncast_analysis
+│   ├── benchmark/              # Cross-method / 29-region comparison & baselines
+│   │   ├── run_unified_eval.py        # Main benchmark orchestrator (29 regions × 5 seeds)
+│   │   ├── run_supervised_baselines.py / _v2.py
+│   │   ├── conformal_prediction.py     # Conformal prediction calibration
+│   │   ├── ablation_study.py
+│   │   ├── temporal_ood.py
+│   │   ├── optimize_weak_regions.py
+│   │   └── run_downstream_chain.sh
+│   └── experiments/            # Single-direction runs & diagnostics
+│       ├── run_{rag,phys_irm,causal,icl,hier}_eval.py
+│       ├── run_phase1_complete.py
+│       ├── probe_*.py
+│       └── deployment_warmup.py
+├── tests/                      # pytest test suite (config, physics, data, models)
+├── docs/                       # Documentation (paper, research, experiments, theory)
 ├── results/                    # Experiment results (JSON + logs)
 ├── figures/                    # Paper figures (PNG + PDF)
-├── requirements.txt
+├── pyproject.toml              # Package + dependencies + pytest config
 ├── pytest.ini
 └── README.md
 ```
+
+> The reusable library code now lives in `src/transcif/` (importable as `transcif`); `scripts/` holds only runnable entry points. The legacy flat `transcif_*.py` modules were merged into the package.
 
 ---
 
