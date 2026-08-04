@@ -155,26 +155,26 @@ transcif/
 
 > 每一步都可独立验证（`pytest` + 跑一个 `run_*` 脚本），不破坏现有实验结果。
 
-**Step 1 — 建包骨架与 config**
+**Step 1 — 建包骨架与 config** ✅ 已完成 (commit 4d25c75)
 - 新建 `src/transcif/__init__.py` 及所有子包 `__init__.py`（空壳）。
 - 抽出 `config.py`（常量 + region config 加载器）。
 - 验证：`python -c "import transcif"` 成功。
 
-**Step 2 — 迁移数据层与物理层**
+**Step 2 — 迁移数据层与物理层** ✅ 已完成 (commit ad2f009)
 - `data/loaders.py`、`data/windows.py`、`physics/decompose.py`、`physics/bounds.py`。
 - 把 `theorem1/2_*.py` 的**核心公式**抽到 `physics/bounds.py`，脚本本身留 `scripts/verify/` 作为 CLI 入口。
 - 验证：`tests/data/test_loaders.py`（重建）跑通。
 
-**Step 3 — 迁移模型层与基线 ZS**
+**Step 3 — 迁移模型层与基线 ZS** ✅ 已完成 (commit b1eefc3)
 - `models/base.py`、`models/patchtst.py`、`models/zeroshot/base_zs.py`（基线 train/eval）。
 - 验证：跑 `run_unified_eval.py` 结果与迁移前 JSON 一致（已存的 `results/` 作 baseline 对照）。
 
-**Step 4 — 迁移 5 个方向模块到 `models/zeroshot/`**
+**Step 4 — 迁移 5 个方向模块到 `models/zeroshot/`** ✅ 已完成 (commit d803de8)
 - rag / phys_irm / causal / icl / hier 各就各位。
 - 删除 `transcif_pipeline.py` 尾部分发逻辑，更新 5 个 `run_*_eval.py` 的 import。
 - 验证：5 个方向 `run_*_eval.py` 全部跑通，输出与历史日志一致。
 
-**Step 5 — 整理 scripts 子目录 + 恢复 tests + pyproject**
+**Step 5 — 整理 scripts 子目录 + 恢复 tests + pyproject** ✅ 已完成 (commit bcefd94)
 - 把脚本按用途移入 `scripts/{data,verify,figures,benchmark,experiments}/`，其中 benchmark 类（unified / supervised baselines / carboncast / ablation / temporal_ood / optimize_weak）单独成 `scripts/benchmark/`，与单方向 `experiments/` 明确分开。
 - 重建 `tests/` 下 4 个基础测试文件（之前 `.pyc` 对应的源码）。
 - 新增 `pyproject.toml`，更新 README 安装说明。
