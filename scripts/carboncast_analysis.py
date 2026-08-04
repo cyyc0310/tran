@@ -10,7 +10,7 @@ Analyzes WHY CarbonCast fails in cross-domain:
 2. No physics layer → cannot separate transferable patterns from region-specific ones
 3. Overfits to source domain absolute CIF values
 
-Usage: PYTHONPATH=src python scripts/carboncast_analysis.py
+Usage: PYTHONPATH=scripts python scripts/carboncast_analysis.py
 """
 
 import json

@@ -16,7 +16,7 @@ Verification:
 4. Generate scatter plot: L_T vs mean CIF error (all regions)
 5. Show that high-L_T regions (like VIC1, 1160) have larger CIF errors
 
-Usage: PYTHONPATH=src python scripts/theorem1_physics_bound.py
+Usage: PYTHONPATH=scripts python scripts/theorem1_physics_bound.py
 """
 
 import json

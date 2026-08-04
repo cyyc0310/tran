@@ -45,5 +45,5 @@
 
 ```bash
 cd /Users/cyyc0310/Downloads/transcif
-PYTHONPATH=src python3 scripts/zeroshot_physics_validation.py
+python3 scripts/zeroshot_physics_validation.py
 ```

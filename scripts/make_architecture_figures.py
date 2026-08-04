@@ -170,13 +170,13 @@ def fig_overall_architecture() -> None:
         size=7.2, style="italic", color=GREY_D)
 
     rect(ax, 42, 36.0, 26, 4.8, TINT_INNER, lw=0.6)
-    txt(ax, 42, 36.9, "LT-MWKC", size=8.0, weight="bold", color=NAVY)
-    txt(ax, 42, 35.0, "local-temporal multi-wavelet conv",
+    txt(ax, 42, 36.9, "DLinear Decomp", size=8.0, weight="bold", color=NAVY)
+    txt(ax, 42, 35.0, "trend/seasonal decomposition + config bias",
         size=6.6, color=GREY_D)
 
     rect(ax, 42, 28.2, 26, 4.8, TINT_INNER, lw=0.6)
-    txt(ax, 42, 29.1, "CV-DWCC", size=8.0, weight="bold", color=NAVY)
-    txt(ax, 42, 27.2, "cross-variable dynamic correlation",
+    txt(ax, 42, 29.1, "Adaptive Persistence Gate", size=8.0, weight="bold", color=NAVY)
+    txt(ax, 42, 27.2, "config-conditioned + volatility-aware",
         size=6.6, color=GREY_D)
 
     txt(ax, 42, 22.5, r"$\hat{s}\in[0,1]^{H}$   (renewable share)",
@@ -184,10 +184,10 @@ def fig_overall_architecture() -> None:
 
     # Side-callout below Stage 1 -- taller box for 2 lines
     rect(ax, 42, 13.0, 30, 7.2, TINT_INNER, lw=0.7)
-    txt(ax, 42, 15.5, "MLDG multi-source pretrain",
+    txt(ax, 42, 15.5, "Config-Weighted Source Sampling",
         size=7.6, weight="bold", color=INK)
     txt(ax, 42, 12.2,
-        "D: gradual-unfreeze FT    ·    E: Deep CORAL",
+        "cosine warmup    ·    5-seed LORO eval",
         size=7.0, color=GREY_D)
 
     # ---- (4) Stage 2 -- mirror layout of Stage 1 ------------------------------------
@@ -208,9 +208,9 @@ def fig_overall_architecture() -> None:
 
     # Black-box residual: rounded, sized for header + caption
     rbox(ax, 75, 28.2, 26, 5.4, TINT_INNER, lw=0.7)
-    txt(ax, 75, 29.6, r"$+\,\hat{\Delta}$   residual head",
+    txt(ax, 75, 29.6, r"ZS+ calibration",
         size=7.8, weight="bold", color=STEEL)
-    txt(ax, 75, 26.9, "split-conformal band  ·  vol-gated skip",
+    txt(ax, 75, 26.9, "level anchoring  ·  residual correction",
         size=6.4, color=GREY_D)
 
     txt(ax, 75, 22.5, r"$CI_{pred}$   (gCO$_2$/kWh)",
@@ -282,7 +282,7 @@ def fig_stage1_encoder() -> None:
     axA.set_xlim(0, 100); axA.set_ylim(0, 30)
     axA.set_aspect("equal"); axA.axis("off")
     txt(axA, 50, 28.5,
-        "(a)  Stage 1 encoder -- LT-MWKC + CV-DWCC + volatility-gated skip",
+        "(a)  Stage 1 encoder -- DLinear Decomp + Adaptive Persistence Gate",
         size=9.5, weight="bold", color=INK)
 
     # Inputs (left column)
@@ -292,15 +292,15 @@ def fig_stage1_encoder() -> None:
     txt(axA, 8, 14.5, "LoadNorm", size=7.5, color=GREY_D)
     txt(axA, 8, 11.5, "TempAnom", size=7.5, color=GREY_D)
 
-    # LT-MWKC block
+    # DLinear trend block
     rect(axA, 31, 21, 24, 9, TINT_S1, lw=0.9)
-    txt(axA, 31, 23.2, "LT-MWKC", size=9, weight="bold", color=NAVY)
-    txt(axA, 31, 19.0, "wavelet kernel conv", size=7, color=GREY_D)
+    txt(axA, 31, 23.2, "DLinear Trend", size=9, weight="bold", color=NAVY)
+    txt(axA, 31, 19.0, "AvgPool decomposition", size=7, color=GREY_D)
 
-    # CV-DWCC block
+    # DLinear seasonal block
     rect(axA, 31, 8, 24, 9, TINT_S1, lw=0.9)
-    txt(axA, 31, 10.2, "CV-DWCC", size=9, weight="bold", color=NAVY)
-    txt(axA, 31, 6.0, "cross-variable corr", size=7, color=GREY_D)
+    txt(axA, 31, 10.2, "DLinear Seasonal", size=9, weight="bold", color=NAVY)
+    txt(axA, 31, 6.0, "config-conditioned sigmoid", size=7, color=GREY_D)
 
     # Feature fusion
     rect(axA, 57, 14.5, 14, 16, TINT_INNER, lw=0.8)
@@ -312,7 +312,7 @@ def fig_stage1_encoder() -> None:
     # Gate (mixer)
     rect(axA, 79, 21, 14, 9, TINT_INNER, lw=0.8)
     txt(axA, 79, 23.2, r"gate $\sigma$", size=8.5, weight="bold", color=INK)
-    txt(axA, 79, 19, "vol mix", size=7, color=GREY_D)
+    txt(axA, 79, 19, "adaptive gate", size=7, color=GREY_D)
 
     # Persistence
     rect(axA, 79, 8, 14, 9, TINT_INNER, lw=0.8)
@@ -339,7 +339,7 @@ def fig_stage1_encoder() -> None:
     axB.set_xlim(0, 100); axB.set_ylim(0, 30)
     axB.set_aspect("equal"); axB.axis("off")
     txt(axB, 50, 28.5,
-        "(b)  Multi-source MLDG pretraining  +  D / E target adaptation",
+        "(b)  Config-weighted source training  +  zero-shot target inference",
         size=9.5, weight="bold", color=INK)
 
     # Row 1: 3 source domains (cool tone)
@@ -351,28 +351,28 @@ def fig_stage1_encoder() -> None:
         txt(axB, x, 20.8, "AEMO 2023", size=6.6, color=GREY_D)
         arrow(axB, x, 18.5, x, 16.5, color=GREY_M, lw=0.8)
 
-    # Row 2: MLDG meta-training bar
+    # Row 2: source region sampling bar
     rect(axB, 50, 13.0, 86, 5.5, TINT_INNER, lw=0.9)
-    txt(axB, 50, 14.5, "MLDG Meta-Training",
+    txt(axB, 50, 14.5, "Config-Weighted Source Sampling",
         size=9, weight="bold", color=INK)
-    txt(axB, 50, 11.5, "Li et al., 2018",
+    txt(axB, 50, 11.5, "weight = 1 / (config_distance + epsilon)",
         size=7, color=GREY_D, style="italic")
 
     # Branch arrows down to D / E
     arrow(axB, 32, 10.0, 24, 7.2, color=GREY_M, lw=0.8)
     arrow(axB, 68, 10.0, 76, 7.2, color=GREY_M, lw=0.8)
 
-    # Row 3: D and E branches
+    # Row 3: ZS and ZS+ branches
     rect(axB, 24, 3.0, 30, 7, TINT_TGT, lw=0.9)
-    txt(axB, 24, 5.2, "D  Gradual-Unfreeze",
+    txt(axB, 24, 5.2, "ZS  Zero-Shot Inference",
         size=8.5, weight="bold", color=INK)
-    txt(axB, 24, 1.8, "supervised fine-tune",
+    txt(axB, 24, 1.8, "config-only prediction",
         size=6.8, color=GREY_D)
 
     rect(axB, 76, 3.0, 30, 7, ("#FAF2EA", "#A07A5A"), lw=0.9)
-    txt(axB, 76, 5.2, "E  Deep CORAL",
+    txt(axB, 76, 5.2, "ZS+  Test-Time Calibration",
         size=8.5, weight="bold", color=INK)
-    txt(axB, 76, 1.8, r"align $\Sigma_S, \Sigma_T$",
+    txt(axB, 76, 1.8, "level anchoring + residual corr",
         size=6.8, color=GREY_D)
 
     save(fig, "fig_stage1_encoder.png")
@@ -423,7 +423,7 @@ def fig_stage2_physics() -> None:
 
     # Volatility-gated skip (below residual)
     rbox(axA, 60, 5, 20, 6, TINT_INNER, lw=0.7)
-    txt(axA, 60, 8.0, "vol-gated skip",
+    txt(axA, 60, 8.0, "adaptive persistence gate",
         size=7.5, weight="bold", color=INK)
     arrow(axA, 60, 11.0, 60, 10.3, color=GREY_M, lw=0.7, ls="--")
 

@@ -124,7 +124,7 @@ This produces `data_2023/US_{CISO,PJM,MISO,ERCO,ISNE,NYIS,FPL,BPAT}_2023_hourly.
 After downloading all three data sources, run the unified validation to confirm data integrity:
 
 ```bash
-PYTHONPATH=src python scripts/validate_us_data.py
+python scripts/validate_us_data.py
 ```
 
 This loads all regions, prints a sorted summary table (region, mean_rs, ef_nr, hours, mean_CIF), and runs a quick zero-shot evaluation on target US regions to verify the data pipeline works end-to-end.
@@ -139,41 +139,58 @@ The model supports an optional temperature anomaly channel for improved accuracy
 
 ### Requirements
 
-- Python 3.10+
-- PyTorch 2.2+
-- NumPy 1.26+
-- Pandas 2.2+
+- Python 3.11+ (via `.venv-nemed`)
+- PyTorch 2.2+, NumPy, Pandas
 
 ### Installation
 
 ```bash
 cd transcif
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+python3 -m venv .venv-nemed
+source .venv-nemed/bin/activate
+pip install torch numpy pandas matplotlib scipy
+```
+
+### Download data (3 sources → 29 regions)
+
+```bash
+source .venv-nemed/bin/activate
+
+# 1. AU NEM (4 regions) — requires nemed
+pip install nemed nemosis nempy
+python scripts/generate_nemed_regions.py --year 2023
+
+# 2. UK DNO (17 regions) — free API, no key
+python scripts/download_uk_regions.py
+
+# 3. US EIA-930 (8 regions) — bulk download
+python scripts/download_eia930_data.py
 ```
 
 ### Basic Usage
 
-Run the phase-1 complete experiment pipeline (training + evaluation on all regions):
-
+Quick evaluation (4 AU regions, 3 seeds):
 ```bash
-PYTHONPATH=src python scripts/run_phase1_complete.py
+source .venv-nemed/bin/activate
+
+# Quick: 4 AU regions, 3 seeds
+python scripts/run_unified_eval.py --quick
+
+# Full: 29 regions, 5 seeds
+python scripts/run_unified_eval.py
+
+# With all research method comparisons
+python scripts/run_unified_eval.py --quick --phys-irm --causal
+
+# Independent method experiments
+python scripts/run_phys_irm_eval.py --quick
+python scripts/run_causal_eval.py --quick
+python scripts/run_rag_eval.py      # retrieval-augmented
+python scripts/run_icl_eval.py      # in-context learning
+python scripts/run_hier_eval.py     # hierarchical debiased
 ```
 
-Run zero-shot physics validation (E1 and E2 from the paper):
-
-```bash
-PYTHONPATH=src python scripts/zeroshot_physics_validation.py
-```
-
-Run the unified evaluation across all methods:
-
-```bash
-PYTHONPATH=src python scripts/run_unified_eval.py
-```
-
-> **Note**: The training pipeline requires the 2023 hourly data files under `data_2023/`. These are not included in the repository due to size. See the data download scripts in `scripts/download_*.py` for fetching data from AEMO, National Grid ESO, and EIA-930.
+> **Data**: 2023 hourly CSVs under `data_2023/` (not in repo). Download via `scripts/download_*.py` or `scripts/generate_nemed_regions.py`.
 
 ---
 
@@ -181,48 +198,28 @@ PYTHONPATH=src python scripts/run_unified_eval.py
 
 ```
 transcif/
-├── src/transcif/               # Core library
-│   ├── models/                 # Neural architectures
-│   │   ├── encoder.py          # DomainInvariantEncoder + PersistenceSkipEncoder
-│   │   ├── lt_mwkc.py          # Local-Temporal Multi-Wavelet Kernel Convolution
-│   │   ├── cv_dwcc.py          # Cross-Variable Dynamic Wavelet Cross-Correlation
-│   │   └── wavelets.py         # Wavelet basis construction
-│   ├── physics/                # Physics decomposition layer
-│   │   ├── cif.py              # CIF reconstruction formula + emission factor table
-│   │   └── residual.py         # Learnable residual correction head
-│   ├── config/                 # Region configuration system
-│   │   ├── region_config.py    # RegionConfig / DeploymentConfig
-│   │   └── deploy.py           # Deployment orchestrator
-│   ├── data/                   # Data loading
-│   │   ├── loaders.py          # CSV loading + sliding window
-│   │   └── reparam.py          # Scale-invariant reparameterization (Stage 0)
-│   ├── training/               # Training loops
-│   │   ├── train_source.py     # Single-source training
-│   │   ├── train_multi_source.py  # MLDG multi-source domain generalization + ERM
-│   │   ├── domain_adaptation.py   # Deep CORAL alignment + progressive unfreezing
-│   │   └── consistency.py      # Synthetic-perturbation consistency regularization
-│   ├── calibration/            # Calibration & uncertainty
-│   │   ├── conformal.py        # Conformal prediction intervals
-│   │   └── gate_recalibration.py  # Gate recalibration
-│   └── evaluation/             # Metrics and evaluation pipelines
-│       ├── metrics.py          # MAE, RMSE, sMAPE, cross-domain degradation ratio
-│       └── baselines.py        # End-to-end pipeline wrappers
-├── scripts/                    # Experiment scripts
-│   ├── run_phase1_complete.py      # Full Phase-1 experiment pipeline
-│   ├── run_supervised_baselines.py # Supervised baselines (PatchTST, DLinear, etc.)
-│   ├── run_unified_eval.py         # Unified evaluation across all methods
-│   ├── zeroshot_physics_validation.py  # Theorem E1/E2 validation
+├── scripts/                    # Experiment scripts & model definitions
+│   ├── run_unified_eval.py     # Unified LORO evaluation (29 regions, 5 seeds)
+│   ├── run_phase1_complete.py  # Phase-1 complete pipeline (all baselines)
+│   ├── run_supervised_baselines.py   # Supervised baselines (PatchTST, DLinear, etc.)
+│   ├── run_supervised_baselines_v2.py # Supervised baselines v2 (direct CIF prediction)
+│   ├── ablation_study.py       # Ablation experiments
+│   ├── conformal_prediction.py # Conformal prediction calibration
 │   ├── theorem1_physics_bound.py   # Theorem 1 verification
 │   ├── theorem2_transfer_bound.py  # Theorem 2 verification
-│   ├── ablation_study.py           # Ablation experiments
-│   ├── carboncast_analysis.py      # CarbonCast comparison
-│   ├── conformal_prediction.py     # Conformal prediction calibration
-│   ├── deployment_warmup.py        # Deployment warmup analysis
-│   ├── temporal_ood.py             # Temporal OOD evaluation
-│   ├── download_eia930_data.py     # US EIA-930 data downloader
-│   ├── download_uk_regions.py      # UK DNO data downloader
-│   └── ...
+│   ├── carboncast_analysis.py  # CarbonCast cross-domain comparison
+│   ├── deployment_warmup.py    # Deployment warmup analysis
+│   ├── temporal_ood.py         # Temporal OOD evaluation
+│   ├── optimize_weak_regions.py    # Weak region optimization
+│   ├── verify_paper_numbers.py     # Paper number verification
+│   ├── probe_*.py              # Diagnostic probes (multibranch, multiseed, UK)
+│   ├── make_*.py               # Figure generation
+│   ├── validate_us_data.py     # US data validation
+│   ├── download_eia930_data.py # US EIA-930 data downloader
+│   ├── download_uk_regions.py  # UK DNO data downloader
+│   └── generate_nemed_regions.py   # AU NEM data generator
 ├── tests/                      # pytest test suite
+│   └── fixtures/               # Test fixtures (real AEMO samples)
 ├── docs/                       # Documentation
 │   ├── paper/                  # Paper drafts (EN + ZH)
 │   ├── research/               # Research notes, gap analysis, literature review
@@ -240,20 +237,23 @@ transcif/
 ## Core Pipeline
 
 ```
-Input: renewable share time series + target region config
+Input: renewable share time series + target region config (mean_rs, ef_nr)
          ↓
-  Stage 0 — Reparameterization
-    Scale-invariant normalization: RenewShare + LoadNorm + optional temperature anomaly
+  Trend/Seasonal Decomposition
+    AvgPool(25) → trend | x - trend → seasonal
          ↓
-  Stage 1 — Domain-Invariant Encoder
-    LT-MWKC (wavelet convolution) + CV-DWCC (cross-variable correlation)
-    → fused features → future share prediction + adaptive persistence gate
+  Config-Conditioned DLinear
+    Linear(trend) + Linear(seasonal) + MLP_config_bias → sigmoid
          ↓
-  Stage 2 — Physics Layer
-    CIF = predicted_share × ef_renewable + (1 − predicted_share) × ef_nonrenewable
+  Adaptive Persistence Gate
+    gate = σ(MLP(config, recent_mean, recent_std))
+    output = gate × persistence + (1 − gate) × model
+         ↓
+  Physics Layer
+    CIF = predicted_share × ef_renew + (1 − predicted_share) × ef_nonrenew
          ↓
   TransCIF-ZS+ (optional test-time calibration, model frozen)
-    Horizontal anchoring → physics residue correction → multi-branch fusion → conformal interval
+    Level anchoring → physics residue correction → multi-branch fusion → conformal interval
 ```
 
 ---

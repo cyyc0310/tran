@@ -15,7 +15,7 @@ Verification:
 3. Plot config_distance vs transfer_gap
 4. Fit regression to show the bound holds
 
-Usage: PYTHONPATH=src python scripts/theorem2_transfer_bound.py
+Usage: PYTHONPATH=scripts python scripts/theorem2_transfer_bound.py
 """
 
 import json

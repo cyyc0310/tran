@@ -9,7 +9,7 @@ Motivation: A reviewer might argue that the model memorizes year-specific patter
 By testing on temporally out-of-distribution data, we prove it learns
 generalizable dynamics.
 
-Usage: PYTHONPATH=src python scripts/temporal_ood.py
+Usage: PYTHONPATH=scripts python scripts/temporal_ood.py
 """
 
 import json

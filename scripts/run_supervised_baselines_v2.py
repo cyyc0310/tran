@@ -6,7 +6,7 @@ Key improvements over v1:
 - Overlapping test windows (stride=6) for more stable evaluation
 - PatchTST-lite: a multi-head attention model for stronger comparison
 
-Usage: PYTHONPATH=src python scripts/run_supervised_baselines_v2.py
+Usage: PYTHONPATH=scripts python scripts/run_supervised_baselines_v2.py
 """
 
 import glob

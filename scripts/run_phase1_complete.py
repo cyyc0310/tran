@@ -5,7 +5,7 @@ Key additions over v2:
 - Fixed PatchTST with RevIN normalization + cosine warmup + lower lr
 - All results in one script for reproducibility
 
-Usage: PYTHONPATH=src python scripts/run_phase1_complete.py
+Usage: PYTHONPATH=scripts python scripts/run_phase1_complete.py
 """
 
 import glob

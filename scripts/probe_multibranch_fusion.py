@@ -4,7 +4,7 @@ Variants (each region's zero-shot model is trained once and shared):
   M0..M3 : the four FUSION_MENU configs, forced
   AUTO   : regional self-selection over the menu (pre-test observed days only)
 
-Usage: PYTHONPATH=src:scripts python scripts/probe_multibranch_fusion.py
+Usage: PYTHONPATH=scripts python scripts/probe_multibranch_fusion.py
 """
 
 import json

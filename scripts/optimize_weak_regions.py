@@ -7,7 +7,7 @@ Variants tested per target (seed 0 quick pass):
   V3: gate-floor OOD fallback + delta48
 Also logs mean gate value for diagnosis.
 
-Usage: PYTHONPATH=src python scripts/optimize_weak_regions.py
+Usage: PYTHONPATH=scripts python scripts/optimize_weak_regions.py
 """
 
 import sys

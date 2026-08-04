@@ -93,7 +93,7 @@ TransCIF 采用两阶段解耦架构:先用编码器预测未来的可再生能�
 
 ## 4. 结果
 
-运行方式:`PYTHONPATH=src python scripts/sa1_domain_adaptation.py`,日志见 `/tmp/sa1_domain_adaptation_output.log`。
+运行方式:`python scripts/sa1_domain_adaptation.py`,日志见 `/tmp/sa1_domain_adaptation_output.log`。
 
 | 变体 | corrected_mae | physics_only_mae | persistence_mae | vs持久性基线 |
 |---|---|---|---|---|

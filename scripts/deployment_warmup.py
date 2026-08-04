@@ -17,7 +17,7 @@ The warm-up curve shows:
 We also compare with a "gradually fine-tuning" baseline that accumulates
 target domain data and re-trains, showing the time it takes to match zero-shot.
 
-Usage: PYTHONPATH=src python scripts/deployment_warmup.py
+Usage: PYTHONPATH=scripts python scripts/deployment_warmup.py
 """
 
 import json

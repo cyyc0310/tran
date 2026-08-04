@@ -4,7 +4,7 @@ For every test origin, compare:
   - the 56d replayed scores of C0 / C1 / LEG (what the selector sees)
   - the realized daily MAE of each forced config at that origin (ground truth)
 
-Usage: PYTHONPATH=src:scripts python scripts/probe_uk01_diagnosis.py
+Usage: PYTHONPATH=scripts python scripts/probe_uk01_diagnosis.py
 """
 
 import numpy as np

@@ -7,7 +7,7 @@ AdaptivePersistDLinear (LORO protocol: all other regions as sources, zero target
 Establishes the "transfer efficiency ratio" = zero-shot MAE / supervised-best MAE.
 Goal: ratio <= 1.25 (zero-shot within 25% of supervised performance).
 
-Usage: PYTHONPATH=src python scripts/run_supervised_baselines.py
+Usage: PYTHONPATH=scripts python scripts/run_supervised_baselines.py
 """
 
 import glob

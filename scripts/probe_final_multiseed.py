@@ -3,7 +3,7 @@
 D3m15 : menu (C0, C1, LEG), dual metric, margin 0.015
 W3t15 : + W4 config with its own recruitment margin 0.03
 
-Usage: PYTHONPATH=src:scripts python scripts/probe_final_multiseed.py
+Usage: PYTHONPATH=scripts python scripts/probe_final_multiseed.py
 """
 
 import json

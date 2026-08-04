@@ -1,7 +1,7 @@
 """Phase 1.2 Validation: Quick check that US regions integrate properly.
 
 Runs a lightweight evaluation (1 seed, 1 US target) to verify data quality.
-Usage: PYTHONPATH=src python scripts/validate_us_data.py
+Usage: PYTHONPATH=scripts python scripts/validate_us_data.py
 """
 
 import glob

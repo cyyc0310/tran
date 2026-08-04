@@ -124,7 +124,7 @@ python scripts/download_eia930_data.py
 下载完三个数据源后，运行统一校验以确认数据完整性：
 
 ```bash
-PYTHONPATH=src python scripts/validate_us_data.py
+python scripts/validate_us_data.py
 ```
 
 该脚本加载所有区域，打印排序后的汇总表（区域、mean_rs、ef_nr、小时数、mean_CIF），并在 US 目标区域上运行快速零样本评估以验证数据管线端到端正常工作。
@@ -158,19 +158,13 @@ pip install -r requirements.txt
 运行第一阶段完整实验管线（所有区域训练 + 评估）：
 
 ```bash
-PYTHONPATH=src python scripts/run_phase1_complete.py
-```
-
-运行零样本物理验证（论文中的 E1 和 E2 实验）：
-
-```bash
-PYTHONPATH=src python scripts/zeroshot_physics_validation.py
+python scripts/run_phase1_complete.py
 ```
 
 运行跨方法统一评估：
 
 ```bash
-PYTHONPATH=src python scripts/run_unified_eval.py
+python scripts/run_unified_eval.py
 ```
 
 > **注意**：训练管线需要 `data_2023/` 目录下的 2023 年逐小时数据文件。限于体积未纳入仓库，可通过 `scripts/download_*.py` 系列脚本从 AEMO、National Grid ESO 和 EIA-930 获取数据。
@@ -181,48 +175,28 @@ PYTHONPATH=src python scripts/run_unified_eval.py
 
 ```
 transcif/
-├── src/transcif/               # 核心代码库
-│   ├── models/                 # 神经网络架构
-│   │   ├── encoder.py          # DomainInvariantEncoder + PersistenceSkipEncoder
-│   │   ├── lt_mwkc.py          # 局部时序多小波核卷积（LT-MWKC）
-│   │   ├── cv_dwcc.py          # 跨变量动态小波互相关（CV-DWCC）
-│   │   └── wavelets.py         # 小波基函数构建
-│   ├── physics/                # 物理分解层
-│   │   ├── cif.py              # CIF 重建公式 + 排放因子表
-│   │   └── residual.py         # 可学习残差校正头
-│   ├── config/                 # 区域配置系统
-│   │   ├── region_config.py    # RegionConfig / DeploymentConfig
-│   │   └── deploy.py           # 部署编排器
-│   ├── data/                   # 数据加载
-│   │   ├── loaders.py          # CSV 加载 + 滑动窗口构建
-│   │   └── reparam.py          # 尺度不变重参数化（Stage 0）
-│   ├── training/               # 训练循环
-│   │   ├── train_source.py     # 单源域训练
-│   │   ├── train_multi_source.py  # MLDG 多源域泛化 + ERM 基线
-│   │   ├── domain_adaptation.py   # Deep CORAL 对齐 + 渐进解冻微调
-│   │   └── consistency.py      # 合成扰动一致性正则化
-│   ├── calibration/            # 校准与不确定性
-│   │   ├── conformal.py        # 保形预测区间
-│   │   └── gate_recalibration.py  # 门控重校准
-│   └── evaluation/             # 评估指标与管线
-│       ├── metrics.py          # MAE / RMSE / sMAPE / 跨域退化率
-│       └── baselines.py        # 端到端管线封装
-├── scripts/                    # 实验脚本
-│   ├── run_phase1_complete.py      # 完整第一阶段实验管线
-│   ├── run_supervised_baselines.py # 有监督基线（PatchTST, DLinear 等）
-│   ├── run_unified_eval.py         # 跨方法统一评估
-│   ├── zeroshot_physics_validation.py  # 定理 E1/E2 验证
+├── scripts/                    # 实验脚本与模型定义
+│   ├── run_unified_eval.py     # 统一 LORO 评估（29 区域，5 种子）
+│   ├── run_phase1_complete.py  # 第一阶段完整管线（所有基线）
+│   ├── run_supervised_baselines.py   # 有监督基线（PatchTST, DLinear 等）
+│   ├── run_supervised_baselines_v2.py # 有监督基线 v2（直接 CIF 预测）
+│   ├── ablation_study.py       # 消融实验
+│   ├── conformal_prediction.py # 保形预测校准
 │   ├── theorem1_physics_bound.py   # 定理 1 验证
 │   ├── theorem2_transfer_bound.py  # 定理 2 验证
-│   ├── ablation_study.py           # 消融实验
-│   ├── carboncast_analysis.py      # CarbonCast 对比分析
-│   ├── conformal_prediction.py     # 保形预测校准
-│   ├── deployment_warmup.py        # 部署预热分析
-│   ├── temporal_ood.py             # 时序分布偏移评估
-│   ├── download_eia930_data.py     # 美国 EIA-930 数据下载
-│   ├── download_uk_regions.py      # 英国 DNO 区域数据下载
-│   └── ...
+│   ├── carboncast_analysis.py  # CarbonCast 跨域对比
+│   ├── deployment_warmup.py    # 部署预热分析
+│   ├── temporal_ood.py         # 时序分布偏移评估
+│   ├── optimize_weak_regions.py    # 弱区域优化
+│   ├── verify_paper_numbers.py     # 论文数字验证
+│   ├── probe_*.py              # 诊断探针（多分支、多种子、UK 区域）
+│   ├── make_*.py               # 图表生成
+│   ├── validate_us_data.py     # 美国数据验证
+│   ├── download_eia930_data.py # 美国 EIA-930 数据下载
+│   ├── download_uk_regions.py  # 英国 DNO 区域数据下载
+│   └── generate_nemed_regions.py   # 澳洲 NEM 数据生成
 ├── tests/                      # pytest 测试套件
+│   └── fixtures/               # 测试夹具（真实 AEMO 样本）
 ├── docs/                       # 文档
 │   ├── paper/                  # 论文草稿（中英文）
 │   ├── research/               # 研究笔记、Gap 分析、文献综述
@@ -241,16 +215,19 @@ transcif/
 ## 核心数据流
 
 ```
-输入：可再生能源占比时间序列 + 目标区域配置
+输入：可再生能源占比时间序列 + 目标区域配置 (mean_rs, ef_nr)
          ↓
-  Stage 0 — 重参数化
-    尺度不变归一化：可再生占比 + 负载归一化 + 可选温度异常
+  趋势/季节分解
+    AvgPool(25) → trend | x - trend → seasonal
          ↓
-  Stage 1 — 域不变编码器
-    LT-MWKC（小波卷积）+ CV-DWCC（跨变量互相关）
-    → 融合特征 → 未来占比预测 + 自适应持久性门控
+  Config 条件化 DLinear
+    Linear(trend) + Linear(seasonal) + MLP_config_bias → sigmoid
          ↓
-  Stage 2 — 物理层
+  自适应持久性门控
+    gate = σ(MLP(config, recent_mean, recent_std))
+    output = gate × persistence + (1 − gate) × model
+         ↓
+  物理层
     CIF = 预测占比 × ef_可再生 + (1 − 预测占比) × ef_非可再生
          ↓
   TransCIF-ZS+（可选测试时校准，模型冻结）

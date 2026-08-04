@@ -11,9 +11,13 @@ data/processed/
 
 # large generated data & cache
 .nemed_cache/
+cache_nemed/
 data_2023/
 data_2023_gen.log
 external/
+
+# partial / temp results
+*.partial.json
 
 # macOS / editor / agent junk
 .DS_Store
