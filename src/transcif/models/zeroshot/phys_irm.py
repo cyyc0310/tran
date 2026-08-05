@@ -71,8 +71,10 @@ def train_phys_irm(all_regions, target_name, seed=42, epochs=200, lr=1e-3,
             # base share loss
             L_share = torch.abs(s_pred - y_s_b).mean()
             # physics-consistency: CIF predicted via physics vs true CIF,
-            # expressed with the target region's emission factors.
-            cif_pred = cif_from_shares(s_pred, ef_r_tgt, ef_nr_tgt)
+            # expressed with the target region's emission factors.  Computed
+            # in tensor space (NOT cif_from_shares, which returns numpy) so the
+            # loss keeps gradients flowing back into the share head.
+            cif_pred = s_pred * ef_r_tgt + (1.0 - s_pred) * ef_nr_tgt
             L_cif = torch.abs(cif_pred - rd["y_cif"][idx]).mean()
             # IRM penalty: variance of per-sample loss across the region batch
             sample_loss = torch.abs(s_pred - y_s_b).mean(dim=1)
@@ -148,7 +150,9 @@ def train_phys_weighted_only(all_regions, target_name, seed=42, epochs=200,
             y_cif_b = y_cif_b.to(device)
         s_pred = model(x_b, c_b)
         L_share = torch.abs(s_pred - y_s_b).mean()
-        cif_pred = cif_from_shares(s_pred, ef_r_b, ef_nr_b)
+        # tensor-space CIF (keep gradients); ef_r_b/ef_nr_b are (B,) tensors
+        cif_pred = (s_pred * ef_r_b.unsqueeze(1)
+                    + (1.0 - s_pred) * ef_nr_b.unsqueeze(1))
         L_cif = torch.abs(cif_pred - y_cif_b).mean()
         loss = L_share + lambda_cif * L_cif
         optimizer.zero_grad()

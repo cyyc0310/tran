@@ -30,6 +30,13 @@ from transcif.evaluation.metrics import compute_metrics
 from transcif.calibration.zs_plus import zs_plus_predict
 
 
+# When True (and CUDA is available), the optional direction methods are trained
+# and inferred concurrently on separate cuda streams instead of strictly
+# serially.  Set to False to force the original serial ordering (e.g. if you
+# hit GPU memory pressure from multiple models being resident at once).
+USE_CUDA_STREAMS = True
+
+
 def train_zero_shot(all_regions, target_name, seed=42,
                     model_class=None, use_weighted=True,
                     use_ramp_loss=False, mask_augment_prob=0.0,
@@ -186,107 +193,142 @@ def evaluate_target(target_name, all_regions, seed=42,
     zsp_pred = zs_plus_predict(zs_model, data["config"], rs, cif, ef_r, ef_nr, origins)
     results["transcif_zs_plus"] = compute_metrics(zsp_pred, y_cif_test)
 
-    # 5. TransCIF-RAG (optional, retrieval-augmented)
+    # 5-9. Optional direction methods.
+    #
+    # Each direction method (RAG, Phys-IRM, Causal, ICL, Hier) trains an
+    # independent model from its own seed and its own data, so the train+predict
+    # of different directions are completely independent.  When CUDA is
+    # available we launch each direction on its OWN cuda stream so their kernels
+    # overlap on the GPU instead of running strictly serially; we then
+    # `synchronize` and collect metrics.  Determinism is preserved: every method
+    # keeps its own seed and its own model, and cuda-stream scheduling does not
+    # change the result of any individual op.
+    #
+    # Disable concurrency (fall back to strict serial) by setting
+    # ``USE_CUDA_STREAMS = False`` below or when CUDA is unavailable.
+    use_streams = USE_CUDA_STREAMS and device is not None and "cuda" in str(device)
+
+    # Each entry: (flag, label, task).  ``task`` returns the cif prediction
+    # array (numpy) or raises; it is executed either inline (serial) or inside
+    # a dedicated cuda stream (concurrent).
+    direction_tasks = []
+
     if use_rag:
-        try:
-            print(f"    [RAG] training...", end="", flush=True)
+        def _task_rag():
             from transcif.models.zeroshot.rag import (RagMemoryBank, RagDLinear,
                                                       train_rag_zero_shot, predict_rag_zs)
-            rag_model, bank = train_rag_zero_shot(all_regions, target_name, seed=seed,
-                                                  device=device)
-            cif_rag = predict_rag_zs(rag_model, bank, x_rs_test.astype(np.float32),
-                                     data["config"].astype(np.float32), ef_r, ef_nr)
-            results["transcif_rag"] = compute_metrics(cif_rag, y_cif_test)
-            results["ratio_rag_vs_zs"] = results["transcif_rag"]["mae"] / max(
-                results["transcif_zs"]["mae"], 1e-6)
-            print(" done", flush=True)
-        except Exception as e:  # noqa: BLE001
-            results["transcif_rag"] = None
-            results["ratio_rag_vs_zs"] = None
-            print(f"  [WARN] RAG failed for {target_name}: {e}")
+            rag_model, bank = train_rag_zero_shot(
+                all_regions, target_name, seed=seed, device=device)
+            return predict_rag_zs(rag_model, bank, x_rs_test.astype(np.float32),
+                                   data["config"].astype(np.float32), ef_r, ef_nr)
+        direction_tasks.append(("rag", "RAG", _task_rag,
+                                "transcif_rag", "ratio_rag_vs_zs"))
 
-    # 6. TransCIF-PhysIRM (optional, physics-informed IRM)
     if use_phys_irm:
-        try:
-            print(f"    [Phys-IRM] training...", end="", flush=True)
+        def _task_phys():
             from transcif.models.zeroshot.phys_irm import (train_phys_irm,
-                                                           predict_phys_irm)
-            phys_model, phys_log = train_phys_irm(
+                                                           predict_phys_irm,
+                                                           train_phys_weighted_only)
+            phys_model, _ = train_phys_irm(
                 all_regions, target_name, seed=seed, gamma_irm=0.1,
                 lambda_cif=0.5, device=device)
             cif_phys = predict_phys_irm(phys_model, x_rs_test.astype(np.float32),
                                         data["config"].astype(np.float32), ef_r, ef_nr)
-            results["transcif_phys_irm"] = compute_metrics(cif_phys, y_cif_test)
-            results["ratio_phys_irm_vs_zs"] = results["transcif_phys_irm"]["mae"] / max(
-                results["transcif_zs"]["mae"], 1e-6)
-            from transcif.models.zeroshot.phys_irm import train_phys_weighted_only
             pw_model, _ = train_phys_weighted_only(
                 all_regions, target_name, seed=seed, lambda_cif=0.5, device=device)
             cif_pw = predict_phys_irm(pw_model, x_rs_test.astype(np.float32),
                                       data["config"].astype(np.float32), ef_r, ef_nr)
-            results["transcif_phys_weighted"] = compute_metrics(cif_pw, y_cif_test)
-            results["ratio_phys_weighted_vs_zs"] = results["transcif_phys_weighted"]["mae"] / max(
-                results["transcif_zs"]["mae"], 1e-6)
-            results["irm_benefit"] = results["transcif_phys_irm"]["mae"] / max(
-                results["transcif_phys_weighted"]["mae"], 1e-6)
-        except Exception as e:  # noqa: BLE001
-            results["transcif_phys_irm"] = None
-            results["ratio_phys_irm_vs_zs"] = None
-            print(f"\n  [WARN] Phys-IRM failed for {target_name}: {e}")
+            return cif_phys, cif_pw
+        direction_tasks.append(("phys-irm", "Phys-IRM", _task_phys,
+                                "transcif_phys_irm", "ratio_phys_irm_vs_zs"))
 
-    # 7. TransCIF-Causal (optional, domain disentanglement)
     if use_causal:
-        try:
-            print(f"    [Causal] training...", end="", flush=True)
+        def _task_causal():
             from transcif.models.zeroshot.causal import (train_causal_zero_shot,
                                                          predict_causal_zs)
             causal_model, _ = train_causal_zero_shot(
                 all_regions, target_name, seed=seed, device=device)
-            cif_causal = predict_causal_zs(
+            return predict_causal_zs(
                 causal_model, x_rs_test.astype(np.float32),
                 data["config"].astype(np.float32), ef_r, ef_nr)
-            results["transcif_causal"] = compute_metrics(cif_causal, y_cif_test)
-            results["ratio_causal_vs_zs"] = results["transcif_causal"]["mae"] / max(
-                results["transcif_zs"]["mae"], 1e-6)
-        except Exception as e:  # noqa: BLE001
-            results["transcif_causal"] = None
-            results["ratio_causal_vs_zs"] = None
-            print(f"\n  [WARN] Causal failed for {target_name}: {e}")
+        direction_tasks.append(("causal", "Causal", _task_causal,
+                                "transcif_causal", "ratio_causal_vs_zs"))
 
-    # 8. TransCIF-ICL (optional, in-context learning)
     if use_icl:
-        try:
-            print(f"    [ICL] training...", end="", flush=True)
+        def _task_icl():
             from transcif.models.zeroshot.icl import (ICTransformer, train_icl,
                                                       predict_icl_zs)
             icl_model = train_icl(all_regions, target_name, seed=seed, device=device)
-            cif_icl = predict_icl_zs(
+            return predict_icl_zs(
                 icl_model, all_regions, target_name,
                 x_rs_test.astype(np.float32), ef_r, ef_nr)
-            results["transcif_icl"] = compute_metrics(cif_icl, y_cif_test)
-            results["ratio_icl_vs_zs"] = results["transcif_icl"]["mae"] / max(
-                results["transcif_zs"]["mae"], 1e-6)
-        except Exception as e:  # noqa: BLE001
-            results["transcif_icl"] = None
-            results["ratio_icl_vs_zs"] = None
-            print(f"\n  [WARN] ICL failed for {target_name}: {e}")
+        direction_tasks.append(("icl", "ICL", _task_icl,
+                                "transcif_icl", "ratio_icl_vs_zs"))
 
-    # 9. TransCIF-Hier (optional, hierarchical debiased)
     if use_hier:
-        try:
-            print(f"    [Hier] training...", end="", flush=True)
+        def _task_hier():
             from transcif.models.zeroshot.hier import train_hier, predict_hier_zs
             hier_model = train_hier(all_regions, target_name, seed=seed, device=device)
-            cif_hier = predict_hier_zs(
+            return predict_hier_zs(
                 hier_model, x_rs_test.astype(np.float32),
                 data["config"].astype(np.float32), ef_r, ef_nr)
-            results["transcif_hier"] = compute_metrics(cif_hier, y_cif_test)
-            results["ratio_hier_vs_zs"] = results["transcif_hier"]["mae"] / max(
-                results["transcif_zs"]["mae"], 1e-6)
-        except Exception as e:  # noqa: BLE001
-            results["transcif_hier"] = None
-            results["ratio_hier_vs_zs"] = None
-            print(f"  [WARN] Hier failed for {target_name}: {e}")
+        direction_tasks.append(("hier", "Hier", _task_hier,
+                                "transcif_hier", "ratio_hier_vs_zs"))
+
+    # Launch concurrently on separate streams (or serially as a fallback).
+    outcomes = {}  # flag -> ("ok", payload) | ("err", msg)
+    if use_streams and direction_tasks:
+        streams = {flag: torch.cuda.Stream() for flag, _, _, _, _ in direction_tasks}
+        launched = {}
+        for flag, label, task, _, _ in direction_tasks:
+            print(f"    [{label}] training...", end="", flush=True)
+            s = streams[flag]
+            def _run(task=task, s=s):  # capture defaults
+                try:
+                    with torch.cuda.stream(s):
+                        return "ok", task()
+                except Exception as e:  # noqa: BLE001
+                    return "err", e
+            launched[flag] = _run()
+        torch.cuda.synchronize()
+        for flag, (status, payload) in launched.items():
+            outcomes[flag] = (status, payload)
+    else:
+        for flag, label, task, _, _ in direction_tasks:
+            print(f"    [{label}] training...", end="", flush=True)
+            try:
+                outcomes[flag] = ("ok", task())
+                print(" done", flush=True)
+            except Exception as e:  # noqa: BLE001
+                outcomes[flag] = ("err", e)
+
+    # Collect results (order-independent; ratios use the already-computed ZS MAE)
+    zs_mae = results["transcif_zs"]["mae"]
+    for flag, label, task, key, ratio_key in direction_tasks:
+        status, payload = outcomes.get(flag, ("err", None))
+        if status == "ok":
+            if flag == "phys-irm":
+                cif_phys, cif_pw = payload
+                results["transcif_phys_irm"] = compute_metrics(cif_phys, y_cif_test)
+                results["ratio_phys_irm_vs_zs"] = (
+                    results["transcif_phys_irm"]["mae"] / max(zs_mae, 1e-6))
+                results["transcif_phys_weighted"] = compute_metrics(cif_pw, y_cif_test)
+                results["ratio_phys_weighted_vs_zs"] = (
+                    results["transcif_phys_weighted"]["mae"] / max(zs_mae, 1e-6))
+                results["irm_benefit"] = (
+                    results["transcif_phys_irm"]["mae"]
+                    / max(results["transcif_phys_weighted"]["mae"], 1e-6))
+            else:
+                results[key] = compute_metrics(payload, y_cif_test)
+                results[ratio_key] = results[key]["mae"] / max(zs_mae, 1e-6)
+            # In stream mode "training..." was printed at launch; finish the line.
+            if use_streams and direction_tasks:
+                print(" done", flush=True)
+        else:
+            e = payload
+            results[key] = None
+            results[ratio_key] = None
+            print(f"  [WARN] {label} failed for {target_name}: {e}")
 
     # Ratios
     results["ratio_vs_patchtst"] = results["transcif_zs"]["mae"] / results["patchtst_sup"]["mae"]
