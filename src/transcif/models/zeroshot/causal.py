@@ -306,9 +306,9 @@ def train_causal_zero_shot(all_regions, target_name, seed=42,
                         x_cf_t, y_cf_cif_t, c_cf = x_cf_t.to(device), y_cf_cif_t.to(device), c_cf.to(device)
                     # Predict share from cross-region data, apply target physics
                     _, share_cf, _, _, _, _, _, _ = model(x_cf_t, c_cf)
-                    cif_cf = cif_from_shares(
-                        share_cf, all_regions[target_name]["ef_r"],
-                        all_regions[target_name]["ef_nr"])
+                    ef_r_t = all_regions[target_name]["ef_r"]
+                    ef_nr_t = all_regions[target_name]["ef_nr"]
+                    cif_cf = share_cf * ef_r_t + (1.0 - share_cf) * ef_nr_t
                     L_cf = F.l1_loss(cif_cf, y_cf_cif_t)
                     loss = loss + lambda_cf * L_cf
                     loss_parts["cf"].append(L_cf.item())

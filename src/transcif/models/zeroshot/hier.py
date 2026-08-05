@@ -223,14 +223,14 @@ def train_hier(all_regions, target_name, seed=42,
         weekly_target = y_s_b.mean(dim=1, keepdim=True)
         L_weekly = F.l1_loss(weekly, weekly_target)
 
-        # Consistency: CIF-level physics consistency
+        # Consistency: CIF-level physics consistency (keep gradients for training)
         ef_r_target = all_regions[target_name]["ef_r"]
         ef_nr_target = all_regions[target_name]["ef_nr"]
-        cif_h = cif_from_shares(hourly, ef_r_target, ef_nr_target)
-        cif_d = cif_from_shares(
-            daily.expand(-1, 24), ef_r_target, ef_nr_target)[:, :1]
-        cif_w = cif_from_shares(
-            weekly.expand(-1, 24), ef_r_target, ef_nr_target)[:, :1]
+        cif_h = hourly * ef_r_target + (1.0 - hourly) * ef_nr_target
+        cif_d = (daily.expand(-1, 24) * ef_r_target
+                 + (1.0 - daily.expand(-1, 24)) * ef_nr_target)[:, :1]
+        cif_w = (weekly.expand(-1, 24) * ef_r_target
+                 + (1.0 - weekly.expand(-1, 24)) * ef_nr_target)[:, :1]
         L_consist = consistency_loss(cif_h, cif_d, cif_w, ef_r_target, ef_nr_target)
 
         loss = L_hourly + L_daily + L_weekly + lambda_consist * L_consist
