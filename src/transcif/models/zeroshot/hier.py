@@ -179,7 +179,7 @@ def train_hier(all_regions, target_name, seed=42,
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
     # Gather data
-    xs, ys_share, ys_cif, cfgs = [], [], [], []
+    xs, ys_share, ys_cif, cfgs, mean_rs_list = [], [], [], [], []
     for name, data in all_regions.items():
         if name == target_name:
             continue
@@ -190,6 +190,7 @@ def train_hier(all_regions, target_name, seed=42,
         ys_share.append(y_win)
         ys_cif.append(y_cif_win)
         cfgs.append(np.tile(data["config"], (len(x_win), 1)))
+        mean_rs_list.append(np.full(len(x_win), data["mean_rs"], dtype=np.float32))
 
     if not xs:
         print(f"  [WARN] No source data for {target_name}")
@@ -199,31 +200,38 @@ def train_hier(all_regions, target_name, seed=42,
     y_share_all = torch.tensor(np.concatenate(ys_share), dtype=torch.float32)
     y_cif_all = torch.tensor(np.concatenate(ys_cif), dtype=torch.float32)
     c_all = torch.tensor(np.concatenate(cfgs), dtype=torch.float32)
+    mean_rs_all = torch.tensor(np.concatenate(mean_rs_list), dtype=torch.float32)
     n = len(x_all)
     batch_size = min(256, n)
 
     if device:
         x_all, y_share_all, y_cif_all, c_all = x_all.to(device), y_share_all.to(device), y_cif_all.to(device), c_all.to(device)
+        mean_rs_all = mean_rs_all.to(device)
 
     model.train()
     for epoch in range(epochs):
         idx = torch.randperm(n)[:batch_size]
         x_b, y_s_b, y_cif_b, c_b = x_all[idx], y_share_all[idx], y_cif_all[idx], c_all[idx]
+        mean_rs_b = mean_rs_all[idx]
 
         hourly, daily, weekly = model(x_b, c_b)
 
         # Hourly share loss
         L_hourly = F.l1_loss(hourly, y_s_b)
 
-        # Daily target: mean of 24h true share
+        # Daily target: mean of the 24h true share in the window (short-term)
         daily_target = y_s_b.mean(dim=1, keepdim=True)
         L_daily = F.l1_loss(daily, daily_target)
 
-        # Weekly target: mean of last 168h (approximate)
-        weekly_target = y_s_b.mean(dim=1, keepdim=True)
+        # Weekly target: the region's long-run renewable share (week-level prior),
+        # which differs from the window-mean and gives the weekly head a distinct
+        # supervisory signal instead of collapsing onto the daily target.
+        weekly_target = mean_rs_b.unsqueeze(1)
         L_weekly = F.l1_loss(weekly, weekly_target)
 
-        # Consistency: CIF-level physics consistency (keep gradients for training)
+        # Consistency: CIF-level physics consistency (keep gradients for training).
+        # hourly vs daily captures short-term bias; daily vs weekly captures the
+        # drift between short-term and long-run behaviour.
         ef_r_target = all_regions[target_name]["ef_r"]
         ef_nr_target = all_regions[target_name]["ef_nr"]
         cif_h = hourly * ef_r_target + (1.0 - hourly) * ef_nr_target

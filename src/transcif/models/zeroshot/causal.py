@@ -237,13 +237,23 @@ def train_causal_zero_shot(all_regions, target_name, seed=42,
             continue
         region_data.append({
             "name": name,
+            "mean_rs": data["mean_rs"],
             "x": torch.tensor(x_win, dtype=torch.float32),
             "y_share": torch.tensor(y_win, dtype=torch.float32),
             "y_cif": torch.tensor(y_cif_win, dtype=torch.float32),
             "config": torch.tensor(
                 np.tile(data["config"], (len(x_win), 1)), dtype=torch.float32),
-            "domain_id": float(hash(name) % 2),  # pseudo domain label
         })
+
+    # Stable, informative domain split for the adversarial term: regions with
+    # renewable share above vs below the source-median.  Replaces the previous
+    # ``hash(name) % 2`` which was non-deterministic across processes and gave
+    # the domain classifier no real signal to push against.
+    if region_data:
+        rs_vals = np.array([rd["mean_rs"] for rd in region_data])
+        median_rs = float(np.median(rs_vals))
+        for rd in region_data:
+            rd["domain_id"] = float(rd["mean_rs"] >= median_rs)
 
     if not region_data:
         print(f"  [WARN] No source data for {target_name}")

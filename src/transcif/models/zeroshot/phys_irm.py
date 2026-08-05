@@ -49,6 +49,12 @@ def train_phys_irm(all_regions, target_name, seed=42, epochs=200, lr=1e-3,
     model.train()
     log = []
     names = list(region_data.keys())
+    # Physics-consistency must use the TARGET's emission factors, because at
+    # inference time the share prediction is converted to CIF with the target's
+    # ef_r / ef_nr.  Training with each source region's own factors would
+    # create a train/serving mismatch.
+    ef_r_tgt = all_regions[target_name]["ef_r"]
+    ef_nr_tgt = all_regions[target_name]["ef_nr"]
     for epoch in range(epochs):
         total_irm_penalty = 0.0
         n_regions = 0
@@ -64,8 +70,9 @@ def train_phys_irm(all_regions, target_name, seed=42, epochs=200, lr=1e-3,
             s_pred = model(x_b, c_b)
             # base share loss
             L_share = torch.abs(s_pred - y_s_b).mean()
-            # physics-consistency: CIF predicted via physics vs true CIF
-            cif_pred = cif_from_shares(s_pred, rd["ef_r"], rd["ef_nr"])
+            # physics-consistency: CIF predicted via physics vs true CIF,
+            # expressed with the target region's emission factors.
+            cif_pred = cif_from_shares(s_pred, ef_r_tgt, ef_nr_tgt)
             L_cif = torch.abs(cif_pred - rd["y_cif"][idx]).mean()
             # IRM penalty: variance of per-sample loss across the region batch
             sample_loss = torch.abs(s_pred - y_s_b).mean(dim=1)
@@ -102,7 +109,7 @@ def train_phys_weighted_only(all_regions, target_name, seed=42, epochs=200,
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
-    xs, ys, cfgs, ef_r_list, ef_nr_list = [], [], [], [], []
+    xs, ys, y_cifs, cfgs, ef_r_list, ef_nr_list = [], [], [], [], [], []
     for name, data in all_regions.items():
         if name == target_name:
             continue
@@ -111,12 +118,14 @@ def train_phys_weighted_only(all_regions, target_name, seed=42, epochs=200,
             continue
         xs.append(x_win)
         ys.append(y_win)
+        y_cifs.append(y_cif_win)
         cfgs.append(np.tile(data["config"], (len(x_win), 1)))
         ef_r_list.append(np.full(len(x_win), data["ef_r"], dtype=np.float32))
         ef_nr_list.append(np.full(len(x_win), data["ef_nr"], dtype=np.float32))
 
     x_all = torch.tensor(np.concatenate(xs), dtype=torch.float32)
     y_s_all = torch.tensor(np.concatenate(ys), dtype=torch.float32)
+    y_cif_all = torch.tensor(np.concatenate(y_cifs), dtype=torch.float32)
     c_all = torch.tensor(np.concatenate(cfgs), dtype=torch.float32)
     ef_r_all = torch.tensor(np.concatenate(ef_r_list), dtype=torch.float32)
     ef_nr_all = torch.tensor(np.concatenate(ef_nr_list), dtype=torch.float32)
@@ -124,18 +133,24 @@ def train_phys_weighted_only(all_regions, target_name, seed=42, epochs=200,
     batch_size = min(512, n)
 
     model.train()
+    # Ablation baseline for Phys-IRM: physics-weighted share training WITH the
+    # CIF consistency loss but WITHOUT the IRM variance penalty.  This isolates
+    # the contribution of the IRM term.  The CIF target is reconstructed from
+    # each source region's own emission factors (consistent with its y_cif).
     for epoch in range(epochs):
         idx = torch.randperm(n)[:batch_size]
         x_b, y_s_b, c_b = x_all[idx], y_s_all[idx], c_all[idx]
         ef_r_b, ef_nr_b = ef_r_all[idx], ef_nr_all[idx]
+        y_cif_b = y_cif_all[idx]
         if device:
             x_b, y_s_b, c_b = x_b.to(device), y_s_b.to(device), c_b.to(device)
             ef_r_b, ef_nr_b = ef_r_b.to(device), ef_nr_b.to(device)
+            y_cif_b = y_cif_b.to(device)
         s_pred = model(x_b, c_b)
         L_share = torch.abs(s_pred - y_s_b).mean()
         cif_pred = cif_from_shares(s_pred, ef_r_b, ef_nr_b)
-        # we do not have per-sample y_cif here; use share reconstruction only
-        loss = L_share
+        L_cif = torch.abs(cif_pred - y_cif_b).mean()
+        loss = L_share + lambda_cif * L_cif
         optimizer.zero_grad()
         loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), 1.0)

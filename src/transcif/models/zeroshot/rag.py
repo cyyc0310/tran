@@ -23,11 +23,17 @@ from transcif.physics.decompose import cif_from_shares
 # ---------------------------------------------------------------------------
 
 class RagMemoryBank:
-    """Stores (context_window, target_cif) pairs from source regions."""
+    """Stores (context_window, target_share) pairs from source regions.
+
+    NOTE: the retrieval target is the *renewable share* (in [0, 1]), NOT the
+    CIF.  The RAG bias is added on top of the model's share prediction, so the
+    two must share the same units; converting to CIF only happens once at the
+    very end via ``cif_from_shares``.
+    """
 
     def __init__(self):
         self.contexts = []   # list of np.float32 arrays (SEQ_LEN,)
-        self.targets = []    # list of np.float32 arrays (HORIZON,)
+        self.targets = []    # list of np.float32 arrays (HORIZON,) — share
 
     def add(self, context, target):
         self.contexts.append(np.asarray(context, np.float32).ravel())
@@ -114,7 +120,9 @@ def train_rag_zero_shot(all_regions, target_name, seed=42,
         n = len(arr) - SEQ_LEN - HORIZON
         for t in range(0, n, 6):
             ctx = arr[t:t + SEQ_LEN]
-            tgt = data["cif"][t + SEQ_LEN:t + SEQ_LEN + HORIZON].astype(np.float32)
+            # Store the renewable SHARE as the retrieval target (not CIF) so the
+            # RAG bias stays in the same units as the model's share prediction.
+            tgt = arr[t + SEQ_LEN:t + SEQ_LEN + HORIZON].astype(np.float32)
             bank.add(ctx, tgt)
             xs.append(ctx)
             ys.append(arr[t + SEQ_LEN:t + SEQ_LEN + HORIZON])
