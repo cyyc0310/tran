@@ -18,11 +18,20 @@ external/
 
 # partial / temp results
 *.partial.json
+scripts/results/
+scripts/**/results/
 
 # macOS / editor / agent junk
 .DS_Store
 .claude/
 .superpowers/
+
+# build / install metadata (editable install)
+*.egg-info/
+build/
+dist/
+*.egg
+
 
 # accidental nested project copy
 未命名/
