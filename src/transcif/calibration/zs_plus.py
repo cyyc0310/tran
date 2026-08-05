@@ -38,9 +38,10 @@ def zs_plus_predict(model, config, rs, cif, ef_r, ef_nr, origins,
 
     def branch_preds(t0):
         if t0 not in branch_cache:
-            x = torch.tensor(rs[t0 - SEQ_LEN:t0], dtype=torch.float32).unsqueeze(0)
+            dev = next(model.parameters()).device
+            x = torch.tensor(rs[t0 - SEQ_LEN:t0], dtype=torch.float32).unsqueeze(0).to(dev)
             with torch.no_grad():
-                s_raw = model(x, cfg1).numpy()[0]
+                s_raw = model(x, cfg1.to(dev)).cpu().numpy()[0]
             s = np.clip(s_raw - s_raw.mean() + rs[t0 - ANCHOR_WIN:t0].mean(), 0.0, 1.0)
             delta = (cif[t0 - RESID_WIN:t0]
                      - cif_from_shares(rs[t0 - RESID_WIN:t0], ef_r, ef_nr)).mean()

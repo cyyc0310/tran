@@ -334,6 +334,7 @@ def predict_icl_zs(model, all_regions, target_name, x_rs_test, ef_r, ef_nr,
     regions, construct context, and predict share via ICL transformer.
     """
     model.eval()
+    dev = next(model.parameters()).device
     cif_preds = []
 
     for i in range(len(x_rs_test)):
@@ -350,12 +351,12 @@ def predict_icl_zs(model, all_regions, target_name, x_rs_test, ef_r, ef_nr,
         values, roles = build_context(
             target_window[-24:], ex_w, ex_o, horizon=24)
 
-        v_t = torch.tensor(values)
-        r_t = torch.tensor(roles, dtype=torch.long)
+        v_t = torch.tensor(values).to(dev)
+        r_t = torch.tensor(roles, dtype=torch.long).to(dev)
 
         with torch.no_grad():
             pred = model(v_t.squeeze(0).unsqueeze(0), r_t.squeeze(0).unsqueeze(0))
-            share = pred.numpy().squeeze(0)
+            share = pred.cpu().numpy().squeeze(0)
 
         cif_preds.append(cif_from_shares(share, ef_r, ef_nr))
 

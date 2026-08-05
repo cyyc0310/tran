@@ -164,13 +164,14 @@ def train_rag_zero_shot(all_regions, target_name, seed=42,
 def predict_rag_zs(model, bank, x_rs, config, ef_r, ef_nr, k=5):
     """Zero-shot prediction with RAG retrieval + physics conversion."""
     model.eval()
-    x_t = torch.tensor(x_rs, dtype=torch.float32)
-    c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1)
+    dev = next(model.parameters()).device
+    x_t = torch.tensor(x_rs, dtype=torch.float32).to(dev)
+    c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1).to(dev)
     rag_list = []
     for i in range(len(x_rs)):
         _, tgts = bank.retrieve(x_rs[i], k=k)
         rag_list.append(np.mean(tgts, axis=0) if tgts else np.zeros(HORIZON, np.float32))
-    rag_t = torch.tensor(np.stack(rag_list), dtype=torch.float32)
+    rag_t = torch.tensor(np.stack(rag_list), dtype=torch.float32).to(dev)
     with torch.no_grad():
-        s_pred = model(x_t, c_t, rag_target=rag_t).numpy()
+        s_pred = model(x_t, c_t, rag_target=rag_t).cpu().numpy()
     return cif_from_shares(s_pred, ef_r, ef_nr)

@@ -121,6 +121,12 @@ def evaluate_target(target_name, all_regions, seed=42,
     random.seed(seed)
     np.random.seed(seed)
 
+    # Use CUDA when available so every method (PatchTST, ZS, ZS+, and all
+    # optional direction methods) trains/inferes on the GPU.  Each predict
+    # routine follows the model's own device, so we only need to pass `device`
+    # into the trainers and move the few tensors we build inline here.
+    device = "cuda" if torch.cuda.is_available() else None
+
     data = all_regions[target_name]
     rs, cif = data["rs"], data["cif"]
     ef_r, ef_nr = data["ef_r"], data["ef_nr"]
@@ -154,19 +160,23 @@ def evaluate_target(target_name, all_regions, seed=42,
     results["persistence"] = compute_metrics(persist_pred, y_cif_test)
 
     # 2. PatchTST supervised
-    ptst = train_patchtst(x_cif_train, y_cif_train, epochs=EPOCHS_SUPERVISED)
+    ptst = train_patchtst(x_cif_train, y_cif_train, epochs=EPOCHS_SUPERVISED,
+                          device=device)
     with torch.no_grad():
-        ptst_pred = ptst(torch.tensor(x_cif_test, dtype=torch.float32)).numpy()
+        ptst_pred = ptst(
+            torch.tensor(x_cif_test, dtype=torch.float32).to(device)).numpy()
     results["patchtst_sup"] = compute_metrics(ptst_pred, y_cif_test)
 
     # 3. TransCIF zero-shot
     zs_model = train_zero_shot(all_regions, target_name, seed=seed,
                                model_class=model_class,
-                               use_ramp_loss=use_ramp_loss)
-    target_cfg = torch.tensor(data["config"]).unsqueeze(0).expand(len(x_rs_test), -1)
+                               use_ramp_loss=use_ramp_loss, device=device)
+    target_cfg = torch.tensor(data["config"]).unsqueeze(0).expand(
+        len(x_rs_test), -1).to(device)
     with torch.no_grad():
-        zs_rs_pred = zs_model(torch.tensor(x_rs_test, dtype=torch.float32),
-                              target_cfg).numpy()
+        zs_rs_pred = zs_model(
+            torch.tensor(x_rs_test, dtype=torch.float32).to(device),
+            target_cfg).numpy()
     zs_cif_pred = cif_from_shares(zs_rs_pred, ef_r, ef_nr)
     results["transcif_zs"] = compute_metrics(zs_cif_pred, y_cif_test)
 
@@ -182,7 +192,8 @@ def evaluate_target(target_name, all_regions, seed=42,
             print(f"    [RAG] training...", end="", flush=True)
             from transcif.models.zeroshot.rag import (RagMemoryBank, RagDLinear,
                                                       train_rag_zero_shot, predict_rag_zs)
-            rag_model, bank = train_rag_zero_shot(all_regions, target_name, seed=seed)
+            rag_model, bank = train_rag_zero_shot(all_regions, target_name, seed=seed,
+                                                  device=device)
             cif_rag = predict_rag_zs(rag_model, bank, x_rs_test.astype(np.float32),
                                      data["config"].astype(np.float32), ef_r, ef_nr)
             results["transcif_rag"] = compute_metrics(cif_rag, y_cif_test)
@@ -201,7 +212,8 @@ def evaluate_target(target_name, all_regions, seed=42,
             from transcif.models.zeroshot.phys_irm import (train_phys_irm,
                                                            predict_phys_irm)
             phys_model, phys_log = train_phys_irm(
-                all_regions, target_name, seed=seed, gamma_irm=0.1, lambda_cif=0.5)
+                all_regions, target_name, seed=seed, gamma_irm=0.1,
+                lambda_cif=0.5, device=device)
             cif_phys = predict_phys_irm(phys_model, x_rs_test.astype(np.float32),
                                         data["config"].astype(np.float32), ef_r, ef_nr)
             results["transcif_phys_irm"] = compute_metrics(cif_phys, y_cif_test)
@@ -209,7 +221,7 @@ def evaluate_target(target_name, all_regions, seed=42,
                 results["transcif_zs"]["mae"], 1e-6)
             from transcif.models.zeroshot.phys_irm import train_phys_weighted_only
             pw_model, _ = train_phys_weighted_only(
-                all_regions, target_name, seed=seed, lambda_cif=0.5)
+                all_regions, target_name, seed=seed, lambda_cif=0.5, device=device)
             cif_pw = predict_phys_irm(pw_model, x_rs_test.astype(np.float32),
                                       data["config"].astype(np.float32), ef_r, ef_nr)
             results["transcif_phys_weighted"] = compute_metrics(cif_pw, y_cif_test)
@@ -228,7 +240,8 @@ def evaluate_target(target_name, all_regions, seed=42,
             print(f"    [Causal] training...", end="", flush=True)
             from transcif.models.zeroshot.causal import (train_causal_zero_shot,
                                                          predict_causal_zs)
-            causal_model, _ = train_causal_zero_shot(all_regions, target_name, seed=seed)
+            causal_model, _ = train_causal_zero_shot(
+                all_regions, target_name, seed=seed, device=device)
             cif_causal = predict_causal_zs(
                 causal_model, x_rs_test.astype(np.float32),
                 data["config"].astype(np.float32), ef_r, ef_nr)
@@ -246,7 +259,7 @@ def evaluate_target(target_name, all_regions, seed=42,
             print(f"    [ICL] training...", end="", flush=True)
             from transcif.models.zeroshot.icl import (ICTransformer, train_icl,
                                                       predict_icl_zs)
-            icl_model = train_icl(all_regions, target_name, seed=seed)
+            icl_model = train_icl(all_regions, target_name, seed=seed, device=device)
             cif_icl = predict_icl_zs(
                 icl_model, all_regions, target_name,
                 x_rs_test.astype(np.float32), ef_r, ef_nr)
@@ -263,7 +276,7 @@ def evaluate_target(target_name, all_regions, seed=42,
         try:
             print(f"    [Hier] training...", end="", flush=True)
             from transcif.models.zeroshot.hier import train_hier, predict_hier_zs
-            hier_model = train_hier(all_regions, target_name, seed=seed)
+            hier_model = train_hier(all_regions, target_name, seed=seed, device=device)
             cif_hier = predict_hier_zs(
                 hier_model, x_rs_test.astype(np.float32),
                 data["config"].astype(np.float32), ef_r, ef_nr)

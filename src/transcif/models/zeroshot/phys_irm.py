@@ -163,10 +163,11 @@ def train_phys_weighted_only(all_regions, target_name, seed=42, epochs=200,
 def predict_phys_irm(model, x_rs, config, ef_r, ef_nr):
     """Zero-shot inference: share prediction -> physics CIF conversion."""
     model.eval()
-    x_t = torch.tensor(x_rs, dtype=torch.float32)
-    c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1)
+    dev = next(model.parameters()).device
+    x_t = torch.tensor(x_rs, dtype=torch.float32).to(dev)
+    c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1).to(dev)
     with torch.no_grad():
-        s_pred = model(x_t, c_t).numpy()
+        s_pred = model(x_t, c_t).cpu().numpy()
     return cif_from_shares(s_pred, ef_r, ef_nr)
 
 

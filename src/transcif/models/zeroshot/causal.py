@@ -356,12 +356,13 @@ def predict_causal_zs(model, x_rs, config, ef_r, ef_nr):
         cif_pred : (N, horizon) numpy CIF predictions
     """
     model.eval()
-    x_t = torch.tensor(x_rs, dtype=torch.float32)
-    c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1)
+    dev = next(model.parameters()).device
+    x_t = torch.tensor(x_rs, dtype=torch.float32).to(dev)
+    c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1).to(dev)
     with torch.no_grad():
         z_inv, z_spec, _, _, _, _ = model.encode(x_t, c_t)
         share_pred = model.predict_share(z_inv, c_t, x_t)
-    return cif_from_shares(share_pred.numpy(), ef_r, ef_nr)
+    return cif_from_shares(share_pred.cpu().numpy(), ef_r, ef_nr)
 
 
 def disentanglement_quality(model, x, config):

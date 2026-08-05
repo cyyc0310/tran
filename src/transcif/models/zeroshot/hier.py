@@ -258,11 +258,12 @@ def predict_hier_zs(model, x_rs, config, ef_r, ef_nr):
     Returns the hourly CIF predictions (primary output).
     """
     model.eval()
-    x_t = torch.tensor(x_rs, dtype=torch.float32)
-    c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1)
+    dev = next(model.parameters()).device
+    x_t = torch.tensor(x_rs, dtype=torch.float32).to(dev)
+    c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1).to(dev)
     with torch.no_grad():
         hourly, daily_avg, weekly_avg = model(x_t, c_t)
-    return cif_from_shares(hourly.numpy(), ef_r, ef_nr)
+    return cif_from_shares(hourly.cpu().numpy(), ef_r, ef_nr)
 
 
 def compute_debias_metric(model, x_test, config, ef_r, ef_nr, y_cif_test):
