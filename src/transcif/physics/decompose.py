@@ -18,12 +18,18 @@ def cif_from_shares(rs, ef_r, ef_nr):
         rs    : renewable share in [0, 1] (scalar or array).  Accepts a numpy
                 array or a torch tensor (including one that requires grad —
                 it is detached internally so this is safe inside training loops).
-        ef_r  : renewable emission factor (tCO2/MWh)
-        ef_nr : non-renewable emission factor (tCO2/MWh)
+        ef_r  : renewable emission factor (tCO2/MWh).  Accepts a scalar, numpy
+                array, or torch tensor; converted to numpy internally.
+        ef_nr : non-renewable emission factor (tCO2/MWh).  Same as ef_r.
 
     Returns CIF in gCO2/kWh as a numpy array.  In gCO2/kWh the identity is
     ``rs*ef_r + (1-rs)*ef_nr`` (1 tCO2/MWh == 1000 gCO2/kWh, factors cancel).
     """
     if isinstance(rs, torch.Tensor):
         rs = rs.detach().cpu().numpy()
-    return np.asarray(rs) * ef_r + (1.0 - np.asarray(rs)) * ef_nr
+    if isinstance(ef_r, torch.Tensor):
+        ef_r = ef_r.detach().cpu().numpy()
+    if isinstance(ef_nr, torch.Tensor):
+        ef_nr = ef_nr.detach().cpu().numpy()
+    rs = np.asarray(rs, dtype=np.float64)
+    return rs * ef_r + (1.0 - rs) * ef_nr
