@@ -10,8 +10,10 @@ scipy>=1.12,<2.0
 # — Visualization (scripts / paper figures) —
 matplotlib>=3.8,<4.0
 
-# — AU NEM data pipeline (optional) —
-nemed>=0.2
+# — AU NEM data pipeline —
+# NOTE: nemed lives in its OWN Python 3.11 venv (`.venv-nemed311`), NOT here.
+# All nemed releases pin pandas<2.0, which conflicts with the pandas>=2.2 above
+# (and the rest of this repo). See requirements-nemed.txt and README "AU NEM data".
 
 # — Testing —
 pytest>=8.0,<9.0

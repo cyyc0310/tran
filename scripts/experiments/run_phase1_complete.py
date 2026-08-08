@@ -22,7 +22,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 # Configuration
 # ---------------------------------------------------------------------------
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data_2023"
+DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data_2023"
 SEQ_LEN = 336   # 14 days
 HORIZON = 24    # 24-hour ahead
 TRAIN_STRIDE = 6

@@ -31,17 +31,31 @@ FUSION_MENU = (
 
 
 def zs_plus_predict(model, config, rs, cif, ef_r, ef_nr, origins,
-                    horizon=HORIZON, fusion=None):
-    """Test-time calibrated zero-shot prediction (TransCIF-ZS+)."""
+                    horizon=HORIZON, fusion=None, share_fn=None):
+    """Test-time calibrated zero-shot prediction (TransCIF-ZS+).
+
+    Args:
+        model    : a zero-shot model exposing ``model(x, config) -> share``.
+                   Ignored when ``share_fn`` is provided.
+        share_fn : optional callable ``share_fn(x_window_np) -> share_np``
+                   (shape ``(horizon,)``).  When given, it replaces the
+                   ``model(x, cfg1)`` call inside branch 0/5, letting models
+                   with a different forward signature (RAG/Causal/ICL) reuse
+                   the same calibration pipeline.
+    """
     cfg1 = torch.tensor(config).unsqueeze(0)
     branch_cache = {}
 
     def branch_preds(t0):
         if t0 not in branch_cache:
-            dev = next(model.parameters()).device
-            x = torch.tensor(rs[t0 - SEQ_LEN:t0], dtype=torch.float32).unsqueeze(0).to(dev)
-            with torch.no_grad():
-                s_raw = model(x, cfg1.to(dev)).cpu().numpy()[0]
+            dev = next(model.parameters()).device if share_fn is None else None
+            x_win = rs[t0 - SEQ_LEN:t0]
+            if share_fn is not None:
+                s_raw = np.asarray(share_fn(x_win), dtype=np.float64).ravel()
+            else:
+                x = torch.tensor(x_win, dtype=torch.float32).unsqueeze(0).to(dev)
+                with torch.no_grad():
+                    s_raw = model(x, cfg1.to(dev)).cpu().numpy()[0]
             s = np.clip(s_raw - s_raw.mean() + rs[t0 - ANCHOR_WIN:t0].mean(), 0.0, 1.0)
             delta = (cif[t0 - RESID_WIN:t0]
                      - cif_from_shares(rs[t0 - RESID_WIN:t0], ef_r, ef_nr)).mean()

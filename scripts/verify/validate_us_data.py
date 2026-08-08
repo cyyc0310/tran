@@ -15,6 +15,7 @@ import torch
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo scripts/ root
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "experiments"))  # scripts/experiments
 from run_phase1_complete import (
     DATA_DIR, AU_REGIONS, discover_uk_regions, UK_REGIONS,
     load_region_data, build_windows, cif_from_shares,

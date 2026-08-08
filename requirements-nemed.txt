@@ -1,0 +1,16 @@
+# Isolated requirements for the AEMO/NEMED data-generation venv (`.venv-nemed311`).
+# Install SEPARATELY from the main project — do NOT add to the main requirements.txt.
+#
+#   python3.11 -m venv .venv-nemed311
+#   source .venv-nemed311/bin/activate
+#   pip install -r requirements-nemed.txt
+#   python scripts/generate_nemed_regions.py --validate
+#
+# nemed pins pandas<2.0 (incompatible with this repo's pandas>=2.2), so it cannot
+# share an environment with the main project. Pin 0.3.3 because that is the exact
+# release scripts/generate_nemed_regions.py was written and validated against.
+nemed==0.3.3
+# pandas 1.5.3's C extensions were built against the numpy 1.x ABI; numpy>=2.0
+# changes the dtype struct size and breaks the pandas import with
+# "numpy.dtype size changed". Pin numpy<2.0 to match.
+numpy<2.0

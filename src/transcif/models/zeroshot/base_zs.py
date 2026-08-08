@@ -28,6 +28,7 @@ from transcif.training.augment import MissingMaskAugmentor
 from transcif.training.schedulers import get_cosine_warmup_scheduler
 from transcif.evaluation.metrics import compute_metrics
 from transcif.calibration.zs_plus import zs_plus_predict
+from transcif.training.progress import TrainProgress
 
 
 # When True (and CUDA is available), the optional direction methods are trained
@@ -40,7 +41,7 @@ USE_CUDA_STREAMS = True
 def train_zero_shot(all_regions, target_name, seed=42,
                     model_class=None, use_weighted=True,
                     use_ramp_loss=False, mask_augment_prob=0.0,
-                    epochs=EPOCHS_ZERO_SHOT, lr=1e-3, device=None):
+                    epochs=EPOCHS_ZERO_SHOT, lr=1e-3, device=None, pbar=None):
     """Train the zero-shot model on all source regions for one LORO target.
 
     Args:
@@ -110,7 +111,11 @@ def train_zero_shot(all_regions, target_name, seed=42,
         nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         optimizer.step()
         scheduler.step()
+        if pbar is not None:
+            pbar(epoch, epochs, loss.item())
     model.eval()
+    if pbar is not None:
+        pbar.finish()
     return model
 
 
@@ -168,22 +173,23 @@ def evaluate_target(target_name, all_regions, seed=42,
 
     # 2. PatchTST supervised
     ptst = train_patchtst(x_cif_train, y_cif_train, epochs=EPOCHS_SUPERVISED,
-                          device=device)
+                          device=device, pbar=TrainProgress("PatchTST"))
     with torch.no_grad():
         ptst_pred = ptst(
-            torch.tensor(x_cif_test, dtype=torch.float32).to(device)).numpy()
+            torch.tensor(x_cif_test, dtype=torch.float32).to(device)).cpu().numpy()
     results["patchtst_sup"] = compute_metrics(ptst_pred, y_cif_test)
 
     # 3. TransCIF zero-shot
     zs_model = train_zero_shot(all_regions, target_name, seed=seed,
                                model_class=model_class,
-                               use_ramp_loss=use_ramp_loss, device=device)
+                               use_ramp_loss=use_ramp_loss, device=device,
+                               pbar=TrainProgress("ZS"))
     target_cfg = torch.tensor(data["config"]).unsqueeze(0).expand(
         len(x_rs_test), -1).to(device)
     with torch.no_grad():
         zs_rs_pred = zs_model(
             torch.tensor(x_rs_test, dtype=torch.float32).to(device),
-            target_cfg).numpy()
+            target_cfg).cpu().numpy()
     zs_cif_pred = cif_from_shares(zs_rs_pred, ef_r, ef_nr)
     results["transcif_zs"] = compute_metrics(zs_cif_pred, y_cif_test)
 
@@ -219,8 +225,23 @@ def evaluate_target(target_name, all_regions, seed=42,
                                                       train_rag_zero_shot, predict_rag_zs)
             rag_model, bank = train_rag_zero_shot(
                 all_regions, target_name, seed=seed, device=device)
-            return predict_rag_zs(rag_model, bank, x_rs_test.astype(np.float32),
-                                   data["config"].astype(np.float32), ef_r, ef_nr)
+            cif_rag = predict_rag_zs(rag_model, bank, x_rs_test.astype(np.float32),
+                                     data["config"].astype(np.float32), ef_r, ef_nr)
+            # ZS+ calibration: share_fn retrieves from the bank for each window.
+            dev_rag = next(rag_model.parameters()).device
+            def _rag_share(x_win):
+                _, tgts, ds = bank.retrieve(x_win, k=5)
+                rag_t = np.mean(tgts, axis=0) if tgts else np.zeros(HORIZON, np.float32)
+                rag_d = np.array([[np.mean(ds)] if len(ds) else [0.0]], dtype=np.float32)
+                xt = torch.tensor(x_win, dtype=torch.float32).unsqueeze(0).to(dev_rag)
+                ct = torch.tensor(data["config"]).unsqueeze(0).to(dev_rag)
+                rt = torch.tensor(rag_t, dtype=torch.float32).unsqueeze(0).to(dev_rag)
+                rd = torch.tensor(rag_d).to(dev_rag)
+                with torch.no_grad():
+                    return rag_model(xt, ct, rag_target=rt, rag_dist=rd).cpu().numpy()[0]
+            cif_rag_plus = zs_plus_predict(
+                rag_model, data["config"], rs, cif, ef_r, ef_nr, origins, share_fn=_rag_share)
+            return cif_rag, cif_rag_plus
         direction_tasks.append(("rag", "RAG", _task_rag,
                                 "transcif_rag", "ratio_rag_vs_zs"))
 
@@ -234,11 +255,17 @@ def evaluate_target(target_name, all_regions, seed=42,
                 lambda_cif=0.5, device=device)
             cif_phys = predict_phys_irm(phys_model, x_rs_test.astype(np.float32),
                                         data["config"].astype(np.float32), ef_r, ef_nr)
+            # ZS+ calibration on the Phys-IRM model (same interface as base ZS:
+            # model(x, config) -> share).  Phys-IRM/Hier both expose this
+            # interface so they can reuse the test-time calibration pipeline.
+            cif_phys_plus = zs_plus_predict(
+                phys_model, data["config"], rs, cif, ef_r, ef_nr, origins)
             pw_model, _ = train_phys_weighted_only(
-                all_regions, target_name, seed=seed, lambda_cif=0.5, device=device)
+                all_regions, target_name, seed=seed, lambda_cif=0.5, device=device,
+                pbar=TrainProgress("PhysWt"))
             cif_pw = predict_phys_irm(pw_model, x_rs_test.astype(np.float32),
                                       data["config"].astype(np.float32), ef_r, ef_nr)
-            return cif_phys, cif_pw
+            return cif_phys, cif_pw, cif_phys_plus
         direction_tasks.append(("phys-irm", "Phys-IRM", _task_phys,
                                 "transcif_phys_irm", "ratio_phys_irm_vs_zs"))
 
@@ -248,40 +275,83 @@ def evaluate_target(target_name, all_regions, seed=42,
                                                          predict_causal_zs)
             causal_model, _ = train_causal_zero_shot(
                 all_regions, target_name, seed=seed, device=device)
-            return predict_causal_zs(
+            cif_causal = predict_causal_zs(
                 causal_model, x_rs_test.astype(np.float32),
                 data["config"].astype(np.float32), ef_r, ef_nr)
+            # ZS+ calibration: share_fn uses encode + predict_share.
+            dev_c = next(causal_model.parameters()).device
+            def _causal_share(x_win):
+                xt = torch.tensor(x_win, dtype=torch.float32).unsqueeze(0).to(dev_c)
+                ct = torch.tensor(data["config"]).unsqueeze(0).to(dev_c)
+                with torch.no_grad():
+                    z_inv, _, _, _, _, _ = causal_model.encode(xt, ct)
+                    return causal_model.predict_share(z_inv, ct, xt).cpu().numpy()[0]
+            cif_causal_plus = zs_plus_predict(
+                causal_model, data["config"], rs, cif, ef_r, ef_nr, origins, share_fn=_causal_share)
+            return cif_causal, cif_causal_plus
         direction_tasks.append(("causal", "Causal", _task_causal,
                                 "transcif_causal", "ratio_causal_vs_zs"))
 
     if use_icl:
         def _task_icl():
             from transcif.models.zeroshot.icl import (ICTransformer, train_icl,
-                                                      predict_icl_zs)
+                                                      predict_icl_zs, select_examples,
+                                                      build_context)
             icl_model = train_icl(all_regions, target_name, seed=seed, device=device)
-            return predict_icl_zs(
+            cif_icl = predict_icl_zs(
                 icl_model, all_regions, target_name,
                 x_rs_test.astype(np.float32), ef_r, ef_nr)
+            # ZS+ calibration: share_fn builds an ICL context per window.
+            dev_i = next(icl_model.parameters()).device
+            def _icl_share(x_win):
+                ex_w, ex_o = select_examples(
+                    all_regions, target_name, x_win, n_examples=3, horizon=24)
+                while len(ex_w) < 3:
+                    ex_w.append(np.zeros(24, dtype=np.float32))
+                    ex_o.append(np.zeros(24, dtype=np.float32))
+                values, roles = build_context(x_win[-24:], ex_w, ex_o, horizon=24)
+                v_t = torch.tensor(values).to(dev_i)
+                r_t = torch.tensor(roles, dtype=torch.long).to(dev_i)
+                with torch.no_grad():
+                    return icl_model(v_t.squeeze(0).unsqueeze(0),
+                                     r_t.squeeze(0).unsqueeze(0)).cpu().numpy()[0]
+            cif_icl_plus = zs_plus_predict(
+                icl_model, data["config"], rs, cif, ef_r, ef_nr, origins, share_fn=_icl_share)
+            return cif_icl, cif_icl_plus
         direction_tasks.append(("icl", "ICL", _task_icl,
                                 "transcif_icl", "ratio_icl_vs_zs"))
 
     if use_hier:
         def _task_hier():
             from transcif.models.zeroshot.hier import train_hier, predict_hier_zs
-            hier_model = train_hier(all_regions, target_name, seed=seed, device=device)
-            return predict_hier_zs(
+            hier_model = train_hier(all_regions, target_name, seed=seed, device=device,
+                                    pbar=TrainProgress("Hier"))
+            cif_hier = predict_hier_zs(
                 hier_model, x_rs_test.astype(np.float32),
                 data["config"].astype(np.float32), ef_r, ef_nr)
+            # ZS+ calibration.  HierDLinear.forward returns (hourly, daily,
+            # weekly); wrap it so zs_plus_predict sees a model(x, config) that
+            # returns only the hourly share head (what the physics layer uses).
+            class _HierShareWrapper(nn.Module):
+                def __init__(self, m):
+                    super().__init__()
+                    self.m = m
+                def forward(self, x, config):
+                    return self.m(x, config)[0]
+            cif_hier_plus = zs_plus_predict(
+                _HierShareWrapper(hier_model), data["config"], rs, cif, ef_r, ef_nr, origins)
+            return cif_hier, cif_hier_plus
         direction_tasks.append(("hier", "Hier", _task_hier,
                                 "transcif_hier", "ratio_hier_vs_zs"))
 
     # Launch concurrently on separate streams (or serially as a fallback).
+    # Each task carries its own TrainProgress bar (written to stderr); in
+    # concurrent-stream mode the bars interleave but still show live loss.
     outcomes = {}  # flag -> ("ok", payload) | ("err", msg)
     if use_streams and direction_tasks:
         streams = {flag: torch.cuda.Stream() for flag, _, _, _, _ in direction_tasks}
         launched = {}
         for flag, label, task, _, _ in direction_tasks:
-            print(f"    [{label}] training...", end="", flush=True)
             s = streams[flag]
             def _run(task=task, s=s):  # capture defaults
                 try:
@@ -295,10 +365,8 @@ def evaluate_target(target_name, all_regions, seed=42,
             outcomes[flag] = (status, payload)
     else:
         for flag, label, task, _, _ in direction_tasks:
-            print(f"    [{label}] training...", end="", flush=True)
             try:
                 outcomes[flag] = ("ok", task())
-                print(" done", flush=True)
             except Exception as e:  # noqa: BLE001
                 outcomes[flag] = ("err", e)
 
@@ -308,7 +376,7 @@ def evaluate_target(target_name, all_regions, seed=42,
         status, payload = outcomes.get(flag, ("err", None))
         if status == "ok":
             if flag == "phys-irm":
-                cif_phys, cif_pw = payload
+                cif_phys, cif_pw, cif_phys_plus = payload
                 results["transcif_phys_irm"] = compute_metrics(cif_phys, y_cif_test)
                 results["ratio_phys_irm_vs_zs"] = (
                     results["transcif_phys_irm"]["mae"] / max(zs_mae, 1e-6))
@@ -318,12 +386,22 @@ def evaluate_target(target_name, all_regions, seed=42,
                 results["irm_benefit"] = (
                     results["transcif_phys_irm"]["mae"]
                     / max(results["transcif_phys_weighted"]["mae"], 1e-6))
+                results["transcif_phys_irm_plus"] = compute_metrics(cif_phys_plus, y_cif_test)
+                results["ratio_phys_irm_plus_vs_zs_plus"] = (
+                    results["transcif_phys_irm_plus"]["mae"]
+                    / max(results["transcif_zs_plus"]["mae"], 1e-6))
+            elif isinstance(payload, tuple):
+                # (raw_cif, plus_cif) — RAG / Causal / ICL / Hier
+                cif_raw, cif_plus = payload
+                results[key] = compute_metrics(cif_raw, y_cif_test)
+                results[ratio_key] = results[key]["mae"] / max(zs_mae, 1e-6)
+                results[key + "_plus"] = compute_metrics(cif_plus, y_cif_test)
+                results["ratio_" + flag.replace("-", "_") + "_plus_vs_zs_plus"] = (
+                    results[key + "_plus"]["mae"]
+                    / max(results["transcif_zs_plus"]["mae"], 1e-6))
             else:
                 results[key] = compute_metrics(payload, y_cif_test)
-                results[ratio_key] = results[key]["mae"] / max(zs_mae, 1e-6)
-            # In stream mode "training..." was printed at launch; finish the line.
-            if use_streams and direction_tasks:
-                print(" done", flush=True)
+                results[ratio_key] =                 results[key]["mae"] / max(zs_mae, 1e-6)
         else:
             e = payload
             results[key] = None

@@ -36,6 +36,7 @@ import torch.nn.functional as F
 
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
+from transcif.training.schedulers import get_cosine_warmup_scheduler
 
 
 # ---------------------------------------------------------------------------
@@ -103,7 +104,7 @@ class ICTransformer(nn.Module):
             norm_first=True, activation='gelu')
         self.transformer = nn.TransformerEncoder(
             encoder_layer, num_layers=n_layers,
-            norm=nn.LayerNorm(d_model))
+            norm=nn.LayerNorm(d_model), enable_nested_tensor=False)
 
         # Predict share values for query positions only
         self.pred_head = nn.Sequential(
@@ -221,9 +222,14 @@ def select_examples(all_regions, target_name, target_window, n_examples=3,
         x_win, y_win, _ = build_windows(data["rs"], data["cif"])
         if len(x_win) == 0:
             continue
-        # Input similarity: last horizon of target vs last horizon of each window
-        target_tail = target_window[-horizon:].reshape(1, -1)
-        sims = -np.linalg.norm(x_win[:, -horizon:] - target_tail, axis=1)
+        # Input similarity: compare the FULL target window to the full source
+        # window (not just the last horizon) — a longer context yields more
+        # stable neighbour matching.  Source windows are SEQ_LEN wide; the
+        # target window passed in is also SEQ_LEN wide.
+        target_full = target_window.reshape(1, -1)
+        src_full = x_win[:, :target_full.shape[1]] if x_win.shape[1] >= target_full.shape[1] \
+            else x_win
+        sims = -np.linalg.norm(src_full - target_full[:, :src_full.shape[1]], axis=1)
         best_idx = int(np.argmax(sims))
         score = sims[best_idx] - 0.1 * config_dist  # combined
         scores.append((name, score, best_idx, x_win, y_win))
@@ -246,7 +252,7 @@ def select_examples(all_regions, target_name, target_window, n_examples=3,
 # ---------------------------------------------------------------------------
 
 def train_icl(all_regions, target_name, seed=42, n_examples=3,
-               epochs=200, lr=1e-3, device=None):
+               epochs=200, lr=1e-3, device=None, pbar=None):
     """Train ICTransformer with ICL format on source regions.
 
     Training: for each batch, randomly pick m examples from source regions,
@@ -260,43 +266,53 @@ def train_icl(all_regions, target_name, seed=42, n_examples=3,
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler = get_cosine_warmup_scheduler(optimizer, max(1, epochs // 10), epochs)
 
-    # Gather source data
+    # Gather source data with config-distance weights (matches base TransCIF-ZS)
+    target_mean_rs = all_regions[target_name]["mean_rs"]
     region_windows = {}
+    region_weights = {}
     for name, data in all_regions.items():
         if name == target_name:
             continue
         x_win, y_win, _ = build_windows(data["rs"], data["cif"])
         if len(x_win) > 0:
             region_windows[name] = (x_win, y_win, data["config"])
+            dist = abs(data["mean_rs"] - target_mean_rs)
+            region_weights[name] = 1.0 / (dist + 0.05)
 
     if not region_windows:
         print(f"  [WARN] No source data for {target_name}")
         return model, []
 
     region_names = list(region_windows.keys())
+    # Normalised sampling weights over regions (config-distance biased)
+    w_vals = np.array([region_weights[n] for n in region_names], dtype=np.float64)
+    region_probs = w_vals / w_vals.sum()
     model.train()
 
     for epoch in range(epochs):
         total_loss = 0.0
         n_iters = 0
 
-        for _ in range(4):  # 4 batches per epoch
-            # Pick a random "query" region from sources
-            query_name = random.choice(region_names)
+        for _ in range(32):  # 32 batches per epoch (was 4 — undertrained)
+            # Pick a config-weighted "query" region from sources
+            query_name = np.random.choice(region_names, p=region_probs)
             q_x_win, q_y_win, q_cfg = region_windows[query_name]
             q_idx = random.randrange(len(q_x_win))
             query_x = q_x_win[q_idx, -24:]  # last H as query input
             query_y = q_y_win[q_idx]
 
-            # Select examples from OTHER regions
+            # Select examples from OTHER regions (also config-weighted)
             ex_windows, ex_outputs = [], []
             candidates = [n for n in region_names if n != query_name]
             if len(candidates) < n_examples:
                 candidates = region_names  # fallback (allow self)
+            cand_w = np.array([region_weights[n] for n in candidates], dtype=np.float64)
+            cand_probs = cand_w / cand_w.sum()
 
             for i in range(n_examples):
-                ex_name = random.choice(candidates)
+                ex_name = np.random.choice(candidates, p=cand_probs)
                 ex_x_win, ex_y_win, _ = region_windows[ex_name]
                 ex_idx = random.randrange(len(ex_x_win))
                 ex_windows.append(ex_x_win[ex_idx, -24:])
@@ -322,7 +338,13 @@ def train_icl(all_regions, target_name, seed=42, n_examples=3,
             nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             optimizer.step()
 
+        scheduler.step()
+        if pbar is not None:
+            pbar(epoch, epochs, total_loss / max(n_iters, 1))
+
     model.eval()
+    if pbar is not None:
+        pbar.finish()
     return model
 
 

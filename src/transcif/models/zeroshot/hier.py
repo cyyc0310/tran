@@ -37,6 +37,7 @@ import torch.nn.functional as F
 
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
+from transcif.training.schedulers import get_cosine_warmup_scheduler
 
 
 # ---------------------------------------------------------------------------
@@ -161,7 +162,7 @@ def consistency_loss(cif_hourly, cif_daily, cif_weekly, ef_r, ef_nr):
 
 def train_hier(all_regions, target_name, seed=42,
                 epochs=300, lr=1e-3, device=None,
-                lambda_consist=0.3):
+                lambda_consist=0.3, pbar=None):
     """Train HierDLinear with hierarchical + consistency losses.
 
     Loss:
@@ -177,20 +178,25 @@ def train_hier(all_regions, target_name, seed=42,
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    scheduler = get_cosine_warmup_scheduler(optimizer, max(1, epochs // 10), epochs)
 
-    # Gather data
-    xs, ys_share, ys_cif, cfgs, mean_rs_list = [], [], [], [], []
+    # Gather data with config-distance sample weights (matches base TransCIF-ZS)
+    target_mean_rs = all_regions[target_name]["mean_rs"]
+    xs, ys_share, ys_cif, cfgs, mean_rs_list, ws = [], [], [], [], [], []
     for name, data in all_regions.items():
         if name == target_name:
             continue
         x_win, y_win, y_cif_win = build_windows(data["rs"], data["cif"])
         if len(x_win) == 0:
             continue
+        dist = abs(data["mean_rs"] - target_mean_rs)
+        w = 1.0 / (dist + 0.05)
         xs.append(x_win)
         ys_share.append(y_win)
         ys_cif.append(y_cif_win)
         cfgs.append(np.tile(data["config"], (len(x_win), 1)))
         mean_rs_list.append(np.full(len(x_win), data["mean_rs"], dtype=np.float32))
+        ws.append(np.full(len(x_win), w, dtype=np.float32))
 
     if not xs:
         print(f"  [WARN] No source data for {target_name}")
@@ -201,6 +207,8 @@ def train_hier(all_regions, target_name, seed=42,
     y_cif_all = torch.tensor(np.concatenate(ys_cif), dtype=torch.float32)
     c_all = torch.tensor(np.concatenate(cfgs), dtype=torch.float32)
     mean_rs_all = torch.tensor(np.concatenate(mean_rs_list), dtype=torch.float32)
+    w_all = torch.tensor(np.concatenate(ws), dtype=torch.float32)
+    w_all = w_all / w_all.sum() * len(w_all)
     n = len(x_all)
     batch_size = min(256, n)
 
@@ -210,7 +218,7 @@ def train_hier(all_regions, target_name, seed=42,
 
     model.train()
     for epoch in range(epochs):
-        idx = torch.randperm(n)[:batch_size]
+        idx = torch.multinomial(w_all, batch_size, replacement=True)
         x_b, y_s_b, y_cif_b, c_b = x_all[idx], y_share_all[idx], y_cif_all[idx], c_all[idx]
         mean_rs_b = mean_rs_all[idx]
 
@@ -247,8 +255,13 @@ def train_hier(all_regions, target_name, seed=42,
         loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         optimizer.step()
+        scheduler.step()
+        if pbar is not None:
+            pbar(epoch, epochs, loss.item())
 
     model.eval()
+    if pbar is not None:
+        pbar.finish()
     return model
 
 

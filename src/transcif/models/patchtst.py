@@ -7,9 +7,11 @@ import torch.nn as nn
 from transcif.config import SEQ_LEN, HORIZON, BATCH_SIZE, EPOCHS_SUPERVISED
 from transcif.models.base import PatchTSTFixed
 from transcif.training.schedulers import get_cosine_warmup_scheduler
+from transcif.training.progress import TrainProgress
 
 
-def train_patchtst(x_train, y_train, epochs=EPOCHS_SUPERVISED, lr=3e-4, device=None):
+def train_patchtst(x_train, y_train, epochs=EPOCHS_SUPERVISED, lr=3e-4, device=None,
+                   pbar=None):
     """Train a supervised PatchTST baseline."""
     model = PatchTSTFixed(seq_len=SEQ_LEN, horizon=HORIZON)
     if device:
@@ -31,5 +33,9 @@ def train_patchtst(x_train, y_train, epochs=EPOCHS_SUPERVISED, lr=3e-4, device=N
         nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         optimizer.step()
         scheduler.step()
+        if pbar is not None:
+            pbar(epoch, epochs, loss.item())
     model.eval()
+    if pbar is not None:
+        pbar.finish()
     return model
