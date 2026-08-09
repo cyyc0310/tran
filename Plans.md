@@ -40,7 +40,7 @@
 | Task | 内容 | DoD | Depends | Status |
 |------|------|-----|---------|--------|
 | 2.1 | `[lane:gate]` 在 `fusion.py` 增加 `EqualWeightFusion` 与 `MedianFusion` 两个无参 baseline | `compute_metrics` 输出有限；equal-weight 与 median 是两条独立 code path | 1.1 | `cc:完了 [9dacec1]` |
-| 2.2 | `[lane:gate] [stage:review]` 4-AU × seed-0 sanity：跑 equal-weight / median / softmax-head（fixed）三组，确认 (a) 都不崩；(b) equal-weight 不显著差于 softmax-head（如果显著差，说明 head 有信号；如果持平，按 skeptic R2 的预判 head 是死重） | `results/fused_five_sanity.json` 含 3 个变体 × 4 region 的 MAE/RMSE/sMAPE；写入一行 markdown 总结到 `results/fused_five_sanity.md` | 2.1, 1.4 | `cc:TODO` |
+| 2.2 | `[lane:gate] [stage:review]` 4-AU × seed-0 sanity：跑 equal-weight / median / softmax-head（fixed）三组，确认 (a) 都不崩；(b) equal-weight 不显著差于 softmax-head（如果显著差，说明 head 有信号；如果持平，按 skeptic R2 的预判 head 是死重） | `results/fused_five_sanity.json` 含 3 个变体 × 4 region 的 MAE/RMSE/sMAPE；写入一行 markdown 总结到 `results/fused_five_sanity.md` | 2.1, 1.4 | `cc:完了` |
 
 ### Phase 3 — Headline 融合：非负基底混合（论文贡献）
 
@@ -48,14 +48,14 @@
 |------|------|-----|---------|--------|
 | 3.1 | `[lane:gate] [stage:tdd]` 实现 `BasisMixFusion`：5 → 1 softmax 权重 + (a) 非负约束（softmax 天然满足）+ (b) L2 权重正则 + (c) entropy floor（强制权重不塌缩到单点）+ (d) diversity reg（pairwise weight-cosine 惩罚，鼓励 5 个方向都被使用）。论文 framing：每个方向 = 命名基底（knowledge/physics/causality/context/hierarchy）。`[tdd:required]` | 单元测试：极端同质 stack → entropy floor 阻止塌缩；loss 可微；权重和 = 1 | 1.1 | `cc:完了 [9dacec1]` |
 | 3.2 | `[lane:gate] [stage:tdd]` LOO-CV 训练 pipeline：留一 source region 出，剩余 source region 训练 head，预测被留出 region 的 cif；遍历所有 source region，得到 OOF（out-of-fold）预测；最终 head 用全部 source 重训一次。报告各 fold 权重向量与 OOF MAE。`[tdd:required]` | OOF MAE 与 in-fold MAE 差距 < 20%（差距过大 = 过拟合标志）；5 fold 的权重向量 std < 0.15 | 3.1, 1.3 | `cc:完了 [5f5f7bf]` |
-| 3.3 | `[lane:gate] [stage:review]` ZS+ 集成与 R1 双计数检查：同时输出 (a) `BasisMix_fused`（cif 级融合，不过 ZS+），(b) `BasisMix_fused_plus`（融合后过 ZS+），(c) `equal_weight_then_plus`（R1 控制组） | 三组指标都在 `results/fused_five_headline.json`；如果 (c) ≥ (b) 的中位 MAE，写入 `results/fused_five_headline.md` 标记 "meta-learner is dead weight, headline 退回到 equal-weight+ZS+" | 3.2, 2.1 | `cc:TODO` |
+| 3.3 | `[lane:gate] [stage:review]` ZS+ 集成与 R1 双计数检查：同时输出 (a) `BasisMix_fused`（cif 级融合，不过 ZS+），(b) `BasisMix_fused_plus`（融合后过 ZS+），(c) `equal_weight_then_plus`（R1 控制组） | 三组指标都在 `results/fused_five_headline.json`；如果 (c) ≥ (b) 的中位 MAE，写入 `results/fused_five_headline.md` 标记 "meta-learner is dead weight, headline 退回到 equal-weight+ZS+" | 3.2, 2.1 | `cc:完了` |
 
 ### Phase 4 — Drop-one 消融（gate for R3: 证明不是 ZS+ wrapper）
 
 | Task | 内容 | DoD | Depends | Status |
 |------|------|-----|---------|--------|
-| 4.1 | `[lane:gate]` Drop-one-direction pipeline：5 次重训 BasisMixFusion，每次去掉一个方向；产出 5 组 `(drop_which, MAE, RMSE, sMAPE)`；附上 "fusion using only 4 of 5" 的 ZS+ 与 non-ZS+ 双列 | `results/fused_five_dropone.json`；附 markdown 表 `results/fused_five_dropone.md` 列出 "drop X → MAE Y" | 3.2 | `cc:TODO` |
-| 4.2 | `[lane:gate] [stage:review]` 关键判定：drop Hier（最弱方向）后 fusion 是否仍击败 best-single（Causal 41.18 中位 / 42.10 单点）？若是 → 多样性真实；若否 → R3 命中，论文重定位为 "ZS+ wrapper"。把判定写入 `results/fused_five_dropone.md` 顶部 verdict 行 | verdict 行必须明确写 `DIVERSITY_REAL` 或 `ZS_PLUS_WRAPPER`，并附 drop-Hier MAE 数字 | 4.1 | `cc:TODO` |
+| 4.1 | `[lane:gate]` Drop-one-direction pipeline：5 次重训 BasisMixFusion，每次去掉一个方向；产出 5 组 `(drop_which, MAE, RMSE, sMAPE)`；附上 "fusion using only 4 of 5" 的 ZS+ 与 non-ZS+ 双列 | `results/fused_five_dropone.json`；附 markdown 表 `results/fused_five_dropone.md` 列出 "drop X → MAE Y" | 3.2 | `cc:完了` |
+| 4.2 | `[lane:gate] [stage:review]` 关键判定：drop Hier（最弱方向）后 fusion 是否仍击败 best-single（Causal 41.18 中位 / 42.10 单点）？若是 → 多样性真实；若否 → R3 命中，论文重定位为 "ZS+ wrapper"。把判定写入 `results/fused_five_dropone.md` 顶部 verdict 行 | verdict 行必须明确写 `DIVERSITY_REAL` 或 `ZS_PLUS_WRAPPER`，并附 drop-Hier MAE 数字 | 4.1 | `cc:完了` |
 
 ### Phase 5 — 全规模评测（gate for paper headline claim）
 
