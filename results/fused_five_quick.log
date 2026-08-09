@@ -1,0 +1,23 @@
+[EVAL] QLD1 ...
+Traceback (most recent call last):
+  File "/Users/cyyc0310/Downloads/transcif/scripts/experiments/run_fused_five.py", line 264, in <module>
+    fn = "fused_five_quick.json" if not args.no_head else "fused_five_equalweight_quick.json"
+    ^^^^^^
+  File "/Users/cyyc0310/Downloads/transcif/scripts/experiments/run_fused_five.py", line 251, in main
+    
+  File "/Users/cyyc0310/Downloads/transcif/scripts/experiments/run_fused_five.py", line 223, in evaluate_fused
+    
+    
+  File "/Users/cyyc0310/Downloads/transcif/src/transcif/calibration/zs_plus.py", line 119, in zs_plus_predict
+    errs.append([sim_mae(o_s, i) for i in range(len(FUSION_MENU))])
+                 ^^^^^^^^^^^^^^^
+  File "/Users/cyyc0310/Downloads/transcif/src/transcif/calibration/zs_plus.py", line 109, in sim_mae
+    fuse_at(o, **cfg_args(FUSION_MENU[ci]))[:24] - cif[o:o + 24]).mean()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/cyyc0310/Downloads/transcif/src/transcif/calibration/zs_plus.py", line 82, in fuse_at
+    bp.append(branch_preds(o)[idx, :24])
+              ^^^^^^^^^^^^^^^
+  File "/Users/cyyc0310/Downloads/transcif/src/transcif/calibration/zs_plus.py", line 51, in branch_preds
+    dev = next(model.parameters()).device if share_fn is None else None
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'list' object is not an iterator
