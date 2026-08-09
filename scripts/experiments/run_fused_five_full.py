@@ -217,11 +217,17 @@ def _train_basismix(src_stacks, src_true, predictors, seed,
 # Persistence baseline
 # ---------------------------------------------------------------------------
 
-def _eval_persistence(x_test, y_true):
-    """Evaluate persistence baseline (predict last HORIZON values)."""
-    # For persistence, we use the last HORIZON values of each input window
-    # as the prediction for the next HORIZON steps
-    pred = x_test[:, -HORIZON:]  # Take last HORIZON steps from input
+def _eval_persistence(x_test, y_true, ef_r, ef_nr):
+    """Persistence baseline: predict the last HORIZON rs values converted to CIF.
+
+    Standard "lag-24h" persistence used across the codebase (see
+    scripts/benchmark/temporal_ood.py:142, run_supervised_baselines_v2.py).
+    Captures diurnal cycle: hour t+24 ≈ hour t. The earlier implementation
+    compared rs (renewable share, 0-1) directly to y_true (CIF), inflating
+    MAE by ~10x.
+    """
+    last_window_rs = x_test[:, -HORIZON:].astype(np.float32)
+    pred = last_window_rs * ef_r + (1.0 - last_window_rs) * ef_nr
     return compute_metrics(pred, y_true)
 
 
@@ -328,7 +334,7 @@ def evaluate_target(target, all_regions, seed, src_limit, output_json,
 
     # Evaluate persistence baseline
     print(f"  [persistence] evaluating persistence baseline...", flush=True)
-    row["persistence"] = _eval_persistence(x_test, y_true)
+    row["persistence"] = _eval_persistence(x_test, y_true, ef_r, ef_nr)
     print(f"    MAE={row['persistence']['mae']:.3f}", flush=True)
 
     return row
