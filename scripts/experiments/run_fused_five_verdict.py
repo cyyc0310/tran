@@ -178,10 +178,16 @@ def main():
             f"vs best-single Causal = {BEST_SINGLE_MAE:.3f}; "
             f"R1: {meta_verdict}; R3: {diversity_verdict})\n\n"
         )
-        # Strip existing header (everything up to and including the first blank line
-        # after the title) and prepend our verdict
+        # Idempotent rewrite: keep only the body that follows the existing
+        # explanatory paragraph ("Verdict (Task 4.2) is computed in a separate
+        # step..."). Strip all prior title + verdict header lines so re-runs
+        # don't accumulate duplicate verdict blocks.
+        body = ""
         lines = existing.splitlines()
-        body = "\n".join(lines[2:]) if len(lines) > 2 else ""
+        for i, line in enumerate(lines):
+            if line.startswith("Verdict (Task 4.2) is computed in a separate step"):
+                body = "\n".join(lines[i:])
+                break
         with open(md_path, "w") as f:
             f.write(header + body)
 

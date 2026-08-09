@@ -2,8 +2,6 @@
 
 **VERDICT (Task 4.2): ZS_PLUS_WRAPPER** (drop-Hier BasisMix+ median = 53.780 vs best-single Causal = 42.101; R1: META_DEAD_WEIGHT; R3: DIVERSITY_MIRAGE)
 
-**VERDICT (Task 4.2): ZS_PLUS_WRAPPER** (drop-Hier BasisMix+ median = 53.780 vs best-single Causal = 42.101; R1: META_DEAD_WEIGHT; R3: DIVERSITY_MIRAGE)
-
 Verdict (Task 4.2) is computed in a separate step. This table
 shows MAE when each direction is dropped from BasisMix.
 
