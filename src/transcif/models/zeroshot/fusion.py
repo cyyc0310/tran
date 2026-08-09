@@ -1,0 +1,299 @@
+"""Five-direction fusion model for zero-shot CIF forecasting.
+
+This module is the public contract between (a) the per-direction predictors
+under :mod:`transcif.models.zeroshot.{rag,phys_irm,causal,icl,hier}`,
+(b) the source-region stack collector (Task 1.3), and (c) the test-time
+calibration pipeline :func:`transcif.calibration.zs_plus.zs_plus_predict`,
+which consumes a ``share_fn`` callable.
+
+Task 1.1 establishes the interface only. The BasisMix head (non-negative
+mixture with diversity regularization) lands in Task 3.1; the LOO-CV training
+pipeline lands in Task 3.2. The default head shipped here is a plain
+softmax-weight fusion so the interface can be exercised end-to-end.
+"""
+
+from __future__ import annotations
+
+from typing import Callable, Mapping, Sequence
+
+import numpy as np
+import torch
+import torch.nn as nn
+
+from transcif.config import HORIZON, SEQ_LEN
+
+DIRECTION_ORDER: tuple[str, ...] = ("rag", "phys", "causal", "icl", "hier")
+
+PredictorFn = Callable[
+    [np.ndarray, np.ndarray, float, float],
+    np.ndarray,
+]
+
+
+class FusionHead(nn.Module):
+    """5 -> 1 softmax-weight fusion over CIF predictions.
+
+    Forward input : ``(n, 5, HORIZON)`` tensor or ndarray.
+    Forward output: ``(n, HORIZON)`` tensor.
+    """
+
+    def __init__(self, n_directions: int = len(DIRECTION_ORDER)):
+        super().__init__()
+        self.logit = nn.Parameter(torch.zeros(n_directions))
+
+    def forward(self, cif_stack):
+        if isinstance(cif_stack, np.ndarray):
+            cif_stack = torch.as_tensor(cif_stack, dtype=torch.float32)
+        weights = torch.softmax(self.logit, dim=0)
+        return (cif_stack * weights.view(1, -1, 1)).sum(dim=1)
+
+    def weights(self) -> torch.Tensor:
+        """Return the learned softmax weights as a (5,) tensor that sums to 1."""
+        return torch.softmax(self.logit, dim=0).detach()
+
+
+class FusionModel:
+    """Combines the 5 zero-shot direction predictors into a single CIF output.
+
+    Two evaluation paths:
+
+    1. **From a pre-computed stack**: :meth:`predict_cif_from_stack` is a pure
+       combiner -- no predictors needed. Use this when the caller has already
+       run the 5 directions and cached their CIF output.
+    2. **End-to-end**: :meth:`predict_cif` takes raw RenewShare windows and
+       calls each attached predictor per window. Requires ``predictors`` to be
+       set at construction time.
+
+    For ZS+ integration, call :meth:`configure_for_target` to bind the target
+    region's emission factors, then pass ``fusion_model.share_fn`` directly
+    to ``zs_plus_predict(..., share_fn=fusion_model.share_fn)``.
+    """
+
+    def __init__(
+        self,
+        head: FusionHead,
+        predictors: Mapping[str, PredictorFn] | None = None,
+    ):
+        self.head = head
+        self.predictors: dict[str, PredictorFn] | None = (
+            dict(predictors) if predictors is not None else None
+        )
+        if self.predictors is not None:
+            _validate_predictor_keys(self.predictors)
+        self._target_cfg: tuple[np.ndarray, float, float] | None = None
+
+    # ------------------------------------------------------------------
+    # Pure combiner
+    # ------------------------------------------------------------------
+
+    def predict_cif_from_stack(self, cif_stack: np.ndarray) -> np.ndarray:
+        """Fuse a pre-computed 5-direction CIF stack.
+
+        Args:
+            cif_stack: ``(n, 5, HORIZON)`` array of per-direction CIF preds.
+
+        Returns:
+            ``(n, HORIZON)`` fused CIF predictions.
+        """
+        if cif_stack.ndim != 3 or cif_stack.shape[1] != len(DIRECTION_ORDER):
+            raise ValueError(
+                f"cif_stack must be (n, {len(DIRECTION_ORDER)}, HORIZON); "
+                f"got shape {cif_stack.shape}"
+            )
+        with torch.no_grad():
+            fused = self.head(cif_stack)
+        return fused.cpu().numpy()
+
+    # ------------------------------------------------------------------
+    # End-to-end
+    # ------------------------------------------------------------------
+
+    def predict_cif(
+        self,
+        x_rs: np.ndarray,
+        config: np.ndarray,
+        ef_r: float,
+        ef_nr: float,
+    ) -> np.ndarray:
+        """End-to-end fused CIF prediction from raw RenewShare windows.
+
+        Args:
+            x_rs   : ``(n, SEQ_LEN)`` RenewShare windows.
+            config : ``(config_dim,)`` target config vector.
+            ef_r   : renewable emission factor.
+            ef_nr  : non-renewable emission factor.
+
+        Returns:
+            ``(n, HORIZON)`` fused CIF predictions.
+        """
+        if self.predictors is None:
+            raise RuntimeError(
+                "FusionModel.predict_cif requires predictors to be set at "
+                "construction time; got predictors=None."
+            )
+        if x_rs.ndim != 2 or x_rs.shape[1] != SEQ_LEN:
+            raise ValueError(
+                f"x_rs must be (n, SEQ_LEN={SEQ_LEN}); got {x_rs.shape}"
+            )
+
+        n = x_rs.shape[0]
+        per_window_stacks = np.empty(
+            (n, len(DIRECTION_ORDER), HORIZON), dtype=np.float32
+        )
+        for i in range(n):
+            for d, name in enumerate(DIRECTION_ORDER):
+                pred = self.predictors[name](x_rs[i], config, ef_r, ef_nr)
+                per_window_stacks[i, d] = np.asarray(pred, dtype=np.float32)
+        return self.predict_cif_from_stack(per_window_stacks)
+
+    # ------------------------------------------------------------------
+    # ZS+ integration
+    # ------------------------------------------------------------------
+
+    def configure_for_target(
+        self,
+        config: np.ndarray,
+        ef_r: float,
+        ef_nr: float,
+    ) -> None:
+        """Bind the target region's config + emission factors.
+
+        Required before :meth:`share_fn` can be called by ``zs_plus_predict``.
+        """
+        self._target_cfg = (
+            np.asarray(config, dtype=np.float64),
+            float(ef_r),
+            float(ef_nr),
+        )
+
+    def share_fn(self, x_window_np: np.ndarray) -> np.ndarray:
+        """Per-window RenewShare prediction for ``zs_plus_predict``.
+
+        The signature ``(x_window_np) -> (HORIZON,)`` matches the ``share_fn``
+        hook in :func:`transcif.calibration.zs_plus.zs_plus_predict`. The
+        fused CIF for the window is inverted to a RenewShare via the target's
+        emission factors and clipped to ``[0, 1]``.
+        """
+        if self._target_cfg is None:
+            raise RuntimeError(
+                "FusionModel.share_fn requires configure_for_target(...) to "
+                "bind the target region's emission factors first."
+            )
+        if self.predictors is None:
+            raise RuntimeError(
+                "FusionModel.share_fn requires predictors to be set."
+            )
+        if x_window_np.shape != (SEQ_LEN,):
+            raise ValueError(
+                f"x_window_np must be (SEQ_LEN={SEQ_LEN},); "
+                f"got {x_window_np.shape}"
+            )
+
+        config, ef_r, ef_nr = self._target_cfg
+        stack = np.empty((len(DIRECTION_ORDER), HORIZON), dtype=np.float32)
+        for d, name in enumerate(DIRECTION_ORDER):
+            stack[d] = np.asarray(
+                self.predictors[name](x_window_np, config, ef_r, ef_nr),
+                dtype=np.float32,
+            )
+        # head expects (n, 5, HORIZON); single-window batch of 1.
+        fused_cif = self.predict_cif_from_stack(stack[None]).squeeze(0)
+        share = (fused_cif - ef_nr) / (ef_r - ef_nr + 1e-8)
+        return np.clip(share, 0.0, 1.0)
+
+
+def _validate_predictor_keys(predictors: Mapping[str, PredictorFn]) -> None:
+    missing = set(DIRECTION_ORDER) - set(predictors.keys())
+    extra = set(predictors.keys()) - set(DIRECTION_ORDER)
+    if missing:
+        raise ValueError(
+            f"predictors missing required keys: {sorted(missing)}; "
+            f"expected exactly {list(DIRECTION_ORDER)}."
+        )
+    if extra:
+        raise ValueError(
+            f"predictors has unexpected keys: {sorted(extra)}; "
+            f"expected exactly {list(DIRECTION_ORDER)}."
+        )
+
+
+def train_fusion(
+    src_cif_stacks: Sequence[np.ndarray],
+    src_cif_true: Sequence[np.ndarray],
+    predictors: Mapping[str, PredictorFn] | None = None,
+    epochs: int = 200,
+    lr: float = 1e-2,
+    l2: float = 1e-4,
+    seed: int = 0,
+) -> FusionModel:
+    """Train a FusionHead on source-region CIF stacks (zero-shot safe).
+
+    The head is trained to minimize MAE between the fused 5-direction output
+    and the source CIF ground truth. Source regions are NOT the target, so
+    using their labels does not violate the zero-shot constraint.
+
+    Args:
+        src_cif_stacks : list of ``(n_i, 5, HORIZON)`` per-direction CIF
+                         predictions on each source region's TEST window.
+        src_cif_true   : list of ``(n_i, HORIZON)`` source CIF ground truth.
+        predictors     : optional per-direction predictor callables, attached
+                         to the returned model for end-to-end evaluation.
+        epochs, lr, l2 : training hyperparameters.
+        seed           : RNG seed for reproducibility.
+
+    Returns:
+        A :class:`FusionModel` with the trained head and (optionally) the
+        supplied predictors attached.
+    """
+    if not src_cif_stacks:
+        raise ValueError("src_cif_stacks must contain at least one source.")
+    if len(src_cif_stacks) != len(src_cif_true):
+        raise ValueError(
+            f"len(src_cif_stacks)={len(src_cif_stacks)} must equal "
+            f"len(src_cif_true)={len(src_cif_true)}."
+        )
+    if predictors is not None:
+        _validate_predictor_keys(predictors)
+
+    torch.manual_seed(seed)
+    np.random.seed(seed)
+
+    head = FusionHead(n_directions=len(DIRECTION_ORDER))
+    optimizer = torch.optim.Adam(head.parameters(), lr=lr, weight_decay=l2)
+
+    X = np.concatenate(src_cif_stacks, axis=0).astype(np.float32)
+    Y = np.concatenate(src_cif_true, axis=0).astype(np.float32)
+    expected_X_shape = (X.shape[0], len(DIRECTION_ORDER), HORIZON)
+    if X.shape != expected_X_shape:
+        raise ValueError(
+            f"each src stack must be (n_i, {len(DIRECTION_ORDER)}, HORIZON); "
+            f"got concatenated shape {X.shape}."
+        )
+    if Y.shape != (X.shape[0], HORIZON):
+        raise ValueError(
+            f"src_true must concatenate to ({X.shape[0]}, HORIZON); "
+            f"got {Y.shape}."
+        )
+
+    X_t = torch.as_tensor(X, dtype=torch.float32)
+    Y_t = torch.as_tensor(Y, dtype=torch.float32)
+
+    head.train()
+    for _ in range(epochs):
+        optimizer.zero_grad()
+        pred = head(X_t)
+        loss = torch.abs(pred - Y_t).mean()
+        loss.backward()
+        optimizer.step()
+    head.eval()
+
+    return FusionModel(head, predictors=predictors)
+
+
+__all__ = [
+    "DIRECTION_ORDER",
+    "FusionHead",
+    "FusionModel",
+    "PredictorFn",
+    "train_fusion",
+]
