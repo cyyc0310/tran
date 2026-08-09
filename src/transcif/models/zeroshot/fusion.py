@@ -29,6 +29,20 @@ PredictorFn = Callable[
     [np.ndarray, np.ndarray, float, float],
     np.ndarray,
 ]
+"""Per-direction predictor contract.
+
+A predictor takes ``(x_rs, config, ef_r, ef_nr)`` and returns CIF predictions:
+
+    x_rs   : ``(B, SEQ_LEN)`` RenewShare windows (batched).
+    config : ``(config_dim,)`` target config vector.
+    ef_r   : renewable emission factor (gCO2/kWh).
+    ef_nr  : non-renewable emission factor (gCO2/kWh).
+    returns: ``(B, HORIZON)`` CIF predictions.
+
+Batched semantics match the underlying direction modules
+(``predict_rag_zs``, ``predict_phys_irm``, etc.) which all take ``(B, SEQ_LEN)``
+input and return ``(B, HORIZON)``.
+"""
 
 
 class FusionHead(nn.Module):
@@ -295,14 +309,18 @@ class FusionModel:
             )
 
         n = x_rs.shape[0]
-        per_window_stacks = np.empty(
-            (n, len(DIRECTION_ORDER), HORIZON), dtype=np.float32
-        )
-        for i in range(n):
-            for d, name in enumerate(DIRECTION_ORDER):
-                pred = self.predictors[name](x_rs[i], config, ef_r, ef_nr)
-                per_window_stacks[i, d] = np.asarray(pred, dtype=np.float32)
-        return self.predict_cif_from_stack(per_window_stacks)
+        stack = np.empty((n, len(DIRECTION_ORDER), HORIZON), dtype=np.float32)
+        for d, name in enumerate(DIRECTION_ORDER):
+            pred = self.predictors[name](x_rs, config, ef_r, ef_nr)
+            pred = np.asarray(pred, dtype=np.float32)
+            if pred.shape != (n, HORIZON):
+                raise ValueError(
+                    f"predictor '{name}' returned shape {pred.shape}, "
+                    f"expected ({n}, {HORIZON}). Predictors must accept "
+                    f"batched (B, SEQ_LEN) input and return (B, HORIZON)."
+                )
+            stack[:, d, :] = pred
+        return self.predict_cif_from_stack(stack)
 
     # ------------------------------------------------------------------
     # ZS+ integration
@@ -348,12 +366,16 @@ class FusionModel:
             )
 
         config, ef_r, ef_nr = self._target_cfg
+        # Predictors take batched (B, SEQ_LEN). Wrap the single window and
+        # squeeze the leading axis off each direction's (1, HORIZON) output.
+        x_batch = x_window_np[None, :]
         stack = np.empty((len(DIRECTION_ORDER), HORIZON), dtype=np.float32)
         for d, name in enumerate(DIRECTION_ORDER):
-            stack[d] = np.asarray(
-                self.predictors[name](x_window_np, config, ef_r, ef_nr),
+            pred = np.asarray(
+                self.predictors[name](x_batch, config, ef_r, ef_nr),
                 dtype=np.float32,
             )
+            stack[d] = pred.reshape(-1)
         # head expects (n, 5, HORIZON); single-window batch of 1.
         fused_cif = self.predict_cif_from_stack(stack[None]).squeeze(0)
         share = (fused_cif - ef_nr) / (ef_r - ef_nr + 1e-8)
@@ -446,6 +468,134 @@ def train_fusion(
     head.eval()
 
     return FusionModel(head, predictors=predictors)
+
+
+def _predict_stack_with_head(head: nn.Module,
+                             cif_stack: np.ndarray) -> np.ndarray:
+    """Run a trained head on a (n, 5, HORIZON) stack → (n, HORIZON)."""
+    head.eval()
+    with torch.no_grad():
+        x = torch.as_tensor(cif_stack, dtype=torch.float32)
+        return head(x).cpu().numpy()
+
+
+def loo_cv_train(
+    src_cif_stacks: Sequence[np.ndarray],
+    src_cif_true: Sequence[np.ndarray],
+    src_names: Sequence[str],
+    predictors: Mapping[str, PredictorFn] | None = None,
+    epochs: int = 200,
+    lr: float = 1e-2,
+    l2: float = 1e-4,
+    seed: int = 0,
+) -> dict:
+    """Leave-one-out CV training for the fusion head (Task 3.2).
+
+    For each source region *i*, train a head on all sources except *i*, then
+    predict source *i*'s CIF. The resulting out-of-fold (OOF) MAE is an
+    honest estimate of how the head will perform on an unseen target region.
+    A final head is then retrained on *all* sources for deployment.
+
+    The function also reports per-fold weight vectors and their per-direction
+    standard deviation. Large std means the head is flip-flopping across
+    folds (R2: meta-overfit signal).
+
+    Args:
+        src_cif_stacks : list of ``(n_i, 5, HORIZON)`` per-direction CIF
+                         predictions on each source region's TEST window.
+        src_cif_true   : list of ``(n_i, HORIZON)`` source CIF ground truth.
+        src_names      : list of source region names, parallel to the above.
+        predictors     : optional per-direction predictor callables, attached
+                         to the final returned model.
+        epochs, lr, l2 : training hyperparameters.
+        seed           : RNG seed.
+
+    Returns:
+        Dict with keys:
+
+            loo_per_fold            : list of ``{fold, name, weights,
+                                      oof_mae, in_fold_mae}`` records.
+            weight_vectors          : ``(n_sources, 5)`` array of per-fold
+                                      softmax weights.
+            weight_std_per_direction: ``(5,)`` array of per-direction std.
+            oof_mae_mean            : mean OOF MAE across folds.
+            oof_mae_std             : std of OOF MAE across folds.
+            final_model             : :class:`FusionModel` trained on all
+                                      sources (for deployment).
+    """
+    n = len(src_cif_stacks)
+    if not (n == len(src_cif_true) == len(src_names)):
+        raise ValueError(
+            f"length mismatch: stacks={len(src_cif_stacks)}, "
+            f"true={len(src_cif_true)}, names={len(src_names)}"
+        )
+    if n < 2:
+        raise ValueError(
+            f"LOO-CV requires at least 2 sources (1 train + 1 holdout); "
+            f"got {n}."
+        )
+    if predictors is not None:
+        _validate_predictor_keys(predictors)
+
+    loo_per_fold = []
+    weight_rows = []
+
+    for i in range(n):
+        train_stacks = [s for j, s in enumerate(src_cif_stacks) if j != i]
+        train_true = [s for j, s in enumerate(src_cif_true) if j != i]
+
+        fold_model = train_fusion(
+            train_stacks, train_true,
+            predictors=None,  # head-only; no need to wire predictors per fold
+            epochs=epochs, lr=lr, l2=l2, seed=seed,
+        )
+
+        # OOF: predict held-out source
+        oof_pred = _predict_stack_with_head(fold_model.head, src_cif_stacks[i])
+        oof_mae = float(np.abs(oof_pred - src_cif_true[i]).mean())
+
+        # In-fold MAE: mean over training sources (memorization diagnostic)
+        in_fold_preds = [
+            _predict_stack_with_head(fold_model.head, s)
+            for s in train_stacks
+        ]
+        in_fold_maes = [
+            float(np.abs(p - t).mean())
+            for p, t in zip(in_fold_preds, train_true)
+        ]
+        in_fold_mae = float(np.mean(in_fold_maes))
+
+        with torch.no_grad():
+            w = fold_model.head.weights().cpu().numpy()
+
+        weight_rows.append(w)
+        loo_per_fold.append({
+            "fold": i,
+            "name": src_names[i],
+            "weights": w,
+            "oof_mae": oof_mae,
+            "in_fold_mae": in_fold_mae,
+        })
+
+    weight_vectors = np.stack(weight_rows, axis=0)
+    weight_std_per_direction = weight_vectors.std(axis=0)
+
+    oof_maes = np.array([r["oof_mae"] for r in loo_per_fold])
+
+    final_model = train_fusion(
+        list(src_cif_stacks), list(src_cif_true),
+        predictors=predictors,
+        epochs=epochs, lr=lr, l2=l2, seed=seed,
+    )
+
+    return {
+        "loo_per_fold": loo_per_fold,
+        "weight_vectors": weight_vectors,
+        "weight_std_per_direction": weight_std_per_direction,
+        "oof_mae_mean": float(oof_maes.mean()),
+        "oof_mae_std": float(oof_maes.std()),
+        "final_model": final_model,
+    }
 
 
 def basis_mix_loss(

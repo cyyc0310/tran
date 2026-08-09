@@ -132,7 +132,7 @@ def evaluate_fused(target_name, all_regions, seed, src_limit, use_head):
     fusion_model.configure_for_target(data["config"], data["ef_r"], data["ef_nr"])
     rs, cif = data["rs"], data["cif"]
     split = int(len(rs) * TRAIN_FRACTION)
-    origins = [split + st for st in range(0, len(cif) - split - SEQ_LEN - HORIZON + 1, TEST_STRIDE)]
+    origins = [split + st for st in range(0, len(cif) - split - HORIZON + 1, TEST_STRIDE)]
 
     cif_fused_plus = zs_plus_predict(model=None, config=data["config"], rs=rs, cif=cif, ef_r=data["ef_r"],
                                       ef_nr=data["ef_nr"], origins=origins, share_fn=fusion_model.share_fn)
@@ -142,10 +142,11 @@ def evaluate_fused(target_name, all_regions, seed, src_limit, use_head):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--regions", nargs="+", default=["AU1", "AU2", "AU3", "AU4"])
+    ap.add_argument("--regions", nargs="+", default=["QLD1", "NSW1", "VIC1", "SA1"])
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--no-head", action="store_true", help="use equal-weight fusion")
     ap.add_argument("--src-limit", type=int, default=1, help="max source regions for head training")
+    ap.add_argument("--out", default=None, help="output filename (default: fused_five_smoke.json)")
     args = ap.parse_args()
 
     all_configs = {**AU_REGIONS, **UK_REGIONS, **US_REGIONS}
@@ -162,7 +163,8 @@ def main():
         print(f"  fused5 MAE={r['transcif_fused5']['mae']:.3f}  fused5+ MAE={r['transcif_fused5_plus']['mae']:.3f}", flush=True)
 
     os.makedirs("results", exist_ok=True)
-    fn = "fused_five_quick.json" if not args.no_head else "fused_five_equalweight_quick.json"
+    fn = args.out or ("fused_five_smoke.json" if not args.no_head
+                      else "fused_five_equalweight_smoke.json")
     with open(os.path.join("results", fn), "w") as f:
         json.dump(out, f, indent=2)
     print(f"[DONE] wrote results/{fn}")

@@ -24,12 +24,13 @@ from transcif.models.zeroshot.fusion import (
 
 
 def _stub_predictor(value: float):
-    """Return a single-window predictor that ignores its inputs and emits a
-    constant CIF array. Good enough for shape/range assertions."""
+    """Return a batched predictor that ignores its inputs and emits a
+    constant CIF array. Predictors take ``(B, SEQ_LEN)`` and return
+    ``(B, HORIZON)`` per the documented contract."""
 
-    def _pred(x_window, config, ef_r, ef_nr):
-        assert x_window.shape == (SEQ_LEN,)
-        return np.full(HORIZON, float(value), dtype=np.float32)
+    def _pred(x_rs, config, ef_r, ef_nr):
+        assert x_rs.ndim == 2 and x_rs.shape[1] == SEQ_LEN
+        return np.full((x_rs.shape[0], HORIZON), float(value), dtype=np.float32)
 
     return _pred
 
