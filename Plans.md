@@ -33,7 +33,7 @@
 | 1.1 | `[lane:gate] [stage:plan]` 创建 `src/transcif/models/zeroshot/fusion.py`，定义 `FusionModel` 类与公开接口 `train_fusion(...) -> FusionModel`、`FusionModel.predict_cif(x_rs, config, ef_r, ef_nr) -> (n, HORIZON)`、`FusionModel.share_fn(x_window_np) -> (horizon,)`。`share_fn` 必须能直接喂给 `zs_plus_predict(..., share_fn=...)`（参见 `src/transcif/calibration/zs_plus.py:33`）。`[tdd:required]` | 接口签名单元测试通过：构造 dummy 5-stack → `predict_cif` 输出形状 `(n, HORIZON)`；`share_fn` 输出形状 `(HORIZON,)` 且值落在 [0, 1] | - | `cc:完了` |
 | 1.2 | `[lane:gate] [stage:tdd]` 修复 `run_fused_five.py` 三处 bug 并迁移到新模块：(a) `_FuseModel.parameters()` 返回 list 不是 iterator → `next()` 崩；(b) `_FuseModel.__call__` 用 `self._i[0]` 但从不自增 → 每个 origin 都返回 row 0；(c) `FusionHead` 训练无 val split / 无 L2 / 无 early stop。`[tdd:required]` | 删除 `_FuseModel` 与 `FusedModel` 占位类；`run_fused_five.py` 仅保留 argparse + 数据加载 + 调用 `train_fusion` + 调用 `zs_plus_predict`；脚本主体 < 80 行 | 1.1 | `cc:完了 [f91bbbc]` |
 | 1.3 | `[lane:gate] [stage:tdd]` 实现 zero-shot 训练数据收集器：对每个 source region 跑 5 个方向，组装 `(n_i, 5, HORIZON)` cif stack 与 `(n_i, HORIZON)` true cif；显式只取 source 的 TEST 窗口（避免与 source 的训练窗泄漏）。`[tdd:required]` | 单元测试：mock 5 个方向 → 收集器返回的 stack shape 与 true cif shape 一致；source 训练窗的索引不与 source TEST 窗口的起点重叠 | 1.1 | `cc:完了 [f91bbbc]` |
-| 1.4 | `[lane:gate] [stage:review]` Phase 1 smoke：`.venv/bin/python scripts/experiments/run_fused_five.py --regions AU1 AU2 --seed 0` 必须完整跑完不报错，写出非空 JSON（至少 2 行） | `results/fused_five_smoke.json` 含 2 个 region 的 `transcif_fused5` + `transcif_fused5_plus` 字段，MAE 是有限正数 | 1.2, 1.3 | `cc:TODO` |
+| 1.4 | `[lane:gate] [stage:review]` Phase 1 smoke：`.venv/bin/python scripts/experiments/run_fused_five.py --regions AU1 AU2 --seed 0` 必须完整跑完不报错，写出非空 JSON（至少 2 行） | `results/fused_five_smoke.json` 含 2 个 region 的 `transcif_fused5` + `transcif_fused5_plus` 字段，MAE 是有限正数 | 1.2, 1.3 | `cc:完了 [5f5f7bf]` |
 
 ### Phase 2 — Baseline 融合（gate: 确认管道活着）
 
@@ -47,7 +47,7 @@
 | Task | 内容 | DoD | Depends | Status |
 |------|------|-----|---------|--------|
 | 3.1 | `[lane:gate] [stage:tdd]` 实现 `BasisMixFusion`：5 → 1 softmax 权重 + (a) 非负约束（softmax 天然满足）+ (b) L2 权重正则 + (c) entropy floor（强制权重不塌缩到单点）+ (d) diversity reg（pairwise weight-cosine 惩罚，鼓励 5 个方向都被使用）。论文 framing：每个方向 = 命名基底（knowledge/physics/causality/context/hierarchy）。`[tdd:required]` | 单元测试：极端同质 stack → entropy floor 阻止塌缩；loss 可微；权重和 = 1 | 1.1 | `cc:完了 [9dacec1]` |
-| 3.2 | `[lane:gate] [stage:tdd]` LOO-CV 训练 pipeline：留一 source region 出，剩余 source region 训练 head，预测被留出 region 的 cif；遍历所有 source region，得到 OOF（out-of-fold）预测；最终 head 用全部 source 重训一次。报告各 fold 权重向量与 OOF MAE。`[tdd:required]` | OOF MAE 与 in-fold MAE 差距 < 20%（差距过大 = 过拟合标志）；5 fold 的权重向量 std < 0.15 | 3.1, 1.3 | `cc:TODO` |
+| 3.2 | `[lane:gate] [stage:tdd]` LOO-CV 训练 pipeline：留一 source region 出，剩余 source region 训练 head，预测被留出 region 的 cif；遍历所有 source region，得到 OOF（out-of-fold）预测；最终 head 用全部 source 重训一次。报告各 fold 权重向量与 OOF MAE。`[tdd:required]` | OOF MAE 与 in-fold MAE 差距 < 20%（差距过大 = 过拟合标志）；5 fold 的权重向量 std < 0.15 | 3.1, 1.3 | `cc:完了 [5f5f7bf]` |
 | 3.3 | `[lane:gate] [stage:review]` ZS+ 集成与 R1 双计数检查：同时输出 (a) `BasisMix_fused`（cif 级融合，不过 ZS+），(b) `BasisMix_fused_plus`（融合后过 ZS+），(c) `equal_weight_then_plus`（R1 控制组） | 三组指标都在 `results/fused_five_headline.json`；如果 (c) ≥ (b) 的中位 MAE，写入 `results/fused_five_headline.md` 标记 "meta-learner is dead weight, headline 退回到 equal-weight+ZS+" | 3.2, 2.1 | `cc:TODO` |
 
 ### Phase 4 — Drop-one 消融（gate for R3: 证明不是 ZS+ wrapper）
