@@ -19,6 +19,7 @@ from typing import Callable, Mapping, Sequence
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 from transcif.config import HORIZON, SEQ_LEN
 
@@ -50,6 +51,163 @@ class FusionHead(nn.Module):
     def weights(self) -> torch.Tensor:
         """Return the learned softmax weights as a (5,) tensor that sums to 1."""
         return torch.softmax(self.logit, dim=0).detach()
+
+
+class EqualWeightFusion(nn.Module):
+    """Equal-weight fusion baseline (Task 2.1).
+
+    Forward input : ``(n, 5, HORIZON)`` tensor or ndarray.
+    Forward output: ``(n, HORIZON)`` tensor computed as mean over 5 directions.
+
+    No learnable parameters. Useful as a sanity baseline to compare against
+    learned fusion heads.
+    """
+
+    def __init__(self, n_directions: int = len(DIRECTION_ORDER)):
+        super().__init__()
+        self.n_directions = n_directions
+
+    def forward(self, cif_stack):
+        if isinstance(cif_stack, np.ndarray):
+            cif_stack = torch.as_tensor(cif_stack, dtype=torch.float32)
+        return cif_stack.mean(dim=1)
+
+    def weights(self) -> torch.Tensor:
+        """Return uniform weights (1/n, ..., 1/n) for interface consistency."""
+        return torch.ones(self.n_directions) / self.n_directions
+
+
+class MedianFusion(nn.Module):
+    """Median fusion baseline (Task 2.1).
+
+    Forward input : ``(n, 5, HORIZON)`` tensor or ndarray.
+    Forward output: ``(n, HORIZON)`` tensor computed as elementwise median.
+
+    No learnable parameters. Robust to broken individual predictors (relevant
+    since Hier alone has MAE 77.6). Median ignores outliers that would distort
+    a mean fusion.
+    """
+
+    def __init__(self, n_directions: int = len(DIRECTION_ORDER)):
+        super().__init__()
+        self.n_directions = n_directions
+
+    def forward(self, cif_stack):
+        if isinstance(cif_stack, np.ndarray):
+            cif_stack = torch.as_tensor(cif_stack, dtype=torch.float32)
+        return cif_stack.median(dim=1).values
+
+    def weights(self) -> torch.Tensor:
+        """Return uniform weights (1/n, ..., 1/n) for interface consistency.
+
+        Note: Median fusion doesn't actually use linear weights, but we
+        return uniform weights to maintain a consistent interface with other
+        fusion heads.
+        """
+        return torch.ones(self.n_directions) / self.n_directions
+
+
+class BasisMixFusion(nn.Module):
+    """Non-negative basis mixture fusion with diversity regularization (Task 3.1).
+
+    This head extends the softmax-weight fusion (FusionHead) with three
+    regularization terms:
+
+    1. **L2 regularization** on logit weights (handled by optimizer weight_decay,
+       but exposed via :meth:`l2_penalty` for explicit loss construction).
+    2. **Entropy floor** that penalizes weight collapse to one-hot. When all
+       5 weights are uniform, entropy = log(5) and loss = 0. When one weight = 1
+       and rest = 0, entropy = 0 and loss = log(5)^2.
+    3. **Diversity regularization** that penalizes pairwise cosine similarity
+       between the 5 directions' CIF predictions. If two directions produce
+       nearly identical predictions (cosine ≈ 1), we penalize redundancy.
+
+    Paper framing: each direction = a named basis function
+    (knowledge/physics/causality/context/hierarchy), and BasisMixFusion learns
+    a non-negative mixture with diversity regularization.
+
+    Forward input : ``(n, 5, HORIZON)`` tensor or ndarray.
+    Forward output: ``(n, HORIZON)`` tensor.
+    """
+
+    def __init__(self, n_directions: int = len(DIRECTION_ORDER)):
+        super().__init__()
+        self.logit = nn.Parameter(torch.zeros(n_directions))
+
+    def forward(self, cif_stack):
+        if isinstance(cif_stack, np.ndarray):
+            cif_stack = torch.as_tensor(cif_stack, dtype=torch.float32)
+        weights = torch.softmax(self.logit, dim=0)
+        return (cif_stack * weights.view(1, -1, 1)).sum(dim=1)
+
+    def weights(self) -> torch.Tensor:
+        """Return the learned softmax weights as a (5,) tensor that sums to 1."""
+        return torch.softmax(self.logit, dim=0).detach()
+
+    def l2_penalty(self) -> torch.Tensor:
+        """Return the L2 penalty on logit weights: ||logit||^2."""
+        return (self.logit ** 2).sum()
+
+    def entropy_floor_loss(self) -> torch.Tensor:
+        """Return the entropy floor penalty.
+
+        Computes max(0, log(5) - H(w))^2 where H(w) = -sum(w * log(w+eps)).
+        This penalizes weight collapse (one-hot). When all 5 weights are uniform,
+        entropy = log(5) and loss = 0. When one weight = 1 and rest = 0,
+        entropy = 0 and loss = log(5)^2.
+        """
+        weights = torch.softmax(self.logit, dim=0)
+        eps = 1e-8
+        entropy = -(weights * torch.log(weights + eps)).sum()
+        target_entropy = np.log(len(self.logit))
+        gap = target_entropy - entropy.item()
+        return torch.tensor(max(0.0, gap) ** 2, dtype=torch.float32)
+
+    def diversity_loss(self, cif_stack: torch.Tensor, threshold: float = 0.9) -> torch.Tensor:
+        """Return the diversity penalty based on pairwise cosine similarity.
+
+        Computes the mean off-diagonal cosine similarity between the 5 directions'
+        CIF predictions. If two directions produce nearly identical predictions
+        (cosine ≈ 1), we penalize redundancy. Only penalizes when cosine > threshold.
+
+        Args:
+            cif_stack: ``(n, 5, HORIZON)`` tensor of per-direction CIF predictions.
+            threshold: Only penalize cosine similarity above this value.
+
+        Returns:
+            Scalar tensor representing the diversity penalty.
+        """
+        if cif_stack.ndim != 3 or cif_stack.shape[1] != len(self.logit):
+            raise ValueError(
+                f"cif_stack must be (n, {len(self.logit)}, HORIZON); "
+                f"got shape {cif_stack.shape}"
+            )
+
+        n, n_directions, horizon = cif_stack.shape
+
+        # Flatten each direction's predictions: (n, 5, HORIZON) -> (n_directions, n*HORIZON)
+        # Stack along direction dimension to compute pairwise similarities
+        flat_preds = cif_stack.transpose(0, 1).reshape(n_directions, -1)
+
+        # Compute pairwise cosine similarities
+        # Normalize vectors
+        norms = flat_preds.norm(dim=1, keepdim=True) + 1e-8
+        normalized = flat_preds / norms
+
+        # Compute cosine matrix: (n_directions, n_directions)
+        cosine_matrix = torch.mm(normalized, normalized.t())
+
+        # Mask diagonal (self-similarity) and lower triangle (duplicates)
+        mask = ~torch.eye(n_directions, dtype=torch.bool, device=cif_stack.device)
+        upper_triangle = torch.triu(cosine_matrix, diagonal=1)
+
+        # Only penalize when cosine > threshold
+        high_similarity = upper_triangle[upper_triangle > threshold]
+
+        if high_similarity.numel() == 0:
+            return torch.tensor(0.0, dtype=torch.float32, device=cif_stack.device)
+
+        return high_similarity.mean()
 
 
 class FusionModel:
@@ -290,10 +448,58 @@ def train_fusion(
     return FusionModel(head, predictors=predictors)
 
 
+def basis_mix_loss(
+    head: BasisMixFusion,
+    cif_stack: torch.Tensor,
+    y_true: torch.Tensor,
+    lambda_l2: float = 1e-3,
+    lambda_entropy: float = 1e-2,
+    lambda_diversity: float = 1e-2,
+) -> torch.Tensor:
+    """Compute the combined BasisMixFusion loss (Task 3.1).
+
+    Combines MAE + L2 + entropy floor + diversity regularization into a single
+    differentiable loss. This will be used by Task 3.2's LOO-CV training.
+
+    Args:
+        head: The BasisMixFusion head.
+        cif_stack: ``(n, 5, HORIZON)`` tensor of per-direction CIF predictions.
+        y_true: ``(n, HORIZON)`` tensor of true CIF values.
+        lambda_l2: Weight for L2 regularization.
+        lambda_entropy: Weight for entropy floor penalty.
+        lambda_diversity: Weight for diversity penalty.
+
+    Returns:
+        Scalar tensor representing the combined loss.
+    """
+    # MAE loss
+    pred = head(cif_stack)
+    mae_loss = torch.abs(pred - y_true).mean()
+
+    # Regularization terms
+    l2_loss = head.l2_penalty()
+    entropy_loss = head.entropy_floor_loss()
+    diversity_loss = head.diversity_loss(cif_stack)
+
+    # Combined loss
+    total_loss = (
+        mae_loss
+        + lambda_l2 * l2_loss
+        + lambda_entropy * entropy_loss
+        + lambda_diversity * diversity_loss
+    )
+
+    return total_loss
+
+
 __all__ = [
     "DIRECTION_ORDER",
     "FusionHead",
+    "EqualWeightFusion",
+    "MedianFusion",
+    "BasisMixFusion",
     "FusionModel",
     "PredictorFn",
     "train_fusion",
+    "basis_mix_loss",
 ]
