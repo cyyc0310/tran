@@ -61,7 +61,7 @@
 
 | Task | 内容 | DoD | Depends | Status |
 |------|------|-----|---------|--------|
-| 5.1 | `[lane:gate]` 29-region LORO × 5 seeds 全量评测：对每个 target region 跑（每个方向单跑 + 等权融合 + BasisMix + BasisMix+ZS+），统一写入 `results/fused_five_full.json`。预算估计 ~ 29 region × 5 seed × ~6 分钟 ≈ 14.5 小时；可拆 5 个 seed 进程并行 | JSON 含 29 × 5 = 145 行，每行所有方法的 mae/rmse/smape；`results/fused_five_full_summary.json` 含中位与 mean ± std | 3.3, 4.2 | `cc:TODO` |
+| 5.1 | `[lane:gate]` 29-region LORO × 5 seeds 全量评测：对每个 target region 跑（每个方向单跑 + 等权融合 + BasisMix + BasisMix+ZS+），统一写入 `results/fused_five_full.json`。预算估计 ~ 29 region × 5 seed × ~6 分钟 ≈ 14.5 小时；可拆 5 个 seed 进程并行 | JSON 含 29 × 5 = 145 行，每行所有方法的 mae/rmse/smape；`results/fused_five_full_summary.json` 含中位与 mean ± std | 3.3, 4.2 | `cc:WIP [266d4f6]` |
 | 5.2 | `[lane:gate]` 统计显著性：per-region paired Diebold-Mariano 检验（BasisMix+ZS+ vs PatchTST-supervised、BasisMix+ZS+ vs Causal-alone、BasisMix+ZS+ vs equal-weight+ZS+）；输出 p-value 矩阵与 Holm-Bonferroni 校正后的显著性 | `results/fused_five_significance.json` 含 p-value、n_regions where significant at α=0.05；markdown 表格 `results/fused_five_significance.md` | 5.1 | `cc:TODO` |
 | 5.3 | `[lane:gate] [stage:review]` Paper-claim verdict：基于 5.1/5.2 写一行结论 — (a) BasisMix+ZS+ 中位 MAE < 41 且 DM 检验显著 → headline 成立；(b) 中位 < 41 但不显著 → 降级为 "competitive with supervised"；(c) 中位 ≥ 41 → headline 失败，论文回到 "5 单方向独立 + ZS+" 故事 | `results/fused_five_verdict.md` 一页结论 + 三种情况各自对应的论文措辞建议 | 5.2 | `cc:TODO` |
 
