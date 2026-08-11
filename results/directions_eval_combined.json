@@ -1,0 +1,2844 @@
+[
+  {
+    "target": "US_FPL",
+    "seed": 0,
+    "mean_rs": 0.057035308331251144,
+    "ef_nr": 340.9,
+    "n_test": 72,
+    "persistence": {
+      "mae": 13.385560989379883,
+      "rmse": 26.1756534576416,
+      "smape": 4.63109165430069
+    },
+    "patchtst_sup": {
+      "mae": 14.174487113952637,
+      "rmse": 22.67156219482422,
+      "smape": 4.759874194860458
+    },
+    "transcif_zs": {
+      "mae": 39.50024241026691,
+      "rmse": 46.72079987493269,
+      "smape": 13.539566015942112
+    },
+    "transcif_zs_plus": {
+      "mae": 12.905150525242645,
+      "rmse": 22.832656690915847,
+      "smape": 4.405469170300194
+    },
+    "transcif_rag": {
+      "mae": 27.00683816961247,
+      "rmse": 33.871339682708516,
+      "smape": 8.969067533364042
+    },
+    "ratio_rag_vs_zs": 0.6837132260887809,
+    "transcif_rag_plus": {
+      "mae": 12.824336634563561,
+      "rmse": 22.871227391030178,
+      "smape": 4.372539426971786
+    },
+    "ratio_rag_plus_vs_zs_plus": 0.9937378575692697,
+    "transcif_phys_irm": {
+      "mae": 21.712564558520665,
+      "rmse": 30.25912400051775,
+      "smape": 7.152262190234936
+    },
+    "ratio_phys_irm_vs_zs": 0.5496818053166462,
+    "transcif_phys_weighted": {
+      "mae": 31.747074047934827,
+      "rmse": 38.81735531267595,
+      "smape": 10.714324903590489
+    },
+    "ratio_phys_weighted_vs_zs": 0.8037184612234968,
+    "irm_benefit": 0.6839233286739093,
+    "transcif_phys_irm_plus": {
+      "mae": 12.835531049765509,
+      "rmse": 22.845819554600197,
+      "smape": 4.37599090046163
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9946052953554505,
+    "transcif_causal": {
+      "mae": 23.2783321776705,
+      "rmse": 32.041209417536194,
+      "smape": 7.6389177349051804
+    },
+    "ratio_causal_vs_zs": 0.5893212486113755,
+    "transcif_causal_plus": {
+      "mae": 12.817352822554804,
+      "rmse": 22.87159651085101,
+      "smape": 4.369274614122735
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9931966928618069,
+    "transcif_icl": {
+      "mae": 21.11277467279277,
+      "rmse": 29.649048974663046,
+      "smape": 6.9776707320468585
+    },
+    "ratio_icl_vs_zs": 0.534497344434148,
+    "transcif_icl_plus": {
+      "mae": 12.871157667640441,
+      "rmse": 23.01128818289844,
+      "smape": 4.387784104216539
+    },
+    "ratio_icl_plus_vs_zs_plus": 0.997365946446288,
+    "transcif_hier": {
+      "mae": 68.90563634339532,
+      "rmse": 74.47572439737512,
+      "smape": 24.53526014778694
+    },
+    "ratio_hier_vs_zs": 1.74443578415826,
+    "transcif_hier_plus": {
+      "mae": 12.842068111506267,
+      "rmse": 22.9812124490757,
+      "smape": 4.372364241041836
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9951118420809593,
+    "ratio_vs_patchtst": 2.786714051289016,
+    "ratio_vs_persist": 2.950959055179416,
+    "ratio_plus_vs_patchtst": 0.9104492050749038,
+    "ratio_plus_vs_persist": 0.9641097997671972
+  },
+  {
+    "target": "US_PJM",
+    "seed": 0,
+    "mean_rs": 0.06584352254867554,
+    "ef_nr": 347.6,
+    "n_test": 72,
+    "persistence": {
+      "mae": 15.640140533447266,
+      "rmse": 19.60844612121582,
+      "smape": 4.921429231762886
+    },
+    "patchtst_sup": {
+      "mae": 12.84249496459961,
+      "rmse": 16.645143508911133,
+      "smape": 4.062093049287796
+    },
+    "transcif_zs": {
+      "mae": 44.05835471802079,
+      "rmse": 49.068194896225414,
+      "smape": 14.581531769549263
+    },
+    "transcif_zs_plus": {
+      "mae": 14.155933536727343,
+      "rmse": 17.6822523137517,
+      "smape": 4.45433457420052
+    },
+    "transcif_rag": {
+      "mae": 27.26236301369929,
+      "rmse": 32.65495113499143,
+      "smape": 8.707950221222383
+    },
+    "ratio_rag_vs_zs": 0.6187785083710449,
+    "transcif_rag_plus": {
+      "mae": 14.12894241370085,
+      "rmse": 17.668643557197054,
+      "smape": 4.445305179299529
+    },
+    "ratio_rag_plus_vs_zs_plus": 0.9980932996784377,
+    "transcif_phys_irm": {
+      "mae": 17.437720372155308,
+      "rmse": 21.596847082340066,
+      "smape": 5.462304709787706
+    },
+    "ratio_phys_irm_vs_zs": 0.39578691677796396,
+    "transcif_phys_weighted": {
+      "mae": 34.05554165151141,
+      "rmse": 39.57246327709787,
+      "smape": 11.04485171787761
+    },
+    "ratio_phys_weighted_vs_zs": 0.7729644438488754,
+    "irm_benefit": 0.5120376751189158,
+    "transcif_phys_irm_plus": {
+      "mae": 14.100718386786252,
+      "rmse": 17.610268132614593,
+      "smape": 4.437122597645633
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9960995048614889,
+    "transcif_causal": {
+      "mae": 17.569579795042607,
+      "rmse": 21.824029628898693,
+      "smape": 5.502071278128487
+    },
+    "ratio_causal_vs_zs": 0.3987797526142364,
+    "transcif_causal_plus": {
+      "mae": 14.121640544854857,
+      "rmse": 17.646440626630536,
+      "smape": 4.443418076630468
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9975774828425471,
+    "transcif_icl": {
+      "mae": 18.140041920234427,
+      "rmse": 22.41445012593612,
+      "smape": 5.687993520306159
+    },
+    "ratio_icl_vs_zs": 0.41172762887613623,
+    "transcif_icl_plus": {
+      "mae": 14.153398821092411,
+      "rmse": 17.727070779034523,
+      "smape": 4.452844554252786
+    },
+    "ratio_icl_plus_vs_zs_plus": 0.9998209432370988,
+    "transcif_hier": {
+      "mae": 77.31271483854009,
+      "rmse": 80.29759139179691,
+      "smape": 27.253617702837396
+    },
+    "ratio_hier_vs_zs": 1.7547798898381826,
+    "transcif_hier_plus": {
+      "mae": 14.037474830012146,
+      "rmse": 17.53203460921756,
+      "smape": 4.4162719801710075
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9916318689680297,
+    "ratio_vs_patchtst": 3.4306694173887413,
+    "ratio_vs_persist": 2.817005040574902,
+    "ratio_plus_vs_patchtst": 1.1022728508555566,
+    "ratio_plus_vs_persist": 0.9051027071306765
+  },
+  {
+    "target": "US_ISNE",
+    "seed": 0,
+    "mean_rs": 0.136003777384758,
+    "ef_nr": 299.1,
+    "n_test": 73,
+    "persistence": {
+      "mae": 15.959382057189941,
+      "rmse": 20.081287384033203,
+      "smape": 6.180156022310257
+    },
+    "patchtst_sup": {
+      "mae": 13.058836936950684,
+      "rmse": 16.820144653320312,
+      "smape": 5.00837005674839
+    },
+    "transcif_zs": {
+      "mae": 40.80604665296823,
+      "rmse": 46.72246389144907,
+      "smape": 16.25133917962755
+    },
+    "transcif_zs_plus": {
+      "mae": 15.33068517838937,
+      "rmse": 19.031875888540903,
+      "smape": 5.932280511715436
+    },
+    "transcif_rag": {
+      "mae": 29.036229023605273,
+      "rmse": 34.50680287393899,
+      "smape": 11.295023470204121
+    },
+    "ratio_rag_vs_zs": 0.7115668241655844,
+    "transcif_rag_plus": {
+      "mae": 15.373071227769454,
+      "rmse": 19.05772756183894,
+      "smape": 5.950551841051048
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.002764785062564,
+    "transcif_phys_irm": {
+      "mae": 22.779209181195185,
+      "rmse": 28.515347859976178,
+      "smape": 8.829285466049203
+    },
+    "ratio_phys_irm_vs_zs": 0.5582312193807735,
+    "transcif_phys_weighted": {
+      "mae": 26.98418819967223,
+      "rmse": 32.38707986733585,
+      "smape": 10.471926717989657
+    },
+    "ratio_phys_weighted_vs_zs": 0.6612791586785436,
+    "irm_benefit": 0.844168778124364,
+    "transcif_phys_irm_plus": {
+      "mae": 15.43170067925013,
+      "rmse": 19.125881341680238,
+      "smape": 5.972621376470845
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 1.0065891054238825,
+    "transcif_causal": {
+      "mae": 22.645326706758997,
+      "rmse": 28.355383702709336,
+      "smape": 8.77090567171193
+    },
+    "ratio_causal_vs_zs": 0.5549502724276226,
+    "transcif_causal_plus": {
+      "mae": 15.30465551466558,
+      "rmse": 19.013796002571056,
+      "smape": 5.9230500981002905
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9983021200017542,
+    "transcif_icl": {
+      "mae": 23.953244934758573,
+      "rmse": 29.235987262921032,
+      "smape": 9.291662493230518
+    },
+    "ratio_icl_vs_zs": 0.5870023415516586,
+    "transcif_icl_plus": {
+      "mae": 15.484030992161848,
+      "rmse": 19.19514546351576,
+      "smape": 5.99438612696358
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0100025414381766,
+    "transcif_hier": {
+      "mae": 62.13836891576136,
+      "rmse": 67.96839328954012,
+      "smape": 26.068352837789494
+    },
+    "ratio_hier_vs_zs": 1.522773559620028,
+    "transcif_hier_plus": {
+      "mae": 15.377446495824245,
+      "rmse": 19.115953258360673,
+      "smape": 5.94728758671837
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0030501779203445,
+    "ratio_vs_patchtst": 3.1247841480817726,
+    "ratio_vs_persist": 2.556868837824738,
+    "ratio_plus_vs_patchtst": 1.1739701822151074,
+    "ratio_plus_vs_persist": 0.9606064397388535
+  },
+  {
+    "target": "US_MISO",
+    "seed": 0,
+    "mean_rs": 0.17985941469669342,
+    "ef_nr": 534.1,
+    "n_test": 73,
+    "persistence": {
+      "mae": 55.600894927978516,
+      "rmse": 68.07442474365234,
+      "smape": 12.895087897777557
+    },
+    "patchtst_sup": {
+      "mae": 41.106014251708984,
+      "rmse": 51.64544677734375,
+      "smape": 9.491530060768127
+    },
+    "transcif_zs": {
+      "mae": 55.08730224228663,
+      "rmse": 67.57290595009452,
+      "smape": 12.965208876918327
+    },
+    "transcif_zs_plus": {
+      "mae": 46.6583919484717,
+      "rmse": 55.605539664223215,
+      "smape": 10.804168804969011
+    },
+    "transcif_rag": {
+      "mae": 51.302305980047976,
+      "rmse": 61.76939491163087,
+      "smape": 11.992238479397335
+    },
+    "ratio_rag_vs_zs": 0.9312909489451603,
+    "transcif_rag_plus": {
+      "mae": 46.82806886104153,
+      "rmse": 55.78408153825777,
+      "smape": 10.843550795306387
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0036365786621453,
+    "transcif_phys_irm": {
+      "mae": 42.02270634684405,
+      "rmse": 50.250922571123354,
+      "smape": 9.744078134302345
+    },
+    "ratio_phys_irm_vs_zs": 0.7628383427095144,
+    "transcif_phys_weighted": {
+      "mae": 71.42309755929767,
+      "rmse": 86.96986557130887,
+      "smape": 17.268156955323178
+    },
+    "ratio_phys_weighted_vs_zs": 1.2965437524089027,
+    "irm_benefit": 0.5883629775641626,
+    "transcif_phys_irm_plus": {
+      "mae": 45.83406399840838,
+      "rmse": 54.814815386997296,
+      "smape": 10.616948945732393
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9823326969567728,
+    "transcif_causal": {
+      "mae": 44.73554286325699,
+      "rmse": 54.50696991800322,
+      "smape": 10.402234844201418
+    },
+    "ratio_causal_vs_zs": 0.8120844739591672,
+    "transcif_causal_plus": {
+      "mae": 45.95753123537977,
+      "rmse": 54.813103238079705,
+      "smape": 10.640582490490017
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.984978892674528,
+    "transcif_icl": {
+      "mae": 52.68540362633795,
+      "rmse": 63.41821590212048,
+      "smape": 12.28042007637091
+    },
+    "ratio_icl_vs_zs": 0.9563983255998891,
+    "transcif_icl_plus": {
+      "mae": 47.06595892426354,
+      "rmse": 55.89775393561873,
+      "smape": 10.901091981802285
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0087351269251188,
+    "transcif_hier": {
+      "mae": 94.64449185776486,
+      "rmse": 108.4731879870084,
+      "smape": 23.605644200255053
+    },
+    "ratio_hier_vs_zs": 1.7180818084264973,
+    "transcif_hier_plus": {
+      "mae": 46.22907364908147,
+      "rmse": 55.13688195901953,
+      "smape": 10.70541906027971
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9907986906221637,
+    "ratio_vs_patchtst": 1.3401275517729472,
+    "ratio_vs_persist": 0.9907628701596053,
+    "ratio_plus_vs_patchtst": 1.1350745820979682,
+    "ratio_plus_vs_persist": 0.8391662042294409
+  },
+  {
+    "target": "QLD1",
+    "seed": 0,
+    "mean_rs": 0.1832774430513382,
+    "ef_nr": 841.59,
+    "n_test": 73,
+    "persistence": {
+      "mae": 29.113201141357422,
+      "rmse": 40.768062591552734,
+      "smape": 4.578866809606552
+    },
+    "patchtst_sup": {
+      "mae": 30.303260803222656,
+      "rmse": 39.2282829284668,
+      "smape": 4.723281413316727
+    },
+    "transcif_zs": {
+      "mae": 50.60858381332041,
+      "rmse": 63.476743068524925,
+      "smape": 8.059354945512714
+    },
+    "transcif_zs_plus": {
+      "mae": 26.955904454034837,
+      "rmse": 36.867384636961106,
+      "smape": 4.239402063810665
+    },
+    "transcif_rag": {
+      "mae": 42.0891735452464,
+      "rmse": 51.386047673225875,
+      "smape": 6.325064135075349
+    },
+    "ratio_rag_vs_zs": 0.8316607653061484,
+    "transcif_rag_plus": {
+      "mae": 27.151862272939237,
+      "rmse": 36.988162203389514,
+      "smape": 4.261915781450062
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0072695694273048,
+    "transcif_phys_irm": {
+      "mae": 62.10637738088994,
+      "rmse": 72.26684829544895,
+      "smape": 9.667415436852309
+    },
+    "ratio_phys_irm_vs_zs": 1.2271905811468935,
+    "transcif_phys_weighted": {
+      "mae": 229.36398728506595,
+      "rmse": 234.7060020958679,
+      "smape": 41.1817560189114
+    },
+    "ratio_phys_weighted_vs_zs": 4.532116293376625,
+    "irm_benefit": 0.27077649859522535,
+    "transcif_phys_irm_plus": {
+      "mae": 26.987154217460276,
+      "rmse": 36.95157771354263,
+      "smape": 4.237084061107951
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 1.0011592919643533,
+    "transcif_causal": {
+      "mae": 39.60338922563955,
+      "rmse": 49.2277316217337,
+      "smape": 6.1480881535507885
+    },
+    "ratio_causal_vs_zs": 0.7825429253607322,
+    "transcif_causal_plus": {
+      "mae": 27.070191886089837,
+      "rmse": 36.877448806332005,
+      "smape": 4.253474922101242
+    },
+    "ratio_causal_plus_vs_zs_plus": 1.004239792148317,
+    "transcif_icl": {
+      "mae": 31.853704678353285,
+      "rmse": 41.688410744655016,
+      "smape": 4.909509043735011
+    },
+    "ratio_icl_vs_zs": 0.6294130813035959,
+    "transcif_icl_plus": {
+      "mae": 26.95685429790119,
+      "rmse": 36.96880683236864,
+      "smape": 4.229241083439512
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0000352369503303,
+    "transcif_hier": {
+      "mae": 134.42469071859688,
+      "rmse": 148.4911376085514,
+      "smape": 21.48087058966625
+    },
+    "ratio_hier_vs_zs": 2.6561638479047045,
+    "transcif_hier_plus": {
+      "mae": 27.08339219583312,
+      "rmse": 36.93535143445151,
+      "smape": 4.255693488766466
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0047294922719316,
+    "ratio_vs_patchtst": 1.6700705624372392,
+    "ratio_vs_persist": 1.7383379988890066,
+    "ratio_plus_vs_patchtst": 0.8895380807060922,
+    "ratio_plus_vs_persist": 0.9258997086288121
+  },
+  {
+    "target": "US_NYIS",
+    "seed": 0,
+    "mean_rs": 0.2639837861061096,
+    "ef_nr": 287.3,
+    "n_test": 73,
+    "persistence": {
+      "mae": 14.583292007446289,
+      "rmse": 18.37027931213379,
+      "smape": 7.209985703229904
+    },
+    "patchtst_sup": {
+      "mae": 11.765907287597656,
+      "rmse": 15.062378883361816,
+      "smape": 5.788164585828781
+    },
+    "transcif_zs": {
+      "mae": 17.316014692931514,
+      "rmse": 20.81352374298262,
+      "smape": 8.530906371667694
+    },
+    "transcif_zs_plus": {
+      "mae": 13.493415373558593,
+      "rmse": 16.88237122222252,
+      "smape": 6.641292858221264
+    },
+    "transcif_rag": {
+      "mae": 14.082531414930305,
+      "rmse": 17.614706769207043,
+      "smape": 6.904151788756605
+    },
+    "ratio_rag_vs_zs": 0.8132663124084126,
+    "transcif_rag_plus": {
+      "mae": 13.533858211826317,
+      "rmse": 16.942307114309497,
+      "smape": 6.662066289266512
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0029972276957377,
+    "transcif_phys_irm": {
+      "mae": 16.462987357340584,
+      "rmse": 21.129336338601437,
+      "smape": 7.965087285347468
+    },
+    "ratio_phys_irm_vs_zs": 0.9507376639072073,
+    "transcif_phys_weighted": {
+      "mae": 17.65887709213719,
+      "rmse": 22.688955091520903,
+      "smape": 8.49276611930099
+    },
+    "ratio_phys_weighted_vs_zs": 1.0198003065535417,
+    "irm_benefit": 0.9322782683996884,
+    "transcif_phys_irm_plus": {
+      "mae": 13.470584553859066,
+      "rmse": 16.828685810666,
+      "smape": 6.628232081666647
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9983080028986385,
+    "transcif_causal": {
+      "mae": 14.67711435615183,
+      "rmse": 18.183865836127694,
+      "smape": 7.139495164258625
+    },
+    "ratio_causal_vs_zs": 0.8476034824654602,
+    "transcif_causal_plus": {
+      "mae": 13.267493357570388,
+      "rmse": 16.628137510858412,
+      "smape": 6.526320791650912
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9832568693889824,
+    "transcif_icl": {
+      "mae": 14.20865500015398,
+      "rmse": 18.192964753484116,
+      "smape": 6.945579391149099
+    },
+    "ratio_icl_vs_zs": 0.8205499505584288,
+    "transcif_icl_plus": {
+      "mae": 13.589866806030898,
+      "rmse": 17.04004018749616,
+      "smape": 6.691446571751364
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0071480370093187,
+    "transcif_hier": {
+      "mae": 30.577839824506267,
+      "rmse": 34.39357007172903,
+      "smape": 15.630755845531692
+    },
+    "ratio_hier_vs_zs": 1.7658705173649627,
+    "transcif_hier_plus": {
+      "mae": 13.411029953749454,
+      "rmse": 16.757254945555566,
+      "smape": 6.599121826900337
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9938943983025543,
+    "ratio_vs_patchtst": 1.4717109585917083,
+    "ratio_vs_persist": 1.1873872294465395,
+    "ratio_plus_vs_patchtst": 1.1468231938034976,
+    "ratio_plus_vs_persist": 0.9252653904666244
+  },
+  {
+    "target": "UK_14_South_East_England",
+    "seed": 0,
+    "mean_rs": 0.2788901925086975,
+    "ef_nr": 237.6425855513308,
+    "n_test": 72,
+    "persistence": {
+      "mae": 50.69502258300781,
+      "rmse": 69.80928802490234,
+      "smape": 36.06552481651306
+    },
+    "patchtst_sup": {
+      "mae": 48.10573959350586,
+      "rmse": 63.09077835083008,
+      "smape": 35.16313135623932
+    },
+    "transcif_zs": {
+      "mae": 58.83327806600324,
+      "rmse": 72.486273235322,
+      "smape": 41.469069940925976
+    },
+    "transcif_zs_plus": {
+      "mae": 50.43732566332651,
+      "rmse": 63.98679151341263,
+      "smape": 36.04143903953902
+    },
+    "transcif_rag": {
+      "mae": 59.27434688270082,
+      "rmse": 72.14885932276366,
+      "smape": 41.78409453354834
+    },
+    "ratio_rag_vs_zs": 1.0074969274396501,
+    "transcif_rag_plus": {
+      "mae": 50.39772871954918,
+      "rmse": 63.98464891842791,
+      "smape": 35.9029552231173
+    },
+    "ratio_rag_plus_vs_zs_plus": 0.9992149277691358,
+    "transcif_phys_irm": {
+      "mae": 62.63390239705858,
+      "rmse": 76.45472645670121,
+      "smape": 43.23385682810996
+    },
+    "ratio_phys_irm_vs_zs": 1.0645999076711574,
+    "transcif_phys_weighted": {
+      "mae": 64.39345819126935,
+      "rmse": 77.87861318380605,
+      "smape": 44.67143408746533
+    },
+    "ratio_phys_weighted_vs_zs": 1.0945073996901602,
+    "irm_benefit": 0.9726749293540918,
+    "transcif_phys_irm_plus": {
+      "mae": 50.54933618494127,
+      "rmse": 64.19540179572678,
+      "smape": 36.011620125815824
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 1.0022207862954995,
+    "transcif_causal": {
+      "mae": 56.637063240630745,
+      "rmse": 69.84718270725381,
+      "smape": 40.366083142812094
+    },
+    "ratio_causal_vs_zs": 0.9626705344735572,
+    "transcif_causal_plus": {
+      "mae": 50.13058229129478,
+      "rmse": 63.36603403463733,
+      "smape": 36.00531690417147
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9939183260016744,
+    "transcif_icl": {
+      "mae": 60.818592083587966,
+      "rmse": 74.56056934492231,
+      "smape": 42.31225028699313
+    },
+    "ratio_icl_vs_zs": 1.0337447458793214,
+    "transcif_icl_plus": {
+      "mae": 50.58697061876352,
+      "rmse": 64.24234626678002,
+      "smape": 36.0202206466417
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0029669486529857,
+    "transcif_hier": {
+      "mae": 59.637391959510744,
+      "rmse": 72.22516290707114,
+      "smape": 42.73686649012433
+    },
+    "ratio_hier_vs_zs": 1.0136676710858334,
+    "transcif_hier_plus": {
+      "mae": 50.24691434345578,
+      "rmse": 63.72551143988459,
+      "smape": 35.81772055522288
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9962247934963534,
+    "ratio_vs_patchtst": 1.2229991382139682,
+    "ratio_vs_persist": 1.1605336198375271,
+    "ratio_plus_vs_patchtst": 1.0484679393669567,
+    "ratio_plus_vs_persist": 0.9949167214738025
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "seed": 0,
+    "mean_rs": 0.28978559374809265,
+    "ef_nr": 393.8692886061307,
+    "n_test": 72,
+    "persistence": {
+      "mae": 76.1998519897461,
+      "rmse": 106.9461898803711,
+      "smape": 37.739184498786926
+    },
+    "patchtst_sup": {
+      "mae": 74.9751968383789,
+      "rmse": 97.28119659423828,
+      "smape": 36.412063241004944
+    },
+    "transcif_zs": {
+      "mae": 73.42064821930296,
+      "rmse": 94.31859447690516,
+      "smape": 35.52460949706033
+    },
+    "transcif_zs_plus": {
+      "mae": 71.54429113673989,
+      "rmse": 93.67934369266351,
+      "smape": 34.39130275519915
+    },
+    "transcif_rag": {
+      "mae": 71.92104875778465,
+      "rmse": 94.92972013710543,
+      "smape": 34.795991337691675
+    },
+    "ratio_rag_vs_zs": 0.979575235333811,
+    "transcif_rag_plus": {
+      "mae": 72.23707464646913,
+      "rmse": 94.27230304940302,
+      "smape": 34.654123941013665
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0096832814851033,
+    "transcif_phys_irm": {
+      "mae": 60.594024144662455,
+      "rmse": 80.28814344453833,
+      "smape": 30.739164007152848
+    },
+    "ratio_phys_irm_vs_zs": 0.8252994983600775,
+    "transcif_phys_weighted": {
+      "mae": 72.35660628049072,
+      "rmse": 94.18335884370266,
+      "smape": 34.791341704357414
+    },
+    "ratio_phys_weighted_vs_zs": 0.9855075926919903,
+    "irm_benefit": 0.8374359614071649,
+    "transcif_phys_irm_plus": {
+      "mae": 67.74147241334668,
+      "rmse": 89.82955758048844,
+      "smape": 33.11527392789803
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9468466503340565,
+    "transcif_causal": {
+      "mae": 58.26778234747302,
+      "rmse": 78.89188173325763,
+      "smape": 29.828872557849373
+    },
+    "ratio_causal_vs_zs": 0.7936157438086182,
+    "transcif_causal_plus": {
+      "mae": 68.77941294576256,
+      "rmse": 90.76612438614077,
+      "smape": 33.4399370805714
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9613543142709609,
+    "transcif_icl": {
+      "mae": 73.99676314308769,
+      "rmse": 102.99323173238807,
+      "smape": 36.01043017316478
+    },
+    "ratio_icl_vs_zs": 1.0078467697814912,
+    "transcif_icl_plus": {
+      "mae": 72.71758204891584,
+      "rmse": 95.40532657285297,
+      "smape": 34.858684359504984
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0163995043284935,
+    "transcif_hier": {
+      "mae": 88.53750665000223,
+      "rmse": 100.51610668970584,
+      "smape": 41.508710138451455
+    },
+    "ratio_hier_vs_zs": 1.2058938295606727,
+    "transcif_hier_plus": {
+      "mae": 71.74303067926222,
+      "rmse": 93.14506911404075,
+      "smape": 34.544775544112596
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.002777853262149,
+    "ratio_vs_patchtst": 0.979265828105433,
+    "ratio_vs_persist": 0.9635274387302337,
+    "ratio_plus_vs_patchtst": 0.954239457229637,
+    "ratio_plus_vs_persist": 0.938903282205421
+  },
+  {
+    "target": "NSW1",
+    "seed": 0,
+    "mean_rs": 0.29200616478919983,
+    "ef_nr": 875.23,
+    "n_test": 73,
+    "persistence": {
+      "mae": 53.71515655517578,
+      "rmse": 70.66560363769531,
+      "smape": 9.991379082202911
+    },
+    "patchtst_sup": {
+      "mae": 46.580318450927734,
+      "rmse": 59.88437271118164,
+      "smape": 8.787298202514648
+    },
+    "transcif_zs": {
+      "mae": 49.21638907043646,
+      "rmse": 63.26495011792595,
+      "smape": 9.110318887835216
+    },
+    "transcif_zs_plus": {
+      "mae": 46.23641892880416,
+      "rmse": 60.59841201824252,
+      "smape": 8.59675630194096
+    },
+    "transcif_rag": {
+      "mae": 53.529855284694946,
+      "rmse": 69.7138085049817,
+      "smape": 9.964535730700142
+    },
+    "ratio_rag_vs_zs": 1.0876428827008262,
+    "transcif_rag_plus": {
+      "mae": 46.68484790029439,
+      "rmse": 60.96542242434085,
+      "smape": 8.670007670942837
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0096986094918106,
+    "transcif_phys_irm": {
+      "mae": 57.63561282694645,
+      "rmse": 72.49816063719722,
+      "smape": 10.528353751879685
+    },
+    "ratio_phys_irm_vs_zs": 1.17106545026009,
+    "transcif_phys_weighted": {
+      "mae": 234.08420539251372,
+      "rmse": 245.46890865413658,
+      "smape": 51.17826697400294
+    },
+    "ratio_phys_weighted_vs_zs": 4.756224701034082,
+    "irm_benefit": 0.24621743585947087,
+    "transcif_phys_irm_plus": {
+      "mae": 46.21739969383161,
+      "rmse": 60.415130332147854,
+      "smape": 8.607551360512733
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9995886525078458,
+    "transcif_causal": {
+      "mae": 53.93187658606055,
+      "rmse": 70.18292441255836,
+      "smape": 10.11966577393728
+    },
+    "ratio_causal_vs_zs": 1.0958113263627585,
+    "transcif_causal_plus": {
+      "mae": 46.11123971460098,
+      "rmse": 60.32852655889155,
+      "smape": 8.602888161243083
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9972926273897652,
+    "transcif_icl": {
+      "mae": 55.78931171926785,
+      "rmse": 71.84429940178026,
+      "smape": 10.309433885794538
+    },
+    "ratio_icl_vs_zs": 1.133551501298165,
+    "transcif_icl_plus": {
+      "mae": 46.676234204334186,
+      "rmse": 60.78767480589259,
+      "smape": 8.664531357368265
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0095123127119179,
+    "transcif_hier": {
+      "mae": 84.72883454826868,
+      "rmse": 101.22126414227151,
+      "smape": 15.22654148060191
+    },
+    "ratio_hier_vs_zs": 1.7215573134999456,
+    "transcif_hier_plus": {
+      "mae": 46.58209967799491,
+      "rmse": 61.0426105333498,
+      "smape": 8.680057701328689
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0074763737590282,
+    "ratio_vs_patchtst": 1.056591940698856,
+    "ratio_vs_persist": 0.9162477078491204,
+    "ratio_plus_vs_patchtst": 0.9926170637393588,
+    "ratio_plus_vs_persist": 0.8607704397419094
+  },
+  {
+    "target": "UK_12_South_England",
+    "seed": 0,
+    "mean_rs": 0.30931487679481506,
+    "ef_nr": 325.7952104732543,
+    "n_test": 72,
+    "persistence": {
+      "mae": 57.36814880371094,
+      "rmse": 77.6309814453125,
+      "smape": 27.489450573921204
+    },
+    "patchtst_sup": {
+      "mae": 53.03406524658203,
+      "rmse": 68.39260864257812,
+      "smape": 25.2728670835495
+    },
+    "transcif_zs": {
+      "mae": 65.10227842707609,
+      "rmse": 79.63983835229602,
+      "smape": 30.4339243666845
+    },
+    "transcif_zs_plus": {
+      "mae": 54.75252279894745,
+      "rmse": 71.35159111931169,
+      "smape": 25.872002306699315
+    },
+    "transcif_rag": {
+      "mae": 63.81155187607468,
+      "rmse": 77.83581527812777,
+      "smape": 29.72430121013242
+    },
+    "ratio_rag_vs_zs": 0.9801738651520898,
+    "transcif_rag_plus": {
+      "mae": 54.95707890166669,
+      "rmse": 71.60152707207273,
+      "smape": 25.889791127068566
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0037360123746328,
+    "transcif_phys_irm": {
+      "mae": 60.57276050253284,
+      "rmse": 73.01800442259008,
+      "smape": 28.49706896222161
+    },
+    "ratio_phys_irm_vs_zs": 0.9304245867582506,
+    "transcif_phys_weighted": {
+      "mae": 65.4000394358398,
+      "rmse": 79.44446196629603,
+      "smape": 30.68019898635916
+    },
+    "ratio_phys_weighted_vs_zs": 1.0045737417484897,
+    "irm_benefit": 0.9261884400231482,
+    "transcif_phys_irm_plus": {
+      "mae": 53.605704670432004,
+      "rmse": 69.9322767872304,
+      "smape": 25.53137102327559
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9790545153010284,
+    "transcif_causal": {
+      "mae": 57.80771645714158,
+      "rmse": 71.91315879069194,
+      "smape": 27.033324490669386
+    },
+    "ratio_causal_vs_zs": 0.8879522783813862,
+    "transcif_causal_plus": {
+      "mae": 53.4490776327386,
+      "rmse": 69.71771273255005,
+      "smape": 25.35522672239678
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9761938793031486,
+    "transcif_icl": {
+      "mae": 65.1943302631747,
+      "rmse": 80.24864976060775,
+      "smape": 30.32370280540943
+    },
+    "ratio_icl_vs_zs": 1.001413957211985,
+    "transcif_icl_plus": {
+      "mae": 54.913714552355096,
+      "rmse": 71.6059582473934,
+      "smape": 25.90630207548695
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.002944005959315,
+    "transcif_hier": {
+      "mae": 71.14767208872091,
+      "rmse": 87.35058268891135,
+      "smape": 33.20283889967915
+    },
+    "ratio_hier_vs_zs": 1.0928599398931411,
+    "transcif_hier_plus": {
+      "mae": 54.60452678064358,
+      "rmse": 70.89984218777778,
+      "smape": 25.678777341248832
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9972970009282072,
+    "ratio_vs_patchtst": 1.2275558761030834,
+    "ratio_vs_persist": 1.1348157433112929,
+    "ratio_plus_vs_patchtst": 1.0324029007464437,
+    "ratio_plus_vs_persist": 0.9544063028125062
+  },
+  {
+    "target": "UK_11_South_West_England",
+    "seed": 0,
+    "mean_rs": 0.3220597505569458,
+    "ef_nr": 384.0288095453162,
+    "n_test": 72,
+    "persistence": {
+      "mae": 53.04108810424805,
+      "rmse": 72.5740737915039,
+      "smape": 22.519198060035706
+    },
+    "patchtst_sup": {
+      "mae": 51.75927734375,
+      "rmse": 67.19444274902344,
+      "smape": 21.2722048163414
+    },
+    "transcif_zs": {
+      "mae": 53.95050589182315,
+      "rmse": 66.77693868123539,
+      "smape": 22.203240388127714
+    },
+    "transcif_zs_plus": {
+      "mae": 49.379475185377835,
+      "rmse": 65.83017151028427,
+      "smape": 20.53433303699384
+    },
+    "transcif_rag": {
+      "mae": 50.32891532851754,
+      "rmse": 64.46854865323756,
+      "smape": 20.860554795845392
+    },
+    "ratio_rag_vs_zs": 0.9328719813940706,
+    "transcif_rag_plus": {
+      "mae": 49.54425980789434,
+      "rmse": 66.04145601661142,
+      "smape": 20.574717177895575
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0033371076119761,
+    "transcif_phys_irm": {
+      "mae": 44.01089989820601,
+      "rmse": 56.56642952140877,
+      "smape": 18.403805704012324
+    },
+    "ratio_phys_irm_vs_zs": 0.8157643597717662,
+    "transcif_phys_weighted": {
+      "mae": 52.829587078185675,
+      "rmse": 65.71880943227393,
+      "smape": 21.769214818013484
+    },
+    "ratio_phys_weighted_vs_zs": 0.9792232010597817,
+    "irm_benefit": 0.8330729489343092,
+    "transcif_phys_irm_plus": {
+      "mae": 48.34364860103007,
+      "rmse": 63.48146968110821,
+      "smape": 20.07748637194318
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9790231350078323,
+    "transcif_causal": {
+      "mae": 43.611707486101174,
+      "rmse": 56.96136549016361,
+      "smape": 18.521559404190473
+    },
+    "ratio_causal_vs_zs": 0.8083651258719903,
+    "transcif_causal_plus": {
+      "mae": 48.73631755108941,
+      "rmse": 64.10647222237644,
+      "smape": 20.270605400894656
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.986975203120853,
+    "transcif_icl": {
+      "mae": 49.4088482442688,
+      "rmse": 66.15185079410183,
+      "smape": 20.619149523813864
+    },
+    "ratio_icl_vs_zs": 0.9158180711658037,
+    "transcif_icl_plus": {
+      "mae": 50.03301753746727,
+      "rmse": 66.95552586311445,
+      "smape": 20.801223323577485
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0132351012163645,
+    "transcif_hier": {
+      "mae": 69.88573913255333,
+      "rmse": 81.22157682916787,
+      "smape": 27.981028841420923
+    },
+    "ratio_hier_vs_zs": 1.2953676333023108,
+    "transcif_hier_plus": {
+      "mae": 49.49418785061763,
+      "rmse": 65.41872451502115,
+      "smape": 20.505380862115345
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0023230839292874,
+    "ratio_vs_patchtst": 1.0423349911460413,
+    "ratio_vs_persist": 1.0171455341524613,
+    "ratio_plus_vs_patchtst": 0.9540217274950125,
+    "ratio_plus_vs_persist": 0.9309664818400105
+  },
+  {
+    "target": "US_ERCO",
+    "seed": 0,
+    "mean_rs": 0.3246876895427704,
+    "ef_nr": 470.3,
+    "n_test": 73,
+    "persistence": {
+      "mae": 64.79312133789062,
+      "rmse": 84.75955963134766,
+      "smape": 20.75020968914032
+    },
+    "patchtst_sup": {
+      "mae": 48.26012420654297,
+      "rmse": 60.93141174316406,
+      "smape": 15.503418445587158
+    },
+    "transcif_zs": {
+      "mae": 59.012857622128465,
+      "rmse": 72.72465396611736,
+      "smape": 18.822316423942446
+    },
+    "transcif_zs_plus": {
+      "mae": 59.75879975341978,
+      "rmse": 74.20889829160413,
+      "smape": 19.0525276174236
+    },
+    "transcif_rag": {
+      "mae": 59.40091032098903,
+      "rmse": 73.47079759901182,
+      "smape": 18.911386125823558
+    },
+    "ratio_rag_vs_zs": 1.0065757313659567,
+    "transcif_rag_plus": {
+      "mae": 60.174772550648775,
+      "rmse": 74.36118976219569,
+      "smape": 19.1763746849689
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0069608626502775,
+    "transcif_phys_irm": {
+      "mae": 49.8594991518899,
+      "rmse": 61.09814222225924,
+      "smape": 15.831333708774725
+    },
+    "ratio_phys_irm_vs_zs": 0.8448921330187158,
+    "transcif_phys_weighted": {
+      "mae": 64.39679152929142,
+      "rmse": 79.66001266548949,
+      "smape": 20.754988785367242
+    },
+    "ratio_phys_weighted_vs_zs": 1.0912332349949463,
+    "irm_benefit": 0.7742543994480049,
+    "transcif_phys_irm_plus": {
+      "mae": 57.217589105373634,
+      "rmse": 70.93813101075946,
+      "smape": 18.22395203240855
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9574755406980756,
+    "transcif_causal": {
+      "mae": 50.181694515847255,
+      "rmse": 62.72132214951062,
+      "smape": 16.015195077387716
+    },
+    "ratio_causal_vs_zs": 0.85035188157081,
+    "transcif_causal_plus": {
+      "mae": 57.02078679329623,
+      "rmse": 71.06404293467581,
+      "smape": 18.188795680185425
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9541822631742723,
+    "transcif_icl": {
+      "mae": 59.78566317749274,
+      "rmse": 76.25384690162407,
+      "smape": 19.042683533081945
+    },
+    "ratio_icl_vs_zs": 1.0130955453862733,
+    "transcif_icl_plus": {
+      "mae": 60.76292752975222,
+      "rmse": 75.24205432083701,
+      "smape": 19.36408809275501
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0168030111126014,
+    "transcif_hier": {
+      "mae": 66.56307837742479,
+      "rmse": 82.5379030573572,
+      "smape": 21.241556518542616
+    },
+    "ratio_hier_vs_zs": 1.1279419614559585,
+    "transcif_hier_plus": {
+      "mae": 59.3568225954705,
+      "rmse": 73.52216391676048,
+      "smape": 18.908363500472902
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9932733394979828,
+    "ratio_vs_patchtst": 1.2228078272149923,
+    "ratio_vs_persist": 0.910788929497337,
+    "ratio_plus_vs_patchtst": 1.2382645245102344,
+    "ratio_plus_vs_persist": 0.9223016042363928
+  },
+  {
+    "target": "VIC1",
+    "seed": 0,
+    "mean_rs": 0.3422360122203827,
+    "ef_nr": 1160.12,
+    "n_test": 73,
+    "persistence": {
+      "mae": 116.79244232177734,
+      "rmse": 152.71295166015625,
+      "smape": 15.83324819803238
+    },
+    "patchtst_sup": {
+      "mae": 91.26705169677734,
+      "rmse": 117.7042236328125,
+      "smape": 12.397138774394989
+    },
+    "transcif_zs": {
+      "mae": 102.95382315955206,
+      "rmse": 133.10189678142336,
+      "smape": 13.962821558254356
+    },
+    "transcif_zs_plus": {
+      "mae": 98.1346512408878,
+      "rmse": 127.1388289268073,
+      "smape": 13.224489391705397
+    },
+    "transcif_rag": {
+      "mae": 104.92269836302914,
+      "rmse": 136.16320746024417,
+      "smape": 14.11748787554302
+    },
+    "ratio_rag_vs_zs": 1.0191238668274205,
+    "transcif_rag_plus": {
+      "mae": 98.32633507542043,
+      "rmse": 127.28391648143365,
+      "smape": 13.24939085806367
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0019532737122803,
+    "transcif_phys_irm": {
+      "mae": 129.66113308522037,
+      "rmse": 162.16587170922656,
+      "smape": 18.311874565418883
+    },
+    "ratio_phys_irm_vs_zs": 1.2594105697685343,
+    "transcif_phys_weighted": {
+      "mae": 419.91698531866217,
+      "rmse": 437.9675034925594,
+      "smape": 76.74779962913684
+    },
+    "ratio_phys_weighted_vs_zs": 4.0786924898155394,
+    "irm_benefit": 0.3087780147469493,
+    "transcif_phys_irm_plus": {
+      "mae": 98.8610205624031,
+      "rmse": 128.06772827842988,
+      "smape": 13.316107883124955
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 1.0074017618886961,
+    "transcif_causal": {
+      "mae": 91.10538930652348,
+      "rmse": 117.76303230445292,
+      "smape": 12.292759975798962
+    },
+    "ratio_causal_vs_zs": 0.8849150668774433,
+    "transcif_causal_plus": {
+      "mae": 96.14386628550511,
+      "rmse": 124.5504797577875,
+      "smape": 12.964751620441294
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9797137409649933,
+    "transcif_icl": {
+      "mae": 112.03045306290886,
+      "rmse": 146.0804749713244,
+      "smape": 15.01952407516438
+    },
+    "ratio_icl_vs_zs": 1.0881621451715333,
+    "transcif_icl_plus": {
+      "mae": 98.78238555465245,
+      "rmse": 127.99006220812511,
+      "smape": 13.304455075629567
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0066004648263809,
+    "transcif_hier": {
+      "mae": 121.34686005112927,
+      "rmse": 150.49307598516123,
+      "smape": 16.662656389422636
+    },
+    "ratio_hier_vs_zs": 1.1786532673300798,
+    "transcif_hier_plus": {
+      "mae": 97.37463999534539,
+      "rmse": 126.17299068814478,
+      "smape": 13.12860533760429
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9922554241959158,
+    "ratio_vs_patchtst": 1.128050279323172,
+    "ratio_vs_persist": 0.8815110045896788,
+    "ratio_plus_vs_patchtst": 1.075247303560623,
+    "ratio_plus_vs_persist": 0.8402483010888233
+  },
+  {
+    "target": "US_CISO",
+    "seed": 0,
+    "mean_rs": 0.40447503328323364,
+    "ef_nr": 342.8,
+    "n_test": 73,
+    "persistence": {
+      "mae": 27.42571258544922,
+      "rmse": 45.7377815246582,
+      "smape": 13.467885553836823
+    },
+    "patchtst_sup": {
+      "mae": 27.807680130004883,
+      "rmse": 39.93687057495117,
+      "smape": 13.433218002319336
+    },
+    "transcif_zs": {
+      "mae": 41.74948517119844,
+      "rmse": 51.35175682684411,
+      "smape": 18.575663180273118
+    },
+    "transcif_zs_plus": {
+      "mae": 25.332979545749463,
+      "rmse": 39.13776684201833,
+      "smape": 11.758293867530451
+    },
+    "transcif_rag": {
+      "mae": 38.42578881140713,
+      "rmse": 48.431001248341744,
+      "smape": 16.561122080940503
+    },
+    "ratio_rag_vs_zs": 0.9203895246573193,
+    "transcif_rag_plus": {
+      "mae": 25.806550782849612,
+      "rmse": 39.61111147428549,
+      "smape": 11.980928819172213
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.018693862529866,
+    "transcif_phys_irm": {
+      "mae": 27.156725672224198,
+      "rmse": 38.76434934625655,
+      "smape": 12.184566251551422
+    },
+    "ratio_phys_irm_vs_zs": 0.6504685162191822,
+    "transcif_phys_weighted": {
+      "mae": 38.918198901435275,
+      "rmse": 48.74778082418946,
+      "smape": 17.386879731157855
+    },
+    "ratio_phys_weighted_vs_zs": 0.9321839237501216,
+    "irm_benefit": 0.69778988850439,
+    "transcif_phys_irm_plus": {
+      "mae": 25.492438912144497,
+      "rmse": 38.847870324396595,
+      "smape": 11.926087135844549
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 1.0062945365785758,
+    "transcif_causal": {
+      "mae": 39.06588728198586,
+      "rmse": 50.14704773424052,
+      "smape": 17.21541964047968
+    },
+    "ratio_causal_vs_zs": 0.9357214136124509,
+    "transcif_causal_plus": {
+      "mae": 25.368619120952676,
+      "rmse": 38.78379386143051,
+      "smape": 11.842837889244816
+    },
+    "ratio_causal_plus_vs_zs_plus": 1.0014068449839804,
+    "transcif_icl": {
+      "mae": 32.68926403422129,
+      "rmse": 44.12226833743795,
+      "smape": 14.592613098913596
+    },
+    "ratio_icl_vs_zs": 0.7829860392331858,
+    "transcif_icl_plus": {
+      "mae": 25.841745108987492,
+      "rmse": 39.848194724321054,
+      "smape": 12.02728034351166
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0200831316473942,
+    "transcif_hier": {
+      "mae": 60.69158071772148,
+      "rmse": 71.38292138375233,
+      "smape": 25.874318165854326
+    },
+    "ratio_hier_vs_zs": 1.4537084821249617,
+    "transcif_hier_plus": {
+      "mae": 26.253884839110036,
+      "rmse": 40.14155422009593,
+      "smape": 12.179871944041741
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0363520324049322,
+    "ratio_vs_patchtst": 1.5013652694512314,
+    "ratio_vs_persist": 1.5222753115756318,
+    "ratio_plus_vs_patchtst": 0.9110065790211251,
+    "ratio_plus_vs_persist": 0.9236944880400279
+  },
+  {
+    "target": "UK_09_East_Midlands",
+    "seed": 0,
+    "mean_rs": 0.41547149419784546,
+    "ef_nr": 427.5618374558305,
+    "n_test": 72,
+    "persistence": {
+      "mae": 91.84210968017578,
+      "rmse": 131.2164306640625,
+      "smape": 36.77670657634735
+    },
+    "patchtst_sup": {
+      "mae": 77.56993103027344,
+      "rmse": 103.61753845214844,
+      "smape": 33.33849012851715
+    },
+    "transcif_zs": {
+      "mae": 96.89112483277637,
+      "rmse": 124.62872865607068,
+      "smape": 39.205572959544966
+    },
+    "transcif_zs_plus": {
+      "mae": 84.11658607958987,
+      "rmse": 114.58321060083789,
+      "smape": 33.83757144086103
+    },
+    "transcif_rag": {
+      "mae": 92.36241224743198,
+      "rmse": 120.08848510010823,
+      "smape": 37.3704267917087
+    },
+    "ratio_rag_vs_zs": 0.9532597790235126,
+    "transcif_rag_plus": {
+      "mae": 84.95835461237903,
+      "rmse": 114.69389314140126,
+      "smape": 33.94660941537065
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0100071647224567,
+    "transcif_phys_irm": {
+      "mae": 82.5375298815998,
+      "rmse": 108.78154077529436,
+      "smape": 33.478468208711675
+    },
+    "ratio_phys_irm_vs_zs": 0.8518585167016139,
+    "transcif_phys_weighted": {
+      "mae": 100.06071466136149,
+      "rmse": 129.75359571978106,
+      "smape": 40.49688245231528
+    },
+    "ratio_phys_weighted_vs_zs": 1.0327129015588938,
+    "irm_benefit": 0.8248744790693736,
+    "transcif_phys_irm_plus": {
+      "mae": 80.5293768716623,
+      "rmse": 109.79569814410075,
+      "smape": 32.89962058714291
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9573543176784016,
+    "transcif_causal": {
+      "mae": 72.54846365336203,
+      "rmse": 98.01250953324191,
+      "smape": 29.98589849516815
+    },
+    "ratio_causal_vs_zs": 0.7487627352719133,
+    "transcif_causal_plus": {
+      "mae": 81.87489184090582,
+      "rmse": 111.1608431426196,
+      "smape": 33.32921349885296
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9733501519359928,
+    "transcif_icl": {
+      "mae": 93.66031889472276,
+      "rmse": 125.27049513868447,
+      "smape": 38.44958322451223
+    },
+    "ratio_icl_vs_zs": 0.9666552953778829,
+    "transcif_icl_plus": {
+      "mae": 85.4722529876912,
+      "rmse": 115.80605960228986,
+      "smape": 34.08173345377749
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0161165231648681,
+    "transcif_hier": {
+      "mae": 109.25466493512087,
+      "rmse": 130.3676087291131,
+      "smape": 44.4289091442039
+    },
+    "ratio_hier_vs_zs": 1.127602400361051,
+    "transcif_hier_plus": {
+      "mae": 84.41119063709378,
+      "rmse": 113.51904215530645,
+      "smape": 33.88220840299041
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0035023361174593,
+    "ratio_vs_patchtst": 1.2490809717874107,
+    "ratio_vs_persist": 1.054974947441679,
+    "ratio_plus_vs_patchtst": 1.0843968141052163,
+    "ratio_plus_vs_persist": 0.9158825550993035
+  },
+  {
+    "target": "UK_13_London",
+    "seed": 0,
+    "mean_rs": 0.4173077642917633,
+    "ef_nr": 292.0530532424931,
+    "n_test": 72,
+    "persistence": {
+      "mae": 52.739967346191406,
+      "rmse": 73.34795379638672,
+      "smape": 40.790754556655884
+    },
+    "patchtst_sup": {
+      "mae": 53.16813278198242,
+      "rmse": 68.86346435546875,
+      "smape": 42.901256680488586
+    },
+    "transcif_zs": {
+      "mae": 60.23279263340715,
+      "rmse": 72.32658659894588,
+      "smape": 47.578427860874356
+    },
+    "transcif_zs_plus": {
+      "mae": 52.293446163291115,
+      "rmse": 66.9647141034961,
+      "smape": 41.62878868187496
+    },
+    "transcif_rag": {
+      "mae": 61.988714612091115,
+      "rmse": 74.41167256445927,
+      "smape": 48.54041558629116
+    },
+    "ratio_rag_vs_zs": 1.0291522591252074,
+    "transcif_rag_plus": {
+      "mae": 52.631410890618824,
+      "rmse": 67.11256895106395,
+      "smape": 41.68233445498342
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0064628505505715,
+    "transcif_phys_irm": {
+      "mae": 53.34193859100986,
+      "rmse": 65.66065838446816,
+      "smape": 43.29286013629771
+    },
+    "ratio_phys_irm_vs_zs": 0.885596304917541,
+    "transcif_phys_weighted": {
+      "mae": 62.82886833819462,
+      "rmse": 75.34985942581213,
+      "smape": 49.01935627487504
+    },
+    "ratio_phys_weighted_vs_zs": 1.0431007029773278,
+    "irm_benefit": 0.8490036507403156,
+    "transcif_phys_irm_plus": {
+      "mae": 50.649308255233535,
+      "rmse": 65.22295144494898,
+      "smape": 40.53345685932464
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9685593888204727,
+    "transcif_causal": {
+      "mae": 52.462055453969874,
+      "rmse": 65.48635526966629,
+      "smape": 41.849322496881506
+    },
+    "ratio_causal_vs_zs": 0.8709882633745366,
+    "transcif_causal_plus": {
+      "mae": 50.53767011237883,
+      "rmse": 65.06490091231254,
+      "smape": 40.35096333362348
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9664245487774947,
+    "transcif_icl": {
+      "mae": 62.38731767348344,
+      "rmse": 77.08291781273135,
+      "smape": 47.42003378007084
+    },
+    "ratio_icl_vs_zs": 1.0357699675854197,
+    "transcif_icl_plus": {
+      "mae": 53.003686016542495,
+      "rmse": 67.49968658931662,
+      "smape": 42.13939508626582
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0135818138860764,
+    "transcif_hier": {
+      "mae": 65.36029098236229,
+      "rmse": 75.15612295443987,
+      "smape": 52.19574860388657
+    },
+    "ratio_hier_vs_zs": 1.0851280195517823,
+    "transcif_hier_plus": {
+      "mae": 51.9664466452141,
+      "rmse": 66.64024317567076,
+      "smape": 41.03490090547856
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9937468355583999,
+    "ratio_vs_patchtst": 1.1328739506499803,
+    "ratio_vs_persist": 1.1420711021307985,
+    "ratio_plus_vs_patchtst": 0.9835486677277536,
+    "ratio_plus_vs_persist": 0.99153353319373
+  },
+  {
+    "target": "UK_17_Wales",
+    "seed": 0,
+    "mean_rs": 0.46281713247299194,
+    "ef_nr": 394.13283741725365,
+    "n_test": 72,
+    "persistence": {
+      "mae": 73.02449798583984,
+      "rmse": 100.3474349975586,
+      "smape": 49.99557137489319
+    },
+    "patchtst_sup": {
+      "mae": 64.89893341064453,
+      "rmse": 84.24679565429688,
+      "smape": 45.863404870033264
+    },
+    "transcif_zs": {
+      "mae": 69.32356528493273,
+      "rmse": 88.53860757760964,
+      "smape": 48.40801906234936
+    },
+    "transcif_zs_plus": {
+      "mae": 67.6444424894204,
+      "rmse": 89.05164723763295,
+      "smape": 45.962373710458316
+    },
+    "transcif_rag": {
+      "mae": 69.99196412417284,
+      "rmse": 89.85545286060169,
+      "smape": 48.78924246152614
+    },
+    "ratio_rag_vs_zs": 1.0096417262512807,
+    "transcif_rag_plus": {
+      "mae": 68.27968357314631,
+      "rmse": 89.66684975076778,
+      "smape": 46.20410614241741
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0093908835722205,
+    "transcif_phys_irm": {
+      "mae": 56.96489510632654,
+      "rmse": 75.86299929071218,
+      "smape": 41.905371824402756
+    },
+    "ratio_phys_irm_vs_zs": 0.8217248329942385,
+    "transcif_phys_weighted": {
+      "mae": 68.13680978324217,
+      "rmse": 88.61255005809625,
+      "smape": 47.51704015554911
+    },
+    "ratio_phys_weighted_vs_zs": 0.982880922283602,
+    "irm_benefit": 0.8360370156387437,
+    "transcif_phys_irm_plus": {
+      "mae": 64.00481797140762,
+      "rmse": 84.93174362550836,
+      "smape": 44.185626114495065
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9461947739670998,
+    "transcif_causal": {
+      "mae": 49.94140063849215,
+      "rmse": 69.15681940791654,
+      "smape": 38.00671178734047
+    },
+    "ratio_causal_vs_zs": 0.7204101582661497,
+    "transcif_causal_plus": {
+      "mae": 64.57898021399514,
+      "rmse": 85.92831368951417,
+      "smape": 44.45150369615454
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9546827180088786,
+    "transcif_icl": {
+      "mae": 71.66502673534681,
+      "rmse": 97.04520452508477,
+      "smape": 48.84722587146339
+    },
+    "ratio_icl_vs_zs": 1.0337758371311436,
+    "transcif_icl_plus": {
+      "mae": 69.33213465081356,
+      "rmse": 91.08473791875558,
+      "smape": 46.7223755069615
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0249494577718947,
+    "transcif_hier": {
+      "mae": 84.20636969633757,
+      "rmse": 97.06197936128865,
+      "smape": 56.95691797844354
+    },
+    "ratio_hier_vs_zs": 1.2146860789723344,
+    "transcif_hier_plus": {
+      "mae": 67.45428841414059,
+      "rmse": 88.30303023486762,
+      "smape": 45.968637127941655
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9971889179911632,
+    "ratio_vs_patchtst": 1.06817726643197,
+    "ratio_vs_persist": 0.9493192996461987,
+    "ratio_plus_vs_patchtst": 1.0423043790473998,
+    "ratio_plus_vs_persist": 0.9263253340343033
+  },
+  {
+    "target": "UK_15_England",
+    "seed": 0,
+    "mean_rs": 0.521807074546814,
+    "ef_nr": 341.5545689659641,
+    "n_test": 72,
+    "persistence": {
+      "mae": 48.572242736816406,
+      "rmse": 67.85794830322266,
+      "smape": 32.98103213310242
+    },
+    "patchtst_sup": {
+      "mae": 44.11069869995117,
+      "rmse": 57.7080192565918,
+      "smape": 31.06866180896759
+    },
+    "transcif_zs": {
+      "mae": 50.73817664044285,
+      "rmse": 62.832023691383334,
+      "smape": 35.21602555802911
+    },
+    "transcif_zs_plus": {
+      "mae": 47.50555609038599,
+      "rmse": 61.89970740006119,
+      "smape": 32.360141165460746
+    },
+    "transcif_rag": {
+      "mae": 49.398163513877805,
+      "rmse": 61.8628760899803,
+      "smape": 34.169653063578735
+    },
+    "ratio_rag_vs_zs": 0.973589647573245,
+    "transcif_rag_plus": {
+      "mae": 47.7166915890702,
+      "rmse": 61.95965232808305,
+      "smape": 32.419019628994064
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0044444379996837,
+    "transcif_phys_irm": {
+      "mae": 41.67087535907855,
+      "rmse": 54.20214583181139,
+      "smape": 29.565587681963667
+    },
+    "ratio_phys_irm_vs_zs": 0.8212923309085401,
+    "transcif_phys_weighted": {
+      "mae": 49.80906240779406,
+      "rmse": 62.01480552065273,
+      "smape": 34.60215774865087
+    },
+    "ratio_phys_weighted_vs_zs": 0.9816880642118265,
+    "irm_benefit": 0.8366123220291323,
+    "transcif_phys_irm_plus": {
+      "mae": 45.149319709810115,
+      "rmse": 59.11171568494082,
+      "smape": 31.118515574791456
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9504008251983662,
+    "transcif_causal": {
+      "mae": 36.27718344588159,
+      "rmse": 48.5648601898057,
+      "smape": 25.65215313850534
+    },
+    "ratio_causal_vs_zs": 0.7149879212838216,
+    "transcif_causal_plus": {
+      "mae": 45.07819944256821,
+      "rmse": 59.098024618371696,
+      "smape": 30.96943778051869
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9489037315298575,
+    "transcif_icl": {
+      "mae": 49.40795695222177,
+      "rmse": 63.27684776715066,
+      "smape": 34.14102239912803
+    },
+    "ratio_icl_vs_zs": 0.973782666695973,
+    "transcif_icl_plus": {
+      "mae": 48.17785165707309,
+      "rmse": 62.620768657267945,
+      "smape": 32.60431827628466
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0141519355211412,
+    "transcif_hier": {
+      "mae": 60.70715957736475,
+      "rmse": 69.3473122025828,
+      "smape": 42.836005722128185
+    },
+    "ratio_hier_vs_zs": 1.196478935527528,
+    "transcif_hier_plus": {
+      "mae": 47.35216679759742,
+      "rmse": 61.442726557259874,
+      "smape": 32.10136839497156
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9967711294128054,
+    "ratio_vs_patchtst": 1.1502464965602328,
+    "ratio_vs_persist": 1.0445920093779142,
+    "ratio_plus_vs_patchtst": 1.076962222102335,
+    "ratio_plus_vs_persist": 0.9780391724506083
+  },
+  {
+    "target": "UK_18_GB",
+    "seed": 0,
+    "mean_rs": 0.5604252815246582,
+    "ef_nr": 347.02225027257225,
+    "n_test": 72,
+    "persistence": {
+      "mae": 45.98350524902344,
+      "rmse": 64.91150665283203,
+      "smape": 34.00517702102661
+    },
+    "patchtst_sup": {
+      "mae": 41.54893493652344,
+      "rmse": 54.515567779541016,
+      "smape": 31.996572017669678
+    },
+    "transcif_zs": {
+      "mae": 47.72417926857448,
+      "rmse": 59.477522132471634,
+      "smape": 36.208025926609785
+    },
+    "transcif_zs_plus": {
+      "mae": 44.75757737063538,
+      "rmse": 59.140773884705,
+      "smape": 33.139613149023454
+    },
+    "transcif_rag": {
+      "mae": 46.332215521979315,
+      "rmse": 58.50125267539288,
+      "smape": 35.058611718012614
+    },
+    "ratio_rag_vs_zs": 0.970833154850884,
+    "transcif_rag_plus": {
+      "mae": 44.91269477289138,
+      "rmse": 59.38065504488146,
+      "smape": 33.16451496339135
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0034657238252973,
+    "transcif_phys_irm": {
+      "mae": 38.93955941625978,
+      "rmse": 51.59745036832638,
+      "smape": 30.08163196886225
+    },
+    "ratio_phys_irm_vs_zs": 0.8159293677345811,
+    "transcif_phys_weighted": {
+      "mae": 46.763080398344904,
+      "rmse": 58.74630866126872,
+      "smape": 35.46639673958188
+    },
+    "ratio_phys_weighted_vs_zs": 0.9798613850471716,
+    "irm_benefit": 0.8326987675867046,
+    "transcif_phys_irm_plus": {
+      "mae": 42.72858920496016,
+      "rmse": 56.44435035415099,
+      "smape": 32.022586471290666
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9546671583925719,
+    "transcif_causal": {
+      "mae": 33.101898169323384,
+      "rmse": 45.421867507589425,
+      "smape": 25.65686403891345
+    },
+    "ratio_causal_vs_zs": 0.6936085371534172,
+    "transcif_causal_plus": {
+      "mae": 42.69851636491618,
+      "rmse": 56.59414764520769,
+      "smape": 31.878776761750704
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.953995253392108,
+    "transcif_icl": {
+      "mae": 46.49453140129474,
+      "rmse": 60.29925812513135,
+      "smape": 34.97193660984884
+    },
+    "ratio_icl_vs_zs": 0.974234279433917,
+    "transcif_icl_plus": {
+      "mae": 45.7446219475409,
+      "rmse": 60.25674923354089,
+      "smape": 33.64847100704822
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0220531278699883,
+    "transcif_hier": {
+      "mae": 60.19148280611098,
+      "rmse": 69.06238048114884,
+      "smape": 45.83160074924448
+    },
+    "ratio_hier_vs_zs": 1.2612366253042302,
+    "transcif_hier_plus": {
+      "mae": 44.691743845223264,
+      "rmse": 58.75077404834091,
+      "smape": 32.98304598437542
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9985291088285018,
+    "ratio_vs_patchtst": 1.1486258153544802,
+    "ratio_vs_persist": 1.0378543134135694,
+    "ratio_plus_vs_patchtst": 1.0772256241709677,
+    "ratio_plus_vs_persist": 0.9733398341046632
+  },
+  {
+    "target": "UK_08_West_Midlands",
+    "seed": 0,
+    "mean_rs": 0.5822159051895142,
+    "ef_nr": 370.1808515247356,
+    "n_test": 72,
+    "persistence": {
+      "mae": 81.46903991699219,
+      "rmse": 117.24755096435547,
+      "smape": 58.971261978149414
+    },
+    "patchtst_sup": {
+      "mae": 65.79133605957031,
+      "rmse": 88.42829895019531,
+      "smape": 55.60161471366882
+    },
+    "transcif_zs": {
+      "mae": 81.42418184915222,
+      "rmse": 105.38986839696533,
+      "smape": 62.73644434315223
+    },
+    "transcif_zs_plus": {
+      "mae": 77.3945604777043,
+      "rmse": 105.00860908711594,
+      "smape": 57.12435897029524
+    },
+    "transcif_rag": {
+      "mae": 78.95709012819222,
+      "rmse": 104.50234561746268,
+      "smape": 60.448673727724
+    },
+    "ratio_rag_vs_zs": 0.9697007490289485,
+    "transcif_rag_plus": {
+      "mae": 77.60193363733705,
+      "rmse": 105.48583996956582,
+      "smape": 57.02078460306228
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0026794280935607,
+    "transcif_phys_irm": {
+      "mae": 71.16247740515098,
+      "rmse": 94.82812055570228,
+      "smape": 56.77660612691656
+    },
+    "ratio_phys_irm_vs_zs": 0.8739722744403838,
+    "transcif_phys_weighted": {
+      "mae": 79.94419656540933,
+      "rmse": 105.17128132825736,
+      "smape": 61.09346754692647
+    },
+    "ratio_phys_weighted_vs_zs": 0.981823762300925,
+    "irm_benefit": 0.8901518867217177,
+    "transcif_phys_irm_plus": {
+      "mae": 74.99187054454416,
+      "rmse": 100.63287036442989,
+      "smape": 56.38970027612137
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9689553126430337,
+    "transcif_causal": {
+      "mae": 61.39565794767594,
+      "rmse": 85.0782917471629,
+      "smape": 49.69998386046018
+    },
+    "ratio_causal_vs_zs": 0.7540224114430594,
+    "transcif_causal_plus": {
+      "mae": 75.24630636911377,
+      "rmse": 101.61078166365793,
+      "smape": 56.196563394764
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9722428282384341,
+    "transcif_icl": {
+      "mae": 79.7550837029508,
+      "rmse": 110.04284614724004,
+      "smape": 58.652553733439994
+    },
+    "ratio_icl_vs_zs": 0.9795011984364348,
+    "transcif_icl_plus": {
+      "mae": 78.16903427028868,
+      "rmse": 106.6421566984607,
+      "smape": 56.88279308646749
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0100068246114982,
+    "transcif_hier": {
+      "mae": 100.11703466296402,
+      "rmse": 113.16271534556273,
+      "smape": 75.11934060055512
+    },
+    "ratio_hier_vs_zs": 1.2295737260024606,
+    "transcif_hier_plus": {
+      "mae": 77.60415223049078,
+      "rmse": 104.14827894028215,
+      "smape": 57.30827983360168
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0027080941023867,
+    "ratio_vs_patchtst": 1.2376125296410951,
+    "ratio_vs_persist": 0.9994493850929669,
+    "ratio_plus_vs_patchtst": 1.1763640186243964,
+    "ratio_plus_vs_persist": 0.949987388541226
+  },
+  {
+    "target": "UK_10_East_England",
+    "seed": 0,
+    "mean_rs": 0.6011291146278381,
+    "ef_nr": 403.11986863711,
+    "n_test": 72,
+    "persistence": {
+      "mae": 61.08747863769531,
+      "rmse": 84.40030670166016,
+      "smape": 55.800408124923706
+    },
+    "patchtst_sup": {
+      "mae": 51.34402084350586,
+      "rmse": 68.91645812988281,
+      "smape": 52.30536460876465
+    },
+    "transcif_zs": {
+      "mae": 57.992263885112976,
+      "rmse": 72.5355042059891,
+      "smape": 56.20320422385646
+    },
+    "transcif_zs_plus": {
+      "mae": 56.944197650901366,
+      "rmse": 74.7108481022248,
+      "smape": 53.93287327581005
+    },
+    "transcif_rag": {
+      "mae": 57.24706341122891,
+      "rmse": 73.20442186527274,
+      "smape": 54.921726658001326
+    },
+    "ratio_rag_vs_zs": 0.9871500020181939,
+    "transcif_rag_plus": {
+      "mae": 56.99803772122801,
+      "rmse": 74.55912065982268,
+      "smape": 53.94613056005405
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0009454882595188,
+    "transcif_phys_irm": {
+      "mae": 46.25417626032553,
+      "rmse": 61.13427133503461,
+      "smape": 48.72086031103397
+    },
+    "ratio_phys_irm_vs_zs": 0.7975921814667991,
+    "transcif_phys_weighted": {
+      "mae": 56.25396834330487,
+      "rmse": 72.1522980025944,
+      "smape": 54.4422766045193
+    },
+    "ratio_phys_weighted_vs_zs": 0.970025389157909,
+    "irm_benefit": 0.8222384593038319,
+    "transcif_phys_irm_plus": {
+      "mae": 53.3013575323398,
+      "rmse": 70.36737237653439,
+      "smape": 51.357199982858425
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.936027896276735,
+    "transcif_causal": {
+      "mae": 45.434668615970715,
+      "rmse": 61.99475366203926,
+      "smape": 45.17667254876122
+    },
+    "ratio_causal_vs_zs": 0.7834608544681098,
+    "transcif_causal_plus": {
+      "mae": 53.31939685216483,
+      "rmse": 70.99826661834122,
+      "smape": 50.944707682477116
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9363446857051438,
+    "transcif_icl": {
+      "mae": 59.850146878252886,
+      "rmse": 78.51967695053278,
+      "smape": 55.56895421618324
+    },
+    "ratio_icl_vs_zs": 1.0320367385005096,
+    "transcif_icl_plus": {
+      "mae": 57.29664596535051,
+      "rmse": 74.82864949650192,
+      "smape": 54.3024152555314
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0061893630780407,
+    "transcif_hier": {
+      "mae": 79.43828096752326,
+      "rmse": 91.0232878251966,
+      "smape": 69.0423848185974
+    },
+    "ratio_hier_vs_zs": 1.3698082407145968,
+    "transcif_hier_plus": {
+      "mae": 55.756066374794045,
+      "rmse": 73.37194712470988,
+      "smape": 52.87072193202987
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9791351652122451,
+    "ratio_vs_patchtst": 1.12948426968489,
+    "ratio_vs_persist": 0.9493314371192205,
+    "ratio_plus_vs_patchtst": 1.1090716448652236,
+    "ratio_plus_vs_persist": 0.9321746276128469
+  },
+  {
+    "target": "UK_05_Yorkshire",
+    "seed": 0,
+    "mean_rs": 0.6035640239715576,
+    "ef_nr": 445.6980780676449,
+    "n_test": 72,
+    "persistence": {
+      "mae": 49.96855545043945,
+      "rmse": 64.90906524658203,
+      "smape": 34.20060873031616
+    },
+    "patchtst_sup": {
+      "mae": 39.54377365112305,
+      "rmse": 51.55010986328125,
+      "smape": 28.04952561855316
+    },
+    "transcif_zs": {
+      "mae": 46.781804151427046,
+      "rmse": 59.27882982931482,
+      "smape": 32.71652912042545
+    },
+    "transcif_zs_plus": {
+      "mae": 45.854070740494855,
+      "rmse": 57.843859144533674,
+      "smape": 31.67450438539092
+    },
+    "transcif_rag": {
+      "mae": 47.2400919521749,
+      "rmse": 60.46024902093972,
+      "smape": 32.9700249636423
+    },
+    "ratio_rag_vs_zs": 1.0097962831716458,
+    "transcif_rag_plus": {
+      "mae": 45.9359698625224,
+      "rmse": 57.98806334783483,
+      "smape": 31.68575245504596
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0017860818179272,
+    "transcif_phys_irm": {
+      "mae": 42.43039922706169,
+      "rmse": 56.09568957368853,
+      "smape": 30.078868284771822
+    },
+    "ratio_phys_irm_vs_zs": 0.9069850980889839,
+    "transcif_phys_weighted": {
+      "mae": 49.457213346789544,
+      "rmse": 64.19190466821487,
+      "smape": 35.09128526202923
+    },
+    "ratio_phys_weighted_vs_zs": 1.0571890982806589,
+    "irm_benefit": 0.8579213497037033,
+    "transcif_phys_irm_plus": {
+      "mae": 43.106404408159115,
+      "rmse": 54.46328410328351,
+      "smape": 30.1001200584808
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9400780282325248,
+    "transcif_causal": {
+      "mae": 39.66607586749592,
+      "rmse": 53.33623632545274,
+      "smape": 29.27013384041211
+    },
+    "ratio_causal_vs_zs": 0.8478953855456627,
+    "transcif_causal_plus": {
+      "mae": 43.18256494735166,
+      "rmse": 54.7194055815979,
+      "smape": 30.0973605342958
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9417389612306781,
+    "transcif_icl": {
+      "mae": 49.941650965565174,
+      "rmse": 64.09352320346974,
+      "smape": 35.2721771484131
+    },
+    "ratio_icl_vs_zs": 1.067544355577012,
+    "transcif_icl_plus": {
+      "mae": 46.267269019992995,
+      "rmse": 58.42710537729699,
+      "smape": 31.928618750256682
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0090111580678753,
+    "transcif_hier": {
+      "mae": 62.65078160310933,
+      "rmse": 72.94361404367814,
+      "smape": 42.668266195878225
+    },
+    "ratio_hier_vs_zs": 1.3392126007008263,
+    "transcif_hier_plus": {
+      "mae": 45.565245129307215,
+      "rmse": 57.25081242765645,
+      "smape": 31.534554983114315
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9937012002091982,
+    "ratio_vs_patchtst": 1.1830384364467057,
+    "ratio_vs_persist": 0.9362248664127756,
+    "ratio_plus_vs_patchtst": 1.159577513897503,
+    "ratio_plus_vs_persist": 0.917658521987383
+  },
+  {
+    "target": "SA1",
+    "seed": 0,
+    "mean_rs": 0.6867250800132751,
+    "ef_nr": 490.43,
+    "n_test": 73,
+    "persistence": {
+      "mae": 68.06713104248047,
+      "rmse": 97.53361511230469,
+      "smape": 54.80663776397705
+    },
+    "patchtst_sup": {
+      "mae": 51.7573127746582,
+      "rmse": 72.42642974853516,
+      "smape": 47.6608008146286
+    },
+    "transcif_zs": {
+      "mae": 64.05410839902858,
+      "rmse": 88.09835681387787,
+      "smape": 52.79483390192219
+    },
+    "transcif_zs_plus": {
+      "mae": 60.47648443055113,
+      "rmse": 83.29032568492237,
+      "smape": 52.19029780576443
+    },
+    "transcif_rag": {
+      "mae": 64.42893021671246,
+      "rmse": 90.28936858692461,
+      "smape": 52.35137093985664
+    },
+    "ratio_rag_vs_zs": 1.005851643665835,
+    "transcif_rag_plus": {
+      "mae": 60.6041585317402,
+      "rmse": 83.53549187070776,
+      "smape": 52.25506143693688
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0021111362935735,
+    "transcif_phys_irm": {
+      "mae": 57.558038404593454,
+      "rmse": 82.8025332512243,
+      "smape": 48.30300853678084
+    },
+    "ratio_phys_irm_vs_zs": 0.8985846473114963,
+    "transcif_phys_weighted": {
+      "mae": 61.07807000012277,
+      "rmse": 87.20192460685124,
+      "smape": 51.998991581073476
+    },
+    "ratio_phys_weighted_vs_zs": 0.953538680448623,
+    "irm_benefit": 0.9423683231064399,
+    "transcif_phys_irm_plus": {
+      "mae": 58.810113860742085,
+      "rmse": 81.47636152863497,
+      "smape": 50.77001431103223
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9724459749024823,
+    "transcif_causal": {
+      "mae": 61.82969628279467,
+      "rmse": 89.15991063567326,
+      "smape": 51.06894109052532
+    },
+    "ratio_causal_vs_zs": 0.9652729204756577,
+    "transcif_causal_plus": {
+      "mae": 58.541447830947334,
+      "rmse": 81.21187745421413,
+      "smape": 50.66284507615063
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9680034873418292,
+    "transcif_icl": {
+      "mae": 69.91558541835809,
+      "rmse": 99.31176054019338,
+      "smape": 54.72150387483732
+    },
+    "ratio_icl_vs_zs": 1.0915082133813356,
+    "transcif_icl_plus": {
+      "mae": 60.642340595166594,
+      "rmse": 83.87852903416031,
+      "smape": 52.14047333023175
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.00274249017907,
+    "transcif_hier": {
+      "mae": 101.73291436450667,
+      "rmse": 114.68684763528127,
+      "smape": 75.07927259456069
+    },
+    "ratio_hier_vs_zs": 1.5882340244400235,
+    "transcif_hier_plus": {
+      "mae": 60.06116784038001,
+      "rmse": 83.03206512749169,
+      "smape": 52.05749973868281
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9931325937001504,
+    "ratio_vs_patchtst": 1.2375856659697222,
+    "ratio_vs_persist": 0.9410431645642979,
+    "ratio_plus_vs_patchtst": 1.168462603417117,
+    "ratio_plus_vs_persist": 0.8884829359534481
+  },
+  {
+    "target": "UK_06_North_Wales_Merseyside",
+    "seed": 0,
+    "mean_rs": 0.7756487131118774,
+    "ef_nr": 345.6535114705107,
+    "n_test": 72,
+    "persistence": {
+      "mae": 54.37818145751953,
+      "rmse": 79.50093841552734,
+      "smape": 73.5369086265564
+    },
+    "patchtst_sup": {
+      "mae": 43.5013427734375,
+      "rmse": 60.275814056396484,
+      "smape": 67.34240055084229
+    },
+    "transcif_zs": {
+      "mae": 51.9250327516939,
+      "rmse": 70.06644485371625,
+      "smape": 74.37093379491692
+    },
+    "transcif_zs_plus": {
+      "mae": 51.449790106999686,
+      "rmse": 70.59798352205416,
+      "smape": 70.84940278599753
+    },
+    "transcif_rag": {
+      "mae": 50.84027169491588,
+      "rmse": 70.05766972269983,
+      "smape": 72.63885148622292
+    },
+    "ratio_rag_vs_zs": 0.9791090924879073,
+    "transcif_rag_plus": {
+      "mae": 51.44038692994254,
+      "rmse": 70.71404588486631,
+      "smape": 70.81910664727427
+    },
+    "ratio_rag_plus_vs_zs_plus": 0.9998172358519327,
+    "transcif_phys_irm": {
+      "mae": 47.14225988437867,
+      "rmse": 65.79400402018481,
+      "smape": 69.77129006414373
+    },
+    "ratio_phys_irm_vs_zs": 0.9078908069218462,
+    "transcif_phys_weighted": {
+      "mae": 50.61584257336236,
+      "rmse": 70.40750346136274,
+      "smape": 72.32420288756225
+    },
+    "ratio_phys_weighted_vs_zs": 0.97478691665748,
+    "irm_benefit": 0.9313736073058727,
+    "transcif_phys_irm_plus": {
+      "mae": 49.90202317656757,
+      "rmse": 68.56616392489504,
+      "smape": 69.82172393060547
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9699169437384829,
+    "transcif_causal": {
+      "mae": 41.17670424763793,
+      "rmse": 59.003347426728205,
+      "smape": 63.26027105359536
+    },
+    "ratio_causal_vs_zs": 0.7930029518622627,
+    "transcif_causal_plus": {
+      "mae": 49.33649454785935,
+      "rmse": 68.23908807355089,
+      "smape": 69.02446168339466
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9589250888148362,
+    "transcif_icl": {
+      "mae": 51.563542021158725,
+      "rmse": 74.13390229786428,
+      "smape": 70.89173822830575
+    },
+    "ratio_icl_vs_zs": 0.9930382185358683,
+    "transcif_icl_plus": {
+      "mae": 51.79192386334028,
+      "rmse": 71.17414365625253,
+      "smape": 71.01790122346824
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0066498571836553,
+    "transcif_hier": {
+      "mae": 82.95535845263473,
+      "rmse": 91.25319590739491,
+      "smape": 95.70628976398156
+    },
+    "ratio_hier_vs_zs": 1.597598577343768,
+    "transcif_hier_plus": {
+      "mae": 51.088451858350574,
+      "rmse": 70.1822493426738,
+      "smape": 70.55581467187653
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9929768761369553,
+    "ratio_vs_patchtst": 1.1936420680650808,
+    "ratio_vs_persist": 0.9548872610287263,
+    "ratio_plus_vs_patchtst": 1.1827172870262666,
+    "ratio_plus_vs_persist": 0.9461476777628631
+  },
+  {
+    "target": "US_BPAT",
+    "seed": 0,
+    "mean_rs": 0.7817654609680176,
+    "ef_nr": 207.5,
+    "n_test": 73,
+    "persistence": {
+      "mae": 6.305214881896973,
+      "rmse": 8.721711158752441,
+      "smape": 13.854226469993591
+    },
+    "patchtst_sup": {
+      "mae": 6.0754265785217285,
+      "rmse": 7.849910259246826,
+      "smape": 13.443608582019806
+    },
+    "transcif_zs": {
+      "mae": 8.391679214934507,
+      "rmse": 10.333605169501466,
+      "smape": 18.788186521881034
+    },
+    "transcif_zs_plus": {
+      "mae": 6.147006326099392,
+      "rmse": 8.326894912576433,
+      "smape": 13.460829217836986
+    },
+    "transcif_rag": {
+      "mae": 8.500860085515264,
+      "rmse": 10.456734692231768,
+      "smape": 19.063897394840364
+    },
+    "ratio_rag_vs_zs": 1.0130106106041863,
+    "transcif_rag_plus": {
+      "mae": 6.158775959972889,
+      "rmse": 8.34668805945622,
+      "smape": 13.484349061782583
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0019146936328216,
+    "transcif_phys_irm": {
+      "mae": 8.572859586339835,
+      "rmse": 10.30728710497095,
+      "smape": 19.053123503182515
+    },
+    "ratio_phys_irm_vs_zs": 1.0215904787069177,
+    "transcif_phys_weighted": {
+      "mae": 10.194039664482146,
+      "rmse": 12.475864427338768,
+      "smape": 22.298216699393034
+    },
+    "ratio_phys_weighted_vs_zs": 1.2147794742129814,
+    "irm_benefit": 0.8409678467515884,
+    "transcif_phys_irm_plus": {
+      "mae": 6.099290930699895,
+      "rmse": 8.258930901226547,
+      "smape": 13.356116335454809
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9922376205801344,
+    "transcif_causal": {
+      "mae": 7.4091712005572505,
+      "rmse": 9.227180814441587,
+      "smape": 16.726651133033346
+    },
+    "ratio_causal_vs_zs": 0.882918783093054,
+    "transcif_causal_plus": {
+      "mae": 6.135674946928942,
+      "rmse": 8.29175673331791,
+      "smape": 13.46326470171458
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9981566019995232,
+    "transcif_icl": {
+      "mae": 8.51037760670871,
+      "rmse": 10.476749193253356,
+      "smape": 19.06334957987277
+    },
+    "ratio_icl_vs_zs": 1.0141447723076638,
+    "transcif_icl_plus": {
+      "mae": 6.169542550591048,
+      "rmse": 8.373403715191149,
+      "smape": 13.501547884815773
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0036662113712118,
+    "transcif_hier": {
+      "mae": 32.19721973122663,
+      "rmse": 34.31949102723518,
+      "smape": 54.12066630790764
+    },
+    "ratio_hier_vs_zs": 3.8368029695327093,
+    "transcif_hier_plus": {
+      "mae": 6.201519168171437,
+      "rmse": 8.37094891116553,
+      "smape": 13.626498984116516
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0088681935856467,
+    "ratio_vs_patchtst": 1.3812493833110182,
+    "ratio_vs_persist": 1.3309109002816104,
+    "ratio_plus_vs_patchtst": 1.011781847192544,
+    "ratio_plus_vs_persist": 0.9749083007064808
+  },
+  {
+    "target": "UK_03_North_West_England",
+    "seed": 0,
+    "mean_rs": 0.8045178055763245,
+    "ef_nr": 257.5150170229336,
+    "n_test": 72,
+    "persistence": {
+      "mae": 29.26909637451172,
+      "rmse": 43.680992126464844,
+      "smape": 61.73832416534424
+    },
+    "patchtst_sup": {
+      "mae": 21.21700096130371,
+      "rmse": 29.218564987182617,
+      "smape": 56.65093660354614
+    },
+    "transcif_zs": {
+      "mae": 29.346921189130164,
+      "rmse": 39.59972437621375,
+      "smape": 68.38866997769156
+    },
+    "transcif_zs_plus": {
+      "mae": 27.769830734670677,
+      "rmse": 38.73502942926136,
+      "smape": 59.33589071585607
+    },
+    "transcif_rag": {
+      "mae": 28.529855915695226,
+      "rmse": 39.836270199986764,
+      "smape": 65.82054763190163
+    },
+    "ratio_rag_vs_zs": 0.9721583988940696,
+    "transcif_rag_plus": {
+      "mae": 27.84215062614903,
+      "rmse": 38.88924580859437,
+      "smape": 59.27225447991674
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0026042611555448,
+    "transcif_phys_irm": {
+      "mae": 27.30974915722133,
+      "rmse": 39.32415108801378,
+      "smape": 62.45795776577966
+    },
+    "ratio_phys_irm_vs_zs": 0.9305831089135379,
+    "transcif_phys_weighted": {
+      "mae": 28.832710771221215,
+      "rmse": 39.46820990396858,
+      "smape": 67.02728591283916
+    },
+    "ratio_phys_weighted_vs_zs": 0.9824782158716053,
+    "irm_benefit": 0.947179381568243,
+    "transcif_phys_irm_plus": {
+      "mae": 27.343684048312255,
+      "rmse": 37.98622082498272,
+      "smape": 58.7841117448727
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.984654328993573,
+    "transcif_causal": {
+      "mae": 24.762655810145382,
+      "rmse": 35.64240565904314,
+      "smape": 57.766005963378106
+    },
+    "ratio_causal_vs_zs": 0.8437905854095947,
+    "transcif_causal_plus": {
+      "mae": 27.046393655399196,
+      "rmse": 37.739278804809985,
+      "smape": 58.507729033363766
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9739488120693416,
+    "transcif_icl": {
+      "mae": 27.85807489529148,
+      "rmse": 40.71506818327783,
+      "smape": 62.10051706129932
+    },
+    "ratio_icl_vs_zs": 0.9492673768316746,
+    "transcif_icl_plus": {
+      "mae": 27.949241951228235,
+      "rmse": 39.069067414455716,
+      "smape": 59.44573851399887
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.006460652146992,
+    "transcif_hier": {
+      "mae": 54.36709477997524,
+      "rmse": 60.18785334448058,
+      "smape": 93.91262397682493
+    },
+    "ratio_hier_vs_zs": 1.852565535907471,
+    "transcif_hier_plus": {
+      "mae": 27.617537722011168,
+      "rmse": 38.47543423612237,
+      "smape": 59.530370953400706
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9945158825736243,
+    "ratio_vs_patchtst": 1.3831795192286638,
+    "ratio_vs_persist": 1.0026589414863596,
+    "ratio_plus_vs_patchtst": 1.3088480688349047,
+    "ratio_plus_vs_persist": 0.9487764972086176
+  },
+  {
+    "target": "UK_16_Scotland",
+    "seed": 0,
+    "mean_rs": 0.8842718601226807,
+    "ef_nr": 401.99969654923694,
+    "n_test": 72,
+    "persistence": {
+      "mae": 35.338348388671875,
+      "rmse": 56.60013198852539,
+      "smape": 75.3258228302002
+    },
+    "patchtst_sup": {
+      "mae": 28.94608497619629,
+      "rmse": 42.039424896240234,
+      "smape": 73.26523065567017
+    },
+    "transcif_zs": {
+      "mae": 38.69462341029216,
+      "rmse": 50.63288420466751,
+      "smape": 92.50626523219907
+    },
+    "transcif_zs_plus": {
+      "mae": 33.905202568851465,
+      "rmse": 51.44629189673054,
+      "smape": 76.18993444921043
+    },
+    "transcif_rag": {
+      "mae": 37.211602918055945,
+      "rmse": 51.42679469759406,
+      "smape": 88.09089775968717
+    },
+    "ratio_rag_vs_zs": 0.9616737323810792,
+    "transcif_rag_plus": {
+      "mae": 34.25366895012653,
+      "rmse": 51.70878060502444,
+      "smape": 76.90308448198596
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0102776669912954,
+    "transcif_phys_irm": {
+      "mae": 31.266031793540694,
+      "rmse": 43.13786581641904,
+      "smape": 82.6594123208247
+    },
+    "ratio_phys_irm_vs_zs": 0.8080200564821732,
+    "transcif_phys_weighted": {
+      "mae": 35.37953778027325,
+      "rmse": 50.149612968502346,
+      "smape": 84.37387164419043
+    },
+    "ratio_phys_weighted_vs_zs": 0.9143269700581413,
+    "irm_benefit": 0.8837320596928163,
+    "transcif_phys_irm_plus": {
+      "mae": 32.66097801624201,
+      "rmse": 49.64322664582239,
+      "smape": 73.31522316817875
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9633028426807715,
+    "transcif_causal": {
+      "mae": 28.84153222839046,
+      "rmse": 41.615800588498814,
+      "smape": 74.909317533932
+    },
+    "ratio_causal_vs_zs": 0.7453627839344488,
+    "transcif_causal_plus": {
+      "mae": 32.848313582496594,
+      "rmse": 50.02991351555317,
+      "smape": 74.52091664286755
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9688281176256464,
+    "transcif_icl": {
+      "mae": 35.73329602474023,
+      "rmse": 56.52003264323202,
+      "smape": 76.4498076186953
+    },
+    "ratio_icl_vs_zs": 0.9234692801076786,
+    "transcif_icl_plus": {
+      "mae": 34.355637384366936,
+      "rmse": 52.177907209650755,
+      "smape": 75.38489851130247
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0132851238567524,
+    "transcif_hier": {
+      "mae": 96.13686885426021,
+      "rmse": 104.46512573636431,
+      "smape": 126.21058743310765
+    },
+    "ratio_hier_vs_zs": 2.4845019897180167,
+    "transcif_hier_plus": {
+      "mae": 33.76907751739717,
+      "rmse": 50.83332209891789,
+      "smape": 77.70053367720155
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9959851279113326,
+    "ratio_vs_patchtst": 1.3367826233534708,
+    "ratio_vs_persist": 1.0949754353176329,
+    "ratio_plus_vs_patchtst": 1.1713225673431584,
+    "ratio_plus_vs_persist": 0.9594450254421109
+  },
+  {
+    "target": "UK_02_South_Scotland",
+    "seed": 0,
+    "mean_rs": 0.8990264534950256,
+    "ef_nr": 278.6914384249276,
+    "n_test": 72,
+    "persistence": {
+      "mae": 22.079477310180664,
+      "rmse": 34.522796630859375,
+      "smape": 65.33932685852051
+    },
+    "patchtst_sup": {
+      "mae": 17.889747619628906,
+      "rmse": 29.01424789428711,
+      "smape": 64.38956260681152
+    },
+    "transcif_zs": {
+      "mae": 22.808078263017546,
+      "rmse": 31.571013605725767,
+      "smape": 73.80750501664352
+    },
+    "transcif_zs_plus": {
+      "mae": 21.25631313766918,
+      "rmse": 31.40777112675723,
+      "smape": 65.70610628817522
+    },
+    "transcif_rag": {
+      "mae": 21.9831847899077,
+      "rmse": 31.563129262620777,
+      "smape": 69.7752457485608
+    },
+    "ratio_rag_vs_zs": 0.9638332759298104,
+    "transcif_rag_plus": {
+      "mae": 21.484925067161274,
+      "rmse": 31.629385232881134,
+      "smape": 66.5255877566736
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0107550132523668,
+    "transcif_phys_irm": {
+      "mae": 18.777683215367116,
+      "rmse": 30.32715705201471,
+      "smape": 60.434281565640426
+    },
+    "ratio_phys_irm_vs_zs": 0.8232908971473688,
+    "transcif_phys_weighted": {
+      "mae": 22.51197503337974,
+      "rmse": 31.52519518057936,
+      "smape": 72.35968773278798
+    },
+    "ratio_phys_weighted_vs_zs": 0.9870176160295835,
+    "irm_benefit": 0.8341197601509602,
+    "transcif_phys_irm_plus": {
+      "mae": 20.88127323344722,
+      "rmse": 30.92518069283344,
+      "smape": 64.34475029920642
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9823563050754396,
+    "transcif_causal": {
+      "mae": 17.982011026946743,
+      "rmse": 28.55462994416527,
+      "smape": 57.6531924104822
+    },
+    "ratio_causal_vs_zs": 0.78840535443549,
+    "transcif_causal_plus": {
+      "mae": 20.783374225132388,
+      "rmse": 30.843615963651395,
+      "smape": 64.35184993216726
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9777506612048033,
+    "transcif_icl": {
+      "mae": 21.749217625006526,
+      "rmse": 33.16159279874779,
+      "smape": 65.72309446686754
+    },
+    "ratio_icl_vs_zs": 0.9535751927102109,
+    "transcif_icl_plus": {
+      "mae": 21.787009420499494,
+      "rmse": 32.03248064012272,
+      "smape": 67.3184526705549
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0249665254455556,
+    "transcif_hier": {
+      "mae": 66.35171613815116,
+      "rmse": 71.23680999377552,
+      "smape": 119.86116949472778
+    },
+    "ratio_hier_vs_zs": 2.909132254502038,
+    "transcif_hier_plus": {
+      "mae": 21.388890053675055,
+      "rmse": 31.19490782077961,
+      "smape": 67.64036870740114
+    },
+    "ratio_hier_plus_vs_zs_plus": 1.0062370607333089,
+    "ratio_vs_patchtst": 1.274924540466528,
+    "ratio_vs_persist": 1.0329990127302937,
+    "ratio_plus_vs_patchtst": 1.188184069983549,
+    "ratio_plus_vs_persist": 0.9627181313693541
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "seed": 0,
+    "mean_rs": 0.9056854248046875,
+    "ef_nr": 393.55204988518483,
+    "n_test": 72,
+    "persistence": {
+      "mae": 34.958621978759766,
+      "rmse": 68.06177520751953,
+      "smape": 79.52430248260498
+    },
+    "patchtst_sup": {
+      "mae": 31.76741600036621,
+      "rmse": 58.92566680908203,
+      "smape": 153.32545042037964
+    },
+    "transcif_zs": {
+      "mae": 44.37740634162191,
+      "rmse": 62.33484996421145,
+      "smape": 143.21289866096245
+    },
+    "transcif_zs_plus": {
+      "mae": 34.26525205910201,
+      "rmse": 63.55254741268423,
+      "smape": 123.76869292507648
+    },
+    "transcif_rag": {
+      "mae": 41.54053560998835,
+      "rmse": 62.28895264261002,
+      "smape": 143.22896521087668
+    },
+    "ratio_rag_vs_zs": 0.9360739852663983,
+    "transcif_rag_plus": {
+      "mae": 34.65086497072051,
+      "rmse": 64.35539305531599,
+      "smape": 122.74619318070137
+    },
+    "ratio_rag_plus_vs_zs_plus": 1.0112537596674724,
+    "transcif_phys_irm": {
+      "mae": 38.07461851835113,
+      "rmse": 56.57599848906422,
+      "smape": 140.94818880314153
+    },
+    "ratio_phys_irm_vs_zs": 0.8579730465825052,
+    "transcif_phys_weighted": {
+      "mae": 40.65052997869099,
+      "rmse": 61.66304171687286,
+      "smape": 143.68335435744495
+    },
+    "ratio_phys_weighted_vs_zs": 0.9160186078870624,
+    "irm_benefit": 0.9366327705520653,
+    "transcif_phys_irm_plus": {
+      "mae": 33.42203079306761,
+      "rmse": 61.10465321670286,
+      "smape": 119.84429092402263
+    },
+    "ratio_phys_irm_plus_vs_zs_plus": 0.9753913596030177,
+    "transcif_causal": {
+      "mae": 34.979852928850285,
+      "rmse": 54.70692544341665,
+      "smape": 140.72707574764354
+    },
+    "ratio_causal_vs_zs": 0.7882356318792434,
+    "transcif_causal_plus": {
+      "mae": 32.93348966699738,
+      "rmse": 61.05618460454724,
+      "smape": 121.23810348153738
+    },
+    "ratio_causal_plus_vs_zs_plus": 0.9611337342621162,
+    "transcif_icl": {
+      "mae": 42.241578384534904,
+      "rmse": 66.9198878908075,
+      "smape": 143.34292236985164
+    },
+    "ratio_icl_vs_zs": 0.9518712756521827,
+    "transcif_icl_plus": {
+      "mae": 35.05242051344841,
+      "rmse": 65.48790133686346,
+      "smape": 125.48775834139762
+    },
+    "ratio_icl_plus_vs_zs_plus": 1.0229727904230403,
+    "transcif_hier": {
+      "mae": 103.97823791142115,
+      "rmse": 110.8638139273523,
+      "smape": 150.99288151485354
+    },
+    "ratio_hier_vs_zs": 2.343044501316409,
+    "transcif_hier_plus": {
+      "mae": 34.20493648879375,
+      "rmse": 63.054849316547674,
+      "smape": 124.82161436146623
+    },
+    "ratio_hier_plus_vs_zs_plus": 0.9982397453197126,
+    "ratio_vs_patchtst": 1.3969473104488677,
+    "ratio_vs_persist": 1.2694266486987051,
+    "ratio_plus_vs_patchtst": 1.0786288711271639,
+    "ratio_plus_vs_persist": 0.980165982512725
+  }
+]

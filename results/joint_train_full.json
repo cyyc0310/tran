@@ -1,0 +1,2177 @@
+[
+  {
+    "target": "QLD1",
+    "seed": 0,
+    "sources": [
+      "NSW1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 27.75520698229472,
+    "stage2_train_mae": 27.177263736724854,
+    "held_out_mae": 28.03691339492798,
+    "elapsed_seconds": 42.559329986572266
+  },
+  {
+    "target": "QLD1",
+    "seed": 1,
+    "sources": [
+      "NSW1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 27.21375012397766,
+    "stage2_train_mae": 26.844407558441162,
+    "held_out_mae": 27.87829287846883,
+    "elapsed_seconds": 41.426859855651855
+  },
+  {
+    "target": "QLD1",
+    "seed": 2,
+    "sources": [
+      "NSW1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 27.318392356236775,
+    "stage2_train_mae": 27.215840101242065,
+    "held_out_mae": 27.984707593917847,
+    "elapsed_seconds": 43.2662570476532
+  },
+  {
+    "target": "QLD1",
+    "seed": 3,
+    "sources": [
+      "NSW1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 26.571045716603596,
+    "stage2_train_mae": 26.686329523722332,
+    "held_out_mae": 27.74693473180135,
+    "elapsed_seconds": 43.144690990448
+  },
+  {
+    "target": "QLD1",
+    "seed": 4,
+    "sources": [
+      "NSW1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 26.92734964688619,
+    "stage2_train_mae": 26.90308419863383,
+    "held_out_mae": 27.819921414057415,
+    "elapsed_seconds": 42.966989040374756
+  },
+  {
+    "target": "NSW1",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 50.59692176183065,
+    "stage2_train_mae": 49.53612915674845,
+    "held_out_mae": 40.20011202494303,
+    "elapsed_seconds": 43.60523009300232
+  },
+  {
+    "target": "NSW1",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.08340438206991,
+    "stage2_train_mae": 49.9447725613912,
+    "held_out_mae": 40.600363413492836,
+    "elapsed_seconds": 42.941965103149414
+  },
+  {
+    "target": "NSW1",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.571020444234215,
+    "stage2_train_mae": 49.67057196299235,
+    "held_out_mae": 40.534238497416176,
+    "elapsed_seconds": 42.139309883117676
+  },
+  {
+    "target": "NSW1",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 50.23188718159994,
+    "stage2_train_mae": 48.76316134134928,
+    "held_out_mae": 39.798052628835045,
+    "elapsed_seconds": 44.71218299865723
+  },
+  {
+    "target": "NSW1",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "VIC1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.17425489425659,
+    "stage2_train_mae": 49.87426026662191,
+    "held_out_mae": 40.62180519104004,
+    "elapsed_seconds": 44.086665868759155
+  },
+  {
+    "target": "VIC1",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 89.82141749064128,
+    "stage2_train_mae": 89.73580169677734,
+    "held_out_mae": 88.87834072113037,
+    "elapsed_seconds": 44.57066798210144
+  },
+  {
+    "target": "VIC1",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 90.43072573343913,
+    "stage2_train_mae": 90.25056457519531,
+    "held_out_mae": 89.63215605417888,
+    "elapsed_seconds": 42.79440999031067
+  },
+  {
+    "target": "VIC1",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 90.52106189727783,
+    "stage2_train_mae": 90.60856707890828,
+    "held_out_mae": 89.72770659128825,
+    "elapsed_seconds": 43.6341187953949
+  },
+  {
+    "target": "VIC1",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 90.22588602701823,
+    "stage2_train_mae": 90.19570636749268,
+    "held_out_mae": 89.84066549936931,
+    "elapsed_seconds": 44.71452283859253
+  },
+  {
+    "target": "VIC1",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "SA1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 90.71362527211507,
+    "stage2_train_mae": 90.1733791033427,
+    "held_out_mae": 89.14978059132893,
+    "elapsed_seconds": 43.728049993515015
+  },
+  {
+    "target": "SA1",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 63.687761863072716,
+    "stage2_train_mae": 63.17698486646017,
+    "held_out_mae": 55.98802264531454,
+    "elapsed_seconds": 44.32174015045166
+  },
+  {
+    "target": "SA1",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 63.68951694170634,
+    "stage2_train_mae": 63.12890203793844,
+    "held_out_mae": 55.818450133005776,
+    "elapsed_seconds": 42.61340689659119
+  },
+  {
+    "target": "SA1",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 63.5239192644755,
+    "stage2_train_mae": 63.11568093299866,
+    "held_out_mae": 55.914398988087974,
+    "elapsed_seconds": 43.33943486213684
+  },
+  {
+    "target": "SA1",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 63.699829975763954,
+    "stage2_train_mae": 63.215343157450356,
+    "held_out_mae": 55.86372216542562,
+    "elapsed_seconds": 42.76063799858093
+  },
+  {
+    "target": "SA1",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 63.59123055140177,
+    "stage2_train_mae": 63.14663163820902,
+    "held_out_mae": 55.88455390930176,
+    "elapsed_seconds": 44.73206567764282
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 20.374727675691247,
+    "stage2_train_mae": 20.008894556512434,
+    "held_out_mae": 23.650345621009667,
+    "elapsed_seconds": 42.643842935562134
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 20.405537012343604,
+    "stage2_train_mae": 20.083465539850295,
+    "held_out_mae": 23.61919371659557,
+    "elapsed_seconds": 41.98339509963989
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 20.420955729360383,
+    "stage2_train_mae": 20.051065837653976,
+    "held_out_mae": 23.606418586646516,
+    "elapsed_seconds": 43.825029134750366
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 20.382392559821408,
+    "stage2_train_mae": 20.05245058486859,
+    "held_out_mae": 23.593737409760553,
+    "elapsed_seconds": 44.177757263183594
+  },
+  {
+    "target": "UK_01_North_Scotland",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 20.33579462704559,
+    "stage2_train_mae": 20.005782540887594,
+    "held_out_mae": 23.595526474217575,
+    "elapsed_seconds": 43.38171100616455
+  },
+  {
+    "target": "UK_02_South_Scotland",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.58549169699351,
+    "stage2_train_mae": 15.362043996651968,
+    "held_out_mae": 15.422943512598673,
+    "elapsed_seconds": 42.52136301994324
+  },
+  {
+    "target": "UK_02_South_Scotland",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.65361656745275,
+    "stage2_train_mae": 15.411309937636057,
+    "held_out_mae": 15.40939168135325,
+    "elapsed_seconds": 43.0803599357605
+  },
+  {
+    "target": "UK_02_South_Scotland",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.617778042952219,
+    "stage2_train_mae": 15.413903693358103,
+    "held_out_mae": 15.406206210454306,
+    "elapsed_seconds": 44.76224493980408
+  },
+  {
+    "target": "UK_02_South_Scotland",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.598252991835276,
+    "stage2_train_mae": 15.372274736563364,
+    "held_out_mae": 15.417296489079794,
+    "elapsed_seconds": 43.1916880607605
+  },
+  {
+    "target": "UK_02_South_Scotland",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.56630273660024,
+    "stage2_train_mae": 15.347736378510794,
+    "held_out_mae": 15.438491980234781,
+    "elapsed_seconds": 45.334234952926636
+  },
+  {
+    "target": "UK_03_North_West_England",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 22.45819926261902,
+    "stage2_train_mae": 22.24022062619527,
+    "held_out_mae": 28.66773811976115,
+    "elapsed_seconds": 44.936257123947144
+  },
+  {
+    "target": "UK_03_North_West_England",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 22.550044020016987,
+    "stage2_train_mae": 22.30606746673584,
+    "held_out_mae": 28.686585505803425,
+    "elapsed_seconds": 44.98602485656738
+  },
+  {
+    "target": "UK_03_North_West_England",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 22.431578278541565,
+    "stage2_train_mae": 22.263750592867535,
+    "held_out_mae": 28.576988577842712,
+    "elapsed_seconds": 45.01060605049133
+  },
+  {
+    "target": "UK_03_North_West_England",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 22.456313729286194,
+    "stage2_train_mae": 22.23360562324524,
+    "held_out_mae": 28.638794740041096,
+    "elapsed_seconds": 44.38932132720947
+  },
+  {
+    "target": "UK_03_North_West_England",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 22.443873246510822,
+    "stage2_train_mae": 22.23891818523407,
+    "held_out_mae": 28.661261955897015,
+    "elapsed_seconds": 43.23213005065918
+  },
+  {
+    "target": "UK_05_Yorkshire",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 33.7705500125885,
+    "stage2_train_mae": 33.02850238482157,
+    "held_out_mae": 45.95729772249857,
+    "elapsed_seconds": 45.034584045410156
+  },
+  {
+    "target": "UK_05_Yorkshire",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 33.786296447118126,
+    "stage2_train_mae": 33.10486467679342,
+    "held_out_mae": 45.827931801478066,
+    "elapsed_seconds": 44.80878210067749
+  },
+  {
+    "target": "UK_05_Yorkshire",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 33.827113469441734,
+    "stage2_train_mae": 33.05694508552551,
+    "held_out_mae": 45.84761452674866,
+    "elapsed_seconds": 44.72030997276306
+  },
+  {
+    "target": "UK_05_Yorkshire",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 33.80739188194275,
+    "stage2_train_mae": 33.07959381739298,
+    "held_out_mae": 46.10351347923279,
+    "elapsed_seconds": 45.98122501373291
+  },
+  {
+    "target": "UK_05_Yorkshire",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 33.83983333905538,
+    "stage2_train_mae": 33.050012270609535,
+    "held_out_mae": 45.90665062268575,
+    "elapsed_seconds": 43.8338840007782
+  },
+  {
+    "target": "UK_06_North_Wales_Merseyside",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 41.087041894594826,
+    "stage2_train_mae": 40.39416742324829,
+    "held_out_mae": 46.13115652402242,
+    "elapsed_seconds": 44.30713486671448
+  },
+  {
+    "target": "UK_06_North_Wales_Merseyside",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 41.058660546938576,
+    "stage2_train_mae": 40.27978638807932,
+    "held_out_mae": 46.06825645764669,
+    "elapsed_seconds": 44.55531406402588
+  },
+  {
+    "target": "UK_06_North_Wales_Merseyside",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 41.057350754737854,
+    "stage2_train_mae": 40.3691916068395,
+    "held_out_mae": 46.12193695704142,
+    "elapsed_seconds": 45.579535245895386
+  },
+  {
+    "target": "UK_06_North_Wales_Merseyside",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 41.06525830427805,
+    "stage2_train_mae": 40.31686655680338,
+    "held_out_mae": 46.14965589841207,
+    "elapsed_seconds": 44.874637842178345
+  },
+  {
+    "target": "UK_06_North_Wales_Merseyside",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 41.12274773915609,
+    "stage2_train_mae": 40.41349975268046,
+    "held_out_mae": 46.144268910090126,
+    "elapsed_seconds": 45.33097004890442
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 54.291139920552574,
+    "stage2_train_mae": 52.91085910797119,
+    "held_out_mae": 66.90758323669434,
+    "elapsed_seconds": 43.41342091560364
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 54.58449522654215,
+    "stage2_train_mae": 53.321067810058594,
+    "held_out_mae": 67.3947655359904,
+    "elapsed_seconds": 44.18282914161682
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 54.10963249206543,
+    "stage2_train_mae": 52.66260623931885,
+    "held_out_mae": 67.5222094853719,
+    "elapsed_seconds": 44.87737798690796
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 54.42153882980347,
+    "stage2_train_mae": 53.02930736541748,
+    "held_out_mae": 67.24961948394775,
+    "elapsed_seconds": 44.57234787940979
+  },
+  {
+    "target": "UK_07_South_Wales",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 54.39286231994629,
+    "stage2_train_mae": 52.97653293609619,
+    "held_out_mae": 67.61410395304362,
+    "elapsed_seconds": 44.982532262802124
+  },
+  {
+    "target": "UK_08_West_Midlands",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 64.45756761233012,
+    "stage2_train_mae": 63.84861874580383,
+    "held_out_mae": 96.28051821390788,
+    "elapsed_seconds": 43.9140899181366
+  },
+  {
+    "target": "UK_08_West_Midlands",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 64.53204234441121,
+    "stage2_train_mae": 63.94969073931376,
+    "held_out_mae": 96.41615772247314,
+    "elapsed_seconds": 44.79363703727722
+  },
+  {
+    "target": "UK_08_West_Midlands",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 64.53417547543843,
+    "stage2_train_mae": 63.90481766064962,
+    "held_out_mae": 96.45334529876709,
+    "elapsed_seconds": 45.18809390068054
+  },
+  {
+    "target": "UK_08_West_Midlands",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 64.53857906659444,
+    "stage2_train_mae": 63.93758678436279,
+    "held_out_mae": 96.53116289774577,
+    "elapsed_seconds": 44.369072914123535
+  },
+  {
+    "target": "UK_08_West_Midlands",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 64.47351733843486,
+    "stage2_train_mae": 63.88616967201233,
+    "held_out_mae": 96.46905740102132,
+    "elapsed_seconds": 45.552149057388306
+  },
+  {
+    "target": "UK_09_East_Midlands",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 71.85200866063435,
+    "stage2_train_mae": 71.67626031239827,
+    "held_out_mae": 99.36343351999919,
+    "elapsed_seconds": 44.86348009109497
+  },
+  {
+    "target": "UK_09_East_Midlands",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 72.06375487645467,
+    "stage2_train_mae": 72.03178834915161,
+    "held_out_mae": 100.14310836791992,
+    "elapsed_seconds": 44.38881206512451
+  },
+  {
+    "target": "UK_09_East_Midlands",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 71.84237082799275,
+    "stage2_train_mae": 71.69088395436604,
+    "held_out_mae": 99.78871631622314,
+    "elapsed_seconds": 44.699719190597534
+  },
+  {
+    "target": "UK_09_East_Midlands",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 71.77583169937134,
+    "stage2_train_mae": 71.69697952270508,
+    "held_out_mae": 99.68302663167317,
+    "elapsed_seconds": 45.36736798286438
+  },
+  {
+    "target": "UK_09_East_Midlands",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 71.99499448140462,
+    "stage2_train_mae": 71.79568274815877,
+    "held_out_mae": 99.27294445037842,
+    "elapsed_seconds": 44.43083381652832
+  },
+  {
+    "target": "UK_10_East_England",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 42.040260314941406,
+    "stage2_train_mae": 41.87753486633301,
+    "held_out_mae": 49.76922154426575,
+    "elapsed_seconds": 44.39886403083801
+  },
+  {
+    "target": "UK_10_East_England",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 41.71723937988281,
+    "stage2_train_mae": 41.35206127166748,
+    "held_out_mae": 49.05107442537943,
+    "elapsed_seconds": 45.39358901977539
+  },
+  {
+    "target": "UK_10_East_England",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 42.022626082102455,
+    "stage2_train_mae": 41.76834408442179,
+    "held_out_mae": 49.85086973508199,
+    "elapsed_seconds": 44.87748312950134
+  },
+  {
+    "target": "UK_10_East_England",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 41.99294884999593,
+    "stage2_train_mae": 41.64110851287842,
+    "held_out_mae": 49.44126272201538,
+    "elapsed_seconds": 44.685555934906006
+  },
+  {
+    "target": "UK_10_East_England",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 41.88145685195923,
+    "stage2_train_mae": 41.721866289774574,
+    "held_out_mae": 49.60874358812968,
+    "elapsed_seconds": 43.02308917045593
+  },
+  {
+    "target": "UK_11_South_West_England",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 42.46255397796631,
+    "stage2_train_mae": 41.72770897547404,
+    "held_out_mae": 39.17952140172323,
+    "elapsed_seconds": 44.03136992454529
+  },
+  {
+    "target": "UK_11_South_West_England",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 42.47311242421468,
+    "stage2_train_mae": 41.8738177617391,
+    "held_out_mae": 39.38473637898763,
+    "elapsed_seconds": 44.70916509628296
+  },
+  {
+    "target": "UK_11_South_West_England",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 42.602835496266685,
+    "stage2_train_mae": 41.98077646891276,
+    "held_out_mae": 39.342300256093345,
+    "elapsed_seconds": 44.00722670555115
+  },
+  {
+    "target": "UK_11_South_West_England",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 42.520944118499756,
+    "stage2_train_mae": 41.94055779774984,
+    "held_out_mae": 39.19221941630045,
+    "elapsed_seconds": 45.18422794342041
+  },
+  {
+    "target": "UK_11_South_West_England",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 42.56979846954346,
+    "stage2_train_mae": 41.94930442174276,
+    "held_out_mae": 39.24904521306356,
+    "elapsed_seconds": 44.629969358444214
+  },
+  {
+    "target": "UK_12_South_England",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 37.64257415135702,
+    "stage2_train_mae": 37.53094800313314,
+    "held_out_mae": 40.79182481765747,
+    "elapsed_seconds": 44.890892028808594
+  },
+  {
+    "target": "UK_12_South_England",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 37.63020102183024,
+    "stage2_train_mae": 37.62023655573527,
+    "held_out_mae": 40.824974377950035,
+    "elapsed_seconds": 44.30933403968811
+  },
+  {
+    "target": "UK_12_South_England",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 37.662232398986816,
+    "stage2_train_mae": 37.60475381215414,
+    "held_out_mae": 40.72827021280924,
+    "elapsed_seconds": 44.9934139251709
+  },
+  {
+    "target": "UK_12_South_England",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 37.65740394592285,
+    "stage2_train_mae": 37.55355707804362,
+    "held_out_mae": 40.71600294113159,
+    "elapsed_seconds": 45.26333284378052
+  },
+  {
+    "target": "UK_12_South_England",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 37.84124183654785,
+    "stage2_train_mae": 37.71477619806925,
+    "held_out_mae": 40.900801499684654,
+    "elapsed_seconds": 44.82725787162781
+  },
+  {
+    "target": "UK_13_London",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 32.36829956372579,
+    "stage2_train_mae": 30.998909791310627,
+    "held_out_mae": 38.49213488896688,
+    "elapsed_seconds": 45.11086416244507
+  },
+  {
+    "target": "UK_13_London",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 32.348290046056114,
+    "stage2_train_mae": 30.992534240086872,
+    "held_out_mae": 38.593502839406334,
+    "elapsed_seconds": 44.87193775177002
+  },
+  {
+    "target": "UK_13_London",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 32.32508412996928,
+    "stage2_train_mae": 30.978550513585407,
+    "held_out_mae": 38.50176525115967,
+    "elapsed_seconds": 45.19140601158142
+  },
+  {
+    "target": "UK_13_London",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 32.44706074396769,
+    "stage2_train_mae": 31.006303946177166,
+    "held_out_mae": 38.524069945017494,
+    "elapsed_seconds": 44.91829991340637
+  },
+  {
+    "target": "UK_13_London",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 32.433497190475464,
+    "stage2_train_mae": 31.037617683410645,
+    "held_out_mae": 38.7035387357076,
+    "elapsed_seconds": 48.91225290298462
+  },
+  {
+    "target": "UK_14_South_East_England",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 34.12757436434428,
+    "stage2_train_mae": 33.30707343419393,
+    "held_out_mae": 37.25858942667643,
+    "elapsed_seconds": 44.146451234817505
+  },
+  {
+    "target": "UK_14_South_East_England",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 34.052621285120644,
+    "stage2_train_mae": 33.26439905166626,
+    "held_out_mae": 37.23974927266439,
+    "elapsed_seconds": 45.105658292770386
+  },
+  {
+    "target": "UK_14_South_East_England",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 34.06308801968893,
+    "stage2_train_mae": 33.26847314834595,
+    "held_out_mae": 37.242926597595215,
+    "elapsed_seconds": 43.84129285812378
+  },
+  {
+    "target": "UK_14_South_East_England",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 34.081148862838745,
+    "stage2_train_mae": 33.284775177637734,
+    "held_out_mae": 37.23064851760864,
+    "elapsed_seconds": 44.25376486778259
+  },
+  {
+    "target": "UK_14_South_East_England",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 34.17021346092224,
+    "stage2_train_mae": 33.331769943237305,
+    "held_out_mae": 37.24156220753988,
+    "elapsed_seconds": 45.135783195495605
+  },
+  {
+    "target": "UK_15_England",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 31.946982781092327,
+    "stage2_train_mae": 31.291932264963787,
+    "held_out_mae": 43.39800262451172,
+    "elapsed_seconds": 44.00936985015869
+  },
+  {
+    "target": "UK_15_England",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 31.956217288970947,
+    "stage2_train_mae": 31.31963849067688,
+    "held_out_mae": 43.35031716028849,
+    "elapsed_seconds": 44.22578191757202
+  },
+  {
+    "target": "UK_15_England",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 31.984835783640545,
+    "stage2_train_mae": 31.314980506896973,
+    "held_out_mae": 43.49921671549479,
+    "elapsed_seconds": 44.98571491241455
+  },
+  {
+    "target": "UK_15_England",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 32.00684102376302,
+    "stage2_train_mae": 31.387506087621052,
+    "held_out_mae": 43.58859141667684,
+    "elapsed_seconds": 45.46684217453003
+  },
+  {
+    "target": "UK_15_England",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 31.93114439646403,
+    "stage2_train_mae": 31.352309385935467,
+    "held_out_mae": 43.66543881098429,
+    "elapsed_seconds": 44.62483310699463
+  },
+  {
+    "target": "UK_16_Scotland",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 23.85329745213191,
+    "stage2_train_mae": 23.18404124180476,
+    "held_out_mae": 34.51369329293569,
+    "elapsed_seconds": 44.15461301803589
+  },
+  {
+    "target": "UK_16_Scotland",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 23.722532133261364,
+    "stage2_train_mae": 23.14303119977315,
+    "held_out_mae": 34.610385616620384,
+    "elapsed_seconds": 45.79827570915222
+  },
+  {
+    "target": "UK_16_Scotland",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 24.041089415550232,
+    "stage2_train_mae": 23.33642170826594,
+    "held_out_mae": 34.39336156845093,
+    "elapsed_seconds": 44.407734632492065
+  },
+  {
+    "target": "UK_16_Scotland",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 23.86439249912898,
+    "stage2_train_mae": 23.144732892513275,
+    "held_out_mae": 34.467822790145874,
+    "elapsed_seconds": 44.02857232093811
+  },
+  {
+    "target": "UK_16_Scotland",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 23.964461386203766,
+    "stage2_train_mae": 23.340382039546967,
+    "held_out_mae": 34.66692034403483,
+    "elapsed_seconds": 44.24611806869507
+  },
+  {
+    "target": "UK_17_Wales",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.580779393514,
+    "stage2_train_mae": 50.5952935218811,
+    "held_out_mae": 69.7281723022461,
+    "elapsed_seconds": 43.93533396720886
+  },
+  {
+    "target": "UK_17_Wales",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.63222487767538,
+    "stage2_train_mae": 50.45223172505697,
+    "held_out_mae": 69.72510592142741,
+    "elapsed_seconds": 43.97249627113342
+  },
+  {
+    "target": "UK_17_Wales",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.58350578943888,
+    "stage2_train_mae": 50.40944242477417,
+    "held_out_mae": 69.62502606709798,
+    "elapsed_seconds": 44.05984807014465
+  },
+  {
+    "target": "UK_17_Wales",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.64751784006754,
+    "stage2_train_mae": 50.463001092274986,
+    "held_out_mae": 69.6998217900594,
+    "elapsed_seconds": 45.33737802505493
+  },
+  {
+    "target": "UK_17_Wales",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.7558700243632,
+    "stage2_train_mae": 50.63203366597494,
+    "held_out_mae": 69.92875544230144,
+    "elapsed_seconds": 44.468111991882324
+  },
+  {
+    "target": "UK_18_GB",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 30.521882613499958,
+    "stage2_train_mae": 29.852270126342773,
+    "held_out_mae": 41.95021152496338,
+    "elapsed_seconds": 45.4321231842041
+  },
+  {
+    "target": "UK_18_GB",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 30.521225134531658,
+    "stage2_train_mae": 29.81379310290019,
+    "held_out_mae": 41.76783514022827,
+    "elapsed_seconds": 45.275558948516846
+  },
+  {
+    "target": "UK_18_GB",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 30.504854281743366,
+    "stage2_train_mae": 29.83040388425191,
+    "held_out_mae": 41.85108629862467,
+    "elapsed_seconds": 44.98529601097107
+  },
+  {
+    "target": "UK_18_GB",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 30.555054426193237,
+    "stage2_train_mae": 29.86798906326294,
+    "held_out_mae": 41.944531758626304,
+    "elapsed_seconds": 44.00679612159729
+  },
+  {
+    "target": "UK_18_GB",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 30.500500758488972,
+    "stage2_train_mae": 29.849220514297485,
+    "held_out_mae": 41.970025062561035,
+    "elapsed_seconds": 45.94749712944031
+  },
+  {
+    "target": "US_CISO",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 21.24144148826599,
+    "stage2_train_mae": 21.284296989440918,
+    "held_out_mae": 37.1195547580719,
+    "elapsed_seconds": 43.753063917160034
+  },
+  {
+    "target": "US_CISO",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 21.16314125061035,
+    "stage2_train_mae": 21.195549488067627,
+    "held_out_mae": 36.966306845347084,
+    "elapsed_seconds": 43.308653116226196
+  },
+  {
+    "target": "US_CISO",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 21.280949195226032,
+    "stage2_train_mae": 21.376521428426106,
+    "held_out_mae": 37.094351053237915,
+    "elapsed_seconds": 45.88909101486206
+  },
+  {
+    "target": "US_CISO",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 21.201794862747192,
+    "stage2_train_mae": 21.278560558954876,
+    "held_out_mae": 36.906275828679405,
+    "elapsed_seconds": 44.986774921417236
+  },
+  {
+    "target": "US_CISO",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 21.20681111017863,
+    "stage2_train_mae": 21.215951760609943,
+    "held_out_mae": 36.94054627418518,
+    "elapsed_seconds": 46.04491591453552
+  },
+  {
+    "target": "US_PJM",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 13.504643738269806,
+    "stage2_train_mae": 13.281548043092092,
+    "held_out_mae": 13.039888620376587,
+    "elapsed_seconds": 43.124309062957764
+  },
+  {
+    "target": "US_PJM",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 13.517219344774881,
+    "stage2_train_mae": 13.256100714206696,
+    "held_out_mae": 12.980321764945984,
+    "elapsed_seconds": 44.78475999832153
+  },
+  {
+    "target": "US_PJM",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 13.624886532624563,
+    "stage2_train_mae": 13.320267220338186,
+    "held_out_mae": 13.014139691988627,
+    "elapsed_seconds": 44.06779193878174
+  },
+  {
+    "target": "US_PJM",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 13.424652934074402,
+    "stage2_train_mae": 13.150056540966034,
+    "held_out_mae": 12.97225570678711,
+    "elapsed_seconds": 44.91676902770996
+  },
+  {
+    "target": "US_PJM",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 13.572622815767923,
+    "stage2_train_mae": 13.387932280699411,
+    "held_out_mae": 13.06629196802775,
+    "elapsed_seconds": 46.09180212020874
+  },
+  {
+    "target": "US_MISO",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 47.353197733561196,
+    "stage2_train_mae": 47.88610076904297,
+    "held_out_mae": 47.55379565556844,
+    "elapsed_seconds": 43.97384190559387
+  },
+  {
+    "target": "US_MISO",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 47.883108139038086,
+    "stage2_train_mae": 48.03187847137451,
+    "held_out_mae": 47.59620141983032,
+    "elapsed_seconds": 43.781038999557495
+  },
+  {
+    "target": "US_MISO",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 47.06522115071615,
+    "stage2_train_mae": 47.78588612874349,
+    "held_out_mae": 47.38743178049723,
+    "elapsed_seconds": 43.82672071456909
+  },
+  {
+    "target": "US_MISO",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 47.56625191370646,
+    "stage2_train_mae": 48.241089820861816,
+    "held_out_mae": 47.719902197519936,
+    "elapsed_seconds": 45.70758295059204
+  },
+  {
+    "target": "US_MISO",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 47.67259136835734,
+    "stage2_train_mae": 48.24307552973429,
+    "held_out_mae": 48.09153493245443,
+    "elapsed_seconds": 45.12739586830139
+  },
+  {
+    "target": "US_ERCO",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.79710499445597,
+    "stage2_train_mae": 52.39121357599894,
+    "held_out_mae": 52.28229626019796,
+    "elapsed_seconds": 45.54460382461548
+  },
+  {
+    "target": "US_ERCO",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.43297322591146,
+    "stage2_train_mae": 52.12838045756022,
+    "held_out_mae": 52.543009996414185,
+    "elapsed_seconds": 45.70697593688965
+  },
+  {
+    "target": "US_ERCO",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.81112019220988,
+    "stage2_train_mae": 52.324233055114746,
+    "held_out_mae": 52.4136598110199,
+    "elapsed_seconds": 44.69171190261841
+  },
+  {
+    "target": "US_ERCO",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 51.95135084788004,
+    "stage2_train_mae": 52.47695906956991,
+    "held_out_mae": 52.730607986450195,
+    "elapsed_seconds": 46.529057025909424
+  },
+  {
+    "target": "US_ERCO",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 49.87528085708618,
+    "stage2_train_mae": 49.93006944656372,
+    "held_out_mae": 51.48023374875387,
+    "elapsed_seconds": 45.07913279533386
+  },
+  {
+    "target": "US_ISNE",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 12.269374748071035,
+    "stage2_train_mae": 12.28073368469874,
+    "held_out_mae": 15.683841943740845,
+    "elapsed_seconds": 46.35218000411987
+  },
+  {
+    "target": "US_ISNE",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 12.255603988965353,
+    "stage2_train_mae": 12.267254094282785,
+    "held_out_mae": 15.70796807607015,
+    "elapsed_seconds": 46.46307897567749
+  },
+  {
+    "target": "US_ISNE",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 12.268076181411743,
+    "stage2_train_mae": 12.27666699886322,
+    "held_out_mae": 15.700761477152506,
+    "elapsed_seconds": 46.15077805519104
+  },
+  {
+    "target": "US_ISNE",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 12.260914266109467,
+    "stage2_train_mae": 12.270256598790487,
+    "held_out_mae": 15.718082666397095,
+    "elapsed_seconds": 46.34448218345642
+  },
+  {
+    "target": "US_ISNE",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 12.271041731039682,
+    "stage2_train_mae": 12.279273013273874,
+    "held_out_mae": 15.686221599578857,
+    "elapsed_seconds": 45.981799840927124
+  },
+  {
+    "target": "US_NYIS",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.631334900856018,
+    "stage2_train_mae": 15.202948093414307,
+    "held_out_mae": 17.473352670669556,
+    "elapsed_seconds": 45.89085292816162
+  },
+  {
+    "target": "US_NYIS",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.736072460810343,
+    "stage2_train_mae": 15.147144317626953,
+    "held_out_mae": 17.32080062230428,
+    "elapsed_seconds": 46.523653984069824
+  },
+  {
+    "target": "US_NYIS",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.57581361134847,
+    "stage2_train_mae": 15.161419550577799,
+    "held_out_mae": 17.4426592985789,
+    "elapsed_seconds": 44.723045349121094
+  },
+  {
+    "target": "US_NYIS",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.735916376113892,
+    "stage2_train_mae": 15.217483838399252,
+    "held_out_mae": 17.4998680750529,
+    "elapsed_seconds": 44.943317890167236
+  },
+  {
+    "target": "US_NYIS",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.426932692527771,
+    "stage2_train_mae": 14.969369530677795,
+    "held_out_mae": 17.17748188972473,
+    "elapsed_seconds": 45.39201879501343
+  },
+  {
+    "target": "US_FPL",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.609176437060038,
+    "stage2_train_mae": 16.824684699376423,
+    "held_out_mae": 13.043508251508078,
+    "elapsed_seconds": 45.05826115608215
+  },
+  {
+    "target": "US_FPL",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 16.19978658358256,
+    "stage2_train_mae": 17.69940523306529,
+    "held_out_mae": 14.072822590668997,
+    "elapsed_seconds": 46.25093197822571
+  },
+  {
+    "target": "US_FPL",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.735690553983053,
+    "stage2_train_mae": 17.009629050890606,
+    "held_out_mae": 13.356976826985678,
+    "elapsed_seconds": 46.34182786941528
+  },
+  {
+    "target": "US_FPL",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.542714993158976,
+    "stage2_train_mae": 16.709402044614155,
+    "held_out_mae": 12.995554606119791,
+    "elapsed_seconds": 46.5916588306427
+  },
+  {
+    "target": "US_FPL",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 15.512374877929688,
+    "stage2_train_mae": 16.718219478925068,
+    "held_out_mae": 12.903686046600342,
+    "elapsed_seconds": 46.94964003562927
+  },
+  {
+    "target": "US_BPAT",
+    "seed": 0,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 6.652119139830272,
+    "stage2_train_mae": 6.591092218955358,
+    "held_out_mae": 9.360824863115946,
+    "elapsed_seconds": 45.10549306869507
+  },
+  {
+    "target": "US_BPAT",
+    "seed": 1,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 6.6330476105213165,
+    "stage2_train_mae": 6.57908766468366,
+    "held_out_mae": 9.35176189740499,
+    "elapsed_seconds": 45.63120222091675
+  },
+  {
+    "target": "US_BPAT",
+    "seed": 2,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 6.627488921085994,
+    "stage2_train_mae": 6.5650265117486315,
+    "held_out_mae": 9.391650895277659,
+    "elapsed_seconds": 45.258036375045776
+  },
+  {
+    "target": "US_BPAT",
+    "seed": 3,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 6.66521151860555,
+    "stage2_train_mae": 6.599715391794841,
+    "held_out_mae": 9.35097316900889,
+    "elapsed_seconds": 47.381792068481445
+  },
+  {
+    "target": "US_BPAT",
+    "seed": 4,
+    "sources": [
+      "QLD1",
+      "NSW1",
+      "VIC1"
+    ],
+    "n_train_origins": 12,
+    "n_eval_origins": 12,
+    "stage1_train_mae": 6.648026535908381,
+    "stage2_train_mae": 6.587517668803533,
+    "held_out_mae": 9.38654774427414,
+    "elapsed_seconds": 45.34170079231262
+  }
+]

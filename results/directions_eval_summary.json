@@ -1,0 +1,45 @@
+{
+  "baselines": {
+    "median_zs_mae": 50.73817664044285,
+    "median_zs_plus_mae": 46.6583919484717,
+    "median_persist_mae": 50.69502258300781
+  },
+  "directions": {
+    "rag": {
+      "median_mae": 50.32891532851754,
+      "median_ratio_vs_zs": 0.9721583988940696,
+      "median_plus_mae": 46.82806886104153,
+      "median_plus_ratio_vs_zs_plus": 1.0034657238252973,
+      "n": 29
+    },
+    "phys_irm": {
+      "median_mae": 44.01089989820601,
+      "median_ratio_vs_zs": 0.8518585167016139,
+      "median_plus_mae": 45.83406399840838,
+      "median_plus_ratio_vs_zs_plus": 0.9790231350078323,
+      "n": 29
+    },
+    "causal": {
+      "median_mae": 41.17670424763793,
+      "median_ratio_vs_zs": 0.7936157438086182,
+      "median_plus_mae": 45.95753123537977,
+      "median_plus_ratio_vs_zs_plus": 0.9739488120693416,
+      "n": 29
+    },
+    "icl": {
+      "median_mae": 49.941650965565174,
+      "median_ratio_vs_zs": 0.974234279433917,
+      "median_plus_mae": 47.06595892426354,
+      "median_plus_ratio_vs_zs_plus": 1.0095123127119179,
+      "n": 29
+    },
+    "hier": {
+      "median_mae": 71.14767208872091,
+      "median_ratio_vs_zs": 1.4537084821249617,
+      "median_plus_mae": 46.58209967799491,
+      "median_plus_ratio_vs_zs_plus": 0.9967711294128054,
+      "n": 29
+    }
+  },
+  "n_evals": 29
+}

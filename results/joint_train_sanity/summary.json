@@ -1,0 +1,14 @@
+{
+  "stage1_final_mae": 27.75520698229472,
+  "stage1_final_loss": 50.467838287353516,
+  "stage2_final_mae": 27.177263736724854,
+  "stage2_final_loss": 50.123626708984375,
+  "elapsed_seconds": 44.0243079662323,
+  "target": "QLD1",
+  "sources": [
+    "NSW1",
+    "VIC1",
+    "SA1"
+  ],
+  "n_origins": 12
+}
