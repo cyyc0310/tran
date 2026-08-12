@@ -6,6 +6,7 @@ sequence lengths, strides, and per-region emission factors.
 """
 
 from pathlib import Path
+import json
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -13,6 +14,7 @@ from pathlib import Path
 # Data directory lives at the repository root (excluded from git via .gitignore).
 DATA_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data_2023"
 RESULTS_DIR = Path(__file__).resolve().parent.parent.parent.parent / "results"
+FUEL_DIR = DATA_DIR / "fuel"
 
 # ---------------------------------------------------------------------------
 # Sequence / training hyperparameters
@@ -62,6 +64,73 @@ UK_REGIONS = {}
 
 # Combined lookup used by loaders and experiments.
 ALL_REGION_CONFIGS = {**AU_REGIONS, **US_REGIONS}
+
+
+# ---------------------------------------------------------------------------
+# Multi-fuel config (Stage A) — per-fuel share vectors for richer config space
+# ---------------------------------------------------------------------------
+# Fuel share vectors are loaded lazily from data_2023/fuel/fuel_shares_*.json,
+# produced by scripts/data/extract_fuel_breakdown.py (US) and
+# extract_uk_fuel_breakdown.py (UK).  When a region has fuel data its config
+# vector is extended with per-fuel shares; otherwise it falls back to the
+# legacy 2-D [mean_rs, ef_nr/1000] vector (full backward compatibility).
+#
+# The canonical fuel order is fixed across US/UK so the multi-fuel config
+# dimensions are comparable.  AU regions stay on 2-D until NEMED DUID-level
+# fuel data is wired in (see IMPROVEMENT_PLAN.md TODO).
+_FUEL_SHARES_CACHE: dict = {}
+_FUEL_ORDER: list = ["coal", "gas", "nuclear", "petroleum", "hydro", "solar", "wind"]
+_FUEL_EFS: dict = {}
+
+
+def _load_fuel_shares():
+    """Lazily load fuel-share JSONs from disk (idempotent, cached)."""
+    if _FUEL_SHARES_CACHE:
+        return
+    global _FUEL_ORDER
+    seen_orders = []
+    for name in ("fuel_shares_us.json", "fuel_shares_uk.json"):
+        path = FUEL_DIR / name
+        if not path.exists():
+            continue
+        with open(path) as f:
+            doc = json.load(f)
+        order = doc.get("_fuel_order")
+        if order:
+            seen_orders.append(order)
+        for ef_key, ef_val in doc.get("_emission_factors", {}).items():
+            _FUEL_EFS.setdefault(ef_key, ef_val)
+        for region_key, shares in doc.get("regions", {}).items():
+            _FUEL_SHARES_CACHE[region_key] = shares
+    # Canonical order = stable union of all fuels seen across jurisdictions,
+    # so no per-fuel dimension is silently dropped when US and UK differ
+    # (e.g. US has petroleum; UK has biomass/imports/other).  Fuels present in
+    # the seed order keep their position; new fuels are appended.
+    if seen_orders:
+        union = []
+        for order in seen_orders:
+            for f in order:
+                if f not in union:
+                    union.append(f)
+        _FUEL_ORDER = union
+
+
+def get_fuel_shares(region_name: str):
+    """Return the fuel-share dict for a region, or None if unavailable."""
+    _load_fuel_shares()
+    return _FUEL_SHARES_CACHE.get(region_name)
+
+
+def get_fuel_order() -> list:
+    """Canonical fuel key order for the multi-fuel config vector."""
+    _load_fuel_shares()
+    return list(_FUEL_ORDER)
+
+
+def get_fuel_emission_factors() -> dict:
+    """Per-fuel emission factors (gCO2/kWh)."""
+    _load_fuel_shares()
+    return dict(_FUEL_EFS)
 
 
 def get_region_config(region_name: str) -> dict:

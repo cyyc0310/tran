@@ -65,18 +65,25 @@ def load_region_data(region_name: str) -> dict:
     rs = df["renew_share"].values.astype(np.float32)
     cif = df["cif_real_gco2_per_kwh"].values.astype(np.float32)
 
+    # Derive scalar config from the training split only (no test-period leak).
+    split = int(len(rs) * TRAIN_FRACTION)
+    train_mean_rs = float(rs[:split].mean())
     return {
         "rs": rs,
         "cif": cif,
-        "mean_rs": float(rs.mean()),
+        "mean_rs": train_mean_rs,
         "ef_r": ef_r,
         "ef_nr": ef_nr,
-        "config": np.array([rs.mean(), ef_nr / 1000.0], dtype=np.float32),
+        "config": np.array([train_mean_rs, ef_nr / 1000.0], dtype=np.float32),
     }
 
 
 def discover_uk_regions():
-    """Discover UK regions from data_2023/ and estimate emission factors."""
+    """Discover UK regions from data_2023/ and estimate emission factors.
+
+    ef_nr is estimated from the training split only so the zero-shot config
+    does not leak test-period CIF information.
+    """
     global UK_REGIONS
     for f in sorted(glob.glob(str(DATA_DIR / "UK_*_2023_hourly.csv"))):
         name = Path(f).stem.replace("_2023_hourly", "")
@@ -84,10 +91,12 @@ def discover_uk_regions():
         rs = df["renew_share"].values
         cif = df["cif_real_gco2_per_kwh"].values
 
-        # Estimate ef_nr from data: CIF ≈ (1-rs) * ef_nr when ef_r ≈ 0
-        mask = (rs < 0.95) & (rs > 0.05) & (cif > 0)
+        # Restrict ef_nr estimation to the training split.
+        split = int(len(rs) * TRAIN_FRACTION)
+        rs_tr, cif_tr = rs[:split], cif[:split]
+        mask = (rs_tr < 0.95) & (rs_tr > 0.05) & (cif_tr > 0)
         if mask.sum() > 500:
-            ef_nr_est = float(np.median(cif[mask] / (1 - rs[mask])))
+            ef_nr_est = float(np.median(cif_tr[mask] / (1 - rs_tr[mask])))
             if 100 < ef_nr_est < 2000:  # sanity check
                 UK_REGIONS[name] = {
                     "file": Path(f).name,

@@ -44,3 +44,43 @@ def config_distance(config_a, config_b, weights=(1.0, 1.0)):
 def compute_weighted_config_distance(source_configs, target_config):
     """Mean weighted config distance from a target to a set of sources."""
     return float(np.mean([config_distance(s, target_config) for s in source_configs]))
+
+
+def config_weight(source_mean_rs, target_mean_rs, eps=0.05):
+    """Zero-shot source-region sampling weight from config distance.
+
+    Mirrors the ``1 / (|Δmean_rs| + eps)`` formula that was previously inlined
+    in every direction trainer (base_zs / phys_irm / rag / causal / icl / hier).
+    Centralising it keeps the weighting consistent across models and makes the
+    ``eps`` smoothing knob a single tunable parameter.
+
+    Args:
+        source_mean_rs : training-split mean renewable share of the source
+        target_mean_rs : training-split mean renewable share of the target
+        eps            : smoothing constant preventing infinite weights as the
+                         source approaches the target in config space
+
+    Returns the scalar sampling weight (higher = sampled more often).
+    """
+    return 1.0 / (abs(source_mean_rs - target_mean_rs) + eps)
+
+
+def unify_config_dim(all_regions):
+    """Return the unified config dimension for a mixed-dim region pool.
+
+    Direction trainers (RAG / Phys-IRM / Causal / ICL / Hier) must instantiate
+    their models with a fixed ``config_dim``.  When the pool mixes 2-D legacy
+    regions (e.g. AU) with N-D multi-fuel regions (e.g. US/UK, Stage A), all
+    configs are right-padded with zeros to the pool's max width so the model
+    sees a consistent input.  The first 2 dims ([mean_rs, ef_nr/1000]) are
+    always present and aligned across regions.
+    """
+    return max(len(r["config"]) for r in all_regions.values())
+
+
+def pad_config(config, config_dim):
+    """Right-pad a config vector to ``config_dim`` (zero-fill for missing fuels)."""
+    import numpy as np
+    if len(config) < config_dim:
+        return np.pad(config, (0, config_dim - len(config)), mode="constant")
+    return config

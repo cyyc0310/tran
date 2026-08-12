@@ -51,11 +51,14 @@ def load_us_region(region_name: str) -> dict:
     rs = rs[valid]
     cif = cif[valid]
 
+    # Derive scalar config from the training split only (no test-period leak).
+    split = int(len(rs) * TRAIN_FRACTION)
+    train_mean_rs = float(rs[:split].mean())
     return {
         "rs": rs, "cif": cif,
-        "mean_rs": float(rs.mean()),
+        "mean_rs": train_mean_rs,
         "ef_r": ef_r, "ef_nr": ef_nr,
-        "config": np.array([rs.mean(), ef_nr / 1000.0], dtype=np.float32),
+        "config": np.array([train_mean_rs, ef_nr / 1000.0], dtype=np.float32),
     }
 
 
@@ -102,7 +105,7 @@ def main():
         ef_r, ef_nr = data["ef_r"], data["ef_nr"]
 
         # Build test windows
-        split = int(len(rs) * 0.8)
+        split = int(len(rs) * TRAIN_FRACTION)
         x_rs_test, _, y_cif_test = build_windows(
             rs[split - SEQ_LEN:], cif[split - SEQ_LEN:], SEQ_LEN, HORIZON, TEST_STRIDE)
 

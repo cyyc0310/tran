@@ -44,4 +44,9 @@ def test_load_region_data_keys():
         data = load_region_data("US_CISO", {"US_CISO": cfg}, data_dir=Path(td))
         assert "rs" in data and "cif" in data
         assert data["ef_nr"] == 342.8
-        assert abs(data["mean_rs"] - df["renew_share"].mean()) < 1e-5
+        # mean_rs must be derived from the training split only (500 * 0.8 = 400
+        # rows) so the zero-shot config vector does not leak test-period data.
+        train_split = int(len(df) * 0.8)
+        assert abs(data["mean_rs"] - df["renew_share"].iloc[:train_split].mean()) < 1e-5
+        # Sanity: the full-series mean should NOT match once the leak is fixed.
+        assert abs(data["mean_rs"] - df["renew_share"].mean()) > 1e-6

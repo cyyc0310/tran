@@ -16,6 +16,7 @@ import torch.nn as nn
 from transcif.config import SEQ_LEN, HORIZON
 from transcif.models.base import AdaptivePersistDLinear
 from transcif.physics.decompose import cif_from_shares
+from transcif.physics.bounds import config_weight, unify_config_dim, pad_config
 from transcif.training.schedulers import get_cosine_warmup_scheduler
 
 
@@ -102,6 +103,7 @@ class RagDLinear(nn.Module):
 
     def __init__(self, seq_len=SEQ_LEN, horizon=HORIZON, config_dim=2):
         super().__init__()
+        self.config_dim = config_dim
         self.horizon = horizon
         self.avg_pool = nn.AvgPool1d(kernel_size=25, stride=1, padding=12)
         self.linear_trend = nn.Linear(seq_len, horizon)
@@ -155,7 +157,8 @@ def train_rag_zero_shot(all_regions, target_name, seed=42,
     random.seed(seed)
     np.random.seed(seed)
 
-    model = RagDLinear(seq_len=SEQ_LEN, horizon=HORIZON)
+    cfg_dim = unify_config_dim(all_regions)
+    model = RagDLinear(seq_len=SEQ_LEN, horizon=HORIZON, config_dim=cfg_dim)
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -172,8 +175,7 @@ def train_rag_zero_shot(all_regions, target_name, seed=42,
         # Config-distance source weighting (matches the base TransCIF-ZS
         # sampler): windows from regions close to the target in mean_rs are
         # sampled more often, which is what makes zero-shot transfer work.
-        dist = abs(data["mean_rs"] - target_mean_rs)
-        w = 1.0 / (dist + 0.05)
+        w = config_weight(data["mean_rs"], target_mean_rs)
         for t in range(0, n, 6):
             ctx = arr[t:t + SEQ_LEN]
             # Store the renewable SHARE as the retrieval target (not CIF) so the
@@ -182,7 +184,7 @@ def train_rag_zero_shot(all_regions, target_name, seed=42,
             bank.add(ctx, tgt)
             xs.append(ctx)
             ys.append(arr[t + SEQ_LEN:t + SEQ_LEN + HORIZON])
-            cfgs.append(data["config"])
+            cfgs.append(pad_config(data["config"], cfg_dim))
             ws.append(w)
     bank.build()
 
@@ -229,6 +231,7 @@ def predict_rag_zs(model, bank, x_rs, config, ef_r, ef_nr, k=5):
     model.eval()
     dev = next(model.parameters()).device
     x_t = torch.tensor(x_rs, dtype=torch.float32).to(dev)
+    config = pad_config(np.asarray(config), getattr(model, "config_dim", len(config)))
     c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1).to(dev)
     rag_np, dist_np = bank.retrieve_batch(x_rs, k=k)
     rag_t = torch.tensor(rag_np, dtype=torch.float32).to(dev)

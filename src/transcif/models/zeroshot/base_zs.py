@@ -21,6 +21,7 @@ from transcif.config import (
 from transcif.data.loaders import load_region_data
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
+from transcif.physics.bounds import config_weight
 from transcif.models.base import AdaptivePersistDLinear
 from transcif.models.patchtst import train_patchtst
 from transcif.training.losses import ramp_aware_loss
@@ -59,36 +60,72 @@ def train_zero_shot(all_regions, target_name, seed=42,
     torch.manual_seed(seed)
     random.seed(seed)
     np.random.seed(seed)
-    model = model_class(seq_len=SEQ_LEN, horizon=HORIZON)
+    # Determine the unified config dimension across all regions.  When multi-
+    # fuel config (Stage A) is active, US regions carry 9-D vectors while AU
+    # regions stay 2-D; we pad shorter configs with zeros so the model sees a
+    # consistent input width.  The first 2 dims ([mean_rs, ef_nr/1000]) are
+    # always present and aligned across all regions.
+    config_dim = max(len(data["config"]) for data in all_regions.values())
+    model = model_class(seq_len=SEQ_LEN, horizon=HORIZON, config_dim=config_dim)
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     scheduler = get_cosine_warmup_scheduler(optimizer, max(1, epochs // 10), epochs)
     mask_aug = MissingMaskAugmentor(prob=mask_augment_prob) if mask_augment_prob > 0 else None
-    xs, ys, cfgs, weights = [], [], [], []
+    use_weather = getattr(model, "n_weather", 0) > 0
+    xs, ys, cfgs, weights, ws_all = [], [], [], [], []
     for name, data in all_regions.items():
         if name == target_name:
             continue
-        x_win, y_win, _ = build_windows(data["rs"], data["cif"])
+        # When the model consumes a weather side channel, align it to rs by
+        # trimming to the shorter of the two before windowing.
+        rs_arr = data["rs"]
+        w_arr = data.get("weather") if use_weather else None
+        if w_arr is not None:
+            n = min(len(rs_arr), len(w_arr))
+            rs_arr = rs_arr[:n]
+            w_arr = w_arr[:n]
+            cif_arr = data["cif"][:n]
+        else:
+            cif_arr = data["cif"]
+            w_arr = None
+        x_win, y_win, _ = build_windows(rs_arr, cif_arr)
         if len(x_win) == 0:
             continue
         xs.append(x_win)
         ys.append(y_win)
-        cfgs.append(np.tile(data["config"], (len(x_win), 1)))
+        # Right-pad config to the unified dimension (missing fuel dims → 0).
+        cfg = data["config"]
+        if len(cfg) < config_dim:
+            cfg = np.pad(cfg, (0, config_dim - len(cfg)), mode="constant")
+        cfgs.append(np.tile(cfg, (len(x_win), 1)))
         if use_weighted:
-            dist = abs(data["mean_rs"] - all_regions[target_name]["mean_rs"])
-            w = 1.0 / (dist + 0.05)
+            w = config_weight(data["mean_rs"], all_regions[target_name]["mean_rs"])
         else:
             w = 1.0
         weights.append(np.full(len(x_win), w, dtype=np.float32))
+        if use_weather and w_arr is not None:
+            # Build weather windows aligned to rs windows (same start/stride).
+            w_win = np.stack([w_arr[s:s + SEQ_LEN]
+                              for s in range(0, len(w_arr) - SEQ_LEN - HORIZON + 1, TRAIN_STRIDE)
+                              if s + SEQ_LEN + HORIZON <= len(w_arr)])[:len(x_win)]
+            ws_all.append(w_win)
+        elif use_weather:
+            ws_all.append(np.zeros((len(x_win), SEQ_LEN, getattr(model, "n_weather", 3)),
+                                   dtype=np.float32))
     x_all = torch.tensor(np.concatenate(xs))
     y_all = torch.tensor(np.concatenate(ys))
     c_all = torch.tensor(np.concatenate(cfgs))
     w_all = torch.tensor(np.concatenate(weights))
     w_all = w_all / w_all.sum() * len(w_all)
+    weather_all = None
+    if use_weather and ws_all:
+        weather_all = torch.tensor(np.concatenate(ws_all), dtype=torch.float32)
     if device:
         x_all, y_all, c_all, w_all = (x_all.to(device), y_all.to(device),
                                       c_all.to(device), w_all.to(device))
+        if weather_all is not None:
+            weather_all = weather_all.to(device)
     n_samples = len(x_all)
     batch_size = min(512, n_samples)
     model.train()
@@ -100,7 +137,10 @@ def train_zero_shot(all_regions, target_name, seed=42,
         w_batch = w_all[idx]
         if mask_aug is not None:
             x_batch, _ = mask_aug(x_batch)
-        pred = model(x_batch, c_batch)
+        if weather_all is not None:
+            pred = model(x_batch, c_batch, weather=weather_all[idx])
+        else:
+            pred = model(x_batch, c_batch)
         if use_ramp_loss:
             per_element = ramp_aware_loss(pred, y_batch, reduction='none')
             loss = (w_batch.unsqueeze(1) * per_element).mean()
@@ -184,19 +224,49 @@ def evaluate_target(target_name, all_regions, seed=42,
                                model_class=model_class,
                                use_ramp_loss=use_ramp_loss, device=device,
                                pbar=TrainProgress("ZS"))
-    target_cfg = torch.tensor(data["config"]).unsqueeze(0).expand(
-        len(x_rs_test), -1).to(device)
+    # Pad the target config to the model's expected width (matches the
+    # train_zero_shot padding convention for mixed-dim region pools).
+    model_cfg_dim = zs_model.config_bias[0].in_features
+    tgt_cfg = data["config"]
+    if len(tgt_cfg) < model_cfg_dim:
+        tgt_cfg = np.pad(tgt_cfg, (0, model_cfg_dim - len(tgt_cfg)), mode="constant")
+    target_cfg = torch.tensor(tgt_cfg).unsqueeze(0).expand(len(x_rs_test), -1).to(device)
+    # Build target weather test windows if the model expects a weather channel.
+    # weather is pre-aligned to len(rs) in the loader, so the same windowing
+    # geometry as x_rs_test applies directly.
+    target_weather = None
+    if getattr(zs_model, "n_weather", 0) > 0 and data.get("weather") is not None:
+        w_arr = data["weather"]
+        w_offset = w_arr[split_hour - SEQ_LEN:]
+        w_windows = [w_offset[s:s + SEQ_LEN]
+                     for s in range(0, len(w_offset) - SEQ_LEN - HORIZON + 1, TEST_STRIDE)
+                     if s + SEQ_LEN <= len(w_offset)]
+        if w_windows:
+            n_win = min(len(w_windows), len(x_rs_test))
+            target_weather = torch.tensor(
+                np.stack(w_windows[:n_win]), dtype=torch.float32).to(device)
+            # Trim x_rs_test and y_cif_test to match (only when weather is shorter).
+            if n_win < len(x_rs_test):
+                x_rs_test = x_rs_test[:n_win]
+                y_cif_test = y_cif_test[:n_win]
+                target_cfg = target_cfg[:n_win]
     with torch.no_grad():
-        zs_rs_pred = zs_model(
-            torch.tensor(x_rs_test, dtype=torch.float32).to(device),
-            target_cfg).cpu().numpy()
+        if target_weather is not None:
+            zs_rs_pred = zs_model(
+                torch.tensor(x_rs_test, dtype=torch.float32).to(device),
+                target_cfg, weather=target_weather).cpu().numpy()
+        else:
+            zs_rs_pred = zs_model(
+                torch.tensor(x_rs_test, dtype=torch.float32).to(device),
+                target_cfg).cpu().numpy()
     zs_cif_pred = cif_from_shares(zs_rs_pred, ef_r, ef_nr)
     results["transcif_zs"] = compute_metrics(zs_cif_pred, y_cif_test)
 
     # 4. TransCIF-ZS+
     origins = [split_hour + st
                for st in range(0, len(cif_offset) - SEQ_LEN - HORIZON + 1, TEST_STRIDE)]
-    zsp_pred = zs_plus_predict(zs_model, data["config"], rs, cif, ef_r, ef_nr, origins)
+    # Reuse the padded target config so ZS+ matches the model's input width.
+    zsp_pred = zs_plus_predict(zs_model, tgt_cfg, rs, cif, ef_r, ef_nr, origins)
     results["transcif_zs_plus"] = compute_metrics(zsp_pred, y_cif_test)
 
     # 5-9. Optional direction methods.

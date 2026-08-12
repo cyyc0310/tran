@@ -16,6 +16,7 @@ from transcif.config import SEQ_LEN, HORIZON
 from transcif.models.base import AdaptivePersistDLinear
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
+from transcif.physics.bounds import config_weight, unify_config_dim, pad_config
 from transcif.training.schedulers import get_cosine_warmup_scheduler
 
 
@@ -26,7 +27,8 @@ def train_phys_irm(all_regions, target_name, seed=42, epochs=200, lr=1e-3,
     random.seed(seed)
     np.random.seed(seed)
 
-    model = AdaptivePersistDLinear(seq_len=SEQ_LEN, horizon=HORIZON)
+    cfg_dim = unify_config_dim(all_regions)
+    model = AdaptivePersistDLinear(seq_len=SEQ_LEN, horizon=HORIZON, config_dim=cfg_dim)
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -44,14 +46,14 @@ def train_phys_irm(all_regions, target_name, seed=42, epochs=200, lr=1e-3,
         # close to the target in mean_rs contribute more gradient.  Stored per
         # region and applied to the share + CIF losses so the IRM cross-region
         # structure is preserved while still biasing toward the target.
-        dist = abs(data["mean_rs"] - target_mean_rs)
-        w = 1.0 / (dist + 0.05)
+        w = config_weight(data["mean_rs"], target_mean_rs)
         region_data[name] = {
             "x": torch.tensor(x_win, dtype=torch.float32),
             "y_share": torch.tensor(y_win, dtype=torch.float32),
             "y_cif": torch.tensor(y_cif_win, dtype=torch.float32),
             "config": torch.tensor(
-                np.tile(data["config"], (len(x_win), 1)), dtype=torch.float32),
+                np.tile(pad_config(data["config"], cfg_dim), (len(x_win), 1)),
+                dtype=torch.float32),
             "ef_r": data["ef_r"], "ef_nr": data["ef_nr"],
             "w": float(w),
         }
@@ -149,7 +151,8 @@ def train_phys_weighted_only(all_regions, target_name, seed=42, epochs=200,
     random.seed(seed)
     np.random.seed(seed)
 
-    model = AdaptivePersistDLinear(seq_len=SEQ_LEN, horizon=HORIZON)
+    cfg_dim = unify_config_dim(all_regions)
+    model = AdaptivePersistDLinear(seq_len=SEQ_LEN, horizon=HORIZON, config_dim=cfg_dim)
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -163,12 +166,11 @@ def train_phys_weighted_only(all_regions, target_name, seed=42, epochs=200,
         x_win, y_win, y_cif_win = build_windows(data["rs"], data["cif"])
         if len(x_win) == 0:
             continue
-        dist = abs(data["mean_rs"] - target_mean_rs)
-        w = 1.0 / (dist + 0.05)
+        w = config_weight(data["mean_rs"], target_mean_rs)
         xs.append(x_win)
         ys.append(y_win)
         y_cifs.append(y_cif_win)
-        cfgs.append(np.tile(data["config"], (len(x_win), 1)))
+        cfgs.append(np.tile(pad_config(data["config"], cfg_dim), (len(x_win), 1)))
         ws.append(np.full(len(x_win), w, dtype=np.float32))
 
     x_all = torch.tensor(np.concatenate(xs), dtype=torch.float32)
@@ -220,6 +222,8 @@ def predict_phys_irm(model, x_rs, config, ef_r, ef_nr):
     model.eval()
     dev = next(model.parameters()).device
     x_t = torch.tensor(x_rs, dtype=torch.float32).to(dev)
+    config = pad_config(np.asarray(config), getattr(model, "config_dim", len(config))) \
+             if not isinstance(config, torch.Tensor) else config
     c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1).to(dev)
     with torch.no_grad():
         s_pred = model(x_t, c_t).cpu().numpy()

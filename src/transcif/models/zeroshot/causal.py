@@ -30,6 +30,7 @@ import torch.nn.functional as F
 from transcif.models.base import AdaptivePersistDLinear
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
+from transcif.physics.bounds import config_weight, unify_config_dim, pad_config
 from transcif.training.schedulers import get_cosine_warmup_scheduler
 
 
@@ -49,6 +50,7 @@ class CausalDomainVAE(nn.Module):
     def __init__(self, seq_len=336, horizon=24, config_dim=2,
                  latent_dim=32, hidden_dim=128):
         super().__init__()
+        self.config_dim = config_dim
         self.seq_len = seq_len
         self.horizon = horizon
         self.latent_dim = latent_dim
@@ -225,7 +227,8 @@ def train_causal_zero_shot(all_regions, target_name, seed=42,
     random.seed(seed)
     np.random.seed(seed)
 
-    model = CausalDomainVAE(seq_len=336, horizon=24)
+    cfg_dim = unify_config_dim(all_regions)
+    model = CausalDomainVAE(seq_len=336, horizon=24, config_dim=cfg_dim)
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -241,8 +244,7 @@ def train_causal_zero_shot(all_regions, target_name, seed=42,
         if len(x_win) == 0:
             continue
         # Config-distance source weight (matches base TransCIF-ZS sampler).
-        dist = abs(data["mean_rs"] - target_mean_rs)
-        w = 1.0 / (dist + 0.05)
+        w = config_weight(data["mean_rs"], target_mean_rs)
         region_data.append({
             "name": name,
             "mean_rs": data["mean_rs"],
@@ -251,7 +253,8 @@ def train_causal_zero_shot(all_regions, target_name, seed=42,
             "y_share": torch.tensor(y_win, dtype=torch.float32),
             "y_cif": torch.tensor(y_cif_win, dtype=torch.float32),
             "config": torch.tensor(
-                np.tile(data["config"], (len(x_win), 1)), dtype=torch.float32),
+                np.tile(pad_config(data["config"], cfg_dim), (len(x_win), 1)),
+                dtype=torch.float32),
         })
 
     # Stable, informative domain split for the adversarial term: regions with
@@ -374,6 +377,8 @@ def predict_causal_zs(model, x_rs, config, ef_r, ef_nr):
     model.eval()
     dev = next(model.parameters()).device
     x_t = torch.tensor(x_rs, dtype=torch.float32).to(dev)
+    config = pad_config(np.asarray(config), getattr(model, "config_dim", len(config))) \
+             if not isinstance(config, torch.Tensor) else config
     c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1).to(dev)
     with torch.no_grad():
         z_inv, z_spec, _, _, _, _ = model.encode(x_t, c_t)

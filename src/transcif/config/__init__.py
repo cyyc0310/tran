@@ -2,6 +2,8 @@
 
 from .constants import (
     DATA_DIR,
+    FUEL_DIR,
+    RESULTS_DIR,
     SEQ_LEN,
     HORIZON,
     TRAIN_STRIDE,
@@ -18,10 +20,15 @@ from .constants import (
     UK_REGIONS,
     ALL_REGION_CONFIGS,
     get_region_config,
+    get_fuel_shares,
+    get_fuel_order,
+    get_fuel_emission_factors,
 )
 
 __all__ = [
     "DATA_DIR",
+    "FUEL_DIR",
+    "RESULTS_DIR",
     "SEQ_LEN",
     "HORIZON",
     "TRAIN_STRIDE",
@@ -38,4 +45,7 @@ __all__ = [
     "UK_REGIONS",
     "ALL_REGION_CONFIGS",
     "get_region_config",
+    "get_fuel_shares",
+    "get_fuel_order",
+    "get_fuel_emission_factors",
 ]

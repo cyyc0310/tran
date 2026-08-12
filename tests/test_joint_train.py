@@ -18,7 +18,7 @@ import numpy as np
 import pytest
 import torch
 
-from transcif.config import HORIZON, SEQ_LEN
+from transcif.config import HORIZON, SEQ_LEN, TRAIN_FRACTION
 
 
 @pytest.fixture
@@ -40,11 +40,15 @@ def small_setup():
     src2_cif = (src2_rs * ef_r + (1 - src2_rs) * ef_nr).astype(np.float32)
 
     def _pack(rs, cif):
+        # Mirror the split-aware loader: config stats use the training split
+        # only so the test does not encode the pre-leak-fix behavior.
+        split = int(len(rs) * TRAIN_FRACTION)
+        train_mean_rs = float(rs[:split].mean())
         return {
             "rs": rs, "cif": cif,
-            "mean_rs": float(rs.mean()),
+            "mean_rs": train_mean_rs,
             "ef_r": ef_r, "ef_nr": ef_nr,
-            "config": np.array([rs.mean(), ef_nr / 1000.0], dtype=np.float32),
+            "config": np.array([train_mean_rs, ef_nr / 1000.0], dtype=np.float32),
         }
 
     regions = {

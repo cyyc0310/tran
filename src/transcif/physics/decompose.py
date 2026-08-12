@@ -33,3 +33,31 @@ def cif_from_shares(rs, ef_r, ef_nr):
         ef_nr = ef_nr.detach().cpu().numpy()
     rs = np.asarray(rs, dtype=np.float64)
     return rs * ef_r + (1.0 - rs) * ef_nr
+
+
+def cif_from_fuel_shares(fuel_shares, fuel_efs):
+    """Multi-fuel CIF reconstruction: CIF = Σ_f share_f × ef_f.
+
+    This is the N-fuel generalisation of ``cif_from_shares``.  When the fuel
+    breakdown is collapsed to two buckets (renewable vs non-renewable) it
+    reduces exactly to the 2-class identity.
+
+    Args:
+        fuel_shares : dict {fuel_key: share in [0,1]} or array of shares.
+                      Shares should sum to ~1.0; they are NOT renormalised here
+                      so callers control the convention.
+        fuel_efs    : dict {fuel_key: emission factor in gCO2/kWh} or array.
+                      gCO2/kWh is used (not tCO2/MWh) so the result is directly
+                      comparable to ``cif_from_shares`` output.  Since
+                      1 tCO2/MWh == 1000 gCO2/kWh the unit factors cancel.
+
+    Returns CIF in gCO2/kWh as a float.
+    """
+    if isinstance(fuel_shares, dict):
+        keys = list(fuel_shares.keys())
+        s = np.array([fuel_shares[k] for k in keys], dtype=np.float64)
+        e = np.array([fuel_efs[k] for k in keys], dtype=np.float64)
+    else:
+        s = np.asarray(fuel_shares, dtype=np.float64)
+        e = np.asarray(fuel_efs, dtype=np.float64)
+    return float(np.dot(s, e))

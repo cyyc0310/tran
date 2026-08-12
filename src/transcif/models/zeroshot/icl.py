@@ -36,6 +36,7 @@ import torch.nn.functional as F
 
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
+from transcif.physics.bounds import config_weight
 from transcif.training.schedulers import get_cosine_warmup_scheduler
 
 
@@ -211,13 +212,16 @@ def select_examples(all_regions, target_name, target_window, n_examples=3,
     Returns: (example_windows, example_outputs) lists
     """
     target_cfg = all_regions[target_name]["config"]
+    # Config distance only over the comparable leading dims (min of the two
+    # configs) so mixed-dim pools (2-D AU vs 12-D US/UK) don't broadcast-fail.
     scores = []
 
     for name, data in all_regions.items():
         if name == target_name:
             continue
         # Config distance
-        config_dist = np.linalg.norm(data["config"] - target_cfg)
+        n_cmp = min(len(data["config"]), len(target_cfg))
+        config_dist = np.linalg.norm(data["config"][:n_cmp] - target_cfg[:n_cmp])
         # Find best-matching window in this region
         x_win, y_win, _ = build_windows(data["rs"], data["cif"])
         if len(x_win) == 0:
@@ -278,8 +282,7 @@ def train_icl(all_regions, target_name, seed=42, n_examples=3,
         x_win, y_win, _ = build_windows(data["rs"], data["cif"])
         if len(x_win) > 0:
             region_windows[name] = (x_win, y_win, data["config"])
-            dist = abs(data["mean_rs"] - target_mean_rs)
-            region_weights[name] = 1.0 / (dist + 0.05)
+            region_weights[name] = config_weight(data["mean_rs"], target_mean_rs)
 
     if not region_windows:
         print(f"  [WARN] No source data for {target_name}")

@@ -37,6 +37,7 @@ import torch.nn.functional as F
 
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
+from transcif.physics.bounds import config_weight, unify_config_dim, pad_config
 from transcif.training.schedulers import get_cosine_warmup_scheduler
 
 
@@ -55,6 +56,7 @@ class HierDLinear(nn.Module):
 
     def __init__(self, seq_len=336, horizon=24, config_dim=2):
         super().__init__()
+        self.config_dim = config_dim
         self.horizon = horizon  # 24 hours
         self.daily_blocks = 6   # 4h per block
         self.weekly_steps = 168  # full week at hourly
@@ -174,7 +176,8 @@ def train_hier(all_regions, target_name, seed=42,
     random.seed(seed)
     np.random.seed(seed)
 
-    model = HierDLinear(seq_len=336, horizon=24)
+    cfg_dim = unify_config_dim(all_regions)
+    model = HierDLinear(seq_len=336, horizon=24, config_dim=cfg_dim)
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -189,12 +192,11 @@ def train_hier(all_regions, target_name, seed=42,
         x_win, y_win, y_cif_win = build_windows(data["rs"], data["cif"])
         if len(x_win) == 0:
             continue
-        dist = abs(data["mean_rs"] - target_mean_rs)
-        w = 1.0 / (dist + 0.05)
+        w = config_weight(data["mean_rs"], target_mean_rs)
         xs.append(x_win)
         ys_share.append(y_win)
         ys_cif.append(y_cif_win)
-        cfgs.append(np.tile(data["config"], (len(x_win), 1)))
+        cfgs.append(np.tile(pad_config(data["config"], cfg_dim), (len(x_win), 1)))
         mean_rs_list.append(np.full(len(x_win), data["mean_rs"], dtype=np.float32))
         ws.append(np.full(len(x_win), w, dtype=np.float32))
 
@@ -273,6 +275,8 @@ def predict_hier_zs(model, x_rs, config, ef_r, ef_nr):
     model.eval()
     dev = next(model.parameters()).device
     x_t = torch.tensor(x_rs, dtype=torch.float32).to(dev)
+    config = pad_config(np.asarray(config), getattr(model, "config_dim", len(config))) \
+             if not isinstance(config, torch.Tensor) else config
     c_t = torch.tensor(config).unsqueeze(0).expand(len(x_rs), -1).to(dev)
     with torch.no_grad():
         hourly, daily_avg, weekly_avg = model(x_t, c_t)
@@ -291,6 +295,8 @@ def compute_debias_metric(model, x_test, config, ef_r, ef_nr, y_cif_test):
     """
     model.eval()
     x_t = torch.tensor(x_test, dtype=torch.float32)
+    config = pad_config(np.asarray(config), getattr(model, "config_dim", len(config))) \
+             if not isinstance(config, torch.Tensor) else config
     c_t = torch.tensor(config).unsqueeze(0).expand(len(x_test), -1)
     with torch.no_grad():
         hourly, _, _ = model(x_t, c_t)
