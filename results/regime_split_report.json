@@ -1,0 +1,289 @@
+{
+  "per_region": [
+    {
+      "region": "NSW1",
+      "persist_mae": 49.58926554456292,
+      "ef_nr": 875.23,
+      "joint_mae": 40.534238497416176,
+      "cluster": NaN,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "incomparable(>=600)"
+    },
+    {
+      "region": "QLD1",
+      "persist_mae": 26.577278701266465,
+      "ef_nr": 841.59,
+      "joint_mae": 27.87829287846883,
+      "cluster": NaN,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "incomparable(>=600)"
+    },
+    {
+      "region": "SA1",
+      "persist_mae": 91.15337616285011,
+      "ef_nr": 490.43,
+      "joint_mae": 55.88455390930176,
+      "cluster": NaN,
+      "difficulty": "pathological(>60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "TAS1",
+      "persist_mae": 3.2280092745488007,
+      "ef_nr": NaN,
+      "joint_mae": NaN,
+      "cluster": NaN,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "unknown"
+    },
+    {
+      "region": "UK_01_North_Scotland",
+      "persist_mae": 32.53232427869859,
+      "ef_nr": 393.9766594609303,
+      "joint_mae": 23.606418586646516,
+      "cluster": 3.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_02_South_Scotland",
+      "persist_mae": 19.08383210558625,
+      "ef_nr": NaN,
+      "joint_mae": 15.417296489079794,
+      "cluster": 3.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "unknown"
+    },
+    {
+      "region": "UK_03_North_West_England",
+      "persist_mae": 28.7528007980356,
+      "ef_nr": NaN,
+      "joint_mae": 28.661261955897015,
+      "cluster": 3.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "unknown"
+    },
+    {
+      "region": "UK_04_North_East_England",
+      "persist_mae": 12.78641037446286,
+      "ef_nr": 5.460973255252705,
+      "joint_mae": NaN,
+      "cluster": 3.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_05_Yorkshire",
+      "persist_mae": 52.43466083486801,
+      "ef_nr": 426.17483087789367,
+      "joint_mae": 45.90665062268575,
+      "cluster": 2.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_06_North_Wales_Merseyside",
+      "persist_mae": 47.767898250460405,
+      "ef_nr": 368.29306597489665,
+      "joint_mae": 46.13115652402242,
+      "cluster": 3.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_07_South_Wales",
+      "persist_mae": 67.09440224063843,
+      "ef_nr": 393.8848920863309,
+      "joint_mae": 67.3947655359904,
+      "cluster": 2.0,
+      "difficulty": "pathological(>60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_08_West_Midlands",
+      "persist_mae": 74.33565454266422,
+      "ef_nr": 378.0215187711102,
+      "joint_mae": 96.45334529876709,
+      "cluster": 2.0,
+      "difficulty": "pathological(>60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_09_East_Midlands",
+      "persist_mae": 77.04508133824433,
+      "ef_nr": 408.2215454650831,
+      "joint_mae": 99.68302663167317,
+      "cluster": 2.0,
+      "difficulty": "pathological(>60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_10_East_England",
+      "persist_mae": 61.594766728054026,
+      "ef_nr": 402.43352295986506,
+      "joint_mae": 49.60874358812968,
+      "cluster": 2.0,
+      "difficulty": "pathological(>60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_11_South_West_England",
+      "persist_mae": 53.14207335788828,
+      "ef_nr": 385.49042237054556,
+      "joint_mae": 39.24904521306356,
+      "cluster": 2.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_12_South_England",
+      "persist_mae": 54.07117096378146,
+      "ef_nr": 301.38342725715984,
+      "joint_mae": 40.79182481765747,
+      "cluster": 2.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_13_London",
+      "persist_mae": 53.2691259975445,
+      "ef_nr": 289.7805104900448,
+      "joint_mae": 38.524069945017494,
+      "cluster": 2.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_14_South_East_England",
+      "persist_mae": 52.16014426028238,
+      "ef_nr": 233.19562004369553,
+      "joint_mae": 37.24156220753988,
+      "cluster": 2.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_15_England",
+      "persist_mae": 45.26778314917127,
+      "ef_nr": 344.0716797893788,
+      "joint_mae": 43.49921671549479,
+      "cluster": 2.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_16_Scotland",
+      "persist_mae": 34.82249462860651,
+      "ef_nr": NaN,
+      "joint_mae": 34.51369329293569,
+      "cluster": 3.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "unknown"
+    },
+    {
+      "region": "UK_17_Wales",
+      "persist_mae": 72.69431015960713,
+      "ef_nr": 394.0040560499019,
+      "joint_mae": 69.72510592142741,
+      "cluster": 2.0,
+      "difficulty": "pathological(>60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "UK_18_GB",
+      "persist_mae": 43.581664364640886,
+      "ef_nr": 353.0505458376184,
+      "joint_mae": 41.944531758626304,
+      "cluster": 2.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "US_BPAT",
+      "persist_mae": 5.94179830308371,
+      "ef_nr": 207.5,
+      "joint_mae": 9.360824863115946,
+      "cluster": 4.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "US_CISO",
+      "persist_mae": 21.175622969086945,
+      "ef_nr": 342.8,
+      "joint_mae": 36.966306845347084,
+      "cluster": 1.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "US_ERCO",
+      "persist_mae": 52.656949345520246,
+      "ef_nr": 470.3,
+      "joint_mae": 52.4136598110199,
+      "cluster": 2.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "US_FPL",
+      "persist_mae": 8.984533198848933,
+      "ef_nr": 340.9,
+      "joint_mae": 13.043508251508078,
+      "cluster": 1.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "US_ISNE",
+      "persist_mae": 16.20344827106334,
+      "ef_nr": 299.1,
+      "joint_mae": 15.700761477152506,
+      "cluster": 1.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "US_MISO",
+      "persist_mae": 40.439795131231214,
+      "ef_nr": 534.1,
+      "joint_mae": 47.59620141983032,
+      "cluster": 1.0,
+      "difficulty": "medium(30-60)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "US_NYIS",
+      "persist_mae": 14.313226926463289,
+      "ef_nr": 287.3,
+      "joint_mae": 17.4426592985789,
+      "cluster": 1.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "US_PJM",
+      "persist_mae": 14.19193927212779,
+      "ef_nr": 347.6,
+      "joint_mae": 13.014139691988627,
+      "cluster": 1.0,
+      "difficulty": "easy(<30)",
+      "ef_comparable": "comparable(<600)"
+    },
+    {
+      "region": "VIC1",
+      "persist_mae": 113.06308335144861,
+      "ef_nr": 1160.12,
+      "joint_mae": 89.63215605417888,
+      "cluster": NaN,
+      "difficulty": "pathological(>60)",
+      "ef_comparable": "incomparable(>=600)"
+    }
+  ],
+  "aggregate": {
+    "all_median": 40.534238497416176,
+    "all_mean": 42.683414417329715,
+    "comparable_median": 41.944531758626304,
+    "comparable_mean": 43.529655605851524
+  }
+}

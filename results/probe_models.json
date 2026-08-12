@@ -1,0 +1,214 @@
+{
+  "targets": [
+    "US_CISO",
+    "US_ERCO",
+    "US_MISO",
+    "US_PJM",
+    "US_ISNE",
+    "US_NYIS",
+    "US_FPL",
+    "US_BPAT",
+    "QLD1",
+    "VIC1",
+    "NSW1",
+    "SA1"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "variants": [
+    "flagship",
+    "revin",
+    "moe3"
+  ],
+  "results": {
+    "flagship": {
+      "US_CISO": {
+        "persistence": 27.42571258544922,
+        "transcif_zs": 40.45453481596285,
+        "transcif_zs_plus": 25.320751310439245
+      },
+      "US_ERCO": {
+        "persistence": 64.79312133789062,
+        "transcif_zs": 59.304060022239504,
+        "transcif_zs_plus": 59.905400661782956
+      },
+      "US_MISO": {
+        "persistence": 55.600894927978516,
+        "transcif_zs": 53.63859210130864,
+        "transcif_zs_plus": 46.68971605256361
+      },
+      "US_PJM": {
+        "persistence": 15.640140533447266,
+        "transcif_zs": 39.80131177859793,
+        "transcif_zs_plus": 14.140483114556927
+      },
+      "US_ISNE": {
+        "persistence": 15.959382057189941,
+        "transcif_zs": 37.043617785647164,
+        "transcif_zs_plus": 15.353641769745833
+      },
+      "US_NYIS": {
+        "persistence": 14.583292007446289,
+        "transcif_zs": 15.811658036292073,
+        "transcif_zs_plus": 13.52309642864058
+      },
+      "US_FPL": {
+        "persistence": 13.385560989379883,
+        "transcif_zs": 35.91865120490894,
+        "transcif_zs_plus": 12.856357701747195
+      },
+      "US_BPAT": {
+        "persistence": 6.305214881896973,
+        "transcif_zs": 8.404256281906475,
+        "transcif_zs_plus": 6.149897936944308
+      },
+      "QLD1": {
+        "persistence": 29.113201141357422,
+        "transcif_zs": 53.921150428746465,
+        "transcif_zs_plus": 26.878105964632766
+      },
+      "VIC1": {
+        "persistence": 116.79244232177734,
+        "transcif_zs": 102.61000375218282,
+        "transcif_zs_plus": 98.19258074142371
+      },
+      "NSW1": {
+        "persistence": 53.71515655517578,
+        "transcif_zs": 49.23502211233116,
+        "transcif_zs_plus": 46.490752408005356
+      },
+      "SA1": {
+        "persistence": 68.06713104248047,
+        "transcif_zs": 64.26762564554589,
+        "transcif_zs_plus": 60.51113428223366
+      }
+    },
+    "revin": {
+      "US_CISO": {
+        "persistence": 27.42571258544922,
+        "transcif_zs": 49.32633218306656,
+        "transcif_zs_plus": 25.286103660208127
+      },
+      "US_ERCO": {
+        "persistence": 64.79312133789062,
+        "transcif_zs": 67.1541999781181,
+        "transcif_zs_plus": 59.91646846492643
+      },
+      "US_MISO": {
+        "persistence": 55.600894927978516,
+        "transcif_zs": 76.0712931862237,
+        "transcif_zs_plus": 46.663128703992996
+      },
+      "US_PJM": {
+        "persistence": 15.640140533447266,
+        "transcif_zs": 55.1509982845056,
+        "transcif_zs_plus": 14.138038767959015
+      },
+      "US_ISNE": {
+        "persistence": 15.959382057189941,
+        "transcif_zs": 50.41834604898424,
+        "transcif_zs_plus": 15.350943656763299
+      },
+      "US_NYIS": {
+        "persistence": 14.583292007446289,
+        "transcif_zs": 28.06113329776924,
+        "transcif_zs_plus": 13.530738276114898
+      },
+      "US_FPL": {
+        "persistence": 13.385560989379883,
+        "transcif_zs": 47.921181483927235,
+        "transcif_zs_plus": 12.875464048730207
+      },
+      "US_BPAT": {
+        "persistence": 6.305214881896973,
+        "transcif_zs": 10.310291390627894,
+        "transcif_zs_plus": 6.149750362330993
+      },
+      "QLD1": {
+        "persistence": 29.113201141357422,
+        "transcif_zs": 102.95647344006878,
+        "transcif_zs_plus": 26.959717591367884
+      },
+      "VIC1": {
+        "persistence": 116.79244232177734,
+        "transcif_zs": 128.7682883356573,
+        "transcif_zs_plus": 98.15026311996093
+      },
+      "NSW1": {
+        "persistence": 53.71515655517578,
+        "transcif_zs": 72.19934536499179,
+        "transcif_zs_plus": 46.48501555701002
+      },
+      "SA1": {
+        "persistence": 68.06713104248047,
+        "transcif_zs": 65.29879659175464,
+        "transcif_zs_plus": 60.522971322432305
+      }
+    },
+    "moe3": {
+      "US_CISO": {
+        "persistence": 27.42571258544922,
+        "transcif_zs": 37.8792013376577,
+        "transcif_zs_plus": 25.347110363871202
+      },
+      "US_ERCO": {
+        "persistence": 64.79312133789062,
+        "transcif_zs": 58.979090908371326,
+        "transcif_zs_plus": 59.842042015398505
+      },
+      "US_MISO": {
+        "persistence": 55.600894927978516,
+        "transcif_zs": 50.76880384267193,
+        "transcif_zs_plus": 46.50009870470813
+      },
+      "US_PJM": {
+        "persistence": 15.640140533447266,
+        "transcif_zs": 39.4613383136448,
+        "transcif_zs_plus": 14.124354780628822
+      },
+      "US_ISNE": {
+        "persistence": 15.959382057189941,
+        "transcif_zs": 32.660205268762894,
+        "transcif_zs_plus": 15.379899537128662
+      },
+      "US_NYIS": {
+        "persistence": 14.583292007446289,
+        "transcif_zs": 14.548621191000182,
+        "transcif_zs_plus": 13.498121622011556
+      },
+      "US_FPL": {
+        "persistence": 13.385560989379883,
+        "transcif_zs": 37.477738203815875,
+        "transcif_zs_plus": 12.835468445753552
+      },
+      "US_BPAT": {
+        "persistence": 6.305214881896973,
+        "transcif_zs": 8.79289744284055,
+        "transcif_zs_plus": 6.157228240067376
+      },
+      "QLD1": {
+        "persistence": 29.113201141357422,
+        "transcif_zs": 41.79296335297282,
+        "transcif_zs_plus": 26.905627503578874
+      },
+      "VIC1": {
+        "persistence": 116.79244232177734,
+        "transcif_zs": 99.8187423994797,
+        "transcif_zs_plus": 97.94587240528064
+      },
+      "NSW1": {
+        "persistence": 53.71515655517578,
+        "transcif_zs": 53.9633383221028,
+        "transcif_zs_plus": 46.09343070405647
+      },
+      "SA1": {
+        "persistence": 68.06713104248047,
+        "transcif_zs": 66.10850647022718,
+        "transcif_zs_plus": 60.498118547645035
+      }
+    }
+  }
+}

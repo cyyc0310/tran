@@ -1,0 +1,151 @@
+{
+  "targets": [
+    "US_CISO",
+    "US_ERCO",
+    "US_MISO",
+    "US_PJM",
+    "US_ISNE",
+    "US_NYIS",
+    "US_FPL",
+    "US_BPAT",
+    "QLD1",
+    "VIC1",
+    "NSW1",
+    "SA1"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "variants": [
+    "flagship",
+    "weather"
+  ],
+  "results": {
+    "flagship": {
+      "US_CISO": {
+        "persistence": 27.42571258544922,
+        "transcif_zs": 40.45453481596285,
+        "transcif_zs_plus": 25.320751310439245
+      },
+      "US_ERCO": {
+        "persistence": 64.79312133789062,
+        "transcif_zs": 59.304060022239504,
+        "transcif_zs_plus": 59.905400661782956
+      },
+      "US_MISO": {
+        "persistence": 55.600894927978516,
+        "transcif_zs": 53.63859210130864,
+        "transcif_zs_plus": 46.68971605256361
+      },
+      "US_PJM": {
+        "persistence": 15.640140533447266,
+        "transcif_zs": 39.80131177859793,
+        "transcif_zs_plus": 14.140483114556927
+      },
+      "US_ISNE": {
+        "persistence": 15.959382057189941,
+        "transcif_zs": 37.043617785647164,
+        "transcif_zs_plus": 15.353641769745833
+      },
+      "US_NYIS": {
+        "persistence": 14.583292007446289,
+        "transcif_zs": 15.811658036292073,
+        "transcif_zs_plus": 13.52309642864058
+      },
+      "US_FPL": {
+        "persistence": 13.385560989379883,
+        "transcif_zs": 35.91865120490894,
+        "transcif_zs_plus": 12.856357701747195
+      },
+      "US_BPAT": {
+        "persistence": 6.305214881896973,
+        "transcif_zs": 8.404256281906475,
+        "transcif_zs_plus": 6.149897936944308
+      },
+      "QLD1": {
+        "persistence": 29.113201141357422,
+        "transcif_zs": 53.921150428746465,
+        "transcif_zs_plus": 26.878105964632766
+      },
+      "VIC1": {
+        "persistence": 116.79244232177734,
+        "transcif_zs": 102.61000375218282,
+        "transcif_zs_plus": 98.19258074142371
+      },
+      "NSW1": {
+        "persistence": 53.71515655517578,
+        "transcif_zs": 49.23502211233116,
+        "transcif_zs_plus": 46.490752408005356
+      },
+      "SA1": {
+        "persistence": 68.06713104248047,
+        "transcif_zs": 64.26762564554589,
+        "transcif_zs_plus": 60.51113428223366
+      }
+    },
+    "weather": {
+      "US_CISO": {
+        "persistence": 27.42571258544922,
+        "transcif_zs": 42.138345487310325,
+        "transcif_zs_plus": 25.315045809385214
+      },
+      "US_ERCO": {
+        "persistence": 64.79312133789062,
+        "transcif_zs": 60.3199003993138,
+        "transcif_zs_plus": 59.91508853015212
+      },
+      "US_MISO": {
+        "persistence": 55.600894927978516,
+        "transcif_zs": 56.63572090165689,
+        "transcif_zs_plus": 46.75116298125012
+      },
+      "US_PJM": {
+        "persistence": 15.640140533447266,
+        "transcif_zs": 40.956325638002724,
+        "transcif_zs_plus": 14.137037673265425
+      },
+      "US_ISNE": {
+        "persistence": 15.959382057189941,
+        "transcif_zs": 38.89290572443474,
+        "transcif_zs_plus": 15.394812681328542
+      },
+      "US_NYIS": {
+        "persistence": 14.583292007446289,
+        "transcif_zs": 17.329630624453564,
+        "transcif_zs_plus": 13.536001020937725
+      },
+      "US_FPL": {
+        "persistence": 13.385560989379883,
+        "transcif_zs": 38.18322826846487,
+        "transcif_zs_plus": 12.863670308078405
+      },
+      "US_BPAT": {
+        "persistence": 6.305214881896973,
+        "transcif_zs": 8.467321358655141,
+        "transcif_zs_plus": 6.155508573358901
+      },
+      "QLD1": {
+        "persistence": 29.113201141357422,
+        "transcif_zs": 56.506850294284376,
+        "transcif_zs_plus": 26.871517850133298
+      },
+      "VIC1": {
+        "persistence": 116.79244232177734,
+        "transcif_zs": 105.05565791874666,
+        "transcif_zs_plus": 98.07101982868943
+      },
+      "NSW1": {
+        "persistence": 53.71515655517578,
+        "transcif_zs": 50.9150987113291,
+        "transcif_zs_plus": 46.262948891923884
+      },
+      "SA1": {
+        "persistence": 68.06713104248047,
+        "transcif_zs": 64.97913802913965,
+        "transcif_zs_plus": 60.48064664680145
+      }
+    }
+  }
+}

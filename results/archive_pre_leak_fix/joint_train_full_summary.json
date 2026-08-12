@@ -1,15 +1,15 @@
 {
   "joint_trained": {
     "mae": {
-      "median": 40.49676911036173,
-      "mean": 42.638127124348074,
-      "std": 23.41311363597787,
+      "median": 40.534238497416176,
+      "mean": 42.67300499610431,
+      "std": 23.441821531419752,
       "n_pairs": 145
     }
   },
   "baseline_basisMix_plus": {
     "mae": {
-      "median": 46.88,
+      "median": 46.89,
       "source": "results/fused_five_full_summary.json"
     }
   },

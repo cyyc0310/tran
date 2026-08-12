@@ -156,6 +156,15 @@
 
 ### 3.2 P2 — 语义配置向量替代二维标量
 
+**状态**：🔧 **部分完成（Stage A, 2026-08-12）**。US 8 区域的 7 燃料分项（煤/气/核/油/
+水/光/风）已从 EIA-930 Adjusted 列提取（`scripts/data/extract_fuel_breakdown.py`），
+UK 17 区域的 9 燃料 mix 从 Carbon Intensity API 保留
+（`scripts/data/extract_uk_fuel_breakdown.py`）。config 向量从 2 维扩展到 9 维
+（`[mean_rs, ef_nr/1000, coal, gas, nuclear, petroleum, hydro, solar, wind]`），
+`AdaptivePersistDLinear` 和 `train_zero_shot` 已支持混合维度池（2 维区域自动零填充）。
+新增 `cif_from_fuel_shares()` 多燃料物理分解（`physics/decompose.py`）。
+**AU 4 区域待办**：需 NEMED venv 重跑拉 DUID 级燃料类型（见下方 TODO）。
+
 **原因**：这是当前最根本的能力瓶颈。两个标量无法区分"20% 太阳能 + 20% 风电" 和 "40% 太阳能"。
 
 **方案**：
@@ -170,6 +179,12 @@
 **预期收益**：根本性改善跨域泛化；区分伪近邻；为 Theorem 2 提供更精细的迁移难度度量。
 
 **风险**：新字段可能不完整或口径不一致；需要额外数据收集工作；配置维度增加可能在小源域集上过拟合。
+
+> **AU 燃料数据 TODO**：`scripts/data/generate_nemed_regions.py` 当前只取
+> `Plant_Emissions_Intensity` 做 renew/nonrenew 二分。NEMED 的 DUID 表本身包含
+> `FuelType`（褐煤/黑煤/气/水/风/光/屋顶光伏），需调用 `download_genset_map`
+> / `DUDETAILSUMMARY` 拉取并按燃料聚合。需独立 Python 3.11 venv（nemed pin
+> pandas<2.0）。完成后 AU 4 区也将拥有多维 config。
 
 ### 3.3 P3 — 时序基础模型作为冻结特征提取器
 
@@ -265,6 +280,11 @@
 ### 5.3 P1 — 严格 zero-shot 信息集审计
 
 **原因**：当前 `mean_rs` 可能从完整 CSV 计算，包含测试期信息。
+
+**状态**：✅ **已完成（2026-08-12）**。`load_region_data` 现在只用训练段（前 80%）计算
+`mean_rs` 和 `config` 向量；UK `ef_nr` 反估也限制到训练段。6 处脚本重复的 config
+构造已同步修复。7 处内联的 `1/(dist+0.05)` 加权提取为共享 `config_weight()` 函数
+（`physics/bounds.py`）。详见 `docs/PROTOCOL.md` 的信息集定义。
 
 **方案**：
 - 为每个实验明确记录三类信息集：

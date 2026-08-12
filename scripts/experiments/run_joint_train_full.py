@@ -9,9 +9,10 @@ For each (target, seed):
 Aggregates median/mean/std to results/joint_train_full_summary.json.
 
 Comparison target: results/fused_five_full_summary.json BasisMix+ row
-(median MAE 46.89). Apples-to-apples comparison requires same eval protocol,
-but note that the joint model is supervised (uses target CIF labels for
-calibration fine-tuning), unlike pure zero-shot BasisMix+.
+(median MAE 46.88, leak-fixed 2026-08-12). Apples-to-apples comparison
+requires same eval protocol, but note that the joint model is supervised
+(uses target CIF labels for calibration fine-tuning), unlike pure
+zero-shot BasisMix+.
 
 Usage:
     .venv/bin/python scripts/experiments/run_joint_train_full.py
@@ -163,14 +164,14 @@ def main():
                 },
             },
             "baseline_basisMix_plus": {
-                "mae": {"median": 46.89, "source": "results/fused_five_full_summary.json"},
+                "mae": {"median": 46.88, "source": "results/fused_five_full_summary.json"},
             },
             "headline_target": 41.0,
         }
         summary_path = out_path.parent / "joint_train_full_summary.json"
         summary_path.write_text(json.dumps(summary, indent=2))
         print(f"\n[SUMMARY] median MAE = {summary['joint_trained']['mae']['median']:.2f}")
-        print(f"  vs baseline 46.89, target < 41.0")
+        print(f"  vs baseline 46.88, target < 41.0")
 
 
 if __name__ == "__main__":
