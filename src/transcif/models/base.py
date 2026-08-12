@@ -116,6 +116,7 @@ class AdaptivePersistDLinear(nn.Module):
 
     def __init__(self, seq_len=336, horizon=24, config_dim=2):
         super().__init__()
+        self.config_dim = config_dim
         self.horizon = horizon
         self.avg_pool = nn.AvgPool1d(kernel_size=25, stride=1, padding=12)
         self.linear_trend = nn.Linear(seq_len, horizon)
@@ -296,11 +297,156 @@ class NoPhysicsConversion(NoDecomposition):
 
 
 # ---------------------------------------------------------------------------
+# Stage D: RevIN-wrapped variant
+# ---------------------------------------------------------------------------
+# RevIN (Kim et al., ICLR 2022) normalises the DLinear branch per-instance so
+# the model learns temporal *patterns* rather than absolute CIF levels.  This
+# directly targets the temporal-OOD problem (seasonal distribution shift between
+# train/test splits).  The persist branch and gate statistics use raw x so the
+# physical semantics of renew_share are preserved.
+
+class RevINAdaptivePersistDLinear(nn.Module):
+    """AdaptivePersistDLinear with RevIN on the DLinear branch only."""
+
+    def __init__(self, seq_len=336, horizon=24, config_dim=2):
+        super().__init__()
+        self.config_dim = config_dim
+        self.horizon = horizon
+        self.revin = RevIN()
+        self.avg_pool = nn.AvgPool1d(kernel_size=25, stride=1, padding=12)
+        self.linear_trend = nn.Linear(seq_len, horizon)
+        self.linear_seasonal = nn.Linear(seq_len, horizon)
+        self.config_bias = nn.Sequential(
+            nn.Linear(config_dim, 16), nn.ReLU(), nn.Linear(16, horizon))
+        self.gate_net = nn.Sequential(
+            nn.Linear(config_dim + 2, 16), nn.ReLU(), nn.Linear(16, 1))
+
+    def forward(self, x, config):
+        x_norm = self.revin(x, 'norm')
+        x3 = x_norm.unsqueeze(1)
+        trend = self.avg_pool(x3).squeeze(1)
+        seasonal = x_norm - trend
+        dlinear_raw = (self.linear_trend(trend)
+                       + self.linear_seasonal(seasonal)
+                       + self.config_bias(config))
+        dlinear_out = torch.sigmoid(self.revin(dlinear_raw, 'denorm'))
+        persist = x[:, -self.horizon:]
+        recent_mean = x[:, -48:].mean(dim=1, keepdim=True)
+        recent_std = x[:, -48:].std(dim=1, keepdim=True)
+        gate_input = torch.cat([config, recent_mean, recent_std], dim=1)
+        gate = torch.sigmoid(self.gate_net(gate_input))
+        return gate * persist + (1 - gate) * dlinear_out
+
+
+# ---------------------------------------------------------------------------
+# Stage C: Regime Mixture-of-Experts
+# ---------------------------------------------------------------------------
+# K parallel trend/seasonal experts + a softmax router conditioned on the
+# (fuel-augmented) config.  The router learns to send solar-heavy regions to
+# one expert, coal-heavy to another, etc., reducing the "false-neighbour"
+# negative transfer that a single linear head suffers.  A +1 persist fallback
+# expert guarantees a safe mode.  All config input is already fuel-augmented
+# (Stage A), so the router exploits fuel structure for free.
+
+class RegimeMoEAdaptivePersist(nn.Module):
+    """K-expert MoE with config-conditioned softmax routing + persist fallback."""
+
+    def __init__(self, seq_len=336, horizon=24, config_dim=2, num_experts=3):
+        super().__init__()
+        self.config_dim = config_dim
+        self.horizon = horizon
+        self.num_experts = num_experts
+        self.avg_pool = nn.AvgPool1d(kernel_size=25, stride=1, padding=12)
+        self.experts_trend = nn.ModuleList(
+            [nn.Linear(seq_len, horizon) for _ in range(num_experts)])
+        self.experts_seasonal = nn.ModuleList(
+            [nn.Linear(seq_len, horizon) for _ in range(num_experts)])
+        # config_bias must be Sequential[Linear,...] so evaluate_target can
+        # probe config_dim via config_bias[0].in_features.
+        self.config_bias = nn.Sequential(
+            nn.Linear(config_dim, 16), nn.ReLU(), nn.Linear(16, horizon))
+        # router: outputs num_experts (dlinear) + 1 (persist) weights.
+        self.gate_net = nn.Sequential(
+            nn.Linear(config_dim + 2, 32), nn.ReLU(),
+            nn.Linear(32, num_experts + 1))
+
+    def forward(self, x, config):
+        x3 = x.unsqueeze(1)
+        trend = self.avg_pool(x3).squeeze(1)
+        seasonal = x - trend
+        cb = self.config_bias(config)
+        expert_outs = [torch.sigmoid(self.experts_trend[i](trend)
+                                     + self.experts_seasonal[i](seasonal) + cb)
+                       for i in range(self.num_experts)]
+        persist = x[:, -self.horizon:]
+        all_outs = torch.stack(expert_outs + [persist], dim=1)  # (B, K+1, H)
+        recent_mean = x[:, -48:].mean(dim=1, keepdim=True)
+        recent_std = x[:, -48:].std(dim=1, keepdim=True)
+        gate_input = torch.cat([config, recent_mean, recent_std], dim=1)
+        gates = torch.softmax(self.gate_net(gate_input), dim=1)  # (B, K+1)
+        return (gates.unsqueeze(-1) * all_outs).sum(dim=1)
+
+
+# ---------------------------------------------------------------------------
+# Stage B: Weather-augmented variant
+# ---------------------------------------------------------------------------
+# Adds an optional weather channel (temperature, solar radiation, wind speed)
+# as a second input stream.  The weather encoder compresses the (T, 3) weather
+# sequence into a horizon-length bias that is added to the DLinear output,
+# letting the model exploit the physical upstream of renewable generation.
+# Falls back to the base model when weather is not provided.
+
+class WeatherAdaptivePersistDLinear(nn.Module):
+    """AdaptivePersistDLinear with an optional weather side channel."""
+
+    def __init__(self, seq_len=336, horizon=24, config_dim=2, n_weather=3):
+        super().__init__()
+        self.config_dim = config_dim
+        self.horizon = horizon
+        self.n_weather = n_weather
+        self.avg_pool = nn.AvgPool1d(kernel_size=25, stride=1, padding=12)
+        self.linear_trend = nn.Linear(seq_len, horizon)
+        self.linear_seasonal = nn.Linear(seq_len, horizon)
+        self.config_bias = nn.Sequential(
+            nn.Linear(config_dim, 16), nn.ReLU(), nn.Linear(16, horizon))
+        # Weather encoder: compresses (B, seq_len, n_weather) -> (B, horizon).
+        # Uses a patch-average + linear to keep parameter count modest.
+        self.weather_pool = nn.AvgPool1d(kernel_size=24, stride=24)
+        self.weather_head = nn.Linear(
+            (seq_len // 24) * n_weather, horizon)
+        self.gate_net = nn.Sequential(
+            nn.Linear(config_dim + 2, 16), nn.ReLU(), nn.Linear(16, 1))
+
+    def forward(self, x, config, weather=None):
+        x3 = x.unsqueeze(1)
+        trend = self.avg_pool(x3).squeeze(1)
+        seasonal = x - trend
+        out = (self.linear_trend(trend)
+               + self.linear_seasonal(seasonal)
+               + self.config_bias(config))
+        if weather is not None:
+            # weather: (B, seq_len, n_weather) — pool to (B, seq_len//24, n_weather)
+            B = weather.shape[0]
+            wp = self.weather_pool(weather.permute(0, 2, 1)).permute(0, 2, 1)
+            out = out + self.weather_head(wp.reshape(B, -1))
+        dlinear_out = torch.sigmoid(out)
+        persist = x[:, -self.horizon:]
+        recent_mean = x[:, -48:].mean(dim=1, keepdim=True)
+        recent_std = x[:, -48:].std(dim=1, keepdim=True)
+        gate_input = torch.cat([config, recent_mean, recent_std], dim=1)
+        gate = torch.sigmoid(self.gate_net(gate_input))
+        return gate * persist + (1 - gate) * dlinear_out
+
+
+# ---------------------------------------------------------------------------
 # Model registry
 # ---------------------------------------------------------------------------
 
 MODEL_REGISTRY = {
     "AdaptivePersistDLinear": AdaptivePersistDLinear,
+    "RevINAdaptivePersistDLinear": RevINAdaptivePersistDLinear,
+    "RegimeMoEAdaptivePersist": RegimeMoEAdaptivePersist,
+    "WeatherAdaptivePersistDLinear": WeatherAdaptivePersistDLinear,
     "RichConfigAdaptivePersist": RichConfigAdaptivePersist,
     "PatchTSTFixed": PatchTSTFixed,
     "NoAdaptiveGate": NoAdaptiveGate,
