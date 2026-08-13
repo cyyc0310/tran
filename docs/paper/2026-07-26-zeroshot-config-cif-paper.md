@@ -187,6 +187,9 @@ deployment — to make explicit what each tier of observability buys:
 | **Joint** | + differentiable calibration fine-tuning | 288 h (12 days) | **39.53** | **0.95×** |
 | PatchTST-sup | Supervised reference | ~7008 h (80% of year) | 41.47 | 1.00× |
 
+<p align="center"><img src="../figures/information_set_tiers.png" width="70%"></p>
+<p align="center"><em>Figure 1: Information-set tier ladder. Each tier adds target-domain information (0 → 0-observable → 288 h labels), and median MAE decreases monotonically from ZS (52.1) through ZS+ (46.88) to Joint (39.53), the latter surpassing the PatchTST supervised reference (41.47).</em></p>
+
 **Table 1: Zero-shot TransCIF (ZS: config-only; ZS+: with test-time calibration, §4.5) vs. supervised PatchTST and persistence (CIF MAE, gCO$_2$/kWh; 5 seeds). $\rho$ = ZS/PatchTST; $\rho_P$ = ZS/persistence; $\rho^+, \rho_P^+$ analogous for ZS+. Sorted by $\bar{rs}$.**
 
 | Region | $\bar{rs}$ | Persist | PatchTST (sup) | TransCIF (ZS) | $\rho$ | $\rho_P$ | TransCIF (ZS+) | $\rho^+$ | $\rho_P^+$ |
@@ -274,6 +277,14 @@ The self-validated fusion is by far the largest single contributor (+12.7% per-r
 
 The Regime MoE — whose softmax router exploits the fuel-augmented config vector to specialize one expert per fuel regime — improves pure ZS meaningfully (−4.2, 8/12 regions), with the largest gain on QLD1 (−12.1: solar+coal correctly routed to a dedicated expert). Yet **all four variants converge to ZS+ median within 0.05 MAE**. The ZS+ branch fusion acts as an *equalizer*: by backtesting each branch on the target's observable past and fusing lead-by-lead, it recovers the same calibrated output regardless of the ZS backbone's quality. RevIN hurts because the renewable-share series is already in $[0,1]$ with physically meaningful absolute level (the region's mean penetration), which instance normalization erases; the weather encoder is too simple (AvgPool+Linear) to capture the nonlinear irradiance→PV map. The positive finding is that **config precision and architecture determine the cold-start (ZS) floor, while calibration data determines the ceiling** — and the ceiling is architecture-independent.
 
+<p align="center"><img src="../figures/equalizer_effect.png" width="75%"></p>
+<p align="center"><em>Figure 2: The calibration equalizer effect. Four architecturally diverse backbones (orange bars) have ZS quality ranging from 40.6 (MoE) to 60.2 (RevIN), yet their ZS+ medians (green bars) all fall within a 0.05-MAE convergence band (shaded blue, centered at 26.10). The branch fusion performs adaptive per-origin model selection, neutralising backbone quality differences.</em></p>
+
+The MoE variant's cold-start improvement is driven by the fuel-augmented config vector (Stage A), which resolves "false neighbour" pairs that the 2-scalar config cannot distinguish. The figure below visualizes the fuel-mix diversity that the router exploits:
+
+<p align="center"><img src="../figures/fuel_regime_clusters.png" width="85%"></p>
+<p align="center"><em>Figure 3: Fuel-mix composition of 26 regions (8 US + 18 UK), grouped by hierarchical cluster. Red brackets mark "false neighbour" pairs — regions with nearly identical mean renewable share but radically different fuel structure (e.g. ERCO wind-heavy vs MISO coal-heavy, both $\bar{rs}\approx 0.2$). The fuel-augmented config vector resolves these, and the MoE router specializes one expert per cluster.</em></p>
+
 ### 6.5 Why CarbonCast fails cross-domain (Phase 3.2)
 
 **Table 3: CarbonCast supervised vs. zero-shot vs. TransCIF ZS/ZS+ (CIF MAE; 9 representative regions).**
@@ -322,13 +333,19 @@ Median 30–60 days; in 2/8 regions the supervised model *never catches up withi
 
 The pathological tier's joint MAE (69.7) nearly equals its persistence floor — even supervised calibration cannot pull these regions to the medium tier because their CIF signal has intrinsically high day-to-day volatility. VIC1 is a special case: its $ef_{nr}=1160$ (lignite-dominated) is 2× higher than any donor, making it an isolated outlier in configuration space with no transferable source. We recommend benchmark tables report all three tiers separately for honest comparison.
 
+<p align="center"><img src="../figures/difficulty_stratification.png" width="60%"></p>
+<p align="center"><em>Figure 4: Difficulty stratification. Persistence MAE vs joint MAE for 29 regions, colored by tier. Pathological regions (red) cluster near the diagonal — calibration barely helps. VIC1 (ef_nr=1160) is the most extreme outlier. Easy regions (green) lie far below the diagonal, confirming calibration effectiveness where the signal is predictable.</em></p>
+
 **Calibration-data-amount curve.** How much target-domain calibration is enough? Sweeping the number of calibration origins (each = 24 h of CIF labels) on the 12-region subset:
 
 | Calibration hours | 0 (ZS+) | 72 (3d) | **144 (6d)** | 288 (12d) | 576 (24d) |
 |---:|---:|---:|---:|---:|---:|
 | Median MAE | 36.68 | 33.92 | **32.67** | 38.79 | 38.14 |
 
-The curve is **non-monotonic**: 6 days of calibration data (144 h) reaches the sweet spot (−4.0 vs zero-label ZS+), but more data *overfits* — 24 days (576 h) is worse than zero. Easy regions (persistence < 20) are immune to calibration or slightly harmed (ZS+ already sufficient); medium regions benefit at 144 h; pathological regions (VIC1, UK_09) respond volatily. This reveals that the Joint protocol's fixed 12-day calibration is not universally optimal — different difficulty tiers have different sweet spots. Figure: `figures/calibration_curve.png`.
+The curve is **non-monotonic**: 6 days of calibration data (144 h) reaches the sweet spot (−4.0 vs zero-label ZS+), but more data *overfits* — 24 days (576 h) is worse than zero. Easy regions (persistence < 20) are immune to calibration or slightly harmed (ZS+ already sufficient); medium regions benefit at 144 h; pathological regions (VIC1, UK_09) respond volatily. This reveals that the Joint protocol's fixed 12-day calibration is not universally optimal — different difficulty tiers have different sweet spots.
+
+<p align="center"><img src="../figures/calibration_curve.png" width="65%"></p>
+<p align="center"><em>Figure 5: Calibration-data-amount curve. Median MAE is non-monotonic: 144 h (6 days) is the sweet spot (32.67, −4.0 vs zero-label ZS+); beyond ~200 h, overfitting raises MAE above the zero-label baseline. Shaded band shows the 25–75% interquartile range across 12 regions.</em></p>
 
 ### 6.10 Five-prior basis fusion and differentiable joint calibration
 
