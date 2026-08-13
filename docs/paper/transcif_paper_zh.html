@@ -115,9 +115,9 @@ window.MathJax = {
 <p><strong>数据声明。</strong> 所有数值结果均基于 3 个司法辖区、29 个电力区域的真实逐时数据：4 个澳大利亚 NEM 区域（AEMO 2023）、17 个英国 DNO 区域（National Grid ESO Carbon Intensity API）、8 个美国平衡区（EIA-930）。任何报告指标均不含合成数据。每个数字均可追溯至 Reproducibility 一节所列脚本产出的 <code>results/*.json</code>。</p>
 <hr />
 <h2> id="摘要">摘要</h2>
-<p>电网碳强度预测（CIF）是碳感知计算、电动汽车充电调度与需求响应的基础信号，但当前最先进的预测器均遵循"一区域一模型"范式：每次部署都需要数月本地历史数据与专门训练。我们形式化<strong>仅凭配置的零样本跨区域 CIF 预测（config-only zero-shot cross-region CIF prediction）</strong>——在源区域上训练的模型部署到一个从未见过的目标时，仅提供两个公开配置标量（平均可再生占比、非可再生排放因子）与实时可再生占比输入流——并提出 <strong>TransCIF</strong>，耦合一个物理分解层（从预测占比精确重构 CIF）、一个低容量配置条件化骨干（约 18k 参数）与一个自适应持久性门控。物理层给出一个精确的、与架构无关的误差恒等式（定理 1，验证至 $1.3\times10^{-4}$，放大项解释 71% 的误差，$R^2=0.84$）与一条配置空间迁移难度规律（定理 2，关于可再生渗透率呈 U 形，$R^2=0.66$）。</p>
-<p>我们按<strong>信息集分层</strong>——部署时可用的目标数据量——组织结果。在 29 区域、3 司法辖区的留一区域（LORO）基准（5 个种子）上：(i) <strong>零样本</strong>（$\mathcal{I}_0$，0 个目标标签）相对有监督 PatchTST 取得中位比 $\rho=1.24$，在 12/29 个区域直接击败持久性；(ii) <strong>测试期校准</strong>（$\mathcal{I}_+$，仍为 0 个未来标签——三个闭式校正仅使用目标的可观测 CIF 历史）将其降至 $\rho^+=1.08$（中位 MAE 46.88），在 <strong>29/29 个区域</strong>击败持久性（最差 0.995），并在 6 个区域直接超越有监督模型；(iii) <strong>联合校准</strong>（$\mathcal{I}_J$，在不相交的训练/评估划分上使用 288 h = 12 天标签，经由带对抗-持久性训练的可微五先验融合）达到中位 MAE <strong>39.53</strong> gCO$_2$/kWh（$\rho^J=0.95$），相对 PatchTST（41.47）赢得 61% 的配对比较——首个低于 40 的系统中位。</p>
-<p>一个关键的方法论发现是<strong>校准均衡器效应</strong>：四个架构各异的骨干——旗舰、状态混合专家（regime mixture-of-experts）、天气增强、RevIN 包裹——零样本质量相差 15+ MAE，却全部收敛到同一 $\mathcal{I}_+$ 中位的 0.05 MAE 以内。测试期分支融合执行逐原点的自适应模型选择，因此框架的竞争力源自物理分解 + 配置条件化 + 校准的组合，而非任何单一架构。其他结果：对零样本 CarbonCast 取得 5/9 胜（$\mathcal{I}_+$ 下 8/9，均值比 0.73；CarbonCast 跨域退化 2.4 倍）、25/29 区域的无假设保形区间（平均覆盖率 0.952）、时间 OOD 稳健性（$\mathcal{I}_+$ 比值稳定于 0.82），以及显示有监督模型需要 30–270+ 天才能追平第一天零样本精度的预热研究。</p>
+<p>电网碳强度预测（CIF）驱动碳感知计算、电动汽车充电与需求响应，但当前最先进的预测器均遵循"一区域一模型"范式，每次部署都需数月本地数据。我们形式化<strong>仅凭配置的零样本跨区域 CIF 预测</strong>：在源区域训练的模型部署到从未见过的目标时，仅提供两个公开标量（平均可再生占比、非可再生排放因子）与实时可再生占比流。<strong>TransCIF</strong> 耦合一个物理分解层（从预测占比精确重构 CIF）、一个低容量配置条件化骨干（约 18k 参数）与一个自适应持久性门控。物理层给出一个精确的误差恒等式（定理 1，验证至 $1.3\times10^{-4}$；放大项解释 71% 的误差，$R^2=0.84$）与一条配置空间迁移规律（定理 2，关于可再生渗透率呈 U 形，$R^2=0.66$）。</p>
+<p>在 29 区域、3 司法辖区的留一区域（LORO）基准（5 个种子）上，结果按<strong>信息集分层</strong>组织：(i) <strong>零样本</strong>（$\mathcal{I}_0$，0 标签）相对有监督 PatchTST 取得中位比 $\rho=1.24$，在 12/29 区域击败持久性；(ii) <strong>测试期校准</strong>（$\mathcal{I}_+$，仍为 0 未来标签——三个来自可观测流的闭式校正）降至 $\rho^+=1.08$（中位 MAE 46.88），在 <strong>29/29</strong> 区域击败持久性，并在 6 个区域直接超越有监督模型；(iii) <strong>联合校准</strong>（$\mathcal{I}_J$，12 天标签经可微五先验融合）达到中位 MAE <strong>39.53</strong>（$\rho^J=0.95$），相对 PatchTST（41.47）赢得 61% 配对比较——首个低于 40 的系统。</p>
+<p><strong>校准均衡器效应</strong>：四个架构各异、零样本质量相差 15+ MAE 的骨干全部收敛到同一 $\mathcal{I}_+$ 中位的 0.05 MAE 以内——竞争力源自物理 + 配置 + 校准的组合，而非任何单一架构。其他：对零样本 CarbonCast 取得 5/9 胜（$\mathcal{I}_+$ 下 8/9，后者跨域退化 2.4 倍）、25/29 区域的无假设保形区间（覆盖率 0.952）、时间 OOD 稳健性（$\mathcal{I}_+$ 比值稳定于 0.82），以及显示有监督模型需 30–270+ 天才能追平第一天零样本精度的预热研究。</p>
 <p><strong>关键词：</strong> 碳强度预测；零样本迁移；域泛化；物理信息学习；保形预测；碳感知计算</p>
 <hr />
 <h2> id="1-引言">1. 引言</h2>
@@ -715,7 +715,11 @@ $$\widehat{CIF}_t - CIF_t \;=\; \underbrace{(\hat s_t - s_t)\,(ef_r - ef_{nr})}_
 </tr>
 </tbody>
 </table>
-<p><strong>解读表 1。</strong> (i) <strong>中位 $\rho = 1.24$</strong>（config-only ZS）：零目标数据下，TransCIF 的预测误差与在目标自身 10 个月历史上训练的 PatchTST 相差不到 24%；17/29 区域在 1.25× 内，24/29 在 1.5× 内。(ii) <strong>ZS 在 12/29 区域直接击败持久性</strong>，另有 4 个区域打平（±5%）——不曾使用任何形式的有监督训练数据。(iii) <strong>ZS 的失败是结构性的，不是随机的</strong>：四个最差比值（US_FPL/PJM/ISNE ≥ 2.6，QLD1 1.7）正是定理 2 预测的配置空间边界区域（化石燃料重，$\bar{rs}<0.19$，U 形左臂）；值得注意的是，这些也是 CIF 近乎恒定的区域——即使有监督的 PatchTST 也仅勉强超过持久性——预测的<em>绝对</em>价值恰恰在零样本最弱之处最低。(iv) <strong>ZS+ 消除了边界失败模式——并在六个区域反超有监督上界</strong>：三个化石燃料重失败区域从 $\rho \ge 2.6$ 降至 0.93–1.18（US_FPL 直接<em>击败</em>有监督 PatchTST），全部 29 区域的最差比值降至 $\rho^+ = 1.29$（29/29 在 1.5× 内，28/29 在 1.25× 内），并在 <strong>29/29 区域</strong>击败持久性，中位 $\rho_P^+ = 0.94$、最差 0.995。六个区域——QLD1（0.89）、US_FPL（0.93）、US_CISO（0.95）、UK_11（0.96）、UK_07（0.97）、UK_13（0.996）——最终<em>低于</em>有监督上界本身：滚动自选的多分支融合把跨区域信号、本地持久性与气候基准组合成任何单一有监督模型都无法匹敌的预测。平均 MAE 相对 ZS 下降 14%（52.1 → 44.8）。(v) <strong>ZS+ 同时在 27/29 个区域是跨域方法中的直接最优</strong>：在四方跨域排行榜（持久性、CarbonCast-ZS、config-only ZS、ZS+）上，它在除 US_MISO（CarbonCast-ZS 低 1.1%）与 US_ERCO（原始 ZS 低 1.2%）外的所有区域取得最低 MAE——在这两个区域，5 种子决策实验证实诚实的仅过去选择器在不窥探测试标签的前提下无法弥合差距。这一机制是诊断性的而非偶然的：水平锚定与残差校正在经验上恰好消除定理 1 所识别的两个误差分量（Term ① 的水平偏差与 Term ②），而它们正是配置谱两端的主导误差；逐原点配置重选则把校准预算恰好花在理论指出可迁移信号耗尽的地方。</p>
+<p><strong>解读表 1。</strong> (i) <strong>中位 $\rho = 1.24$</strong>（config-only ZS）：零目标数据下，TransCIF 的预测误差与在目标自身 10 个月历史上训练的 PatchTST 相差不到 24%；17/29 区域在 1.25× 内，24/29 在 1.5× 内。</p>
+<p>(ii) <strong>ZS 在 12/29 区域直接击败持久性</strong>，另有 4 个区域打平（±5%）——不曾使用任何形式的有监督训练数据。</p>
+<p>(iii) <strong>ZS 的失败是结构性的，不是随机的</strong>：四个最差比值（US_FPL/PJM/ISNE ≥ 2.6，QLD1 1.7）正是定理 2 预测的配置空间边界区域（化石燃料重，$\bar{rs}<0.19$，U 形左臂）；值得注意的是，这些也是 CIF 近乎恒定的区域——即使有监督的 PatchTST 也仅勉强超过持久性——预测的<em>绝对</em>价值恰恰在零样本最弱之处最低。</p>
+<p>(iv) <strong>ZS+ 消除了边界失败模式——并在六个区域反超有监督上界</strong>：三个化石燃料重失败区域从 $\rho \ge 2.6$ 降至 0.93–1.18（US_FPL 直接<em>击败</em>有监督 PatchTST），全部 29 区域的最差比值降至 $\rho^+ = 1.29$（29/29 在 1.5× 内，28/29 在 1.25× 内），并在 <strong>29/29 区域</strong>击败持久性，中位 $\rho_P^+ = 0.94$、最差 0.995。六个区域——QLD1（0.89）、US_FPL（0.93）、US_CISO（0.95）、UK_11（0.96）、UK_07（0.97）、UK_13（0.996）——最终<em>低于</em>有监督上界本身：滚动自选的多分支融合把跨区域信号、本地持久性与气候基准组合成任何单一有监督模型都无法匹敌的预测。平均 MAE 相对 ZS 下降 14%（52.1 → 44.8）。</p>
+<p>(v) <strong>ZS+ 同时在 27/29 个区域是跨域方法中的直接最优</strong>：在四方跨域排行榜（持久性、CarbonCast-ZS、config-only ZS、ZS+）上，它在除 US_MISO（CarbonCast-ZS 低 1.1%）与 US_ERCO（原始 ZS 低 1.2%）外的所有区域取得最低 MAE——在这两个区域，5 种子决策实验证实诚实的仅过去选择器在不窥探测试标签的前提下无法弥合差距。这一机制是诊断性的而非偶然的：水平锚定与残差校正在经验上恰好消除定理 1 所识别的两个误差分量（Term ① 的水平偏差与 Term ②），而它们正是配置谱两端的主导误差；逐原点配置重选则把校准预算恰好花在理论指出可迁移信号耗尽的地方。</p>
 <h3> id="63-有监督基线背景4-个-au-区域深挖">6.3 有监督基线背景（4 个 AU 区域深挖）</h3>
 <p>在具备完整基线套件的 AU 区域上：PatchTST 在全部 4 个区域中都是最强有监督模型（QLD1/NSW1/VIC1/SA1 分别为 30.7/46.8/92.3/50.6），领先 DLinear-Direct 5–10%、领先 CarbonCast-supervised 10–20%；GBRT 大幅落后。TransCIF-ZS 相对该上界取得 1.08（NSW1）、1.16（VIC1）、1.26（SA1）的比值——即以零数据成本达到最佳有监督精度的 80–93%——QLD1（2.36）为已记录的边界失败案例。</p>
 <h3> id="64-消融9-个代表区域-5-个种子">6.4 消融（9 个代表区域 × 5 个种子）</h3>
@@ -1055,7 +1059,8 @@ $$\widehat{CIF}_t - CIF_t \;=\; \underbrace{(\hat s_t - s_t)\,(ef_r - ef_{nr})}_
 <p>表 1 的 Joint 行汇总了五个架构上各异的零样本<em>方向</em>模型——检索增强（RAG）、物理不变 IRM、因果/域不变 VAE、上下文 Transformer（ICL）、层级模型——每个方向对可再生占比动力学编码不同的归纳先验。本节剖析这个池：融合是否击败最强单方向？学习型组合器是否优于简单平均？端到端可微校准能否把融合系统推到有监督 PatchTST 基线（41.47）以下？</p>
 <p><strong>基底混合融合（零样本）。</strong> 我们用非负 softmax 头（熵下限 + 两两余弦多样性正则）组合五个方向，通过留一源区域交叉验证训练，权重从不接触目标。Drop-one 消融给出一个不舒服但决定性的结果：去掉任一单方向对融合 MAE 几乎无影响，且等权融合 + ZS+ 与学习型 BasisMix + ZS+ 在统计上不可区分（$\Delta=-0.14$ 中位，等权在 86% 的对上更优）。在纯零样本下<strong>元学习器是死重</strong>——表观的融合增益来自作为自适应均衡器的 ZS+ 测试期校准（参见 §6.4），而非智能的方向加权。</p>
 <p><strong>可微联合校准。</strong> 死重发现定位了问题：方向参数从不与校准协同优化，因为 numpy/torch 混合预测器在末端物理重构处切断了梯度图。我们分两步移除它。其一，<em>可微</em> ZS+ 用 soft attention（一个可学习的 6 分支门控与逆温度，作用在同样的 lag/气候/模型分支上）替代硬分支菜单，并对抗一个对抗-持久性 hinge 损失 $\mathrm{ReLU}(\mathrm{MAE}_{\mathrm{pred}} - 0.9\,\mathrm{MAE}_{\mathrm{persist}})$——一旦模型以 10% 相对 margin 击败持久性，该损失恰为零。其二，将五个方向模型全部 torch-native 化（方向 <code>forward</code> 本就输出可再生占比；我们把 $cif = s\cdot ef_r + (1-s)\cdot ef_{nr}$ 内联为 torch op，对 RAG/ICL 则用可微 matmul kNN / no-grad 上下文组装替代 numpy 检索，后者仍喂入可微 transformer）。两阶段 warmup 随后在留出的 12 原点校准划分上端到端微调：Stage 1 只训融合头 + 可微 ZS+（方向冻结）；Stage 2 额外解冻每个方向的<em>预测头</em>（DLinear 头、VAE 预测器、hourly 头、RAG 分支、ICL 投影），主干保持冻结以保住迁移信号。</p>
-<p><strong>结果。</strong> 表 2 追踪完整 29×5 LORO 上的中位 MAE 演进：</p>
+<p><strong>结果。</strong> 表 4 追踪完整 29×5 LORO 上的中位 MAE 演进：</p>
+<p><strong>表 4：联合校准的中位 MAE 演进（29 区域 × 5 种子 LORO；gCO$_2$/kWh）。</strong></p>
 <table>
 <thead>
 <tr>
@@ -1154,9 +1159,19 @@ $$\widehat{CIF}_t - CIF_t \;=\; \underbrace{(\hat s_t - s_t)\,(ef_r - ef_{nr})}_
 <td><code>results/fused_five_full.json</code></td>
 </tr>
 <tr>
-<td>联合校准（§6.10，$\mathcal{I}_J$）</td>
+<td>联合校准，冻结方向代理（§6.10）</td>
 <td><code>scripts/experiments/run_joint_train_full.py</code></td>
 <td><code>results/joint_train_full.json</code></td>
+</tr>
+<tr>
+<td>联合校准，torch-native（§6.10，$\mathcal{I}_J$，39.53）</td>
+<td><code>scripts/experiments/run_joint_train_native_full.py</code></td>
+<td><code>results/joint_train_native_full.json</code></td>
+</tr>
+<tr>
+<td>显著性检验（§6.10）</td>
+<td><code>scripts/experiments/run_significance.py</code></td>
+<td><code>results/fused_five_significance.json</code></td>
 </tr>
 <tr>
 <td>均衡器效应（§6.4）</td>
