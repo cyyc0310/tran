@@ -1,0 +1,124 @@
+{
+  "US": {
+    "US_CISO": {
+      "persistence": 27.42571258544922,
+      "zs_plus": 25.3107705213591
+    },
+    "US_PJM": {
+      "persistence": 15.640140533447266,
+      "zs_plus": 14.128072930445729
+    },
+    "US_MISO": {
+      "persistence": 55.600894927978516,
+      "zs_plus": 46.647875385305696
+    },
+    "US_ERCO": {
+      "persistence": 64.79312133789062,
+      "zs_plus": 59.822792542660956
+    },
+    "US_ISNE": {
+      "persistence": 15.959382057189941,
+      "zs_plus": 15.41045837699412
+    },
+    "US_NYIS": {
+      "persistence": 14.583292007446289,
+      "zs_plus": 13.502670708188214
+    },
+    "US_FPL": {
+      "persistence": 13.385560989379883,
+      "zs_plus": 12.85655555181046
+    },
+    "US_BPAT": {
+      "persistence": 6.305214881896973,
+      "zs_plus": 6.143215175942617
+    }
+  },
+  "UK": {
+    "UK_01_North_Scotland": {
+      "persistence": 34.958621978759766,
+      "zs_plus": 34.65103158394114
+    },
+    "UK_02_South_Scotland": {
+      "persistence": 22.079477310180664,
+      "zs_plus": 21.41437236957253
+    },
+    "UK_03_North_West_England": {
+      "persistence": 29.26909637451172,
+      "zs_plus": 27.83237962799517
+    },
+    "UK_05_Yorkshire": {
+      "persistence": 49.96855545043945,
+      "zs_plus": 45.88089446077518
+    },
+    "UK_06_North_Wales_Merseyside": {
+      "persistence": 54.37818145751953,
+      "zs_plus": 51.527645587866544
+    },
+    "UK_07_South_Wales": {
+      "persistence": 76.1998519897461,
+      "zs_plus": 71.6489413112377
+    },
+    "UK_08_West_Midlands": {
+      "persistence": 81.46903991699219,
+      "zs_plus": 77.5884422067682
+    },
+    "UK_09_East_Midlands": {
+      "persistence": 91.84210968017578,
+      "zs_plus": 84.82871965861142
+    },
+    "UK_10_East_England": {
+      "persistence": 61.08747863769531,
+      "zs_plus": 56.99251816335977
+    },
+    "UK_11_South_West_England": {
+      "persistence": 53.04108810424805,
+      "zs_plus": 49.438699781415416
+    },
+    "UK_12_South_England": {
+      "persistence": 57.36814880371094,
+      "zs_plus": 54.924356103198775
+    },
+    "UK_13_London": {
+      "persistence": 52.739967346191406,
+      "zs_plus": 52.577461640009744
+    },
+    "UK_14_South_East_England": {
+      "persistence": 50.69502258300781,
+      "zs_plus": 50.42573338019538
+    },
+    "UK_15_England": {
+      "persistence": 48.572242736816406,
+      "zs_plus": 47.64238033043452
+    },
+    "UK_16_Scotland": {
+      "persistence": 35.338348388671875,
+      "zs_plus": 34.174337122603276
+    },
+    "UK_17_Wales": {
+      "persistence": 73.02449798583984,
+      "zs_plus": 68.20813747664594
+    },
+    "UK_18_GB": {
+      "persistence": 45.98350524902344,
+      "zs_plus": 44.88134074565698
+    }
+  },
+  "AU": {
+    "QLD1": {
+      "persistence": 29.113201141357422,
+      "zs_plus": 26.829587760932228
+    },
+    "NSW1": {
+      "persistence": 53.71515655517578,
+      "zs_plus": 46.49281925471305
+    },
+    "VIC1": {
+      "persistence": 116.79244232177734,
+      "zs_plus": 98.16891483669531
+    },
+    "SA1": {
+      "persistence": 68.06713104248047,
+      "zs_plus": 60.498956033560155
+    }
+  }
+}

@@ -266,21 +266,15 @@ The AU case is the strongest demonstration: QLD1, NSW1, VIC1, SA1 have **no othe
 
 The AU row is the headline cross-domain result: **4 Australian grids, trained exclusively on US and UK data, improve over persistence by 12% median** — and the single best case (QLD1, ZS+ 27.0 vs PatchTST 30.3) outright surpasses the supervised model trained on QLD1's own 10-month history.
 
-**View 4 — Leave-one-jurisdiction-out (LOJO): the strongest cross-domain test.** The LORO protocol leaves one *region* out but still trains on other regions from the same jurisdiction. LOJO is stricter: it removes *all* regions from an entire jurisdiction (country) and asks whether transfer from the remaining two jurisdictions still works. For US targets with all US sources removed (trained only on AU + UK):
+**View 4 — Leave-one-jurisdiction-out (LOJO): the strongest cross-domain test.** The LORO protocol leaves one *region* out but still trains on other regions from the same jurisdiction. LOJO is stricter: it removes *all* regions from an entire jurisdiction (country) and asks whether transfer from the remaining two jurisdictions still works. The result is decisive — **all 29 targets are won, in all three directions**:
 
-| US target (no US sources) | Persistence | ZS+ (AU+UK trained) | Win? |
-|---|---:|---:|---|
-| US_CISO | 27.4 | 25.3 | ✓ |
-| US_PJM | 15.6 | 14.1 | ✓ |
-| US_MISO | 55.6 | 46.6 | ✓ |
-| US_ERCO | 64.8 | 59.8 | ✓ |
-| US_ISNE | 16.0 | 15.4 | ✓ |
-| US_NYIS | 14.6 | 13.5 | ✓ |
-| US_FPL | 13.4 | 12.9 | ✓ |
-| US_BPAT | 6.3 | 6.1 | ✓ |
-| **Median** | **15.8** | **14.8** | **8/8 win** |
+| Excluded jurisdiction | Training sources | # targets | ZS+ median | Persistence median | Wins |
+|---|---|---:|---:|---:|---:|
+| **US** (→ US targets) | AU + UK only | 8 | **14.8** | 15.8 | **8/8** |
+| **UK** (→ UK targets) | AU + US only | 17 | **50.4** | 52.7 | **17/17** |
+| **AU** (→ AU targets) | US + UK only | 4 | **53.5** | 60.9 | **4/4** |
 
-The model has **never seen any US data** — no US market structure, no US fuel mix, no US demand patterns — yet it beats persistence on all 8 US targets. This is not intra-jurisdiction interpolation; it is genuine cross-border, cross-market transfer. The UK→US direction works because UK grids span a similar renewable-penetration range, and the physics layer absorbs the absolute-scale difference between US and UK emission factors. *(AU-excluded and UK-excluded results in progress; preliminary: AU targets with 0 AU sources are already confirmed in the per-jurisdiction table above.)*
+Critically, the LOJO medians are **nearly identical to the standard LORO** (which uses all 28 sources): US 14.8 vs 14.7, UK 50.4 vs 50.4, AU 53.5 vs 53.5. Removing an entire jurisdiction's worth of source data barely changes the forecast — the model is not relying on intra-jurisdiction interpolation; it is extracting genuinely transferable renewable-share dynamics conditioned on the config scalar, and the physics layer absorbs the cross-jurisdiction scale difference. A US target trained exclusively on Australian and British grids — different market structures, different dispatch logics, different data pipelines — still beats persistence on every region. This is the strongest evidence that cross-domain transfer, not memorization, drives the result.
 
 <p align="center"><img src="../figures/cross_domain_timeseries.png" width="90%"></p>
 <p align="center"><em>Figure 3d: Seven-day CIF time series from three target regions' test periods. The model captures the diurnal cycle shape and level across jurisdictions — solar-dominated CISO, coal-dominated QLD1, and wind-heavy UK Midlands — despite never having trained on these specific grids. MAE annotations show ZS+ outperforms persistence and approaches PatchTST-supervised accuracy.</em></p>
