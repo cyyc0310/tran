@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero-Shot Cross-Region Carbon Intensity Forecasting via Physics-Informed Adaptive Decomposition with Configuration-Driven Domain Transfer</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --accent: #2563eb;
+  --border: #e0e0e0;
+  --code-bg: #f5f5f5;
+  --sidebar-bg: #f8f9fa;
+  --table-stripe: #f8f9fa;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a2e;
+    --fg: #d4d4d4;
+    --muted: #999;
+    --border: #333;
+    --code-bg: #252535;
+    --sidebar-bg: #161628;
+    --table-stripe: #202030;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+  font-size: 15px;
+}
+/* Sidebar TOC */
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 280px; height: 100vh;
+  overflow-y: auto;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  font-size: 13px;
+  z-index: 100;
+}
+#sidebar h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+#sidebar ul { list-style: none; }
+#sidebar li { margin: 2px 0; }
+#sidebar a {
+  color: var(--fg);
+  text-decoration: none;
+  display: block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+#sidebar a:hover { background: var(--border); color: var(--accent); }
+#sidebar .toc-h2 { padding-left: 12px; font-weight: 600; }
+#sidebar .toc-h3 { padding-left: 28px; font-size: 12px; color: var(--muted); }
+
+/* Main content */
+#content {
+  margin-left: 280px;
+  max-width: 800px;
+  padding: 40px 48px 80px;
+}
+h1 {
+  font-size: 26px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  color: var(--fg);
+}
+h2 {
+  font-size: 22px;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  color: var(--fg);
+}
+h3 {
+  font-size: 18px;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  color: var(--fg);
+}
+h4 { font-size: 16px; margin-top: 20px; }
+p { margin: 10px 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+/* Code */
+code {
+  background: var(--code-bg);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+  font-size: 0.88em;
+}
+pre {
+  background: var(--code-bg);
+  padding: 12px 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 12px 0;
+}
+pre code { background: none; padding: 0; }
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+  font-size: 13px;
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+th { background: var(--sidebar-bg); font-weight: 700; }
+tr:nth-child(even) { background: var(--table-stripe); }
+
+/* Figures */
+figure, p[align="center"] {
+  margin: 20px auto;
+  text-align: center;
+}
+p[align="center"] img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  border: 1px solid var(--border);
+}
+p[align="center"] em {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  margin: 16px 0;
+  color: var(--muted);
+}
+
+/* Abstract special styling */
+h2 + p strong:first-child { font-size: 16px; }
+
+/* Keywords */
+p:last-of-type strong { color: var(--accent); }
+
+/* Mobile */
+@media (max-width: 900px) {
+  #sidebar { display: none; }
+  #content { margin-left: 0; padding: 20px; }
+}
+@media print {
+  #sidebar { display: none; }
+  #content { margin: 0; padding: 0; max-width: 100%; }
+  p[align="center"] img { box-shadow: none; }
+}
+</style>
+<!-- MathJax for LaTeX rendering -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+<div id="sidebar"><h2>Table of Contents</h2><ul>
+<li class="toc-h2"><a href="#abstract">Abstract</a></li>
+<li class="toc-h2"><a href="#1-introduction">1. Introduction</a></li>
+<li class="toc-h2"><a href="#2-related-work">2. Related Work</a></li>
+<li class="toc-h2"><a href="#3-problem-formulation">3. Problem Formulation</a></li>
+<li class="toc-h2"><a href="#4-methodology">4. Methodology</a></li>
+<li class="toc-h3"><a href="#41-design-principle-transfer-what-is-invariant-condition-on-what-is-not-fall-back-when-neither-holds">4.1 Design principle: transfer what is invariant, condition on what is not, fall back when neither holds</a></li>
+<li class="toc-h3"><a href="#42-adaptivepersistdlinear-config-conditioned-share-predictor">4.2 AdaptivePersistDLinear: config-conditioned share predictor</a></li>
+<li class="toc-h3"><a href="#43-config-weighted-source-sampling">4.3 Config-weighted source sampling</a></li>
+<li class="toc-h3"><a href="#44-probabilistic-extension-per-horizon-split-conformal">4.4 Probabilistic extension: per-horizon split conformal</a></li>
+<li class="toc-h3"><a href="#45-transcif-zs-training-free-test-time-calibration">4.5 TransCIF-ZS+: training-free test-time calibration</a></li>
+<li class="toc-h2"><a href="#5-theory">5. Theory</a></li>
+<li class="toc-h3"><a href="#51-theorem-1-exact-error-propagation-through-the-physics-layer">5.1 Theorem 1: exact error propagation through the physics layer</a></li>
+<li class="toc-h3"><a href="#52-theorem-2-what-governs-transfer-difficulty">5.2 Theorem 2: what governs transfer difficulty</a></li>
+<li class="toc-h2"><a href="#6-experiments">6. Experiments</a></li>
+<li class="toc-h3"><a href="#61-setup">6.1 Setup</a></li>
+<li class="toc-h3"><a href="#62-main-result-three-information-set-tiers-on-the-29-region-loro-benchmark">6.2 Main result: three information-set tiers on the 29-region LORO benchmark</a></li>
+<li class="toc-h3"><a href="#63-supervised-baseline-context-4-region-au-deep-dive">6.3 Supervised baseline context (4-region AU deep-dive)</a></li>
+<li class="toc-h3"><a href="#64-ablation-9-representative-regions-5-seeds">6.4 Ablation (9 representative regions × 5 seeds)</a></li>
+<li class="toc-h3"><a href="#65-why-carboncast-fails-cross-domain-phase-32">6.5 Why CarbonCast fails cross-domain (Phase 3.2)</a></li>
+<li class="toc-h3"><a href="#66-probabilistic-extension-phase-31">6.6 Probabilistic extension (Phase 3.1)</a></li>
+<li class="toc-h3"><a href="#67-temporal-ood-phase-33">6.7 Temporal OOD (Phase 3.3)</a></li>
+<li class="toc-h3"><a href="#68-deployment-case-study-the-warm-up-race-phase-34">6.8 Deployment case study: the warm-up race (Phase 3.4)</a></li>
+<li class="toc-h3"><a href="#69-difficulty-stratification-and-the-calibration-sweet-spot">6.9 Difficulty stratification and the calibration sweet spot</a></li>
+<li class="toc-h3"><a href="#610-five-prior-basis-fusion-and-differentiable-joint-calibration">6.10 Five-prior basis fusion and differentiable joint calibration</a></li>
+<li class="toc-h2"><a href="#7-discussion">7. Discussion</a></li>
+<li class="toc-h2"><a href="#8-limitations">8. Limitations</a></li>
+<li class="toc-h2"><a href="#9-conclusion">9. Conclusion</a></li>
+<li class="toc-h2"><a href="#reproducibility">Reproducibility</a></li>
+<li class="toc-h2"><a href="#references">References</a></li>
+</ul></div>
+<div id="content">
+<h1 id="zero-shot-cross-region-carbon-intensity-forecasting-via-physics-informed-adaptive-decomposition-with-configuration-driven-domain-transfer">Zero-Shot Cross-Region Carbon Intensity Forecasting via Physics-Informed Adaptive Decomposition with Configuration-Driven Domain Transfer</h1>
+<p><strong>Draft status:</strong> full-length draft (target: <em>Applied Energy</em>; alternates: IEEE TSTE, <em>Energy</em>). This draft supersedes <code>2026-07-22-transcif-full-paper.md</code> (the fine-tuning-era draft) and is organized around the <strong>config-only zero-shot</strong> paradigm validated in Phases 1–3 of the Q1 submission plan.</p>
+<p><strong>Data disclosure.</strong> All numerical results are computed on real hourly data from 29 electricity regions across three jurisdictions: 4 Australian NEM regions (AEMO 2023), 17 UK DNO regions (National Grid ESO Carbon Intensity API), and 8 US balancing authorities (EIA-930). No synthetic data underlies any reported metric. Every number is traceable to <code>results/*.json</code> produced by the scripts listed in the Reproducibility section.</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Grid carbon intensity forecasting (CIF) is the fundamental signal for carbon-aware computing, EV-charging scheduling, and demand response, yet state-of-the-art forecasters follow a one-region-one-model paradigm: each deployment requires months of local history and dedicated training. We formalize <strong>config-only zero-shot cross-region CIF prediction</strong> — a model trained on source regions is deployed to a never-seen target given only two public configuration scalars (mean renewable share, non-renewable emission factor) and the real-time renewable-share stream — and propose <strong>TransCIF</strong>, coupling a physics decomposition layer (exact CIF reconstruction from the predicted share), a low-capacity config-conditioned backbone (~18k parameters), and an adaptive persistence gate. The physics layer yields an exact, architecture-agnostic error identity (Theorem 1, verified to $1.3\times10^{-4}$, amplification explains 71% of error, $R^2=0.84$) and a config-space transfer-difficulty law (Theorem 2, U-shaped in renewable penetration, $R^2=0.66$).</p>
+<p>We organize results by <strong>information-set tier</strong> — the amount of target data available at deployment. On a 29-region, 3-jurisdiction leave-one-region-out benchmark (5 seeds): (i) <strong>zero-shot</strong> ($\mathcal{I}<em>0$, 0 target labels) attains median ratio $\rho=1.24$ vs. supervised PatchTST, beating persistence outright in 12/29 regions; (ii) <strong>test-time calibration</strong> ($\mathcal{I}</em>+$, still 0 future labels — three closed-form corrections using only the target's observable CIF history) lowers this to $\rho^+=1.08$ (median MAE 46.88), beats persistence in <strong>29/29 regions</strong> (worst case 0.995), and surpasses the supervised model outright in 6 regions; (iii) <strong>joint calibration</strong> ($\mathcal{I}_J$, 288 h = 12 days of labels on a disjoint train/eval split, via a differentiable five-prior fusion with adversarial-persistence training) reaches median MAE <strong>39.53</strong> gCO$_2$/kWh ($\rho^J=0.95$), winning 61% of pairwise comparisons against PatchTST (41.47) — the first sub-40 system median.</p>
+<p>A key methodological finding is the <strong>calibration equalizer effect</strong>: four architecturally diverse backbones — flagship, regime mixture-of-experts, weather-augmented, RevIN-wrapped — whose zero-shot quality differs by 15+ MAE all converge to within 0.05 MAE of the same $\mathcal{I}<em>+$ median. The test-time branch fusion performs adaptive per-origin model selection, so the framework's competitiveness stems from the combination of physics decomposition + config conditioning + calibration, not from any single architecture. Further results: 5/9 wins over zero-shot CarbonCast (8/9 at $\mathcal{I}</em>+$, mean ratio 0.73; CarbonCast degrades 2.4× cross-domain), assumption-free conformal intervals in 25/29 regions (mean coverage 0.952), temporal-OOD robustness ($\mathcal{I}_+$ ratio flat at 0.82), and a warm-up study showing supervised models need 30–270+ days to match day-one zero-shot accuracy.</p>
+<p><strong>Keywords:</strong> carbon intensity forecasting; zero-shot transfer; domain generalization; physics-informed learning; conformal prediction; carbon-aware computing</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Decarbonizing electricity consumption requires knowing <em>when</em> the grid is clean. Hourly grid carbon intensity (CIF, gCO$_2$/kWh) forecasts drive carbon-aware load shifting in data centers, EV-charging schedulers, and industrial demand response. A decade of work has produced accurate <em>within-region</em> forecasters — but the operational reality is that every one of them is trained, tuned, and validated on the history of a single region. Onboarding a new region means collecting months-to-years of local generation and emissions data, retraining, and revalidating: a <strong>one-region-one-model</strong> cost structure that scales linearly with the number of grids and excludes precisely the data-scarce, newly instrumented regions where carbon-aware control could matter most.</p>
+<p>This paper asks a deliberately extreme question: <em>how well can a new region be forecast with zero local training data?</em> We formalize <strong>config-only zero-shot cross-region CIF prediction</strong>: a model is trained once on a pool of source regions; at deployment the target region supplies only (a) two public configuration scalars — its mean renewable share $\bar{rs}$ and its non-renewable emission factor $ef_{nr}$, both obtainable from public capacity registries and grid operator reports at ±10–20% accuracy — and (b) its real-time renewable-share input stream. No target CIF history, no fine-tuning, no per-region hyperparameters.</p>
+<p>Three observations make this tractable. First, for a two-category renewable/non-renewable split, the map from renewable share to carbon intensity is <em>exactly linear</em> with region-specific coefficients: $\mathrm{CIF}(rs) = rs \cdot ef_r + (1-rs)\cdot ef_{nr}$. Predicting the <strong>share</strong> instead of the CIF removes the dominant region-specific scale factor from the learning problem and yields an exact, architecture-agnostic error decomposition (Theorem 1). Second, renewable-share <em>dynamics</em> (diurnal solar cycles, wind ramps, weekly demand patterns) are far more transferable across grids than absolute CIF levels — but their statistics still shift with renewable penetration, which is precisely what the config scalar $\bar{rs}$ summarizes; conditioning a low-capacity model on it recovers most of the shift. Third, when neither transfers — e.g., a target whose dynamics no source region covers — the model should <em>know</em> to fall back: an adaptive gate blending model output with the persistence prior, conditioned on config and recent input volatility, converts unfamiliarity into graceful degradation rather than catastrophic error.</p>
+<p><strong>Contributions.</strong>
+1. <strong>Problem formalization and open benchmark.</strong> We are, to our knowledge, the first to formalize config-only zero-shot cross-region CIF prediction, and we release a 29-region leave-one-region-out (LORO) benchmark spanning three jurisdictions (AU NEM, UK DNO, US EIA-930) and the full renewable-penetration spectrum ($\bar{rs}\in[0.06, 0.91]$), evaluated over 5 seeds with a unified protocol.
+2. <strong>Physics-decomposed architecture.</strong> TransCIF couples a config-conditioned linear-decomposition share predictor, an adaptive persistence gate, and a fixed linear physics layer. The design is deliberately low-capacity: we show complex encoders overfit source-domain temporal idioms and generalize <em>worse</em> zero-shot.
+3. <strong>Theory validated at scale.</strong> Theorem 1 (exact error propagation identity through the physics layer, amplification constant $L_T = |ef_r - ef_{nr}|$) is verified to $1.3\times10^{-4}$ on 29 real regions; the amplification term explains 71% of CIF error on average and $L_T\cdot\varepsilon_{rs}$ predicts realized error with $R^2=0.84$. Theorem 2's transfer-difficulty analysis shows a model-weighted effective config distance predicts the zero-shot ratio ($r=0.58$, $p=0.001$) with an interpretable U-shape in $\bar{rs}$ ($R^2=0.66$).
+4. <strong>Comprehensive empirical case.</strong> Median transfer-efficiency ratio 1.24 vs. a supervised PatchTST upper bound (1.08 with the training-free ZS+ calibration, which beats persistence in 29/29 regions and outperforms the supervised upper bound itself in 6, delivering the lowest cross-domain MAE in 27/29 regions); 5/9 wins against zero-shot CarbonCast (8/9 with ZS+ at mean ratio 0.73), which degrades up to 2.4× cross-domain; label-free-valid conformal intervals in 25/29 regions; temporal-OOD robustness (ZS: 2–12% degradation; ZS+: none measurable); and a deployment warm-up study showing supervised methods need 30 to &gt;270 days to match day-one zero-shot accuracy.
+5. <strong>Five-prior fusion with differentiable joint calibration.</strong> We fuse five architecturally distinct zero-shot priors (retrieval, physics-invariant, causal, in-context, hierarchical) and make the test-time calibration <em>differentiable</em> — a soft-attention ZS+ plus an adversarial-persistence loss — then make every direction model torch-native so its prediction head receives gradient end-to-end. A drop-one ablation shows the learned meta-learner is dead weight at pure zero-shot (equal-weight fusion matches it), localizing the lever as <em>differentiability</em>, not fusion topology: end-to-end head finetuning reaches a median MAE of <strong>39.53 gCO₂/kWh</strong> (sub-40), a significant +1.62 improvement over the frozen-direction proxy (Holm-corrected Wilcoxon $p=5{\times}10^{-14}$, 79% pair-wise win), competitive with the supervised PatchTST reference (41.47; 61% pair-wise win), with the gain concentrated on the high-volatility grids the zero-shot tiers cannot crack.</p>
+<p>We report negative and mixed results alongside positive ones: TransCIF loses to persistence in fossil-dominated, near-constant-CIF regions (where persistence is nearly optimal for <em>every</em> method), and CarbonCast remains stronger when the target's distribution happens to resemble the source pool. The claim is not universal dominance; it is that <strong>zero data can buy ~80% of supervised accuracy, predictably and with calibrated uncertainty</strong> — and that we can characterize <em>when</em> it cannot.</p>
+<hr />
+<h2 id="2-related-work">2. Related Work</h2>
+<p><strong>Carbon intensity forecasting.</strong> CarbonCast (Maji et al., BuildSys'22) is the reference open system: a two-tier CNN-LSTM pipeline forecasting source-level generation and synthesizing CIF, trained per region on local history. Recent deep architectures (e.g., joint local-temporal / cross-variable dependency networks, AAAI'26) improve within-region accuracy further but retain the one-region-one-model paradigm. We use CarbonCast in <em>both</em> modes — supervised on the target (as the domain upper bound) and trained on sources only (as the zero-shot straw-man it was never designed to be) — to quantify precisely what breaks under domain shift (Section 6.5).</p>
+<p><strong>Cross-region and data-scarce CIF.</strong> Foundation-model approaches (e.g., dual-graph carbon-domain foundation models with metadata-driven fine-tuning, WWW'26) reduce but do not eliminate target-domain data needs: fine-tuning on target history remains their critical ingredient. Our setting is strictly harder — zero target training data — and our answer is structural (physics layer + config conditioning) rather than scale-based. The two are complementary: our physics layer could wrap any foundation-model share predictor.</p>
+<p><strong>Domain generalization.</strong> Classical DG theory (Ben-David et al., 2010; Mansour et al., 2009) bounds target risk by source risk plus a distribution divergence. Our Theorem 2 instantiates this structurally, but our empirical finding is sharper and domain-specific: in config space, the <em>relevant</em> divergence is not nearest-source distance but a model-weighted effective distance, and difficulty is U-shaped in renewable penetration — targets at the boundary of the config spectrum (very low or very high $\bar{rs}$) are hard even when a near neighbor exists, because <em>boundary</em> position limits the diversity of relevant training signal.</p>
+<p><strong>Time-series transfer and simplicity.</strong> DLinear's demonstration that linear decomposition rivals transformers within-domain (Zeng et al., 2023) is amplified in our zero-shot setting: we find the capacity-generalization tradeoff tips decisively toward low-capacity models when the target distribution is never seen (Section 6.4, encoder comparison). PatchTST with RevIN (Nie et al., 2023) serves as our supervised upper bound.</p>
+<p><strong>Conformal prediction.</strong> Split-conformal methods (Lei et al., 2018) give distribution-free finite-sample coverage. We show per-horizon split-conformal calibration on a short target <em>calibration stream</em> (labels used only for interval width, never for model weights) yields valid coverage in 25/29 zero-shot regions — probabilistic output essentially for free (Section 6.6).</p>
+<hr />
+<h2 id="3-problem-formulation">3. Problem Formulation</h2>
+<p><strong>Setting.</strong> Let $\mathcal{R} = {R_1,\dots,R_N}$ be a pool of electricity regions. Each region $R_i$ has an hourly renewable-share series $rs^i_t \in [0,1]$, an hourly carbon-intensity series $CIF^i_t$, and a static configuration $c_i = (\bar{rs}<em>i,\ ef</em>{nr,i}/1000) \in \mathbb{R}^2$, where $\bar{rs}<em>i$ is the long-run mean renewable share and $ef</em>{nr,i}$ the generation-weighted non-renewable emission factor (gCO$<em>2$/kWh). The renewable factor $ef</em>{r,i}$ is likewise tabulated (near zero for wind/solar/hydro-dominated fleets).</p>
+<p><strong>Physics layer.</strong> For a two-category split, CIF reconstruction from the share is exactly linear:
+$$\mathrm{CIF}<em>i(s) \;=\; s\cdot ef</em>{r,i} \;+\; (1-s)\cdot ef_{nr,i}. \tag{1}$$
+The coefficients are looked up, never estimated.</p>
+<p><strong>Task (config-only zero-shot LORO).</strong> For each target $R_j$: train a single share predictor $h_\theta$ on windows from all <em>other</em> regions ${R_i}<em>{i\neq j}$ (each window paired with its region's config $c_i$). At test time, predict $\hat s</em>{t+1:t+H} = h_\theta(rs^j_{t-L+1:t},\, c_j)$ and output $\widehat{CIF} = \mathrm{CIF}_j(\hat s)$. The model never sees any target series during training; the target contributes only its two config scalars and its live input stream.</p>
+<p><strong>Protocol.</strong> $L=336$ h (14 days), $H=24$ h. Each region's chronological final 20% is the test period for all methods (supervised baselines train on the first 80% of the <em>target</em>; zero-shot methods never use it). Metrics: MAE, RMSE, sMAPE on CIF; CRPS and empirical coverage for probabilistic outputs; 5 seeds, mean ± std.</p>
+<p><strong>Information-set tiers.</strong> We evaluate three deployment tiers defined by how much target-domain information is available, plus a supervised reference:</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Symbol</th>
+<th>Target labels used</th>
+<th>Calibration source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zero-shot</td>
+<td>$\mathcal{I}_0$</td>
+<td><strong>0 h</strong></td>
+<td>None (config + rs stream only)</td>
+</tr>
+<tr>
+<td>Test-time calibration</td>
+<td>$\mathcal{I}_+$</td>
+<td><strong>0 h</strong> (future labels)</td>
+<td>Observable CIF history (no future labels, §4.5)</td>
+</tr>
+<tr>
+<td>Joint calibration</td>
+<td>$\mathcal{I}_J$</td>
+<td><strong>288 h</strong> (12 days)</td>
+<td>First 12 test-origin days; eval on disjoint next 12 (§6.10)</td>
+</tr>
+<tr>
+<td>Supervised (ref.)</td>
+<td>$\mathcal{I}_S$</td>
+<td>~7008 h (80% of year)</td>
+<td>Full target training history</td>
+</tr>
+</tbody>
+</table>
+<p>The tiers are <em>nested</em> ($\mathcal{I}<em>0 \subset \mathcal{I}</em>+ \subset \mathcal{I}<em>J$): each tier strictly adds information. At $\mathcal{I}_0$ no target CIF is ever observed; at $\mathcal{I}</em>+$ the target's <em>past</em> CIF stream is observed but never used to update model weights; at $\mathcal{I}_J$ a small calibration set updates a differentiable fusion head (§6.10). The supervised reference trains on ~24× more target data than $\mathcal{I}_J$.</p>
+<p><strong>Headline metric.</strong> The <strong>transfer-efficiency ratio</strong> at each tier: $\rho_j^{(\cdot)} = \mathrm{MAE}^{(\cdot)}_j / \mathrm{MAE}^{Sup^<em>}_j$, where $Sup^</em>$ is the strongest supervised baseline (PatchTST). We report $\rho$ (ZS), $\rho^+$ (ZS+), and $\rho^J$ (Joint) to make explicit what each tier of observability buys.</p>
+<hr />
+<h2 id="4-methodology">4. Methodology</h2>
+<h3 id="41-design-principle-transfer-what-is-invariant-condition-on-what-is-not-fall-back-when-neither-holds">4.1 Design principle: transfer what is invariant, condition on what is not, fall back when neither holds</h3>
+<p>The architecture allocates each source of cross-region variation to the mechanism best suited to absorb it:</p>
+<table>
+<thead>
+<tr>
+<th>Variation source</th>
+<th>Mechanism</th>
+<th>Cost at deployment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Absolute CIF scale ($ef_{nr}$: 208–1160 across regions)</td>
+<td>Physics layer (Eq. 1), exact</td>
+<td>1 config lookup</td>
+</tr>
+<tr>
+<td>Share-dynamics shift with penetration level</td>
+<td>Config-conditioned bias + config-weighted sampling</td>
+<td>1 config scalar</td>
+</tr>
+<tr>
+<td>Residual, uncovered dynamics</td>
+<td>Adaptive persistence gate</td>
+<td>none (input statistics)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-adaptivepersistdlinear-config-conditioned-share-predictor">4.2 AdaptivePersistDLinear: config-conditioned share predictor</h3>
+<p>The backbone is a DLinear-style trend/seasonal decomposition over the 336-h input window $x$:
+$$\text{trend} = \mathrm{AvgPool}<em>{25}(x), \qquad \text{seasonal} = x - \text{trend},$$
+$$\hat s^{\,\text{model}} = \sigma\big(W</em>{tr}\,\text{trend} + W_{se}\,\text{seasonal} + \mathrm{MLP}<em>{\text{cfg}}(c)\big) \in [0,1]^{H}, \tag{2}$$
+where $\mathrm{MLP}</em>{\text{cfg}}: \mathbb{R}^2 \to \mathbb{R}^H$ (2→16→24) injects a config-dependent bias into the horizon profile — e.g., shifting the predicted diurnal amplitude for high-solar regions. The sigmoid enforces the physical range of a share.</p>
+<p><strong>Adaptive persistence gate.</strong> A second head consumes the config plus two input statistics (48-h recent mean and std of the share stream):
+$$g = \sigma\big(\mathrm{MLP}<em>{\text{gate}}(c,\ \mu</em>{48},\ \sigma_{48})\big) \in (0,1), \qquad \hat s = g\cdot x_{-H:} + (1-g)\cdot \hat s^{\,\text{model}}. \tag{3}$$
+The gate is trained end-to-end with the backbone; no supervision on $g$ itself. Learned behavior is physically interpretable (Section 6.4): flat fossil-heavy inputs drive $g$ up (persistence is near-optimal there), strong diurnal-cycle regions drive $g$ down (the pattern is learnable).</p>
+<p><strong>Capacity.</strong> ~18k parameters total. This is a feature: Section 6.4 shows a deep FiLM encoder with 30× the capacity is uniformly worse zero-shot.</p>
+<h3 id="43-config-weighted-source-sampling">4.3 Config-weighted source sampling</h3>
+<p>Not all source regions are equally relevant to a target. Training windows from source $R_i$ receive weight
+$$w_i \;=\; \frac{1}{|\bar{rs}_i - \bar{rs}_j| + 0.05}, \tag{4}$$
+normalized to mean 1 over the training set, inside a weighted L1 loss. This focuses gradient signal on sources whose penetration regime matches the target's — the single largest ablation contributor (+18.5% MAE when removed, Section 6.4). Note Eq. 4 uses only the target's <em>config</em>, preserving the zero-data property.</p>
+<p><strong>Training.</strong> Adam (lr $10^{-3}$), cosine schedule with 15-epoch warmup, 150 epochs, batch 512, gradient clipping 1.0, weighted L1 loss on the share. One model per LORO fold; identical hyperparameters for all 29 folds.</p>
+<h3 id="44-probabilistic-extension-per-horizon-split-conformal">4.4 Probabilistic extension: per-horizon split conformal</h3>
+<p>After deployment, the first available target observations form a calibration stream (no model weights are updated). For each horizon step $t \in {1..H}$ and miscoverage $\alpha$, the halfwidth is the $\lceil(1-\alpha)(n+1)\rceil/n$ empirical quantile of absolute residuals at that step:
+$$q_t = \mathrm{Quantile}<em>{1-\alpha}\big({|CIF</em>{s+t} - \widehat{CIF}<em>{s+t}|}</em>{s \in \text{cal}}\big), \qquad \hat C_t = [\widehat{CIF}_t - q_t,\ \widehat{CIF}_t + q_t].$$
+Per-horizon calibration (rather than a single pooled score) tracks the growth of uncertainty with lead time, letting interval widths widen with horizon instead of inheriting the worst-case step's quantile (Section 6.6).</p>
+<h3 id="45-transcif-zs-training-free-test-time-calibration">4.5 TransCIF-ZS+: training-free test-time calibration</h3>
+<p>The config-only model of Sections 4.2–4.3 (TransCIF-ZS) uses <em>zero</em> target observations — the cleanest possible transfer protocol, and the variant we use to validate the theory. In deployment, however, the target's own observation stream becomes available immediately after day 0, and it can be exploited <em>without any training</em> on target data. TransCIF-ZS+ applies three closed-form corrections at each forecast origin $t_0$, each using only observations up to $t_0$:</p>
+<p><strong>(i) Level anchoring</strong> re-centers the predicted share profile onto the recently observed level, removing the cross-region level bias that dominates transfer error at the extremes of the config spectrum:
+$$\hat s^{\,a} = \mathrm{clip}\big(\hat s - \overline{\hat s} + \bar{rs}_{[t_0-24,\,t_0)},\ 0,\ 1\big).$$</p>
+<p><strong>(ii) Physics-residual correction</strong> is a direct empirical estimator of Term ② in Theorem 1: the recent mean gap between measured CIF and the two-category formula evaluated at the <em>observed</em> share,
+$$\hat\delta = \tfrac{1}{48}\textstyle\sum_{u=t_0-48}^{t_0-1}\big(CIF_u - \mathrm{CIF}(rs_u)\big),$$
+is added to the reconstructed forecast. Theorem 1 guarantees this removes the learner-independent error component wherever $\delta_t$ is locally stationary.</p>
+<p><strong>(iii) Self-validated multi-branch fusion with rolling configuration selection</strong> blends the corrected model branch with training-free reference branches — lag-24h CIF persistence, a 7-day same-hour climatology, and (optionally) a 4-week same-weekday climatology — lead-by-lead. Each branch $b$ is backtested on the last $K$ fully observed 24-h blocks, yielding <em>per-lead</em> mean absolute errors $\bar e_{b,h}$ at every horizon step $h \in {1..H}$, and the branches are fused with inverse-power precision weights normalized by the per-lead best branch:
+$$\widehat{CIF}^{\,+}<em>{t_0+h} = \sum_b w</em>{b,h}\,\widehat{CIF}^{\,b}<em>{t_0+h}, \qquad w</em>{b,h} \;\propto\; \Big(\bar e_{b,h}\,/\,\min\nolimits_{b'}\bar e_{b',h}\Big)^{-\gamma};$$
+for two branches and $\gamma=2$ this reduces exactly to inverse-variance weighting under a Gaussian error model: whichever branch has recently been more precise <em>at a given lead</em> receives proportionally more weight at exactly that lead — persistence typically dominates the first few hours after the origin, the model and the climatologies the diurnal-cycle leads. The fusion <em>configuration</em> itself — which branches enter, the sharpness $\gamma$, and the backtest depth $K$ — is re-selected at every forecast origin from a fixed three-entry menu (a default model+persistence+climatology blend with $\gamma{=}2.5$, $K{=}28$; the same plus the weekly climatology; and a conservative two-branch model+persistence blend with $\gamma{=}2$, $K{=}7$) by <em>replaying</em> all menu entries over the 56 most recent observed days strictly before the origin. Replayed daily MAEs are compared under two aggregations at once — the arithmetic mean, which is dominated by hard days, and the log-mean $\sum_d \log(1+e_d)$, which detects a systematic everyday edge — and a candidate displaces the default only if it wins by a 1.5% relative margin on one aggregation without losing by more than the margin on the other. The selector consumes only the target's observable past — the identical information set persistence uses, with no access to test labels and one global hyperparameter setting across all 29 regions — so each grid recruits the configuration its own recent history supports: demand-driven grids elect the climatology-augmented blends, highly renewable grids the conservative blend. On day 0, when no backtest blocks exist, the default configuration applies with equal weights and ramps to fully self-validated weighting within days (Section 6.8).</p>
+<p>All three steps are gradient-free and model-agnostic; per origin they add $O(K)$ forward passes plus replays of cached branch forecasts. ZS+ preserves the zero-target-<em>training</em> property: no parameter of the network ever sees target data. We report ZS and ZS+ side by side throughout — ZS isolates what config-conditioning alone achieves (the scientific claim), ZS+ is what a practitioner would actually deploy.</p>
+<hr />
+<h2 id="5-theory">5. Theory</h2>
+<h3 id="51-theorem-1-exact-error-propagation-through-the-physics-layer">5.1 Theorem 1: exact error propagation through the physics layer</h3>
+<p><strong>Theorem 1.</strong> <em>For any predictor $\hat s_t$ of the renewable share, the CIF error under reconstruction (1) satisfies the exact identity</em>
+$$\widehat{CIF}<em>t - CIF_t \;=\; \underbrace{(\hat s_t - s_t)\,(ef_r - ef</em>{nr})}<em>{\text{Term ① (amplification)}} \;+\; \underbrace{\delta_t}</em>{\text{Term ② (physics residual)}},$$
+<em>where $\delta_t := \mathrm{CIF}(s_t) - CIF_t$ is the gap between the two-category linear formula evaluated at the true share and the measured CIF (imports, losses, sub-fuel-mix heterogeneity). Consequently $|\widehat{CIF}<em>t - CIF_t| \le L_T\,|\hat s_t - s_t| + |\delta_t|$ with $L_T := |ef_r - ef</em>{nr}|$.</em></p>
+<p><em>Proof.</em> $\widehat{CIF}<em>t - CIF_t = [\mathrm{CIF}(\hat s_t) - \mathrm{CIF}(s_t)] + [\mathrm{CIF}(s_t) - CIF_t]$; linearity of (1) collapses the first bracket to $(\hat s_t - s_t)(ef_r - ef</em>{nr})$. $\blacksquare$</p>
+<p>Three consequences. (i) <strong>Architecture-agnostic attribution:</strong> any share-based pipeline's CIF error separates into a measurable share-error term with a <em>known, region-specific</em> gain $L_T$, plus a physics residual independent of the learner. (ii) <strong>Difficulty ranking for free:</strong> at equal share error, a region with $L_T = 1160$ (VIC1) suffers 5.6× the CIF error of one with $L_T = 208$ — before any model is trained. (iii) <strong>Optimization target:</strong> minimizing share L1 loss directly minimizes the controllable part of the CIF bound; the residual $\delta_t$ is a data property, not a modeling failure.</p>
+<p><strong>Empirical validation (29 regions).</strong> The identity holds to machine precision: max residual $1.3\times10^{-4}$ gCO$<em>2$/kWh across all regions and test windows. Term ① accounts for <strong>71.3%</strong> of total CIF error on average (range 36–98%), and the bound is <em>predictively useful</em>: across regions, $L_T \cdot \varepsilon</em>{rs}$ correlates with realized CIF MAE at $r = 0.914$ ($R^2 = 0.835$). Figures: <code>figures/theorem1_error_propagation.png</code>, <code>figures/theorem1_lt_amplification.png</code>.</p>
+<h3 id="52-theorem-2-what-governs-transfer-difficulty">5.2 Theorem 2: what governs transfer difficulty</h3>
+<p>Classical DG bounds give $\varepsilon_T(h) \le \varepsilon_S(h) + \mathrm{disc}(P_S, P_T) + \lambda^<em>$; coupling with Theorem 1 bounds target CIF error by $L_T$ times this quantity plus the residual term. As in prior work, the divergence terms are not directly computable; the scientific content is </em>which observable proxy of $\mathrm{disc}(P_S,P_T)$ actually predicts realized transfer difficulty*. We test four candidates against the measured zero-shot ratio $\rho_j$ on all 29 folds:</p>
+<table>
+<thead>
+<tr>
+<th>Config-space proxy</th>
+<th>Correlation with $\rho_j$</th>
+<th>$p$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nearest-source distance $\min_i \lvert\bar{rs}_i - \bar{rs}_j\rvert$</td>
+<td>$-0.17$</td>
+<td>0.37 (n.s.)</td>
+</tr>
+<tr>
+<td>Distance to source centroid</td>
+<td>$+0.29$</td>
+<td>0.12 (n.s.)</td>
+</tr>
+<tr>
+<td>Local source density</td>
+<td>$-0.07$</td>
+<td>0.73 (n.s.)</td>
+</tr>
+<tr>
+<td><strong>Model-weighted effective distance</strong> $d_{\mathrm{eff}}(j) = \sum_i w_i \lvert\bar{rs}_i-\bar{rs}_j\rvert / \sum_i w_i$, $w_i$ from Eq. 4</td>
+<td>$\mathbf{+0.58}$</td>
+<td><strong>0.001</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The <em>nearest-neighbor</em> intuition fails outright — a cluster of mutually close fossil-heavy US regions (FPL/PJM/ISNE, $\bar{rs}&lt;0.14$) all transfer poorly despite near neighbors, because they sit at the <em>edge</em> of the config spectrum. The quantity that matters is the effective distance under the same weighting the model itself uses (Eq. 4): it measures how much <em>relevant, diverse</em> training mass exists near the target. Complementarily, a quadratic fit of $\rho_j$ against $\bar{rs}_j$ achieves $R^2 = 0.662$ with vertex at $\bar{rs} = 0.582$: <strong>transfer difficulty is U-shaped in renewable penetration</strong>, easiest for mid-penetration targets (which sit inside the source spectrum) and hardest at either extreme. This yields an actionable pre-deployment rule: a new region's expected zero-shot quality can be estimated from its config <em>alone</em>, before any forecast is issued. Figure: <code>figures/theorem2_config_distance.png</code>.</p>
+<p><strong>Honest scope.</strong> Theorem 1 is exact and verified. The Theorem 2 analysis is a <em>validated empirical law</em> about which structural quantity tracks the (uncomputable) divergence term — not a numerically tight bound.</p>
+<hr />
+<h2 id="6-experiments">6. Experiments</h2>
+<h3 id="61-setup">6.1 Setup</h3>
+<p><strong>Data (29 regions, 3 jurisdictions).</strong> AU NEM: QLD1, NSW1, VIC1, SA1 (AEMO, 2023, hourly). UK: 17 DNO regions incl. the GB aggregate (National Grid ESO Carbon Intensity API). US: 8 EIA-930 balancing authorities (FPL, PJM, ISNE, MISO, NYIS, ERCO, CISO, BPAT). Mean renewable share spans 0.057 (US_FPL) to 0.906 (UK_01 North Scotland); $ef_{nr}$ spans 208–1160 gCO$_2$/kWh — the full spectrum of modern grid configurations.</p>
+<p><strong>Baselines.</strong> <em>Supervised (target 80% history):</em> PatchTST + RevIN (strongest; 300 epochs, cosine warmup), DLinear-Direct, DLinear-RS (share-based supervised), CarbonCast CNN-LSTM (faithful PyTorch port of the official architecture: Conv1D(64,k7)→MaxPool→Conv1D(32,k5)→Flatten→RepeatVector→LSTM(64)→Dropout→Dense, with min-max scaling as in the official <code>common.scaleDataset</code>), GBRT. <em>Zero-shot:</em> CarbonCast-ZS (trained on the 28 sources, source normalization statistics — the honest deployment scenario), TransCIF (ours). <em>Floor:</em> persistence (lag-24h).</p>
+<h3 id="62-main-result-three-information-set-tiers-on-the-29-region-loro-benchmark">6.2 Main result: three information-set tiers on the 29-region LORO benchmark</h3>
+<p>We organize results by <strong>information set</strong> — the data available about the target region at
+deployment — to make explicit what each tier of observability buys:</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Protocol</th>
+<th>Target labels used</th>
+<th style="text-align: right;">Median MAE</th>
+<th>vs PatchTST-sup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ZS</strong></td>
+<td>Config-only zero-shot</td>
+<td>0 hours</td>
+<td style="text-align: right;">52.1</td>
+<td>1.24× (ratio $\rho$)</td>
+</tr>
+<tr>
+<td><strong>ZS+</strong></td>
+<td>+ test-time calibration</td>
+<td>0 hours (observable stream only)</td>
+<td style="text-align: right;"><strong>46.88</strong></td>
+<td><strong>1.085×</strong></td>
+</tr>
+<tr>
+<td><strong>Joint</strong></td>
+<td>+ differentiable calibration fine-tuning</td>
+<td>288 h (12 days)</td>
+<td style="text-align: right;"><strong>39.53</strong></td>
+<td><strong>0.95×</strong></td>
+</tr>
+<tr>
+<td>PatchTST-sup</td>
+<td>Supervised reference</td>
+<td>~7008 h (80% of year)</td>
+<td style="text-align: right;">41.47</td>
+<td>1.00×</td>
+</tr>
+</tbody>
+</table>
+<p align="center"><img src="../../figures/information_set_tiers.png" width="70%"></p>
+<p align="center"><em>Figure 1: Information-set tier ladder. Each tier adds target-domain information (0 → 0-observable → 288 h labels), and median MAE decreases monotonically from ZS (52.1) through ZS+ (46.88) to Joint (39.53), the latter surpassing the PatchTST supervised reference (41.47).</em></p>
+
+<p><strong>Table 1: Zero-shot TransCIF (ZS: config-only; ZS+: with test-time calibration, §4.5) vs. supervised PatchTST and persistence (CIF MAE, gCO$_2$/kWh; 5 seeds). $\rho$ = ZS/PatchTST; $\rho_P$ = ZS/persistence; $\rho^+, \rho_P^+$ analogous for ZS+. Sorted by $\bar{rs}$.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>$\bar{rs}$</th>
+<th>Persist</th>
+<th>PatchTST (sup)</th>
+<th>TransCIF (ZS)</th>
+<th>$\rho$</th>
+<th>$\rho_P$</th>
+<th>TransCIF (ZS+)</th>
+<th>$\rho^+$</th>
+<th>$\rho_P^+$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US_FPL</td>
+<td>0.06</td>
+<td>13.4</td>
+<td>13.9</td>
+<td>35.7 ± 5.7</td>
+<td>2.58</td>
+<td>2.67</td>
+<td>12.9 ± 0.0</td>
+<td><strong>0.93</strong></td>
+<td><strong>0.96</strong></td>
+</tr>
+<tr>
+<td>US_PJM</td>
+<td>0.07</td>
+<td>15.6</td>
+<td>12.8</td>
+<td>39.8 ± 6.6</td>
+<td>3.11</td>
+<td>2.55</td>
+<td>14.1 ± 0.0</td>
+<td>1.10</td>
+<td><strong>0.90</strong></td>
+</tr>
+<tr>
+<td>US_ISNE</td>
+<td>0.14</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>38.4 ± 3.3</td>
+<td>2.96</td>
+<td>2.41</td>
+<td>15.4 ± 0.0</td>
+<td>1.18</td>
+<td><strong>0.96</strong></td>
+</tr>
+<tr>
+<td>US_MISO</td>
+<td>0.18</td>
+<td>55.6</td>
+<td>41.2</td>
+<td>54.7 ± 2.3</td>
+<td>1.33</td>
+<td><strong>0.98</strong></td>
+<td>46.7 ± 0.1</td>
+<td>1.13</td>
+<td><strong>0.84</strong></td>
+</tr>
+<tr>
+<td>QLD1</td>
+<td>0.18</td>
+<td>29.1</td>
+<td>30.3</td>
+<td>51.1 ± 10.1</td>
+<td>1.69</td>
+<td>1.75</td>
+<td>27.0 ± 0.1</td>
+<td><strong>0.89</strong></td>
+<td><strong>0.93</strong></td>
+</tr>
+<tr>
+<td>US_NYIS</td>
+<td>0.26</td>
+<td>14.6</td>
+<td>12.0</td>
+<td>16.8 ± 1.0</td>
+<td>1.40</td>
+<td>1.15</td>
+<td>13.5 ± 0.0</td>
+<td>1.13</td>
+<td><strong>0.93</strong></td>
+</tr>
+<tr>
+<td>UK_14_SE_England</td>
+<td>0.28</td>
+<td>50.7</td>
+<td>47.5</td>
+<td>58.7 ± 0.2</td>
+<td>1.24</td>
+<td>1.16</td>
+<td>50.4 ± 0.0</td>
+<td>1.06</td>
+<td><strong>1.00</strong></td>
+</tr>
+<tr>
+<td>UK_07_South_Wales</td>
+<td>0.29</td>
+<td>76.2</td>
+<td>74.1</td>
+<td>73.0 ± 1.1</td>
+<td><strong>0.99</strong></td>
+<td><strong>0.96</strong></td>
+<td>71.6 ± 0.4</td>
+<td><strong>0.97</strong></td>
+<td><strong>0.94</strong></td>
+</tr>
+<tr>
+<td>NSW1</td>
+<td>0.29</td>
+<td>53.7</td>
+<td>46.3</td>
+<td>49.5 ± 0.7</td>
+<td>1.07</td>
+<td><strong>0.92</strong></td>
+<td>46.4 ± 0.3</td>
+<td>1.00</td>
+<td><strong>0.86</strong></td>
+</tr>
+<tr>
+<td>UK_12_South_England</td>
+<td>0.31</td>
+<td>57.4</td>
+<td>53.1</td>
+<td>65.0 ± 0.5</td>
+<td>1.22</td>
+<td>1.13</td>
+<td>54.9 ± 0.1</td>
+<td>1.03</td>
+<td><strong>0.96</strong></td>
+</tr>
+<tr>
+<td>UK_11_SW_England</td>
+<td>0.32</td>
+<td>53.0</td>
+<td>51.2</td>
+<td>53.3 ± 1.6</td>
+<td>1.04</td>
+<td>1.01</td>
+<td>49.4 ± 0.1</td>
+<td><strong>0.96</strong></td>
+<td><strong>0.93</strong></td>
+</tr>
+<tr>
+<td>US_ERCO</td>
+<td>0.33</td>
+<td>64.8</td>
+<td>48.1</td>
+<td>59.1 ± 0.2</td>
+<td>1.23</td>
+<td><strong>0.91</strong></td>
+<td>59.8 ± 0.2</td>
+<td>1.24</td>
+<td><strong>0.92</strong></td>
+</tr>
+<tr>
+<td>VIC1</td>
+<td>0.34</td>
+<td>116.8</td>
+<td>91.6</td>
+<td>104.1 ± 2.4</td>
+<td>1.14</td>
+<td><strong>0.89</strong></td>
+<td>98.2 ± 0.3</td>
+<td>1.07</td>
+<td><strong>0.84</strong></td>
+</tr>
+<tr>
+<td>US_CISO</td>
+<td>0.40</td>
+<td>27.4</td>
+<td>26.5</td>
+<td>40.5 ± 1.9</td>
+<td>1.53</td>
+<td>1.48</td>
+<td>25.3 ± 0.0</td>
+<td><strong>0.95</strong></td>
+<td><strong>0.92</strong></td>
+</tr>
+<tr>
+<td>UK_09_E_Midlands</td>
+<td>0.42</td>
+<td>91.8</td>
+<td>78.2</td>
+<td>96.6 ± 0.9</td>
+<td>1.24</td>
+<td>1.05</td>
+<td>84.4 ± 0.4</td>
+<td>1.08</td>
+<td><strong>0.92</strong></td>
+</tr>
+<tr>
+<td>UK_13_London</td>
+<td>0.42</td>
+<td>52.7</td>
+<td>52.7</td>
+<td>60.4 ± 0.1</td>
+<td>1.15</td>
+<td>1.14</td>
+<td>52.5 ± 0.2</td>
+<td><strong>1.00</strong></td>
+<td><strong>0.99</strong></td>
+</tr>
+<tr>
+<td>UK_17_Wales</td>
+<td>0.46</td>
+<td>73.0</td>
+<td>65.9</td>
+<td>69.5 ± 0.4</td>
+<td>1.06</td>
+<td><strong>0.95</strong></td>
+<td>67.9 ± 0.3</td>
+<td>1.03</td>
+<td><strong>0.93</strong></td>
+</tr>
+<tr>
+<td>UK_15_England</td>
+<td>0.52</td>
+<td>48.6</td>
+<td>44.0</td>
+<td>50.6 ± 0.6</td>
+<td>1.15</td>
+<td>1.04</td>
+<td>47.5 ± 0.2</td>
+<td>1.08</td>
+<td><strong>0.98</strong></td>
+</tr>
+<tr>
+<td>UK_18_GB</td>
+<td>0.56</td>
+<td>46.0</td>
+<td>41.2</td>
+<td>47.7 ± 0.7</td>
+<td>1.16</td>
+<td>1.04</td>
+<td>44.8 ± 0.2</td>
+<td>1.09</td>
+<td><strong>0.97</strong></td>
+</tr>
+<tr>
+<td>UK_08_W_Midlands</td>
+<td>0.58</td>
+<td>81.5</td>
+<td>66.9</td>
+<td>81.2 ± 1.3</td>
+<td>1.21</td>
+<td>0.00</td>
+<td>77.5 ± 0.1</td>
+<td>1.16</td>
+<td><strong>0.95</strong></td>
+</tr>
+<tr>
+<td>UK_10_E_England</td>
+<td>0.60</td>
+<td>61.1</td>
+<td>50.6</td>
+<td>58.3 ± 0.7</td>
+<td>1.15</td>
+<td><strong>0.95</strong></td>
+<td>56.9 ± 0.3</td>
+<td>1.12</td>
+<td><strong>0.93</strong></td>
+</tr>
+<tr>
+<td>UK_05_Yorkshire</td>
+<td>0.60</td>
+<td>50.0</td>
+<td>39.4</td>
+<td>47.2 ± 0.4</td>
+<td>1.20</td>
+<td><strong>0.94</strong></td>
+<td>45.8 ± 0.3</td>
+<td>1.16</td>
+<td><strong>0.92</strong></td>
+</tr>
+<tr>
+<td>SA1</td>
+<td>0.69</td>
+<td>68.1</td>
+<td>51.6</td>
+<td>64.3 ± 0.4</td>
+<td>1.25</td>
+<td><strong>0.95</strong></td>
+<td>60.5 ± 0.1</td>
+<td>1.17</td>
+<td><strong>0.89</strong></td>
+</tr>
+<tr>
+<td>UK_06_NW_Merseyside</td>
+<td>0.78</td>
+<td>54.4</td>
+<td>43.9</td>
+<td>51.8 ± 0.8</td>
+<td>1.18</td>
+<td><strong>0.95</strong></td>
+<td>51.5 ± 0.0</td>
+<td>1.17</td>
+<td><strong>0.95</strong></td>
+</tr>
+<tr>
+<td>US_BPAT</td>
+<td>0.78</td>
+<td>6.3</td>
+<td>6.0</td>
+<td>8.4 ± 0.1</td>
+<td>1.41</td>
+<td>1.34</td>
+<td>6.1 ± 0.0</td>
+<td>1.03</td>
+<td><strong>0.98</strong></td>
+</tr>
+<tr>
+<td>UK_03_NW_England</td>
+<td>0.81</td>
+<td>29.3</td>
+<td>21.5</td>
+<td>29.2 ± 0.6</td>
+<td>1.35</td>
+<td>1.00</td>
+<td>27.8 ± 0.1</td>
+<td>1.29</td>
+<td><strong>0.95</strong></td>
+</tr>
+<tr>
+<td>UK_16_Scotland</td>
+<td>0.88</td>
+<td>35.3</td>
+<td>28.2</td>
+<td>38.5 ± 1.4</td>
+<td>1.36</td>
+<td>1.09</td>
+<td>34.0 ± 0.2</td>
+<td>1.21</td>
+<td><strong>0.96</strong></td>
+</tr>
+<tr>
+<td>UK_02_S_Scotland</td>
+<td>0.90</td>
+<td>22.1</td>
+<td>17.9</td>
+<td>22.7 ± 0.8</td>
+<td>1.26</td>
+<td>1.03</td>
+<td>21.3 ± 0.1</td>
+<td>1.19</td>
+<td><strong>0.97</strong></td>
+</tr>
+<tr>
+<td>UK_01_N_Scotland</td>
+<td>0.91</td>
+<td>35.0</td>
+<td>32.8</td>
+<td>44.1 ± 2.2</td>
+<td>1.34</td>
+<td>1.26</td>
+<td>34.4 ± 0.3</td>
+<td>1.05</td>
+<td><strong>0.98</strong></td>
+</tr>
+<tr>
+<td><strong>Median</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>1.24</strong></td>
+<td><strong>1.04</strong></td>
+<td></td>
+<td><strong>1.08</strong></td>
+<td><strong>0.94</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reading Table 1.</strong> (i) <strong>Median $\rho = 1.24$</strong> (config-only ZS): with zero target data, TransCIF forecasts within 24% of a PatchTST trained on 10 months of the target's own history; 17/29 regions are within 1.25×, 24/29 within 1.5×. (ii) <strong>Persistence is beaten outright in 12/29 regions</strong> by ZS and matched (±5%) in 4 more — no supervised training data of any kind was used. (iii) <strong>ZS failures are structured, not random</strong>: the four worst ratios (US_FPL/PJM/ISNE ≥ 2.6, QLD1 1.7) are exactly the config-space-boundary regions Theorem 2 predicts (fossil-heavy $\bar{rs}&lt;0.19$, U-shape left arm); notably, these are also regions with near-constant CIF where even the supervised PatchTST barely beats persistence — the <em>absolute</em> stakes of the forecast are lowest exactly where zero-shot is weakest. (iv) <strong>ZS+ removes the boundary failure mode — and in six regions overshoots the supervised bound</strong>: the three fossil-heavy failure regions drop from $\rho \ge 2.6$ to 0.93–1.18 (US_FPL now outright <em>beats</em> the supervised PatchTST), the worst region across all 29 falls to $\rho^+ = 1.29$ (all 29 within 1.5×, 28/29 within 1.25×), and persistence is beaten in <strong>29/29 regions</strong> with median $\rho_P^+ = 0.94$ and worst case 0.995. Six regions — QLD1 (0.89), US_FPL (0.93), US_CISO (0.95), UK_11 (0.96), UK_07 (0.97), UK_13 (0.996) — end up <em>below</em> the supervised upper bound itself: the rolling-selected multi-branch fusion composes cross-region signal, local persistence, and climatology into a forecast no single supervised model matches. Mean MAE drops 14% over ZS (52.1 → 44.8). (v) <strong>ZS+ is also the best cross-domain method outright in 27/29 regions</strong>: on the four-way cross-domain leaderboard (persistence, CarbonCast-ZS, config-only ZS, ZS+) it attains the lowest MAE everywhere except US_MISO (CarbonCast-ZS lower by 1.1%) and US_ERCO (raw ZS lower by 1.2%) — in both, a 5-seed decision experiment confirmed the honest past-only selector cannot recover the gap without peeking at test labels. The mechanism is diagnostic, not incidental: level anchoring and residual correction empirically cancel the two error components Theorem 1 identifies (Term ① level bias and Term ②), which is precisely what dominates at the config-spectrum extremes, and the per-origin configuration re-selection spends its budget exactly where the theory says the transferable signal runs out.</p>
+<h3 id="63-supervised-baseline-context-4-region-au-deep-dive">6.3 Supervised baseline context (4-region AU deep-dive)</h3>
+<p>On the AU regions with the full baseline suite: PatchTST is the strongest supervised model in all 4 (30.7/46.8/92.3/50.6 for QLD1/NSW1/VIC1/SA1), ahead of DLinear-Direct by 5–10% and CarbonCast-supervised by 10–20%; GBRT trails badly. TransCIF-ZS achieves ratios of 1.08 (NSW1), 1.16 (VIC1), 1.26 (SA1) versus this upper bound — i.e., 80–93% of best-supervised accuracy at zero data cost — with QLD1 (2.36) as the documented boundary failure.</p>
+<h3 id="64-ablation-9-representative-regions-5-seeds">6.4 Ablation (9 representative regions × 5 seeds)</h3>
+<p><strong>Table 2: Ablation, mean CIF MAE over 9 regions (QLD1, NSW1, VIC1, SA1, UK_01, UK_07, US_MISO, US_ERCO, US_BPAT).</strong></p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>MAE</th>
+<th>Δ vs. Full</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full model</strong></td>
+<td><strong>53.6</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>w/o config-weighted sampling (uniform)</td>
+<td>63.5</td>
+<td>+18.5%</td>
+</tr>
+<tr>
+<td>w/o adaptive gate (fixed $g=0.5$)</td>
+<td>58.7</td>
+<td>+9.7%</td>
+</tr>
+<tr>
+<td>w/o config bias ($\mathrm{MLP}_{\text{cfg}}$ removed)</td>
+<td>58.5</td>
+<td>+9.3%</td>
+</tr>
+<tr>
+<td>w/o trend/seasonal decomposition (single linear)</td>
+<td>55.0</td>
+<td>+2.7%</td>
+</tr>
+<tr>
+<td>Direct-CIF oracle (CIF history as input, no physics)</td>
+<td>47.5</td>
+<td>−11.3%</td>
+</tr>
+</tbody>
+</table>
+<p>Every component contributes; config-weighted sampling is the largest single factor — corroborating Theorem 2's finding that <em>effective</em> source relevance drives transfer. The <strong>Direct-CIF oracle</strong> row requires careful reading: it consumes the target's CIF history as input, which is <em>unavailable by definition</em> in the config-only setting (CIF history presupposes the very emissions instrumentation whose absence motivates zero-shot deployment). Its −11.3% shows that when target CIF telemetry exists, direct modeling is better — the physics layer's value is precisely that it <em>enables</em> transfer when it does not. It is an upper reference, not an ablation variant.</p>
+<p><strong>ZS+ calibration ablation.</strong> Removing each test-time component of §4.5 in turn (same 9 regions × 5 seeds; Δ is the per-region mean relative increase vs. full ZS+):</p>
+<table>
+<thead>
+<tr>
+<th>ZS+ variant</th>
+<th>MAE</th>
+<th>Δ vs. full ZS+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ZS+ (all components)</strong></td>
+<td><strong>44.9</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>w/o self-validated fusion</td>
+<td>49.1</td>
+<td>+12.7%</td>
+</tr>
+<tr>
+<td>w/o rolling configuration selection (fixed default blend)</td>
+<td>45.5</td>
+<td>+1.0%</td>
+</tr>
+<tr>
+<td>legacy 2-branch fusion (model+persistence only, $K{=}7$)</td>
+<td>48.7</td>
+<td>+6.3%</td>
+</tr>
+<tr>
+<td>w/o residual correction</td>
+<td>45.0</td>
+<td>+0.8%</td>
+</tr>
+<tr>
+<td>w/o level anchoring</td>
+<td>45.1</td>
+<td>+0.6%</td>
+</tr>
+<tr>
+<td>Raw ZS (no calibration)</td>
+<td>53.4</td>
+<td>+39.8%</td>
+</tr>
+</tbody>
+</table>
+<p>The self-validated fusion is by far the largest single contributor (+12.7% per-region when removed): it is the step that redistributes trust between model, persistence, and climatology lead-by-lead. Its two design upgrades are separable: restricting the fusion to the legacy two-branch model+persistence blend costs +6.3% (the climatology branches and deeper backtest carry real signal), and freezing the menu to the default configuration — disabling the per-origin rolling selection — costs a further +1.0% on top of the full system. Anchoring and residual correction have small marginal per-region deltas (+0.6–0.8%) because a residual level bias left uncorrected simply shifts the backtest weights toward persistence — the fusion <em>absorbs</em> most of what they would otherwise contribute; they still matter most in the fossil-heavy boundary regions where the level bias is largest. No single component accounts for the +39.8% gap to raw ZS: the steps are complementary rather than redundant.</p>
+<p><strong>Capacity–generalization tradeoff.</strong> Replacing the linear backbone with a two-layer FiLM-conditioned deep encoder (~30× parameters) degrades every AU region (e.g., QLD1 51→65, SA1 64→102 in the pre-benchmark study): high-capacity encoders memorize source-domain temporal idioms that do not transfer. Zero-shot CIF is a regime where <strong>simplicity is the contribution</strong>.</p>
+<p><strong>Gate interpretability.</strong> Learned gate values track physical regime: QLD1 (flat coal-dominated input) $g\approx0.55$, VIC1 (high-volatility) $g\approx0.79$ — both leaning on persistence; SA1 (strong solar diurnal cycle) $g\approx0.24$, NSW1 $g\approx0.31$ — trusting the model where the pattern is learnable. The gate was never supervised on regime labels.</p>
+<p><strong>Config robustness.</strong> Perturbing the config inputs at deployment (simulating public-report inaccuracy): $\bar{rs}$ ±15% and $ef_{nr}$ ±20–40% leave win/loss outcomes unchanged in NSW1/VIC1/SA1 (SA1 is fully immune to ±40% $ef_{nr}$ scaling in share-space input, as $ef$ enters only the fixed output map). Public capacity-registry accuracy (±10%) is comfortably sufficient.</p>
+<p><strong>Architecture equalizer effect.</strong> A natural question is whether richer architectures further improve results. We tested four model variants on a 12-region × 3-seed LORO subset, each keeping the identical config, training protocol, and ZS+ calibration pipeline, varying only the backbone:</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th style="text-align: right;">ZS median MAE</th>
+<th style="text-align: right;">Δ vs flagship</th>
+<th style="text-align: right;">ZS+ median MAE</th>
+<th style="text-align: right;">Δ vs flagship</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flagship (AdaptivePersistDLinear)</td>
+<td style="text-align: right;">44.9</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">26.10</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td><strong>RegimeMoE</strong> (3 experts + config router)</td>
+<td style="text-align: right;"><strong>40.6</strong></td>
+<td style="text-align: right;"><strong>−4.2</strong></td>
+<td style="text-align: right;">26.10</td>
+<td style="text-align: right;">+0.00</td>
+</tr>
+<tr>
+<td>Weather-augmented (ERA5 side channel)</td>
+<td style="text-align: right;">46.5</td>
+<td style="text-align: right;">+1.7</td>
+<td style="text-align: right;">26.10</td>
+<td style="text-align: right;">−0.01</td>
+</tr>
+<tr>
+<td>RevIN-wrapped (instance normalization)</td>
+<td style="text-align: right;">60.2</td>
+<td style="text-align: right;">+15.4</td>
+<td style="text-align: right;">26.15</td>
+<td style="text-align: right;">+0.05</td>
+</tr>
+</tbody>
+</table>
+<p>The Regime MoE — whose softmax router exploits the fuel-augmented config vector to specialize one expert per fuel regime — improves pure ZS meaningfully (−4.2, 8/12 regions), with the largest gain on QLD1 (−12.1: solar+coal correctly routed to a dedicated expert). Yet <strong>all four variants converge to ZS+ median within 0.05 MAE</strong>. The ZS+ branch fusion acts as an <em>equalizer</em>: by backtesting each branch on the target's observable past and fusing lead-by-lead, it recovers the same calibrated output regardless of the ZS backbone's quality. RevIN hurts because the renewable-share series is already in $[0,1]$ with physically meaningful absolute level (the region's mean penetration), which instance normalization erases; the weather encoder is too simple (AvgPool+Linear) to capture the nonlinear irradiance→PV map. The positive finding is that <strong>config precision and architecture determine the cold-start (ZS) floor, while calibration data determines the ceiling</strong> — and the ceiling is architecture-independent.</p>
+<p align="center"><img src="../../figures/equalizer_effect.png" width="75%"></p>
+<p align="center"><em>Figure 2: The calibration equalizer effect. Four architecturally diverse backbones (orange bars) have ZS quality ranging from 40.6 (MoE) to 60.2 (RevIN), yet their ZS+ medians (green bars) all fall within a 0.05-MAE convergence band (shaded blue, centered at 26.10). The branch fusion performs adaptive per-origin model selection, neutralising backbone quality differences.</em></p>
+
+<p>The MoE variant's cold-start improvement is driven by the fuel-augmented config vector (Stage A), which resolves "false neighbour" pairs that the 2-scalar config cannot distinguish. The figure below visualizes the fuel-mix diversity that the router exploits:</p>
+<p align="center"><img src="../../figures/fuel_regime_clusters.png" width="85%"></p>
+<p align="center"><em>Figure 3: Fuel-mix composition of 26 regions (8 US + 18 UK), grouped by hierarchical cluster. Red brackets mark "false neighbour" pairs — regions with nearly identical mean renewable share but radically different fuel structure (e.g. ERCO wind-heavy vs MISO coal-heavy, both $\bar{rs}\approx 0.2$). The fuel-augmented config vector resolves these, and the MoE router specializes one expert per cluster.</em></p>
+
+<h3 id="65-why-carboncast-fails-cross-domain-phase-32">6.5 Why CarbonCast fails cross-domain (Phase 3.2)</h3>
+<p><strong>Table 3: CarbonCast supervised vs. zero-shot vs. TransCIF ZS/ZS+ (CIF MAE; 9 representative regions).</strong></p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>CC-Sup</th>
+<th>CC-ZS</th>
+<th>TransCIF-ZS</th>
+<th>TransCIF-ZS+</th>
+<th>CC degradation</th>
+<th>TC+/CC-ZS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US_FPL</td>
+<td>20.8</td>
+<td>24.9</td>
+<td>42.4</td>
+<td>12.8</td>
+<td>1.20×</td>
+<td><strong>0.51</strong></td>
+</tr>
+<tr>
+<td>US_MISO</td>
+<td>46.2</td>
+<td>46.2</td>
+<td>56.6</td>
+<td>46.6</td>
+<td>1.00×</td>
+<td>1.01</td>
+</tr>
+<tr>
+<td>QLD1</td>
+<td>35.6</td>
+<td>85.2</td>
+<td>53.7</td>
+<td>27.1</td>
+<td><strong>2.39×</strong></td>
+<td><strong>0.32</strong></td>
+</tr>
+<tr>
+<td>NSW1</td>
+<td>61.4</td>
+<td>97.9</td>
+<td>48.6</td>
+<td>46.2</td>
+<td><strong>1.59×</strong></td>
+<td><strong>0.47</strong></td>
+</tr>
+<tr>
+<td>VIC1</td>
+<td>110.1</td>
+<td>107.2</td>
+<td>102.1</td>
+<td>98.1</td>
+<td>0.97×</td>
+<td><strong>0.92</strong></td>
+</tr>
+<tr>
+<td>SA1</td>
+<td>58.6</td>
+<td>60.6</td>
+<td>64.3</td>
+<td>60.5</td>
+<td>1.03×</td>
+<td><strong>1.00</strong></td>
+</tr>
+<tr>
+<td>UK_07_S_Wales</td>
+<td>85.3</td>
+<td>74.2</td>
+<td>73.5</td>
+<td>70.9</td>
+<td>0.87×</td>
+<td><strong>0.96</strong></td>
+</tr>
+<tr>
+<td>UK_01_N_Scotland</td>
+<td>42.9</td>
+<td>43.8</td>
+<td>45.5</td>
+<td>34.1</td>
+<td>1.02×</td>
+<td><strong>0.78</strong></td>
+</tr>
+<tr>
+<td>US_BPAT</td>
+<td>6.7</td>
+<td>9.8</td>
+<td>8.6</td>
+<td>6.1</td>
+<td>1.47×</td>
+<td><strong>0.63</strong></td>
+</tr>
+</tbody>
+</table>
+<p>CarbonCast's zero-shot degradation is highly <em>variable</em> (0.87–2.39×, mean 1.28×): benign when the target's CIF distribution happens to overlap the source pool, catastrophic when it does not (QLD1 +139%, NSW1 +59% — the AU coal regions whose absolute CIF levels sit far from the UK/US-dominated source mass). TransCIF-ZS beats CarbonCast-ZS in 5/9 regions; the deployed <strong>ZS+ variant wins 8/9 at a mean ratio of 0.73</strong> (the sole loss is US_MISO at 1.01), including 0.32–0.51 in the very regions where CarbonCast collapses, and, critically, <strong>its worst case is bounded</strong> by the persistence gate and the self-validated fusion, whereas CarbonCast-ZS has no fallback: its worst regions are 2–2.4× its own supervised accuracy. Root causes (traced in <code>carboncast_analysis.py</code>): (a) min-max normalization statistics bake in source-domain CIF ranges; (b) the CNN-LSTM regresses <em>absolute</em> CIF trajectories, entangling transferable dynamics with region-specific levels; (c) no mechanism accepts target-side physical parameters. These are not implementation defects — they are consequences of the one-region-one-model design assumption our problem formulation removes. An important caveat: CC-ZS consumes target CIF <em>history</em> as an input channel even in "zero-shot" mode, so it operates with the same target-side information ZS+ uses (and strictly more than config-only ZS) and still loses the majority of comparisons.</p>
+<h3 id="66-probabilistic-extension-phase-31">6.6 Probabilistic extension (Phase 3.1)</h3>
+<p>Per-horizon split conformal on the <strong>zero-shot ZS+ point forecasts</strong> (the deployment variant), calibrated on the first half of each target's test stream and evaluated on the second: <strong>25/29 regions achieve valid 90% coverage</strong> (mean empirical coverage 0.952; the four misses are US_FPL and US_PJM, config-boundary regions, plus QLD1 and UK_16_Scotland, where the calibration and evaluation streams drift apart), 95% intervals average 0.975 coverage. Because ZS+ substantially lowers point error (mean point MAE 41.5 vs 52.0 for raw ZS), the same absolute interval widths correspond to a larger width-to-MAE ratio (mean 6.8×) — the intervals are honest rather than sharp, with near-diagonal reliability curves across nominal levels 0.5–0.95, and mean CRPS 95.2. Per-horizon calibration (rather than a single pooled score) tracks the growth of uncertainty with lead time. Figure: <code>figures/conformal_prediction.png</code>.</p>
+<h3 id="67-temporal-ood-phase-33">6.7 Temporal OOD (Phase 3.3)</h3>
+<p>Re-running the LORO protocol with earlier train/test boundaries (75/25 and 50/50 chronological splits, shifting the test season): for config-only ZS the mean ratio-vs-persistence rises from 1.09 (standard 80/20) to 1.11 (75/25, +2%) and 1.22 (50/50, +12%); for the deployed ZS+ variant it is essentially flat — 0.82 at all three split points (80/20, 75/25, 50/50) — because the test-time anchoring and the rolling configuration selection re-reference each origin to locally observed levels and recently winning blends regardless of how far the boundary shifts. The model does not exploit a season-specific idiom, and even predicting a full unseen half-year costs ZS only 12% and ZS+ nothing measurable. Figure: <code>figures/temporal_ood.png</code>.</p>
+<h3 id="68-deployment-case-study-the-warm-up-race-phase-34">6.8 Deployment case study: the warm-up race (Phase 3.4)</h3>
+<p>We simulate onboarding a new region on day 0 with config only, and race TransCIF's (constant, immediately available) zero-shot accuracy against a supervised DLinear retrained weekly as target data accumulates. Crossover day — the first day the supervised model matches zero-shot:</p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>QLD1</th>
+<th>NSW1</th>
+<th>VIC1</th>
+<th>SA1</th>
+<th>UK_07</th>
+<th>UK_01</th>
+<th>US_ERCO</th>
+<th>US_BPAT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crossover (days)</td>
+<td>30</td>
+<td><strong>&gt;270</strong></td>
+<td>60</td>
+<td>30</td>
+<td><strong>&gt;270</strong></td>
+<td>30</td>
+<td>180</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>Median 30–60 days; in 2/8 regions the supervised model <em>never catches up within the 9-month horizon</em> (NSW1, UK_07 — mid-penetration regions where cross-region signal is genuinely richer than a few months of local history). The ZS+ calibration is active here too: its self-validation ramps up within weeks of deployment and pulls ahead as the observation stream grows (mean over the 8 regions: 57.0 vs 59.9 at 30 days, 52.5 vs 57.4 at 60, 51.0 vs 56.9 at 90 — a widening 5–10% margin at zero training cost). Every carbon-aware decision in the gap is enabled by the zero-shot forecast that would otherwise not exist. Figure: <code>figures/deployment_warmup.png</code>.</p>
+<h3 id="69-difficulty-stratification-and-the-calibration-sweet-spot">6.9 Difficulty stratification and the calibration sweet spot</h3>
+<p><strong>Three-tier difficulty structure.</strong> The 29 regions decompose into three persistence-MAE tiers whose joint-trained MAE tracks the persistence floor:</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th style="text-align: right;">Persistence MAE</th>
+<th style="text-align: right;"># regions</th>
+<th style="text-align: right;">Joint MAE median</th>
+<th>Representative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy</td>
+<td style="text-align: right;">&lt; 30</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">15.7</td>
+<td>US_BPAT (5.9), US_FPL (9.0), US_PJM (14.2)</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td style="text-align: right;">30–60</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">40.8</td>
+<td>US_CISO (21.2), UK_London (53.3), US_MISO (40.4)</td>
+</tr>
+<tr>
+<td>Pathological</td>
+<td style="text-align: right;">&gt; 60</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">69.7</td>
+<td>VIC1 (113), SA1 (91), UK_09 (77), UK_08 (74)</td>
+</tr>
+</tbody>
+</table>
+<p>The pathological tier's joint MAE (69.7) nearly equals its persistence floor — even supervised calibration cannot pull these regions to the medium tier because their CIF signal has intrinsically high day-to-day volatility. VIC1 is a special case: its $ef_{nr}=1160$ (lignite-dominated) is 2× higher than any donor, making it an isolated outlier in configuration space with no transferable source. We recommend benchmark tables report all three tiers separately for honest comparison.</p>
+<p align="center"><img src="../../figures/difficulty_stratification.png" width="60%"></p>
+<p align="center"><em>Figure 4: Difficulty stratification. Persistence MAE vs joint MAE for 29 regions, colored by tier. Pathological regions (red) cluster near the diagonal — calibration barely helps. VIC1 (ef_nr=1160) is the most extreme outlier. Easy regions (green) lie far below the diagonal, confirming calibration effectiveness where the signal is predictable.</em></p>
+
+<p><strong>Calibration-data-amount curve.</strong> How much target-domain calibration is enough? Sweeping the number of calibration origins (each = 24 h of CIF labels) on the 12-region subset:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Calibration hours</th>
+<th style="text-align: right;">0 (ZS+)</th>
+<th style="text-align: right;">72 (3d)</th>
+<th style="text-align: right;"><strong>144 (6d)</strong></th>
+<th style="text-align: right;">288 (12d)</th>
+<th style="text-align: right;">576 (24d)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Median MAE</td>
+<td style="text-align: right;">36.68</td>
+<td style="text-align: right;">33.92</td>
+<td style="text-align: right;"><strong>32.67</strong></td>
+<td style="text-align: right;">38.79</td>
+<td style="text-align: right;">38.14</td>
+</tr>
+</tbody>
+</table>
+<p>The curve is <strong>non-monotonic</strong>: 6 days of calibration data (144 h) reaches the sweet spot (−4.0 vs zero-label ZS+), but more data <em>overfits</em> — 24 days (576 h) is worse than zero. Easy regions (persistence &lt; 20) are immune to calibration or slightly harmed (ZS+ already sufficient); medium regions benefit at 144 h; pathological regions (VIC1, UK_09) respond volatily. This reveals that the Joint protocol's fixed 12-day calibration is not universally optimal — different difficulty tiers have different sweet spots.</p>
+<p align="center"><img src="../../figures/calibration_curve.png" width="65%"></p>
+<p align="center"><em>Figure 5: Calibration-data-amount curve. Median MAE is non-monotonic: 144 h (6 days) is the sweet spot (32.67, −4.0 vs zero-label ZS+); beyond ~200 h, overfitting raises MAE above the zero-label baseline. Shaded band shows the 25–75% interquartile range across 12 regions.</em></p>
+
+<h3 id="610-five-prior-basis-fusion-and-differentiable-joint-calibration">6.10 Five-prior basis fusion and differentiable joint calibration</h3>
+<p>The Joint row of Table 1 pools five architecturally distinct zero-shot <em>direction</em> models — retrieval-augmented (RAG), physics-invariant IRM, causal/domain-invariant VAE, in-context transformer (ICL), and hierarchical — each encoding a different inductive prior on the renewable-share dynamics. This section dissects that pool: does fusion beat the best single, does a learned combiner add value over averaging, and can differentiable end-to-end calibration push the fused system below the supervised PatchTST baseline (41.47)?</p>
+<p><strong>Basis-mixture fusion (zero-shot).</strong> We combine the five directions with a non-negative softmax head (entropy-floor + pairwise-cosine diversity regularization), trained by leave-one-source-out CV so the weights never see the target. The drop-one ablation delivers an uncomfortable but decisive result: removing any single direction barely moves the fused MAE, and equal-weight fusion + ZS+ is statistically indistinguishable from the learned BasisMix + ZS+ ($\Delta=-0.14$ median, equal-weight wins 86% of pairs). At pure zero-shot the <strong>meta-learner is dead weight</strong> — the apparent fusion gain is the ZS+ test-time calibration acting as an adaptive equalizer (cf. §6.4), not intelligent direction weighting.</p>
+<p align="center">
+  <img src="../../figures/fusion_weights.png" alt="direction contributions" width="46%">
+  <img src="../../figures/joint_dropone_ablation.png" alt="drop-one ablation" width="46%">
+</p>
+<p align="center"><em>Left: the five direction priors span complementary strengths (causal strongest at 41.2 zero-shot; hierarchical weakest at 71.1 but rescued to 46.6 by ZS+). Right: drop-one ablation — removing any direction leaves the fused MAE essentially flat, confirming the learned meta-learner adds no value over equal weighting at pure zero-shot.</em></p>
+
+<p><strong>Differentiable joint calibration.</strong> The dead-weight finding localizes the problem: the direction parameters are never co-adapted with the calibration because the numpy/torch-hybrid predictors break the gradient graph at the terminal physics reconstruction. We remove this in two steps. First, a <em>differentiable</em> ZS+ replaces the hard branch menu with soft attention (a learnable 6-branch gate and inverse-temperature over the same lag/climatology/model branches), trained against an adversarial-persistence hinge loss $\mathrm{ReLU}(\mathrm{MAE}<em>{\mathrm{pred}} - 0.9\,\mathrm{MAE}</em>{\mathrm{persist}})$ that is exactly zero once the model beats persistence by a 10% relative margin. Second, all five direction models are made torch-native (the direction <code>forward</code> already produced a renewable share; we inline $cif = s\cdot ef_r + (1-s)\cdot ef_{nr}$ as a torch op, and for RAG/ICL replace the numpy retrieval with a differentiable matmul kNN / a no-grad context-assembly step that still feeds a differentiable transformer). A two-stage warmup then finetunes end-to-end on a held-out 12-origin calibration split: Stage 1 trains only the fusion head + differentiable ZS+ (directions frozen); Stage 2 additionally unfreezes each direction's <em>prediction head</em> (DLinear heads, VAE predictor, hourly head, RAG branch, ICL projection) while the main backbone stays frozen to preserve the transferred signal.</p>
+<p><strong>Result.</strong> Table 2 traces the median-MAE progression on the full 29×5 LORO:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th style="text-align: right;">median MAE</th>
+<th>mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>best single direction (causal + ZS+)</td>
+<td style="text-align: right;">45.96</td>
+<td>strongest individual prior</td>
+</tr>
+<tr>
+<td>BasisMix + ZS+ (5-direction fusion)</td>
+<td style="text-align: right;">46.89</td>
+<td>meta-learner ≈ equal-weight at zero-shot</td>
+</tr>
+<tr>
+<td>Joint, frozen-direction proxy (Phase 8)</td>
+<td style="text-align: right;">40.53</td>
+<td>differentiable ZS+ + fixed $(5,24)$ correction</td>
+</tr>
+<tr>
+<td><strong>Joint, torch-native (Phase 9)</strong></td>
+<td style="text-align: right;"><strong>39.53</strong></td>
+<td>end-to-end direction-head finetuning</td>
+</tr>
+</tbody>
+</table>
+<p>The frozen-proxy stage (40.53) is the Joint row of Table 1; the torch-native stage improves it to <strong>39.53</strong> — the first sub-40 system median — by giving the calibration a true gradient path into each prior that the fixed correction proxy captured only partially.</p>
+<p align="center">
+  <img src="../../figures/joint_mae_progression.png" alt="MAE progression" width="72%">
+</p>
+<p align="center"><em>Figure: median-MAE progression from the best single prior (45.96) through zero-shot fusion (46.89) and the frozen-direction proxy (40.53) to the torch-native joint model (39.53), the first sub-40 system. The differentiable end-to-end lift over the proxy is +1.62 (p=5×10⁻¹⁴).</em></p>
+
+<p><strong>Significance (145 pairs, Holm-corrected).</strong> The torch-native variant beats the frozen proxy by $+1.62$ median $\Delta$MAE (bootstrap 95% CI $[+1.32, +2.12]$; Wilcoxon $p=5{\times}10^{-14}$; 79% pair-wise win; Cohen's $d=0.59$). The gain is structured, not uniform: it concentrates on the high-volatility grids the floor analysis (§6.9) flags as "stuck near persistence" — VIC1 $+11.4$, UK_08 $+7.3$ — exactly where the disconnected proxy could not reach. Against the supervised PatchTST reference (41.47) the system attains a lower median (39.53) and wins 61% of pairs, though a one-sample Wilcoxon does not cleanly clear $\alpha=0.05$ ($p=0.057$); we therefore frame the supervised comparison as <em>competitive</em> (61% pair-wise win, lower median) rather than a decisive victory, and note the PatchTST number is a single external point with no per-pair data for a paired test.</p>
+<p align="center">
+  <img src="../../figures/joint_per_region_scatter.png" alt="per-region improvement scatter" width="58%">
+</p>
+<p align="center"><em>Figure: per-region torch-native MAE vs frozen-proxy MAE. Points below the diagonal are regions the torch-native model improved; the largest gains (VIC1, UK_08, UK_09) are exactly the hard-tier grids stuck near their persistence floor, while a few easy grids regress slightly (above the diagonal) — caught by the internal-validation gate.</em></p>
+
+<p><strong>What the ablations say about architecture.</strong> Two negative results sharpen the design. (i) Replacing the global softmax fusion with a per-window learned combiner (conditioned on the five predictions + config) is statistically indistinguishable from the global softmax — <em>the fusion topology is not the lever</em>. (ii) Serially chaining the five directions — a natural alternative — was rejected on first principles and confirmed unnecessary: the directions are independent inductive biases rather than pipeline stages, so chaining compounds rather than cancels their errors and forgoes the variance-reduction that makes ensembling work. The active lever is <em>differentiability</em>: unfreezing the direction prediction heads is what closes the gap, which is why the gain lands on the grids where each prior individually under-fits (high CIF volatility) rather than where any single combiner would help.</p>
+<p><strong>Internal-validation gate.</strong> Stage-2 head finetuning slightly <em>overfits</em> on already-easy grids (persistence floor &lt; 20): e.g. US_ERCO regresses by 7.5 MAE when its frozen-direction zero-shot quality was already near-optimal. An internal-validation gate carves a disjoint 3-origin validation band from after the test split and reverts to Stage 1 (frozen heads) only when Stage 2 is clearly worse there ($\epsilon=2.0$ MAE, conservative so it preserves the hard-grid gains). This recovers the easy-grid regressions (US_ERCO $+5.2$ on the reverted subset) without harming any hard grid.</p>
+<p><strong>Honest caveats.</strong> (1) Supervised calibration, not strict zero-shot: Stage 1/2 consume the first 12 target test origins' CIF labels under a held-out protocol (apples-to-apples with the Joint row, but not with the zero-shot tiers of Table 1). (2) The PatchTST comparison is descriptive (single external number); the one-sample test is borderline. (3) RAG/ICL are torch-native but their retrieval remains a discrete (no-grad) preprocessing step — only the downstream model parameters receive gradient. Figures: <code>figures/fusion_weights.png</code>, <code>figures/mae_vs_persistence_floor.png</code>.</p>
+<hr />
+<h2 id="7-discussion">7. Discussion</h2>
+<p><strong>When does config-only zero-shot work?</strong> The evidence triangulates one answer: when the target sits <em>inside</em> the source configuration spectrum. Mid-penetration targets ($\bar{rs}\in[0.28, 0.70]$) achieve $\rho \le 1.25$ almost uniformly; extreme-penetration targets degrade in proportion to their effective config distance ($r=0.58$). This is operationally decisive because the condition is checkable <em>before deployment</em> from public data alone. The ZS+ calibration reframes rather than voids this law: the config-space boundary still marks where the <em>transferred</em> signal runs out, but three closed-form corrections computed from the target's own observable streams recover most of what transfer alone cannot supply — turning the boundary regions from failures ($\rho \ge 2.6$) into persistence-beating performers ($\rho^+ \le 1.18$, $\rho_P^+ \le 0.96$ among them; US_FPL and QLD1 even overtake the supervised model) at zero training cost.</p>
+<p><strong>The calibration equalizer effect.</strong> A finding with methodological implications: across four architecturally diverse backbones (flagship, Regime-MoE, weather-augmented, RevIN), the ZS+ median MAE converges to within 0.05 of 26.10 — even when ZS quality differs by 15+ MAE (RevIN). The ZS+ branch fusion effectively performs <em>adaptive model selection at each forecast origin</em>: by backtesting every branch on the target's recent past and fusing lead-by-lead, it exploits whatever diversity the backbone provides while discarding its systematic biases. This means the ZS model's role shifts from "final predictor" to "candidate generator" — as long as candidates are diverse (MoE's experts, climatology branches), the calibration mechanism extracts their useful signal. The practical consequence is that <strong>the framework's competitiveness comes from the combination of physics decomposition + config conditioning + test-time calibration, not from any single architecture choice</strong> — a robustness property that lowers the barrier to deployment.</p>
+<p><strong>What is the physics layer worth?</strong> Not raw accuracy — the Direct-CIF oracle is 11% better when target CIF telemetry exists. Its value is threefold: it makes the <em>transfer</em> possible at all (share dynamics transfer; absolute CIF levels do not — the CarbonCast failure mode); it renders error <em>analyzable</em> (Theorem 1's exact attribution, 71% amplification share, $R^2=0.84$ predictive bound); and it makes deployment <em>cheap</em> (two public scalars replace an emissions-measurement pipeline).</p>
+<p><strong>Practical significance.</strong> For grid operators and carbon-aware platforms, the deployment calculus changes: instead of "collect 6–12 months of data, then train," a new region gets a calibrated forecast on day one at ~80% of eventual supervised accuracy config-only — rising to ~93% (median $\rho^+=1.08$), beating the persistence floor in 29/29 regions, surpassing the supervised model itself in 6, and delivering the lowest MAE among all cross-domain alternatives in 27/29, once the ZS+ test-time calibration engages on the live observation stream. With just 12 additional days of calibration labels ($\mathcal{I}_J$), the differentiable five-prior fusion reaches median MAE 39.53 ($\rho^J=0.95$), surpassing the PatchTST supervised reference (41.47) outright in 61% of pairwise comparisons — all with conformal intervals whose validity does not depend on any distributional assumption, and a pre-deployment difficulty estimate from its config alone.</p>
+<h2 id="8-limitations">8. Limitations</h2>
+<ul>
+<li><strong>Boundary regions fail config-only.</strong> Fossil-dominated grids ($\bar{rs} &lt; 0.19$) reach $\rho$ of 1.7–3.1 under pure config-only ZS. The ZS+ calibration reduces this to 0.89–1.18 ($\rho_P^+ \le 0.96$), but it does so by consuming the target's live CIF observation stream at test time — i.e., it relaxes the strictest reading of "config-only" (weights still never see target data; no training occurs). Where even that stream is unavailable, the config-only envelope stands: near-constant CIF makes forecasts in these regions least consequential, a contextual rather than structural consolation.</li>
+<li><strong>Two-scalar config is a coarse domain descriptor.</strong> Fuel-mix composition, interconnection topology, and storage penetration are not captured. We partially addressed this by extending the config vector to include per-fuel shares (coal/gas/nuclear/hydro/solar/wind) for US and UK regions, which resolves "false neighbour" pairs (e.g. ERCO wind-heavy vs MISO coal-heavy, both $\bar{rs}\approx 0.2$) and yields a modest ZS improvement (9/12 regions). The fuel-augmented RegimeMoE variant (§6.4) shows the largest cold-start gain (−4.2 MAE). However, the ZS+ calibration equalizes all variants, so richer config mainly helps the cold-start floor, not the deployed ceiling. AU regions remain on the 2-scalar config pending NEMED DUID-level fuel integration.</li>
+<li><strong>Single-year data.</strong> All series are 2023 (AU) / recent-year (UK, US); the temporal-OOD study (§6.7) covers within-year splits only, not inter-year drift such as fleet turnover.</li>
+<li><strong>The share input stream must exist.</strong> Zero-shot removes the need for target <em>CIF/emissions</em> history, but real-time generation-mix telemetry is still required; grids without any generation reporting are out of scope.</li>
+<li><strong>Theorem 2 terms are proxied, not computed.</strong> The divergence analysis is a validated empirical law (n=29 folds), not a certified bound.</li>
+<li><strong>Two cross-domain leaderboard cells resist honest selection.</strong> On the four-way cross-domain MAE leaderboard ZS+ is best in 27/29 regions; in US_MISO (CarbonCast-ZS ahead by 1.1%) and US_ERCO (raw ZS ahead by 1.2%) the replayed past-only selection signal points the other way, and closing these gaps would require per-region test-set fitting we categorically exclude.</li>
+<li><strong>CRPS is reported but not competitive</strong> with supervised probabilistic methods (mean 95.2 on the ZS+ forecasts); the conformal contribution is validity-without-labels, not sharpness.</li>
+</ul>
+<h2 id="9-conclusion">9. Conclusion</h2>
+<p>We formalized config-only zero-shot cross-region carbon intensity forecasting, built the first 29-region three-jurisdiction LORO benchmark for it, and organized results by <strong>information-set tier</strong> to make explicit what each level of target observability buys. At the zero-shot tier ($\mathcal{I}<em>0$, 0 target labels), a physics-decomposed, config-conditioned, deliberately low-capacity model forecasts never-seen regions at a median 1.24× the error of a fully supervised PatchTST. Three training-free, closed-form test-time corrections ($\mathcal{I}</em>+$, still 0 future labels) tighten this to 1.08×, beating persistence in <strong>29/29 regions</strong> (worst case 0.995), surpassing the supervised model in 6, and attaining the lowest MAE among all cross-domain methods in 27/29. A differentiable five-prior fusion with 12 days of calibration labels ($\mathcal{I}_J$) reaches median MAE <strong>39.53</strong> ($\rho^J=0.95$), winning 61% of pairwise comparisons against PatchTST (41.47) — the first sub-40 system median.</p>
+<p>A methodological finding emerges from the <strong>calibration equalizer effect</strong>: four architecturally diverse backbones whose zero-shot quality differs by 15+ MAE all converge to within 0.05 of the same $\mathcal{I}<em>+$ median. The test-time branch fusion performs adaptive per-origin model selection, so the framework's competitiveness stems from the <em>combination</em> of physics decomposition + config conditioning + calibration — not from any single architecture. An exact error identity (Theorem 1, verified at $1.3\times10^{-4}$) localizes CIF error to share error times a known physical constant, making the $\mathcal{I}</em>+$ corrections diagnostic rather than heuristic; a config-space transfer law (Theorem 2, $r=0.58$, U-shaped) predicts deployment difficulty before deployment. Against CarbonCast, supervised excellence and transferability are structurally disjoint — it degrades up to 2.4× cross-domain while $\mathcal{I}_+$ wins 8/9 head-to-head (mean ratio 0.73). With assumption-free conformal coverage in 25/29 regions, temporal-OOD robustness flat at 0.82, and supervised models needing 30–270+ days to match day-one zero-shot accuracy, the practical message is direct: <strong>a new grid region gets a calibrated, physically interpretable forecast at ~93% of supervised accuracy with zero labels, ~95% with 12 days — and you can compute, from two public numbers, whether that promise applies before you rely on it.</strong></p>
+<hr />
+<h2 id="reproducibility">Reproducibility</h2>
+<p>All experiments run from the repository root with <code>PYTHONPATH=src</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Script</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>29-region LORO benchmark (Table 1)</td>
+<td><code>scripts/benchmark/run_unified_eval.py</code></td>
+<td><code>results/unified_eval_full.json</code></td>
+</tr>
+<tr>
+<td>Supervised baseline suite (§6.3)</td>
+<td><code>scripts/experiments/run_phase1_complete.py</code></td>
+<td><code>docs/experiments/2026-07-25-supervised-baselines-results.md</code></td>
+</tr>
+<tr>
+<td>Theorem 1 validation</td>
+<td><code>scripts/verify/theorem1_physics_bound.py</code></td>
+<td><code>results/theorem1_validation.json</code></td>
+</tr>
+<tr>
+<td>Theorem 2 transfer law</td>
+<td><code>scripts/verify/theorem2_transfer_bound.py</code></td>
+<td><code>results/theorem2_transfer_bound.json</code></td>
+</tr>
+<tr>
+<td>Ablation (Table 2)</td>
+<td><code>scripts/benchmark/ablation_study.py</code></td>
+<td><code>results/ablation_full.json</code></td>
+</tr>
+<tr>
+<td>Five-prior fusion + ZS+ (§6.10)</td>
+<td><code>scripts/experiments/run_fused_five_full.py</code></td>
+<td><code>results/fused_five_full.json</code></td>
+</tr>
+<tr>
+<td>Joint calibration (§6.10, $\mathcal{I}_J$)</td>
+<td><code>scripts/experiments/run_joint_train_full.py</code></td>
+<td><code>results/joint_train_full.json</code></td>
+</tr>
+<tr>
+<td>Equalizer effect (§6.4)</td>
+<td><code>scripts/experiments/probe_models.py</code></td>
+<td><code>results/probe_models.json</code></td>
+</tr>
+<tr>
+<td>Calibration-data curve (§6.9)</td>
+<td><code>scripts/experiments/probe_calibration_curve.py</code></td>
+<td><code>results/probe_calibration_curve.json</code></td>
+</tr>
+<tr>
+<td>Difficulty stratification (§6.9)</td>
+<td><code>scripts/experiments/diagnose_regime_split.py</code></td>
+<td><code>results/regime_split_report.json</code></td>
+</tr>
+<tr>
+<td>Conformal prediction (§6.6)</td>
+<td><code>scripts/benchmark/conformal_prediction.py</code></td>
+<td><code>results/conformal_prediction.json</code></td>
+</tr>
+<tr>
+<td>Temporal OOD (§6.7)</td>
+<td><code>scripts/benchmark/temporal_ood.py</code></td>
+<td><code>results/temporal_ood.json</code></td>
+</tr>
+<tr>
+<td>Deployment warm-up (§6.8)</td>
+<td><code>scripts/benchmark/deployment_warmup.py</code></td>
+<td><code>results/deployment_warmup.json</code></td>
+</tr>
+<tr>
+<td>CarbonCast analysis (Table 3)</td>
+<td><code>scripts/figures/carboncast_analysis.py</code></td>
+<td><code>results/carboncast_analysis.json</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<ul>
+<li>Ben-David, S., Blitzer, J., Crammer, K., Kulesza, A., Pereira, F., &amp; Vaughan, J. W. (2010). A theory of learning from different domains. <em>Machine Learning</em>, 79(1–2), 151–175.</li>
+<li>Lei, J., G'Sell, M., Rinaldo, A., Tibshirani, R. J., &amp; Wasserman, L. (2018). Distribution-free predictive inference for regression. <em>JASA</em>, 113(523), 1094–1111.</li>
+<li>Maji, D., Shenoy, P., &amp; Sitaraman, R. K. (2022). CarbonCast: Multi-day forecasting of grid carbon intensity. <em>ACM BuildSys</em>.</li>
+<li>Mansour, Y., Mohri, M., &amp; Rostamizadeh, A. (2009). Domain adaptation: Learning bounds and algorithms. <em>COLT</em>.</li>
+<li>Nie, Y., Nguyen, N. H., Sinthong, P., &amp; Kalagnanam, J. (2023). A time series is worth 64 words: Long-term forecasting with transformers (PatchTST). <em>ICLR</em>.</li>
+<li>Zeng, A., Chen, M., Zhang, L., &amp; Xu, Q. (2023). Are transformers effective for time series forecasting? (DLinear). <em>AAAI</em>.</li>
+<li>Zhang, et al. (2026a). Joint local-temporal and cross-variable dependency network for day-ahead grid carbon-intensity forecasting. <em>AAAI</em>.</li>
+<li>Zhang, et al. (2026b). Dual-graph carbon-domain foundation model for data-scarce regional carbon-intensity forecasting. <em>WWW</em>.</li>
+</ul>
+</div>
+</body>
+</html>
