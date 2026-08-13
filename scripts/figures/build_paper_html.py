@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 """Build a self-contained, publication-style HTML page from the paper markdown.
 
-Renders:
-  - GitHub-flavored Markdown tables, lists, bold/italic
-  - LaTeX math via MathJax 3 (CDN)
-  - <p align="center"><img ...> blocks as centered figures
-  - ``code`` snippets inline
-  - A floating sidebar TOC for easy navigation
-  - Dark/light toggle, print-friendly CSS
+Key fixes vs v1:
+  - Images: base64-embedded (no relative path issues, works with file://)
+  - Math: protect $...$ and $$...$$ before markdown parsing, restore after,
+    so underscores/subscripts are not mangled into <em> tags
+  - MathJax 3 with pre-process protection
 
 Usage:
     python scripts/figures/build_paper_html.py
@@ -15,6 +13,7 @@ Output:
     docs/paper/transcif_paper.html
 """
 
+import base64
 import re
 from pathlib import Path
 
@@ -23,60 +22,67 @@ import markdown
 REPO = Path(__file__).resolve().parent.parent.parent
 MD_PATH = REPO / "docs/paper/2026-07-26-zeroshot-config-cif-paper.md"
 OUT_PATH = REPO / "docs/paper/transcif_paper.html"
-FIG_REL = "../figures"  # relative from docs/paper/ to figures/
+FIG_DIR = REPO / "figures"
 
-# ---------------------------------------------------------------------------
-# Pre-process the markdown before feeding to the markdown library
-# ---------------------------------------------------------------------------
-
-def preprocess(md_text: str) -> str:
-    """Fix image paths and prepare for HTML conversion."""
-    # Fix <img src="../figures/..."> → keep relative (HTML lives in docs/paper/)
-    # Already correct since OUT_PATH is in docs/paper/ and figures is ../../figures
-    # But we wrote the markdown from docs/paper/ perspective, so ../figures/ is right.
-    # Actually the HTML file is in docs/paper/ and figures/ is at repo root,
-    # so from docs/paper/ it's ../../figures/ ... but the markdown says ../figures/
-    # Let's just fix all ../figures/ → ../../figures/ for the HTML context.
-    md_text = md_text.replace('src="../figures/', 'src="../../figures/')
-    # Also fix bare <img src="figures/..."> (used in §6.10)
-    md_text = md_text.replace('src="figures/', 'src="../../figures/')
-
-    # Convert ``figures/xxx.png`` code-span references to actual <img> tags
-    # These appear in "Figure: `figures/xxx.png`" lines
-    def figure_inline_ref(match):
-        fname = match.group(1)
-        # Check if already wrapped in an <img> tag elsewhere
-        return f'`figures/{fname}`'
-
-    return md_text
+MIME = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+        ".gif": "image/gif", ".svg": "image/svg+xml"}
 
 
-# ---------------------------------------------------------------------------
-# Build sidebar TOC from headings
-# ---------------------------------------------------------------------------
-
-def build_toc(md_text: str) -> str:
-    """Extract h1/h2/h3 headings into a nested TOC."""
-    entries = []
-    for line in md_text.split('\n'):
-        m = re.match(r'^(#{1,3})\s+(.*)', line)
-        if not m:
-            continue
-        level = len(m.group(1))
-        title = m.group(2).strip()
-        # Skip the paper title (h1) from TOC — it's the page header
-        if level == 1:
-            continue
-        # Generate slug
-        slug = re.sub(r'[^\w\s-]', '', title.lower())
-        slug = re.sub(r'[\s]+', '-', slug.strip())
-        entries.append((level, title, slug))
-    return entries
+def img_to_base64(img_path: Path) -> str:
+    """Read an image file and return a data URI."""
+    suffix = img_path.suffix.lower()
+    mime = MIME.get(suffix, "image/png")
+    data = base64.b64encode(img_path.read_bytes()).decode("ascii")
+    return f"data:{mime};base64,{data}"
 
 
-# ---------------------------------------------------------------------------
-# CSS
-# ---------------------------------------------------------------------------
+def preprocess(md_text: str) -> tuple[str, dict]:
+    """Protect math and convert image paths to base64 placeholders.
+
+    Returns (processed_markdown, math_store) where math_store maps
+    placeholders back to original LaTeX.
+    """
+    # --- Step 1: Protect all math from markdown mangling ---
+    math_store = {}
+    counter = [0]
+
+    def stash_math(match):
+        content = match.group(0)
+        key = f"MATHJAXPLACEHOLDER{counter[0]}MATHJAXEND"
+        math_store[key] = content
+        counter[0] += 1
+        return key
+
+    # Protect display math first ($$...$$), then inline ($...$)
+    md_text = re.sub(r'\$\$[^\$]+\$\$', stash_math, md_text)
+    md_text = re.sub(r'\$[^\$\n]+?\$', stash_math, md_text)
+
+    # --- Step 2: Convert <img src="...figures/xxx.png"> to base64 ---
+    def replace_img(match):
+        full_match = match.group(0)
+        src_match = re.search(r'src="([^"]+)"', full_match)
+        if not src_match:
+            return full_match
+        src = src_match.group(1)
+        # Normalize path: remove any ../ or leading figures/
+        fname = Path(src).name
+        img_path = FIG_DIR / fname
+        if img_path.exists():
+            data_uri = img_to_base64(img_path)
+            return full_match.replace(src, data_uri)
+        return full_match
+
+    md_text = re.sub(r'<img[^>]+src="[^"]+"[^>]*/?>', replace_img, md_text)
+
+    return md_text, math_store
+
+
+def restore_math(html: str, math_store: dict) -> str:
+    """Restore LaTeX from placeholders in the generated HTML."""
+    for key, original in math_store.items():
+        html = html.replace(key, original)
+    return html
+
 
 CSS = """
 :root {
@@ -84,168 +90,54 @@ CSS = """
   --fg: #1a1a1a;
   --muted: #666;
   --accent: #2563eb;
-  --border: #e0e0e0;
-  --code-bg: #f5f5f5;
-  --sidebar-bg: #f8f9fa;
-  --table-stripe: #f8f9fa;
+  --border: #ddd;
+  --code-bg: #f0f0f0;
+  --sidebar-bg: #f7f8fa;
+  --table-stripe: #f7f8fa;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1a1a2e;
-    --fg: #d4d4d4;
-    --muted: #999;
-    --border: #333;
-    --code-bg: #252535;
-    --sidebar-bg: #161628;
-    --table-stripe: #202030;
+    --bg: #1a1a2e; --fg: #d4d4d4; --muted: #999; --accent: #60a5fa;
+    --border: #333; --code-bg: #252535; --sidebar-bg: #161628; --table-stripe: #202030;
   }
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.7;
-  font-size: 15px;
+  background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 15px;
 }
-/* Sidebar TOC */
 #sidebar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 280px; height: 100vh;
-  overflow-y: auto;
-  background: var(--sidebar-bg);
-  border-right: 1px solid var(--border);
-  padding: 20px 16px;
-  font-size: 13px;
-  z-index: 100;
+  position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+  overflow-y: auto; background: var(--sidebar-bg); border-right: 1px solid var(--border);
+  padding: 20px 14px; font-size: 13px; z-index: 100;
 }
-#sidebar h2 {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
+#sidebar h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 8px; }
 #sidebar ul { list-style: none; }
-#sidebar li { margin: 2px 0; }
-#sidebar a {
-  color: var(--fg);
-  text-decoration: none;
-  display: block;
-  padding: 3px 8px;
-  border-radius: 4px;
-  transition: background 0.15s;
-}
+#sidebar li { margin: 1px 0; }
+#sidebar a { color: var(--fg); text-decoration: none; display: block; padding: 3px 8px; border-radius: 4px; }
 #sidebar a:hover { background: var(--border); color: var(--accent); }
-#sidebar .toc-h2 { padding-left: 12px; font-weight: 600; }
-#sidebar .toc-h3 { padding-left: 28px; font-size: 12px; color: var(--muted); }
-
-/* Main content */
-#content {
-  margin-left: 280px;
-  max-width: 800px;
-  padding: 40px 48px 80px;
-}
-h1 {
-  font-size: 26px;
-  line-height: 1.3;
-  margin-bottom: 8px;
-  color: var(--fg);
-}
-h2 {
-  font-size: 22px;
-  margin-top: 36px;
-  margin-bottom: 12px;
-  padding-bottom: 6px;
-  border-bottom: 2px solid var(--accent);
-  color: var(--fg);
-}
-h3 {
-  font-size: 18px;
-  margin-top: 28px;
-  margin-bottom: 8px;
-  color: var(--fg);
-}
-h4 { font-size: 16px; margin-top: 20px; }
-p { margin: 10px 0; }
+#sidebar .toc-h2 { padding-left: 8px; font-weight: 600; }
+#sidebar .toc-h3 { padding-left: 24px; font-size: 12px; color: var(--muted); }
+#content { margin-left: 260px; max-width: 820px; padding: 40px 48px 80px; }
+h1 { font-size: 25px; line-height: 1.35; margin-bottom: 6px; }
+h2 { font-size: 21px; margin-top: 36px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 2px solid var(--accent); }
+h3 { font-size: 17px; margin-top: 26px; margin-bottom: 6px; }
+p { margin: 8px 0; }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 strong { font-weight: 700; }
-em { font-style: italic; }
-
-/* Code */
-code {
-  background: var(--code-bg);
-  padding: 1px 5px;
-  border-radius: 3px;
-  font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
-  font-size: 0.88em;
-}
-pre {
-  background: var(--code-bg);
-  padding: 12px 16px;
-  border-radius: 6px;
-  overflow-x: auto;
-  margin: 12px 0;
-}
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-family: 'SF Mono','Fira Code',Consolas,monospace; font-size: .88em; }
+pre { background: var(--code-bg); padding: 12px 16px; border-radius: 6px; overflow-x: auto; margin: 10px 0; }
 pre code { background: none; padding: 0; }
-
-/* Tables */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 16px 0;
-  font-size: 13px;
-}
-th, td {
-  border: 1px solid var(--border);
-  padding: 6px 10px;
-  text-align: left;
-}
+table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 12.5px; }
+th, td { border: 1px solid var(--border); padding: 5px 9px; text-align: left; }
 th { background: var(--sidebar-bg); font-weight: 700; }
 tr:nth-child(even) { background: var(--table-stripe); }
-
-/* Figures */
-figure, p[align="center"] {
-  margin: 20px auto;
-  text-align: center;
-}
-p[align="center"] img {
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  border: 1px solid var(--border);
-}
-p[align="center"] em {
-  display: block;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 8px;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
-}
-hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 32px 0;
-}
-blockquote {
-  border-left: 3px solid var(--accent);
-  padding-left: 16px;
-  margin: 16px 0;
-  color: var(--muted);
-}
-
-/* Abstract special styling */
-h2 + p strong:first-child { font-size: 16px; }
-
-/* Keywords */
-p:last-of-type strong { color: var(--accent); }
-
-/* Mobile */
+p[align="center"] { margin: 18px auto; text-align: center; }
+p[align="center"] img { max-width: 100%; border-radius: 6px; box-shadow: 0 1px 10px rgba(0,0,0,.1); border: 1px solid var(--border); }
+p[align="center"] em { display: block; font-size: 12.5px; color: var(--muted); margin-top: 6px; max-width: 92%; margin-left: auto; margin-right: auto; }
+hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+blockquote { border-left: 3px solid var(--accent); padding-left: 14px; margin: 12px 0; color: var(--muted); }
 @media (max-width: 900px) {
   #sidebar { display: none; }
   #content { margin-left: 0; padding: 20px; }
@@ -258,34 +150,52 @@ p:last-of-type strong { color: var(--accent); }
 """
 
 
+def slugify(text: str) -> str:
+    s = re.sub(r'[^\w\s-]', '', text.lower())
+    return re.sub(r'[\s]+', '-', s.strip())
+
+
 def main():
     md_text = MD_PATH.read_text()
-    md_text = preprocess(md_text)
+    md_text, math_store = preprocess(md_text)
 
-    # Build TOC entries
-    toc_entries = build_toc(md_text)
-
-    # Convert markdown to HTML
-    md = markdown.Markdown(extensions=['tables', 'fenced_code', 'toc', 'sane_lists'],
-                           extension_configs={'toc': {'permalink': False}})
+    md = markdown.Markdown(extensions=['tables', 'fenced_code', 'sane_lists'])
     body_html = md.convert(md_text)
 
-    # Add IDs to h2/h3 for TOC linking (markdown toc extension does this if configured)
-    # The 'toc' extension adds ids automatically. Let's verify slug format matches.
-    # Actually let's just use the toc extension's slugify.
-    toc_html_parts = ['<div id="sidebar"><h2>Table of Contents</h2><ul>']
-    for level, title, slug in toc_entries:
-        cls = f"toc-h{level}"
-        toc_html_parts.append(
-            f'<li class="{cls}"><a href="#{slug}">{title}</a></li>')
-    toc_html_parts.append('</ul></div>')
-    toc_html = '\n'.join(toc_html_parts)
+    # Restore protected math
+    body_html = restore_math(body_html, math_store)
 
-    # Extract title
-    title_match = re.match(r'^#\s+(.+)$', md_text, re.MULTILINE)
+    # Build TOC from original headings (before math protection doesn't matter for titles)
+    orig = MD_PATH.read_text()
+    toc_items = []
+    for line in orig.split('\n'):
+        m = re.match(r'^(#{2,3})\s+(.*)', line)
+        if not m:
+            continue
+        level = len(m.group(1))
+        title = m.group(2).strip()
+        slug = slugify(title)
+        toc_items.append((level, title, slug))
+
+    toc_html = '<div id="sidebar"><h2>Contents</h2><ul>\n'
+    for level, title, slug in toc_items:
+        cls = f"toc-h{level}"
+        toc_html += f'<li class="{cls}"><a href="#{slug}">{title}</a></li>\n'
+    toc_html += '</ul></div>'
+
+    # Add id attributes to h2/h3 headings in body for TOC anchors
+    for level, title, slug in toc_items:
+        tag = f'h{level}'
+        # Find the heading in body_html and add id
+        # Markdown may have already added id via toc extension, but we disabled it
+        # So let's add manually
+        escaped_title = re.escape(title)
+        pattern = f'(<{tag}>){escaped_title}'
+        body_html = re.sub(pattern, rf'\1 id="{slug}">{title}', body_html, count=1)
+
+    title_match = re.match(r'^#\s+(.+)$', orig, re.MULTILINE)
     title = title_match.group(1) if title_match else "TransCIF Paper"
 
-    # Assemble final HTML
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -293,17 +203,14 @@ def main():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <style>{CSS}</style>
-<!-- MathJax for LaTeX rendering -->
 <script>
 window.MathJax = {{
-  tex: {{
-    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]
-  }},
-  svg: {{ fontCache: 'global' }}
+  tex: {{ inlineMath: [['$','$'], ['\\\\(','\\\\)']], displayMath: [['$$','$$'], ['\\\\[','\\\\]']] }},
+  svg: {{ fontCache: 'global' }},
+  startup: {{ typeset: true }}
 }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 {toc_html}
@@ -315,8 +222,9 @@ window.MathJax = {{
 
     OUT_PATH.write_text(html)
     size_kb = OUT_PATH.stat().st_size / 1024
-    print(f"[WRITE] {OUT_PATH} ({size_kb:.1f} KB)")
-    print(f"  Open with: open {OUT_PATH}")
+    print(f"[WRITE] {OUT_PATH} ({size_kb:.0f} KB)")
+    print(f"  Math placeholders restored: {len(math_store)}")
+    print(f"  Open: open {OUT_PATH}")
 
 
 if __name__ == "__main__":
