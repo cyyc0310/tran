@@ -20,9 +20,15 @@ from pathlib import Path
 import markdown
 
 REPO = Path(__file__).resolve().parent.parent.parent
-MD_PATH = REPO / "docs/paper/2026-07-26-zeroshot-config-cif-paper.md"
-OUT_PATH = REPO / "docs/paper/transcif_paper.html"
 FIG_DIR = REPO / "figures"
+
+import sys
+if len(sys.argv) > 1 and sys.argv[1] == "--zh":
+    MD_PATH = REPO / "docs/paper/2026-07-26-zeroshot-config-cif-paper-zh.md"
+    OUT_PATH = REPO / "docs/paper/transcif_paper_zh.html"
+else:
+    MD_PATH = REPO / "docs/paper/2026-07-26-zeroshot-config-cif-paper.md"
+    OUT_PATH = REPO / "docs/paper/transcif_paper.html"
 
 MIME = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
         ".gif": "image/gif", ".svg": "image/svg+xml"}
@@ -73,6 +79,26 @@ def preprocess(md_text: str) -> tuple[str, dict]:
         return full_match
 
     md_text = re.sub(r'<img[^>]+src="[^"]+"[^>]*/?>', replace_img, md_text)
+
+    # --- Step 3: Convert inline figure references like `figures/xxx.png`
+    # (used in Chinese version as "图：`figures/xxx.png`") to <img> tags ---
+    def inline_fig_to_img(match):
+        fname = match.group(1)
+        # Extract just the filename
+        fname = Path(fname).name
+        img_path = FIG_DIR / fname
+        if img_path.exists():
+            data_uri = img_to_base64(img_path)
+            return f'<p align="center"><img src="{data_uri}" width="70%"></p>'
+        return match.group(0)
+
+    # Match: 图：`figures/xxx.png`  or  Figure: `figures/xxx.png`
+    # Also match patterns like: `figures/xxx.png`、`figures/yyy.png` (Chinese enumeration)
+    # Replace each `figures/xxx.png` code span with an embedded image
+    md_text = re.sub(r'`figures/([a-zA-Z0-9_./-]+\.png)`',
+                     lambda m: (lambda f: f'<p align="center"><img src="{img_to_base64(FIG_DIR / Path(m.group(1)).name)}" width="70%"></p>'
+                               if (FIG_DIR / Path(m.group(1)).name).exists() else m.group(0))(m),
+                     md_text)
 
     return md_text, math_store
 
@@ -177,7 +203,7 @@ def main():
         slug = slugify(title)
         toc_items.append((level, title, slug))
 
-    toc_html = '<div id="sidebar"><h2>Contents</h2><ul>\n'
+    toc_html = f'<div id="sidebar"><h2>{"目录" if "--zh" in sys.argv else "Contents"}</h2><ul>\n'
     for level, title, slug in toc_items:
         cls = f"toc-h{level}"
         toc_html += f'<li class="{cls}"><a href="#{slug}">{title}</a></li>\n'
@@ -195,9 +221,11 @@ def main():
 
     title_match = re.match(r'^#\s+(.+)$', orig, re.MULTILINE)
     title = title_match.group(1) if title_match else "TransCIF Paper"
+    is_zh = "--zh" in sys.argv
+    lang = "zh-CN" if is_zh else "en"
 
     html = f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
