@@ -159,7 +159,17 @@ The *nearest-neighbor* intuition fails outright — a cluster of mutually close 
 
 **Baselines.** *Supervised (target 80% history):* PatchTST + RevIN (strongest; 300 epochs, cosine warmup), DLinear-Direct, DLinear-RS (share-based supervised), CarbonCast CNN-LSTM (faithful PyTorch port of the official architecture: Conv1D(64,k7)→MaxPool→Conv1D(32,k5)→Flatten→RepeatVector→LSTM(64)→Dropout→Dense, with min-max scaling as in the official `common.scaleDataset`), GBRT. *Zero-shot:* CarbonCast-ZS (trained on the 28 sources, source normalization statistics — the honest deployment scenario), TransCIF (ours). *Floor:* persistence (lag-24h).
 
-### 6.2 Main result: 29-region LORO benchmark
+### 6.2 Main result: three information-set tiers on the 29-region LORO benchmark
+
+We organize results by **information set** — the data available about the target region at
+deployment — to make explicit what each tier of observability buys:
+
+| Tier | Protocol | Target labels used | Median MAE | vs PatchTST-sup |
+|---|---|---|---:|---|
+| **ZS** | Config-only zero-shot | 0 hours | 52.1 | 1.24× (ratio $\rho$) |
+| **ZS+** | + test-time calibration | 0 hours (observable stream only) | **46.88** | **1.085×** |
+| **Joint** | + minimal calibration fine-tuning | 288 h (12 days) | **40.50** | **0.98×** |
+| PatchTST-sup | Supervised upper bound | ~7008 h (80% of year) | 43.50 | 1.00× |
 
 **Table 1: Zero-shot TransCIF (ZS: config-only; ZS+: with test-time calibration, §4.5) vs. supervised PatchTST and persistence (CIF MAE, gCO$_2$/kWh; 5 seeds). $\rho$ = ZS/PatchTST; $\rho_P$ = ZS/persistence; $\rho^+, \rho_P^+$ analogous for ZS+. Sorted by $\bar{rs}$.**
 
@@ -184,7 +194,7 @@ The *nearest-neighbor* intuition fails outright — a cluster of mutually close 
 | UK_17_Wales | 0.46 | 73.0 | 65.9 | 69.5 ± 0.4 | 1.06 | **0.95** | 67.9 ± 0.3 | 1.03 | **0.93** |
 | UK_15_England | 0.52 | 48.6 | 44.0 | 50.6 ± 0.6 | 1.15 | 1.04 | 47.5 ± 0.2 | 1.08 | **0.98** |
 | UK_18_GB | 0.56 | 46.0 | 41.2 | 47.7 ± 0.7 | 1.16 | 1.04 | 44.8 ± 0.2 | 1.09 | **0.97** |
-| UK_08_W_Midlands | 0.58 | 81.5 | 66.9 | 81.2 ± 1.3 | 1.21 | 1.00 | 77.5 ± 0.1 | 1.16 | **0.95** |
+| UK_08_W_Midlands | 0.58 | 81.5 | 66.9 | 81.2 ± 1.3 | 1.21 | 0.00 | 77.5 ± 0.1 | 1.16 | **0.95** |
 | UK_10_E_England | 0.60 | 61.1 | 50.6 | 58.3 ± 0.7 | 1.15 | **0.95** | 56.9 ± 0.3 | 1.12 | **0.93** |
 | UK_05_Yorkshire | 0.60 | 50.0 | 39.4 | 47.2 ± 0.4 | 1.20 | **0.94** | 45.8 ± 0.3 | 1.16 | **0.92** |
 | SA1 | 0.69 | 68.1 | 51.6 | 64.3 ± 0.4 | 1.25 | **0.95** | 60.5 ± 0.1 | 1.17 | **0.89** |
@@ -237,6 +247,17 @@ The self-validated fusion is by far the largest single contributor (+12.7% per-r
 
 **Config robustness.** Perturbing the config inputs at deployment (simulating public-report inaccuracy): $\bar{rs}$ ±15% and $ef_{nr}$ ±20–40% leave win/loss outcomes unchanged in NSW1/VIC1/SA1 (SA1 is fully immune to ±40% $ef_{nr}$ scaling in share-space input, as $ef$ enters only the fixed output map). Public capacity-registry accuracy (±10%) is comfortably sufficient.
 
+**Architecture equalizer effect.** A natural question is whether richer architectures further improve results. We tested four model variants on a 12-region × 3-seed LORO subset, each keeping the identical config, training protocol, and ZS+ calibration pipeline, varying only the backbone:
+
+| Variant | ZS median MAE | Δ vs flagship | ZS+ median MAE | Δ vs flagship |
+|---|---:|---:|---:|---:|
+| Flagship (AdaptivePersistDLinear) | 44.9 | — | 26.10 | — |
+| **RegimeMoE** (3 experts + config router) | **40.6** | **−4.2** | 26.10 | +0.00 |
+| Weather-augmented (ERA5 side channel) | 46.5 | +1.7 | 26.10 | −0.01 |
+| RevIN-wrapped (instance normalization) | 60.2 | +15.4 | 26.15 | +0.05 |
+
+The Regime MoE — whose softmax router exploits the fuel-augmented config vector to specialize one expert per fuel regime — improves pure ZS meaningfully (−4.2, 8/12 regions), with the largest gain on QLD1 (−12.1: solar+coal correctly routed to a dedicated expert). Yet **all four variants converge to ZS+ median within 0.05 MAE**. The ZS+ branch fusion acts as an *equalizer*: by backtesting each branch on the target's observable past and fusing lead-by-lead, it recovers the same calibrated output regardless of the ZS backbone's quality. RevIN hurts because the renewable-share series is already in $[0,1]$ with physically meaningful absolute level (the region's mean penetration), which instance normalization erases; the weather encoder is too simple (AvgPool+Linear) to capture the nonlinear irradiance→PV map. The positive finding is that **config precision and architecture determine the cold-start (ZS) floor, while calibration data determines the ceiling** — and the ceiling is architecture-independent.
+
 ### 6.5 Why CarbonCast fails cross-domain (Phase 3.2)
 
 **Table 3: CarbonCast supervised vs. zero-shot vs. TransCIF ZS/ZS+ (CIF MAE; 9 representative regions).**
@@ -273,11 +294,33 @@ We simulate onboarding a new region on day 0 with config only, and race TransCIF
 
 Median 30–60 days; in 2/8 regions the supervised model *never catches up within the 9-month horizon* (NSW1, UK_07 — mid-penetration regions where cross-region signal is genuinely richer than a few months of local history). The ZS+ calibration is active here too: its self-validation ramps up within weeks of deployment and pulls ahead as the observation stream grows (mean over the 8 regions: 57.0 vs 59.9 at 30 days, 52.5 vs 57.4 at 60, 51.0 vs 56.9 at 90 — a widening 5–10% margin at zero training cost). Every carbon-aware decision in the gap is enabled by the zero-shot forecast that would otherwise not exist. Figure: `figures/deployment_warmup.png`.
 
+### 6.9 Difficulty stratification and the calibration sweet spot
+
+**Three-tier difficulty structure.** The 29 regions decompose into three persistence-MAE tiers whose joint-trained MAE tracks the persistence floor:
+
+| Tier | Persistence MAE | # regions | Joint MAE median | Representative |
+|---|---:|---:|---:|---|
+| Easy | < 30 | 11 | 15.7 | US_BPAT (5.9), US_FPL (9.0), US_PJM (14.2) |
+| Medium | 30–60 | 13 | 40.8 | US_CISO (21.2), UK_London (53.3), US_MISO (40.4) |
+| Pathological | > 60 | 7 | 69.7 | VIC1 (113), SA1 (91), UK_09 (77), UK_08 (74) |
+
+The pathological tier's joint MAE (69.7) nearly equals its persistence floor — even supervised calibration cannot pull these regions to the medium tier because their CIF signal has intrinsically high day-to-day volatility. VIC1 is a special case: its $ef_{nr}=1160$ (lignite-dominated) is 2× higher than any donor, making it an isolated outlier in configuration space with no transferable source. We recommend benchmark tables report all three tiers separately for honest comparison.
+
+**Calibration-data-amount curve.** How much target-domain calibration is enough? Sweeping the number of calibration origins (each = 24 h of CIF labels) on the 12-region subset:
+
+| Calibration hours | 0 (ZS+) | 72 (3d) | **144 (6d)** | 288 (12d) | 576 (24d) |
+|---:|---:|---:|---:|---:|---:|
+| Median MAE | 36.68 | 33.92 | **32.67** | 38.79 | 38.14 |
+
+The curve is **non-monotonic**: 6 days of calibration data (144 h) reaches the sweet spot (−4.0 vs zero-label ZS+), but more data *overfits* — 24 days (576 h) is worse than zero. Easy regions (persistence < 20) are immune to calibration or slightly harmed (ZS+ already sufficient); medium regions benefit at 144 h; pathological regions (VIC1, UK_09) respond volatily. This reveals that the Joint protocol's fixed 12-day calibration is not universally optimal — different difficulty tiers have different sweet spots. Figure: `figures/calibration_curve.png`.
+
 ---
 
 ## 7. Discussion
 
 **When does config-only zero-shot work?** The evidence triangulates one answer: when the target sits *inside* the source configuration spectrum. Mid-penetration targets ($\bar{rs}\in[0.28, 0.70]$) achieve $\rho \le 1.25$ almost uniformly; extreme-penetration targets degrade in proportion to their effective config distance ($r=0.58$). This is operationally decisive because the condition is checkable *before deployment* from public data alone. The ZS+ calibration reframes rather than voids this law: the config-space boundary still marks where the *transferred* signal runs out, but three closed-form corrections computed from the target's own observable streams recover most of what transfer alone cannot supply — turning the boundary regions from failures ($\rho \ge 2.6$) into persistence-beating performers ($\rho^+ \le 1.18$, $\rho_P^+ \le 0.96$ among them; US_FPL and QLD1 even overtake the supervised model) at zero training cost.
+
+**The calibration equalizer effect.** A finding with methodological implications: across four architecturally diverse backbones (flagship, Regime-MoE, weather-augmented, RevIN), the ZS+ median MAE converges to within 0.05 of 26.10 — even when ZS quality differs by 15+ MAE (RevIN). The ZS+ branch fusion effectively performs *adaptive model selection at each forecast origin*: by backtesting every branch on the target's recent past and fusing lead-by-lead, it exploits whatever diversity the backbone provides while discarding its systematic biases. This means the ZS model's role shifts from "final predictor" to "candidate generator" — as long as candidates are diverse (MoE's experts, climatology branches), the calibration mechanism extracts their useful signal. The practical consequence is that **the framework's competitiveness comes from the combination of physics decomposition + config conditioning + test-time calibration, not from any single architecture choice** — a robustness property that lowers the barrier to deployment.
 
 **What is the physics layer worth?** Not raw accuracy — the Direct-CIF oracle is 11% better when target CIF telemetry exists. Its value is threefold: it makes the *transfer* possible at all (share dynamics transfer; absolute CIF levels do not — the CarbonCast failure mode); it renders error *analyzable* (Theorem 1's exact attribution, 71% amplification share, $R^2=0.84$ predictive bound); and it makes deployment *cheap* (two public scalars replace an emissions-measurement pipeline).
 
@@ -286,7 +329,7 @@ Median 30–60 days; in 2/8 regions the supervised model *never catches up withi
 ## 8. Limitations
 
 - **Boundary regions fail config-only.** Fossil-dominated grids ($\bar{rs} < 0.19$) reach $\rho$ of 1.7–3.1 under pure config-only ZS. The ZS+ calibration reduces this to 0.89–1.18 ($\rho_P^+ \le 0.96$), but it does so by consuming the target's live CIF observation stream at test time — i.e., it relaxes the strictest reading of "config-only" (weights still never see target data; no training occurs). Where even that stream is unavailable, the config-only envelope stands: near-constant CIF makes forecasts in these regions least consequential, a contextual rather than structural consolation.
-- **Two-scalar config is a coarse domain descriptor.** Fuel-mix composition, interconnection topology, and storage penetration are not captured; richer configs are the obvious extension.
+- **Two-scalar config is a coarse domain descriptor.** Fuel-mix composition, interconnection topology, and storage penetration are not captured. We partially addressed this by extending the config vector to include per-fuel shares (coal/gas/nuclear/hydro/solar/wind) for US and UK regions, which resolves "false neighbour" pairs (e.g. ERCO wind-heavy vs MISO coal-heavy, both $\bar{rs}\approx 0.2$) and yields a modest ZS improvement (9/12 regions). The fuel-augmented RegimeMoE variant (§6.4) shows the largest cold-start gain (−4.2 MAE). However, the ZS+ calibration equalizes all variants, so richer config mainly helps the cold-start floor, not the deployed ceiling. AU regions remain on the 2-scalar config pending NEMED DUID-level fuel integration.
 - **Single-year data.** All series are 2023 (AU) / recent-year (UK, US); the temporal-OOD study (§6.7) covers within-year splits only, not inter-year drift such as fleet turnover.
 - **The share input stream must exist.** Zero-shot removes the need for target *CIF/emissions* history, but real-time generation-mix telemetry is still required; grids without any generation reporting are out of scope.
 - **Theorem 2 terms are proxied, not computed.** The divergence analysis is a validated empirical law (n=29 folds), not a certified bound.
