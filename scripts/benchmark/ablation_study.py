@@ -19,7 +19,6 @@ Usage: python scripts/ablation_study.py [--quick]
 import argparse
 import json
 import random
-import sys
 import time
 from pathlib import Path
 
@@ -27,12 +26,11 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo scripts/ root
-from run_unified_eval import (
+from transcif.config import (
     DATA_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
-    AU_REGIONS, US_REGIONS, UK_REGIONS,
-    EPOCHS_ZERO_SHOT,
+    AU_REGIONS, US_REGIONS, UK_REGIONS, EPOCHS_ZERO_SHOT,
+)
+from transcif.calibration.zs_plus import (
     ANCHOR_WIN, RESID_WIN, WEEKLY_LAG, SELECT_DAYS, SELECT_MARGIN, FUSION_MENU,
 )
 from transcif.data.loaders import discover_uk_regions, load_region_data
@@ -227,7 +225,7 @@ def zs_plus_variant(model, config, rs, cif, ef_r, ef_nr, origins,
                     use_anchor=True, use_residual=True, use_selfval=True,
                     fusion=None, horizon=HORIZON):
     """zs_plus_predict with each calibration step individually switchable."""
-    from transcif_pipeline import SEQ_LEN as L
+    from transcif.config import SEQ_LEN as L
     cfg1 = torch.tensor(config).unsqueeze(0)
     branch_cache = {}
 

@@ -217,7 +217,6 @@ transcif/
 │   ├── figures/                # make_*_figures、carboncast_analysis
 │   ├── benchmark/              # 跨方法 / 29 区域对比与基线（专门做测试）
 │   │   ├── run_unified_eval.py        # 主 benchmark 编排器（29 区域 × 5 种子）
-│   │   ├── run_supervised_baselines.py / _v2.py
 │   │   ├── conformal_prediction.py     # 保形预测校准
 │   │   ├── ablation_study.py
 │   │   ├── temporal_ood.py

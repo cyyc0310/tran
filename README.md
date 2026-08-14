@@ -33,6 +33,7 @@ Traditional CIF forecasting requires months of local historical data and per-reg
 | **TransCIF-ZS** (pure config-only, zero target data) | Median transfer efficiency ratio 1.24 vs. supervised PatchTST (~80% of supervised accuracy); beats persistence in 12/29 regions |
 | **TransCIF-ZS+** (with test-time calibration) | Median ratio 1.08; beats persistence in **29/29 regions** (median ratio 0.94); outperforms all cross-domain methods in 27/29 regions |
 | **vs. zero-shot CarbonCast** | ZS+ wins in 8/9 representative regions (mean ratio 0.73); CarbonCast degrades up to 2.4× in cross-domain |
+| **Fused-5 + joint training** (Phase 8/9) | Five-direction fusion + differentiable ZS+ calibration → **median MAE 39.53 gCO₂/kWh** on full 29×5 LORO (sub-40); significant +1.62 vs frozen-proxy (Wilcoxon p=5×10⁻¹⁴, 79% pair-wise win); competitive with supervised PatchTST (41.47; 61% win) |
 | **Theorem 1** (error propagation identity) | Verified at floating-point precision (error 1.3×10⁻⁴) across 29 regions |
 | **Theorem 2** (transfer difficulty analysis) | U-shaped difficulty curve over renewable share; weighted config distance correlates with zero-shot ratio r=0.58 (p=0.001) |
 | **Conformal prediction** | Valid 90% coverage in 25/29 zero-shot regions, step-stratified split calibration |
@@ -230,7 +231,6 @@ transcif/
 │   ├── figures/                # make_*_figures, carboncast_analysis
 │   ├── benchmark/              # Cross-method / 29-region comparison & baselines
 │   │   ├── run_unified_eval.py        # Main benchmark orchestrator (29 regions × 5 seeds)
-│   │   ├── run_supervised_baselines.py / _v2.py
 │   │   ├── conformal_prediction.py     # Conformal prediction calibration
 │   │   ├── ablation_study.py
 │   │   ├── temporal_ood.py
@@ -277,6 +277,88 @@ Input: renewable share time series + target region config (mean_rs, ef_nr)
 ```
 
 ---
+
+## Reproducing the Joint Training / Torch-Native Results (Phase 8/9)
+
+The headline median-MAE 39.53 result comes from the differentiable joint-training
+pipeline. Three entry points, cheapest first:
+
+```bash
+# 1. Significance test on the existing 145-pair results (fast, ~10 s):
+.venv/bin/python scripts/experiments/run_significance.py
+
+# 2. Torch-native joint training, 2-region validation gate (~5 min, MPS):
+.venv/bin/python scripts/experiments/run_joint_train_native.py
+
+# 3. Full 29×5 LORO (~2.5 h on MPS) — the headline number:
+.venv/bin/python scripts/experiments/run_joint_train_native_full.py --fusion learned
+#    with the internal-val gate (skip Stage-2 overfit on easy grids):
+.venv/bin/python scripts/experiments/run_joint_train_native_full.py --gate internal_val \
+    --out results/joint_train_native_gated_full.json
+```
+
+Key design points (see `results/joint_train_native_verdict.md` for the full
+analysis):
+
+- **All five directions are torch-native** (`src/transcif/models/zeroshot/native.py`):
+  `NativePhys/Causal/Hier` inline the physics conversion; `NativeRAG` uses a
+  differentiable matmul kNN over a buffered memory bank; `NativeICL` treats
+  per-query context retrieval as no-grad preprocessing with a differentiable
+  transformer forward.
+- **Stage 1** trains the fusion head + differentiable ZS+ (directions frozen);
+  **Stage 2** unfreezes each direction's prediction head (DLinear heads / VAE
+  predictor / hourly head / RAG branch / ICL projection) — the main backbone
+  stays frozen to preserve zero-shot transfer.
+- The **internal-val gate** (`--gate internal_val`, eps=2.0) reverts to Stage 1
+  only when Stage 2 is clearly worse on a disjoint inner-validation split,
+  catching easy-grid overfit without sacrificing hard-grid gains.
+
+Results land in `results/joint_train_native_full{_summary}.json`; the per-region
+residuals for Diebold-Mariano testing are produced by
+`scripts/experiments/run_residual_dump.py`.
+
+## Fuel-Decomposed Architecture & the Telemetry-Free Tier (Phase FD)
+
+Phase FD adds a fuel-decomposed, config-morphable architecture
+(`src/transcif/models/fuel_decomp.py`) and a new, stricter information tier
+**I_cfg** — prediction from fuel-mix config + reanalysis weather + calendar
+**only, no telemetry of any kind** — the deployment interface of grids that
+publish nothing but annual factors and monthly fuel mix (e.g. Chinese
+provinces). See `docs/BENCHMARK.md` for the full benchmark definition.
+
+```bash
+# Quick LORO eval (8 regions × 2 seeds, ~10 min on MPS): I_cfg + I_0 tiers
+.venv/bin/python scripts/experiments/run_fuel_decomp_eval.py
+
+# FD-2 ablations: physics-guided synthetic grid recombination / config hypernet
+.venv/bin/python scripts/experiments/run_fuel_decomp_eval.py --p-mix 0.3
+.venv/bin/python scripts/experiments/run_fuel_decomp_eval.py --use-hypernet
+
+# Full 29-region × 5-seed protocol
+.venv/bin/python scripts/experiments/run_fuel_decomp_eval.py --full
+
+# Build the benchmark leaderboard (docs/BENCHMARK.md schema)
+.venv/bin/python scripts/benchmark/run_benchmark.py
+```
+
+Headline (quick protocol, 8 hard regions × 2 seeds —
+`results/fuel_decomp_fd1_verdict.md`):
+
+- **I_cfg median MAE 73.3** vs the deployment-legal annual-constant baseline
+  84.8 (and the monthly-constant oracle 75.6) — **with zero target telemetry**
+- **Hourly ranking skill is significant**: Spearman 0.22 vs 0.0 for any
+  constant baseline (paired Wilcoxon p = 0.0017) — the quantity carbon-aware
+  scheduling actually consumes
+- I_0 median 48.7 (vs 52.1 legacy ZS on the full 29-region ladder)
+- Per-fuel physics reconstruction: median 8.9 gCO₂/kWh across the 25
+  fuel-telemetry regions (outliers: import-heavy South-East England cluster)
+
+Design: per-fuel heads with physics inductive biases (solar = astronomy
+envelope × weather modulation; wind = IEC power-curve transform; thermal =
+config-anchored residual split), a learned bounded EF correction, cold-mode
+dropout so one set of weights serves both tiers, and optional
+hypernetwork-generated head weights + physics-guided pseudo-grid recombination
+(FD-2). ~20k parameters.
 
 ## Running Tests
 

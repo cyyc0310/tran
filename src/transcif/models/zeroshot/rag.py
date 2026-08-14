@@ -14,7 +14,6 @@ import torch
 import torch.nn as nn
 
 from transcif.config import SEQ_LEN, HORIZON
-from transcif.models.base import AdaptivePersistDLinear
 from transcif.physics.decompose import cif_from_shares
 from transcif.physics.bounds import config_weight, unify_config_dim, pad_config
 from transcif.training.schedulers import get_cosine_warmup_scheduler

@@ -45,18 +45,16 @@ import torch.nn as nn
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from transcif.calibration.differentiable_zs_plus import DifferentiableZSPlus
-from transcif.config import HORIZON, SEQ_LEN, TEST_STRIDE, TRAIN_FRACTION
+from transcif.config import HORIZON, SEQ_LEN
 from transcif.models.zeroshot.fusion import BasisMixFusion
 from transcif.training.adversarial_loss import adversarial_persistence_loss
+
+from scripts.experiments._shared import zs_plus_origins
 
 
 def _origins_from_series(rs: np.ndarray, n_max: int = 32) -> list[int]:
     """Pick up to ``n_max`` evenly spaced test origins from the test split."""
-    split = int(len(rs) * TRAIN_FRACTION)
-    candidates = [
-        split + st
-        for st in range(0, len(rs) - split - HORIZON + 1, TEST_STRIDE)
-    ]
+    candidates = zs_plus_origins(rs)
     if len(candidates) <= n_max:
         return candidates
     idx = np.linspace(0, len(candidates) - 1, n_max).astype(int)

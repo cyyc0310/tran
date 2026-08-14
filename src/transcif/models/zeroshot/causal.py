@@ -27,7 +27,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from transcif.models.base import AdaptivePersistDLinear
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
 from transcif.physics.bounds import config_weight, unify_config_dim, pad_config

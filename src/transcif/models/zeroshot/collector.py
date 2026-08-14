@@ -24,15 +24,12 @@ The collector is the bridge between:
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Mapping, Sequence
+from typing import Mapping
 
 import numpy as np
 
 from transcif.config import HORIZON, SEQ_LEN, TEST_STRIDE, TRAIN_FRACTION
 from transcif.data.windows import build_windows
-
-if TYPE_CHECKING:
-    from transcif.models.zeroshot.fusion import PredictorFn
 
 
 # -----------------------------------------------------------------------------

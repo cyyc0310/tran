@@ -20,7 +20,6 @@ Usage: PYTHONPATH=scripts python scripts/theorem1_physics_bound.py
 """
 
 import json
-import sys
 from pathlib import Path
 
 import matplotlib
@@ -29,15 +28,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo scripts/ root
-from run_unified_eval import (
+from transcif.config import (
     DATA_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
-    AU_REGIONS, US_REGIONS, UK_REGIONS,
-    discover_uk_regions, load_region_data, build_windows,
-    cif_from_shares, train_zero_shot, AdaptivePersistDLinear,
-    get_cosine_warmup_scheduler, EPOCHS_ZERO_SHOT, BATCH_SIZE,
+    AU_REGIONS, US_REGIONS, UK_REGIONS, EPOCHS_ZERO_SHOT, BATCH_SIZE,
 )
+from transcif.data.loaders import discover_uk_regions, load_region_data
+from transcif.data.windows import build_windows
+from transcif.physics.decompose import cif_from_shares
+from transcif.models.zeroshot.base_zs import train_zero_shot
+from transcif.models.base import AdaptivePersistDLinear
+from transcif.training.schedulers import get_cosine_warmup_scheduler
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
@@ -45,13 +45,16 @@ RESULTS_DIR.mkdir(exist_ok=True)
 FIGURES_DIR.mkdir(exist_ok=True)
 
 
-def validate_identity(rs_pred, rs_true, ef_r, ef_nr, y_cif_true):
+def decompose_prediction_error(rs_pred, rs_true, ef_r, ef_nr, y_cif_true):
     """Decompose CIF prediction error into physics-amplified and residual terms.
-    
+
+    (Distinct from ``transcif.physics.bounds.validate_identity``, which checks
+    the CIF identity against observed data; this operates on predictions.)
+
     Error decomposition:
         CIF_pred - CIF_true = [cif(rs_pred) - cif(rs_true)] + [cif(rs_true) - CIF_true]
                             = L_T*(rs_pred - rs_true) * sign + physics_residual
-    
+
     Where:
         Term 1 (exact): cif(rs_pred) - cif(rs_true) = (rs_pred - rs_true)*(ef_r - ef_nr)
         Term 2 (physics gap): cif(rs_true) - CIF_measured (due to ef approximation)
@@ -153,8 +156,8 @@ def main():
                 torch.tensor(x_rs_test, dtype=torch.float32), target_cfg
             ).numpy()
         
-        # Validate identity
-        stats = validate_identity(rs_pred, y_rs_test, ef_r, ef_nr, y_cif_test)
+        # Decompose prediction error
+        stats = decompose_prediction_error(rs_pred, y_rs_test, ef_r, ef_nr, y_cif_test)
         stats["region"] = target_name
         stats["mean_rs"] = data["mean_rs"]
         stats["ef_nr"] = ef_nr

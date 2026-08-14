@@ -11,7 +11,6 @@ Ablation variants:
     NoAdaptiveGate, NoConfigBias, NoDecomposition, DirectCIF, NoPhysicsConversion
 """
 
-import numpy as np
 import torch
 import torch.nn as nn
 
@@ -100,11 +99,6 @@ EXTENDED_CONFIG_FIELDS = [
     ("storage_ratio", "energy storage capacity / peak demand"),
     ("load_factor", "average load / peak load"),
 ]
-
-
-def build_config_vector(data: dict) -> np.ndarray:
-    """Build a 2-D minimal config from a region data dict."""
-    return np.array([data["mean_rs"], data["ef_nr"] / 1000.0], dtype=np.float32)
 
 
 # ---------------------------------------------------------------------------
@@ -436,27 +430,3 @@ class WeatherAdaptivePersistDLinear(nn.Module):
         gate_input = torch.cat([config, recent_mean, recent_std], dim=1)
         gate = torch.sigmoid(self.gate_net(gate_input))
         return gate * persist + (1 - gate) * dlinear_out
-
-
-# ---------------------------------------------------------------------------
-# Model registry
-# ---------------------------------------------------------------------------
-
-MODEL_REGISTRY = {
-    "AdaptivePersistDLinear": AdaptivePersistDLinear,
-    "RevINAdaptivePersistDLinear": RevINAdaptivePersistDLinear,
-    "RegimeMoEAdaptivePersist": RegimeMoEAdaptivePersist,
-    "WeatherAdaptivePersistDLinear": WeatherAdaptivePersistDLinear,
-    "RichConfigAdaptivePersist": RichConfigAdaptivePersist,
-    "PatchTSTFixed": PatchTSTFixed,
-    "NoAdaptiveGate": NoAdaptiveGate,
-    "NoConfigBias": NoConfigBias,
-    "NoDecomposition": NoDecomposition,
-    "DirectCIF": DirectCIF,
-    "NoPhysicsConversion": NoPhysicsConversion,
-}
-
-
-def get_model(name: str, **kwargs):
-    """Factory for registered models."""
-    return MODEL_REGISTRY[name](**kwargs)

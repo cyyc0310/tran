@@ -1,13 +1,11 @@
 """Supervised PatchTST baseline training."""
 
-import numpy as np
 import torch
 import torch.nn as nn
 
 from transcif.config import SEQ_LEN, HORIZON, BATCH_SIZE, EPOCHS_SUPERVISED
 from transcif.models.base import PatchTSTFixed
 from transcif.training.schedulers import get_cosine_warmup_scheduler
-from transcif.training.progress import TrainProgress
 
 
 def train_patchtst(x_train, y_train, epochs=EPOCHS_SUPERVISED, lr=3e-4, device=None,

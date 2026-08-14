@@ -16,9 +16,8 @@ import torch.nn as nn
 
 from transcif.config import (
     SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
-    EPOCHS_ZERO_SHOT, BATCH_SIZE, EPOCHS_SUPERVISED,
+    EPOCHS_ZERO_SHOT, EPOCHS_SUPERVISED,
 )
-from transcif.data.loaders import load_region_data
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
 from transcif.physics.bounds import config_weight
@@ -291,8 +290,8 @@ def evaluate_target(target_name, all_regions, seed=42,
 
     if use_rag:
         def _task_rag():
-            from transcif.models.zeroshot.rag import (RagMemoryBank, RagDLinear,
-                                                      train_rag_zero_shot, predict_rag_zs)
+            from transcif.models.zeroshot.rag import (
+                train_rag_zero_shot, predict_rag_zs)
             rag_model, bank = train_rag_zero_shot(
                 all_regions, target_name, seed=seed, device=device)
             cif_rag = predict_rag_zs(rag_model, bank, x_rs_test.astype(np.float32),
@@ -364,8 +363,9 @@ def evaluate_target(target_name, all_regions, seed=42,
 
     if use_icl:
         def _task_icl():
-            from transcif.models.zeroshot.icl import (ICTransformer, train_icl,
-                                                      predict_icl_zs, select_examples,
+            from transcif.models.zeroshot.icl import (train_icl,
+                                                      predict_icl_zs,
+                                                      select_examples,
                                                       build_context)
             icl_model = train_icl(all_regions, target_name, seed=seed, device=device)
             cif_icl = predict_icl_zs(

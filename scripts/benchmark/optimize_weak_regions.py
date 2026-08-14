@@ -10,22 +10,20 @@ Also logs mean gate value for diagnosis.
 Usage: PYTHONPATH=scripts python scripts/optimize_weak_regions.py
 """
 
-import sys
 import json
 from pathlib import Path
 
 import numpy as np
 import torch
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo scripts/ root
-
-from run_unified_eval import (
+from transcif.config import (
     SEQ_LEN, HORIZON, TEST_STRIDE, TRAIN_FRACTION,
-    AU_REGIONS, US_REGIONS, discover_uk_regions, UK_REGIONS,
-    load_region_data, cif_from_shares, compute_metrics, train_zero_shot,
+    AU_REGIONS, US_REGIONS, UK_REGIONS,
 )
-import run_unified_eval as ue
+from transcif.data.loaders import discover_uk_regions, load_region_data
+from transcif.physics.decompose import cif_from_shares
+from transcif.evaluation.metrics import compute_metrics
+from transcif.models.zeroshot.base_zs import train_zero_shot
 
 RESULTS = Path(__file__).resolve().parent.parent / "results"
 # per-region patchtst MAE (seed 0) from the existing full eval, for ratio calc

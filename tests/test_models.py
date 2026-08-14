@@ -3,16 +3,14 @@
 import numpy as np
 import torch
 
-from transcif.models.base import (
-    AdaptivePersistDLinear, PatchTSTFixed, get_model, MODEL_REGISTRY,
-)
+from transcif.models.base import AdaptivePersistDLinear, PatchTSTFixed
 from transcif.models.zeroshot.base_zs import train_zero_shot, evaluate_target
 from transcif.config import SEQ_LEN, HORIZON
 
 
-def test_model_registry():
-    for name in ["AdaptivePersistDLinear", "PatchTSTFixed"]:
-        m = get_model(name, seq_len=SEQ_LEN, horizon=HORIZON)
+def test_flagship_models_instantiate():
+    for cls in [AdaptivePersistDLinear, PatchTSTFixed]:
+        m = cls(seq_len=SEQ_LEN, horizon=HORIZON)
         assert isinstance(m, torch.nn.Module)
 
 

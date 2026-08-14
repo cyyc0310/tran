@@ -19,7 +19,6 @@ from typing import Callable, Mapping, Sequence
 import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 from transcif.config import HORIZON, SEQ_LEN
 

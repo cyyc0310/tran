@@ -5,12 +5,14 @@ Key additions over v2:
 - Fixed PatchTST with RevIN normalization + cosine warmup + lower lr
 - All results in one script for reproducibility
 
-Usage: PYTHONPATH=scripts python scripts/run_phase1_complete.py
+Shared constants, models, and physics helpers are imported from the
+``transcif`` package (single source of truth).  Only pieces that deliberately
+diverge from the package are kept local (see comments).
+
+Usage: .venv/bin/python scripts/experiments/run_phase1_complete.py
 """
 
-import glob
 import random
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -18,55 +20,29 @@ import torch
 import torch.nn as nn
 from sklearn.ensemble import GradientBoostingRegressor
 
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
+from transcif.config import (
+    DATA_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
+    EPOCHS_SUPERVISED, EPOCHS_CARBONCAST, EPOCHS_ZERO_SHOT, BATCH_SIZE,
+    SEEDS_QUICK, AU_REGIONS, UK_REGIONS,
+)
+from transcif.data.loaders import discover_uk_regions
+from transcif.data.windows import build_windows
+from transcif.physics.decompose import cif_from_shares
+from transcif.models.base import AdaptivePersistDLinear, PatchTSTFixed
+from transcif.training.schedulers import get_cosine_warmup_scheduler
 
-DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data_2023"
-SEQ_LEN = 336   # 14 days
-HORIZON = 24    # 24-hour ahead
-TRAIN_STRIDE = 6
-TEST_STRIDE = 24
-TRAIN_FRACTION = 0.8
-SEEDS = [0, 1, 2]
-EPOCHS_SUPERVISED = 300      # increased from 200
-EPOCHS_CARBONCAST = 300      # CarbonCast needs more (CNN-LSTM is larger)
-EPOCHS_ZERO_SHOT = 150
-BATCH_SIZE = 256
-
-# AU regions with measured emission factors
-AU_REGIONS = {
-    "QLD1": {"file": "QLD1_2023_hourly.csv", "ef_r": 0.0, "ef_nr": 841.59},
-    "NSW1": {"file": "NSW1_2023_hourly.csv", "ef_r": 0.09, "ef_nr": 875.23},
-    "VIC1": {"file": "VIC1_2023_hourly.csv", "ef_r": 0.0, "ef_nr": 1160.12},
-    "SA1":  {"file": "SA1_2023_hourly.csv",  "ef_r": 0.0, "ef_nr": 490.43},
-}
-
-UK_REGIONS = {}
-
-
-# ---------------------------------------------------------------------------
-# Data Loading (same as v2)
-# ---------------------------------------------------------------------------
-
-def discover_uk_regions():
-    """Discover UK regions and estimate emission factors from the training split."""
-    global UK_REGIONS
-    for f in sorted(glob.glob(str(DATA_DIR / "UK_*_2023_hourly.csv"))):
-        name = Path(f).stem.replace("_2023_hourly", "")
-        df = pd.read_csv(f)
-        rs = df["renew_share"].values
-        cif = df["cif_real_gco2_per_kwh"].values
-        split = int(len(rs) * TRAIN_FRACTION)
-        rs_tr, cif_tr = rs[:split], cif[:split]
-        mask = (rs_tr < 0.95) & (rs_tr > 0.05) & (cif_tr > 0)
-        if mask.sum() > 500:
-            ef_nr_est = float(np.median(cif_tr[mask] / (1 - rs_tr[mask])))
-            if 100 < ef_nr_est < 2000:
-                UK_REGIONS[name] = {"file": Path(f).name, "ef_r": 0.0, "ef_nr": ef_nr_est}
+SEEDS = SEEDS_QUICK  # [0, 1, 2] — 3-seed quick protocol for Phase 1.1
 
 
 def load_region_data(region_name: str) -> dict:
+    """Load one region's series + 2-D config.
+
+    Deliberately local: unlike ``transcif.data.loaders.load_region_data`` this
+    version does NOT drop non-finite rows and does NOT extend the config
+    vector with multi-fuel shares — Phase 1.1 numbers were produced with raw
+    series and a fixed 2-D config, and the flagship model below pins
+    ``config_dim=2``.
+    """
     all_regions = {**AU_REGIONS, **UK_REGIONS}
     info = all_regions[region_name]
     path = DATA_DIR / info["file"]
@@ -88,16 +64,6 @@ def load_region_data(region_name: str) -> dict:
     }
 
 
-def build_windows(rs, cif, seq_len, horizon, stride):
-    window = seq_len + horizon
-    x_rs, y_rs, y_cif = [], [], []
-    for start in range(0, len(rs) - window + 1, stride):
-        x_rs.append(rs[start:start + seq_len])
-        y_rs.append(rs[start + seq_len:start + window])
-        y_cif.append(cif[start + seq_len:start + window])
-    return np.stack(x_rs), np.stack(y_rs), np.stack(y_cif)
-
-
 def build_multivariate_windows(rs, cif, seq_len, horizon, stride):
     """Build multivariate windows: input is (rs, cif) history, target is CIF."""
     window = seq_len + horizon
@@ -110,28 +76,9 @@ def build_multivariate_windows(rs, cif, seq_len, horizon, stride):
     return np.stack(x_multi), np.stack(y_cif_out)
 
 
-def cif_from_shares(rs, ef_r, ef_nr):
-    return rs * ef_r + (1 - rs) * ef_nr
-
-
 # ---------------------------------------------------------------------------
 # Models
 # ---------------------------------------------------------------------------
-
-class RevIN(nn.Module):
-    """Reversible Instance Normalization for time series."""
-    def __init__(self, eps=1e-5):
-        super().__init__()
-        self.eps = eps
-
-    def forward(self, x, mode='norm'):
-        if mode == 'norm':
-            self.mean = x.mean(dim=1, keepdim=True)
-            self.std = x.std(dim=1, keepdim=True) + self.eps
-            return (x - self.mean) / self.std
-        else:  # denorm
-            return x * self.std + self.mean
-
 
 class DLinearDirect(nn.Module):
     """DLinear that directly predicts CIF."""
@@ -161,38 +108,6 @@ class DLinearRS(nn.Module):
         trend = self.avg_pool(x3).squeeze(1)
         seasonal = x - trend
         return torch.sigmoid(self.linear_trend(trend) + self.linear_seasonal(seasonal))
-
-
-class PatchTSTFixed(nn.Module):
-    """PatchTST with RevIN normalization — fixes convergence issue."""
-    def __init__(self, seq_len=336, horizon=24, patch_len=24, d_model=64, n_heads=4, n_layers=2):
-        super().__init__()
-        self.patch_len = patch_len
-        self.horizon = horizon
-        n_patches = seq_len // patch_len
-        self.revin = RevIN()
-        self.patch_embed = nn.Linear(patch_len, d_model)
-        self.pos_embed = nn.Parameter(torch.randn(1, n_patches, d_model) * 0.02)
-        encoder_layer = nn.TransformerEncoderLayer(
-            d_model=d_model, nhead=n_heads, dim_feedforward=128,
-            dropout=0.1, batch_first=True
-        )
-        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
-        self.head = nn.Sequential(
-            nn.LayerNorm(n_patches * d_model),
-            nn.Linear(n_patches * d_model, horizon)
-        )
-
-    def forward(self, x):
-        # RevIN normalization
-        x_norm = self.revin(x, 'norm')
-        B = x_norm.shape[0]
-        patches = x_norm.unfold(1, self.patch_len, self.patch_len)
-        x_emb = self.patch_embed(patches) + self.pos_embed
-        x_enc = self.transformer(x_emb)
-        out_norm = self.head(x_enc.reshape(B, -1))
-        # Denormalize output
-        return self.revin(out_norm, 'denorm')
 
 
 class CarbonCastCNNLSTM(nn.Module):
@@ -291,45 +206,9 @@ class CarbonCastCNNLSTM(nn.Module):
         return out
 
 
-class AdaptivePersistDLinear(nn.Module):
-    """Zero-shot model (our method)."""
-    def __init__(self, seq_len=336, horizon=24, config_dim=2):
-        super().__init__()
-        self.horizon = horizon
-        self.avg_pool = nn.AvgPool1d(kernel_size=25, stride=1, padding=12)
-        self.linear_trend = nn.Linear(seq_len, horizon)
-        self.linear_seasonal = nn.Linear(seq_len, horizon)
-        self.config_bias = nn.Sequential(nn.Linear(config_dim, 16), nn.ReLU(), nn.Linear(16, horizon))
-        self.gate_net = nn.Sequential(nn.Linear(config_dim + 2, 16), nn.ReLU(), nn.Linear(16, 1))
-
-    def forward(self, x, config):
-        x3 = x.unsqueeze(1)
-        trend = self.avg_pool(x3).squeeze(1)
-        seasonal = x - trend
-        dlinear_out = torch.sigmoid(
-            self.linear_trend(trend) + self.linear_seasonal(seasonal) + self.config_bias(config)
-        )
-        persist = x[:, -self.horizon:]
-        recent_mean = x[:, -48:].mean(dim=1, keepdim=True)
-        recent_std = x[:, -48:].std(dim=1, keepdim=True)
-        gate_input = torch.cat([config, recent_mean, recent_std], dim=1)
-        gate = torch.sigmoid(self.gate_net(gate_input))
-        return gate * persist + (1 - gate) * dlinear_out
-
-
 # ---------------------------------------------------------------------------
 # Training Utilities
 # ---------------------------------------------------------------------------
-
-def get_cosine_warmup_scheduler(optimizer, warmup_epochs, total_epochs):
-    """Cosine schedule with linear warmup."""
-    def lr_lambda(epoch):
-        if epoch < warmup_epochs:
-            return float(epoch) / float(max(1, warmup_epochs))
-        progress = float(epoch - warmup_epochs) / float(max(1, total_epochs - warmup_epochs))
-        return 0.5 * (1.0 + np.cos(np.pi * progress))
-    return torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda)
-
 
 def train_model_batched(model, x_train, y_train, epochs=300, lr=1e-3,
                         loss_fn="l1", warmup=20, batch_size=BATCH_SIZE):
@@ -430,7 +309,12 @@ def predict_gbrt(model, x_test_rs, horizon):
 
 
 def train_zero_shot(all_regions, target_name, seed=42):
-    """Train AdaptivePersistDLinear on ALL other regions (LORO)."""
+    """Train AdaptivePersistDLinear on ALL other regions (LORO).
+
+    Deliberately local (do not swap for ``base_zs.train_zero_shot``): this
+    version pins ``config_dim=2`` and keeps the exact batch/seed sequence that
+    produced the published Phase 1.1 numbers.
+    """
     torch.manual_seed(seed)
     random.seed(seed)
     np.random.seed(seed)

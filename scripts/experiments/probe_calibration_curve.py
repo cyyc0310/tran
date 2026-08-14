@@ -38,16 +38,7 @@ from transcif.config import (
 from transcif.data.loaders import discover_uk_regions, load_region_data
 from transcif.models.zeroshot.base_zs import evaluate_target
 from scripts.experiments.run_joint_train import run_joint_train
-
-
-def split_origins(rs, n_train=12, n_eval=12):
-    """Disjoint train+eval origin lists from the test split (copy from run_joint_train_full)."""
-    split = int(len(rs) * TRAIN_FRACTION)
-    all_origins = [split + st for st in range(0, len(rs) - split - HORIZON + 1, TEST_STRIDE)]
-    if len(all_origins) < n_train + n_eval:
-        n_train = max(2, len(all_origins) // 2)
-        n_eval = len(all_origins) - n_train
-    return all_origins[:n_train], all_origins[n_train:n_train + n_eval]
+from scripts.experiments._shared import split_origins
 
 SEEDS = [0, 1, 2]
 TARGETS = ["US_CISO", "US_ERCO", "US_MISO", "US_PJM", "US_ISNE",

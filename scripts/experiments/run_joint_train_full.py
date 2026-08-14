@@ -19,6 +19,7 @@ Usage:
 """
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -26,27 +27,11 @@ from pathlib import Path
 import numpy as np
 import torch
 
-sys.path.insert(0, "/Users/cyyc0310/Downloads/transcif")
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from transcif.config import HORIZON, SEQ_LEN, TEST_STRIDE, TRAIN_FRACTION
 from transcif.data.loaders import load_region_data, all_region_configs
-from scripts.experiments.run_joint_train import run_joint_train, _origins_from_series
-
-
-def split_origins(rs: np.ndarray, n_train: int = 12, n_eval: int = 12):
-    """Get disjoint train + eval origin lists from the test split."""
-    split = int(len(rs) * TRAIN_FRACTION)
-    all_origins = [
-        split + st
-        for st in range(0, len(rs) - split - HORIZON + 1, TEST_STRIDE)
-    ]
-    if len(all_origins) < n_train + n_eval:
-        # Fall back to fewer if series is short
-        n_train = max(2, len(all_origins) // 2)
-        n_eval = len(all_origins) - n_train
-    train_origins = all_origins[:n_train]
-    eval_origins = all_origins[n_train : n_train + n_eval]
-    return train_origins, eval_origins
+from scripts.experiments.run_joint_train import run_joint_train
+from scripts.experiments._shared import split_origins
 
 
 def evaluate_target(target: str, all_regions: dict, seed: int,

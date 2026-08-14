@@ -83,7 +83,7 @@ per-direction correction，在后 12 天 disjoint 窗口上评估。**不是纯�
 | 项 | 值 |
 |---|---|
 | 目标域 CIF 标签用量 | 训练段全部（~7008 小时） |
-| 入口脚本 | `run_supervised_baselines*.py`, `base_zs.evaluate_target` 的 PatchTST 路径 |
+| 入口脚本 | `scripts/experiments/run_phase1_complete.py`, `base_zs.evaluate_target` 的 PatchTST 路径 |
 | 用途 | 提供 ZS/Joint 的性能上限参照 |
 
 ---

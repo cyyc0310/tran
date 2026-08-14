@@ -26,7 +26,6 @@ Usage: python scripts/conformal_prediction.py [--quick]
 
 import argparse
 import json
-import sys
 import time
 from pathlib import Path
 
@@ -36,8 +35,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from run_unified_eval import (
+from transcif.config import (
     DATA_DIR, RESULTS_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
     AU_REGIONS, US_REGIONS, UK_REGIONS,
 )

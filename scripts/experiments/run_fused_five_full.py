@@ -47,52 +47,12 @@ from transcif.models.zeroshot.fusion import (
     basis_mix_loss,
     train_fusion,
 )
+from scripts.experiments._shared import (
+    build_direction_predictors as _build_predictors,
+    zs_plus_origins as _zs_plus_origins,
+)
 
 DEVICE = "cuda" if torch.cuda.is_available() else None
-
-
-# ---------------------------------------------------------------------------
-# Predictor training (reuse pattern from run_fused_five_variants.py)
-# ---------------------------------------------------------------------------
-
-def _build_predictors(small_regions, target, seed):
-    """Train 5 direction models on target; return predictor dict.
-
-    Args:
-        small_regions: Small dict (target + a few donor regions). Train functions
-            iterate ``small_regions.items()`` for the auxiliary/donor pool, so
-            passing the full 29-region dict here makes each train call ~24x
-            slower (~80s vs ~3.3s with 4 regions). See commit history for the
-            profiling that isolated this bottleneck.
-        target: Target region name.
-        seed: Random seed.
-    """
-    predictors = {}
-    from transcif.models.zeroshot.rag import train_rag_zero_shot, predict_rag_zs
-    from transcif.models.zeroshot.phys_irm import train_phys_irm, predict_phys_irm
-    from transcif.models.zeroshot.causal import train_causal_zero_shot, predict_causal_zs
-    from transcif.models.zeroshot.icl import train_icl, predict_icl_zs
-    from transcif.models.zeroshot.hier import train_hier, predict_hier_zs
-
-    m, bank = train_rag_zero_shot(small_regions, target, seed=seed, device=DEVICE)
-    predictors["rag"] = lambda x, cfg, ef_r, ef_nr, m=m, b=bank: predict_rag_zs(
-        m, b, x.astype(np.float32), cfg.astype(np.float32), ef_r, ef_nr)
-    m, _ = train_phys_irm(small_regions, target, seed=seed, gamma_irm=0.1,
-                          lambda_cif=0.5, device=DEVICE)
-    predictors["phys"] = lambda x, cfg, ef_r, ef_nr, m=m: predict_phys_irm(
-        m, x.astype(np.float32), cfg.astype(np.float32), ef_r, ef_nr)
-    m, _ = train_causal_zero_shot(small_regions, target, seed=seed, device=DEVICE)
-    predictors["causal"] = lambda x, cfg, ef_r, ef_nr, m=m: predict_causal_zs(
-        m, x.astype(np.float32), cfg.astype(np.float32), ef_r, ef_nr)
-    m = train_icl(small_regions, target, seed=seed, device=DEVICE)
-    predictors["icl"] = lambda x, cfg, ef_r, ef_nr, m=m, r=small_regions, t=target: (
-        predict_icl_zs(m, r, t, x.astype(np.float32), ef_r, ef_nr)
-    )
-    m = train_hier(small_regions, target, seed=seed, device=DEVICE)
-    predictors["hier"] = lambda x, cfg, ef_r, ef_nr, m=m: predict_hier_zs(
-        m, x.astype(np.float32), cfg.astype(np.float32), ef_r, ef_nr)
-
-    return predictors
 
 
 # ---------------------------------------------------------------------------
@@ -166,11 +126,6 @@ def _eval_single_direction(predictors, direction_name, x_test, config,
 
     return metrics_base, metrics_plus
 
-
-def _zs_plus_origins(rs, cif):
-    """Compute ZS+ origins aligned with build_windows TEST output."""
-    split = int(len(rs) * TRAIN_FRACTION)
-    return [split + st for st in range(0, len(cif) - split - HORIZON + 1, TEST_STRIDE)]
 
 
 # ---------------------------------------------------------------------------
@@ -298,7 +253,7 @@ def evaluate_target(target, all_regions, seed, src_limit, output_json,
 
     print(f"  [predictors] training 5 directions on {target}...", flush=True)
     t0 = time.time()
-    predictors = _build_predictors(small_regions, target, seed)
+    predictors = _build_predictors(small_regions, target, seed, DEVICE)
     print(f"    done in {time.time()-t0:.1f}s", flush=True)
 
     print(f"  [collect] gathering source stacks (src_limit={src_limit})...",

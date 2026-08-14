@@ -37,6 +37,10 @@ from transcif.models.zeroshot.fusion import (
     loo_cv_train,
     train_fusion,
 )
+from scripts.experiments._shared import (
+    build_direction_predictors as _build_predictors,
+    zs_plus_origins as _zs_plus_origins,
+)
 
 DEVICE = "cuda" if torch.cuda.is_available() else None
 
@@ -44,41 +48,6 @@ DEVICE = "cuda" if torch.cuda.is_available() else None
 # ---------------------------------------------------------------------------
 # Per-target setup (shared across variants)
 # ---------------------------------------------------------------------------
-
-def _build_predictors(all_regions, target, seed):
-    """Train 5 direction models on target; return predictor dict."""
-    predictors = {}
-    from transcif.models.zeroshot.rag import train_rag_zero_shot, predict_rag_zs
-    from transcif.models.zeroshot.phys_irm import train_phys_irm, predict_phys_irm
-    from transcif.models.zeroshot.causal import train_causal_zero_shot, predict_causal_zs
-    from transcif.models.zeroshot.icl import train_icl, predict_icl_zs
-    from transcif.models.zeroshot.hier import train_hier, predict_hier_zs
-
-    m, bank = train_rag_zero_shot(all_regions, target, seed=seed, device=DEVICE)
-    predictors["rag"] = lambda x, cfg, ef_r, ef_nr, m=m, b=bank: predict_rag_zs(
-        m, b, x.astype(np.float32), cfg.astype(np.float32), ef_r, ef_nr)
-    m, _ = train_phys_irm(all_regions, target, seed=seed, gamma_irm=0.1,
-                          lambda_cif=0.5, device=DEVICE)
-    predictors["phys"] = lambda x, cfg, ef_r, ef_nr, m=m: predict_phys_irm(
-        m, x.astype(np.float32), cfg.astype(np.float32), ef_r, ef_nr)
-    m, _ = train_causal_zero_shot(all_regions, target, seed=seed, device=DEVICE)
-    predictors["causal"] = lambda x, cfg, ef_r, ef_nr, m=m: predict_causal_zs(
-        m, x.astype(np.float32), cfg.astype(np.float32), ef_r, ef_nr)
-    m = train_icl(all_regions, target, seed=seed, device=DEVICE)
-    predictors["icl"] = lambda x, cfg, ef_r, ef_nr, m=m: predict_icl_zs(
-        m, all_regions, target, x.astype(np.float32), ef_r, ef_nr)
-    m = train_hier(all_regions, target, seed=seed, device=DEVICE)
-    predictors["hier"] = lambda x, cfg, ef_r, ef_nr, m=m: predict_hier_zs(
-        m, x.astype(np.float32), cfg.astype(np.float32), ef_r, ef_nr)
-
-    return predictors
-
-
-def _zs_plus_origins(rs, cif):
-    """Compute ZS+ origins aligned with build_windows TEST output."""
-    split = int(len(rs) * TRAIN_FRACTION)
-    return [split + st for st in range(0, len(cif) - split - HORIZON + 1, TEST_STRIDE)]
-
 
 def _cif_with_head(head, predictors, x_test, config, ef_r, ef_nr,
                    rs, cif, want_plus):
@@ -190,7 +159,7 @@ def evaluate_target(target, all_regions, seed, src_limit):
 
     print(f"  [predictors] training 5 directions on {target}...", flush=True)
     t0 = time.time()
-    predictors = _build_predictors(all_regions, target, seed)
+    predictors = _build_predictors(all_regions, target, seed, DEVICE)
     print(f"    done in {time.time()-t0:.1f}s", flush=True)
 
     print(f"  [collect] gathering source stacks (src_limit={src_limit})...",

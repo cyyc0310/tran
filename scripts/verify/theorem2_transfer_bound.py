@@ -19,7 +19,6 @@ Usage: PYTHONPATH=scripts python scripts/theorem2_transfer_bound.py
 """
 
 import json
-import sys
 from pathlib import Path
 
 import matplotlib
@@ -29,15 +28,17 @@ import numpy as np
 import torch
 from scipy import stats as scipy_stats
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repo scripts/ root
-from run_unified_eval import (
+from transcif.config import (
     DATA_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE, TRAIN_FRACTION,
     AU_REGIONS, US_REGIONS, UK_REGIONS,
-    discover_uk_regions, load_region_data, build_windows,
-    cif_from_shares, train_zero_shot, compute_metrics,
-    AdaptivePersistDLinear, get_cosine_warmup_scheduler,
 )
+from transcif.data.loaders import discover_uk_regions, load_region_data
+from transcif.data.windows import build_windows
+from transcif.physics.decompose import cif_from_shares
+from transcif.models.zeroshot.base_zs import train_zero_shot
+from transcif.models.base import AdaptivePersistDLinear
+from transcif.training.schedulers import get_cosine_warmup_scheduler
+from transcif.evaluation.metrics import compute_metrics
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
@@ -45,19 +46,22 @@ RESULTS_DIR.mkdir(exist_ok=True)
 FIGURES_DIR.mkdir(exist_ok=True)
 
 
-def config_distance(region_a, region_b):
-    """Compute config-space distance between two regions.
-    
+def region_config_distance(region_a, region_b):
+    """Compute config-space distance between two region dicts.
+
+    (Distinct from ``transcif.physics.bounds.config_distance``, which takes
+    raw config vectors; this takes full region dicts and returns components.)
+
     Uses Euclidean distance in (mean_rs, ef_nr/1000) space.
     Also returns component distances for analysis.
     """
     cfg_a = region_a["config"]  # [mean_rs, ef_nr/1000]
     cfg_b = region_b["config"]
-    
+
     euclidean = float(np.linalg.norm(cfg_a - cfg_b))
     rs_dist = abs(cfg_a[0] - cfg_b[0])
     ef_dist = abs(cfg_a[1] - cfg_b[1])
-    
+
     return {
         "euclidean": euclidean,
         "rs_dist": float(rs_dist),
@@ -85,29 +89,30 @@ def compute_source_error(all_regions, source_name, seed=42):
     return float(np.std(y_rs_train))  # Proxy: variability of source rs
 
 
-def compute_weighted_config_distance(all_regions, target_name):
-    """Compute the weighted average config distance from all sources to target.
-    
-    The model uses 1/(dist + 0.05) weighting, so effective distance is:
-    sum(w_i * d_i) / sum(w_i), but we report the MINIMUM source distance
-    as the most relevant predictor (closest source dominates).
+def aggregate_source_distances(all_regions, target_name):
+    """Compute the aggregate config distance from all sources to a target.
+
+    (Distinct from ``transcif.physics.bounds.compute_weighted_config_distance``,
+    which averages over raw config vectors; this reports min/mean over region
+    dicts, weighted per the model's 1/(dist + 0.05) sampling scheme — the
+    closest source dominates.)
     """
     target_data = all_regions[target_name]
-    
+
     min_dist = float('inf')
     mean_dist = 0
     n_sources = 0
-    
+
     for name, data in all_regions.items():
         if name == target_name:
             continue
-        d = config_distance(target_data, data)
+        d = region_config_distance(target_data, data)
         dist = d["euclidean"]
         if dist < min_dist:
             min_dist = dist
         mean_dist += dist
         n_sources += 1
-    
+
     return {
         "min_config_dist": min_dist,
         "mean_config_dist": mean_dist / n_sources if n_sources > 0 else 0,
@@ -178,7 +183,7 @@ def main():
     else:
         # Run quick evaluation (single seed) for each target
         print("Running single-seed evaluation for Theorem 2 analysis...")
-        from run_unified_eval import evaluate_target
+        from transcif.models.zeroshot.base_zs import evaluate_target
         for target_name in sorted(all_regions.keys()):
             r = evaluate_target(target_name, all_regions, seed=42)
             if r is None:
@@ -204,7 +209,7 @@ def main():
     for target_name in sorted(region_stats.keys(), 
                                key=lambda x: all_regions[x]["mean_rs"]):
         data = all_regions[target_name]
-        dists = compute_weighted_config_distance(all_regions, target_name)
+        dists = aggregate_source_distances(all_regions, target_name)
         stats = region_stats[target_name]
         
         row = {

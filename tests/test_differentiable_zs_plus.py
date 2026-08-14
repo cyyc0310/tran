@@ -181,7 +181,6 @@ def test_sane_mae_on_qlD1():
     from transcif.data.loaders import load_region_data, all_region_configs
     from transcif.data.windows import build_windows
     from transcif.config import TRAIN_FRACTION, TEST_STRIDE
-    from transcif.evaluation.metrics import compute_metrics
     from transcif.models.zeroshot.causal import (
         train_causal_zero_shot, predict_causal_zs,
     )

@@ -11,14 +11,12 @@ Run with:
 
 import json
 import math
-import os
-from pathlib import Path
 
 import numpy as np
 import pytest
 import torch
 
-from transcif.config import HORIZON, SEQ_LEN, TRAIN_FRACTION
+from transcif.config import HORIZON, TRAIN_FRACTION
 
 
 @pytest.fixture
