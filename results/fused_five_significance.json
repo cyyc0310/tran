@@ -1,0 +1,404 @@
+{
+  "n_pairs": 145,
+  "primary_family": [
+    {
+      "comparison": "joint_trained - basismix_plus",
+      "method_a": "joint_trained",
+      "method_b": "basismix_plus",
+      "n_pairs": 145,
+      "median_delta_mae": 3.296830159427415,
+      "mean_delta_mae": 2.333288321641769,
+      "bootstrap_ci95": [
+        0.18691429285825478,
+        4.667010855434154
+      ],
+      "wilcoxon_p": 0.0001005200819456093,
+      "wilcoxon_effect_r": 0.322991531279736,
+      "paired_t_p": 0.0004203955362955626,
+      "paired_t_stat": 3.610985091643739,
+      "cohen_d": 0.29987598968025553,
+      "win_rate_a_better": 0.5862068965517241,
+      "median_mae_a": 40.534238497416176,
+      "median_mae_b": 46.89096482654079,
+      "holm_p": 0.00030156024583682787,
+      "reject_holm_0.05": true
+    },
+    {
+      "comparison": "joint_trained - causal_plus",
+      "method_a": "joint_trained",
+      "method_b": "causal_plus",
+      "n_pairs": 145,
+      "median_delta_mae": 3.362774381435088,
+      "mean_delta_mae": 2.3988549669841066,
+      "bootstrap_ci95": [
+        0.06337043784849783,
+        4.831689373740048
+      ],
+      "wilcoxon_p": 6.887847757235205e-05,
+      "wilcoxon_effect_r": 0.330531551801829,
+      "paired_t_p": 0.00030555944694345225,
+      "paired_t_stat": 3.7004794842038597,
+      "cohen_d": 0.3073080944546297,
+      "win_rate_a_better": 0.6,
+      "median_mae_a": 40.534238497416176,
+      "median_mae_b": 46.840971690568445,
+      "holm_p": 0.0002755139102894082,
+      "reject_holm_0.05": true
+    },
+    {
+      "comparison": "joint_trained - equal_plus",
+      "method_a": "joint_trained",
+      "method_b": "equal_plus",
+      "n_pairs": 145,
+      "median_delta_mae": 2.8967429934311753,
+      "mean_delta_mae": 2.1389133056656577,
+      "bootstrap_ci95": [
+        -0.17218364676791964,
+        4.466309885412954
+      ],
+      "wilcoxon_p": 0.00019492122722724106,
+      "wilcoxon_effect_r": 0.3093867116419534,
+      "paired_t_p": 0.0010869767291398298,
+      "paired_t_stat": 3.3344356251940384,
+      "cohen_d": 0.27690980653564434,
+      "win_rate_a_better": 0.5517241379310345,
+      "median_mae_a": 40.534238497416176,
+      "median_mae_b": 46.85728022705124,
+      "holm_p": 0.00038984245445448213,
+      "reject_holm_0.05": true
+    },
+    {
+      "comparison": "joint_trained - persistence",
+      "method_a": "joint_trained",
+      "method_b": "persistence",
+      "n_pairs": 145,
+      "median_delta_mae": 6.9176911513010655,
+      "mean_delta_mae": 7.820908358440489,
+      "bootstrap_ci95": [
+        5.5393854777018205,
+        7.8098390102386475
+      ],
+      "wilcoxon_p": 2.0383276079630149e-16,
+      "wilcoxon_effect_r": 0.6817648690863629,
+      "paired_t_p": 7.671968227996375e-18,
+      "paired_t_stat": 9.859426407538542,
+      "cohen_d": 0.8187807970966741,
+      "win_rate_a_better": 0.7931034482758621,
+      "median_mae_a": 40.534238497416176,
+      "median_mae_b": 51.51873016357422,
+      "holm_p": 1.2229965647778088e-15,
+      "reject_holm_0.05": true
+    },
+    {
+      "comparison": "joint_trained - best_single",
+      "method_a": "joint_trained",
+      "method_b": "best_single",
+      "n_pairs": 145,
+      "median_delta_mae": 2.554025450935086,
+      "mean_delta_mae": 1.6564100184368717,
+      "bootstrap_ci95": [
+        -0.33825719965457424,
+        3.870434185992025
+      ],
+      "wilcoxon_p": 0.0006409835846359187,
+      "wilcoxon_effect_r": 0.28348838028331075,
+      "paired_t_p": 0.01028670108872803,
+      "paired_t_stat": 2.6002516508241085,
+      "cohen_d": 0.21593914608316758,
+      "win_rate_a_better": 0.5517241379310345,
+      "median_mae_a": 40.534238497416176,
+      "median_mae_b": 46.53187758901349,
+      "holm_p": 0.0006409835846359187,
+      "reject_holm_0.05": true
+    },
+    {
+      "comparison": "basismix_plus - causal_plus",
+      "method_a": "basismix_plus",
+      "method_b": "causal_plus",
+      "n_pairs": 145,
+      "median_delta_mae": 0.05360379388474712,
+      "mean_delta_mae": 0.06556664534233819,
+      "bootstrap_ci95": [
+        0.040357673543031325,
+        0.06983452706361959
+      ],
+      "wilcoxon_p": 3.0728628127413375e-12,
+      "wilcoxon_effect_r": 0.5791882681411991,
+      "paired_t_p": 5.352498208216941e-09,
+      "paired_t_stat": 6.210355408344947,
+      "cohen_d": 0.5157419449482754,
+      "win_rate_a_better": 0.7793103448275862,
+      "median_mae_a": 46.89096482654079,
+      "median_mae_b": 46.840971690568445,
+      "holm_p": 1.5364314063706686e-11,
+      "reject_holm_0.05": true
+    },
+    {
+      "comparison": "basismix_plus - equal_plus",
+      "method_a": "basismix_plus",
+      "method_b": "equal_plus",
+      "n_pairs": 145,
+      "median_delta_mae": -0.13949021982084275,
+      "mean_delta_mae": -0.1943750159761109,
+      "bootstrap_ci95": [
+        -0.18925972711045347,
+        -0.09853415130830001
+      ],
+      "wilcoxon_p": 4.801765335725465e-18,
+      "wilcoxon_effect_r": Infinity,
+      "paired_t_p": 3.2287228276531045e-18,
+      "paired_t_stat": -10.004836535241196,
+      "cohen_d": -0.8308564509273344,
+      "win_rate_a_better": 0.13793103448275862,
+      "median_mae_a": 46.89096482654079,
+      "median_mae_b": 46.85728022705124,
+      "holm_p": 3.3612357350078254e-17,
+      "reject_holm_0.05": true
+    },
+    {
+      "comparison": "basismix_plus - persistence",
+      "method_a": "basismix_plus",
+      "method_b": "persistence",
+      "n_pairs": 145,
+      "median_delta_mae": 4.2050677282880855,
+      "mean_delta_mae": 5.48762003679872,
+      "bootstrap_ci95": [
+        2.867451484808818,
+        5.565276364198031
+      ],
+      "wilcoxon_p": 1.5894323964695239e-25,
+      "wilcoxon_effect_r": Infinity,
+      "paired_t_p": 9.011486239416775e-30,
+      "paired_t_stat": 14.434030213692793,
+      "cohen_d": 1.198680965319499,
+      "win_rate_a_better": 0.993103448275862,
+      "median_mae_a": 46.89096482654079,
+      "median_mae_b": 51.51873016357422,
+      "holm_p": 1.2715459171756191e-24,
+      "reject_holm_0.05": true
+    }
+  ],
+  "patchtst_reference": {
+    "patchtst_supervised_mae": 41.47,
+    "joint_trained_median_mae": 40.534238497416176,
+    "n_pairs": 145,
+    "win_rate_joint_beats_patchtst": 0.5517241379310345,
+    "wilcoxon_p_one_sided_less": 0.31539494181776345,
+    "note": "PatchTST-supervised is a single external number (no per-pair data), so this is a one-sample test on joint_trained MAE vs the constant 41.47, not a paired comparison."
+  },
+  "subset_dm_robustness": {
+    "n_pairs": 8,
+    "per_pair": [
+      {
+        "pair": "NSW1_seed0",
+        "dm_joint_vs_basismix_plus": {
+          "dm_stat": -0.8486396564367646,
+          "p_value": 0.3967890885698777,
+          "n": 288,
+          "mean_loss_diff": -3.0515624152289496,
+          "horizon": 24
+        },
+        "joint_better_than_basismix_plus": false,
+        "dm_joint_vs_persistence": {
+          "dm_stat": 0.4203248326269422,
+          "p_value": 0.6745626964956299,
+          "n": 288,
+          "mean_loss_diff": 1.9512627919514973,
+          "horizon": 24
+        },
+        "joint_better_than_persistence": true
+      },
+      {
+        "pair": "QLD1_seed0",
+        "dm_joint_vs_basismix_plus": {
+          "dm_stat": -0.6938928532044488,
+          "p_value": 0.48831064676212727,
+          "n": 288,
+          "mean_loss_diff": -1.607906977335612,
+          "horizon": 24
+        },
+        "joint_better_than_basismix_plus": false,
+        "dm_joint_vs_persistence": {
+          "dm_stat": 3.2069598770423893,
+          "p_value": 0.0014931342764908176,
+          "n": 288,
+          "mean_loss_diff": 6.2649623023139105,
+          "horizon": 24
+        },
+        "joint_better_than_persistence": true
+      },
+      {
+        "pair": "SA1_seed0",
+        "dm_joint_vs_basismix_plus": {
+          "dm_stat": -1.6043657394472017,
+          "p_value": 0.10973328111091839,
+          "n": 288,
+          "mean_loss_diff": -2.2645186715655856,
+          "horizon": 24
+        },
+        "joint_better_than_basismix_plus": false,
+        "dm_joint_vs_persistence": {
+          "dm_stat": 0.8623274352136171,
+          "p_value": 0.3892273190258429,
+          "n": 288,
+          "mean_loss_diff": 5.510946479108599,
+          "horizon": 24
+        },
+        "joint_better_than_persistence": true
+      },
+      {
+        "pair": "UK_02_South_Scotland_seed0",
+        "dm_joint_vs_basismix_plus": {
+          "dm_stat": -2.5634056369946947,
+          "p_value": 0.010874781063867476,
+          "n": 288,
+          "mean_loss_diff": -1.7102434436480205,
+          "horizon": 24
+        },
+        "joint_better_than_basismix_plus": false,
+        "dm_joint_vs_persistence": {
+          "dm_stat": 2.8655345596674,
+          "p_value": 0.004470813576362976,
+          "n": 288,
+          "mean_loss_diff": 6.082081651522054,
+          "horizon": 24
+        },
+        "joint_better_than_persistence": true
+      },
+      {
+        "pair": "UK_08_West_Midlands_seed0",
+        "dm_joint_vs_basismix_plus": {
+          "dm_stat": -3.9225747839414646,
+          "p_value": 0.00010967847787139557,
+          "n": 288,
+          "mean_loss_diff": -7.015142215622796,
+          "horizon": 24
+        },
+        "joint_better_than_basismix_plus": false,
+        "dm_joint_vs_persistence": {
+          "dm_stat": 0.39236185709852905,
+          "p_value": 0.6950820883557821,
+          "n": 288,
+          "mean_loss_diff": 1.285497658782535,
+          "horizon": 24
+        },
+        "joint_better_than_persistence": true
+      },
+      {
+        "pair": "US_BPAT_seed0",
+        "dm_joint_vs_basismix_plus": {
+          "dm_stat": -2.4239855827695997,
+          "p_value": 0.015969209174649023,
+          "n": 288,
+          "mean_loss_diff": -2.8872564103868275,
+          "horizon": 24
+        },
+        "joint_better_than_basismix_plus": false,
+        "dm_joint_vs_persistence": {
+          "dm_stat": -2.203719483171921,
+          "p_value": 0.028338120370799563,
+          "n": 288,
+          "mean_loss_diff": -1.4682326118151348,
+          "horizon": 24
+        },
+        "joint_better_than_persistence": false
+      },
+      {
+        "pair": "US_PJM_seed0",
+        "dm_joint_vs_basismix_plus": {
+          "dm_stat": 0.1907125725319846,
+          "p_value": 0.8488856222002317,
+          "n": 288,
+          "mean_loss_diff": 0.3041969935099284,
+          "horizon": 24
+        },
+        "joint_better_than_basismix_plus": true,
+        "dm_joint_vs_persistence": {
+          "dm_stat": 1.4825357339783907,
+          "p_value": 0.1392949977840415,
+          "n": 288,
+          "mean_loss_diff": 3.6372605429755316,
+          "horizon": 24
+        },
+        "joint_better_than_persistence": true
+      },
+      {
+        "pair": "VIC1_seed0",
+        "dm_joint_vs_basismix_plus": {
+          "dm_stat": -4.147793593082367,
+          "p_value": 4.4260849868220225e-05,
+          "n": 288,
+          "mean_loss_diff": -37.432949490017364,
+          "horizon": 24
+        },
+        "joint_better_than_basismix_plus": false,
+        "dm_joint_vs_persistence": {
+          "dm_stat": -1.0172547221881065,
+          "p_value": 0.3098890368443721,
+          "n": 288,
+          "mean_loss_diff": -13.862482176886665,
+          "horizon": 24
+        },
+        "joint_better_than_persistence": false
+      }
+    ],
+    "holm_joint_vs_basismix_plus": {
+      "n_significant": 2,
+      "details": [
+        {
+          "raw_p": 0.3967890885698777,
+          "holm_p": 1.0,
+          "reject": false,
+          "rank": 5
+        },
+        {
+          "raw_p": 0.48831064676212727,
+          "holm_p": 1.0,
+          "reject": false,
+          "rank": 6
+        },
+        {
+          "raw_p": 0.10973328111091839,
+          "holm_p": 0.43893312444367355,
+          "reject": false,
+          "rank": 4
+        },
+        {
+          "raw_p": 0.010874781063867476,
+          "holm_p": 0.06524868638320486,
+          "reject": false,
+          "rank": 2
+        },
+        {
+          "raw_p": 0.00010967847787139557,
+          "holm_p": 0.000767749345099769,
+          "reject": true,
+          "rank": 1
+        },
+        {
+          "raw_p": 0.015969209174649023,
+          "holm_p": 0.07984604587324512,
+          "reject": false,
+          "rank": 3
+        },
+        {
+          "raw_p": 0.8488856222002317,
+          "holm_p": 1.0,
+          "reject": false,
+          "rank": 7
+        },
+        {
+          "raw_p": 4.4260849868220225e-05,
+          "holm_p": 0.0003540867989457618,
+          "reject": true,
+          "rank": 0
+        }
+      ]
+    },
+    "note": "Per-region Harvey-adjusted DM test on per-hour errors (n_eval*24, h=24). Positive DM stat => joint model has larger loss => baseline better; negative => joint better."
+  },
+  "methodology": {
+    "primary": "Pooled paired test across n_pairs (region x seed) aggregate MAEs. Wilcoxon signed-rank + paired t + bootstrap 95% CI (20000 resamples) on the median delta. Holm-Bonferroni across the 8-comparison family.",
+    "interpretation": "delta = MAE(B) - MAE(A); positive => A better. win_rate_a_better = fraction of pairs where A has strictly lower MAE."
+  }
+}

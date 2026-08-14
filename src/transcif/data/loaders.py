@@ -78,6 +78,9 @@ def load_region_data(region_name: str, all_configs: dict,
     Returns a dict with keys:
         rs, cif     : float32 arrays (cleaned to finite, non-negative CIF),
                      full length — callers slice as needed
+        hours       : pd.DatetimeIndex (UTC) aligned to the cleaned rs/cif
+                     arrays — added for the fuel-decomposed architecture so
+                     per-fuel / weather / astronomy joins are exact
         mean_rs     : mean renewable share over the training split only
         ef_r, ef_nr : emission factors (tCO2/MWh)
         config      : np.array([train_mean_rs, ef_nr/1000], float32) — model
@@ -94,6 +97,7 @@ def load_region_data(region_name: str, all_configs: dict,
     cif = df["cif_real_gco2_per_kwh"].values.astype(np.float32)
     valid = np.isfinite(rs) & np.isfinite(cif) & (cif >= 0)
     rs, cif = rs[valid], cif[valid]
+    hours = pd.DatetimeIndex(df["hour"].values[valid])
     # Derive scalar config statistics from the training split only so the
     # zero-shot config vector does not embed test-period information.
     split = int(len(rs) * train_fraction)
@@ -109,7 +113,7 @@ def load_region_data(region_name: str, all_configs: dict,
         for f in fuel_order:
             base_cfg.append(float(fuel_shares.get(f, 0.0)))
     return {
-        "rs": rs, "cif": cif,
+        "rs": rs, "cif": cif, "hours": hours,
         "mean_rs": train_mean_rs,
         "ef_r": ef_r, "ef_nr": ef_nr,
         "config": np.array(base_cfg, dtype=np.float32),

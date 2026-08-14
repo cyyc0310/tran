@@ -76,8 +76,8 @@
 
 | Task | 内容 | DoD | Depends | Status |
 |------|------|-----|---------|--------|
-| 7.1 | `[lane:release]` 更新 `README.md` 复现段：列出 `run_fused_five.py --regions ... --seed ...` 与 `run_fused_five_full.sh`（新建）的命令，预计时长 | README 复现段含融合部分；`scripts/experiments/run_fused_five_full.sh` 可一键起 5 seed | 5.1 | `cc:TODO` |
-| 7.2 | `[lane:release]` CI smoke：在 `tests/` 加 1 个集成测试 `tests/test_fusion_smoke.py`，跑 1 region × 1 seed × 最少 epoch，确保未来 PR 不会再次破坏 `parameters()` 这类接口 | `pytest tests/test_fusion_smoke.py` 在 < 60 秒内通过 | 1.4 | `cc:TODO` |
+| 7.1 | `[lane:release]` 更新 `README.md` 复现段：列出 `run_fused_five.py --regions ... --seed ...` 与 `run_fused_five_full.sh`（新建）的命令，预计时长 | README 复现段含融合部分；`scripts/experiments/run_fused_five_full.sh` 可一键起 5 seed | 5.1 | `cc:完了`（README 加 Phase 8/9 joint-train 复现段 + headline 行；native pipeline 命令含 `--gate`） |
+| 7.2 | `[lane:release]` CI smoke：在 `tests/` 加 1 个集成测试，跑 1 region × 1 seed × 最少 epoch，确保未来 PR 不会再次破坏 `parameters()` 这类接口 | 集成测试 < 60 秒通过 | 1.4 | `cc:完了`（`tests/test_native_pipeline_smoke.py` 4 测试 < 2s：覆盖 native_stage / eval_held_out / assemble_stack / gate snapshot-restore / head_modules 全 live 方向） |
 
 ### Phase 8 — 可微 ZS+ joint training rescue（条件性，12 GPU-hr 予算）
 
@@ -92,6 +92,36 @@
 | 8.5 | `[lane:gate] [stage:review]` Go/No-Go gate：(a) MAE < 41 → Phase 8.6へ。(b) 41 ≤ MAE < 46 → ハイパラ調整で再学習 1 回。(c) MAE ≥ 46 → Phase 8 中止、negative result 記録。判定は `results/joint_train_gate.md` に明示。 | gate markdown が (a)/(b)/(c) を明示；(b) の場合は再学習結果と再判定を含む；(c) の場合は中止理由と今後の推奨を含む | 8.4 | `cc:完了` |
 | 8.6 | `[lane:gate]` 完全 LORO 評価：29 領域 × 5 seed で joint-trained モデルを評価。`results/joint_train_full.json` に 145 行。予算 ~7 GPU-hr。 | JSON が 145 行で `joint_trained` メソッドを含む；`results/joint_train_full_summary.json` が median/mean/std を含む；既存 `fused_five_full.json` と同じ schema で直接比較可能 | 8.5 | `cc:完了` |
 | 8.7 | `[lane:gate] [stage:review]` 最終 verdict：joint-trained median MAE vs 41 目標、vs BasisMix+ baseline (46.89)。3 ケースを `results/joint_train_verdict.md` に書き出し：(a) < 41 → headline 復活；(b) 41-46 → competitive but not beating supervised；(c) ≥ 46 → joint training 効果なし、既存故事を維持 | verdict markdown が (a)/(b)/(c) を明示；数値根拠を含む | 8.6 | `cc:完了` |
+
+### Phase 9 — Torch-native 方向模型 + 方案 A（并联可学习 fusion）
+
+**决策依据**: Phase 8 verdict 指出 `(5,24)` correction 代理只捕获~30%信号，方向模型是 numpy/torch 混合体无法端到端反传。本 Phase 把 3 个"易迁移"方向（causal/phys/hier）做成可微，替换代理。用户原构思"5 方向串联"经论证否决（独立归纳偏置非 pipeline 阶段，误差累积），改取**方案 A：并联 + 可学习 fusion**。RAG/ICL 迁移成本高，先作冻结常量。
+
+| Task | 内容 | DoD | Depends | Status |
+|------|------|-----|---------|--------|
+| 9.1 | `[lane:gate] [stage:tdd]` `src/transcif/models/zeroshot/native.py`：`TorchNativePredictor` ABC + `NativePhys/Causal/Hier` 薄包装（内联物理转换保梯度）+ `FrozenConstant`（RAG/ICL 断点）+ `LearnedFusion`（逐窗口权重）+ `pad_config_t`。零侵入，不改既有 `predict_*_zs` | 9 单测全绿：3 个 live wrapper 梯度可达模型参数；FrozenConstant 梯度止步；LearnedFusion 权重行和=1 且逐窗口变化；NativePhys 与手算数值一致 | - | `cc:完了` |
+| 9.2 | `[lane:gate] [stage:tdd]` `scripts/experiments/run_joint_train_native.py`：2-stage pipeline。Stage1 方向全冻只训 fusion+ZS+；Stage2 解冻 3 方向**输出层**（DLinear heads / VAE predictor / hourly head）+fusion+ZS+。损失 MAE+0.5·adv-persist，weight_decay 1e-4 | 1 区域 end-to-end 完走；held-out MAE 写出；stage1/stage2 分别优化 | 9.1 | `cc:完了` |
+| 9.3 | `[lane:gate] [stage:review]` 验证实验：QLD1（easy）+ UK_08（hard）× seed0，3 配置（baseline frozen-proxy / native-learned / native-softmax）。gate：native 比 baseline 低 ≥1.0 MAE 且不恶化另一区域 → 进 9.4 | `results/native_validation.json` + `results/native_validation_verdict.md`。实测 QLD1 Δ+1.81、UK_08 Δ+8.08，gate 通过；LearnedFusion≈softmax（fusion 升级中性，lift 来自 head unfreeze） | 9.2 | `cc:完了` |
+| 9.4 | `[lane:gate]` 完全 LORO：29×5 seed，learned fusion，写 `results/joint_train_native_full.json`（145 行）+ `_summary.json`，与 `joint_train_full.json` 同 schema 直接对比 | 145 行；summary 含 median/mean/std；与 frozen-proxy baseline 40.53 对比 | 9.3 | `cc:完了` |
+| 9.5 | `[lane:gate] [stage:review]` 最终对比 verdict：native median vs frozen-proxy 40.53、vs PatchTST 41.47。进 significance 框架（paired Wilcoxon + Holm） | `results/joint_train_native_verdict.md` + 显著性检验结果。实测 native median **39.53**（frozen 40.53，Δ+1.62，Wilcoxon p=5e-14，79% 胜；难区域 VIC1 +11.4、UK_08 +7.3；PatchTST 单样本 p=0.057 borderline） | 9.4 | `cc:完了` |
+| 9.6 | `[lane:gate] [stage:tdd]` RAG `RagMemoryBank` 可微化（buffer 化 X/Y + matmul kNN + softmax 加权）与 ICL torch-native（per-query context 检索作 no_grad 预处理，transformer forward 保梯度，源窗口缓存）。`NativeRAG`/`NativeICL` 加入 `native.py`。至此 **5 方向全 torch-native**（3+2 frozen → 5 live + 0 frozen） | 单测：RAG/ICL 梯度可达模型参数；bank buffers 不进 optimizer；不破坏既有 zero-shot eval。实测 11 测试绿；QLD1 5-live 端到端跑通 | 9.1 | `cc:完了（代码）` |
+| 9.7 | `[lane:gate]` 5-live + internal-val 门（eps=2.0，conservative：仅 Stage2 明显变差才回滚）全量 LORO。隔离 (a) 门对 3-live 的效果（gated-3live vs 39.53）、(b) RAG+ICL-native 的联合效果（5-live+gate vs 39.53） | `results/joint_train_native_5live_gated_full.json`（145 行）+ `joint_train_native_5live_verdict.md`。实测 median **39.04**；vs frozen-proxy +1.86（p=1e-14, 81% 胜）；vs PatchTST 单样本 **p=0.045**（首个跨过 α=0.05）；但 vs 3-live(39.53) 配对 p=0.12（噪声内，RAG/ICL-native+门无稳健额外增益）；门 9/145 回滚 | 9.6 | `cc:完了` |
+
+### Phase FD — 燃料分解架构 TransCIF-FD(跨域冷启动:I_cfg 层级 + benchmark)
+
+**决策依据**(2026-08-15,文献调研):EnsembleCI(arXiv 2505.01959)证明日历特征是跨网格最强特征、CarbonCast 的两层"先逐燃料发电再合成 CI"结构从未被用于零样本;HN-MVTS(AAAI 2026)证明元数据生成末层权重的超网络泛化优于 bias-only 条件化;中国官方仅有年度/省级平均因子,小时级"分时分区电碳因子"是前沿 → 新增 **I_cfg 层级**(仅 config+天气+日历,无遥测)作为主贡献与 benchmark 接口。仓库内 25/29 区域的逐小时逐燃料数据(`data_2023/fuel/`)从未进入 headline 模型。
+
+| Task | 内容 | DoD | Depends | Status |
+|------|------|-----|---------|--------|
+| FD-0 | 数据接口与物理特征:`config/region_meta.py`(29 区域 lat/lon/tz)、`physics/astro.py`(太阳高度角/晴空 GHI/风功率曲线)、`data/calendar.py`(本地时 sin/cos 日历)、`data/fuel.py`(逐燃料序列加载 + 5 通道天气 exog + `build_fd_windows` + `region_fuel_efs` 热力组 EF 重标定)+ `loaders.py` 增 `hours` 键 | 30 单测全绿;物理重建 CIF 中位 MAE ~8.9(25 燃料区域,South-East England 进口重组残差已知);主套件 129 passed 无回归 | - | `cc:完了` |
+| FD-1a | `models/fuel_decomp.py`:FuelDecompNet(solar=天文包络×天气调制;wind=功率曲线归一;baseload=水平+支撑掩码;thermal=残差+config 对数锚定;聚合 rs 头带 logit 锚定与历史门;有界 EF 校正;~20k 参数;冷模式 dropout 双层级) | 9 单测全绿(simplex、冷模式不变性、天文相关性 >0.9、梯度、参数预算 <120k) | FD-0 | `cc:完了` |
+| FD-1b | `models/zeroshot/fuel.py`:`train_fuel_zero_shot`(config 加权采样、EF 加权份额损失、p_cold/p_mix、共享绝对 origin 网格)+ `predict_fuel_windows` + shape 指标(diurnal/monthly-shape MAE、Spearman)+ `prepare_fd_region` | 单测 + 8 区域 smoke;关键 bug 修复:冷模式持久门、风速归一爆炸、热力拆分幻觉(config 锚定+支撑掩码)、logit 锚定跨模式纠缠 | FD-1a | `cc:完了` |
+| FD-1c | `scripts/experiments/run_fuel_decomp_eval.py`:LORO 快速协议(8 区域×2 seeds×600 epochs,resume-safe),同时评 I_0 与 I_cfg + 基线(persistence/config-constant/monthly-constant oracle) | `results/fuel_decomp_eval_quick.json` 16 对;**I_0 中位 48.66 < 现有 ZS 52.1 ✓ gate**;I_cfg 73.30 < config-constant 84.79(中位)但配对 p=0.71 未过显著线;I_cfg Spearman 0.22 vs 常数 0(p=0.0017 ✓ 排序技能显著) | FD-1b | `cc:完了` |
+| FD-1d | FD-1 verdict 文档 | `results/fuel_decomp_fd1_verdict.md`:**PARTIAL PASS**(I_0 48.66<52.1 ✓;I_cfg 排序技能显著 p=0.0017 ✓;水平 MAE 优于常数基线但配对不显著) | FD-1c | `cc:完了` |
+| FD-2a | `models/hypernet.py`(ConfigHyperNet 生成 5 个动态头 111 权重,零初始化=FD-1 热启动)+ `training/synthetic.py`(GridRecombiner 物理引导网格重组 + neighborhood_batch)+ 训练器 `p_mix`/`use_hypernet` 接入 + ZS+ `share_fn` 钩子 | 8 单测全绿;混合 CIF 标签物理精确(重算而非线性混合);邻域 batch config 距离 < 源均值;ZS+ 管线集成冒烟通过 | FD-1b | `cc:完了` |
+| FD-2b | 消融:p_mix=0.3 / hypernet / 二者并用,同 FD-1c 协议 | `results/fuel_decomp_eval_{mix,hn,mixhn}.json` + `fuel_decomp_fd2_verdict.md`:**NEGATIVE/MIXED**——hypernet I_cfg 中位 −8.8 但配对 p=0.98(VIC1/PJM 灾难漂移,SA1/UK_08 大赢);p_mix MAE 中性但冷偏差减半(−8.9→−3.5);组合负交互。FD-1 保持默认 | FD-2a | `cc:完了` |
+| FD-3 | `docs/BENCHMARK.md`(任务/层级/合法性规则/指标/基线/排行榜 schema)+ `scripts/benchmark/run_benchmark.py`(汇总 leaderboard.json) | 文档 + 脚本可运行;`results/leaderboard.json` 含 legacy 阶梯(ZS 50.72 / ZS+ 46.80 / PatchTST 43.50,n=145)与 FD 双层级 | FD-1c | `cc:完了` |
+| FD-4 | (后续,未启动)接入 native joint pipeline 作第 6 方向;TSFM(Chronos-Bolt)零样本方向;29×5 全量 LORO | - | FD-2b | 未启动 |
 
 ---
 

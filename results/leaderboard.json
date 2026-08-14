@@ -1,0 +1,85 @@
+{
+ "leaderboard": [
+  {
+   "method": "fuel_decomp",
+   "tier": "I_cfg",
+   "n_pairs": 16,
+   "median_mae": 73.29860940208174,
+   "mean_mae": 72.13924672256204,
+   "median_diurnal_mae": 52.08547611307475,
+   "median_monthly_shape_mae": 46.85098747168024,
+   "median_spearman": 0.22310176730847567,
+   "median_bias": -8.942633995424366,
+   "win_rate_vs_baseline": 0.5,
+   "paired_wilcoxon_p_vs_baseline": 0.705718994140625
+  },
+  {
+   "method": "annual_constant",
+   "tier": "I_cfg",
+   "n_pairs": 16,
+   "median_mae": 84.79346233905723,
+   "mean_mae": 68.12778891673909,
+   "median_diurnal_mae": 48.965912211630936,
+   "median_monthly_shape_mae": 22.16084143233626,
+   "median_spearman": 0.0,
+   "median_bias": 9.919427352287878
+  },
+  {
+   "method": "fuel_decomp",
+   "tier": "I_0",
+   "n_pairs": 16,
+   "median_mae": 48.65569858830082,
+   "mean_mae": 60.0600761089553,
+   "median_diurnal_mae": 35.049648340797134,
+   "median_monthly_shape_mae": 63.01511379338376,
+   "median_spearman": 0.2958230759049698,
+   "median_bias": -7.249618024767988,
+   "win_rate_vs_baseline": 0.25,
+   "paired_wilcoxon_p_vs_baseline": 0.013092041015625
+  },
+  {
+   "method": "transcif_zs",
+   "tier": "I_0",
+   "n_pairs": 145,
+   "median_mae": 50.720560017162704,
+   "mean_mae": 52.390013350822755,
+   "paired_wilcoxon_p_vs_baseline": 0.00014325092359302954,
+   "win_rate_vs_baseline": 0.4068965517241379
+  },
+  {
+   "method": "transcif_zs_plus",
+   "tier": "I_+",
+   "n_pairs": 145,
+   "median_mae": 46.803106592669124,
+   "mean_mae": 44.779482014127254,
+   "paired_wilcoxon_p_vs_baseline": 1.5246674409619294e-25,
+   "win_rate_vs_baseline": 1.0
+  },
+  {
+   "method": "patchtst_supervised",
+   "tier": "I_S",
+   "n_pairs": 145,
+   "median_mae": 43.5013427734375,
+   "mean_mae": 41.46504715886609
+  },
+  {
+   "method": "persistence_lag24",
+   "tier": "reference",
+   "n_pairs": 145,
+   "median_mae": 50.69502258300781,
+   "mean_mae": 48.255051185344826
+  },
+  {
+   "method": "monthly_constant",
+   "tier": "I_cfg(oracle)",
+   "n_pairs": 16,
+   "median_mae": 75.56689474843952,
+   "mean_mae": 63.413839033460846,
+   "median_diurnal_mae": 48.965912211630936,
+   "median_monthly_shape_mae": 0.0,
+   "median_spearman": 0.0,
+   "median_bias": -6.22105713364801e-06
+  }
+ ],
+ "schema": "docs/BENCHMARK.md v0.1"
+}

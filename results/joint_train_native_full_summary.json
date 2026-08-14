@@ -1,0 +1,16 @@
+{
+  "native_joint_trained": {
+    "fusion": "learned",
+    "mae": {
+      "median": 39.04354763031006,
+      "mean": 40.64858539679955,
+      "std": 21.700597676433063,
+      "n_pairs": 145
+    }
+  },
+  "baseline_frozen_proxy": {
+    "mae": {
+      "median": 40.53
+    }
+  }
+}
