@@ -126,11 +126,11 @@ def train_phys_irm(all_regions, target_name, seed=42, epochs=200, lr=1e-3,
         if pbar is not None:
             pbar(epoch, epochs, total_loss / max(n_regions, 1),
                  extra=f"irm={total_irm_penalty/max(n_regions,1):.4f}")
-            log.append({
-                "epoch": epoch + 1,
-                "loss": total_loss / max(n_regions, 1),
-                "irm_penalty": total_irm_penalty / max(n_regions, 1),
-            })
+        log.append({
+            "epoch": epoch + 1,
+            "loss": total_loss / max(n_regions, 1),
+            "irm_penalty": total_irm_penalty / max(n_regions, 1),
+        })
 
     model.eval()
     if pbar is not None:

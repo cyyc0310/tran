@@ -11,6 +11,7 @@ import torch
 
 from transcif.config import SEQ_LEN, HORIZON
 from transcif.physics.decompose import cif_from_shares
+from transcif.physics.bounds import pad_config
 
 # --- ZS+ hyperparameters ----------------------------------------------------
 K_BACKTEST = 7
@@ -43,7 +44,15 @@ def zs_plus_predict(model, config, rs, cif, ef_r, ef_nr, origins,
                    with a different forward signature (RAG/Causal/ICL) reuse
                    the same calibration pipeline.
     """
-    cfg1 = torch.tensor(config).unsqueeze(0)
+    cfg_np = np.asarray(config, dtype=np.float32)
+    # Mixed-dim pools (Stage A): pad a short config to the model's unified
+    # width so the model(x, cfg1) branch never sees a shape mismatch.  Callers
+    # that already pass a padded config are unaffected.
+    if share_fn is None:
+        model_dim = getattr(model, "config_dim", None)
+        if model_dim is not None and len(cfg_np) < model_dim:
+            cfg_np = pad_config(cfg_np, model_dim)
+    cfg1 = torch.tensor(cfg_np).unsqueeze(0)
     branch_cache = {}
 
     def branch_preds(t0):

@@ -13,38 +13,43 @@ Ablation studies:
     - L_T analysis: low-L_T vs high-L_T region performance
 
 Usage:
-    python scripts/run_phys_irm_eval.py --quick          # 4 AU, 1 seed
-    python scripts/run_phys_irm_eval.py                  # all regions, 3 seeds
-    python scripts/run_phys_irm_eval.py --ablation-irm   # γ sweep
-    python scripts/run_phys_irm_eval.py --ablation-cif   # λ_cif sweep
+    .venv/bin/python scripts/experiments/run_phys_irm_eval.py --quick   # 4 AU, 1 seed
+    .venv/bin/python scripts/experiments/run_phys_irm_eval.py           # all regions, 3 seeds
+    .venv/bin/python scripts/experiments/run_phys_irm_eval.py --ablation-irm  # γ sweep
+    .venv/bin/python scripts/experiments/run_phys_irm_eval.py --ablation-cif  # λ sweep
 """
 
 import argparse
 import json
 import random
 import time
+from pathlib import Path
 
 import numpy as np
 import torch
 
 from transcif.config import (
-    DATA_DIR, RESULTS_DIR, SEQ_LEN, HORIZON, TRAIN_STRIDE, TEST_STRIDE,
-    TRAIN_FRACTION, AU_REGIONS, US_REGIONS, UK_REGIONS,
-)
-from transcif.calibration.zs_plus import (
-    ANCHOR_WIN, RESID_WIN, WEEKLY_LAG, SELECT_DAYS, SELECT_MARGIN, FUSION_MENU,
+    RESULTS_DIR, SEQ_LEN, HORIZON, TEST_STRIDE, TRAIN_FRACTION,
+    AU_REGIONS, US_REGIONS, UK_REGIONS,
 )
 from transcif.data.loaders import discover_uk_regions, load_region_data
 from transcif.data.windows import build_windows
 from transcif.physics.decompose import cif_from_shares
+from transcif.physics.bounds import pad_config
 from transcif.models.zeroshot.base_zs import (
     train_zero_shot, compute_metrics, zs_plus_predict,
 )
-from transcif.models.base import AdaptivePersistDLinear
 from transcif.models.zeroshot.phys_irm import (
-    PhysIRMDLinear, irm_penalty, train_phys_irm, predict_phys_irm,
-    compute_L_T, irm_penalty_batched,
+    train_phys_irm, train_phys_weighted_only, predict_phys_irm,
 )
+
+
+def _model_config_batch(model, config, n):
+    """Tile a region config to a (n, config_dim) batch, right-padded to the
+    model's unified config width (Stage-A pools mix 2-D and N-D configs)."""
+    cfg = pad_config(np.asarray(config, dtype=np.float32),
+                     getattr(model, "config_dim", len(config)))
+    return torch.tensor(np.tile(cfg, (n, 1)), dtype=torch.float32)
 
 
 # ---------------------------------------------------------------------------
@@ -78,7 +83,7 @@ def evaluate_phys_irm_target(target_name, all_regions, seed=42,
 
     # 1. ERM baseline (standard train_zero_shot)
     zs_model = train_zero_shot(all_regions, target_name, seed=seed)
-    cfg_t = torch.tensor(data["config"]).unsqueeze(0).expand(len(x_rs_test), -1)
+    cfg_t = _model_config_batch(zs_model, data["config"], len(x_rs_test))
     with torch.no_grad():
         zs_share = zs_model(torch.tensor(x_rs_test, dtype=torch.float32), cfg_t).numpy()
     zs_cif = cif_from_shares(zs_share, ef_r, ef_nr)
@@ -94,7 +99,6 @@ def evaluate_phys_irm_target(target_name, all_regions, seed=42,
     result["phys_irm_time"] = time.time() - t0
 
     # 3. Phys-IRM without IRM penalty (only 1/L_T weighting)
-    from transcif_phys_irm import train_phys_weighted_only
     pw_model, _ = train_phys_weighted_only(
         all_regions, target_name, seed=seed, lambda_cif=lambda_cif)
     pw_cif = predict_phys_irm(pw_model, x_rs_test, data["config"], ef_r, ef_nr)
@@ -219,7 +223,7 @@ def run_ablation_irm(all_regions, target, seed=42, gammas=None):
     results = []
     # ERM baseline
     zs_model = train_zero_shot(all_regions, target, seed=seed)
-    cfg_t = torch.tensor(data["config"]).unsqueeze(0).expand(len(x_rs_test), -1)
+    cfg_t = _model_config_batch(zs_model, data["config"], len(x_rs_test))
     with torch.no_grad():
         zs_share = zs_model(torch.tensor(x_rs_test, dtype=torch.float32), cfg_t).numpy()
     zs_cif = cif_from_shares(zs_share, data["ef_r"], data["ef_nr"])
@@ -232,7 +236,7 @@ def run_ablation_irm(all_regions, target, seed=42, gammas=None):
                                     data["ef_r"], data["ef_nr"])
         m = compute_metrics(cif_pred, y_cif_test)
         ratio = m["mae"] / max(zs_mae, 1e-6)
-        final_irm = log[-1]["L_irm"] if log else 0
+        final_irm = log[-1]["irm_penalty"] if log else float("nan")
         print(f"  γ={g:<6} MAE={m['mae']:.1f}  ×{ratio:.3f}  "
               f"L_irm_final={final_irm:.6f}")
         results.append({
@@ -260,7 +264,7 @@ def run_ablation_cif(all_regions, target, seed=42, lambdas=None):
         SEQ_LEN, HORIZON, TEST_STRIDE)
 
     zs_model = train_zero_shot(all_regions, target, seed=seed)
-    cfg_t = torch.tensor(data["config"]).unsqueeze(0).expand(len(x_rs_test), -1)
+    cfg_t = _model_config_batch(zs_model, data["config"], len(x_rs_test))
     with torch.no_grad():
         zs_share = zs_model(torch.tensor(x_rs_test, dtype=torch.float32), cfg_t).numpy()
     zs_cif = cif_from_shares(zs_share, data["ef_r"], data["ef_nr"])
@@ -290,60 +294,54 @@ def run_ablation_cif(all_regions, target, seed=42, lambdas=None):
 # ---------------------------------------------------------------------------
 
 def run_spectral_analysis(all_regions, target, seed=42):
-    """Diagnostic: compute IRM penalty per source region.
+    """Diagnostic: per-source contribution to the IRM penalty.
 
-    Reveals which source regions contribute most to the IRM term,
-    i.e., which regions have the largest gradient norm.
+    Under the current cross-region IRM formulation (``phys_irm.train_phys_irm``)
+    the penalty for source *i* is ``(L_share_i - mean_{j≠i} L_share_j)^2`` with
+    the other regions' risks detached.  This diagnostic recomputes each
+    source's share risk after training and reports its penalty term, revealing
+    which source regions drive the invariance term the most.
     """
-    data = all_regions[target]
-    split = int(len(data["rs"]) * TRAIN_FRACTION)
-    x_rs_test, _, y_cif_test = build_windows(
-        data["rs"][split - SEQ_LEN:],
-        data["cif"][split - SEQ_LEN:],
-        SEQ_LEN, HORIZON, TEST_STRIDE)
-
-    # Train a single model
     model, _ = train_phys_irm(all_regions, target, seed=seed)
     model.eval()
+    cfg_dim = getattr(model, "config_dim", 2)
 
-    print(f"\nPer-source IRM penalty spectrum for {target}")
-    print(f"{'source':>20}  {'L_T':>8}  {'L_share':>10}  {'IRM_penalty':>12}")
-    print("-" * 60)
-
-    per_source = []
+    rows = []
     for name, src in all_regions.items():
         if name == target:
             continue
         x_win, y_win, _ = build_windows(src["rs"], src["cif"])
         if len(x_win) == 0:
             continue
-        L_T = abs(src["ef_nr"] - src["ef_r"])
-        cfg_t = torch.tensor(np.tile(src["config"], (len(x_win), 1)),
-                              dtype=torch.float32)
         x_t = torch.tensor(x_win, dtype=torch.float32)
         y_t = torch.tensor(y_win, dtype=torch.float32)
-
-        # Compute share error and IRM penalty
+        c_t = _model_config_batch(model, src["config"], len(x_win))
         with torch.no_grad():
-            share_pred, feat = model(x_t, cfg_t)
-            L_share_val = F.l1_loss(share_pred, y_t).item()
-        L_irm_val = irm_penalty(feat, y_t).item()
-
-        print(f"  {name:>18}  {L_T:>8.0f}  {L_share_val:>10.4f}  {L_irm_val:>12.6f}")
-        per_source.append({
-            "source": name, "L_T": L_T,
-            "L_share": L_share_val, "L_irm": L_irm_val,
+            share_pred = model(x_t, c_t)
+            l_share = torch.abs(share_pred - y_t).mean().item()
+        rows.append({
+            "source": name,
+            "L_T": abs(src["ef_nr"] - src["ef_r"]),
+            "L_share": l_share,
         })
 
-    return per_source
+    shares = [r["L_share"] for r in rows]
+    for i, r in enumerate(rows):
+        others = [s for j, s in enumerate(shares) if j != i]
+        r["L_irm"] = (r["L_share"] - float(np.mean(others))) ** 2
+
+    print(f"\nPer-source IRM penalty spectrum for {target}")
+    print(f"{'source':>26}  {'L_T':>8}  {'L_share':>10}  {'IRM_penalty':>12}")
+    print("-" * 64)
+    for r in sorted(rows, key=lambda d: -d["L_irm"]):
+        print(f"  {r['source']:>24}  {r['L_T']:>8.0f}  "
+              f"{r['L_share']:>10.4f}  {r['L_irm']:>12.6f}")
+    return rows
 
 
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
-
-import torch.nn.functional as F  # noqa: E402 (used in spectral analysis)
-
 
 def main():
     parser = argparse.ArgumentParser(description="Phys-IRM Experiments")
@@ -378,11 +376,12 @@ def main():
             print(f"  [WARN] Skip {name}: {e}")
 
     # Compute L_T stats
-    lt = compute_L_T(all_regions)
+    lt = {n: abs(d["ef_nr"] - d["ef_r"]) for n, d in all_regions.items()}
+    lt_ranked = sorted(lt.items(), key=lambda kv: kv[1], reverse=True)
     print(f"\nLoaded {len(all_regions)} regions.")
-    print(f"L_T range: {min(lt.values()):.0f} – {max(lt.values()):.0f}")
-    print(f"Top-5 high-L_T: {list(lt.items())[:5]}")
-    print(f"Bottom-5 low-L_T: {list(lt.items())[-5:]}")
+    print(f"L_T range: {lt_ranked[-1][1]:.0f} – {lt_ranked[0][1]:.0f}")
+    print(f"Top-5 high-L_T: {lt_ranked[:5]}")
+    print(f"Bottom-5 low-L_T: {lt_ranked[-5:]}")
 
     # --- Ablation branches ---
     if args.ablation_irm:
