@@ -29,9 +29,13 @@ CFG_DIM = 2
 
 
 def _synthetic_region(n_origins=6):
-    """Minimal rs/cif arrays long enough for SEQ_LEN windows + ZS+ history."""
+    """Minimal rs/cif arrays long enough for SEQ_LEN windows + ZS+ history.
+
+    Length budget: the test split must hold n_origins origins, i.e.
+    0.2*N >= n_origins * TEST_STRIDE, so N scales with n_origins.
+    """
     rng = np.random.default_rng(0)
-    N = SEQ_LEN + 168 + TEST_STRIDE * (n_origins + 4)
+    N = SEQ_LEN + 168 + max(TEST_STRIDE * (n_origins + 4), 130 * n_origins)
     rs = rng.random(N).astype(np.float32) * 0.5
     cif = (rs * EF_R + (1 - rs) * EF_NR).astype(np.float32)
     return rs, cif
@@ -72,9 +76,19 @@ def _make_origins(rs, n=6):
 
 
 def test_pipeline_runs_and_produces_finite_mae():
-    """End-to-end: assemble 5-stack -> fusion -> ZS+ -> finite held-out MAE."""
-    rs_np, cif_np = _synthetic_region()
-    origins = _make_origins(rs_np, n=6)
+    """End-to-end: assemble 5-stack -> fusion -> ZS+ -> finite held-out MAE.
+
+    Mirrors production (run_joint_train_native + split_origins): training
+    and held-out evaluation use DISJOINT origin sets.  Evaluating on the
+    training origins would make the "held-out MAE" in-sample and blind to
+    eval-path leakage bugs.
+    """
+    rs_np, cif_np = _synthetic_region(n_origins=8)
+    origins = _make_origins(rs_np, n=8)
+    train_origins, eval_origins = origins[:5], origins[5:]
+    assert set(train_origins).isdisjoint(set(eval_origins)), (
+        "train and eval origins must be disjoint (held-out contract)"
+    )
     rs_t = torch.as_tensor(rs_np, dtype=torch.float32)
     cif_t = torch.as_tensor(cif_np, dtype=torch.float32)
     config_t = torch.as_tensor([[0.4, 0.6]], dtype=torch.float32)
@@ -82,26 +96,30 @@ def test_pipeline_runs_and_produces_finite_mae():
     live = _build_live()
     for n in live.values():
         n.model.eval()
-    # no frozen dirs (5-live); build empty frozen preds
-    frozen = {d: torch.zeros(len(origins), HORIZON) for d in FROZEN_DIRS}
-    y_true = torch.stack([cif_t[o:o + HORIZON] for o in origins])
+    # no frozen dirs (5-live); build empty frozen preds per origin set
+    frozen_train = {d: torch.zeros(len(train_origins), HORIZON) for d in FROZEN_DIRS}
+    frozen_eval = {d: torch.zeros(len(eval_origins), HORIZON) for d in FROZEN_DIRS}
+    y_true_train = torch.stack([cif_t[o:o + HORIZON] for o in train_origins])
+    y_true_eval = torch.stack([cif_t[o:o + HORIZON] for o in eval_origins])
     from scripts.experiments.run_joint_train import _persistence_cif_full
-    persist = _persistence_cif_full(rs_np, cif_np, origins)
+    persist = _persistence_cif_full(rs_np, cif_np, train_origins)
 
     zs = DifferentiableZSPlus()
     fusion = LearnedFusion(n_directions=5, config_dim=CFG_DIM, horizon=HORIZON)
     params = list(zs.parameters()) + list(fusion.parameters())
-    metrics = native_stage("s", params, zs, fusion, live, frozen, rs_t, cif_t,
-                           config_t, EF_R, EF_NR, origins, persist, y_true,
+    metrics = native_stage("s", params, zs, fusion, live, frozen_train, rs_t, cif_t,
+                           config_t, EF_R, EF_NR, train_origins, persist,
+                           y_true_train,
                            n_steps=3, lr=1e-2, margin=0.1, adv_loss_weight=0.5,
                            fusion_kind="learned")
     assert np.isfinite(metrics["train_loss"][-1])
     assert np.isfinite(metrics["val_mae"][-1])
 
-    per_origin, held = eval_held_out(zs, fusion, live, frozen, rs_t, cif_t,
-                                     config_t, EF_R, EF_NR, origins, y_true,
+    per_origin, held = eval_held_out(zs, fusion, live, frozen_eval, rs_t, cif_t,
+                                     config_t, EF_R, EF_NR, eval_origins,
+                                     y_true_eval,
                                      fusion_kind="learned")
-    assert len(per_origin) == len(origins)
+    assert len(per_origin) == len(eval_origins)
     assert np.isfinite(held) and held > 0
 
 

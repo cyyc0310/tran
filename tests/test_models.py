@@ -52,7 +52,17 @@ def test_evaluate_target_default_methods():
     res = evaluate_target("B", regions, seed=0)
     for key in ["persistence", "patchtst_sup", "transcif_zs", "transcif_zs_plus"]:
         assert key in res
-        assert res[key]["mae"] >= 0
+        mae = res[key]["mae"]
+        # Finite and in a sane band for CIF in [300, 400]: catches NaNs,
+        # wrong-scale outputs (e.g. predicting rs instead of CIF, MAE ~350),
+        # and metrics computed against misaligned ground truth.
+        assert np.isfinite(mae), f"{key} mae not finite: {mae}"
+        assert mae < 200.0, f"{key} mae {mae} exceeds the sane band"
+    # iid uniform rs -> persistence |x_t - x_{t-24}| has mean 100/3 ≈ 33.3;
+    # a persistence MAE outside [15, 60] means the split/metrics are broken.
+    assert 15.0 <= res["persistence"]["mae"] <= 60.0, (
+        f"persistence mae {res['persistence']['mae']} outside iid-uniform band"
+    )
 
 
 def test_mixed_dim_config_pool_trains_and_evaluates():

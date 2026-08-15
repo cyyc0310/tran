@@ -166,6 +166,7 @@ def test_persistence_branches_match_definitions(synthetic_data, origins):
 # Test (d): sane MAE on a real QLD1 setup (integration)
 # ---------------------------------------------------------------------------
 
+@pytest.mark.integration
 def test_sane_mae_on_qlD1():
     """On QLD1 seed 0 with a causal direction model, DifferentiableZSPlus
     produces MAE in the sane range [10, 80].
