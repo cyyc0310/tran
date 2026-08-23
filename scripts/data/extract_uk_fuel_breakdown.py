@@ -66,8 +66,11 @@ def fetch_chunk(region_id, start, end):
     e = end.strftime("%Y-%m-%dT%H:%MZ")
     url = f"{BASE_URL}/regional/intensity/{s}/{e}/regionid/{region_id}"
     try:
-        resp = urllib.request.urlopen(url, timeout=30)
-        return json.load(resp)["data"]["data"]
+        import subprocess
+        out = subprocess.run(
+            ["curl", "-s", "-m", "30", url], capture_output=True,
+            check=True).stdout
+        return json.loads(out)["data"]["data"]
     except Exception as ex:
         print(f"    WARN: region {region_id} {s}→{e}: {ex}")
         return []
@@ -78,7 +81,9 @@ def parse_intervals(intervals):
     rows = []
     for iv in intervals:
         t = datetime.fromisoformat(iv["from"].replace("Z", "+00:00"))
-        intensity = iv["intensity"].get("forecast")
+        intensity = iv["intensity"].get("actual")
+        if intensity is None:
+            intensity = iv["intensity"].get("forecast")
         mix = {g["fuel"]: g["perc"] for g in iv.get("generationmix", [])}
         row = {"time": t.replace(tzinfo=None), "cif_gco2_per_kwh": intensity}
         for f in FUEL_KEYS:
@@ -90,7 +95,7 @@ def parse_intervals(intervals):
 def download_region(region, year=2023):
     rid, rname = region["id"], region["name"]
     safe = rname.replace(" ", "_")
-    out_path = FUEL_DIR / f"UK_{rid:02d}_{safe}_fuel_2023_hourly.csv"
+    out_path = FUEL_DIR / f"UK_{rid:02d}_{safe}_fuel_{year}_hourly.csv"
     if out_path.exists():
         print(f"  [skip] {out_path.name} exists")
         return out_path
@@ -138,21 +143,31 @@ def compute_fuel_shares(df, train_fraction=TRAIN_FRACTION):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--years', nargs='+', type=int, default=[2023])
+    ap.add_argument('--region-ids', nargs='*', type=int, default=None)
+    args = ap.parse_args()
     print("=" * 70)
     print("UK Carbon Intensity Fuel Breakdown Extraction (Stage A.2)")
     print("=" * 70)
 
     fuel_shares_all = {}
-    for r in UK_REGIONS:
+    regions = UK_REGIONS
+    if args.region_ids:
+        wanted = set(args.region_ids)
+        regions = [r for r in regions if r['id'] in wanted]
+    for r in regions:
         print(f"\n[{r['id']:02d}] {r['name']}...")
-        path = download_region(r)
-        if path is None:
-            continue
-        df = pd.read_csv(path, parse_dates=["hour"])
-        shares = compute_fuel_shares(df)
-        fuel_shares_all[f"UK_{r['id']:02d}_{r['name'].replace(' ', '_')}"] = shares
-        mix = "  ".join(f"{k}:{v*100:4.1f}%" for k, v in shares.items() if v > 0.01)
-        print(f"    fuel mix (train split): {mix}")
+        for year in args.years:
+            path = download_region(r, year=year)
+            if path is None:
+                continue
+            df = pd.read_csv(path, parse_dates=["hour"])
+            shares = compute_fuel_shares(df)
+            fuel_shares_all[f"UK_{r['id']:02d}_{r['name'].replace(' ', '_')}_{year}"] = shares
+            mix = "  ".join(f"{k}:{v*100:4.1f}%" for k, v in shares.items() if v > 0.01)
+            print(f"    {year} fuel mix (train split): {mix}")
 
     out = FUEL_DIR / "fuel_shares_uk.json"
     with open(out, "w") as f:

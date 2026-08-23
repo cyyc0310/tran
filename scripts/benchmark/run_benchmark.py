@@ -67,6 +67,7 @@ def from_fd_rows(rows):
     for method, tier, key, base in (
         ("fuel_decomp", "I_0", "fuel_i0", "persistence"),
         ("fuel_decomp", "I_cfg", "fuel_i_cfg", "config_constant"),
+        ("fuel_decomp+zs_plus", "I_+", "fuel_i_plus", "persistence"),
         ("annual_constant", "I_cfg", "config_constant", None),
         ("monthly_constant", "I_cfg(oracle)", "monthly_constant", None),
         ("persistence_lag24", "reference", "persistence", None),
@@ -112,8 +113,11 @@ def from_unified_rows(rows):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fd", nargs="+", default=[
-        str(RESULTS / "fuel_decomp_eval_quick.json"),
-        str(RESULTS / "fuel_decomp_eval_full.json")])
+        str(RESULTS / "fuel_decomp_eval_full_final.json"),
+        str(RESULTS / "fuel_decomp_eval_full_shape.json"),
+        str(RESULTS / "fuel_decomp_eval_full.json"),
+        str(RESULTS / "fuel_decomp_eval_anchor.json"),
+        str(RESULTS / "fuel_decomp_eval_quick.json")])
     ap.add_argument("--unified", default="scripts/results/unified_eval_full.json")
     ap.add_argument("--out", default=str(RESULTS / "leaderboard.json"))
     args = ap.parse_args()

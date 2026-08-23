@@ -31,7 +31,7 @@ FUEL_DIR = DATA_DIR / "fuel"
 FUEL_DIR.mkdir(exist_ok=True)
 
 # Six-month bulk files produced by download_eia930_data.py
-EIA_FILES = ["gen_jan_jun_2023.csv", "gen_jul_dec_2023.csv"]
+YEAR = 2023  # --year override; files are named by the downloader
 
 # Target US balancing authorities (must match constants.py US_REGIONS keys)
 US_REGIONS = {
@@ -68,8 +68,9 @@ TRAIN_FRACTION = 0.8
 
 def load_raw_eia():
     """Concatenate the two 6-month EIA-930 bulk CSVs."""
+    eia_files = [f"gen_jan_jun_{YEAR}.csv", f"gen_jul_dec_{YEAR}.csv"]
     dfs = []
-    for name in EIA_FILES:
+    for name in eia_files:
         path = RAW_DIR / name
         if not path.exists():
             raise FileNotFoundError(
@@ -153,6 +154,12 @@ def compute_fuel_shares(df: pd.DataFrame, train_fraction=TRAIN_FRACTION) -> dict
 
 
 def main():
+    import argparse
+    global YEAR
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--year", type=int, default=2023)
+    args = ap.parse_args()
+    YEAR = args.year
     print("=" * 70)
     print("EIA-930 Fuel Breakdown Extraction (Stage A.1)")
     print("=" * 70)
@@ -178,7 +185,7 @@ def main():
         df_region = df_all[df_all[ba_col] == region]
         out = process_region(df_region, region)
 
-        outfile = FUEL_DIR / f"US_{region}_fuel_2023_hourly.csv"
+        outfile = FUEL_DIR / f"US_{region}_fuel_{YEAR}_hourly.csv"
         out.to_csv(outfile, index=False)
         print(f"    ✓ {outfile.name}: {len(out)} rows")
 
@@ -186,7 +193,7 @@ def main():
         fuel_shares_all[f"US_{region}"] = shares
 
         # Sanity check against legacy CIF file.
-        legacy_path = DATA_DIR / f"US_{region}_2023_hourly.csv"
+        legacy_path = DATA_DIR / f"US_{region}_{YEAR}_hourly.csv"
         if legacy_path.exists():
             legacy = pd.read_csv(legacy_path)
             common = min(len(legacy), len(out))
@@ -200,8 +207,10 @@ def main():
         mix = "  ".join(f"{k}:{v*100:4.1f}%" for k, v in shares.items() if v > 0.01)
         print(f"    fuel mix (train split): {mix}")
 
-    # Write fuel shares JSON for constants.py injection.
-    shares_file = FUEL_DIR / "fuel_shares_us.json"
+    # Write fuel shares JSON for constants.py injection (2023 = canonical;
+    # extra years write side files so they never clobber the baseline).
+    shares_file = FUEL_DIR / (
+        "fuel_shares_us.json" if YEAR == 2023 else f"fuel_shares_us_{YEAR}.json")
     with open(shares_file, "w") as f:
         json.dump({
             "_emission_factors": FUEL_EMISSION_FACTORS,

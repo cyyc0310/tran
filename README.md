@@ -339,19 +339,34 @@ provinces). See `docs/BENCHMARK.md` for the full benchmark definition.
 
 # Build the benchmark leaderboard (docs/BENCHMARK.md schema)
 .venv/bin/python scripts/benchmark/run_benchmark.py
+
+# Telemetry-free province deployment demo (monthly fuel-mix input only)
+.venv/bin/python scripts/experiments/demo_cn_province.py
 ```
 
-Headline (quick protocol, 8 hard regions × 2 seeds —
-`results/fuel_decomp_fd1_verdict.md`):
+**Deployment interface for telemetry-free provinces** (the China scenario): the
+model consumes only monthly generation-by-fuel statistics for the past year
+(`--monthly-config`, 1-month publication lag) plus reanalysis weather
+climatology and a coordinate — see `scripts/experiments/demo_cn_province.py`
+and `results/fuel_decomp_fd7_verdict.md` for the conversion table. The monthly
+variant is optional: on the benchmark regions (static annual mixes) it adds
+noise (MAE 71.8→72.2), so annual configs remain the default.
 
-- **I_cfg median MAE 73.3** vs the deployment-legal annual-constant baseline
-  84.8 (and the monthly-constant oracle 75.6) — **with zero target telemetry**
-- **Hourly ranking skill is significant**: Spearman 0.22 vs 0.0 for any
-  constant baseline (paired Wilcoxon p = 0.0017) — the quantity carbon-aware
-  scheduling actually consumes
-- I_0 median 48.7 (vs 52.1 legacy ZS on the full 29-region ladder)
-- Per-fuel physics reconstruction: median 8.9 gCO₂/kWh across the 25
-  fuel-telemetry regions (outliers: import-heavy South-East England cluster)
+Headline (full 29-region × 5-seed LORO, 145 pairs —
+`results/fuel_decomp_fd4_verdict.md`, `results/fuel_decomp_fd6_verdict.md`):
+
+- **I_cfg (telemetry-free) median MAE 62.8** vs the deployment-legal
+  annual-constant baseline 70.9 — the only method producing hourly
+  predictions for telemetry-free grids; **Spearman 0.32**; after the AU
+  telemetry + timeline fixes the improvement over FD-6 is win 75%
+  (p = 7.1e-11)
+- **I_+ 46.5 vs legacy ZS+ 46.8 — 82% paired wins (p = 5.2e-16), the
+  first backbone to beat the legacy ladder under ZS+ at full scale**
+  (the earlier "equalizer" was an artifact of the AU timeline bug
+  corrupting the calibration inputs); vs persistence 50.7
+- Data tracks: monthly fuel-mix interface, AU per-fuel telemetry (NEMED
+  DUID extraction), jurisdiction-mapped fuel prices, gusts/pressure,
+  day-ahead load forecasts — see `results/fuel_decomp_fd13/14/15_verdict.md`
 
 Design: per-fuel heads with physics inductive biases (solar = astronomy
 envelope × weather modulation; wind = IEC power-curve transform; thermal =

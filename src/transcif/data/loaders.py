@@ -60,7 +60,8 @@ def discover_uk_regions(data_dir=None, train_fraction=TRAIN_FRACTION):
 
 
 def load_region_data(region_name: str, all_configs: dict,
-                     data_dir=None, train_fraction=TRAIN_FRACTION) -> dict:
+                     data_dir=None, train_fraction=TRAIN_FRACTION,
+                     multi_year=False) -> dict:
     """Load a single region's rs / cif timeseries and scalar config.
 
     Args:
@@ -89,10 +90,21 @@ def load_region_data(region_name: str, all_configs: dict,
     if data_dir is None:
         data_dir = DATA_DIR
     info = all_configs[region_name]
-    path = data_dir / info["file"]
+    # Discover optional additional years only when explicitly requested.  The
+    # default remains the original 2023 protocol even if extra files have
+    # been downloaded, so cached baselines stay reproducible.
+    stem = info["file"].replace("_2023_hourly.csv", "")
+    paths = sorted(data_dir.glob(f"{stem}_*_hourly.csv")) if multi_year else []
+    if not paths:
+        paths = [data_dir / info["file"]]
     ef_r, ef_nr = info["ef_r"], info["ef_nr"]
-    df = pd.read_csv(path, parse_dates=["hour"])
-    df = df.sort_values("hour").reset_index(drop=True)
+    frames = [pd.read_csv(path, parse_dates=["hour"]) for path in paths
+              if path.exists()]
+    if not frames:
+        raise FileNotFoundError(f"no hourly files found for {region_name}")
+    df = (pd.concat(frames, ignore_index=True)
+            .drop_duplicates("hour", keep="last")
+            .sort_values("hour").reset_index(drop=True))
     rs = df["renew_share"].values.astype(np.float32)
     cif = df["cif_real_gco2_per_kwh"].values.astype(np.float32)
     valid = np.isfinite(rs) & np.isfinite(cif) & (cif >= 0)
@@ -118,11 +130,12 @@ def load_region_data(region_name: str, all_configs: dict,
         "ef_r": ef_r, "ef_nr": ef_nr,
         "config": np.array(base_cfg, dtype=np.float32),
         "fuel_shares": fuel_shares,
-        "weather": _load_weather_aligned(data_dir, info["file"], len(rs)),
+        "weather": _load_weather_aligned(data_dir, info["file"], len(rs),
+                                          multi_year=multi_year),
     }
 
 
-def _load_weather_aligned(data_dir, region_file, target_len):
+def _load_weather_aligned(data_dir, region_file, target_len, multi_year=False):
     """Load optional per-hour weather, aligned to the rs series length.
 
     Returns ``(target_len, 3)`` float32 array (temperature_c,
@@ -131,12 +144,17 @@ def _load_weather_aligned(data_dir, region_file, target_len):
     windowing (build_windows) produces matching rs/weather window counts.
     """
     region_stem = region_file.replace("_2023_hourly.csv", "")
-    wpath = data_dir / "weather" / f"{region_stem}_weather_2023_hourly.csv"
-    if not wpath.exists():
+    paths = sorted((data_dir / "weather").glob(
+        f"{region_stem}_weather_*_hourly.csv"))
+    if not multi_year:
+        paths = [p for p in paths if p.name.endswith("_2023_hourly.csv")]
+    if not paths:
         return None
     try:
-        wdf = pd.read_csv(wpath, parse_dates=["hour"])
-        wdf = wdf.sort_values("hour").reset_index(drop=True)
+        wdf = (pd.concat([pd.read_csv(p, parse_dates=["hour"]) for p in paths],
+                         ignore_index=True)
+                 .drop_duplicates("hour", keep="last")
+                 .sort_values("hour").reset_index(drop=True))
         cols = ["temperature_c", "shortwave_radiation", "wind_speed_100m"]
         for c in cols:
             if c not in wdf.columns:

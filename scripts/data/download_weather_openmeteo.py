@@ -26,6 +26,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import argparse
 
 DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data_2023"
 WEATHER_DIR = DATA_DIR / "weather"
@@ -78,7 +79,7 @@ VARIABLES = "shortwave_radiation,wind_speed_100m,temperature_2m"
 API_BASE = "https://archive-api.open-meteo.com/v1/archive"
 
 
-def fetch_one_region(region, lat, lon, city):
+def fetch_one_region(region, lat, lon, city, year=2023):
     """Fetch one region's full-year hourly weather from Open-Meteo."""
     params = urllib.parse.urlencode({
         "latitude": lat,
@@ -89,7 +90,7 @@ def fetch_one_region(region, lat, lon, city):
         "timezone": "UTC",
     })
     url = f"{API_base}?{params}" if False else f"{API_BASE}?{params}"
-    out_path = WEATHER_DIR / f"{region}_weather_2023_hourly.csv"
+    out_path = WEATHER_DIR / f"{region}_weather_{year}_hourly.csv"
     if out_path.exists():
         print(f"  [skip] {region} exists")
         return out_path
@@ -126,21 +127,27 @@ def fetch_one_region(region, lat, lon, city):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--years", nargs="+", type=int, default=[2023])
+    args = ap.parse_args()
     print("=" * 80)
     print("Stage B.1: Download ERA5 weather (Open-Meteo) for 30 regions")
     print("=" * 80)
-    print(f"Date range: {START_DATE} to {END_DATE}")
+    print(f"Years: {args.years}")
     print(f"Variables:  {VARIABLES}")
     print(f"Output:     {WEATHER_DIR}/")
 
     ok, fail = 0, 0
-    for region, (lat, lon, city) in REGION_COORDS.items():
-        result = fetch_one_region(region, lat, lon, city)
-        if result is not None:
-            ok += 1
-        else:
-            fail += 1
-        time.sleep(1.0)  # polite rate limiting
+    for year in args.years:
+        global START_DATE, END_DATE
+        START_DATE, END_DATE = f"{year}-01-01", f"{year}-12-31"
+        for region, (lat, lon, city) in REGION_COORDS.items():
+            result = fetch_one_region(region, lat, lon, city, year=year)
+            if result is not None:
+                ok += 1
+            else:
+                fail += 1
+            time.sleep(1.0)  # polite rate limiting
 
     print(f"\n[SUMMARY] {ok} ok, {fail} failed, {len(REGION_COORDS)} total")
     if fail:

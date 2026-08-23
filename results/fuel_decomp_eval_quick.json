@@ -949,6 +949,15 @@
   "epochs": 600,
   "p_cold": 0.3,
   "p_mix": 0.0,
+  "use_hypernet": false,
+  "weight_mode": "legacy",
+  "ef_corr_bound": 0.35,
+  "lambda_shape": 0.5,
+  "use_monthly": false,
+  "lag_months": 1,
+  "weather_noise": false,
+  "evening_weight": 1.0,
+  "solar_mod_bound": 0.4,
   "max_windows": 700
  }
 }

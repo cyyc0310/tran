@@ -1,0 +1,4690 @@
+{
+  "regions": {
+    "QLD1": {
+      "hours": 8772
+    },
+    "NSW1": {
+      "hours": 8772
+    },
+    "VIC1": {
+      "hours": 8772
+    },
+    "SA1": {
+      "hours": 8772
+    },
+    "UK_01_North_Scotland": {
+      "hours": 8720
+    },
+    "UK_02_South_Scotland": {
+      "hours": 8720
+    },
+    "UK_03_North_West_England": {
+      "hours": 8720
+    },
+    "UK_05_Yorkshire": {
+      "hours": 8720
+    },
+    "UK_06_North_Wales_Merseyside": {
+      "hours": 8720
+    },
+    "UK_07_South_Wales": {
+      "hours": 8720
+    },
+    "UK_08_West_Midlands": {
+      "hours": 8720
+    },
+    "UK_09_East_Midlands": {
+      "hours": 8720
+    },
+    "UK_10_East_England": {
+      "hours": 8720
+    },
+    "UK_11_South_West_England": {
+      "hours": 8720
+    },
+    "UK_12_South_England": {
+      "hours": 8720
+    },
+    "UK_13_London": {
+      "hours": 8720
+    },
+    "UK_14_South_East_England": {
+      "hours": 8720
+    },
+    "UK_15_England": {
+      "hours": 8720
+    },
+    "UK_16_Scotland": {
+      "hours": 8720
+    },
+    "UK_17_Wales": {
+      "hours": 8720
+    },
+    "UK_18_GB": {
+      "hours": 8720
+    },
+    "US_CISO": {
+      "hours": 8758
+    },
+    "US_PJM": {
+      "hours": 8735
+    },
+    "US_MISO": {
+      "hours": 8760
+    },
+    "US_ERCO": {
+      "hours": 8760
+    },
+    "US_ISNE": {
+      "hours": 8760
+    },
+    "US_NYIS": {
+      "hours": 8760
+    },
+    "US_FPL": {
+      "hours": 8662
+    },
+    "US_BPAT": {
+      "hours": 8760
+    }
+  },
+  "daily_corr": {
+    "QLD1": {
+      "cif_std~gust_max": 0.181,
+      "cif_std~precip_sum": -0.233,
+      "cif_std~wind100_mean": 0.037,
+      "cif_std~temp_max": 0.103,
+      "dcif_max~gust_max": 0.2
+    },
+    "NSW1": {
+      "cif_std~gust_max": 0.208,
+      "cif_std~precip_sum": -0.19,
+      "cif_std~wind100_mean": 0.001,
+      "cif_std~temp_max": 0.248,
+      "dcif_max~gust_max": 0.118
+    },
+    "VIC1": {
+      "cif_std~gust_max": -0.142,
+      "cif_std~precip_sum": -0.154,
+      "cif_std~wind100_mean": -0.257,
+      "cif_std~temp_max": 0.095,
+      "dcif_max~gust_max": -0.274
+    },
+    "SA1": {
+      "cif_std~gust_max": -0.473,
+      "cif_std~precip_sum": -0.126,
+      "cif_std~wind100_mean": -0.43,
+      "cif_std~temp_max": -0.085,
+      "dcif_max~gust_max": -0.457
+    },
+    "UK_01_North_Scotland": {
+      "cif_std~gust_max": -0.499,
+      "cif_std~precip_sum": -0.315,
+      "cif_std~wind100_mean": -0.463,
+      "cif_std~temp_max": -0.118,
+      "dcif_max~gust_max": -0.449
+    },
+    "UK_02_South_Scotland": {
+      "cif_std~gust_max": -0.351,
+      "cif_std~precip_sum": -0.225,
+      "cif_std~wind100_mean": -0.466,
+      "cif_std~temp_max": -0.202,
+      "dcif_max~gust_max": -0.312
+    },
+    "UK_03_North_West_England": {
+      "cif_std~gust_max": -0.532,
+      "cif_std~precip_sum": -0.339,
+      "cif_std~wind100_mean": -0.436,
+      "cif_std~temp_max": -0.224,
+      "dcif_max~gust_max": -0.521
+    },
+    "UK_05_Yorkshire": {
+      "cif_std~gust_max": -0.183,
+      "cif_std~precip_sum": -0.087,
+      "cif_std~wind100_mean": -0.189,
+      "cif_std~temp_max": -0.063,
+      "dcif_max~gust_max": -0.226
+    },
+    "UK_06_North_Wales_Merseyside": {
+      "cif_std~gust_max": -0.453,
+      "cif_std~precip_sum": -0.139,
+      "cif_std~wind100_mean": -0.485,
+      "cif_std~temp_max": -0.08,
+      "dcif_max~gust_max": -0.466
+    },
+    "UK_07_South_Wales": {
+      "cif_std~gust_max": 0.362,
+      "cif_std~precip_sum": 0.126,
+      "cif_std~wind100_mean": 0.31,
+      "cif_std~temp_max": -0.013,
+      "dcif_max~gust_max": 0.326
+    },
+    "UK_08_West_Midlands": {
+      "cif_std~gust_max": -0.255,
+      "cif_std~precip_sum": -0.164,
+      "cif_std~wind100_mean": -0.236,
+      "cif_std~temp_max": -0.165,
+      "dcif_max~gust_max": -0.333
+    },
+    "UK_09_East_Midlands": {
+      "cif_std~gust_max": 0.033,
+      "cif_std~precip_sum": -0.073,
+      "cif_std~wind100_mean": 0.061,
+      "cif_std~temp_max": -0.112,
+      "dcif_max~gust_max": 0.047
+    },
+    "UK_10_East_England": {
+      "cif_std~gust_max": -0.194,
+      "cif_std~precip_sum": -0.008,
+      "cif_std~wind100_mean": -0.223,
+      "cif_std~temp_max": -0.058,
+      "dcif_max~gust_max": -0.11
+    },
+    "UK_11_South_West_England": {
+      "cif_std~gust_max": -0.269,
+      "cif_std~precip_sum": -0.363,
+      "cif_std~wind100_mean": -0.315,
+      "cif_std~temp_max": 0.594,
+      "dcif_max~gust_max": -0.177
+    },
+    "UK_12_South_England": {
+      "cif_std~gust_max": -0.265,
+      "cif_std~precip_sum": -0.204,
+      "cif_std~wind100_mean": -0.316,
+      "cif_std~temp_max": 0.263,
+      "dcif_max~gust_max": -0.255
+    },
+    "UK_13_London": {
+      "cif_std~gust_max": -0.343,
+      "cif_std~precip_sum": -0.041,
+      "cif_std~wind100_mean": -0.392,
+      "cif_std~temp_max": 0.022,
+      "dcif_max~gust_max": -0.413
+    },
+    "UK_14_South_East_England": {
+      "cif_std~gust_max": -0.311,
+      "cif_std~precip_sum": -0.119,
+      "cif_std~wind100_mean": -0.363,
+      "cif_std~temp_max": 0.093,
+      "dcif_max~gust_max": -0.333
+    },
+    "UK_15_England": {
+      "cif_std~gust_max": -0.193,
+      "cif_std~precip_sum": -0.148,
+      "cif_std~wind100_mean": -0.201,
+      "cif_std~temp_max": 0.037,
+      "dcif_max~gust_max": -0.186
+    },
+    "UK_16_Scotland": {
+      "cif_std~gust_max": -0.579,
+      "cif_std~precip_sum": -0.384,
+      "cif_std~wind100_mean": -0.626,
+      "cif_std~temp_max": -0.055,
+      "dcif_max~gust_max": -0.527
+    },
+    "UK_17_Wales": {
+      "cif_std~gust_max": -0.042,
+      "cif_std~precip_sum": -0.121,
+      "cif_std~wind100_mean": -0.03,
+      "cif_std~temp_max": -0.0,
+      "dcif_max~gust_max": -0.056
+    },
+    "UK_18_GB": {
+      "cif_std~gust_max": -0.192,
+      "cif_std~precip_sum": -0.125,
+      "cif_std~wind100_mean": -0.2,
+      "cif_std~temp_max": 0.013,
+      "dcif_max~gust_max": -0.183
+    },
+    "US_CISO": {
+      "cif_std~gust_max": -0.508,
+      "cif_std~precip_sum": -0.237,
+      "cif_std~wind100_mean": -0.357,
+      "cif_std~temp_max": -0.132,
+      "dcif_max~gust_max": -0.49
+    },
+    "US_PJM": {
+      "cif_std~gust_max": -0.114,
+      "cif_std~precip_sum": 0.042,
+      "cif_std~wind100_mean": -0.162,
+      "cif_std~temp_max": 0.485,
+      "dcif_max~gust_max": 0.011
+    },
+    "US_MISO": {
+      "cif_std~gust_max": 0.098,
+      "cif_std~precip_sum": -0.142,
+      "cif_std~wind100_mean": -0.008,
+      "cif_std~temp_max": 0.033,
+      "dcif_max~gust_max": 0.097
+    },
+    "US_ERCO": {
+      "cif_std~gust_max": 0.013,
+      "cif_std~precip_sum": -0.236,
+      "cif_std~wind100_mean": 0.003,
+      "cif_std~temp_max": -0.367,
+      "dcif_max~gust_max": -0.078
+    },
+    "US_ISNE": {
+      "cif_std~gust_max": 0.124,
+      "cif_std~precip_sum": -0.128,
+      "cif_std~wind100_mean": 0.251,
+      "cif_std~temp_max": -0.243,
+      "dcif_max~gust_max": 0.21
+    },
+    "US_NYIS": {
+      "cif_std~gust_max": 0.083,
+      "cif_std~precip_sum": -0.055,
+      "cif_std~wind100_mean": 0.053,
+      "cif_std~temp_max": 0.061,
+      "dcif_max~gust_max": 0.158
+    },
+    "US_FPL": {
+      "cif_std~gust_max": -0.082,
+      "cif_std~precip_sum": -0.551,
+      "cif_std~wind100_mean": 0.265,
+      "cif_std~temp_max": -0.507,
+      "dcif_max~gust_max": -0.092
+    },
+    "US_BPAT": {
+      "cif_std~gust_max": -0.165,
+      "cif_std~precip_sum": -0.088,
+      "cif_std~wind100_mean": 0.01,
+      "cif_std~temp_max": 0.158,
+      "dcif_max~gust_max": -0.135
+    }
+  },
+  "top_days": {
+    "QLD1": [
+      {
+        "date": "2023-11-29",
+        "dcif_max": 167.3,
+        "cif_range": 306.8,
+        "gust_max_ms": 8.8,
+        "precip_sum_mm": 13.3,
+        "type": "heavy-rain",
+        "gust_z_max": 1.23,
+        "pres_tend6_min": -4.9,
+        "precip6_max_mm": 13.1,
+        "temp_z_min": -0.14,
+        "temp_z_max": 1.82,
+        "wind100_z_min": -1.37
+      },
+      {
+        "date": "2023-09-20",
+        "dcif_max": 157.9,
+        "cif_range": 277.4,
+        "gust_max_ms": 12.5,
+        "precip_sum_mm": 0.0,
+        "type": "cyclone/gust+wind-lull",
+        "gust_z_max": 2.53,
+        "pres_tend6_min": -5.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.54,
+        "temp_z_max": 1.56,
+        "wind100_z_min": -2.24
+      },
+      {
+        "date": "2023-08-19",
+        "dcif_max": 157.8,
+        "cif_range": 254.7,
+        "gust_max_ms": 12.4,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold",
+        "gust_z_max": 2.49,
+        "pres_tend6_min": -2.0,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.04,
+        "temp_z_max": 0.16,
+        "wind100_z_min": -0.77
+      },
+      {
+        "date": "2023-10-22",
+        "dcif_max": 152.9,
+        "cif_range": 287.5,
+        "gust_max_ms": 11.6,
+        "precip_sum_mm": 0.0,
+        "type": "cyclone/gust+wind-lull",
+        "gust_z_max": 2.21,
+        "pres_tend6_min": -5.5,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.49,
+        "temp_z_max": 1.76,
+        "wind100_z_min": -1.55
+      },
+      {
+        "date": "2023-02-10",
+        "dcif_max": 151.4,
+        "cif_range": 273.4,
+        "gust_max_ms": 12.7,
+        "precip_sum_mm": 0.3,
+        "type": "gust",
+        "gust_z_max": 2.59,
+        "pres_tend6_min": -3.2,
+        "precip6_max_mm": 0.5,
+        "temp_z_min": -0.27,
+        "temp_z_max": 1.87,
+        "wind100_z_min": -1.0
+      }
+    ],
+    "NSW1": [
+      {
+        "date": "2023-09-29",
+        "dcif_max": 240.4,
+        "cif_range": 459.9,
+        "gust_max_ms": 10.9,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 1.02,
+        "pres_tend6_min": -4.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.21,
+        "temp_z_max": 1.56,
+        "wind100_z_min": -1.97
+      },
+      {
+        "date": "2023-06-17",
+        "dcif_max": 212.3,
+        "cif_range": 336.9,
+        "gust_max_ms": 7.5,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold+wind-lull",
+        "gust_z_max": 0.07,
+        "pres_tend6_min": -5.6,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.22,
+        "temp_z_max": 0.07,
+        "wind100_z_min": -1.7
+      },
+      {
+        "date": "2023-10-28",
+        "dcif_max": 205.2,
+        "cif_range": 420.9,
+        "gust_max_ms": 9.9,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.74,
+        "pres_tend6_min": -4.3,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.45,
+        "temp_z_max": 0.63,
+        "wind100_z_min": -1.08
+      },
+      {
+        "date": "2023-09-09",
+        "dcif_max": 194.5,
+        "cif_range": 409.8,
+        "gust_max_ms": 9.7,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold",
+        "gust_z_max": 0.69,
+        "pres_tend6_min": -1.7,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.06,
+        "temp_z_max": 0.2,
+        "wind100_z_min": -1.33
+      },
+      {
+        "date": "2023-09-15",
+        "dcif_max": 191.1,
+        "cif_range": 396.8,
+        "gust_max_ms": 11.4,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 1.16,
+        "pres_tend6_min": -4.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.14,
+        "temp_z_max": 1.66,
+        "wind100_z_min": -1.51
+      }
+    ],
+    "VIC1": [
+      {
+        "date": "2023-10-29",
+        "dcif_max": 312.8,
+        "cif_range": 508.1,
+        "gust_max_ms": 10.8,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 0.72,
+        "pres_tend6_min": -5.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.74,
+        "temp_z_max": 1.1,
+        "wind100_z_min": -1.89
+      },
+      {
+        "date": "2023-09-03",
+        "dcif_max": 286.5,
+        "cif_range": 622.8,
+        "gust_max_ms": 12.7,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 1.21,
+        "pres_tend6_min": -5.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.55,
+        "temp_z_max": 0.74,
+        "wind100_z_min": -0.81
+      },
+      {
+        "date": "2023-06-01",
+        "dcif_max": 277.8,
+        "cif_range": 405.6,
+        "gust_max_ms": 8.2,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold+wind-lull",
+        "gust_z_max": 0.04,
+        "pres_tend6_min": -0.1,
+        "precip6_max_mm": 0.1,
+        "temp_z_min": -2.2,
+        "temp_z_max": -0.12,
+        "wind100_z_min": -1.6
+      },
+      {
+        "date": "2023-04-30",
+        "dcif_max": 273.3,
+        "cif_range": 395.7,
+        "gust_max_ms": 6.9,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.3,
+        "pres_tend6_min": -2.4,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.88,
+        "temp_z_max": 0.12,
+        "wind100_z_min": -1.91
+      },
+      {
+        "date": "2023-09-17",
+        "dcif_max": 270.8,
+        "cif_range": 323.9,
+        "gust_max_ms": 10.0,
+        "precip_sum_mm": 0.9,
+        "type": "wind-lull",
+        "gust_z_max": 0.51,
+        "pres_tend6_min": -3.4,
+        "precip6_max_mm": 0.9,
+        "temp_z_min": -0.66,
+        "temp_z_max": 1.45,
+        "wind100_z_min": -1.79
+      }
+    ],
+    "SA1": [
+      {
+        "date": "2023-12-31",
+        "dcif_max": 278.5,
+        "cif_range": 457.5,
+        "gust_max_ms": 11.8,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 1.09,
+        "pres_tend6_min": -3.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.15,
+        "temp_z_max": 1.51,
+        "wind100_z_min": -1.8
+      },
+      {
+        "date": "2023-01-27",
+        "dcif_max": 277.3,
+        "cif_range": 534.9,
+        "gust_max_ms": 14.8,
+        "precip_sum_mm": 0.0,
+        "type": "cyclone/gust+heat+wind-lull",
+        "gust_z_max": 1.91,
+        "pres_tend6_min": -5.2,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": 1.49,
+        "temp_z_max": 3.55,
+        "wind100_z_min": -1.7
+      },
+      {
+        "date": "2023-09-24",
+        "dcif_max": 238.6,
+        "cif_range": 356.7,
+        "gust_max_ms": 8.5,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 0.18,
+        "pres_tend6_min": -3.0,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.89,
+        "temp_z_max": 1.65,
+        "wind100_z_min": -1.63
+      },
+      {
+        "date": "2023-12-10",
+        "dcif_max": 236.1,
+        "cif_range": 345.2,
+        "gust_max_ms": 17.6,
+        "precip_sum_mm": 8.8,
+        "type": "cyclone/gust",
+        "gust_z_max": 2.67,
+        "pres_tend6_min": -8.0,
+        "precip6_max_mm": 6.4,
+        "temp_z_min": -0.41,
+        "temp_z_max": 0.56,
+        "wind100_z_min": -1.15
+      },
+      {
+        "date": "2023-01-07",
+        "dcif_max": 231.1,
+        "cif_range": 452.7,
+        "gust_max_ms": 11.9,
+        "precip_sum_mm": 0.0,
+        "type": "heat+wind-lull",
+        "gust_z_max": 1.11,
+        "pres_tend6_min": -2.5,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": 1.39,
+        "temp_z_max": 3.12,
+        "wind100_z_min": -1.58
+      }
+    ],
+    "UK_01_North_Scotland": [
+      {
+        "date": "2023-05-12",
+        "dcif_max": 195.0,
+        "cif_range": 310.0,
+        "gust_max_ms": 8.2,
+        "precip_sum_mm": 0.1,
+        "type": "wind-lull",
+        "gust_z_max": 0.19,
+        "pres_tend6_min": -1.5,
+        "precip6_max_mm": 0.2,
+        "temp_z_min": -0.1,
+        "temp_z_max": 1.34,
+        "wind100_z_min": -1.54
+      },
+      {
+        "date": "2023-05-01",
+        "dcif_max": 183.0,
+        "cif_range": 275.5,
+        "gust_max_ms": 9.7,
+        "precip_sum_mm": 0.4,
+        "type": "calm",
+        "gust_z_max": 0.56,
+        "pres_tend6_min": -0.3,
+        "precip6_max_mm": 0.4,
+        "temp_z_min": -0.81,
+        "temp_z_max": 0.18,
+        "wind100_z_min": -0.78
+      },
+      {
+        "date": "2023-09-09",
+        "dcif_max": 137.2,
+        "cif_range": 206.7,
+        "gust_max_ms": 15.8,
+        "precip_sum_mm": 0.2,
+        "type": "calm",
+        "gust_z_max": 2.06,
+        "pres_tend6_min": -1.8,
+        "precip6_max_mm": 0.2,
+        "temp_z_min": 1.28,
+        "temp_z_max": 2.36,
+        "wind100_z_min": 0.35
+      },
+      {
+        "date": "2023-09-08",
+        "dcif_max": 137.0,
+        "cif_range": 266.0,
+        "gust_max_ms": 4.8,
+        "precip_sum_mm": 0.0,
+        "type": "heat",
+        "gust_z_max": -0.65,
+        "pres_tend6_min": -2.5,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": 1.13,
+        "temp_z_max": 3.06,
+        "wind100_z_min": -1.46
+      },
+      {
+        "date": "2023-10-17",
+        "dcif_max": 132.5,
+        "cif_range": 247.5,
+        "gust_max_ms": 6.7,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.18,
+        "pres_tend6_min": -3.1,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.83,
+        "temp_z_max": 0.56,
+        "wind100_z_min": -1.61
+      }
+    ],
+    "UK_02_South_Scotland": [
+      {
+        "date": "2023-05-01",
+        "dcif_max": 79.5,
+        "cif_range": 151.5,
+        "gust_max_ms": 9.7,
+        "precip_sum_mm": 2.7,
+        "type": "calm",
+        "gust_z_max": 0.18,
+        "pres_tend6_min": -0.2,
+        "precip6_max_mm": 1.7,
+        "temp_z_min": -0.49,
+        "temp_z_max": 0.93,
+        "wind100_z_min": -1.08
+      },
+      {
+        "date": "2023-11-16",
+        "dcif_max": 76.0,
+        "cif_range": 137.0,
+        "gust_max_ms": 6.3,
+        "precip_sum_mm": 3.9,
+        "type": "wind-lull",
+        "gust_z_max": -0.63,
+        "pres_tend6_min": -1.7,
+        "precip6_max_mm": 3.9,
+        "temp_z_min": -1.06,
+        "temp_z_max": -0.26,
+        "wind100_z_min": -1.71
+      },
+      {
+        "date": "2023-01-07",
+        "dcif_max": 74.5,
+        "cif_range": 81.0,
+        "gust_max_ms": 18.9,
+        "precip_sum_mm": 14.9,
+        "type": "cyclone/gust",
+        "gust_z_max": 2.36,
+        "pres_tend6_min": -8.1,
+        "precip6_max_mm": 8.1,
+        "temp_z_min": -0.58,
+        "temp_z_max": 0.02,
+        "wind100_z_min": -0.88
+      },
+      {
+        "date": "2023-02-27",
+        "dcif_max": 67.5,
+        "cif_range": 87.5,
+        "gust_max_ms": 7.2,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold+wind-lull",
+        "gust_z_max": -0.41,
+        "pres_tend6_min": -0.7,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.11,
+        "temp_z_max": -0.67,
+        "wind100_z_min": -1.9
+      },
+      {
+        "date": "2023-09-09",
+        "dcif_max": 66.8,
+        "cif_range": 91.8,
+        "gust_max_ms": 10.8,
+        "precip_sum_mm": 0.6,
+        "type": "calm",
+        "gust_z_max": 0.44,
+        "pres_tend6_min": -1.2,
+        "precip6_max_mm": 0.5,
+        "temp_z_min": 1.11,
+        "temp_z_max": 2.33,
+        "wind100_z_min": -1.02
+      }
+    ],
+    "UK_03_North_West_England": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 113.5,
+        "cif_range": 82.5,
+        "gust_max_ms": 6.4,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.35,
+        "pres_tend6_min": 2.3,
+        "precip6_max_mm": 1.3,
+        "temp_z_min": -0.68,
+        "temp_z_max": 0.35,
+        "wind100_z_min": -1.96
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 66.5,
+        "cif_range": 66.5,
+        "gust_max_ms": 9.5,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.41,
+        "pres_tend6_min": -2.0,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.06,
+        "temp_z_max": 1.28,
+        "wind100_z_min": -0.88
+      },
+      {
+        "date": "2023-02-21",
+        "dcif_max": 65.5,
+        "cif_range": 101.5,
+        "gust_max_ms": 8.6,
+        "precip_sum_mm": 0.2,
+        "type": "calm",
+        "gust_z_max": 0.19,
+        "pres_tend6_min": -3.8,
+        "precip6_max_mm": 0.6,
+        "temp_z_min": -0.9,
+        "temp_z_max": 0.2,
+        "wind100_z_min": -1.07
+      },
+      {
+        "date": "2023-01-20",
+        "dcif_max": 65.0,
+        "cif_range": 142.0,
+        "gust_max_ms": 10.5,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold",
+        "gust_z_max": 0.66,
+        "pres_tend6_min": 3.3,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.52,
+        "temp_z_max": -0.83,
+        "wind100_z_min": -1.39
+      },
+      {
+        "date": "2023-05-13",
+        "dcif_max": 61.0,
+        "cif_range": 73.5,
+        "gust_max_ms": 6.4,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.35,
+        "pres_tend6_min": -2.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.03,
+        "temp_z_max": 1.13,
+        "wind100_z_min": -1.93
+      }
+    ],
+    "UK_05_Yorkshire": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 187.5,
+        "cif_range": 59.0,
+        "gust_max_ms": 7.9,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 0.02,
+        "pres_tend6_min": 2.8,
+        "precip6_max_mm": 7.8,
+        "temp_z_min": -0.67,
+        "temp_z_max": 0.31,
+        "wind100_z_min": -1.97
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 131.5,
+        "cif_range": 155.0,
+        "gust_max_ms": 8.3,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.13,
+        "pres_tend6_min": -1.6,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.05,
+        "temp_z_max": 0.93,
+        "wind100_z_min": -0.84
+      },
+      {
+        "date": "2023-09-28",
+        "dcif_max": 113.5,
+        "cif_range": 113.5,
+        "gust_max_ms": 16.5,
+        "precip_sum_mm": 0.3,
+        "type": "calm",
+        "gust_z_max": 2.22,
+        "pres_tend6_min": -2.1,
+        "precip6_max_mm": 0.7,
+        "temp_z_min": 0.56,
+        "temp_z_max": 1.02,
+        "wind100_z_min": -0.47
+      },
+      {
+        "date": "2023-02-16",
+        "dcif_max": 99.5,
+        "cif_range": 141.5,
+        "gust_max_ms": 14.5,
+        "precip_sum_mm": 5.5,
+        "type": "calm",
+        "gust_z_max": 1.71,
+        "pres_tend6_min": -3.2,
+        "precip6_max_mm": 3.1,
+        "temp_z_min": -0.83,
+        "temp_z_max": 0.18,
+        "wind100_z_min": -0.66
+      },
+      {
+        "date": "2023-10-16",
+        "dcif_max": 97.0,
+        "cif_range": 120.0,
+        "gust_max_ms": 3.8,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -1.02,
+        "pres_tend6_min": -2.3,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.39,
+        "temp_z_max": -0.06,
+        "wind100_z_min": -2.0
+      }
+    ],
+    "UK_06_North_Wales_Merseyside": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 207.5,
+        "cif_range": 78.0,
+        "gust_max_ms": 5.0,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -1.08,
+        "pres_tend6_min": 2.1,
+        "precip6_max_mm": 5.4,
+        "temp_z_min": -0.68,
+        "temp_z_max": 0.35,
+        "wind100_z_min": -1.96
+      },
+      {
+        "date": "2023-10-12",
+        "dcif_max": 114.0,
+        "cif_range": 223.5,
+        "gust_max_ms": 6.4,
+        "precip_sum_mm": 0.6,
+        "type": "wind-lull",
+        "gust_z_max": -0.77,
+        "pres_tend6_min": -4.6,
+        "precip6_max_mm": 0.6,
+        "temp_z_min": -0.83,
+        "temp_z_max": 0.28,
+        "wind100_z_min": -1.96
+      },
+      {
+        "date": "2023-03-26",
+        "dcif_max": 111.0,
+        "cif_range": 173.5,
+        "gust_max_ms": 11.8,
+        "precip_sum_mm": 1.9,
+        "type": "calm",
+        "gust_z_max": 0.41,
+        "pres_tend6_min": -2.3,
+        "precip6_max_mm": 1.1,
+        "temp_z_min": -1.38,
+        "temp_z_max": -0.3,
+        "wind100_z_min": -1.31
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 103.0,
+        "cif_range": 104.0,
+        "gust_max_ms": 10.4,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.1,
+        "pres_tend6_min": -2.3,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.06,
+        "temp_z_max": 1.28,
+        "wind100_z_min": -0.88
+      },
+      {
+        "date": "2023-11-21",
+        "dcif_max": 102.5,
+        "cif_range": 256.5,
+        "gust_max_ms": 15.8,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 1.28,
+        "pres_tend6_min": 0.6,
+        "precip6_max_mm": 1.6,
+        "temp_z_min": -1.03,
+        "temp_z_max": -0.25,
+        "wind100_z_min": -1.52
+      }
+    ],
+    "UK_07_South_Wales": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 250.5,
+        "cif_range": 35.5,
+        "gust_max_ms": 9.5,
+        "precip_sum_mm": 0.1,
+        "type": "calm",
+        "gust_z_max": 0.1,
+        "pres_tend6_min": 1.7,
+        "precip6_max_mm": 0.7,
+        "temp_z_min": -0.7,
+        "temp_z_max": 0.48,
+        "wind100_z_min": -1.4
+      },
+      {
+        "date": "2023-03-10",
+        "dcif_max": 188.5,
+        "cif_range": 361.5,
+        "gust_max_ms": 15.4,
+        "precip_sum_mm": 7.3,
+        "type": "wind-lull",
+        "gust_z_max": 1.49,
+        "pres_tend6_min": -2.0,
+        "precip6_max_mm": 7.1,
+        "temp_z_min": -1.68,
+        "temp_z_max": -0.81,
+        "wind100_z_min": -1.93
+      },
+      {
+        "date": "2023-09-22",
+        "dcif_max": 184.5,
+        "cif_range": 285.5,
+        "gust_max_ms": 12.7,
+        "precip_sum_mm": 0.5,
+        "type": "calm",
+        "gust_z_max": 0.85,
+        "pres_tend6_min": 1.6,
+        "precip6_max_mm": 0.5,
+        "temp_z_min": -0.7,
+        "temp_z_max": 0.72,
+        "wind100_z_min": -0.43
+      },
+      {
+        "date": "2023-11-17",
+        "dcif_max": 171.5,
+        "cif_range": 264.0,
+        "gust_max_ms": 8.9,
+        "precip_sum_mm": 2.4,
+        "type": "calm",
+        "gust_z_max": -0.05,
+        "pres_tend6_min": -3.6,
+        "precip6_max_mm": 3.0,
+        "temp_z_min": -1.3,
+        "temp_z_max": -0.14,
+        "wind100_z_min": -1.13
+      },
+      {
+        "date": "2023-10-04",
+        "dcif_max": 170.5,
+        "cif_range": 324.0,
+        "gust_max_ms": 15.8,
+        "precip_sum_mm": 1.0,
+        "type": "calm",
+        "gust_z_max": 1.59,
+        "pres_tend6_min": -1.6,
+        "precip6_max_mm": 0.8,
+        "temp_z_min": 0.26,
+        "temp_z_max": 0.79,
+        "wind100_z_min": 0.11
+      }
+    ],
+    "UK_08_West_Midlands": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 353.5,
+        "cif_range": 53.0,
+        "gust_max_ms": 8.4,
+        "precip_sum_mm": 0.1,
+        "type": "calm",
+        "gust_z_max": -0.02,
+        "pres_tend6_min": 2.5,
+        "precip6_max_mm": 2.5,
+        "temp_z_min": -0.54,
+        "temp_z_max": 0.41,
+        "wind100_z_min": -0.75
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 202.5,
+        "cif_range": 266.5,
+        "gust_max_ms": 9.7,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.33,
+        "pres_tend6_min": -2.7,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.3,
+        "temp_z_max": 1.25,
+        "wind100_z_min": -0.73
+      },
+      {
+        "date": "2023-10-16",
+        "dcif_max": 159.5,
+        "cif_range": 193.0,
+        "gust_max_ms": 7.7,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.21,
+        "pres_tend6_min": -2.6,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.39,
+        "temp_z_max": -0.04,
+        "wind100_z_min": -1.8
+      },
+      {
+        "date": "2023-04-05",
+        "dcif_max": 136.5,
+        "cif_range": 199.5,
+        "gust_max_ms": 10.5,
+        "precip_sum_mm": 3.9,
+        "type": "calm",
+        "gust_z_max": 0.54,
+        "pres_tend6_min": -3.2,
+        "precip6_max_mm": 2.4,
+        "temp_z_min": -1.08,
+        "temp_z_max": -0.22,
+        "wind100_z_min": -0.75
+      },
+      {
+        "date": "2023-11-20",
+        "dcif_max": 136.0,
+        "cif_range": 328.0,
+        "gust_max_ms": 9.8,
+        "precip_sum_mm": 0.5,
+        "type": "calm",
+        "gust_z_max": 0.36,
+        "pres_tend6_min": -1.8,
+        "precip6_max_mm": 0.3,
+        "temp_z_min": -0.73,
+        "temp_z_max": 0.06,
+        "wind100_z_min": -0.7
+      }
+    ],
+    "UK_09_East_Midlands": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 392.5,
+        "cif_range": 90.0,
+        "gust_max_ms": 7.7,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": -0.23,
+        "pres_tend6_min": 2.5,
+        "precip6_max_mm": 4.8,
+        "temp_z_min": -0.63,
+        "temp_z_max": 0.38,
+        "wind100_z_min": -1.01
+      },
+      {
+        "date": "2023-09-28",
+        "dcif_max": 156.5,
+        "cif_range": 290.0,
+        "gust_max_ms": 18.1,
+        "precip_sum_mm": 7.4,
+        "type": "calm",
+        "gust_z_max": 2.37,
+        "pres_tend6_min": -2.9,
+        "precip6_max_mm": 6.9,
+        "temp_z_min": 0.38,
+        "temp_z_max": 0.96,
+        "wind100_z_min": -1.3
+      },
+      {
+        "date": "2023-01-07",
+        "dcif_max": 154.0,
+        "cif_range": 154.0,
+        "gust_max_ms": 18.9,
+        "precip_sum_mm": 5.1,
+        "type": "cyclone/gust",
+        "gust_z_max": 2.56,
+        "pres_tend6_min": -6.2,
+        "precip6_max_mm": 2.9,
+        "temp_z_min": -0.71,
+        "temp_z_max": 0.11,
+        "wind100_z_min": 0.9
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 152.0,
+        "cif_range": 227.5,
+        "gust_max_ms": 9.8,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.3,
+        "pres_tend6_min": -1.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.29,
+        "temp_z_max": 1.04,
+        "wind100_z_min": -0.68
+      },
+      {
+        "date": "2023-02-16",
+        "dcif_max": 148.5,
+        "cif_range": 259.0,
+        "gust_max_ms": 12.2,
+        "precip_sum_mm": 3.9,
+        "type": "calm",
+        "gust_z_max": 0.89,
+        "pres_tend6_min": -3.6,
+        "precip6_max_mm": 2.1,
+        "temp_z_min": -0.82,
+        "temp_z_max": 0.23,
+        "wind100_z_min": 0.04
+      }
+    ],
+    "UK_10_East_England": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 188.5,
+        "cif_range": 85.5,
+        "gust_max_ms": 7.2,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": -0.23,
+        "pres_tend6_min": 2.5,
+        "precip6_max_mm": 0.6,
+        "temp_z_min": -0.54,
+        "temp_z_max": 0.38,
+        "wind100_z_min": -0.99
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 128.0,
+        "cif_range": 152.5,
+        "gust_max_ms": 10.2,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.56,
+        "pres_tend6_min": -1.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.15,
+        "temp_z_max": 0.71,
+        "wind100_z_min": -0.74
+      },
+      {
+        "date": "2023-10-16",
+        "dcif_max": 114.0,
+        "cif_range": 216.0,
+        "gust_max_ms": 5.7,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.63,
+        "pres_tend6_min": -3.0,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.2,
+        "temp_z_max": 0.26,
+        "wind100_z_min": -1.69
+      },
+      {
+        "date": "2023-02-16",
+        "dcif_max": 111.0,
+        "cif_range": 141.0,
+        "gust_max_ms": 10.6,
+        "precip_sum_mm": 2.0,
+        "type": "calm",
+        "gust_z_max": 0.67,
+        "pres_tend6_min": -2.6,
+        "precip6_max_mm": 1.9,
+        "temp_z_min": -0.79,
+        "temp_z_max": 0.01,
+        "wind100_z_min": -0.36
+      },
+      {
+        "date": "2023-10-15",
+        "dcif_max": 90.5,
+        "cif_range": 216.0,
+        "gust_max_ms": 8.5,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.11,
+        "pres_tend6_min": -0.4,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.13,
+        "temp_z_max": -0.23,
+        "wind100_z_min": -1.2
+      }
+    ],
+    "UK_11_South_West_England": [
+      {
+        "date": "2023-01-02",
+        "dcif_max": 142.5,
+        "cif_range": 274.0,
+        "gust_max_ms": 6.0,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": -0.51,
+        "pres_tend6_min": 0.3,
+        "precip6_max_mm": 0.7,
+        "temp_z_min": -1.56,
+        "temp_z_max": -0.69,
+        "wind100_z_min": -1.06
+      },
+      {
+        "date": "2023-11-25",
+        "dcif_max": 136.5,
+        "cif_range": 299.5,
+        "gust_max_ms": 3.2,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold+wind-lull",
+        "gust_z_max": -1.22,
+        "pres_tend6_min": -2.1,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.17,
+        "temp_z_max": -1.21,
+        "wind100_z_min": -2.05
+      },
+      {
+        "date": "2023-02-16",
+        "dcif_max": 133.0,
+        "cif_range": 238.0,
+        "gust_max_ms": 12.6,
+        "precip_sum_mm": 1.3,
+        "type": "calm",
+        "gust_z_max": 1.19,
+        "pres_tend6_min": -4.1,
+        "precip6_max_mm": 1.1,
+        "temp_z_min": -0.82,
+        "temp_z_max": 0.04,
+        "wind100_z_min": -0.05
+      },
+      {
+        "date": "2023-03-14",
+        "dcif_max": 129.5,
+        "cif_range": 323.5,
+        "gust_max_ms": 15.9,
+        "precip_sum_mm": 0.6,
+        "type": "calm",
+        "gust_z_max": 2.03,
+        "pres_tend6_min": 2.7,
+        "precip6_max_mm": 0.5,
+        "temp_z_min": -1.64,
+        "temp_z_max": -0.44,
+        "wind100_z_min": -0.92
+      },
+      {
+        "date": "2023-09-26",
+        "dcif_max": 128.0,
+        "cif_range": 339.5,
+        "gust_max_ms": 11.6,
+        "precip_sum_mm": 0.4,
+        "type": "calm",
+        "gust_z_max": 0.93,
+        "pres_tend6_min": -4.3,
+        "precip6_max_mm": 0.4,
+        "temp_z_min": 0.07,
+        "temp_z_max": 1.43,
+        "wind100_z_min": -1.05
+      }
+    ],
+    "UK_12_South_England": [
+      {
+        "date": "2023-02-16",
+        "dcif_max": 136.5,
+        "cif_range": 217.5,
+        "gust_max_ms": 11.5,
+        "precip_sum_mm": 1.8,
+        "type": "calm",
+        "gust_z_max": 0.93,
+        "pres_tend6_min": -2.7,
+        "precip6_max_mm": 1.5,
+        "temp_z_min": -0.75,
+        "temp_z_max": 0.17,
+        "wind100_z_min": -0.87
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 132.5,
+        "cif_range": 247.5,
+        "gust_max_ms": 10.0,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.54,
+        "pres_tend6_min": -2.3,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.46,
+        "temp_z_max": 1.74,
+        "wind100_z_min": -0.67
+      },
+      {
+        "date": "2023-08-24",
+        "dcif_max": 122.5,
+        "cif_range": 138.0,
+        "gust_max_ms": 6.5,
+        "precip_sum_mm": 1.4,
+        "type": "wind-lull",
+        "gust_z_max": -0.38,
+        "pres_tend6_min": -3.3,
+        "precip6_max_mm": 1.4,
+        "temp_z_min": 0.49,
+        "temp_z_max": 2.05,
+        "wind100_z_min": -2.11
+      },
+      {
+        "date": "2023-10-22",
+        "dcif_max": 109.5,
+        "cif_range": 45.0,
+        "gust_max_ms": 7.0,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": -0.25,
+        "pres_tend6_min": 1.6,
+        "precip6_max_mm": 0.4,
+        "temp_z_min": -0.57,
+        "temp_z_max": 0.49,
+        "wind100_z_min": -0.97
+      },
+      {
+        "date": "2023-03-19",
+        "dcif_max": 105.0,
+        "cif_range": 238.5,
+        "gust_max_ms": 10.4,
+        "precip_sum_mm": 0.4,
+        "type": "calm",
+        "gust_z_max": 0.64,
+        "pres_tend6_min": 0.7,
+        "precip6_max_mm": 0.3,
+        "temp_z_min": -1.2,
+        "temp_z_max": -0.17,
+        "wind100_z_min": -1.46
+      }
+    ],
+    "UK_13_London": [
+      {
+        "date": "2023-08-23",
+        "dcif_max": 132.0,
+        "cif_range": 260.5,
+        "gust_max_ms": 4.8,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.77,
+        "pres_tend6_min": -2.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": 0.13,
+        "temp_z_max": 2.21,
+        "wind100_z_min": -2.2
+      },
+      {
+        "date": "2023-03-19",
+        "dcif_max": 124.0,
+        "cif_range": 201.5,
+        "gust_max_ms": 9.3,
+        "precip_sum_mm": 1.7,
+        "type": "calm",
+        "gust_z_max": 0.47,
+        "pres_tend6_min": 0.8,
+        "precip6_max_mm": 1.4,
+        "temp_z_min": -1.02,
+        "temp_z_max": -0.17,
+        "wind100_z_min": -1.02
+      },
+      {
+        "date": "2023-10-22",
+        "dcif_max": 122.0,
+        "cif_range": 30.0,
+        "gust_max_ms": 6.4,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": -0.33,
+        "pres_tend6_min": 2.3,
+        "precip6_max_mm": 0.1,
+        "temp_z_min": -0.75,
+        "temp_z_max": 0.5,
+        "wind100_z_min": -1.02
+      },
+      {
+        "date": "2023-05-06",
+        "dcif_max": 119.5,
+        "cif_range": 169.0,
+        "gust_max_ms": 10.8,
+        "precip_sum_mm": 5.6,
+        "type": "calm",
+        "gust_z_max": 0.88,
+        "pres_tend6_min": -1.5,
+        "precip6_max_mm": 4.9,
+        "temp_z_min": -0.49,
+        "temp_z_max": 0.5,
+        "wind100_z_min": -1.25
+      },
+      {
+        "date": "2023-09-28",
+        "dcif_max": 115.5,
+        "cif_range": 183.0,
+        "gust_max_ms": 12.3,
+        "precip_sum_mm": 0.4,
+        "type": "calm",
+        "gust_z_max": 1.3,
+        "pres_tend6_min": -3.5,
+        "precip6_max_mm": 0.4,
+        "temp_z_min": 0.29,
+        "temp_z_max": 1.23,
+        "wind100_z_min": -0.18
+      }
+    ],
+    "UK_14_South_East_England": [
+      {
+        "date": "2023-09-28",
+        "dcif_max": 170.0,
+        "cif_range": 199.0,
+        "gust_max_ms": 13.3,
+        "precip_sum_mm": 0.5,
+        "type": "calm",
+        "gust_z_max": 1.14,
+        "pres_tend6_min": -3.3,
+        "precip6_max_mm": 0.3,
+        "temp_z_min": 0.48,
+        "temp_z_max": 1.2,
+        "wind100_z_min": -0.52
+      },
+      {
+        "date": "2023-08-23",
+        "dcif_max": 161.5,
+        "cif_range": 294.0,
+        "gust_max_ms": 6.4,
+        "precip_sum_mm": 1.1,
+        "type": "wind-lull",
+        "gust_z_max": -0.55,
+        "pres_tend6_min": -2.4,
+        "precip6_max_mm": 1.1,
+        "temp_z_min": 0.21,
+        "temp_z_max": 2.26,
+        "wind100_z_min": -2.11
+      },
+      {
+        "date": "2023-03-09",
+        "dcif_max": 150.0,
+        "cif_range": 232.5,
+        "gust_max_ms": 14.8,
+        "precip_sum_mm": 12.6,
+        "type": "cyclone/gust",
+        "gust_z_max": 1.5,
+        "pres_tend6_min": -5.2,
+        "precip6_max_mm": 6.0,
+        "temp_z_min": -1.51,
+        "temp_z_max": -0.15,
+        "wind100_z_min": -1.35
+      },
+      {
+        "date": "2023-12-08",
+        "dcif_max": 134.0,
+        "cif_range": 256.0,
+        "gust_max_ms": 11.3,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.65,
+        "pres_tend6_min": -1.9,
+        "precip6_max_mm": 2.8,
+        "temp_z_min": -0.89,
+        "temp_z_max": -0.07,
+        "wind100_z_min": -0.32
+      },
+      {
+        "date": "2023-04-09",
+        "dcif_max": 118.0,
+        "cif_range": 260.0,
+        "gust_max_ms": 9.2,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.13,
+        "pres_tend6_min": -3.0,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.46,
+        "temp_z_max": 0.42,
+        "wind100_z_min": -1.2
+      }
+    ],
+    "UK_15_England": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 184.5,
+        "cif_range": 32.5,
+        "gust_max_ms": 6.7,
+        "precip_sum_mm": 0.6,
+        "type": "calm",
+        "gust_z_max": -0.45,
+        "pres_tend6_min": 2.6,
+        "precip6_max_mm": 6.2,
+        "temp_z_min": -0.54,
+        "temp_z_max": 0.41,
+        "wind100_z_min": -0.75
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 104.0,
+        "cif_range": 131.0,
+        "gust_max_ms": 10.1,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.42,
+        "pres_tend6_min": -2.3,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.3,
+        "temp_z_max": 1.25,
+        "wind100_z_min": -0.73
+      },
+      {
+        "date": "2023-08-23",
+        "dcif_max": 99.5,
+        "cif_range": 203.0,
+        "gust_max_ms": 7.7,
+        "precip_sum_mm": 1.8,
+        "type": "wind-lull",
+        "gust_z_max": -0.19,
+        "pres_tend6_min": -2.4,
+        "precip6_max_mm": 1.8,
+        "temp_z_min": 0.41,
+        "temp_z_max": 1.82,
+        "wind100_z_min": -1.72
+      },
+      {
+        "date": "2023-10-16",
+        "dcif_max": 90.5,
+        "cif_range": 100.0,
+        "gust_max_ms": 6.3,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.55,
+        "pres_tend6_min": -2.7,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.39,
+        "temp_z_max": -0.04,
+        "wind100_z_min": -1.8
+      },
+      {
+        "date": "2023-02-16",
+        "dcif_max": 78.5,
+        "cif_range": 149.5,
+        "gust_max_ms": 11.8,
+        "precip_sum_mm": 1.2,
+        "type": "calm",
+        "gust_z_max": 0.85,
+        "pres_tend6_min": -3.7,
+        "precip6_max_mm": 1.1,
+        "temp_z_min": -0.82,
+        "temp_z_max": 0.25,
+        "wind100_z_min": -0.1
+      }
+    ],
+    "UK_16_Scotland": [
+      {
+        "date": "2023-06-07",
+        "dcif_max": 103.0,
+        "cif_range": 110.5,
+        "gust_max_ms": 9.0,
+        "precip_sum_mm": 0.2,
+        "type": "calm",
+        "gust_z_max": -0.08,
+        "pres_tend6_min": -2.1,
+        "precip6_max_mm": 0.2,
+        "temp_z_min": -0.59,
+        "temp_z_max": 0.73,
+        "wind100_z_min": -1.29
+      },
+      {
+        "date": "2023-02-16",
+        "dcif_max": 74.5,
+        "cif_range": 149.0,
+        "gust_max_ms": 17.5,
+        "precip_sum_mm": 2.7,
+        "type": "cyclone/gust",
+        "gust_z_max": 1.68,
+        "pres_tend6_min": -6.1,
+        "precip6_max_mm": 1.9,
+        "temp_z_min": -0.76,
+        "temp_z_max": 0.39,
+        "wind100_z_min": -1.0
+      },
+      {
+        "date": "2023-10-22",
+        "dcif_max": 71.0,
+        "cif_range": 55.0,
+        "gust_max_ms": 11.2,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.37,
+        "pres_tend6_min": 4.0,
+        "precip6_max_mm": 0.7,
+        "temp_z_min": -1.04,
+        "temp_z_max": 0.32,
+        "wind100_z_min": -0.94
+      },
+      {
+        "date": "2023-10-16",
+        "dcif_max": 69.5,
+        "cif_range": 75.0,
+        "gust_max_ms": 8.6,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": -0.16,
+        "pres_tend6_min": -1.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.0,
+        "temp_z_max": 0.16,
+        "wind100_z_min": -1.03
+      },
+      {
+        "date": "2023-09-07",
+        "dcif_max": 65.0,
+        "cif_range": 64.0,
+        "gust_max_ms": 7.0,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.5,
+        "pres_tend6_min": -2.2,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": 0.49,
+        "temp_z_max": 2.08,
+        "wind100_z_min": -1.77
+      }
+    ],
+    "UK_17_Wales": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 223.0,
+        "cif_range": 74.0,
+        "gust_max_ms": 8.7,
+        "precip_sum_mm": 0.2,
+        "type": "calm",
+        "gust_z_max": -0.16,
+        "pres_tend6_min": 1.9,
+        "precip6_max_mm": 4.1,
+        "temp_z_min": -0.68,
+        "temp_z_max": 0.41,
+        "wind100_z_min": -0.73
+      },
+      {
+        "date": "2023-02-16",
+        "dcif_max": 165.0,
+        "cif_range": 229.0,
+        "gust_max_ms": 14.2,
+        "precip_sum_mm": 5.7,
+        "type": "calm",
+        "gust_z_max": 1.16,
+        "pres_tend6_min": -4.5,
+        "precip6_max_mm": 2.8,
+        "temp_z_min": -0.68,
+        "temp_z_max": 0.07,
+        "wind100_z_min": -0.09
+      },
+      {
+        "date": "2023-02-21",
+        "dcif_max": 163.0,
+        "cif_range": 254.5,
+        "gust_max_ms": 9.8,
+        "precip_sum_mm": 0.3,
+        "type": "calm",
+        "gust_z_max": 0.1,
+        "pres_tend6_min": -3.6,
+        "precip6_max_mm": 0.3,
+        "temp_z_min": -0.88,
+        "temp_z_max": 0.11,
+        "wind100_z_min": -0.92
+      },
+      {
+        "date": "2023-06-24",
+        "dcif_max": 146.5,
+        "cif_range": 262.5,
+        "gust_max_ms": 11.7,
+        "precip_sum_mm": 1.8,
+        "type": "heat",
+        "gust_z_max": 0.56,
+        "pres_tend6_min": -3.9,
+        "precip6_max_mm": 1.2,
+        "temp_z_min": 1.18,
+        "temp_z_max": 2.54,
+        "wind100_z_min": -0.94
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 137.0,
+        "cif_range": 202.5,
+        "gust_max_ms": 11.1,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.42,
+        "pres_tend6_min": -2.7,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.3,
+        "temp_z_max": 1.43,
+        "wind100_z_min": -0.72
+      }
+    ],
+    "UK_18_GB": [
+      {
+        "date": "2023-10-22",
+        "dcif_max": 172.0,
+        "cif_range": 30.0,
+        "gust_max_ms": 5.1,
+        "precip_sum_mm": 0.7,
+        "type": "wind-lull",
+        "gust_z_max": -0.75,
+        "pres_tend6_min": 2.7,
+        "precip6_max_mm": 4.9,
+        "temp_z_min": -0.85,
+        "temp_z_max": 0.32,
+        "wind100_z_min": -2.08
+      },
+      {
+        "date": "2023-06-07",
+        "dcif_max": 105.5,
+        "cif_range": 133.0,
+        "gust_max_ms": 9.7,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.49,
+        "pres_tend6_min": -2.4,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.14,
+        "temp_z_max": 0.94,
+        "wind100_z_min": -0.62
+      },
+      {
+        "date": "2023-10-16",
+        "dcif_max": 87.0,
+        "cif_range": 94.5,
+        "gust_max_ms": 6.5,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": -0.37,
+        "pres_tend6_min": -2.7,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.47,
+        "temp_z_max": -0.04,
+        "wind100_z_min": -1.89
+      },
+      {
+        "date": "2023-02-16",
+        "dcif_max": 84.5,
+        "cif_range": 151.5,
+        "gust_max_ms": 11.4,
+        "precip_sum_mm": 0.8,
+        "type": "calm",
+        "gust_z_max": 0.95,
+        "pres_tend6_min": -3.9,
+        "precip6_max_mm": 0.7,
+        "temp_z_min": -0.87,
+        "temp_z_max": 0.29,
+        "wind100_z_min": -0.02
+      },
+      {
+        "date": "2023-08-23",
+        "dcif_max": 76.0,
+        "cif_range": 169.5,
+        "gust_max_ms": 6.6,
+        "precip_sum_mm": 2.3,
+        "type": "calm",
+        "gust_z_max": -0.34,
+        "pres_tend6_min": -2.4,
+        "precip6_max_mm": 2.3,
+        "temp_z_min": 0.41,
+        "temp_z_max": 1.83,
+        "wind100_z_min": -1.46
+      }
+    ],
+    "US_CISO": [
+      {
+        "date": "2023-11-10",
+        "dcif_max": 300.0,
+        "cif_range": 308.6,
+        "gust_max_ms": 5.7,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 0.54,
+        "pres_tend6_min": -3.1,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.19,
+        "temp_z_max": 0.31,
+        "wind100_z_min": -1.63
+      },
+      {
+        "date": "2023-11-09",
+        "dcif_max": 162.3,
+        "cif_range": 337.4,
+        "gust_max_ms": 5.4,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 0.39,
+        "pres_tend6_min": -3.2,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.38,
+        "temp_z_max": 0.28,
+        "wind100_z_min": -1.6
+      },
+      {
+        "date": "2023-02-01",
+        "dcif_max": 130.2,
+        "cif_range": 243.2,
+        "gust_max_ms": 4.9,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.13,
+        "pres_tend6_min": -2.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.91,
+        "temp_z_max": -0.42,
+        "wind100_z_min": -1.26
+      },
+      {
+        "date": "2023-11-12",
+        "dcif_max": 129.6,
+        "cif_range": 228.0,
+        "gust_max_ms": 4.9,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 0.13,
+        "pres_tend6_min": -4.4,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.07,
+        "temp_z_max": 0.48,
+        "wind100_z_min": -1.53
+      },
+      {
+        "date": "2023-10-31",
+        "dcif_max": 121.7,
+        "cif_range": 174.3,
+        "gust_max_ms": 5.1,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 0.24,
+        "pres_tend6_min": -3.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.46,
+        "temp_z_max": 0.57,
+        "wind100_z_min": -1.61
+      }
+    ],
+    "US_PJM": [
+      {
+        "date": "2023-02-05",
+        "dcif_max": 71.3,
+        "cif_range": 75.2,
+        "gust_max_ms": 11.3,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold",
+        "gust_z_max": 0.8,
+        "pres_tend6_min": -6.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.16,
+        "temp_z_max": -0.57,
+        "wind100_z_min": 0.02
+      },
+      {
+        "date": "2023-02-04",
+        "dcif_max": 65.5,
+        "cif_range": 72.1,
+        "gust_max_ms": 18.2,
+        "precip_sum_mm": 0.0,
+        "type": "cyclone/gust+freeze/cold+wind-lull",
+        "gust_z_max": 2.64,
+        "pres_tend6_min": -8.0,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.72,
+        "temp_z_max": -1.85,
+        "wind100_z_min": -1.51
+      },
+      {
+        "date": "2023-12-11",
+        "dcif_max": 63.3,
+        "cif_range": 75.3,
+        "gust_max_ms": 16.5,
+        "precip_sum_mm": 15.7,
+        "type": "calm",
+        "gust_z_max": 2.19,
+        "pres_tend6_min": -1.0,
+        "precip6_max_mm": 10.8,
+        "temp_z_min": -1.24,
+        "temp_z_max": 0.2,
+        "wind100_z_min": -0.81
+      },
+      {
+        "date": "2023-03-16",
+        "dcif_max": 57.8,
+        "cif_range": 70.7,
+        "gust_max_ms": 14.9,
+        "precip_sum_mm": 0.0,
+        "type": "cyclone/gust",
+        "gust_z_max": 1.76,
+        "pres_tend6_min": -6.1,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.7,
+        "temp_z_max": 0.03,
+        "wind100_z_min": -0.82
+      },
+      {
+        "date": "2023-12-19",
+        "dcif_max": 55.5,
+        "cif_range": 63.9,
+        "gust_max_ms": 19.2,
+        "precip_sum_mm": 0.1,
+        "type": "gust",
+        "gust_z_max": 2.91,
+        "pres_tend6_min": 3.6,
+        "precip6_max_mm": 0.1,
+        "temp_z_min": -1.4,
+        "temp_z_max": -0.67,
+        "wind100_z_min": 0.34
+      }
+    ],
+    "US_MISO": [
+      {
+        "date": "2023-04-20",
+        "dcif_max": 44.8,
+        "cif_range": 79.8,
+        "gust_max_ms": 18.4,
+        "precip_sum_mm": 17.9,
+        "type": "gust+heavy-rain",
+        "gust_z_max": 3.36,
+        "pres_tend6_min": -2.7,
+        "precip6_max_mm": 15.4,
+        "temp_z_min": 0.14,
+        "temp_z_max": 1.52,
+        "wind100_z_min": 0.44
+      },
+      {
+        "date": "2023-10-08",
+        "dcif_max": 43.7,
+        "cif_range": 110.2,
+        "gust_max_ms": 5.7,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": -0.46,
+        "pres_tend6_min": -4.5,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.58,
+        "temp_z_max": 0.06,
+        "wind100_z_min": -0.55
+      },
+      {
+        "date": "2023-06-11",
+        "dcif_max": 43.1,
+        "cif_range": 133.4,
+        "gust_max_ms": 12.4,
+        "precip_sum_mm": 11.0,
+        "type": "wind-lull",
+        "gust_z_max": 1.55,
+        "pres_tend6_min": -0.1,
+        "precip6_max_mm": 8.0,
+        "temp_z_min": 0.33,
+        "temp_z_max": 1.36,
+        "wind100_z_min": -1.62
+      },
+      {
+        "date": "2023-06-21",
+        "dcif_max": 42.9,
+        "cif_range": 122.4,
+        "gust_max_ms": 11.2,
+        "precip_sum_mm": 0.1,
+        "type": "calm",
+        "gust_z_max": 1.19,
+        "pres_tend6_min": -3.4,
+        "precip6_max_mm": 0.1,
+        "temp_z_min": 0.66,
+        "temp_z_max": 1.75,
+        "wind100_z_min": -0.03
+      },
+      {
+        "date": "2023-10-27",
+        "dcif_max": 41.6,
+        "cif_range": 155.5,
+        "gust_max_ms": 13.1,
+        "precip_sum_mm": 12.8,
+        "type": "heavy-rain",
+        "gust_z_max": 1.77,
+        "pres_tend6_min": -0.4,
+        "precip6_max_mm": 12.7,
+        "temp_z_min": 0.55,
+        "temp_z_max": 1.36,
+        "wind100_z_min": 0.02
+      }
+    ],
+    "US_ERCO": [
+      {
+        "date": "2023-12-30",
+        "dcif_max": 139.0,
+        "cif_range": 226.3,
+        "gust_max_ms": 7.2,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold",
+        "gust_z_max": -0.18,
+        "pres_tend6_min": -5.0,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.17,
+        "temp_z_max": -0.4,
+        "wind100_z_min": -1.49
+      },
+      {
+        "date": "2023-12-28",
+        "dcif_max": 134.2,
+        "cif_range": 229.6,
+        "gust_max_ms": 9.4,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold",
+        "gust_z_max": 0.54,
+        "pres_tend6_min": -3.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.12,
+        "temp_z_max": -0.83,
+        "wind100_z_min": -1.3
+      },
+      {
+        "date": "2023-12-17",
+        "dcif_max": 123.8,
+        "cif_range": 169.9,
+        "gust_max_ms": 9.0,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold+wind-lull",
+        "gust_z_max": 0.41,
+        "pres_tend6_min": -5.6,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.06,
+        "temp_z_max": -0.21,
+        "wind100_z_min": -1.68
+      },
+      {
+        "date": "2023-12-11",
+        "dcif_max": 117.6,
+        "cif_range": 136.1,
+        "gust_max_ms": 7.5,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold",
+        "gust_z_max": -0.08,
+        "pres_tend6_min": -6.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.23,
+        "temp_z_max": -0.51,
+        "wind100_z_min": -1.46
+      },
+      {
+        "date": "2023-12-26",
+        "dcif_max": 115.5,
+        "cif_range": 241.6,
+        "gust_max_ms": 10.7,
+        "precip_sum_mm": 0.0,
+        "type": "freeze/cold",
+        "gust_z_max": 0.97,
+        "pres_tend6_min": -6.4,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -2.11,
+        "temp_z_max": -0.82,
+        "wind100_z_min": -1.49
+      }
+    ],
+    "US_ISNE": [
+      {
+        "date": "2023-07-30",
+        "dcif_max": 33.7,
+        "cif_range": 86.2,
+        "gust_max_ms": 10.3,
+        "precip_sum_mm": 5.0,
+        "type": "heavy-rain",
+        "gust_z_max": 1.32,
+        "pres_tend6_min": -1.3,
+        "precip6_max_mm": 17.9,
+        "temp_z_min": 0.35,
+        "temp_z_max": 1.46,
+        "wind100_z_min": -1.02
+      },
+      {
+        "date": "2023-02-11",
+        "dcif_max": 30.8,
+        "cif_range": 73.2,
+        "gust_max_ms": 13.7,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 2.42,
+        "pres_tend6_min": 0.8,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.23,
+        "temp_z_max": -0.54,
+        "wind100_z_min": -1.01
+      },
+      {
+        "date": "2023-05-21",
+        "dcif_max": 30.2,
+        "cif_range": 52.8,
+        "gust_max_ms": 12.2,
+        "precip_sum_mm": 19.2,
+        "type": "cyclone/gust+heavy-rain",
+        "gust_z_max": 1.93,
+        "pres_tend6_min": -6.1,
+        "precip6_max_mm": 24.8,
+        "temp_z_min": 0.35,
+        "temp_z_max": 1.34,
+        "wind100_z_min": -0.72
+      },
+      {
+        "date": "2023-05-30",
+        "dcif_max": 30.0,
+        "cif_range": 55.3,
+        "gust_max_ms": 8.8,
+        "precip_sum_mm": 0.0,
+        "type": "wind-lull",
+        "gust_z_max": 0.83,
+        "pres_tend6_min": -2.7,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.33,
+        "temp_z_max": 0.8,
+        "wind100_z_min": -1.54
+      },
+      {
+        "date": "2023-05-14",
+        "dcif_max": 29.0,
+        "cif_range": 100.1,
+        "gust_max_ms": 12.3,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 1.97,
+        "pres_tend6_min": -2.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.32,
+        "temp_z_max": 0.82,
+        "wind100_z_min": -1.03
+      }
+    ],
+    "US_NYIS": [
+      {
+        "date": "2023-03-13",
+        "dcif_max": 132.2,
+        "cif_range": 146.8,
+        "gust_max_ms": 9.3,
+        "precip_sum_mm": 5.7,
+        "type": "calm",
+        "gust_z_max": 0.36,
+        "pres_tend6_min": -3.1,
+        "precip6_max_mm": 3.5,
+        "temp_z_min": -1.08,
+        "temp_z_max": -0.64,
+        "wind100_z_min": -1.05
+      },
+      {
+        "date": "2023-05-01",
+        "dcif_max": 127.8,
+        "cif_range": 139.7,
+        "gust_max_ms": 17.8,
+        "precip_sum_mm": 26.8,
+        "type": "cyclone/gust+heavy-rain",
+        "gust_z_max": 2.76,
+        "pres_tend6_min": -8.4,
+        "precip6_max_mm": 17.8,
+        "temp_z_min": -0.45,
+        "temp_z_max": 0.53,
+        "wind100_z_min": -0.44
+      },
+      {
+        "date": "2023-10-13",
+        "dcif_max": 110.9,
+        "cif_range": 118.7,
+        "gust_max_ms": 9.5,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.41,
+        "pres_tend6_min": -2.6,
+        "precip6_max_mm": 0.1,
+        "temp_z_min": -0.52,
+        "temp_z_max": 0.58,
+        "wind100_z_min": -0.15
+      },
+      {
+        "date": "2023-10-14",
+        "dcif_max": 104.8,
+        "cif_range": 119.2,
+        "gust_max_ms": 6.3,
+        "precip_sum_mm": 0.6,
+        "type": "wind-lull",
+        "gust_z_max": -0.49,
+        "pres_tend6_min": -4.8,
+        "precip6_max_mm": 0.3,
+        "temp_z_min": -0.26,
+        "temp_z_max": 0.38,
+        "wind100_z_min": -1.73
+      },
+      {
+        "date": "2023-09-09",
+        "dcif_max": 78.2,
+        "cif_range": 101.2,
+        "gust_max_ms": 6.1,
+        "precip_sum_mm": 0.3,
+        "type": "wind-lull",
+        "gust_z_max": -0.55,
+        "pres_tend6_min": -2.4,
+        "precip6_max_mm": 3.0,
+        "temp_z_min": 0.73,
+        "temp_z_max": 1.5,
+        "wind100_z_min": -1.69
+      }
+    ],
+    "US_FPL": [
+      {
+        "date": "2023-11-05",
+        "dcif_max": 341.5,
+        "cif_range": 356.3,
+        "gust_max_ms": 9.9,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 1.28,
+        "pres_tend6_min": -3.7,
+        "precip6_max_mm": 0.1,
+        "temp_z_min": -1.13,
+        "temp_z_max": 0.92,
+        "wind100_z_min": -0.23
+      },
+      {
+        "date": "2023-11-17",
+        "dcif_max": 199.1,
+        "cif_range": 220.8,
+        "gust_max_ms": 9.6,
+        "precip_sum_mm": 6.1,
+        "type": "calm",
+        "gust_z_max": 1.19,
+        "pres_tend6_min": -2.8,
+        "precip6_max_mm": 5.9,
+        "temp_z_min": -1.34,
+        "temp_z_max": 0.73,
+        "wind100_z_min": -1.29
+      },
+      {
+        "date": "2023-11-15",
+        "dcif_max": 149.0,
+        "cif_range": 154.4,
+        "gust_max_ms": 12.3,
+        "precip_sum_mm": 27.2,
+        "type": "heavy-rain",
+        "gust_z_max": 2.11,
+        "pres_tend6_min": -3.4,
+        "precip6_max_mm": 20.9,
+        "temp_z_min": -0.45,
+        "temp_z_max": 0.22,
+        "wind100_z_min": 1.51
+      },
+      {
+        "date": "2023-02-08",
+        "dcif_max": 111.9,
+        "cif_range": 122.7,
+        "gust_max_ms": 9.4,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 1.11,
+        "pres_tend6_min": -3.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -1.13,
+        "temp_z_max": -0.02,
+        "wind100_z_min": 0.1
+      },
+      {
+        "date": "2023-09-27",
+        "dcif_max": 101.8,
+        "cif_range": 115.8,
+        "gust_max_ms": 9.5,
+        "precip_sum_mm": 4.5,
+        "type": "wind-lull",
+        "gust_z_max": 1.15,
+        "pres_tend6_min": -3.6,
+        "precip6_max_mm": 7.1,
+        "temp_z_min": -0.1,
+        "temp_z_max": 0.84,
+        "wind100_z_min": -1.64
+      }
+    ],
+    "US_BPAT": [
+      {
+        "date": "2023-09-09",
+        "dcif_max": 20.1,
+        "cif_range": 37.4,
+        "gust_max_ms": 9.1,
+        "precip_sum_mm": 0.0,
+        "type": "calm",
+        "gust_z_max": 0.46,
+        "pres_tend6_min": -2.9,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": -0.05,
+        "temp_z_max": 2.23,
+        "wind100_z_min": -1.34
+      },
+      {
+        "date": "2023-02-22",
+        "dcif_max": 17.8,
+        "cif_range": 32.5,
+        "gust_max_ms": 14.9,
+        "precip_sum_mm": 6.3,
+        "type": "calm",
+        "gust_z_max": 1.94,
+        "pres_tend6_min": -3.8,
+        "precip6_max_mm": 4.1,
+        "temp_z_min": -1.47,
+        "temp_z_max": -0.95,
+        "wind100_z_min": 0.13
+      },
+      {
+        "date": "2023-06-13",
+        "dcif_max": 16.8,
+        "cif_range": 32.5,
+        "gust_max_ms": 21.4,
+        "precip_sum_mm": 0.0,
+        "type": "cyclone/gust",
+        "gust_z_max": 3.6,
+        "pres_tend6_min": -4.0,
+        "precip6_max_mm": 0.0,
+        "temp_z_min": 0.17,
+        "temp_z_max": 2.17,
+        "wind100_z_min": -1.06
+      },
+      {
+        "date": "2023-09-20",
+        "dcif_max": 16.4,
+        "cif_range": 29.8,
+        "gust_max_ms": 13.7,
+        "precip_sum_mm": 3.7,
+        "type": "calm",
+        "gust_z_max": 1.64,
+        "pres_tend6_min": -3.0,
+        "precip6_max_mm": 3.3,
+        "temp_z_min": 0.0,
+        "temp_z_max": 1.12,
+        "wind100_z_min": -1.48
+      },
+      {
+        "date": "2023-02-26",
+        "dcif_max": 14.9,
+        "cif_range": 27.5,
+        "gust_max_ms": 17.1,
+        "precip_sum_mm": 2.7,
+        "type": "cyclone/gust",
+        "gust_z_max": 2.51,
+        "pres_tend6_min": -9.0,
+        "precip6_max_mm": 1.6,
+        "temp_z_min": -1.7,
+        "temp_z_max": -0.86,
+        "wind100_z_min": -1.45
+      }
+    ]
+  },
+  "known_events": {
+    "QLD1": [
+      {
+        "event": "TC Jasper (Cat 2 landfall + 2.2 m rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.46,
+          "pres_tend6_min": -4.8,
+          "precip6_max_mm": 8.7,
+          "temp_z_min": -0.29,
+          "temp_z_max": 2.43,
+          "wind100_z_min": -2.14
+        },
+        "cif_std": 91.8,
+        "cif_std_ratio": 1.07,
+        "wind_share_mean": 0.084
+      }
+    ],
+    "NSW1": [
+      {
+        "event": "June cold snap",
+        "type": "freeze/cold+wind-lull",
+        "stats": {
+          "gust_z_max": 1.41,
+          "pres_tend6_min": -6.0,
+          "precip6_max_mm": 2.2,
+          "temp_z_min": -2.17,
+          "temp_z_max": 0.42,
+          "wind100_z_min": -2.04
+        },
+        "cif_std": 58.0,
+        "cif_std_ratio": 0.72,
+        "wind_share_mean": 0.185
+      }
+    ],
+    "VIC1": [
+      {
+        "event": "June cold snap",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.37,
+          "pres_tend6_min": -5.9,
+          "precip6_max_mm": 14.2,
+          "temp_z_min": -1.34,
+          "temp_z_max": 0.89,
+          "wind100_z_min": -1.07
+        },
+        "cif_std": 104.8,
+        "cif_std_ratio": 1.16,
+        "wind_share_mean": 0.4
+      },
+      {
+        "event": "September wind drought",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 3.33,
+          "pres_tend6_min": -4.7,
+          "precip6_max_mm": 1.0,
+          "temp_z_min": -1.66,
+          "temp_z_max": 1.54,
+          "wind100_z_min": -1.89
+        },
+        "cif_std": 123.7,
+        "cif_std_ratio": 1.37,
+        "wind_share_mean": 0.312
+      }
+    ],
+    "SA1": [
+      {
+        "event": "September wind drought",
+        "type": "cyclone/gust+freeze/cold+wind-lull",
+        "stats": {
+          "gust_z_max": 2.78,
+          "pres_tend6_min": -6.5,
+          "precip6_max_mm": 3.0,
+          "temp_z_min": -2.12,
+          "temp_z_max": 1.93,
+          "wind100_z_min": -1.91
+        },
+        "cif_std": 107.5,
+        "cif_std_ratio": 1.6,
+        "wind_share_mean": 0.489
+      }
+    ],
+    "UK_01_North_Scotland": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "wind-lull",
+        "stats": {
+          "gust_z_max": 0.29,
+          "pres_tend6_min": -2.8,
+          "precip6_max_mm": 1.1,
+          "temp_z_min": -0.15,
+          "temp_z_max": 1.37,
+          "wind100_z_min": -1.56
+        },
+        "cif_std": 13.2,
+        "cif_std_ratio": 3.55,
+        "wind_share_mean": 0.433
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "cyclone/gust+heat+wind-lull",
+        "stats": {
+          "gust_z_max": 2.06,
+          "pres_tend6_min": -4.4,
+          "precip6_max_mm": 3.0,
+          "temp_z_min": -0.08,
+          "temp_z_max": 3.2,
+          "wind100_z_min": -1.63
+        },
+        "cif_std": 101.7,
+        "cif_std_ratio": 27.38,
+        "wind_share_mean": 0.442
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.54,
+          "pres_tend6_min": -11.9,
+          "precip6_max_mm": 5.9,
+          "temp_z_min": 0.16,
+          "temp_z_max": 1.3,
+          "wind100_z_min": -1.29
+        },
+        "cif_std": 0.0,
+        "cif_std_ratio": 0.0,
+        "wind_share_mean": 0.863
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.56,
+          "pres_tend6_min": -5.8,
+          "precip6_max_mm": 3.0,
+          "temp_z_min": -0.7,
+          "temp_z_max": 0.61,
+          "wind100_z_min": -0.59
+        },
+        "cif_std": 16.9,
+        "cif_std_ratio": 4.54,
+        "wind_share_mean": 0.826
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.14,
+          "pres_tend6_min": -10.6,
+          "precip6_max_mm": 5.0,
+          "temp_z_min": -1.43,
+          "temp_z_max": 0.04,
+          "wind100_z_min": -1.57
+        },
+        "cif_std": 3.0,
+        "cif_std_ratio": 0.82,
+        "wind_share_mean": 0.755
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 1.67,
+          "pres_tend6_min": -6.5,
+          "precip6_max_mm": 10.1,
+          "temp_z_min": -1.21,
+          "temp_z_max": -0.1,
+          "wind100_z_min": -1.58
+        },
+        "cif_std": 31.8,
+        "cif_std_ratio": 8.55,
+        "wind_share_mean": 0.749
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "calm",
+        "stats": {
+          "gust_z_max": 0.93,
+          "pres_tend6_min": -5.3,
+          "precip6_max_mm": 4.7,
+          "temp_z_min": -1.33,
+          "temp_z_max": -0.43,
+          "wind100_z_min": -1.45
+        },
+        "cif_std": 29.6,
+        "cif_std_ratio": 7.98,
+        "wind_share_mean": 0.804
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.63,
+          "pres_tend6_min": -17.0,
+          "precip6_max_mm": 11.6,
+          "temp_z_min": -1.81,
+          "temp_z_max": -0.41,
+          "wind100_z_min": -1.14
+        },
+        "cif_std": 0.0,
+        "cif_std_ratio": 0.0,
+        "wind_share_mean": 0.805
+      }
+    ],
+    "UK_02_South_Scotland": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "wind-lull",
+        "stats": {
+          "gust_z_max": 0.32,
+          "pres_tend6_min": -4.3,
+          "precip6_max_mm": 3.3,
+          "temp_z_min": -0.04,
+          "temp_z_max": 1.4,
+          "wind100_z_min": -2.0
+        },
+        "cif_std": 23.7,
+        "cif_std_ratio": 2.91,
+        "wind_share_mean": 0.296
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.49,
+          "pres_tend6_min": -4.1,
+          "precip6_max_mm": 3.3,
+          "temp_z_min": -0.22,
+          "temp_z_max": 2.93,
+          "wind100_z_min": -1.94
+        },
+        "cif_std": 35.3,
+        "cif_std_ratio": 4.33,
+        "wind_share_mean": 0.266
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.01,
+          "pres_tend6_min": -14.3,
+          "precip6_max_mm": 7.8,
+          "temp_z_min": -0.2,
+          "temp_z_max": 1.13,
+          "wind100_z_min": -0.83
+        },
+        "cif_std": 6.7,
+        "cif_std_ratio": 0.82,
+        "wind_share_mean": 0.711
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.6,
+          "pres_tend6_min": -6.4,
+          "precip6_max_mm": 2.7,
+          "temp_z_min": -1.4,
+          "temp_z_max": 0.64,
+          "wind100_z_min": -1.65
+        },
+        "cif_std": 22.8,
+        "cif_std_ratio": 2.8,
+        "wind_share_mean": 0.756
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.01,
+          "pres_tend6_min": -9.9,
+          "precip6_max_mm": 9.5,
+          "temp_z_min": -1.27,
+          "temp_z_max": 0.05,
+          "wind100_z_min": -1.03
+        },
+        "cif_std": 8.1,
+        "cif_std_ratio": 1.0,
+        "wind_share_mean": 0.655
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 1.96,
+          "pres_tend6_min": -12.6,
+          "precip6_max_mm": 12.5,
+          "temp_z_min": -1.11,
+          "temp_z_max": 0.05,
+          "wind100_z_min": -1.49
+        },
+        "cif_std": 23.9,
+        "cif_std_ratio": 2.94,
+        "wind_share_mean": 0.53
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "wind-lull",
+        "stats": {
+          "gust_z_max": 1.35,
+          "pres_tend6_min": -8.9,
+          "precip6_max_mm": 8.2,
+          "temp_z_min": -1.93,
+          "temp_z_max": -0.16,
+          "wind100_z_min": -1.61
+        },
+        "cif_std": 21.1,
+        "cif_std_ratio": 2.59,
+        "wind_share_mean": 0.636
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust+heavy-rain+freeze/cold",
+        "stats": {
+          "gust_z_max": 3.19,
+          "pres_tend6_min": -16.1,
+          "precip6_max_mm": 19.6,
+          "temp_z_min": -2.15,
+          "temp_z_max": 0.02,
+          "wind100_z_min": -0.87
+        },
+        "cif_std": 2.8,
+        "cif_std_ratio": 0.35,
+        "wind_share_mean": 0.733
+      }
+    ],
+    "UK_03_North_West_England": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "calm",
+        "stats": {
+          "gust_z_max": 0.86,
+          "pres_tend6_min": -6.6,
+          "precip6_max_mm": 2.7,
+          "temp_z_min": 0.16,
+          "temp_z_max": 1.08,
+          "wind100_z_min": -1.16
+        },
+        "cif_std": 32.8,
+        "cif_std_ratio": 1.98,
+        "wind_share_mean": 0.273
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.66,
+          "pres_tend6_min": -3.1,
+          "precip6_max_mm": 4.3,
+          "temp_z_min": 0.54,
+          "temp_z_max": 2.74,
+          "wind100_z_min": -1.96
+        },
+        "cif_std": 20.8,
+        "cif_std_ratio": 1.26,
+        "wind_share_mean": 0.093
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.8,
+          "pres_tend6_min": -10.8,
+          "precip6_max_mm": 4.6,
+          "temp_z_min": 0.09,
+          "temp_z_max": 1.36,
+          "wind100_z_min": -0.96
+        },
+        "cif_std": 10.0,
+        "cif_std_ratio": 0.6,
+        "wind_share_mean": 0.467
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 3.27,
+          "pres_tend6_min": -7.7,
+          "precip6_max_mm": 15.7,
+          "temp_z_min": -0.68,
+          "temp_z_max": 1.23,
+          "wind100_z_min": -1.96
+        },
+        "cif_std": 33.5,
+        "cif_std_ratio": 2.02,
+        "wind_share_mean": 0.514
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.11,
+          "pres_tend6_min": -10.8,
+          "precip6_max_mm": 6.0,
+          "temp_z_min": -0.77,
+          "temp_z_max": 0.29,
+          "wind100_z_min": 0.27
+        },
+        "cif_std": 11.9,
+        "cif_std_ratio": 0.72,
+        "wind_share_mean": 0.461
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 4.52,
+          "pres_tend6_min": -13.2,
+          "precip6_max_mm": 9.9,
+          "temp_z_min": -0.62,
+          "temp_z_max": 0.26,
+          "wind100_z_min": -0.84
+        },
+        "cif_std": 33.1,
+        "cif_std_ratio": 2.0,
+        "wind_share_mean": 0.496
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 4.13,
+          "pres_tend6_min": -10.9,
+          "precip6_max_mm": 11.5,
+          "temp_z_min": -1.09,
+          "temp_z_max": 0.18,
+          "wind100_z_min": -0.91
+        },
+        "cif_std": 41.2,
+        "cif_std_ratio": 2.49,
+        "wind_share_mean": 0.39
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.73,
+          "pres_tend6_min": -13.3,
+          "precip6_max_mm": 12.8,
+          "temp_z_min": -0.99,
+          "temp_z_max": 0.28,
+          "wind100_z_min": 0.64
+        },
+        "cif_std": 4.4,
+        "cif_std_ratio": 0.26,
+        "wind_share_mean": 0.568
+      }
+    ],
+    "UK_05_Yorkshire": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 0.77,
+          "pres_tend6_min": -5.2,
+          "precip6_max_mm": 9.5,
+          "temp_z_min": -0.13,
+          "temp_z_max": 1.3,
+          "wind100_z_min": -1.56
+        },
+        "cif_std": 60.9,
+        "cif_std_ratio": 2.05,
+        "wind_share_mean": 0.245
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.23,
+          "pres_tend6_min": -3.0,
+          "precip6_max_mm": 1.1,
+          "temp_z_min": 0.41,
+          "temp_z_max": 2.93,
+          "wind100_z_min": -2.02
+        },
+        "cif_std": 33.4,
+        "cif_std_ratio": 1.12,
+        "wind_share_mean": 0.053
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.25,
+          "pres_tend6_min": -9.8,
+          "precip6_max_mm": 1.5,
+          "temp_z_min": 0.15,
+          "temp_z_max": 1.19,
+          "wind100_z_min": -1.16
+        },
+        "cif_std": 41.3,
+        "cif_std_ratio": 1.39,
+        "wind_share_mean": 0.338
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 2.8,
+          "pres_tend6_min": -10.1,
+          "precip6_max_mm": 18.2,
+          "temp_z_min": -0.67,
+          "temp_z_max": 1.14,
+          "wind100_z_min": -1.97
+        },
+        "cif_std": 59.3,
+        "cif_std_ratio": 2.0,
+        "wind_share_mean": 0.463
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 1.91,
+          "pres_tend6_min": -13.1,
+          "precip6_max_mm": 6.7,
+          "temp_z_min": -0.84,
+          "temp_z_max": 0.45,
+          "wind100_z_min": -1.0
+        },
+        "cif_std": 30.6,
+        "cif_std_ratio": 1.03,
+        "wind_share_mean": 0.436
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 4.28,
+          "pres_tend6_min": -11.6,
+          "precip6_max_mm": 6.5,
+          "temp_z_min": -0.81,
+          "temp_z_max": 0.18,
+          "wind100_z_min": -1.13
+        },
+        "cif_std": 45.5,
+        "cif_std_ratio": 1.53,
+        "wind_share_mean": 0.313
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 4.28,
+          "pres_tend6_min": -11.0,
+          "precip6_max_mm": 10.4,
+          "temp_z_min": -1.18,
+          "temp_z_max": 0.01,
+          "wind100_z_min": -1.85
+        },
+        "cif_std": 68.6,
+        "cif_std_ratio": 2.31,
+        "wind_share_mean": 0.331
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.52,
+          "pres_tend6_min": -13.0,
+          "precip6_max_mm": 9.7,
+          "temp_z_min": -1.21,
+          "temp_z_max": 0.27,
+          "wind100_z_min": -0.33
+        },
+        "cif_std": 17.5,
+        "cif_std_ratio": 0.59,
+        "wind_share_mean": 0.553
+      }
+    ],
+    "UK_06_North_Wales_Merseyside": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "heavy-rain",
+        "stats": {
+          "gust_z_max": 1.18,
+          "pres_tend6_min": -8.3,
+          "precip6_max_mm": 12.1,
+          "temp_z_min": 0.16,
+          "temp_z_max": 1.08,
+          "wind100_z_min": -1.16
+        },
+        "cif_std": 55.2,
+        "cif_std_ratio": 2.24,
+        "wind_share_mean": 0.498
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.28,
+          "pres_tend6_min": -3.1,
+          "precip6_max_mm": 2.3,
+          "temp_z_min": 0.54,
+          "temp_z_max": 2.74,
+          "wind100_z_min": -1.96
+        },
+        "cif_std": 73.9,
+        "cif_std_ratio": 2.99,
+        "wind_share_mean": 0.176
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.57,
+          "pres_tend6_min": -11.3,
+          "precip6_max_mm": 4.6,
+          "temp_z_min": 0.09,
+          "temp_z_max": 1.36,
+          "wind100_z_min": -0.96
+        },
+        "cif_std": 17.7,
+        "cif_std_ratio": 0.72,
+        "wind_share_mean": 0.61
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 2.18,
+          "pres_tend6_min": -7.7,
+          "precip6_max_mm": 24.1,
+          "temp_z_min": -0.68,
+          "temp_z_max": 1.23,
+          "wind100_z_min": -1.96
+        },
+        "cif_std": 73.6,
+        "cif_std_ratio": 2.98,
+        "wind_share_mean": 0.635
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.2,
+          "pres_tend6_min": -11.4,
+          "precip6_max_mm": 8.1,
+          "temp_z_min": -0.77,
+          "temp_z_max": 0.29,
+          "wind100_z_min": 0.27
+        },
+        "cif_std": 15.4,
+        "cif_std_ratio": 0.62,
+        "wind_share_mean": 0.671
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.27,
+          "pres_tend6_min": -13.0,
+          "precip6_max_mm": 12.1,
+          "temp_z_min": -0.62,
+          "temp_z_max": 0.26,
+          "wind100_z_min": -0.84
+        },
+        "cif_std": 75.3,
+        "cif_std_ratio": 3.05,
+        "wind_share_mean": 0.627
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 5.02,
+          "pres_tend6_min": -11.0,
+          "precip6_max_mm": 5.0,
+          "temp_z_min": -1.09,
+          "temp_z_max": 0.18,
+          "wind100_z_min": -0.91
+        },
+        "cif_std": 81.8,
+        "cif_std_ratio": 3.32,
+        "wind_share_mean": 0.561
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.21,
+          "pres_tend6_min": -12.4,
+          "precip6_max_mm": 9.6,
+          "temp_z_min": -0.99,
+          "temp_z_max": 0.28,
+          "wind100_z_min": 0.64
+        },
+        "cif_std": 11.4,
+        "cif_std_ratio": 0.46,
+        "wind_share_mean": 0.682
+      }
+    ],
+    "UK_07_South_Wales": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.22,
+          "pres_tend6_min": -12.5,
+          "precip6_max_mm": 24.4,
+          "temp_z_min": -0.21,
+          "temp_z_max": 1.46,
+          "wind100_z_min": -0.96
+        },
+        "cif_std": 92.6,
+        "cif_std_ratio": 1.89,
+        "wind_share_mean": 0.234
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.52,
+          "pres_tend6_min": -3.7,
+          "precip6_max_mm": 9.0,
+          "temp_z_min": 0.72,
+          "temp_z_max": 2.89,
+          "wind100_z_min": -1.97
+        },
+        "cif_std": 34.5,
+        "cif_std_ratio": 0.7,
+        "wind_share_mean": 0.047
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.96,
+          "pres_tend6_min": -7.2,
+          "precip6_max_mm": 6.9,
+          "temp_z_min": -0.08,
+          "temp_z_max": 1.22,
+          "wind100_z_min": -1.68
+        },
+        "cif_std": 74.5,
+        "cif_std_ratio": 1.52,
+        "wind_share_mean": 0.458
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 1.84,
+          "pres_tend6_min": -8.4,
+          "precip6_max_mm": 11.8,
+          "temp_z_min": -0.7,
+          "temp_z_max": 0.95,
+          "wind100_z_min": -1.63
+        },
+        "cif_std": 101.1,
+        "cif_std_ratio": 2.06,
+        "wind_share_mean": 0.408
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.49,
+          "pres_tend6_min": -20.7,
+          "precip6_max_mm": 13.3,
+          "temp_z_min": -0.95,
+          "temp_z_max": 0.32,
+          "wind100_z_min": -1.0
+        },
+        "cif_std": 81.6,
+        "cif_std_ratio": 1.66,
+        "wind_share_mean": 0.448
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 3.76,
+          "pres_tend6_min": -9.5,
+          "precip6_max_mm": 19.2,
+          "temp_z_min": -1.01,
+          "temp_z_max": 0.52,
+          "wind100_z_min": -1.65
+        },
+        "cif_std": 98.5,
+        "cif_std_ratio": 2.01,
+        "wind_share_mean": 0.394
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 3.43,
+          "pres_tend6_min": -11.0,
+          "precip6_max_mm": 16.4,
+          "temp_z_min": -0.9,
+          "temp_z_max": 0.21,
+          "wind100_z_min": -1.56
+        },
+        "cif_std": 115.4,
+        "cif_std_ratio": 2.36,
+        "wind_share_mean": 0.381
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 4.32,
+          "pres_tend6_min": -8.9,
+          "precip6_max_mm": 14.8,
+          "temp_z_min": -0.84,
+          "temp_z_max": 0.21,
+          "wind100_z_min": -0.6
+        },
+        "cif_std": 44.6,
+        "cif_std_ratio": 0.91,
+        "wind_share_mean": 0.692
+      }
+    ],
+    "UK_08_West_Midlands": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 1.37,
+          "pres_tend6_min": -8.7,
+          "precip6_max_mm": 9.6,
+          "temp_z_min": -0.09,
+          "temp_z_max": 1.15,
+          "wind100_z_min": -1.95
+        },
+        "cif_std": 84.9,
+        "cif_std_ratio": 2.01,
+        "wind_share_mean": 0.253
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.59,
+          "pres_tend6_min": -3.3,
+          "precip6_max_mm": 7.6,
+          "temp_z_min": 0.46,
+          "temp_z_max": 3.14,
+          "wind100_z_min": -2.42
+        },
+        "cif_std": 41.3,
+        "cif_std_ratio": 0.98,
+        "wind_share_mean": 0.083
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.71,
+          "pres_tend6_min": -8.3,
+          "precip6_max_mm": 7.0,
+          "temp_z_min": 0.06,
+          "temp_z_max": 1.31,
+          "wind100_z_min": -1.98
+        },
+        "cif_std": 34.8,
+        "cif_std_ratio": 0.82,
+        "wind_share_mean": 0.507
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 1.71,
+          "pres_tend6_min": -9.3,
+          "precip6_max_mm": 25.2,
+          "temp_z_min": -0.54,
+          "temp_z_max": 1.17,
+          "wind100_z_min": -1.62
+        },
+        "cif_std": 119.8,
+        "cif_std_ratio": 2.83,
+        "wind_share_mean": 0.542
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.46,
+          "pres_tend6_min": -16.9,
+          "precip6_max_mm": 8.9,
+          "temp_z_min": -0.82,
+          "temp_z_max": 0.29,
+          "wind100_z_min": -0.41
+        },
+        "cif_std": 51.3,
+        "cif_std_ratio": 1.21,
+        "wind_share_mean": 0.49
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.37,
+          "pres_tend6_min": -10.9,
+          "precip6_max_mm": 5.0,
+          "temp_z_min": -1.03,
+          "temp_z_max": 0.42,
+          "wind100_z_min": -0.61
+        },
+        "cif_std": 134.9,
+        "cif_std_ratio": 3.19,
+        "wind_share_mean": 0.418
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 3.13,
+          "pres_tend6_min": -10.9,
+          "precip6_max_mm": 13.9,
+          "temp_z_min": -0.99,
+          "temp_z_max": 0.25,
+          "wind100_z_min": -1.82
+        },
+        "cif_std": 117.4,
+        "cif_std_ratio": 2.78,
+        "wind_share_mean": 0.412
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.98,
+          "pres_tend6_min": -10.2,
+          "precip6_max_mm": 7.5,
+          "temp_z_min": -1.15,
+          "temp_z_max": 0.2,
+          "wind100_z_min": 0.01
+        },
+        "cif_std": 11.0,
+        "cif_std_ratio": 0.26,
+        "wind_share_mean": 0.618
+      }
+    ],
+    "UK_09_East_Midlands": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "wind-lull",
+        "stats": {
+          "gust_z_max": 0.92,
+          "pres_tend6_min": -5.8,
+          "precip6_max_mm": 6.9,
+          "temp_z_min": -0.19,
+          "temp_z_max": 1.18,
+          "wind100_z_min": -1.88
+        },
+        "cif_std": 89.6,
+        "cif_std_ratio": 1.94,
+        "wind_share_mean": 0.235
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.67,
+          "pres_tend6_min": -2.9,
+          "precip6_max_mm": 6.0,
+          "temp_z_min": 0.45,
+          "temp_z_max": 3.07,
+          "wind100_z_min": -2.25
+        },
+        "cif_std": 45.5,
+        "cif_std_ratio": 0.98,
+        "wind_share_mean": 0.035
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.37,
+          "pres_tend6_min": -8.1,
+          "precip6_max_mm": 7.4,
+          "temp_z_min": 0.06,
+          "temp_z_max": 1.38,
+          "wind100_z_min": -1.89
+        },
+        "cif_std": 99.6,
+        "cif_std_ratio": 2.15,
+        "wind_share_mean": 0.322
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 1.99,
+          "pres_tend6_min": -10.0,
+          "precip6_max_mm": 21.2,
+          "temp_z_min": -0.63,
+          "temp_z_max": 1.18,
+          "wind100_z_min": -1.14
+        },
+        "cif_std": 134.2,
+        "cif_std_ratio": 2.9,
+        "wind_share_mean": 0.495
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 1.67,
+          "pres_tend6_min": -16.0,
+          "precip6_max_mm": 7.2,
+          "temp_z_min": -0.83,
+          "temp_z_max": 0.33,
+          "wind100_z_min": -0.36
+        },
+        "cif_std": 74.5,
+        "cif_std_ratio": 1.61,
+        "wind_share_mean": 0.452
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.01,
+          "pres_tend6_min": -11.4,
+          "precip6_max_mm": 2.4,
+          "temp_z_min": -1.02,
+          "temp_z_max": 0.42,
+          "wind100_z_min": -0.38
+        },
+        "cif_std": 133.6,
+        "cif_std_ratio": 2.89,
+        "wind_share_mean": 0.365
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 3.38,
+          "pres_tend6_min": -11.3,
+          "precip6_max_mm": 11.3,
+          "temp_z_min": -1.22,
+          "temp_z_max": 0.26,
+          "wind100_z_min": -2.03
+        },
+        "cif_std": 118.0,
+        "cif_std_ratio": 2.55,
+        "wind_share_mean": 0.338
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.74,
+          "pres_tend6_min": -10.4,
+          "precip6_max_mm": 7.0,
+          "temp_z_min": -1.14,
+          "temp_z_max": 0.16,
+          "wind100_z_min": 0.13
+        },
+        "cif_std": 28.1,
+        "cif_std_ratio": 0.61,
+        "wind_share_mean": 0.601
+      }
+    ],
+    "UK_10_East_England": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "calm",
+        "stats": {
+          "gust_z_max": 1.35,
+          "pres_tend6_min": -6.1,
+          "precip6_max_mm": 5.2,
+          "temp_z_min": 0.09,
+          "temp_z_max": 1.27,
+          "wind100_z_min": -1.49
+        },
+        "cif_std": 78.0,
+        "cif_std_ratio": 2.31,
+        "wind_share_mean": 0.312
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.54,
+          "pres_tend6_min": -2.7,
+          "precip6_max_mm": 6.4,
+          "temp_z_min": 0.43,
+          "temp_z_max": 3.04,
+          "wind100_z_min": -2.23
+        },
+        "cif_std": 37.2,
+        "cif_std_ratio": 1.1,
+        "wind_share_mean": 0.08
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 1.78,
+          "pres_tend6_min": -7.1,
+          "precip6_max_mm": 1.2,
+          "temp_z_min": 0.14,
+          "temp_z_max": 1.58,
+          "wind100_z_min": -1.52
+        },
+        "cif_std": 71.2,
+        "cif_std_ratio": 2.11,
+        "wind_share_mean": 0.422
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 2.06,
+          "pres_tend6_min": -9.8,
+          "precip6_max_mm": 10.9,
+          "temp_z_min": -0.54,
+          "temp_z_max": 0.89,
+          "wind100_z_min": -2.13
+        },
+        "cif_std": 67.0,
+        "cif_std_ratio": 1.98,
+        "wind_share_mean": 0.541
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.57,
+          "pres_tend6_min": -16.7,
+          "precip6_max_mm": 6.8,
+          "temp_z_min": -0.76,
+          "temp_z_max": 0.4,
+          "wind100_z_min": -1.31
+        },
+        "cif_std": 28.9,
+        "cif_std_ratio": 0.86,
+        "wind_share_mean": 0.585
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.96,
+          "pres_tend6_min": -10.0,
+          "precip6_max_mm": 4.9,
+          "temp_z_min": -0.86,
+          "temp_z_max": 0.57,
+          "wind100_z_min": -0.48
+        },
+        "cif_std": 47.0,
+        "cif_std_ratio": 1.39,
+        "wind_share_mean": 0.582
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.62,
+          "pres_tend6_min": -11.5,
+          "precip6_max_mm": 9.4,
+          "temp_z_min": -1.35,
+          "temp_z_max": 0.14,
+          "wind100_z_min": -1.02
+        },
+        "cif_std": 77.2,
+        "cif_std_ratio": 2.29,
+        "wind_share_mean": 0.466
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.36,
+          "pres_tend6_min": -9.0,
+          "precip6_max_mm": 6.5,
+          "temp_z_min": -1.27,
+          "temp_z_max": 0.09,
+          "wind100_z_min": -0.48
+        },
+        "cif_std": 14.5,
+        "cif_std_ratio": 0.43,
+        "wind_share_mean": 0.632
+      }
+    ],
+    "UK_11_South_West_England": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 4.11,
+          "pres_tend6_min": -11.9,
+          "precip6_max_mm": 3.6,
+          "temp_z_min": -0.07,
+          "temp_z_max": 1.27,
+          "wind100_z_min": -1.19
+        },
+        "cif_std": 110.9,
+        "cif_std_ratio": 1.53,
+        "wind_share_mean": 0.114
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heavy-rain+heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.29,
+          "pres_tend6_min": -2.5,
+          "precip6_max_mm": 12.7,
+          "temp_z_min": 0.63,
+          "temp_z_max": 3.07,
+          "wind100_z_min": -2.14
+        },
+        "cif_std": 98.3,
+        "cif_std_ratio": 1.35,
+        "wind_share_mean": 0.031
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.75,
+          "pres_tend6_min": -6.9,
+          "precip6_max_mm": 5.8,
+          "temp_z_min": 0.0,
+          "temp_z_max": 1.37,
+          "wind100_z_min": -1.45
+        },
+        "cif_std": 94.9,
+        "cif_std_ratio": 1.31,
+        "wind_share_mean": 0.195
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.01,
+          "pres_tend6_min": -7.9,
+          "precip6_max_mm": 9.7,
+          "temp_z_min": -0.42,
+          "temp_z_max": 1.07,
+          "wind100_z_min": -1.99
+        },
+        "cif_std": 55.3,
+        "cif_std_ratio": 0.76,
+        "wind_share_mean": 0.146
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 4.21,
+          "pres_tend6_min": -22.3,
+          "precip6_max_mm": 12.7,
+          "temp_z_min": -0.73,
+          "temp_z_max": 0.36,
+          "wind100_z_min": -0.46
+        },
+        "cif_std": 57.8,
+        "cif_std_ratio": 0.8,
+        "wind_share_mean": 0.168
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.52,
+          "pres_tend6_min": -8.6,
+          "precip6_max_mm": 6.7,
+          "temp_z_min": -0.85,
+          "temp_z_max": 0.52,
+          "wind100_z_min": -1.59
+        },
+        "cif_std": 65.0,
+        "cif_std_ratio": 0.89,
+        "wind_share_mean": 0.144
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.06,
+          "pres_tend6_min": -11.4,
+          "precip6_max_mm": 9.5,
+          "temp_z_min": -0.8,
+          "temp_z_max": 0.23,
+          "wind100_z_min": -0.98
+        },
+        "cif_std": 88.9,
+        "cif_std_ratio": 1.22,
+        "wind_share_mean": 0.227
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.6,
+          "pres_tend6_min": -7.1,
+          "precip6_max_mm": 8.9,
+          "temp_z_min": -0.78,
+          "temp_z_max": 0.23,
+          "wind100_z_min": -0.91
+        },
+        "cif_std": 48.8,
+        "cif_std_ratio": 0.67,
+        "wind_share_mean": 0.396
+      }
+    ],
+    "UK_12_South_England": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.53,
+          "pres_tend6_min": -9.9,
+          "precip6_max_mm": 5.7,
+          "temp_z_min": -0.22,
+          "temp_z_max": 1.36,
+          "wind100_z_min": -1.35
+        },
+        "cif_std": 64.4,
+        "cif_std_ratio": 1.46,
+        "wind_share_mean": 0.098
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.46,
+          "pres_tend6_min": -2.4,
+          "precip6_max_mm": 0.9,
+          "temp_z_min": 0.6,
+          "temp_z_max": 2.95,
+          "wind100_z_min": -2.18
+        },
+        "cif_std": 54.0,
+        "cif_std_ratio": 1.22,
+        "wind_share_mean": 0.025
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 1.95,
+          "pres_tend6_min": -5.9,
+          "precip6_max_mm": 6.1,
+          "temp_z_min": -0.11,
+          "temp_z_max": 1.47,
+          "wind100_z_min": -1.34
+        },
+        "cif_std": 62.6,
+        "cif_std_ratio": 1.42,
+        "wind_share_mean": 0.277
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.29,
+          "pres_tend6_min": -11.3,
+          "precip6_max_mm": 11.5,
+          "temp_z_min": -0.57,
+          "temp_z_max": 0.99,
+          "wind100_z_min": -1.4
+        },
+        "cif_std": 44.0,
+        "cif_std_ratio": 1.0,
+        "wind_share_mean": 0.268
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 4.57,
+          "pres_tend6_min": -19.1,
+          "precip6_max_mm": 12.2,
+          "temp_z_min": -0.94,
+          "temp_z_max": 0.37,
+          "wind100_z_min": -0.96
+        },
+        "cif_std": 37.6,
+        "cif_std_ratio": 0.85,
+        "wind_share_mean": 0.193
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.11,
+          "pres_tend6_min": -8.0,
+          "precip6_max_mm": 11.6,
+          "temp_z_min": -1.15,
+          "temp_z_max": 0.53,
+          "wind100_z_min": -1.41
+        },
+        "cif_std": 70.5,
+        "cif_std_ratio": 1.6,
+        "wind_share_mean": 0.15
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.14,
+          "pres_tend6_min": -11.0,
+          "precip6_max_mm": 10.5,
+          "temp_z_min": -1.04,
+          "temp_z_max": 0.39,
+          "wind100_z_min": -0.53
+        },
+        "cif_std": 89.5,
+        "cif_std_ratio": 2.03,
+        "wind_share_mean": 0.255
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.55,
+          "pres_tend6_min": -7.3,
+          "precip6_max_mm": 7.4,
+          "temp_z_min": -0.98,
+          "temp_z_max": 0.08,
+          "wind100_z_min": 0.17
+        },
+        "cif_std": 25.8,
+        "cif_std_ratio": 0.58,
+        "wind_share_mean": 0.447
+      }
+    ],
+    "UK_13_London": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 1.71,
+          "pres_tend6_min": -8.9,
+          "precip6_max_mm": 11.2,
+          "temp_z_min": -0.19,
+          "temp_z_max": 1.23,
+          "wind100_z_min": -1.88
+        },
+        "cif_std": 69.2,
+        "cif_std_ratio": 2.1,
+        "wind_share_mean": 0.197
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.83,
+          "pres_tend6_min": -2.5,
+          "precip6_max_mm": 1.6,
+          "temp_z_min": 0.5,
+          "temp_z_max": 3.15,
+          "wind100_z_min": -2.19
+        },
+        "cif_std": 42.1,
+        "cif_std_ratio": 1.28,
+        "wind_share_mean": 0.06
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 1.57,
+          "pres_tend6_min": -6.2,
+          "precip6_max_mm": 2.4,
+          "temp_z_min": 0.18,
+          "temp_z_max": 1.59,
+          "wind100_z_min": -1.27
+        },
+        "cif_std": 68.5,
+        "cif_std_ratio": 2.08,
+        "wind_share_mean": 0.334
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.23,
+          "pres_tend6_min": -10.6,
+          "precip6_max_mm": 11.2,
+          "temp_z_min": -0.75,
+          "temp_z_max": 0.96,
+          "wind100_z_min": -1.02
+        },
+        "cif_std": 49.5,
+        "cif_std_ratio": 1.51,
+        "wind_share_mean": 0.441
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 3.28,
+          "pres_tend6_min": -18.1,
+          "precip6_max_mm": 11.9,
+          "temp_z_min": -0.76,
+          "temp_z_max": 0.31,
+          "wind100_z_min": -1.87
+        },
+        "cif_std": 25.5,
+        "cif_std_ratio": 0.78,
+        "wind_share_mean": 0.44
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.11,
+          "pres_tend6_min": -8.9,
+          "precip6_max_mm": 10.9,
+          "temp_z_min": -1.14,
+          "temp_z_max": 0.5,
+          "wind100_z_min": -0.7
+        },
+        "cif_std": 45.4,
+        "cif_std_ratio": 1.38,
+        "wind_share_mean": 0.416
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.78,
+          "pres_tend6_min": -11.3,
+          "precip6_max_mm": 7.8,
+          "temp_z_min": -1.13,
+          "temp_z_max": 0.36,
+          "wind100_z_min": -0.88
+        },
+        "cif_std": 64.2,
+        "cif_std_ratio": 1.96,
+        "wind_share_mean": 0.375
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.31,
+          "pres_tend6_min": -7.1,
+          "precip6_max_mm": 4.3,
+          "temp_z_min": -0.94,
+          "temp_z_max": 0.05,
+          "wind100_z_min": -0.23
+        },
+        "cif_std": 13.5,
+        "cif_std_ratio": 0.41,
+        "wind_share_mean": 0.506
+      }
+    ],
+    "UK_14_South_East_England": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 1.89,
+          "pres_tend6_min": -8.8,
+          "precip6_max_mm": 16.9,
+          "temp_z_min": -0.19,
+          "temp_z_max": 1.36,
+          "wind100_z_min": -1.38
+        },
+        "cif_std": 70.2,
+        "cif_std_ratio": 1.93,
+        "wind_share_mean": 0.125
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.87,
+          "pres_tend6_min": -2.4,
+          "precip6_max_mm": 0.0,
+          "temp_z_min": 0.67,
+          "temp_z_max": 3.18,
+          "wind100_z_min": -2.2
+        },
+        "cif_std": 52.5,
+        "cif_std_ratio": 1.44,
+        "wind_share_mean": 0.053
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "calm",
+        "stats": {
+          "gust_z_max": 1.36,
+          "pres_tend6_min": -6.1,
+          "precip6_max_mm": 0.6,
+          "temp_z_min": 0.16,
+          "temp_z_max": 1.49,
+          "wind100_z_min": -1.31
+        },
+        "cif_std": 69.6,
+        "cif_std_ratio": 1.92,
+        "wind_share_mean": 0.242
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.62,
+          "pres_tend6_min": -9.8,
+          "precip6_max_mm": 13.9,
+          "temp_z_min": -0.57,
+          "temp_z_max": 1.0,
+          "wind100_z_min": -1.26
+        },
+        "cif_std": 40.1,
+        "cif_std_ratio": 1.1,
+        "wind_share_mean": 0.352
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.8,
+          "pres_tend6_min": -18.1,
+          "precip6_max_mm": 8.4,
+          "temp_z_min": -0.76,
+          "temp_z_max": 0.33,
+          "wind100_z_min": -0.31
+        },
+        "cif_std": 31.1,
+        "cif_std_ratio": 0.86,
+        "wind_share_mean": 0.335
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.77,
+          "pres_tend6_min": -7.8,
+          "precip6_max_mm": 7.7,
+          "temp_z_min": -1.01,
+          "temp_z_max": 0.55,
+          "wind100_z_min": -0.57
+        },
+        "cif_std": 56.7,
+        "cif_std_ratio": 1.56,
+        "wind_share_mean": 0.294
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.56,
+          "pres_tend6_min": -10.8,
+          "precip6_max_mm": 13.9,
+          "temp_z_min": -0.88,
+          "temp_z_max": 0.37,
+          "wind100_z_min": -0.54
+        },
+        "cif_std": 49.3,
+        "cif_std_ratio": 1.36,
+        "wind_share_mean": 0.292
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.97,
+          "pres_tend6_min": -6.9,
+          "precip6_max_mm": 4.0,
+          "temp_z_min": -0.86,
+          "temp_z_max": -0.04,
+          "wind100_z_min": -0.45
+        },
+        "cif_std": 17.8,
+        "cif_std_ratio": 0.49,
+        "wind_share_mean": 0.403
+      }
+    ],
+    "UK_15_England": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 1.03,
+          "pres_tend6_min": -6.7,
+          "precip6_max_mm": 11.7,
+          "temp_z_min": -0.09,
+          "temp_z_max": 1.15,
+          "wind100_z_min": -1.95
+        },
+        "cif_std": 53.1,
+        "cif_std_ratio": 1.83,
+        "wind_share_mean": 0.221
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heavy-rain+heat+wind-lull",
+        "stats": {
+          "gust_z_max": 1.0,
+          "pres_tend6_min": -2.9,
+          "precip6_max_mm": 14.3,
+          "temp_z_min": 0.46,
+          "temp_z_max": 3.14,
+          "wind100_z_min": -2.42
+        },
+        "cif_std": 35.6,
+        "cif_std_ratio": 1.22,
+        "wind_share_mean": 0.059
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.42,
+          "pres_tend6_min": -8.8,
+          "precip6_max_mm": 6.9,
+          "temp_z_min": 0.06,
+          "temp_z_max": 1.31,
+          "wind100_z_min": -1.98
+        },
+        "cif_std": 50.6,
+        "cif_std_ratio": 1.74,
+        "wind_share_mean": 0.367
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 2.2,
+          "pres_tend6_min": -9.5,
+          "precip6_max_mm": 18.2,
+          "temp_z_min": -0.54,
+          "temp_z_max": 1.17,
+          "wind100_z_min": -1.62
+        },
+        "cif_std": 63.4,
+        "cif_std_ratio": 2.18,
+        "wind_share_mean": 0.452
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.09,
+          "pres_tend6_min": -15.9,
+          "precip6_max_mm": 8.1,
+          "temp_z_min": -0.82,
+          "temp_z_max": 0.29,
+          "wind100_z_min": -0.41
+        },
+        "cif_std": 27.0,
+        "cif_std_ratio": 0.93,
+        "wind_share_mean": 0.418
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.1,
+          "pres_tend6_min": -11.5,
+          "precip6_max_mm": 5.2,
+          "temp_z_min": -1.03,
+          "temp_z_max": 0.42,
+          "wind100_z_min": -0.61
+        },
+        "cif_std": 62.3,
+        "cif_std_ratio": 2.14,
+        "wind_share_mean": 0.377
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 3.87,
+          "pres_tend6_min": -11.8,
+          "precip6_max_mm": 7.2,
+          "temp_z_min": -0.99,
+          "temp_z_max": 0.25,
+          "wind100_z_min": -1.82
+        },
+        "cif_std": 73.2,
+        "cif_std_ratio": 2.52,
+        "wind_share_mean": 0.349
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.56,
+          "pres_tend6_min": -10.6,
+          "precip6_max_mm": 6.9,
+          "temp_z_min": -1.15,
+          "temp_z_max": 0.2,
+          "wind100_z_min": 0.01
+        },
+        "cif_std": 12.3,
+        "cif_std_ratio": 0.42,
+        "wind_share_mean": 0.547
+      }
+    ],
+    "UK_16_Scotland": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "wind-lull",
+        "stats": {
+          "gust_z_max": 0.58,
+          "pres_tend6_min": -3.1,
+          "precip6_max_mm": 3.8,
+          "temp_z_min": -0.1,
+          "temp_z_max": 1.43,
+          "wind100_z_min": -1.71
+        },
+        "cif_std": 47.6,
+        "cif_std_ratio": 3.33,
+        "wind_share_mean": 0.359
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.98,
+          "pres_tend6_min": -4.5,
+          "precip6_max_mm": 4.0,
+          "temp_z_min": 0.16,
+          "temp_z_max": 2.97,
+          "wind100_z_min": -1.82
+        },
+        "cif_std": 47.0,
+        "cif_std_ratio": 3.29,
+        "wind_share_mean": 0.325
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.89,
+          "pres_tend6_min": -12.9,
+          "precip6_max_mm": 16.5,
+          "temp_z_min": -0.12,
+          "temp_z_max": 1.28,
+          "wind100_z_min": -0.96
+        },
+        "cif_std": 6.9,
+        "cif_std_ratio": 0.48,
+        "wind_share_mean": 0.735
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.43,
+          "pres_tend6_min": -6.0,
+          "precip6_max_mm": 17.1,
+          "temp_z_min": -1.04,
+          "temp_z_max": 0.69,
+          "wind100_z_min": -0.94
+        },
+        "cif_std": 32.2,
+        "cif_std_ratio": 2.26,
+        "wind_share_mean": 0.766
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 1.54,
+          "pres_tend6_min": -10.3,
+          "precip6_max_mm": 11.1,
+          "temp_z_min": -1.37,
+          "temp_z_max": 0.24,
+          "wind100_z_min": -1.03
+        },
+        "cif_std": 21.4,
+        "cif_std_ratio": 1.5,
+        "wind_share_mean": 0.68
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 1.85,
+          "pres_tend6_min": -8.8,
+          "precip6_max_mm": 14.3,
+          "temp_z_min": -0.66,
+          "temp_z_max": -0.02,
+          "wind100_z_min": -1.45
+        },
+        "cif_std": 43.7,
+        "cif_std_ratio": 3.06,
+        "wind_share_mean": 0.58
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "calm",
+        "stats": {
+          "gust_z_max": 1.04,
+          "pres_tend6_min": -5.2,
+          "precip6_max_mm": 8.3,
+          "temp_z_min": -1.16,
+          "temp_z_max": -0.17,
+          "wind100_z_min": -1.16
+        },
+        "cif_std": 35.2,
+        "cif_std_ratio": 2.46,
+        "wind_share_mean": 0.684
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.76,
+          "pres_tend6_min": -16.6,
+          "precip6_max_mm": 31.4,
+          "temp_z_min": -1.76,
+          "temp_z_max": 0.14,
+          "wind100_z_min": -0.58
+        },
+        "cif_std": 2.7,
+        "cif_std_ratio": 0.19,
+        "wind_share_mean": 0.753
+      }
+    ],
+    "UK_17_Wales": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 1.52,
+          "pres_tend6_min": -11.4,
+          "precip6_max_mm": 11.7,
+          "temp_z_min": -0.0,
+          "temp_z_max": 1.11,
+          "wind100_z_min": -1.07
+        },
+        "cif_std": 91.4,
+        "cif_std_ratio": 2.08,
+        "wind_share_mean": 0.365
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.39,
+          "pres_tend6_min": -3.8,
+          "precip6_max_mm": 3.1,
+          "temp_z_min": 0.58,
+          "temp_z_max": 3.22,
+          "wind100_z_min": -1.97
+        },
+        "cif_std": 50.4,
+        "cif_std_ratio": 1.15,
+        "wind_share_mean": 0.114
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.18,
+          "pres_tend6_min": -9.3,
+          "precip6_max_mm": 5.8,
+          "temp_z_min": 0.13,
+          "temp_z_max": 1.26,
+          "wind100_z_min": -0.86
+        },
+        "cif_std": 48.6,
+        "cif_std_ratio": 1.11,
+        "wind_share_mean": 0.627
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 2.07,
+          "pres_tend6_min": -8.2,
+          "precip6_max_mm": 13.5,
+          "temp_z_min": -0.68,
+          "temp_z_max": 1.07,
+          "wind100_z_min": -1.85
+        },
+        "cif_std": 85.8,
+        "cif_std_ratio": 1.96,
+        "wind_share_mean": 0.624
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.7,
+          "pres_tend6_min": -17.2,
+          "precip6_max_mm": 11.6,
+          "temp_z_min": -0.75,
+          "temp_z_max": 0.24,
+          "wind100_z_min": -0.78
+        },
+        "cif_std": 54.6,
+        "cif_std_ratio": 1.24,
+        "wind_share_mean": 0.632
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 3.82,
+          "pres_tend6_min": -10.8,
+          "precip6_max_mm": 10.6,
+          "temp_z_min": -1.07,
+          "temp_z_max": 0.43,
+          "wind100_z_min": -1.52
+        },
+        "cif_std": 87.5,
+        "cif_std_ratio": 1.99,
+        "wind_share_mean": 0.534
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 4.11,
+          "pres_tend6_min": -11.0,
+          "precip6_max_mm": 11.2,
+          "temp_z_min": -0.83,
+          "temp_z_max": 0.17,
+          "wind100_z_min": -1.16
+        },
+        "cif_std": 104.0,
+        "cif_std_ratio": 2.37,
+        "wind_share_mean": 0.486
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.94,
+          "pres_tend6_min": -10.3,
+          "precip6_max_mm": 16.8,
+          "temp_z_min": -1.19,
+          "temp_z_max": 0.24,
+          "wind100_z_min": -0.18
+        },
+        "cif_std": 22.8,
+        "cif_std_ratio": 0.52,
+        "wind_share_mean": 0.692
+      }
+    ],
+    "UK_18_GB": [
+      {
+        "event": "Storm Antoni (wind+rain)",
+        "type": "wind-lull",
+        "stats": {
+          "gust_z_max": 1.03,
+          "pres_tend6_min": -7.4,
+          "precip6_max_mm": 5.1,
+          "temp_z_min": -0.18,
+          "temp_z_max": 1.27,
+          "wind100_z_min": -1.82
+        },
+        "cif_std": 51.7,
+        "cif_std_ratio": 1.96,
+        "wind_share_mean": 0.247
+      },
+      {
+        "event": "UK September heatwave",
+        "type": "heavy-rain+heat+wind-lull",
+        "stats": {
+          "gust_z_max": 0.87,
+          "pres_tend6_min": -2.9,
+          "precip6_max_mm": 11.9,
+          "temp_z_min": 0.51,
+          "temp_z_max": 3.0,
+          "wind100_z_min": -2.17
+        },
+        "cif_std": 33.6,
+        "cif_std_ratio": 1.27,
+        "wind_share_mean": 0.089
+      },
+      {
+        "event": "Storm Agnes (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 2.19,
+          "pres_tend6_min": -8.9,
+          "precip6_max_mm": 6.0,
+          "temp_z_min": 0.01,
+          "temp_z_max": 1.28,
+          "wind100_z_min": -1.46
+        },
+        "cif_std": 44.1,
+        "cif_std_ratio": 1.67,
+        "wind_share_mean": 0.426
+      },
+      {
+        "event": "Storm Babet (extreme rain)",
+        "type": "cyclone/gust+heavy-rain+wind-lull",
+        "stats": {
+          "gust_z_max": 2.56,
+          "pres_tend6_min": -9.0,
+          "precip6_max_mm": 19.4,
+          "temp_z_min": -0.85,
+          "temp_z_max": 1.2,
+          "wind100_z_min": -2.08
+        },
+        "cif_std": 59.7,
+        "cif_std_ratio": 2.26,
+        "wind_share_mean": 0.501
+      },
+      {
+        "event": "Storm Ciar\u00e1n (extreme gusts)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 2.51,
+          "pres_tend6_min": -15.8,
+          "precip6_max_mm": 10.6,
+          "temp_z_min": -0.75,
+          "temp_z_max": 0.32,
+          "wind100_z_min": -0.57
+        },
+        "cif_std": 25.5,
+        "cif_std_ratio": 0.96,
+        "wind_share_mean": 0.465
+      },
+      {
+        "event": "Storm Debi (wind)",
+        "type": "cyclone/gust+heavy-rain",
+        "stats": {
+          "gust_z_max": 3.1,
+          "pres_tend6_min": -11.6,
+          "precip6_max_mm": 10.7,
+          "temp_z_min": -0.92,
+          "temp_z_max": 0.34,
+          "wind100_z_min": -0.31
+        },
+        "cif_std": 60.3,
+        "cif_std_ratio": 2.29,
+        "wind_share_mean": 0.409
+      },
+      {
+        "event": "Storm Elin/Fergus (wind+rain)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.99,
+          "pres_tend6_min": -11.4,
+          "precip6_max_mm": 9.0,
+          "temp_z_min": -1.47,
+          "temp_z_max": 0.17,
+          "wind100_z_min": -1.47
+        },
+        "cif_std": 68.8,
+        "cif_std_ratio": 2.61,
+        "wind_share_mean": 0.396
+      },
+      {
+        "event": "Storm Gerrit (wind/rain/snow)",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 3.37,
+          "pres_tend6_min": -10.9,
+          "precip6_max_mm": 7.8,
+          "temp_z_min": -1.18,
+          "temp_z_max": 0.23,
+          "wind100_z_min": 0.04
+        },
+        "cif_std": 11.4,
+        "cif_std_ratio": 0.43,
+        "wind_share_mean": 0.582
+      }
+    ],
+    "US_CISO": [
+      {
+        "event": "Hurricane Hilary remnant TS",
+        "type": "cyclone/gust",
+        "stats": {
+          "gust_z_max": 4.54,
+          "pres_tend6_min": -4.3,
+          "precip6_max_mm": 14.9,
+          "temp_z_min": 0.13,
+          "temp_z_max": 2.35,
+          "wind100_z_min": -1.5
+        },
+        "cif_std": 42.8,
+        "cif_std_ratio": 0.83,
+        "wind_share_mean": 0.055
+      },
+      {
+        "event": "July heat wave",
+        "type": "heat",
+        "stats": {
+          "gust_z_max": 1.82,
+          "pres_tend6_min": -3.9,
+          "precip6_max_mm": 0.0,
+          "temp_z_min": -0.49,
+          "temp_z_max": 3.22,
+          "wind100_z_min": -1.45
+        },
+        "cif_std": 49.1,
+        "cif_std_ratio": 0.96,
+        "wind_share_mean": 0.083
+      }
+    ],
+    "US_PJM": [
+      {
+        "event": "Feb cold snap",
+        "type": "cyclone/gust+freeze/cold+wind-lull",
+        "stats": {
+          "gust_z_max": 3.39,
+          "pres_tend6_min": -8.9,
+          "precip6_max_mm": 0.2,
+          "temp_z_min": -2.72,
+          "temp_z_max": -0.57,
+          "wind100_z_min": -1.7
+        },
+        "cif_std": 22.1,
+        "cif_std_ratio": 1.85,
+        "wind_share_mean": 0.058
+      },
+      {
+        "event": "July heat dome",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 3.5,
+          "pres_tend6_min": -6.3,
+          "precip6_max_mm": 2.8,
+          "temp_z_min": 0.19,
+          "temp_z_max": 2.36,
+          "wind100_z_min": -2.01
+        },
+        "cif_std": 18.2,
+        "cif_std_ratio": 1.52,
+        "wind_share_mean": 0.015
+      }
+    ],
+    "US_MISO": [
+      {
+        "event": "July heat dome",
+        "type": "wind-lull",
+        "stats": {
+          "gust_z_max": 2.3,
+          "pres_tend6_min": -3.6,
+          "precip6_max_mm": 7.3,
+          "temp_z_min": 0.23,
+          "temp_z_max": 2.25,
+          "wind100_z_min": -2.12
+        },
+        "cif_std": 25.5,
+        "cif_std_ratio": 0.94,
+        "wind_share_mean": 0.062
+      }
+    ],
+    "US_ERCO": [
+      {
+        "event": "Winter Storm Mara (freeze/ice)",
+        "type": "cyclone/gust+freeze/cold",
+        "stats": {
+          "gust_z_max": 1.56,
+          "pres_tend6_min": -5.5,
+          "precip6_max_mm": 6.1,
+          "temp_z_min": -2.61,
+          "temp_z_max": -1.04,
+          "wind100_z_min": -1.03
+        },
+        "cif_std": 48.6,
+        "cif_std_ratio": 1.35,
+        "wind_share_mean": 0.106
+      },
+      {
+        "event": "July heat dome",
+        "type": "wind-lull",
+        "stats": {
+          "gust_z_max": 1.4,
+          "pres_tend6_min": -5.6,
+          "precip6_max_mm": 0.0,
+          "temp_z_min": 0.38,
+          "temp_z_max": 1.94,
+          "wind100_z_min": -1.93
+        },
+        "cif_std": 27.3,
+        "cif_std_ratio": 0.76,
+        "wind_share_mean": 0.179
+      },
+      {
+        "event": "August heat dome",
+        "type": "cyclone/gust+wind-lull",
+        "stats": {
+          "gust_z_max": 2.49,
+          "pres_tend6_min": -7.1,
+          "precip6_max_mm": 0.0,
+          "temp_z_min": 0.5,
+          "temp_z_max": 2.22,
+          "wind100_z_min": -2.19
+        },
+        "cif_std": 37.5,
+        "cif_std_ratio": 1.05,
+        "wind_share_mean": 0.144
+      }
+    ],
+    "US_FPL": [
+      {
+        "event": "Hurricane Idalia (Cat 3 landfall)",
+        "type": "gust+wind-lull",
+        "stats": {
+          "gust_z_max": 5.14,
+          "pres_tend6_min": -3.3,
+          "precip6_max_mm": 11.4,
+          "temp_z_min": -0.02,
+          "temp_z_max": 2.1,
+          "wind100_z_min": -1.79
+        },
+        "cif_std": 14.7,
+        "cif_std_ratio": 0.64,
+        "wind_share_mean": 0.0
+      }
+    ]
+  }
+}

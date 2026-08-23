@@ -89,7 +89,8 @@ def _load_fuel_shares():
         return
     global _FUEL_ORDER
     seen_orders = []
-    for name in ("fuel_shares_us.json", "fuel_shares_uk.json"):
+    for name in ("fuel_shares_us.json", "fuel_shares_uk.json",
+                 "fuel_shares_au.json"):
         path = FUEL_DIR / name
         if not path.exists():
             continue

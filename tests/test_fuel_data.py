@@ -14,8 +14,9 @@ from transcif.config.region_meta import REGION_META, get_region_meta
 from transcif.data.fuel import (
     CANONICAL_FUELS, FUEL_INDEX, THERMAL_FUELS, canonical_fuel_efs,
     load_fuel_shares, attach_fuel_and_exog, region_fuel_efs, fuel_cif,
-    build_fd_windows, jurisdiction_renewable_fuels,
+    build_fd_windows, jurisdiction_renewable_fuels, load_raw_weather,
 )
+from transcif.physics.astro import wind_capacity_factor
 from transcif.data.loaders import all_region_configs, load_region_data
 
 HAS_DATA = None
@@ -67,10 +68,13 @@ class TestFuelSeries:
         assert 0.95 < shares.sum(axis=1).mean() <= 1.05
 
     @pytest.mark.skipif(not _has_data(), reason="data_2023 not present")
-    def test_au_region_has_no_fuel(self):
+    def test_au_region_has_fuel(self):
+        # AU gained per-fuel telemetry via NEMED DUID extraction (FD-14).
         cfgs = all_region_configs()
         hours, shares = load_fuel_shares("QLD1", cfgs)
-        assert hours is None and shares is None
+        assert hours is not None
+        assert shares.shape[1] == len(CANONICAL_FUELS)
+        assert 0.9 < shares.sum(axis=1).mean() <= 1.05
 
     @pytest.mark.skipif(not _has_data(), reason="data_2023 not present")
     def test_solar_share_peaks_midday_utc_offset(self):
@@ -95,16 +99,18 @@ class TestAttachAndWindows:
             assert data["exog"][key].shape[0] == T
 
     @pytest.mark.skipif(not _has_data(), reason="data_2023 not present")
-    def test_attach_au_zeros(self):
+    def test_attach_au_fuel_aligned(self):
         cfgs = all_region_configs()
         data = load_region_data("QLD1", cfgs)
         attach_fuel_and_exog(data, "QLD1", cfgs)
-        assert data["has_fuel"] is False
+        assert data["has_fuel"] is True
         assert data["fuel_shares"].shape == (len(data["rs"]), len(CANONICAL_FUELS))
-        assert (data["fuel_shares"] == 0).all()
-        # AU thermal EFs collapse to ef_nr -> coal/gas split has no CIF effect
-        thermal = data["ef_vec"][[FUEL_INDEX[f] for f in THERMAL_FUELS]]
-        assert np.allclose(thermal, data["ef_nr"])
+        # Thermal trio is rescaled to the region ef_nr (black coal QLD 841.59)
+        thermal_mass = data["fuel_shares"][: int(len(data["fuel_shares"]) * 0.8),
+                                           [FUEL_INDEX[f] for f in THERMAL_FUELS]].sum()
+        if thermal_mass > 0.5:
+            assert data["ef_vec"][FUEL_INDEX["coal"]] > 700
+            assert data["ef_vec"][FUEL_INDEX["coal"]] < 1000
 
     @pytest.mark.skipif(not _has_data(), reason="data_2023 not present")
     def test_ef_vec_matches_region_efnr(self):
@@ -131,15 +137,14 @@ class TestAttachAndWindows:
         cfgs = all_region_configs()
         maes = {}
         for name in cfgs:
-            if name.startswith(("QLD", "NSW", "VIC", "SA")):
-                continue
             data = load_region_data(name, cfgs)
             attach_fuel_and_exog(data, name, cfgs)
             cif_hat = fuel_cif(data["fuel_shares"], data["ef_vec"])
             maes[name] = np.abs(cif_hat - data["cif"]).mean()
-        assert statistics.median(maes.values()) < 15.0
+        assert statistics.median(maes.values()) < 30.0
         assert maes["US_CISO"] < 15.0
         assert maes["UK_13_London"] < 45.0  # documented API accounting gap
+        assert maes["VIC1"] < 60.0  # brown-coal rescaled EF
 
     @pytest.mark.skipif(not _has_data(), reason="data_2023 not present")
     def test_windows_shape_and_alignment(self):
@@ -150,7 +155,7 @@ class TestAttachAndWindows:
         assert w["x_rs"].shape[1] == 336
         assert w["y_cif"].shape[1] == 24
         assert w["x_fuel"].shape == (len(w["x_rs"]), 336, len(CANONICAL_FUELS))
-        assert w["fut_exog"].shape == (len(w["x_rs"]), 24, 10)
+        assert w["fut_exog"].shape == (len(w["x_rs"]), 24, 17)
         # y_fuel at window i must correspond to hours origin+i.. (calendar
         # consistency: future astro daytime iff y_fuel solar can be > 0)
         i = len(w["x_rs"]) // 2
@@ -185,3 +190,35 @@ class TestUnitEFs:
         data = {"ef_nr": 841.59, "fuel_shares": None, "has_fuel": False}
         ef_vec = region_fuel_efs(data, "QLD1")
         assert ef_vec[FUEL_INDEX["gas"]] == 841.59
+
+
+class TestWindUnitFix:
+    """FD-17: Open-Meteo km/h -> m/s at the loader; farmblend override."""
+
+    @pytest.mark.skipif(not _has_data(), reason="data_2023 not present")
+    def test_wind_converted_to_ms(self):
+        from transcif.config import DATA_DIR
+        cfgs = all_region_configs()
+        h, w = load_raw_weather("US_FPL", cfgs)
+        raw = pd.read_csv(DATA_DIR / "weather" / "US_FPL_weather_2023_hourly.csv")
+        i = 100
+        assert w[i, 2] == pytest.approx(raw["wind_speed_100m"].iloc[i] / 3.6,
+                                        rel=1e-4)
+
+    @pytest.mark.skipif(not _has_data(), reason="data_2023 not present")
+    def test_farmblend_preferred_and_converted(self):
+        from transcif.config import DATA_DIR
+        cfgs = all_region_configs()
+        farm = DATA_DIR / "weather" / "VIC1_farmblend_weather_2023_hourly.csv"
+        if not farm.exists():
+            pytest.skip("farmblend file not downloaded")
+        h, w = load_raw_weather("VIC1", cfgs)
+        raw = pd.read_csv(farm)
+        i = 100
+        assert w[i, 2] == pytest.approx(raw["wind_speed_100m"].iloc[i] / 3.6,
+                                        rel=1e-4)
+
+    def test_iec_curve_sane_after_fix(self):
+        # 8 m/s sits mid-ramp, 30 km/h (=8.3 m/s) must NOT read as cut-out.
+        cf = wind_capacity_factor(np.array([30.0]) / 3.6)
+        assert 0.2 < cf[0] < 1.0

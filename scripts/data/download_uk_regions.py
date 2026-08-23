@@ -26,8 +26,10 @@ def fetch_region_chunk(region_id: int, start: datetime, end: datetime):
     e = end.strftime("%Y-%m-%dT%H:%MZ")
     url = f"{BASE_URL}/regional/intensity/{s}/{e}/regionid/{region_id}"
     try:
-        resp = urllib.request.urlopen(url, timeout=30)
-        data = json.load(resp)
+        import subprocess
+        resp_out = subprocess.run(
+            ["curl", "-s", "-m", "30", url], capture_output=True, check=True).stdout
+        data = json.loads(resp_out)
         return data["data"]["data"]
     except Exception as ex:
         print(f"    WARN: {region_id} {s}→{e}: {ex}")
@@ -39,7 +41,13 @@ def parse_intervals(intervals):
     rows = []
     for iv in intervals:
         t = datetime.fromisoformat(iv["from"].replace("Z", "+00:00"))
-        intensity = iv["intensity"].get("forecast", None)  # actual not always available
+        # Use measured regional intensity whenever available.  The forecast is
+        # a prediction product and must not silently become the training label.
+        intensity = iv["intensity"].get("actual", None)
+        source = "actual"
+        if intensity is None:
+            intensity = iv["intensity"].get("forecast", None)
+            source = "forecast"
         mix = {g["fuel"]: g["perc"] for g in iv.get("generationmix", [])}
         
         renew_pct = sum(mix.get(f, 0) for f in RENEW_FUELS)
@@ -53,6 +61,7 @@ def parse_intervals(intervals):
                 "renew_pct": renew_pct,
                 "nonrenew_pct": nonrenew_pct,
                 "cif_gco2_per_kwh": intensity,
+                "cif_source": source,
                 "renew_share": rs,
             })
     return rows
@@ -85,7 +94,7 @@ def get_all_regions():
 def download_region_year(region_id, region_name, year=2023):
     """Download full year in 14-day chunks, aggregate to hourly."""
     safe_name = region_name.replace(" ", "_")
-    out_path = f"{OUT_DIR}/UK_{region_id:02d}_{safe_name}_2023_hourly.csv"
+    out_path = f"{OUT_DIR}/UK_{region_id:02d}_{safe_name}_{year}_hourly.csv"
     if os.path.exists(out_path):
         print(f"  [skip] {out_path} exists")
         return out_path
@@ -117,6 +126,7 @@ def download_region_year(region_id, region_name, year=2023):
         nonrenew_pct=("nonrenew_pct", "mean"),
         cif_real_gco2_per_kwh=("cif_gco2_per_kwh", "mean"),
         renew_share=("renew_share", "mean"),
+        cif_source=("cif_source", lambda s: "actual" if (s == "actual").any() else "forecast"),
     ).reset_index()
     
     # Normalize pct to pseudo-energy (total=100 per hour)
@@ -137,12 +147,20 @@ def download_region_year(region_id, region_name, year=2023):
 
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--years", nargs="+", type=int, default=[2023])
+    parser.add_argument("--region-ids", nargs="*", type=int, default=None)
+    args = parser.parse_args()
     print("Fetching UK region list...")
     regions = get_all_regions()
+    if args.region_ids:
+        regions = [r for r in regions if r["id"] in set(args.region_ids)]
     print(f"Found {len(regions)} regions: {[r['name'] for r in regions]}")
     
     for r in regions:
         print(f"\n[{r['id']:02d}] {r['name']}...")
-        download_region_year(r["id"], r["name"])
+        for year in args.years:
+            download_region_year(r["id"], r["name"], year=year)
     
     print("\n=== Done ===")

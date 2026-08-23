@@ -29,6 +29,15 @@
 - 测试窗:最后 20%,L=336 h,H=24 h,stride=24;指标在每个 (区域, seed) 上汇总后报告中位数/均值
 - 显著性:配对 Wilcoxon / paired-t / bootstrap CI(20k) + Holm-Bonferroni(`evaluation/stats.py`)
 
+**日前预报双轨道**(未来信息合法性,见 `results/fuel_decomp_fd8_verdict.md`):
+
+| 轨道 | 未来 24 h 天气 | 说明 |
+|---|---|---|
+| **Track A(主榜)** | 再分析(完美知识) | 与文献可比(EnsembleCI 同口径);天文/日历通道本就确定 |
+| **Track B(部署口径)** | NWP 报技能退化:温度 N(0,2K)、风速 ×(1+N(0,20%))、短波 ×(1+N(0,25%)),派生量一致重算(`--weather-noise`) | 实测敏感度:MAE 中位不变、均值 +2-4%(n.s.),Spearman −0.02 |
+
+输入合法性硬规则:目标值(CIF/份额)从不进入输入;历史通道严格取 origin 之前;ZS+ 分支全为滞后量;月度统计 1 月发布滞后。
+
 ## 4. 指标
 
 | 指标 | 定义 | 为什么 |

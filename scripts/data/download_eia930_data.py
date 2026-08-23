@@ -17,15 +17,19 @@ import urllib.request
 import numpy as np
 import pandas as pd
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data_2023"
+DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data_2023"
 RAW_DIR = DATA_DIR / "raw_eia930"
 RAW_DIR.mkdir(exist_ok=True)
 
 # EIA-930 download URLs (6-month bulk files)
-EIA_URLS = {
-    "gen_jan_jun_2023": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2023_Jan_Jun.csv",
-    "gen_jul_dec_2023": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2023_Jul_Dec.csv",
-}
+YEAR = 2023  # overridden by --year
+
+
+def eia_urls(year):
+    return {
+        f"gen_jan_jun_{year}": f"https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_{year}_Jan_Jun.csv",
+        f"gen_jul_dec_{year}": f"https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_{year}_Jul_Dec.csv",
+    }
 
 # US Balancing Authority regions to extract
 US_REGIONS = {
@@ -73,7 +77,7 @@ RENEWABLE_SOURCES = {"solar", "wind", "hydro", "other renewables"}
 
 def download_files():
     """Download EIA-930 CSV files if not already present."""
-    for name, url in EIA_URLS.items():
+    for name, url in eia_urls(YEAR).items():
         filepath = RAW_DIR / f"{name}.csv"
         if filepath.exists():
             print(f"  Already exists: {filepath.name}")
@@ -91,7 +95,7 @@ def download_files():
 def load_and_merge_eia():
     """Load and merge the two 6-month CSV files."""
     dfs = []
-    for name in EIA_URLS:
+    for name in eia_urls(YEAR):
         filepath = RAW_DIR / f"{name}.csv"
         if not filepath.exists():
             print(f"  Missing: {filepath}. Run download first.")
@@ -184,6 +188,12 @@ def estimate_emission_factors(df):
 
 
 def main():
+    import argparse
+    global YEAR
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--year", type=int, default=2023)
+    args = ap.parse_args()
+    YEAR = args.year
     print("=" * 70)
     print("Phase 1.2: EIA-930 US Data Download & Processing")
     print("=" * 70)
@@ -198,7 +208,7 @@ def main():
     if df is None:
         print("No data available. Please download manually.")
         print("URLs:")
-        for name, url in EIA_URLS.items():
+        for name, url in eia_urls(YEAR).items():
             print(f"  {url}")
         sys.exit(1)
 
@@ -244,7 +254,7 @@ def main():
         ef_r, ef_nr = estimate_emission_factors(result)
 
         # Save to CSV
-        outfile = DATA_DIR / f"US_{region_code}_2023_hourly.csv"
+        outfile = DATA_DIR / f"US_{region_code}_{YEAR}_hourly.csv"
         result.to_csv(outfile, index=False)
 
         mean_rs = result["renew_share"].mean()

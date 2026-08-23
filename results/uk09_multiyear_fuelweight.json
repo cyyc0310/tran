@@ -1,0 +1,118 @@
+{
+ "rows": [
+  {
+   "target": "UK_09_East_Midlands",
+   "seed": 0,
+   "n_test": 218,
+   "mean_rs": 0.41301918029785156,
+   "ef_nr": 413.3649591514971,
+   "has_fuel": true,
+   "train_s": 10.0,
+   "selected_route_tau": 0.45,
+   "source_route_scores": {
+    "0.45": 55.07397299587896,
+    "1.1": 55.1020004658501
+   },
+   "fuel_i0": {
+    "mae": 51.31382493487921,
+    "rmse": 64.18957098028825,
+    "bias": 10.72525328251929,
+    "diurnal_mae": 35.47482645760739,
+    "monthly_shape_mae": 46.5254582292443,
+    "spearman": 0.47887906480909564,
+    "std_metrics": {
+     "mae": 51.31382751464844,
+     "rmse": 64.1895751953125,
+     "smape": 31.06763458251953
+    }
+   },
+   "fuel_i0_phys": {
+    "mae": 52.28493908913493,
+    "rmse": 65.14874808710886,
+    "bias": 23.31503340027748,
+    "diurnal_mae": 35.174804415815835,
+    "monthly_shape_mae": 50.35492492068433,
+    "spearman": 0.455428799361787
+   },
+   "fuel_i_cfg": {
+    "mae": 79.86749496153735,
+    "rmse": 94.86946154998797,
+    "bias": 70.03790908997212,
+    "diurnal_mae": 34.78262216879566,
+    "monthly_shape_mae": 74.29472884344399,
+    "spearman": 0.43621342821849046,
+    "std_metrics": {
+     "mae": 79.86750030517578,
+     "rmse": 94.86946105957031,
+     "smape": 43.412818908691406
+    }
+   },
+   "fuel_i_cfg_phys": {
+    "mae": 88.14778062910844,
+    "rmse": 102.71589444230231,
+    "bias": 82.62768920773031,
+    "diurnal_mae": 34.08473868599725,
+    "monthly_shape_mae": 85.42209255585976,
+    "spearman": 0.4135181491822895
+   },
+   "fuel_i_plus": {
+    "mae": 55.20153158142029,
+    "rmse": 69.90842864595773,
+    "bias": 0.6643836335487248,
+    "diurnal_mae": 32.03677504809189,
+    "monthly_shape_mae": 45.82010877255419,
+    "spearman": 0.5671830791080318,
+    "std_metrics": {
+     "mae": 55.20153158142029,
+     "rmse": 69.90842864595773,
+     "smape": 32.5447837383871
+    }
+   },
+   "persistence": {
+    "mae": 61.610028033591924,
+    "rmse": 80.10664208118531,
+    "bias": 0.6160168195718655,
+    "diurnal_mae": 38.904736878128226,
+    "monthly_shape_mae": 63.878855475591955,
+    "spearman": 0.46782484605417163
+   },
+   "config_constant": {
+    "mae": 86.523253736146,
+    "rmse": 102.03117755489293,
+    "bias": 60.77370276217796,
+    "diurnal_mae": 38.65272203206287,
+    "monthly_shape_mae": 60.77371166824201,
+    "spearman": 0.0
+   },
+   "monthly_constant": {
+    "mae": 63.60368113926062,
+    "rmse": 76.35333744379835,
+    "bias": -8.906064048090478e-06,
+    "diurnal_mae": 38.65272203206287,
+    "monthly_shape_mae": 0.0,
+    "spearman": 0.0
+   }
+  }
+ ],
+ "meta": {
+  "epochs": 300,
+  "p_cold": 0.3,
+  "p_mix": 0.0,
+  "use_hypernet": false,
+  "weight_mode": "fuel",
+  "ef_corr_bound": 0.35,
+  "lambda_shape": 0.5,
+  "lambda_fuel": 1.0,
+  "lambda_rs": 0.3,
+  "use_monthly": true,
+  "lag_months": 1,
+  "weather_noise": false,
+  "evening_weight": 1.0,
+  "solar_mod_bound": 0.4,
+  "wind_route_tau": 1.1,
+  "domain_penalty": 0.0,
+  "physics_target": false,
+  "source_route_select": true,
+  "max_windows": 700
+ }
+}

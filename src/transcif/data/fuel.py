@@ -68,11 +68,13 @@ def load_fuel_shares(region_name, all_configs, data_dir=None):
     if info is None:
         return None, None
     stem = info["file"].replace("_2023_hourly.csv", "")
-    path = data_dir / "fuel" / f"{stem}_fuel_2023_hourly.csv"
-    if not path.exists():
+    paths = sorted((data_dir / "fuel").glob(f"{stem}_fuel_*_hourly.csv"))
+    if not paths:
         return None, None
-    df = pd.read_csv(path, parse_dates=["hour"])
-    df = df.sort_values("hour").reset_index(drop=True)
+    df = (pd.concat([pd.read_csv(p, parse_dates=["hour"]) for p in paths],
+                    ignore_index=True)
+            .drop_duplicates("hour", keep="last")
+            .sort_values("hour").reset_index(drop=True))
     hours = pd.DatetimeIndex(df["hour"])
     T = len(df)
     shares = np.zeros((T, len(CANONICAL_FUELS)), dtype=np.float32)
@@ -94,7 +96,7 @@ def load_fuel_shares(region_name, all_configs, data_dir=None):
     return hours, shares
 
 
-def load_raw_weather(region_name, all_configs, data_dir=None):
+def load_raw_weather(region_name, all_configs, data_dir=None, multi_year=False):
     """Load RAW (un-normalised) per-hour weather (T, 3) by timestamp.
 
     Columns: temperature_c, shortwave_radiation (W/m^2), wind_speed_100m
@@ -108,16 +110,142 @@ def load_raw_weather(region_name, all_configs, data_dir=None):
     if info is None:
         return None, None
     stem = info["file"].replace("_2023_hourly.csv", "")
-    path = data_dir / "weather" / f"{stem}_weather_2023_hourly.csv"
+    # Wind-farm blend override (FD-17): when a capacity-weighted
+    # farm-fleet weather file exists (VIC1/SA1 — centroid cells badly
+    # misrepresent clustered wind fleets), prefer it.  Same schema and
+    # units as the centroid file; the wind column is the blended 100 m
+    # speed, temperature/shortwave stay centroid (demand channels).
+    farm_paths = sorted((data_dir / "weather").glob(
+        f"{stem}_farmblend_weather_*_hourly.csv"))
+    if not farm_paths and region_name.startswith("UK_"):
+        # GB synoptic wind is nationwide-coherent (FD-26): UK regions
+        # without their own farm table share the national fleet blend.
+        farm_paths = sorted((data_dir / "weather").glob(
+            "UK_18_GB_farmblend_weather_*_hourly.csv"))
+    paths = farm_paths or sorted((data_dir / "weather").glob(
+        f"{stem}_weather_*_hourly.csv"))
+    if not multi_year:
+        paths = [p for p in paths if p.name.endswith("_2023_hourly.csv")]
+    if not paths:
+        return None, None
+    df = (pd.concat([pd.read_csv(p, parse_dates=["hour"]) for p in paths],
+                    ignore_index=True)
+            .drop_duplicates("hour", keep="last")
+            .sort_values("hour").reset_index(drop=True))
+    cols = ["temperature_c", "shortwave_radiation", "wind_speed_100m"]
+    arr = df[cols].values.astype(np.float32)
+    # UNIT FIX (FD-17): the Open-Meteo archive serves wind speed in km/h
+    # (its default) — 39-42% of hours sat above the IEC cut-out when fed
+    # to the m/s power curve, reading good wind as zero output.  Convert
+    # here so every consumer (wind CF channel, regime features, annual
+    # climatology config, weather-noise track) sees m/s.
+    arr[:, 2] = arr[:, 2] / 3.6
+    return pd.DatetimeIndex(df["hour"]), arr
+
+
+def load_pressure_winds(region_name, all_configs, data_dir=None):
+    """Load optional gust + synoptic-pressure tracks (T, 2) by timestamp.
+
+    From ``data_2023/weather2/{REGION}_wind2_2023_hourly.csv`` (Open-Meteo
+    ERA5: wind_gusts_10m km/h -> m/s, pressure_msl -> hPa anomaly from
+    1013).  Returns ``(hours, array)`` or ``(None, None)`` when absent —
+    the FD layer degrades gracefully to zeros.
+    """
+    if data_dir is None:
+        data_dir = DATA_DIR
+    info = all_configs.get(region_name)
+    if info is None:
+        return None, None
+    stem = info["file"].replace("_2023_hourly.csv", "")
+    path = data_dir / "weather2" / f"{stem}_wind2_2023_hourly.csv"
     if not path.exists():
         return None, None
     df = pd.read_csv(path, parse_dates=["hour"])
     df = df.sort_values("hour").reset_index(drop=True)
-    cols = ["temperature_c", "shortwave_radiation", "wind_speed_100m"]
-    return pd.DatetimeIndex(df["hour"]), df[cols].values.astype(np.float32)
+    gust = df["wind_gusts_10m"].values / 3.6                  # km/h -> m/s
+    pres = df["pressure_msl"].values - 1013.0                  # hPa anomaly
+    w = np.stack([gust, pres], axis=1)
+    return pd.DatetimeIndex(df["hour"]), w.astype(np.float32)
 
 
-def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None):
+def load_demand(region_name, all_configs, data_dir=None):
+    """Load optional hourly demand (T, 2) by timestamp: actual + forecast.
+
+    From ``data_2023/demand/{REGION}_demand_2023_hourly.csv`` (EIA-930;
+    the forecast column is the balancing authority's own DAY-AHEAD load
+    forecast — deployment-legal day-ahead input).  Returns
+    ``(hours, array)`` or ``(None, None)`` for non-US regions.
+    """
+    if data_dir is None:
+        data_dir = DATA_DIR
+    info = all_configs.get(region_name)
+    if info is None:
+        return None, None
+    stem = info["file"].replace("_2023_hourly.csv", "")
+    path = data_dir / "demand" / f"{stem}_demand_2023_hourly.csv"
+    if not path.exists():
+        return None, None
+    df = pd.read_csv(path, parse_dates=["hour"])
+    df = df.sort_values("hour").reset_index(drop=True)
+    return pd.DatetimeIndex(df["hour"]), df[
+        ["demand_actual_mw", "demand_forecast_mw"]].values.astype(np.float32)
+
+
+def load_regional_state(region_name, all_configs, data_dir=None):
+    """Load optional public AU hourly system-state output.
+
+    This is a causal deployment feature: the past channel is observed
+    regional sent-out generation, while the future channel is constructed in
+    ``attach_fuel_and_exog`` from a train-only month/hour climatology.
+    """
+    if data_dir is None:
+        data_dir = DATA_DIR
+    info = all_configs.get(region_name)
+    if info is None or not region_name.endswith(("1", "2", "3", "4", "5")):
+        return None, None
+    stem = info["file"].replace("_2023_hourly.csv", "")
+    path = data_dir / "state" / f"{stem}_state_2023_hourly.csv"
+    if not path.exists():
+        return None, None
+    df = pd.read_csv(path, parse_dates=["hour"]).sort_values("hour")
+    return pd.DatetimeIndex(df["hour"]), df[
+        ["generation_sent_out_mw"]].values.astype(np.float32)
+
+
+def load_prices_2023(data_dir=None):
+    """Monthly fuel prices (World Bank pink sheet + FRED), z-scored.
+
+    Returns {jurisdiction: (coal_z (12,), gas_z (12,))} or None.  AU gas
+    proxies to Japan LNG (east-coast export parity); UK to Europe TTF; US
+    to the FRED daily Henry-Hub monthly mean (fallback: pink-sheet US).
+    """
+    if data_dir is None:
+        data_dir = DATA_DIR
+    path = data_dir / "prices" / "prices_2023.csv"
+    if not path.exists():
+        return None
+    df = pd.read_csv(path)
+
+    def z(v):
+        v = np.asarray(v, dtype=np.float64)
+        s = np.nanstd(v)
+        return np.nan_to_num((v - np.nanmean(v)) / (s if s > 1e-9 else 1.0))
+
+    gas_us = df["gas_us_daily"].fillna(df["gas_us"])
+    return {
+        "au": (z(df["coal_newc"]), z(df["gas_jp"])),
+        "uk": (z(df["coal_newc"]), z(df["gas_eu"])),
+        "us": (z(df["coal_newc"]), z(gas_us)),
+    }
+
+
+def jurisdiction_of(region_name):
+    return "us" if region_name.startswith("US_") else (
+        "uk" if region_name.startswith("UK_") else "au")
+
+
+def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None,
+                         use_au_state=False):
     """Enrich a ``load_region_data`` dict with fuel shares + exog features.
 
     Adds keys (all aligned to ``len(data['rs'])``):
@@ -147,43 +275,185 @@ def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None):
     has_fuel = fuel_hours is not None
     if has_fuel:
         # Timestamp join onto the cleaned rs series; missing rows -> zeros.
+        # Dedup the SOURCE index first (DST repeated hours), then reindex to
+        # ``hours`` so the result is exactly aligned to len(rs).
         fdf = pd.DataFrame(fuel_shares, index=fuel_hours)
+        fdf = fdf[~fdf.index.duplicated(keep="first")]
         joined = fdf.reindex(hours).fillna(0.0)
-        # Guard against duplicate timestamps in either index.
-        joined = joined[~joined.index.duplicated(keep="first")]
         fuel_shares = joined.values.astype(np.float32)
     else:
         fuel_shares = np.zeros((T, len(CANONICAL_FUELS)), dtype=np.float32)
 
     lat, lon, tz = get_region_meta(region_name)
-    sin_elev = sin_solar_elevation(hours, lat, lon)
+    # Timeline normalisation: US/UK dataset timestamps are UTC, but AU NEM
+    # series are LOCAL (NEM time, UTC+10) — astronomy and the UTC-stamped
+    # weather joins must therefore run on a converted index for AU.
+    # (QLD is DST-free so the fixed offset is exact; NSW/VIC/SA carry a
+    # 1 h summer kink, documented.)
+    if jurisdiction_of(region_name) == "au":
+        # NEM local -> UTC with DST correction: NSW/VIC/SA observe
+        # summer time (Oct-Apr, +1 h); QLD does not.
+        dst_regions = {"NSW1", "VIC1", "SA1"}
+        in_dst_months = np.isin(
+            np.asarray(hours.month), [10, 11, 12, 1, 2, 3])
+        off = tz + (in_dst_months.astype(float)
+                    if region_name in dst_regions else 0.0)
+        hours_utc = hours - pd.to_timedelta(off, unit="h")
+    else:
+        hours_utc = hours
+    sin_elev = sin_solar_elevation(hours_utc, lat, lon)
     astro = np.stack([sin_elev, clearsky_ghi(sin_elev)], axis=1).astype(np.float32)
     clearsky = np.maximum(astro[:, 1], 1.0)
-    cal = calendar_features(hours, tz_offset=tz)
+    cal = calendar_features(hours_utc, tz_offset=tz)
 
-    w_hours, w_raw = load_raw_weather(region_name, all_configs, data_dir)
+    w_hours, w_raw = load_raw_weather(
+        region_name, all_configs, data_dir,
+        multi_year=bool(len(data.get("hours", [])) > 9000))
     if w_hours is not None:
         wdf = pd.DataFrame(w_raw, index=w_hours)
         wdf = wdf[~wdf.index.duplicated(keep="first")]
-        w_joined = wdf.reindex(hours)
+        w_joined = wdf.reindex(hours_utc)
         weather = np.nan_to_num(w_joined.values, nan=0.0).astype(np.float32)
     else:
         weather = np.zeros((T, 3), dtype=np.float32)
 
     wind_cf = wind_capacity_factor(weather[:, 2]).astype(np.float32)
     csi = np.clip(weather[:, 1] / clearsky, 0.0, 1.3).astype(np.float32)
-    # 5-channel weather-exog matrix: physical raw values + physics transforms
-    # so models never need to re-learn the turbine curve / clear-sky ratio.
-    wx = np.concatenate([weather, wind_cf[:, None], csi[:, None]], axis=1).astype(np.float32)
+    # Degree-hour channels (roadmap C-class): heating/cooling degree hours
+    # drive the thermal dispatch response to load (the duck-curve evening
+    # ramp) — HDH = max(0, 15.5 - T), CDH = max(0, T - 22).
+    hdh = np.clip(15.5 - weather[:, 0], 0.0, None).astype(np.float32)
+    cdh = np.clip(weather[:, 0] - 22.0, 0.0, None).astype(np.float32)
+    # Gust + synoptic pressure (roadmap B-class): ramp-event proxy and
+    # frontal signal, timestamp-joined; graceful zeros when absent.
+    p_hours, p_winds = load_pressure_winds(region_name, all_configs, data_dir)
+    if p_hours is not None:
+        pdf = pd.DataFrame(p_winds, index=p_hours)
+        pdf = pdf[~pdf.index.duplicated(keep="first")]
+        p_joined = pdf.reindex(hours_utc)
+        winds2 = np.nan_to_num(p_joined.values, nan=0.0).astype(np.float32)
+    else:
+        winds2 = np.zeros((T, 2), dtype=np.float32)
+    # 7-channel weather-exog matrix: raw surface weather + physics
+    # transforms + pressure-level winds.
+    wx = np.concatenate([weather, wind_cf[:, None], csi[:, None], winds2],
+                        axis=1).astype(np.float32)
+
+    # Demand channels (roadmap E/C-class, FD-15): EIA-930 actual (past
+    # windows) + day-ahead forecast (horizon), z-scored on the train split.
+    d_hours, d_raw = load_demand(region_name, all_configs, data_dir)
+    demand = np.zeros((T, 2), dtype=np.float32)
+    if d_hours is not None:
+        ddf = pd.DataFrame(d_raw, index=d_hours)
+        ddf = ddf[~ddf.index.duplicated(keep="first")]
+        dj = ddf.reindex(hours_utc)   # US timelines are UTC already
+        vals = np.nan_to_num(dj.values, nan=0.0)
+        split = int(T * 0.8)
+        mu = vals[:split].mean(axis=0)
+        sd = vals[:split].std(axis=0)
+        sd[sd < 1e-6] = 1.0
+        demand = ((vals - mu) / sd).astype(np.float32)
+    elif use_au_state:
+        # AU has no EIA-930 feed in this project.  Reuse the existing demand
+        # feature slots for public NEM regional state when available.
+        s_hours, s_raw = load_regional_state(region_name, all_configs, data_dir)
+        if s_hours is not None:
+            sdf = pd.DataFrame(s_raw, index=s_hours)
+            sdf = sdf[~sdf.index.duplicated(keep="first")]
+            sj = sdf.reindex(hours_utc)
+            vals = np.nan_to_num(sj.values, nan=0.0)
+            split = int(T * 0.8)
+            mu, sd = vals[:split].mean(axis=0), vals[:split].std(axis=0)
+            sd[sd < 1e-6] = 1.0
+            actual = ((vals - mu) / sd).astype(np.float32)[:, 0]
+            # Train-only seasonal forecast; no target test values enter it.
+            train_hours = hours_utc[:split]
+            train_z = actual[:split]
+            key = np.array([(h.month, h.hour) for h in train_hours])
+            table = {(m, h): float(train_z[(key[:, 0] == m) &
+                                             (key[:, 1] == h)].mean())
+                     for m in range(1, 13) for h in range(24)
+                     if np.any((key[:, 0] == m) & (key[:, 1] == h))}
+            forecast = np.array([table.get((h.month, h.hour), 0.0)
+                                 for h in hours_utc], dtype=np.float32)
+            demand = np.stack([actual, forecast], axis=1)
+    wx = np.concatenate([wx, demand[:, :1]], axis=1).astype(np.float32)
+    dem_fut = demand[:, 1]
+
+    # Wind-regime channels (extreme-weather attribution, FD-16): the
+    # attribution study showed CIF volatility peaks in the wind-share
+    # TRANSITION band (drought onset/exit), not during storms.  Both
+    # channels are strictly causal (only past hours) and weather-derived,
+    # so they are deployment-legal at every information tier:
+    #   idx 8  wind_regime24 : trailing 24 h mean of the normalised wind
+    #                         CF — drought persistence (1 = regime normal)
+    #   idx 9  wind_tend6    : 6 h change of the regime — onset/exit ramps
+    regime24 = pd.Series(wind_cf).rolling(24, min_periods=1).mean().values
+    tend6 = np.zeros_like(regime24)
+    tend6[6:] = regime24[6:] - regime24[:-6]
+    wx = np.concatenate([wx, regime24[:, None].astype(np.float32),
+                         tend6[:, None].astype(np.float32)], axis=1)
+
+    # Fuel-price channels (roadmap E-class): jurisdiction-mapped z-scored
+    # monthly coal/gas prices broadcast to hours with a 1-month publication
+    # lag (window in month m uses month m-1; January wraps to December of
+    # the same table — a documented approximation at monthly granularity).
+    prices = load_prices_2023(data_dir)
+    coal_z = np.zeros(T, dtype=np.float32)
+    gas_z = np.zeros(T, dtype=np.float32)
+    if prices is not None:
+        cz, gz = prices[jurisdiction_of(region_name)]
+        lagged = np.roll(np.stack([cz, gz], axis=1), 1, axis=0)  # (12, 2)
+        month_idx = (hours.month.values - 1).astype(int)
+        coal_z = lagged[month_idx, 0].astype(np.float32)
+        gas_z = lagged[month_idx, 1].astype(np.float32)
 
     data["fuel_shares"] = fuel_shares
     data["has_fuel"] = has_fuel
-    data["ef_vec"] = region_fuel_efs(data, region_name)
+    data["ef_vec"] = calibrated_fuel_efs(data, region_name)
     data["exog"] = {
         "weather": wx, "astro": astro, "calendar": cal,
         "wind_cf": wind_cf, "clearsky_index": csi,
+        "wind_regime24": regime24.astype(np.float32),
+        "wind_tend6": tend6.astype(np.float32),
+        "hdh": hdh, "cdh": cdh, "coal_z": coal_z, "gas_z": gas_z,
+        "demand_fut": dem_fut,
     }
     return data
+
+
+def calibrated_fuel_efs(data, region_name):
+    """Effective per-fuel EFs calibrated on the target's TRAIN split.
+
+    The canonical/IPCC EFs (rescaled to ef_nr) misrepresent how each
+    data source actually maps its own fuel mix to a reported CIF — the
+    UK API's interconnector accounting, DUID classification drift, EIA
+    methodology.  A ridge regression of the reported CIF on the observed
+    per-fuel shares (train split only, shrunken toward the canonical
+    vector) recovers each source's EFFECTIVE emission factors:
+
+        argmin ||X @ ef - y||^2 + lam ||ef - ef_canonical||^2
+
+    True-share residual floor collapses for the label-accounting family
+    (test-period, true shares): UK_14 59.6 -> 27.1, UK_13 34.5 -> 19.2,
+    UK_12 35.1 -> 20.5, UK_09 14.0 -> 8.0, US_NYIS 19.3 -> 2.5,
+    US_PJM 5.6 -> 1.3.  Regions without fuel telemetry keep the
+    canonical vector (the regression is unidentifiable).
+    """
+    ef_c = region_fuel_efs(data, region_name)
+    if not data.get("has_fuel"):
+        return ef_c
+    fs = np.asarray(data["fuel_shares"], dtype=np.float64)
+    y = np.asarray(data["cif"], dtype=np.float64)
+    split = int(len(y) * 0.8)
+    X, yt = fs[:split], y[:split]
+    scale = float(np.linalg.norm(X, axis=0).mean())
+    import os
+    lam = float(os.environ.get("CALIB_LAMBDA", 15.0)) * split / 1000.0 * max(scale, 1e-6)
+    A = X.T @ X + lam * np.eye(X.shape[1])
+    b = X.T @ yt + lam * ef_c
+    ef_k = np.linalg.solve(A, b)
+    return np.clip(ef_k, 0.0, 1400.0)
 
 
 def region_fuel_efs(data, region_name):
@@ -211,7 +481,7 @@ def region_fuel_efs(data, region_name):
     annual = fs[:split].mean(axis=0)
     # Per-jurisdiction non-renewable set: US counts nuclear as a zero-EF
     # non-renewable; UK counts nuclear + biomass as renewable.
-    juris = "us" if region_name.startswith("US_") else "uk"
+    juris = jurisdiction_of(region_name)
     renewable = jurisdiction_renewable_fuels().get(juris, set())
     nonren_idx = [FUEL_INDEX[f] for f in CANONICAL_FUELS if f not in renewable]
     thermal_idx = [FUEL_INDEX[f] for f in THERMAL_FUELS]
@@ -254,7 +524,8 @@ def jurisdiction_renewable_fuels():
     import json  # noqa: PLC0415
     from transcif.config import FUEL_DIR  # noqa: PLC0415
     out = {}
-    for juris, name in (("us", "fuel_shares_us.json"), ("uk", "fuel_shares_uk.json")):
+    for juris, name in (("us", "fuel_shares_us.json"), ("uk", "fuel_shares_uk.json"),
+                        ("au", "fuel_shares_au.json")):
         path = FUEL_DIR / name
         if not path.exists():
             continue
@@ -308,14 +579,105 @@ def build_fd_config(data, region_name):
     return np.array(vec, dtype=np.float32)
 
 
+def build_monthly_config_table(data, region_name, shrink=0.5,
+                               history_only=False):
+    """Month-indexed FD config table (12, D) — the monthly-interface variant.
+
+    Built from MONTHLY fuel-mix statistics (the exact input a Chinese
+    province publishes: per-month generation by fuel).  Each row is the
+    16-dim FD config with that month's fuel shares; ``mean_rs`` is derived
+    from the fuel shares (per the jurisdiction renewable definition), NOT
+    from rs telemetry — so the whole table is deployment-legal for I_cfg.
+    Weather climatology entries stay annual (reanalysis-derived).
+
+    Returns None for regions without fuel telemetry (AU fallback = annual).
+    """
+    if not data.get("has_fuel"):
+        return None
+    lat, lon, tz = get_region_meta(region_name)
+    hours = data["hours"]
+    fuel = data["fuel_shares"]
+    ex = data["exog"]
+    split = int(len(fuel) * 0.8)
+    annual_shares = fuel[:split].mean(axis=0)
+    juris = jurisdiction_of(region_name)
+    renewable = jurisdiction_renewable_fuels().get(juris, set())
+    renew_mask = np.array([f in renewable for f in CANONICAL_FUELS])
+    w_split = ex["wind_cf"][:split]
+    day = ex["astro"][:split, 0] > 0
+    ann_windcf = float(w_split.mean())
+    ann_csi = float(ex["clearsky_index"][:split][day].mean()) if day.any() else 0.0
+    months = hours.month.values
+    years = hours.year.values
+    table = np.zeros((12, len(FD_CONFIG_FIELDS)), dtype=np.float32)
+    for m in range(1, 13):
+        # Row m is only ever read by origins in month m+1 or later (the
+        # 1-month publication lag of official statistics — exactly the
+        # Chinese province interface).  By then month m is complete and
+        # its aggregate is public, so the FULL month m is legal input;
+        # using only the train split here would simulate a deployment
+        # with no access to published monthly statistics.
+        sel = months == m
+        if history_only:
+            # Strict deployment protocol: only statistics available before
+            # the global train/test boundary may define the month table.
+            # This matters for multi-year holdouts, where otherwise the
+            # target's test-year fuel mix would leak into the input.
+            sel &= np.arange(len(months)) < split
+        elif np.unique(years).size > 1:
+            # Multi-year series: official statistics are published per
+            # YEAR, so month m means the LATEST year's month m (FD-29b) —
+            # averaging 2022+2023+2024 Octobers dilutes the 2024-specific
+            # structural drift the monthly interface exists to track.
+            latest = years[sel].max()
+            sel &= (years == latest)
+        monthly = fuel[sel].mean(axis=0) if sel.any() else None
+        if monthly is None:
+            shares = annual_shares
+        else:
+            # Shrinkage toward the annual mean (FD-20): raw single-month
+            # telemetry means carry sampling noise that hurts grids whose
+            # annual level was already right (NYIS/PJM-class) — keep half
+            # of the seasonal deviation, which is where the signal lives
+            # (CISO-class cold-mode bias).
+            shares = (1.0 - shrink) * annual_shares + shrink * monthly
+        mean_rs_m = float(shares[renew_mask].sum())
+        table[m - 1] = np.array([
+            mean_rs_m, float(data["ef_nr"]) / 1000.0,
+            *[float(s) for s in shares],
+            ann_windcf, ann_csi, 1.0, abs(lat) / 60.0,
+        ], dtype=np.float32)
+    return table
+
+
+def monthly_config_at(table, origin_hours, lag_months=1):
+    """Per-window config lookup with publication lag.
+
+    For a window in month m, return the table row of month ``m - lag``
+    (deployment realism: monthly statistics publish with a ~1-month lag;
+    lag=0 uses the same month's structure).  January with lag 1 wraps to
+    December of the previous year (same table — monthly climatology of the
+    publication year).
+    """
+    m = origin_hours.month.values - 1 - lag_months
+    m = np.mod(m, 12)
+    return table[m]
+
+
 def build_fd_windows(data, seq_len=SEQ_LEN, horizon=HORIZON, stride=TRAIN_STRIDE,
-                     max_windows=None, rng=None, starts=None):
+                     max_windows=None, rng=None, starts=None,
+                     monthly_table=None, lag_months=1):
     """Build fuel-decomposed training/eval windows for one region.
 
     ``starts`` optionally supplies explicit local start positions (e.g. a
     shared absolute-origin grid so windows from different regions cover the
     same calendar period and can be mixed pairwise — see
     ``training.synthetic``); otherwise positions come from ``stride``.
+
+    ``monthly_table`` (12, D) optionally supplies per-month FD configs; each
+    window then carries its lagged monthly config in the extra ``config``
+    output (n, D) — the deployment interface for regions publishing
+    monthly fuel-mix statistics.
 
     Returns a dict of float32 arrays (empty trailing dims when the series
     is too short):
@@ -325,11 +687,15 @@ def build_fd_windows(data, seq_len=SEQ_LEN, horizon=HORIZON, stride=TRAIN_STRIDE
         y_fuel      (n, H, F)   future per-fuel shares (zeros for AU)
         y_rs        (n, H)      future renewable-share ground truth
         y_cif       (n, H)      future CIF ground truth
-        x_weather   (n, L, 5)   past weather-exog: temp, shortwave, wind
-                                speed, wind capacity factor, clear-sky index
-        fut_weather (n, H, 5)   future weather-exog (24 h reanalysis proxy)
+        x_weather   (n, L, W)   past weather-exog: temp, shortwave, wind
+                                speed, wind CF, clear-sky index, gusts, MSL
+                                pressure, demand actual (z), wind regime
+                                24 h mean, regime 6 h tendency
+        fut_weather (n, H, W)   future weather-exog (24 h reanalysis proxy)
         fut_exog    (n, H, K)   future exog: sin_elev, clearsky, wind_cf,
-                                clearsky_index + 6 calendar channels (K=10)
+                                clearsky_index + 6 calendar + HDH/CDH +
+                                coal/gas price z, day-ahead demand
+                                forecast z (K=15)
         origin_hours (n,)       pd.DatetimeIndex of each window's origin
 
     ``fut_*`` channels are legitimately available at deployment: astronomy
@@ -342,8 +708,17 @@ def build_fd_windows(data, seq_len=SEQ_LEN, horizon=HORIZON, stride=TRAIN_STRIDE
     ex = data["exog"]
     weather, astro, cal = ex["weather"], ex["astro"], ex["calendar"]
     wind_cf, csi = ex["wind_cf"], ex["clearsky_index"]
-    fut_exog_full = np.concatenate([astro, wind_cf[:, None], csi[:, None], cal],
-                                   axis=1).astype(np.float32)
+    hdh, cdh = ex["hdh"], ex["cdh"]
+    coal_z, gas_z = ex["coal_z"], ex["gas_z"]
+    dem_fut = ex["demand_fut"]
+    parts = [astro, wind_cf[:, None], csi[:, None], cal,
+             hdh[:, None], cdh[:, None], coal_z[:, None], gas_z[:, None],
+             dem_fut[:, None]]
+    regime24 = ex.get("wind_regime24")
+    tend6 = ex.get("wind_tend6")
+    if regime24 is not None and tend6 is not None:
+        parts += [regime24[:, None], tend6[:, None]]
+    fut_exog_full = np.concatenate(parts, axis=1).astype(np.float32)
     hours = data["hours"]
 
     window = seq_len + horizon
@@ -365,8 +740,8 @@ def build_fd_windows(data, seq_len=SEQ_LEN, horizon=HORIZON, stride=TRAIN_STRIDE
             "y_fuel": np.empty((n, horizon, len(CANONICAL_FUELS)), np.float32),
             "y_rs": np.empty((n, horizon), np.float32),
             "y_cif": np.empty((n, horizon), np.float32),
-            "x_weather": np.empty((n, seq_len, 5), np.float32),
-            "fut_weather": np.empty((n, horizon, 5), np.float32),
+            "x_weather": np.empty((n, seq_len, weather.shape[1]), np.float32),
+            "fut_weather": np.empty((n, horizon, weather.shape[1]), np.float32),
             "fut_exog": np.empty((n, horizon, fut_exog_full.shape[1]), np.float32),
         }
 
@@ -385,5 +760,16 @@ def build_fd_windows(data, seq_len=SEQ_LEN, horizon=HORIZON, stride=TRAIN_STRIDE
         out["x_weather"][i] = weather[s:h0]
         out["fut_weather"][i] = weather[h0:h1]
         out["fut_exog"][i] = fut_exog_full[h0:h1]
+    # Demand channel: per-window DEMEANED deviation (shape-only) — the
+    # annual z-score leaked seasonal level into the shape pathway and
+    # perturbed the calibrated levels (FD-15 ablation: Spearman +0.05 but
+    # MAE +1-4).  Subtract the trailing-week mean of the observed demand.
+    if fut_exog_full.shape[1] >= 15 and (weather[:, 7] != 0).any():
+        for i, s in enumerate(starts):
+            ref = weather[max(0, s + seq_len - 168):s + seq_len, 7].mean()
+            out["fut_exog"][i, :, 14] -= ref
     out["origin_hours"] = pd.DatetimeIndex([hours[s + seq_len] for s in starts])
+    if monthly_table is not None:
+        out["config"] = monthly_config_at(monthly_table, out["origin_hours"],
+                                          lag_months=lag_months)
     return out

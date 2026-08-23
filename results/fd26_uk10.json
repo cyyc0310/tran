@@ -1,0 +1,485 @@
+{
+ "rows": [
+  {
+   "target": "UK_10_East_England",
+   "seed": 0,
+   "n_test": 72,
+   "mean_rs": 0.5766478180885315,
+   "ef_nr": 403.9897751345817,
+   "has_fuel": true,
+   "train_s": 20.8,
+   "selected_route_tau": 0.45,
+   "source_route_scores": {},
+   "source_bias": 0.0,
+   "source_bias_details": {},
+   "fuel_i0": {
+    "mae": 27.436055729096687,
+    "rmse": 34.935770436975055,
+    "bias": 1.6539937474385455,
+    "diurnal_mae": 20.442969866430403,
+    "monthly_shape_mae": 64.86857063888952,
+    "spearman": 0.6091363424778504,
+    "std_metrics": {
+     "mae": 27.43605613708496,
+     "rmse": 34.93577194213867,
+     "smape": 35.25645732879639
+    }
+   },
+   "fuel_i0_phys": {
+    "mae": 27.822557901204735,
+    "rmse": 36.36984449443798,
+    "bias": -3.943109179398528,
+    "diurnal_mae": 21.429411927571547,
+    "monthly_shape_mae": 65.78823500416345,
+    "spearman": 0.6052657004830917
+   },
+   "fuel_i_cfg": {
+    "mae": 33.40320659621998,
+    "rmse": 42.51008921098185,
+    "bias": 9.671105515625742,
+    "diurnal_mae": 23.46797408876412,
+    "monthly_shape_mae": 69.27649183074634,
+    "spearman": 0.5710249708180464,
+    "std_metrics": {
+     "mae": 33.40320587158203,
+     "rmse": 42.51008987426758,
+     "smape": 38.77561092376709
+    }
+   },
+   "fuel_i_cfg_phys": {
+    "mae": 34.02015305724409,
+    "rmse": 43.72462395314881,
+    "bias": 4.074002588788669,
+    "diurnal_mae": 24.774035609557213,
+    "monthly_shape_mae": 70.61403529180421,
+    "spearman": 0.5640338164251207
+   },
+   "fuel_i_plus": {
+    "mae": 57.914903272460286,
+    "rmse": 75.48348741169536,
+    "bias": 1.3708552710936022,
+    "diurnal_mae": 36.75774163364086,
+    "monthly_shape_mae": 48.89675840469637,
+    "spearman": 0.19260527201789182,
+    "std_metrics": {
+     "mae": 57.914903272460286,
+     "rmse": 75.48348741169536,
+     "smape": 54.570811029052834
+    }
+   },
+   "persistence": {
+    "mae": 61.087480713371875,
+    "rmse": 84.4003098959155,
+    "bias": 0.14747299364319555,
+    "diurnal_mae": 43.10558931612306,
+    "monthly_shape_mae": 70.40860958342199,
+    "spearman": 0.1963995341898916
+   },
+   "config_constant": {
+    "mae": 85.1060646303274,
+    "rmse": 97.79522496840275,
+    "bias": 53.28159266213576,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 53.28159205118815,
+    "spearman": 0.0
+   },
+   "monthly_constant": {
+    "mae": 69.66492800524941,
+    "rmse": 80.56704409121608,
+    "bias": 6.109476089477539e-07,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 0.0,
+    "spearman": 0.0
+   }
+  },
+  {
+   "target": "UK_10_East_England",
+   "seed": 1,
+   "n_test": 72,
+   "mean_rs": 0.5766478180885315,
+   "ef_nr": 403.9897751345817,
+   "has_fuel": true,
+   "train_s": 18.8,
+   "selected_route_tau": 0.45,
+   "source_route_scores": {},
+   "source_bias": 0.0,
+   "source_bias_details": {},
+   "fuel_i0": {
+    "mae": 26.73672883267756,
+    "rmse": 34.710743355582665,
+    "bias": -0.6390583702811489,
+    "diurnal_mae": 21.55296763713345,
+    "monthly_shape_mae": 66.19777887231774,
+    "spearman": 0.5958126008570652,
+    "std_metrics": {
+     "mae": 26.736730575561523,
+     "rmse": 34.71074295043945,
+     "smape": 33.16860795021057
+    }
+   },
+   "fuel_i0_phys": {
+    "mae": 27.591127492763377,
+    "rmse": 36.88634857965732,
+    "bias": -6.2361612971182225,
+    "diurnal_mae": 22.180863857062327,
+    "monthly_shape_mae": 67.15005325663972,
+    "spearman": 0.5971618357487922
+   },
+   "fuel_i_cfg": {
+    "mae": 31.896193302891874,
+    "rmse": 41.81560693404377,
+    "bias": 7.040314828356107,
+    "diurnal_mae": 22.93776448917242,
+    "monthly_shape_mae": 72.12815732205355,
+    "spearman": 0.5849005785844771,
+    "std_metrics": {
+     "mae": 31.896194458007812,
+     "rmse": 41.81560516357422,
+     "smape": 36.64472997188568
+    }
+   },
+   "fuel_i_cfg_phys": {
+    "mae": 32.931444984343315,
+    "rmse": 43.40059223661778,
+    "bias": 1.4432119015190337,
+    "diurnal_mae": 24.295406048347097,
+    "monthly_shape_mae": 73.57570546423948,
+    "spearman": 0.5745410628019323
+   },
+   "fuel_i_plus": {
+    "mae": 57.73441421998074,
+    "rmse": 75.33890215237646,
+    "bias": 1.5840795614472205,
+    "diurnal_mae": 36.79986719342527,
+    "monthly_shape_mae": 49.18127286996417,
+    "spearman": 0.19424015654132512,
+    "std_metrics": {
+     "mae": 57.73441421998074,
+     "rmse": 75.33890215237646,
+     "smape": 54.46948025643117
+    }
+   },
+   "persistence": {
+    "mae": 61.087480713371875,
+    "rmse": 84.4003098959155,
+    "bias": 0.14747299364319555,
+    "diurnal_mae": 43.10558931612306,
+    "monthly_shape_mae": 70.40860958342199,
+    "spearman": 0.1963995341898916
+   },
+   "config_constant": {
+    "mae": 85.1060646303274,
+    "rmse": 97.79522496840275,
+    "bias": 53.28159266213576,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 53.28159205118815,
+    "spearman": 0.0
+   },
+   "monthly_constant": {
+    "mae": 69.66492800524941,
+    "rmse": 80.56704409121608,
+    "bias": 6.109476089477539e-07,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 0.0,
+    "spearman": 0.0
+   }
+  },
+  {
+   "target": "UK_10_East_England",
+   "seed": 2,
+   "n_test": 72,
+   "mean_rs": 0.5766478180885315,
+   "ef_nr": 403.9897751345817,
+   "has_fuel": true,
+   "train_s": 18.5,
+   "selected_route_tau": 0.45,
+   "source_route_scores": {},
+   "source_bias": 0.0,
+   "source_bias_details": {},
+   "fuel_i0": {
+    "mae": 27.710448867192977,
+    "rmse": 35.150808400149785,
+    "bias": 2.002819300249771,
+    "diurnal_mae": 21.21350899734247,
+    "monthly_shape_mae": 64.67553935337949,
+    "spearman": 0.6107358165220114,
+    "std_metrics": {
+     "mae": 27.710447311401367,
+     "rmse": 35.15080642700195,
+     "smape": 34.585535526275635
+    }
+   },
+   "fuel_i0_phys": {
+    "mae": 27.835056036158843,
+    "rmse": 36.771393412877494,
+    "bias": -3.5942836265873024,
+    "diurnal_mae": 21.86030210569547,
+    "monthly_shape_mae": 65.57716812138204,
+    "spearman": 0.614891304347826
+   },
+   "fuel_i_cfg": {
+    "mae": 33.264396747505224,
+    "rmse": 42.294782630946,
+    "bias": 10.643864508580279,
+    "diurnal_mae": 23.086146895440272,
+    "monthly_shape_mae": 71.16825303435326,
+    "spearman": 0.5687527485068102,
+    "std_metrics": {
+     "mae": 33.26439666748047,
+     "rmse": 42.29478073120117,
+     "smape": 38.756757974624634
+    }
+   },
+   "fuel_i_cfg_phys": {
+    "mae": 33.749256271455025,
+    "rmse": 43.240378880094994,
+    "bias": 5.046761581743205,
+    "diurnal_mae": 24.271198795981885,
+    "monthly_shape_mae": 72.52655571588764,
+    "spearman": 0.5696618357487923
+   },
+   "fuel_i_plus": {
+    "mae": 57.9455871145309,
+    "rmse": 75.50106291158448,
+    "bias": 1.390937466058412,
+    "diurnal_mae": 36.791153627772985,
+    "monthly_shape_mae": 48.93297532299771,
+    "spearman": 0.19718640395781442,
+    "std_metrics": {
+     "mae": 57.9455871145309,
+     "rmse": 75.50106291158448,
+     "smape": 54.61751394047513
+    }
+   },
+   "persistence": {
+    "mae": 61.087480713371875,
+    "rmse": 84.4003098959155,
+    "bias": 0.14747299364319555,
+    "diurnal_mae": 43.10558931612306,
+    "monthly_shape_mae": 70.40860958342199,
+    "spearman": 0.1963995341898916
+   },
+   "config_constant": {
+    "mae": 85.1060646303274,
+    "rmse": 97.79522496840275,
+    "bias": 53.28159266213576,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 53.28159205118815,
+    "spearman": 0.0
+   },
+   "monthly_constant": {
+    "mae": 69.66492800524941,
+    "rmse": 80.56704409121608,
+    "bias": 6.109476089477539e-07,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 0.0,
+    "spearman": 0.0
+   }
+  },
+  {
+   "target": "UK_10_East_England",
+   "seed": 3,
+   "n_test": 72,
+   "mean_rs": 0.5766478180885315,
+   "ef_nr": 403.9897751345817,
+   "has_fuel": true,
+   "train_s": 26.3,
+   "selected_route_tau": 0.45,
+   "source_route_scores": {},
+   "source_bias": 0.0,
+   "source_bias_details": {},
+   "fuel_i0": {
+    "mae": 26.72118239739427,
+    "rmse": 34.74088544290564,
+    "bias": -0.7111158925626013,
+    "diurnal_mae": 21.50510895535074,
+    "monthly_shape_mae": 66.06475371315524,
+    "spearman": 0.6042560237598011,
+    "std_metrics": {
+     "mae": 26.721181869506836,
+     "rmse": 34.74088668823242,
+     "smape": 33.07754397392273
+    }
+   },
+   "fuel_i0_phys": {
+    "mae": 27.748182798149408,
+    "rmse": 36.91727049548432,
+    "bias": -6.308218819399674,
+    "diurnal_mae": 22.453857835738653,
+    "monthly_shape_mae": 66.94524028097038,
+    "spearman": 0.5945772946859903
+   },
+   "fuel_i_cfg": {
+    "mae": 31.407079735839808,
+    "rmse": 40.863455100401126,
+    "bias": 7.4788725878353475,
+    "diurnal_mae": 22.550635297311306,
+    "monthly_shape_mae": 71.1395035982132,
+    "spearman": 0.594389291902212,
+    "std_metrics": {
+     "mae": 31.40707778930664,
+     "rmse": 40.86345291137695,
+     "smape": 36.74823045730591
+    }
+   },
+   "fuel_i_cfg_phys": {
+    "mae": 32.38600643420661,
+    "rmse": 42.4995329601434,
+    "bias": 1.8817696609982737,
+    "diurnal_mae": 24.072779117336058,
+    "monthly_shape_mae": 72.48620566173837,
+    "spearman": 0.5817874396135265
+   },
+   "fuel_i_plus": {
+    "mae": 57.97453715670532,
+    "rmse": 75.55251248969846,
+    "bias": 1.3824130559966779,
+    "diurnal_mae": 36.85435397342074,
+    "monthly_shape_mae": 48.94000527470484,
+    "spearman": 0.19629821562908228,
+    "std_metrics": {
+     "mae": 57.97453715670532,
+     "rmse": 75.55251248969846,
+     "smape": 54.60399239924355
+    }
+   },
+   "persistence": {
+    "mae": 61.087480713371875,
+    "rmse": 84.4003098959155,
+    "bias": 0.14747299364319555,
+    "diurnal_mae": 43.10558931612306,
+    "monthly_shape_mae": 70.40860958342199,
+    "spearman": 0.1963995341898916
+   },
+   "config_constant": {
+    "mae": 85.1060646303274,
+    "rmse": 97.79522496840275,
+    "bias": 53.28159266213576,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 53.28159205118815,
+    "spearman": 0.0
+   },
+   "monthly_constant": {
+    "mae": 69.66492800524941,
+    "rmse": 80.56704409121608,
+    "bias": 6.109476089477539e-07,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 0.0,
+    "spearman": 0.0
+   }
+  },
+  {
+   "target": "UK_10_East_England",
+   "seed": 4,
+   "n_test": 72,
+   "mean_rs": 0.5766478180885315,
+   "ef_nr": 403.9897751345817,
+   "has_fuel": true,
+   "train_s": 26.2,
+   "selected_route_tau": 0.45,
+   "source_route_scores": {},
+   "source_bias": 0.0,
+   "source_bias_details": {},
+   "fuel_i0": {
+    "mae": 26.20636975378902,
+    "rmse": 34.00036880817452,
+    "bias": 2.4219198342826633,
+    "diurnal_mae": 20.882695784999264,
+    "monthly_shape_mae": 65.74198607051814,
+    "spearman": 0.5937149851300356,
+    "std_metrics": {
+     "mae": 26.206369400024414,
+     "rmse": 34.000370025634766,
+     "smape": 32.33758211135864
+    }
+   },
+   "fuel_i0_phys": {
+    "mae": 27.256975929494256,
+    "rmse": 36.128700508274946,
+    "bias": -3.1751830925544104,
+    "diurnal_mae": 21.91508123247574,
+    "monthly_shape_mae": 66.56516097099693,
+    "spearman": 0.5826932367149757
+   },
+   "fuel_i_cfg": {
+    "mae": 32.77968123058478,
+    "rmse": 42.79202375745322,
+    "bias": 10.376284752179075,
+    "diurnal_mae": 23.483236673667474,
+    "monthly_shape_mae": 73.3210548725393,
+    "spearman": 0.5815590650672645,
+    "std_metrics": {
+     "mae": 32.77968215942383,
+     "rmse": 42.792022705078125,
+     "smape": 36.95240616798401
+    }
+   },
+   "fuel_i_cfg_phys": {
+    "mae": 33.400324296620155,
+    "rmse": 44.034696424055326,
+    "bias": 4.779181825342001,
+    "diurnal_mae": 25.12333848518262,
+    "monthly_shape_mae": 74.59175732290304,
+    "spearman": 0.558671497584541
+   },
+   "fuel_i_plus": {
+    "mae": 57.94909459050742,
+    "rmse": 75.52177450724842,
+    "bias": 1.3797764735088511,
+    "diurnal_mae": 36.81616286006573,
+    "monthly_shape_mae": 48.92637585246449,
+    "spearman": 0.1949622598702557,
+    "std_metrics": {
+     "mae": 57.94909459050742,
+     "rmse": 75.52177450724842,
+     "smape": 54.585298690146224
+    }
+   },
+   "persistence": {
+    "mae": 61.087480713371875,
+    "rmse": 84.4003098959155,
+    "bias": 0.14747299364319555,
+    "diurnal_mae": 43.10558931612306,
+    "monthly_shape_mae": 70.40860958342199,
+    "spearman": 0.1963995341898916
+   },
+   "config_constant": {
+    "mae": 85.1060646303274,
+    "rmse": 97.79522496840275,
+    "bias": 53.28159266213576,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 53.28159205118815,
+    "spearman": 0.0
+   },
+   "monthly_constant": {
+    "mae": 69.66492800524941,
+    "rmse": 80.56704409121608,
+    "bias": 6.109476089477539e-07,
+    "diurnal_mae": 31.153549384233763,
+    "monthly_shape_mae": 0.0,
+    "spearman": 0.0
+   }
+  }
+ ],
+ "meta": {
+  "epochs": 600,
+  "p_cold": 0.3,
+  "p_mix": 0.0,
+  "use_hypernet": false,
+  "weight_mode": "legacy",
+  "ef_corr_bound": 0.35,
+  "lambda_shape": 0.5,
+  "lambda_fuel": 1.0,
+  "lambda_rs": 0.3,
+  "use_monthly": false,
+  "lag_months": 1,
+  "weather_noise": false,
+  "evening_weight": 1.0,
+  "solar_mod_bound": 0.4,
+  "wind_route_tau": 0.45,
+  "domain_penalty": 0.0,
+  "physics_target": false,
+  "source_route_select": false,
+  "max_windows": 700
+ }
+}

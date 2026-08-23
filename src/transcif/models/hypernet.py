@@ -24,11 +24,11 @@ import torch.nn.functional as F
 
 # name -> (out_features, in_features) of each generated head
 GENERATED_HEADS = {
-    "solar_mod": (1, 5),
-    "wind_mod": (1, 5),
-    "base_delta": (5, 10),
-    "therm_dyn": (3, 10),
-    "rs_exog": (1, 10),
+    "solar_mod": (1, 10),
+    "wind_mod": (1, 10),
+    "base_delta": (5, 17),
+    "therm_dyn": (3, 17),
+    "rs_exog": (1, 17),
 }
 _OFFSETS = {}
 _o = 0
