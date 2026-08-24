@@ -182,11 +182,19 @@ def load_demand(region_name, all_configs, data_dir=None):
     if info is None:
         return None, None
     stem = info["file"].replace("_2023_hourly.csv", "")
-    path = data_dir / "demand" / f"{stem}_demand_2023_hourly.csv"
-    if not path.exists():
+    paths = sorted((data_dir / "demand").glob(f"{stem}_demand_*_hourly.csv"))
+    if not paths:
         return None, None
-    df = pd.read_csv(path, parse_dates=["hour"])
-    df = df.sort_values("hour").reset_index(drop=True)
+    # Multi-year demand files concat on the timestamp grid (the 2023-only
+    # file kept the original single-year protocol reproducible).
+    frames = []
+    for path in paths:
+        d = pd.read_csv(path, parse_dates=["hour"])
+        d = d.drop_duplicates("hour", keep="last")
+        frames.append(d)
+    df = (pd.concat(frames, ignore_index=True)
+          .drop_duplicates("hour", keep="last")
+          .sort_values("hour").reset_index(drop=True))
     return pd.DatetimeIndex(df["hour"]), df[
         ["demand_actual_mw", "demand_forecast_mw"]].values.astype(np.float32)
 
@@ -579,7 +587,7 @@ def build_fd_config(data, region_name):
     return np.array(vec, dtype=np.float32)
 
 
-def build_monthly_config_table(data, region_name, shrink=0.5,
+def build_monthly_config_table(data, region_name, shrink=None,
                                history_only=False):
     """Month-indexed FD config table (12, D) — the monthly-interface variant.
 
@@ -596,6 +604,9 @@ def build_monthly_config_table(data, region_name, shrink=0.5,
         return None
     lat, lon, tz = get_region_meta(region_name)
     hours = data["hours"]
+    import os
+    if shrink is None:
+        shrink = float(os.environ.get("MONTHLY_SHRINK", 0.5))
     fuel = data["fuel_shares"]
     ex = data["exog"]
     split = int(len(fuel) * 0.8)

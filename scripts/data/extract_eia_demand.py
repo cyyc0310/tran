@@ -33,6 +33,10 @@ BA_MAP = {
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     frames = []
+    year_files = {}
+    for f in sorted(RAW.glob("gen_*.csv")):
+        yr = ''.join(c for c in f.stem if c.isdigit())
+        year_files.setdefault(yr, []).append(f)
     for f in sorted(RAW.glob("gen_*.csv")):
         print(f"[demand] reading {f.name} ...")
         df = pd.read_csv(
@@ -47,16 +51,38 @@ def main():
         "Demand (MW)": "demand_actual_mw"})
     for ba, region in BA_MAP.items():
         sub = full[full["Balancing Authority"] == ba]
-        g = (sub.groupby("hour")[["demand_forecast_mw", "demand_actual_mw"]]
-             .mean().sort_index())
-        # Interval-ENDING labels -> shift to interval-beginning to match
-        # the main pipeline's convention (verified: main CSVs label the
-        # hour the energy belongs to).
-        g.index = g.index - pd.Timedelta(hours=1)
-        g = g[~g.index.duplicated(keep="first")]
-        out = OUT / f"{region}_demand_2023_hourly.csv"
-        g.to_csv(out)
-        print(f"[demand] {region}: {len(g)} hours -> {out.name}")
+        for yr, files in sorted(year_files.items()):
+            fy = full
+            if len(year_files) > 1:
+                rows = []
+                for f in files:
+                    dfy = pd.read_csv(
+                        f, usecols=["Balancing Authority",
+                                    "UTC Time at End of Hour",
+                                    "Demand Forecast (MW)", "Demand (MW)"],
+                        parse_dates=["UTC Time at End of Hour"])
+                    rows.append(dfy[dfy["Balancing Authority"] == ba])
+                fy = pd.concat(rows, ignore_index=True).rename(columns={
+                    "UTC Time at End of Hour": "hour",
+                    "Demand Forecast (MW)": "demand_forecast_mw",
+                    "Demand (MW)": "demand_actual_mw"})
+                g = (fy.groupby("hour")[["demand_forecast_mw",
+                                         "demand_actual_mw"]]
+                     .mean().sort_index())
+                g.index = g.index - pd.Timedelta(hours=1)
+                g = g[~g.index.duplicated(keep="first")]
+                out = OUT / f"{region}_demand_{yr}_hourly.csv"
+                g.to_csv(out)
+                print(f"[demand] {region} {yr}: {len(g)} hours -> {out.name}")
+                continue
+            g = (sub.groupby("hour")[["demand_forecast_mw",
+                                      "demand_actual_mw"]]
+                 .mean().sort_index())
+            g.index = g.index - pd.Timedelta(hours=1)
+            g = g[~g.index.duplicated(keep="first")]
+            out = OUT / f"{region}_demand_{yr}_hourly.csv"
+            g.to_csv(out)
+            print(f"[demand] {region} {yr}: {len(g)} hours -> {out.name}")
 
 
 if __name__ == "__main__":
