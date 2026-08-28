@@ -181,6 +181,13 @@ class FuelDecompNet(nn.Module):
         self.anchor_gate = nn.Sequential(
             nn.Linear(config_dim + 2, 16), nn.ReLU(), nn.Linear(16, 1))
         nn.init.constant_(self.anchor_gate[-1].bias, 1.5)  # start near-anchored
+        # --- cold-mode anchor gate (FD-34): zero-init (pass-through at
+        #     start); learns how strongly the monthly-config level should
+        #     anchor the telemetry-free prediction
+        self.cold_anchor_gate = nn.Sequential(
+            nn.Linear(config_dim, 16), nn.ReLU(), nn.Linear(16, 1))
+        nn.init.zeros_(self.cold_anchor_gate[-1].weight)
+        nn.init.zeros_(self.cold_anchor_gate[-1].bias)
         # --- optional config hypernet (FD-2): config generates the weights
         #     of every per-hour dynamic head, zero-initialised so a fresh
         #     model still starts at the FD-1 physics prior.
@@ -411,15 +418,34 @@ class FuelDecompNet(nn.Module):
         cif = route_fuel * cif_fuel + (1.0 - route_fuel) * cif_agg
 
         # ------------------------------------------------------------------
-        # 7. I_0 level anchor (history mode only): shift the predicted
-        #    trajectory so its horizon mean matches the observed level
-        #    implied by the recent renewable-share stream (2-fuel identity).
-        #    Cold mode (I_cfg) has no observable level and passes through.
+        # 7. Level anchor: history mode anchors to the OBSERVED rs window
+        #    (I_0, ZS+ branch-0 mechanism).  Cold mode (I_cfg) anchors to
+        #    the CONFIG mean_rs slot (FD-34) — with the monthly interface
+        #    that slot carries the target's lagged PUBLISHED monthly
+        #    renewable share, the exact public-statistics substitute for
+        #    the telemetry anchor (green/orange gap decomposition: the
+        #    level component is +18 on CISO/NSW1-class regions).
         # ------------------------------------------------------------------
         cif = (cif + hm * self._anchor_correction(
-            x_rs_g, config, cif, ef_nr)).clamp_min(0.0)
+            x_rs_g, config, cif, ef_nr)
+               + (1.0 - hm) * self._cold_anchor(
+                   config, cif, ef_nr)).clamp_min(0.0)
 
         return cif, shares, rs_hat
+
+    def _cold_anchor(self, config, cif, ef_nr):
+        """Cold-mode level anchor from the config mean_rs slot (FD-34).
+
+        Zero-init gate -> a fresh model passes through unchanged; with the
+        monthly interface config[0] is the lagged published monthly mean
+        renewable share, so the anchor level (1 - mean_rs) * ef_nr tracks
+        the target's seasonal level without any telemetry.
+        """
+        cfg_mean_rs = config[:, 0:1].clamp(0.0, 1.0)
+        anchor_level = (1.0 - cfg_mean_rs) * ef_nr.unsqueeze(1)
+        gate = torch.sigmoid(self.cold_anchor_gate(
+            torch.cat([config], dim=1)))
+        return gate * (anchor_level - cif.mean(dim=1, keepdim=True))
 
     def _anchor_correction(self, x_rs_g, config, cif, ef_nr):
         """Gated additive level correction from the observed rs window.
