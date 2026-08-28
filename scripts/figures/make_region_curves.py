@@ -51,11 +51,6 @@ def region_curves(target, fd_regions, device):
     model = train_fuel_zero_shot(fd_regions, target, seed=0, epochs=600,
                                  device=device,
                                  wind_route_tau=ROUTE_TAU.get(target, 0.45))
-    # I_S: same architecture, fine-tuned on the target's train split
-    # (starts from the zero-shot weights — transfer + local supervision).
-    model_is = finetune_fuel_supervised(
-        copy.deepcopy(model), fd_regions[target],
-        epochs=120, lr=3e-4, device=device)
 
     data = fd_regions[target]
     split = int(len(data["rs"]) * TRAIN_FRACTION)
@@ -78,8 +73,6 @@ def region_curves(target, fd_regions, device):
                                         ef_vec, cold=False, device=device)
     cif_cfg, _, _ = predict_fuel_windows(model, w_sel, data["fd_config"],
                                          ef_vec, cold=True, device=device)
-    cif_is, _, _ = predict_fuel_windows(model_is, w_sel, data["fd_config"],
-                                        ef_vec, cold=False, device=device)
     # I_+ via ZS+ calibration at the same origins.
     share_fn = make_zs_plus_share_fn(model, data, device=device)
     origins = np.array([split + st for st in
@@ -89,7 +82,7 @@ def region_curves(target, fd_regions, device):
                                data["cif"], data["ef_r"], data["ef_nr"],
                                origins, share_fn=share_fn)
     actual = w_sel["y_cif"]
-    return actual, cif_plus, cif_cfg, cif_i0, cif_is
+    return actual, cif_plus, cif_cfg, cif_i0
 
 
 def main():
@@ -102,7 +95,7 @@ def main():
 
     # Sort panels by I_cfg MAE (the headline telemetry-free tier).
     import json
-    rows = json.load(open(RESULTS_DIR / "fuel_decomp_eval_full_fd28.json"))["rows"]
+    rows = json.load(open(RESULTS_DIR / "fuel_decomp_eval_full_fd34.json"))["rows"]
     from collections import defaultdict
     mae = defaultdict(list)
     for r in rows:
@@ -114,37 +107,31 @@ def main():
                              sharex=True)
     hours = np.arange(N_ORIGINS * HORIZON)
     for ax, target in zip(axes.flat, order):
-        actual, plus, cfg_pred, i0, is_pred = region_curves(
-            target, fd_regions, device)
+        actual, plus, cfg_pred, i0 = region_curves(target, fd_regions, device)
         m = lambda p: np.abs(p.ravel() - actual.ravel()).mean()
-        ax.plot(hours, actual.ravel(), color="black", lw=1.4, label="Actual")
-        ax.plot(hours, cfg_pred.ravel(), color="tab:green", lw=0.9,
-                alpha=0.85, label="I$_{cfg}$ (no telemetry)")
-        ax.plot(hours, i0.ravel(), color="tab:orange", lw=1.0,
-                alpha=0.9, label="I$_0$ (+rs telemetry)")
-        ax.plot(hours, plus.ravel(), color="tab:blue", lw=1.2,
-                label="I$_+$ (+CIF history, ZS+)")
-        ax.plot(hours, is_pred.ravel(), color="tab:red", lw=1.0, ls="--",
-                alpha=0.9, label="I$_S$ (local supervised)")
-        ax.set_title(f"{target}  ({m(cfg_pred):.0f}/{m(i0):.0f}/"
-                     f"{m(plus):.0f}/{m(is_pred):.0f})", fontsize=8)
+        ax.plot(hours, actual.ravel(), color="black", lw=1.5, label="Actual")
+        ax.plot(hours, cfg_pred.ravel(), color="tab:green", lw=1.1,
+                label="I$_{cfg}$ (no telemetry)")
+        ax.plot(hours, i0.ravel(), color="tab:orange", lw=1.2,
+                label="I$_0$ (+rs telemetry)")
+        ax.set_title(f"{target}  ({m(cfg_pred):.0f} / {m(i0):.0f})", fontsize=8)
         ax.tick_params(labelsize=7)
     for ax in axes.flat[len(order):]:
         ax.axis("off")
     handles, labels = axes.flat[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower center", ncol=5, fontsize=10)
+    fig.legend(handles, labels, loc="lower center", ncol=3, fontsize=11)
     fig.suptitle(
-        "Day-ahead CIF, 29 regions — the information ladder (96 h spliced "
-        "from 4 origins, seed 0)\npanel title: I$_{cfg}$ / I$_0$ / I$_+$ / "
-        "I$_S$ MAE over the plotted 96 h; panels sorted by I$_{cfg}$",
+        "Day-ahead CIF, 29 regions — zero-telemetry (green) vs share "
+        "telemetry (orange)\npanel title: I$_{cfg}$ / I$_0$ MAE over the "
+        "plotted 96 h; panels sorted by I$_{cfg}$; FD-34 deployment mode",
         fontsize=12)
     fig.supxlabel("hours")
     fig.supylabel("CIF (gCO$_2$/kWh)")
     fig.tight_layout(rect=(0, 0.03, 1, 0.97))
     OUT.mkdir(exist_ok=True)
     for ext in ("png", "pdf"):
-        fig.savefig(OUT / f"region_curves_29_ladder.{ext}", dpi=160)
-    print(f"[curves] wrote {OUT / 'region_curves_29_ladder.png'}")
+        fig.savefig(OUT / f"region_curves_29_cfg0.{ext}", dpi=160)
+    print(f"[curves] wrote {OUT / 'region_curves_29_cfg0.png'}")
 
 
 if __name__ == "__main__":
