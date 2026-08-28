@@ -19,7 +19,7 @@ def _rand_batch(B=4, seed=0):
     x_weather = torch.randn(B, L, 10, generator=g)
     fut_weather = torch.randn(B, H, 10, generator=g)
     # 12 exog channels: astro(2) + wind_cf + csi + calendar(6) + hdh + cdh
-    fut_exog = torch.randn(B, H, 17, generator=g)
+    fut_exog = torch.randn(B, H, 18, generator=g)
     config = torch.rand(B, D, generator=g)
     config[:, 0] = 0.3                      # mean_rs
     config[:, 1] = 0.4                      # ef_nr/1000
@@ -84,7 +84,7 @@ class TestFuelDecompNet:
         # Build a deterministic diurnal clear-sky channel.
         hours = np.arange(H)
         astro = np.clip(np.sin(np.pi * (hours - 6) / 12), 0, None) * 800
-        fut_exog = torch.randn(4, H, 17)
+        fut_exog = torch.randn(4, H, 18)
         fut_exog[:, :, 1] = torch.tensor(astro, dtype=torch.float32)
         config[:, 2 + FUEL_INDEX["solar"]] = 0.1
         with torch.no_grad():

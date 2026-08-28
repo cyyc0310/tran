@@ -1,14 +1,13 @@
 #!/usr/bin/env python
-"""Extract day-ahead load forecasts from raw EIA-930 (FD-15, E/C-class).
+"""Extract day-ahead load forecasts + net interchange from raw EIA-930.
 
-The raw files carry ``Demand Forecast (MW)`` — the balancing authority's
-own DAY-AHEAD forecast — plus the actual.  The forecast is deployment-
-perfect for day-ahead CIF prediction (it is what utilities publish /
-plan on), and load shape is the primary driver of the thermal-residual
-component (duck-curve evening ramp, coal/gas dispatch).
+The raw files carry ``Demand Forecast (MW)`` (day-ahead), ``Demand (MW)``
+and ``Total Interchange (MW)`` (net imports, positive = importing) —
+the last is the physical carbon-flow channel for import-heavy BAs
+(ISNE's Quebec hydro imports are ~15-20 % of energy and absent from the
+rs telemetry definition).
 
-Writes ``data_2023/demand/{REGION}_demand_2023_hourly.csv`` with columns
-``hour`` (UTC), ``demand_forecast_mw``, ``demand_actual_mw``.
+Writes ``data_2023/demand/{REGION}_demand_{year}_hourly.csv``.
 
 Usage:
     .venv/bin/python scripts/data/extract_eia_demand.py
@@ -22,65 +21,38 @@ DATA = Path(__file__).resolve().parent.parent.parent / "data_2023"
 RAW = DATA / "raw_eia930"
 OUT = DATA / "demand"
 
-# EIA balancing-authority code -> TransCIF region name.
 BA_MAP = {
     "CISO": "US_CISO", "PJM": "US_PJM", "MISO": "US_MISO",
     "ERCO": "US_ERCO", "ISNE": "US_ISNE", "NYIS": "US_NYIS",
     "FPL": "US_FPL", "BPAT": "US_BPAT",
 }
+COLS = ["Balancing Authority", "UTC Time at End of Hour",
+        "Demand Forecast (MW)", "Demand (MW)", "Total Interchange (MW)"]
+RENAME = {"UTC Time at End of Hour": "hour",
+          "Demand Forecast (MW)": "demand_forecast_mw",
+          "Demand (MW)": "demand_actual_mw",
+          "Total Interchange (MW)": "net_interchange_mw"}
 
 
 def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    frames = []
+    OUT.mkdir(exist_ok=True)
     year_files = {}
     for f in sorted(RAW.glob("gen_*.csv")):
-        yr = ''.join(c for c in f.stem if c.isdigit())
+        yr = "".join(c for c in f.stem if c.isdigit())
         year_files.setdefault(yr, []).append(f)
-    for f in sorted(RAW.glob("gen_*.csv")):
-        print(f"[demand] reading {f.name} ...")
-        df = pd.read_csv(
-            f, usecols=["Balancing Authority", "UTC Time at End of Hour",
-                        "Demand Forecast (MW)", "Demand (MW)"],
-            parse_dates=["UTC Time at End of Hour"])
-        frames.append(df)
-    full = pd.concat(frames, ignore_index=True)
-    full = full.rename(columns={
-        "UTC Time at End of Hour": "hour",
-        "Demand Forecast (MW)": "demand_forecast_mw",
-        "Demand (MW)": "demand_actual_mw"})
     for ba, region in BA_MAP.items():
-        sub = full[full["Balancing Authority"] == ba]
         for yr, files in sorted(year_files.items()):
-            fy = full
-            if len(year_files) > 1:
-                rows = []
-                for f in files:
-                    dfy = pd.read_csv(
-                        f, usecols=["Balancing Authority",
-                                    "UTC Time at End of Hour",
-                                    "Demand Forecast (MW)", "Demand (MW)"],
-                        parse_dates=["UTC Time at End of Hour"])
-                    rows.append(dfy[dfy["Balancing Authority"] == ba])
-                fy = pd.concat(rows, ignore_index=True).rename(columns={
-                    "UTC Time at End of Hour": "hour",
-                    "Demand Forecast (MW)": "demand_forecast_mw",
-                    "Demand (MW)": "demand_actual_mw"})
-                g = (fy.groupby("hour")[["demand_forecast_mw",
-                                         "demand_actual_mw"]]
-                     .mean().sort_index())
-                g.index = g.index - pd.Timedelta(hours=1)
-                g = g[~g.index.duplicated(keep="first")]
-                out = OUT / f"{region}_demand_{yr}_hourly.csv"
-                g.to_csv(out)
-                print(f"[demand] {region} {yr}: {len(g)} hours -> {out.name}")
-                continue
-            g = (sub.groupby("hour")[["demand_forecast_mw",
-                                      "demand_actual_mw"]]
+            out = OUT / f"{region}_demand_{yr}_hourly.csv"
+            rows = []
+            for f in files:
+                df = pd.read_csv(f, usecols=COLS, parse_dates=[COLS[1]])
+                rows.append(df[df["Balancing Authority"] == ba])
+            fy = pd.concat(rows, ignore_index=True).rename(columns=RENAME)
+            g = (fy.groupby("hour")[list(RENAME.values())[1:]]
                  .mean().sort_index())
+            # interval-ENDING -> beginning (matches the main pipeline)
             g.index = g.index - pd.Timedelta(hours=1)
             g = g[~g.index.duplicated(keep="first")]
-            out = OUT / f"{region}_demand_{yr}_hourly.csv"
             g.to_csv(out)
             print(f"[demand] {region} {yr}: {len(g)} hours -> {out.name}")
 

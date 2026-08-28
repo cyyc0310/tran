@@ -26,9 +26,9 @@ import torch.nn.functional as F
 GENERATED_HEADS = {
     "solar_mod": (1, 10),
     "wind_mod": (1, 10),
-    "base_delta": (5, 17),
-    "therm_dyn": (3, 17),
-    "rs_exog": (1, 17),
+    "base_delta": (5, 18),
+    "therm_dyn": (3, 18),
+    "rs_exog": (1, 18),
 }
 _OFFSETS = {}
 _o = 0

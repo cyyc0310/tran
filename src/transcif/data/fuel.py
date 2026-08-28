@@ -351,8 +351,15 @@ def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None,
     # windows) + day-ahead forecast (horizon), z-scored on the train split.
     d_hours, d_raw = load_demand(region_name, all_configs, data_dir)
     demand = np.zeros((T, 2), dtype=np.float32)
+    inter = np.zeros(T, dtype=np.float32)
     if d_hours is not None:
-        ddf = pd.DataFrame(d_raw, index=d_hours)
+        if d_raw.shape[1] > 2:  # net interchange (positive = importing)
+            # Physical import SHARE via the balance identity: imports /
+            # demand (carries the level, unlike a demeaned MW channel).
+            imp = (-d_raw[:, 2])[:T]
+            dem = d_raw[:, 0][:T] + 1e-6
+            inter = np.clip(imp / dem, -0.3, 0.6).astype(np.float32)
+        ddf = pd.DataFrame(d_raw[:, :2], index=d_hours)
         ddf = ddf[~ddf.index.duplicated(keep="first")]
         dj = ddf.reindex(hours_utc)   # US timelines are UTC already
         vals = np.nan_to_num(dj.values, nan=0.0)
@@ -425,7 +432,7 @@ def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None,
         "wind_regime24": regime24.astype(np.float32),
         "wind_tend6": tend6.astype(np.float32),
         "hdh": hdh, "cdh": cdh, "coal_z": coal_z, "gas_z": gas_z,
-        "demand_fut": dem_fut,
+        "demand_fut": dem_fut, "interchange_z": inter,
     }
     return data
 
@@ -729,6 +736,8 @@ def build_fd_windows(data, seq_len=SEQ_LEN, horizon=HORIZON, stride=TRAIN_STRIDE
     tend6 = ex.get("wind_tend6")
     if regime24 is not None and tend6 is not None:
         parts += [regime24[:, None], tend6[:, None]]
+    if ex.get("interchange_z") is not None:
+        parts += [ex["interchange_z"][:, None]]
     fut_exog_full = np.concatenate(parts, axis=1).astype(np.float32)
     hours = data["hours"]
 

@@ -76,7 +76,7 @@ class FuelDecompNet(nn.Module):
     inline differentiable physics layer, and per-fuel shares (B, H, F).
     """
 
-    def __init__(self, seq_len=336, horizon=24, n_weather=10, n_exog=17,
+    def __init__(self, seq_len=336, horizon=24, n_weather=10, n_exog=18,
                  config_dim=16, hidden=32, use_hypernet=False,
                  ef_corr_bound=0.35, solar_mod_bound=0.4,
                  wind_route_tau=1.1, dynamic_residual=False,
@@ -182,8 +182,9 @@ class FuelDecompNet(nn.Module):
             nn.Linear(config_dim + 2, 16), nn.ReLU(), nn.Linear(16, 1))
         nn.init.constant_(self.anchor_gate[-1].bias, 1.5)  # start near-anchored
         # --- cold-mode anchor gate (FD-34): zero-init (pass-through at
-        #     start); learns how strongly the monthly-config level should
-        #     anchor the telemetry-free prediction
+        #     start).  FD-37 probed the near-anchored init (bias 1.5,
+        #     mirroring I_0): neutral (p=0.96) with a VIC1 instability
+        #     outlier — training relaxes the gate on donors either way.
         self.cold_anchor_gate = nn.Sequential(
             nn.Linear(config_dim, 16), nn.ReLU(), nn.Linear(16, 1))
         nn.init.zeros_(self.cold_anchor_gate[-1].weight)

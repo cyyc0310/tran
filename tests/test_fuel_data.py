@@ -155,7 +155,7 @@ class TestAttachAndWindows:
         assert w["x_rs"].shape[1] == 336
         assert w["y_cif"].shape[1] == 24
         assert w["x_fuel"].shape == (len(w["x_rs"]), 336, len(CANONICAL_FUELS))
-        assert w["fut_exog"].shape == (len(w["x_rs"]), 24, 17)
+        assert w["fut_exog"].shape == (len(w["x_rs"]), 24, 18)
         # y_fuel at window i must correspond to hours origin+i.. (calendar
         # consistency: future astro daytime iff y_fuel solar can be > 0)
         i = len(w["x_rs"]) // 2

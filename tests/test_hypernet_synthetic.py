@@ -37,8 +37,8 @@ class TestConfigHyperNet:
     def test_apply_generated_head_shapes(self):
         hn = ConfigHyperNet(config_dim=16)
         gen = hn(torch.rand(3, 16))
-        x2 = torch.rand(3, 17)
-        x3 = torch.rand(3, 24, 17)
+        x2 = torch.rand(3, 18)
+        x3 = torch.rand(3, 24, 18)
         assert apply_generated_head(x2, "base_delta", gen).shape == (3, 5)
         assert apply_generated_head(x3, "therm_dyn", gen).shape == (3, 24, 3)
 
