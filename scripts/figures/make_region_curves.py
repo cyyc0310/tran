@@ -49,7 +49,8 @@ ROUTE_TAU = {"UK_01_North_Scotland": 1.1, "UK_02_South_Scotland": 1.1,
 def region_curves(target, fd_regions, device):
     import copy
     model = train_fuel_zero_shot(fd_regions, target, seed=0, epochs=600,
-                                 device=device,
+                                 device=device, use_monthly=True,
+                                 dynamic_residual=True,
                                  wind_route_tau=ROUTE_TAU.get(target, 0.45))
 
     data = fd_regions[target]
@@ -61,7 +62,8 @@ def region_curves(target, fd_regions, device):
               "hours": data["hours"][sl],
               "exog": {k: v[sl] for k, v in data["exog"].items()}}
     w = build_fd_windows(sliced, seq_len=SEQ_LEN, horizon=HORIZON,
-                         stride=TEST_STRIDE)
+                         stride=TEST_STRIDE,
+                         monthly_table=data.get("monthly_table"), lag_months=1)
     n = len(w["x_rs"])
     o0 = min(ORIGIN_OFFSET, max(0, n - N_ORIGINS))
     sel = list(range(o0, min(o0 + N_ORIGINS, n)))
@@ -95,7 +97,7 @@ def main():
 
     # Sort panels by I_cfg MAE (the headline telemetry-free tier).
     import json
-    rows = json.load(open(RESULTS_DIR / "fuel_decomp_eval_full_fd34.json"))["rows"]
+    rows = json.load(open(RESULTS_DIR / "fuel_decomp_eval_full_fd35.json"))["rows"]
     from collections import defaultdict
     mae = defaultdict(list)
     for r in rows:
@@ -123,7 +125,7 @@ def main():
     fig.suptitle(
         "Day-ahead CIF, 29 regions — zero-telemetry (green) vs share "
         "telemetry (orange)\npanel title: I$_{cfg}$ / I$_0$ MAE over the "
-        "plotted 96 h; panels sorted by I$_{cfg}$; FD-34 deployment mode",
+        "plotted 96 h; panels sorted by I$_{cfg}$; FD-35 deployment v3",
         fontsize=12)
     fig.supxlabel("hours")
     fig.supylabel("CIF (gCO$_2$/kWh)")
