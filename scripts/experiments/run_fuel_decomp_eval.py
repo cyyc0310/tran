@@ -49,6 +49,15 @@ QUICK_REGIONS = [
     "UK_02_South_Scotland", "UK_08_West_Midlands",
 ]
 
+# FD-22 deployment route table (official PASS, fd22/fd24): wind-seasonal
+# regions with REAL per-fuel telemetry run the fuel path (tau 1.1 never
+# triggers the aggregate router); everything else keeps the default router.
+# Eval-time only — training stays at the global tau, so the trained models
+# are bit-identical to a uniform-tau run.  SA1 must stay aggregate: its
+# fuel path carries a +56 cold bias (FD-22, classifier-synthetic shares).
+ROUTE_TABLE = {"UK_01_North_Scotland": 1.1, "UK_02_South_Scotland": 1.1,
+               "UK_16_Scotland": 1.1}
+
 
 def build_target_test_windows(data, use_monthly=False):
     """Test-split windows (last 20%, stride 24) matching the paper protocol."""
@@ -62,7 +71,8 @@ def build_target_test_windows(data, use_monthly=False):
     }
     return build_fd_windows(sliced, seq_len=SEQ_LEN, horizon=HORIZON,
                             stride=TEST_STRIDE,
-                            monthly_table=(data.get("monthly_table")
+                            monthly_table=(data.get("monthly_table_target",
+                                                     data.get("monthly_table"))
                                            if use_monthly else None),
                             lag_months=1)
 
@@ -179,7 +189,8 @@ def evaluate_one(target, fd_regions, seed, epochs, device, p_cold=0.3,
                  route_candidates=(0.0, 0.45, 1.1),
                  source_bias_calibrate=False,
                  smooth_hours=1,
-                 lambda_fuel=1.0, lambda_rs=0.3):
+                 lambda_fuel=1.0, lambda_rs=0.3,
+                 deployment_route_table=False):
     t0 = time.time()
     model = train_fuel_zero_shot(
         fd_regions, target, seed=seed, epochs=epochs, device=device,
@@ -200,6 +211,9 @@ def evaluate_one(target, fd_regions, seed, epochs, device, p_cold=0.3,
             model, fd_regions, target, device, candidates=route_candidates)
         model.wind_route_tau = wind_route_tau
     data = fd_regions[target]
+    if deployment_route_table and not source_route_select:
+        wind_route_tau = ROUTE_TABLE.get(target, wind_route_tau)
+        model.wind_route_tau = float(wind_route_tau)
     w = build_target_test_windows(data, use_monthly=use_monthly)
     n = len(w["x_rs"])
     if n == 0:
@@ -342,8 +356,10 @@ def main():
     ap.add_argument("--dynamic-residual-bound", type=float, default=220.0)
     ap.add_argument("--physics-target", action="store_true",
                     help="train source CIF loss on fuel shares x effective EF")
-    ap.add_argument("--source-route-select", action="store_true",
-                    help="select route from source-only validation, no target CIF")
+    ap.add_argument("--source-route-select", action="store_true",                    help="select route from source-only validation, no target CIF")
+    ap.add_argument("--deployment-route-table", action="store_true",
+                    help="restore the FD-22 official route table at eval "
+                         "(UK_01/02/16 -> fuel path); training unchanged")
     ap.add_argument("--route-candidates", nargs="+", type=float,
                     default=[0.0, 0.45, 1.1])
     ap.add_argument("--source-bias-calibrate", action="store_true",
@@ -416,6 +432,7 @@ def main():
         "domain_penalty": args.domain_penalty,
         "physics_target": bool(args.physics_target),
         "source_route_select": bool(args.source_route_select),
+        "deployment_route_table": bool(args.deployment_route_table),
         "max_windows": args.max_windows,
     }
     if out_path.exists():
@@ -463,7 +480,8 @@ def main():
                                    physics_target=args.physics_target,
                                    source_route_select=args.source_route_select,
                                    lambda_fuel=args.lambda_fuel,
-                                   lambda_rs=args.lambda_rs)
+                                   lambda_rs=args.lambda_rs,
+                                   deployment_route_table=args.deployment_route_table)
             except Exception as e:  # noqa: BLE001
                 print(f"  [WARN] {target} seed {seed} failed: {e}")
                 continue

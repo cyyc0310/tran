@@ -55,20 +55,81 @@ def fuel_config_weight(src, tgt):
     return legacy / (0.5 * dist + 0.1)
 
 
+def anchor_trust(data, monthly_table, train_fraction=None):
+    """Deployment-causal trust score for the monthly interface table.
+
+    Correlation (12 monthly points, TRAIN split only) between the level the
+    monthly table implies — ``(1 - share_m) * ef_nr`` — and the observed
+    train-split monthly mean CIF.  A table whose seasonal cycle disagrees
+    with the region's own observed cycle would inject level noise through
+    the config-conditioned paths (FD-34/35: UK_05 +10.8, US_BPAT +4.7,
+    UK_16 I_0 +11.8); trust~0 collapses the table to the annual config,
+    trust~1 keeps the published monthly resolution.  No labels beyond the
+    train split are touched, so this is a uniform automatic gate, not a
+    per-region lookup.
+    """
+    if train_fraction is None:
+        from transcif.config import TRAIN_FRACTION  # noqa: PLC0415
+        train_fraction = TRAIN_FRACTION
+    n = int(len(data["cif"]) * train_fraction)
+    months = data["hours"][:n].month
+    y = data["cif"][:n]
+    # The 80% train split of a single year ends in autumn — score only the
+    # months the train split actually covers.
+    valid = [m for m in range(1, 13) if (months == m).any()]
+    if len(valid) < 6:
+        return 0.0
+    obs = np.array([y[months == m].mean() for m in valid])
+    if np.std(obs) < 1e-6:
+        return 0.0
+    imp = np.array([1.0 - float(monthly_table[m - 1, 0]) for m in valid]) \
+        * float(data["ef_nr"])
+    if np.std(imp) < 1e-6:
+        return 0.0
+    # Shape agreement AND level calibration: correlation is shift/scale
+    # invariant, so a table with the right seasonal shape but a systematic
+    # level offset would pass a pure correlation gate (UK_05: corr 0.95,
+    # bias +7 gCO2 — exactly its FD-34 +10.8 regression).  The exponential
+    # bias penalty makes trust vanish when the implied level is off by
+    # ~1 sigma of the observed seasonal cycle.  Offline validation vs the
+    # measured FD-28->FD-34 anchor deltas: low-trust half +2.6 MAE,
+    # high-trust half -5.2.
+    r = float(np.corrcoef(imp, obs)[0, 1])
+    bias = float((imp - obs).mean())
+    return float(max(r, 0.0) * np.exp(-abs(bias) / np.std(obs)))
+
+
 def prepare_fd_region(region_name, all_configs, data_dir=None, multi_year=False,
                       monthly_history_only=False, use_au_state=False):
     """Load one region with fuel shares, exog features and the FD config."""
+    import os  # noqa: PLC0415
     from transcif.data.loaders import load_region_data  # noqa: PLC0415
     data = load_region_data(region_name, all_configs, data_dir=data_dir,
                             multi_year=multi_year)
     from transcif.data.fuel import (attach_fuel_and_exog,  # noqa: PLC0415
-                                    build_fd_config,
                                     build_monthly_config_table)
     attach_fuel_and_exog(data, region_name, all_configs, data_dir=data_dir,
                          use_au_state=use_au_state)
     data["fd_config"] = build_fd_config(data, region_name)
     data["monthly_table"] = build_monthly_config_table(
         data, region_name, history_only=monthly_history_only)
+    # FD-39 anchor-trust gate: blend the monthly table toward the annual
+    # config in proportion to its train-observed seasonal consistency.
+    # ANCHOR_TRUST=1        blend everywhere (sources' training tables too)
+    # ANCHOR_TRUST=2        blend the TARGET's evaluation table only — the
+    #                       shared model keeps raw monthly source tables, so
+    #                       training is bit-identical to FD-35 and the gate
+    #                       acts purely as an inference-time interface choice
+    data["anchor_trust"] = anchor_trust(data, data["monthly_table"])
+    mode = os.environ.get("ANCHOR_TRUST", "0")
+    if mode in ("1", "2"):
+        t = data["anchor_trust"]
+        blended = (data["fd_config"][None, :]
+                   + t * (data["monthly_table"] - data["fd_config"][None, :]))
+        if mode == "1":
+            data["monthly_table"] = blended
+        else:
+            data["monthly_table_target"] = blended
     return data
 
 
