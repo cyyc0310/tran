@@ -1,0 +1,68 @@
+[
+ {
+  "tag": "B",
+  "target": "VIC1",
+  "seed": 0,
+  "anchor_trust": 0.947,
+  "bound": 220.0,
+  "train_s": 21.9,
+  "mae_cfg": 75.57254028320312,
+  "mae_i0": 80.32653045654297,
+  "mae_cfg_tta": 75.66517050335216
+ },
+ {
+  "tag": "B",
+  "target": "NSW1",
+  "seed": 0,
+  "anchor_trust": 0.782,
+  "bound": 220.0,
+  "train_s": 20.8,
+  "mae_cfg": 81.69163513183594,
+  "mae_i0": 65.86503601074219,
+  "mae_cfg_tta": 81.99715116946275
+ },
+ {
+  "tag": "B",
+  "target": "UK_05_Yorkshire",
+  "seed": 0,
+  "anchor_trust": 0.739,
+  "bound": 220.0,
+  "train_s": 20.9,
+  "mae_cfg": 55.80077362060547,
+  "mae_i0": 63.56804275512695,
+  "mae_cfg_tta": 55.85967908029492
+ },
+ {
+  "tag": "B",
+  "target": "US_BPAT",
+  "seed": 0,
+  "anchor_trust": 0.744,
+  "bound": 220.0,
+  "train_s": 20.6,
+  "mae_cfg": 19.919025421142578,
+  "mae_i0": 10.62090015411377,
+  "mae_cfg_tta": 19.778119430541796
+ },
+ {
+  "tag": "B",
+  "target": "US_NYIS",
+  "seed": 0,
+  "anchor_trust": 0.0,
+  "bound": 220.0,
+  "train_s": 21.0,
+  "mae_cfg": 24.29312515258789,
+  "mae_i0": 19.402616500854492,
+  "mae_cfg_tta": 24.648409302718328
+ },
+ {
+  "tag": "B",
+  "target": "UK_16_Scotland",
+  "seed": 0,
+  "anchor_trust": 0.619,
+  "bound": 220.0,
+  "train_s": 20.8,
+  "mae_cfg": 20.482404708862305,
+  "mae_i0": 20.16747283935547,
+  "mae_cfg_tta": 20.139950595751813
+ }
+]

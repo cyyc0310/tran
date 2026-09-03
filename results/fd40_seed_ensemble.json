@@ -1,0 +1,234 @@
+[
+ {
+  "target": "QLD1",
+  "mae_seed_mean_cfg": 38.36275100708008,
+  "mae_ensemble_cfg": 37.456424713134766,
+  "mae_seed_mean_i0": 34.27698516845703,
+  "mae_ensemble_i0": 33.29941940307617,
+  "train_s": 99.1
+ },
+ {
+  "target": "NSW1",
+  "mae_seed_mean_cfg": 77.05496978759766,
+  "mae_ensemble_cfg": 76.84078979492188,
+  "mae_seed_mean_i0": 64.4553451538086,
+  "mae_ensemble_i0": 64.07432556152344,
+  "train_s": 97.6
+ },
+ {
+  "target": "VIC1",
+  "mae_seed_mean_cfg": 81.30292510986328,
+  "mae_ensemble_cfg": 78.15660858154297,
+  "mae_seed_mean_i0": 86.02217102050781,
+  "mae_ensemble_i0": 83.31519317626953,
+  "train_s": 97.5
+ },
+ {
+  "target": "SA1",
+  "mae_seed_mean_cfg": 85.53446960449219,
+  "mae_ensemble_cfg": 85.44390106201172,
+  "mae_seed_mean_i0": 78.5384292602539,
+  "mae_ensemble_i0": 78.44096374511719,
+  "train_s": 98.3
+ },
+ {
+  "target": "UK_01_North_Scotland",
+  "mae_seed_mean_cfg": 48.39407730102539,
+  "mae_ensemble_cfg": 48.30849075317383,
+  "mae_seed_mean_i0": 44.95443344116211,
+  "mae_ensemble_i0": 44.88633346557617,
+  "train_s": 98.2
+ },
+ {
+  "target": "UK_02_South_Scotland",
+  "mae_seed_mean_cfg": 16.15917205810547,
+  "mae_ensemble_cfg": 15.701886177062988,
+  "mae_seed_mean_i0": 18.408157348632812,
+  "mae_ensemble_i0": 17.862150192260742,
+  "train_s": 98.2
+ },
+ {
+  "target": "UK_03_North_West_England",
+  "mae_seed_mean_cfg": 25.384403228759766,
+  "mae_ensemble_cfg": 25.25394630432129,
+  "mae_seed_mean_i0": 20.554428100585938,
+  "mae_ensemble_i0": 20.366724014282227,
+  "train_s": 97.6
+ },
+ {
+  "target": "UK_05_Yorkshire",
+  "mae_seed_mean_cfg": 40.29635238647461,
+  "mae_ensemble_cfg": 37.34108352661133,
+  "mae_seed_mean_i0": 43.87963104248047,
+  "mae_ensemble_i0": 40.795997619628906,
+  "train_s": 97.1
+ },
+ {
+  "target": "UK_06_North_Wales_Merseyside",
+  "mae_seed_mean_cfg": 42.109859466552734,
+  "mae_ensemble_cfg": 41.872615814208984,
+  "mae_seed_mean_i0": 33.948665618896484,
+  "mae_ensemble_i0": 33.64208984375,
+  "train_s": 97.8
+ },
+ {
+  "target": "UK_07_South_Wales",
+  "mae_seed_mean_cfg": 66.76447296142578,
+  "mae_ensemble_cfg": 66.65182495117188,
+  "mae_seed_mean_i0": 58.105224609375,
+  "mae_ensemble_i0": 57.96145248413086,
+  "train_s": 97.8
+ },
+ {
+  "target": "UK_08_West_Midlands",
+  "mae_seed_mean_cfg": 72.82400512695312,
+  "mae_ensemble_cfg": 72.70268249511719,
+  "mae_seed_mean_i0": 59.15188980102539,
+  "mae_ensemble_i0": 58.87581253051758,
+  "train_s": 97.7
+ },
+ {
+  "target": "UK_09_East_Midlands",
+  "mae_seed_mean_cfg": 79.9059829711914,
+  "mae_ensemble_cfg": 79.38629913330078,
+  "mae_seed_mean_i0": 69.7069320678711,
+  "mae_ensemble_i0": 69.03300476074219,
+  "train_s": 97.7
+ },
+ {
+  "target": "UK_10_East_England",
+  "mae_seed_mean_cfg": 33.38971710205078,
+  "mae_ensemble_cfg": 33.020328521728516,
+  "mae_seed_mean_i0": 27.735280990600586,
+  "mae_ensemble_i0": 27.193986892700195,
+  "train_s": 97.6
+ },
+ {
+  "target": "UK_11_South_West_England",
+  "mae_seed_mean_cfg": 52.39823532104492,
+  "mae_ensemble_cfg": 51.75172805786133,
+  "mae_seed_mean_i0": 43.211326599121094,
+  "mae_ensemble_i0": 42.54253387451172,
+  "train_s": 97.2
+ },
+ {
+  "target": "UK_12_South_England",
+  "mae_seed_mean_cfg": 52.813697814941406,
+  "mae_ensemble_cfg": 52.344757080078125,
+  "mae_seed_mean_i0": 41.861568450927734,
+  "mae_ensemble_i0": 41.3515625,
+  "train_s": 97.8
+ },
+ {
+  "target": "UK_13_London",
+  "mae_seed_mean_cfg": 37.65987777709961,
+  "mae_ensemble_cfg": 37.303531646728516,
+  "mae_seed_mean_i0": 37.46100997924805,
+  "mae_ensemble_i0": 37.189449310302734,
+  "train_s": 97.3
+ },
+ {
+  "target": "UK_14_South_East_England",
+  "mae_seed_mean_cfg": 44.3390998840332,
+  "mae_ensemble_cfg": 43.78858184814453,
+  "mae_seed_mean_i0": 43.696044921875,
+  "mae_ensemble_i0": 42.89078903198242,
+  "train_s": 98.3
+ },
+ {
+  "target": "UK_15_England",
+  "mae_seed_mean_cfg": 35.61865997314453,
+  "mae_ensemble_cfg": 35.13904571533203,
+  "mae_seed_mean_i0": 29.76451873779297,
+  "mae_ensemble_i0": 29.207067489624023,
+  "train_s": 98.4
+ },
+ {
+  "target": "UK_16_Scotland",
+  "mae_seed_mean_cfg": 21.098798751831055,
+  "mae_ensemble_cfg": 20.73434829711914,
+  "mae_seed_mean_i0": 20.581262588500977,
+  "mae_ensemble_i0": 20.162656784057617,
+  "train_s": 98.4
+ },
+ {
+  "target": "UK_17_Wales",
+  "mae_seed_mean_cfg": 51.122825622558594,
+  "mae_ensemble_cfg": 50.769996643066406,
+  "mae_seed_mean_i0": 49.28154373168945,
+  "mae_ensemble_i0": 49.01396942138672,
+  "train_s": 97.9
+ },
+ {
+  "target": "UK_18_GB",
+  "mae_seed_mean_cfg": 33.18115234375,
+  "mae_ensemble_cfg": 32.72341537475586,
+  "mae_seed_mean_i0": 27.035919189453125,
+  "mae_ensemble_i0": 26.41179656982422,
+  "train_s": 97.9
+ },
+ {
+  "target": "US_CISO",
+  "mae_seed_mean_cfg": 53.58774185180664,
+  "mae_ensemble_cfg": 53.40811538696289,
+  "mae_seed_mean_i0": 38.053558349609375,
+  "mae_ensemble_i0": 37.67259216308594,
+  "train_s": 98.1
+ },
+ {
+  "target": "US_PJM",
+  "mae_seed_mean_cfg": 19.621774673461914,
+  "mae_ensemble_cfg": 19.274641036987305,
+  "mae_seed_mean_i0": 19.5662841796875,
+  "mae_ensemble_i0": 19.21704864501953,
+  "train_s": 98.3
+ },
+ {
+  "target": "US_MISO",
+  "mae_seed_mean_cfg": 32.50905227661133,
+  "mae_ensemble_cfg": 30.71819305419922,
+  "mae_seed_mean_i0": 31.709157943725586,
+  "mae_ensemble_i0": 30.265615463256836,
+  "train_s": 98.2
+ },
+ {
+  "target": "US_ERCO",
+  "mae_seed_mean_cfg": 38.68626403808594,
+  "mae_ensemble_cfg": 38.308349609375,
+  "mae_seed_mean_i0": 37.4433479309082,
+  "mae_ensemble_i0": 37.04280471801758,
+  "train_s": 97.8
+ },
+ {
+  "target": "US_ISNE",
+  "mae_seed_mean_cfg": 24.194869995117188,
+  "mae_ensemble_cfg": 23.930484771728516,
+  "mae_seed_mean_i0": 17.32439613342285,
+  "mae_ensemble_i0": 17.01176643371582,
+  "train_s": 97.7
+ },
+ {
+  "target": "US_NYIS",
+  "mae_seed_mean_cfg": 20.4902400970459,
+  "mae_ensemble_cfg": 19.618370056152344,
+  "mae_seed_mean_i0": 18.9381103515625,
+  "mae_ensemble_i0": 18.14728546142578,
+  "train_s": 97.6
+ },
+ {
+  "target": "US_FPL",
+  "mae_seed_mean_cfg": 22.906301498413086,
+  "mae_ensemble_cfg": 22.37519073486328,
+  "mae_seed_mean_i0": 19.157697677612305,
+  "mae_ensemble_i0": 18.41086769104004,
+  "train_s": 97.8
+ },
+ {
+  "target": "US_BPAT",
+  "mae_seed_mean_cfg": 17.52573585510254,
+  "mae_ensemble_cfg": 16.9697265625,
+  "mae_seed_mean_i0": 11.293782234191895,
+  "mae_ensemble_i0": 10.451878547668457,
+  "train_s": 98.1
+ }
+]

@@ -1,0 +1,6 @@
+[B] VIC1                     trust=0.95 cfg=75.6 tta=75.7 i0=80.3 (21.9s)
+[B] NSW1                     trust=0.78 cfg=81.7 tta=82.0 i0=65.9 (20.8s)
+[B] UK_05_Yorkshire          trust=0.74 cfg=55.8 tta=55.9 i0=63.6 (20.9s)
+[B] US_BPAT                  trust=0.74 cfg=19.9 tta=19.8 i0=10.6 (20.6s)
+[B] US_NYIS                  trust=0.00 cfg=24.3 tta=24.6 i0=19.4 (21.0s)
+[B] UK_16_Scotland           trust=0.62 cfg=20.5 tta=20.1 i0=20.2 (20.8s)
