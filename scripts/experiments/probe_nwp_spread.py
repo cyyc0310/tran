@@ -23,7 +23,7 @@ from transcif.models.zeroshot.fuel import (
 )
 
 REGIONS = None   # None = all 29
-SEEDS = [2, 3, 4]
+SEEDS = [0, 1, 2, 3, 4]
 
 
 def main():
@@ -62,7 +62,7 @@ def main():
             results.append(row)
             print(f"[fd43] {target:26s} s{seed} cfg {row['mae_cfg']:.1f} "
                   f"i0 {row['mae_i0']:.1f}", flush=True)
-            RESULTS_DIR.joinpath("fd43_nwp_full_s234.json").write_text(
+            RESULTS_DIR.joinpath("fd44_probe.json").write_text(
                 json.dumps(results, indent=1))
     print("[fd43] done")
 
