@@ -466,12 +466,13 @@ def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None,
             ndf = pd.DataFrame(n_raw, index=n_hours)
             ndf = ndf[~ndf.index.duplicated(keep="first")]
             nj = ndf.reindex(hours_utc)
-            sw = np.abs(nj.iloc[:, 0].values - nj.iloc[:, 1].values)
-            st = np.abs(nj.iloc[:, 2].values - nj.iloc[:, 3].values)
+            sw = np.nan_to_num(np.abs(nj.iloc[:, 0].values
+                                      - nj.iloc[:, 1].values), nan=0.0)
+            st = np.nan_to_num(np.abs(nj.iloc[:, 2].values
+                                      - nj.iloc[:, 3].values), nan=0.0)
             split = int(T * 0.8)
             out = np.zeros((T, 2), dtype=np.float32)
             for i, arr in enumerate((sw, st)):
-                arr = np.nan_to_num(arr, nan=0.0)
                 mu, sd = arr[:split].mean(), arr[:split].std()
                 out[:, i] = (arr - mu) / (sd if sd > 1e-6 else 1.0)
             nwp_spread = out
