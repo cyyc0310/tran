@@ -475,6 +475,17 @@ def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None,
             for i, arr in enumerate((sw, st)):
                 mu, sd = arr[:split].mean(), arr[:split].std()
                 out[:, i] = (arr - mu) / (sd if sd > 1e-6 else 1.0)
+            # FD-44 PRE-REGISTERED interaction: feature amplitude scales
+            # with the region's wind share (fd_config[8]) — spread is only
+            # informative where the CIF is weather(wind)-sensitive, and
+            # amplitude-proportional features shrink the overfit surface
+            # exactly where the signal is irrelevant (FPL wind=0 -> exact
+            # zeros).  Decision rule: adopt iff pooled(145) p<0.05 AND
+            # mean >= +0.9 AND no region net <-3.
+            if has_fuel:
+                w_cfg = float(np.mean(
+                    fuel_shares[:split, CANONICAL_FUELS.index("wind")]))
+                out = out * np.float32(w_cfg)
             nwp_spread = out
 
     data["fuel_shares"] = fuel_shares
