@@ -46,14 +46,17 @@ def main():
     ap.add_argument("--out", default=str(RESULTS_DIR / "fd40_seed_ensemble.json"))
     ap.add_argument("--seeds", nargs="+", type=int, default=[0, 1, 2, 3, 4])
     ap.add_argument("--epochs", type=int, default=600)
+    ap.add_argument("--regions", nargs="+", default=None)
     args = ap.parse_args()
 
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     cfgs = all_region_configs()
     fd_regions = {n: prepare_fd_region(n, cfgs) for n in cfgs}
+    loop = [n for n in (args.regions or list(fd_regions))
+            if n in fd_regions]
 
     results = []
-    for target in fd_regions:
+    for target in loop:
         t0 = time.time()
         data = fd_regions[target]
         w = build_target_test_windows(data)

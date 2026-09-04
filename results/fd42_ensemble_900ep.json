@@ -1,0 +1,82 @@
+[
+ {
+  "target": "VIC1",
+  "mae_seed_mean_cfg": 84.48900604248047,
+  "mae_ensemble_cfg": 81.35424041748047,
+  "mae_seed_mean_i0": 90.49569702148438,
+  "mae_ensemble_i0": 87.8038330078125,
+  "train_s": 160.0
+ },
+ {
+  "target": "SA1",
+  "mae_seed_mean_cfg": 80.08345794677734,
+  "mae_ensemble_cfg": 80.0052261352539,
+  "mae_seed_mean_i0": 73.09793090820312,
+  "mae_ensemble_i0": 72.95037841796875,
+  "train_s": 3138.4
+ },
+ {
+  "target": "US_BPAT",
+  "mae_seed_mean_cfg": 21.116323471069336,
+  "mae_ensemble_cfg": 20.51569366455078,
+  "mae_seed_mean_i0": 12.236756324768066,
+  "mae_ensemble_i0": 11.339534759521484,
+  "train_s": 157.3
+ },
+ {
+  "target": "UK_05_Yorkshire",
+  "mae_seed_mean_cfg": 52.3248176574707,
+  "mae_ensemble_cfg": 50.44023513793945,
+  "mae_seed_mean_i0": 58.51771926879883,
+  "mae_ensemble_i0": 56.76432800292969,
+  "train_s": 159.4
+ },
+ {
+  "target": "US_MISO",
+  "mae_seed_mean_cfg": 33.292293548583984,
+  "mae_ensemble_cfg": 31.792192459106445,
+  "mae_seed_mean_i0": 32.488182067871094,
+  "mae_ensemble_i0": 31.219589233398438,
+  "train_s": 159.1
+ },
+ {
+  "target": "US_NYIS",
+  "mae_seed_mean_cfg": 20.760103225708008,
+  "mae_ensemble_cfg": 19.616579055786133,
+  "mae_seed_mean_i0": 20.38835334777832,
+  "mae_ensemble_i0": 19.42422103881836,
+  "train_s": 159.1
+ },
+ {
+  "target": "QLD1",
+  "mae_seed_mean_cfg": 38.29466247558594,
+  "mae_ensemble_cfg": 37.44599151611328,
+  "mae_seed_mean_i0": 33.8844108581543,
+  "mae_ensemble_i0": 33.021121978759766,
+  "train_s": 158.7
+ },
+ {
+  "target": "UK_16_Scotland",
+  "mae_seed_mean_cfg": 20.811676025390625,
+  "mae_ensemble_cfg": 20.378366470336914,
+  "mae_seed_mean_i0": 20.905033111572266,
+  "mae_ensemble_i0": 20.38039207458496,
+  "train_s": 159.3
+ },
+ {
+  "target": "UK_02_South_Scotland",
+  "mae_seed_mean_cfg": 17.50543212890625,
+  "mae_ensemble_cfg": 17.198463439941406,
+  "mae_seed_mean_i0": 20.478578567504883,
+  "mae_ensemble_i0": 20.094690322875977,
+  "train_s": 158.8
+ },
+ {
+  "target": "US_CISO",
+  "mae_seed_mean_cfg": 50.45661926269531,
+  "mae_ensemble_cfg": 50.1322021484375,
+  "mae_seed_mean_i0": 37.3336067199707,
+  "mae_ensemble_i0": 36.76002502441406,
+  "train_s": 158.9
+ }
+]
