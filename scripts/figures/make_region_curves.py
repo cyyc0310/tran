@@ -125,7 +125,7 @@ def main():
     fig.suptitle(
         "Day-ahead CIF, 29 regions — zero-telemetry (green) vs share "
         "telemetry (orange)\npanel title: I$_{cfg}$ / I$_0$ MAE over the "
-        "plotted 96 h; panels sorted by I$_{cfg}$; FD-35 deployment v3",
+        "plotted 96 h; panels sorted by I$_{cfg}$; fd41 official (900ep, fuel path)",
         fontsize=12)
     fig.supxlabel("hours")
     fig.supylabel("CIF (gCO$_2$/kWh)")
