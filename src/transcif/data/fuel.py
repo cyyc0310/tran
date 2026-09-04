@@ -12,6 +12,8 @@ fuel telemetry and carry zeros + ``has_fuel=False``)::
     coal, gas, petroleum, nuclear, hydro, solar, wind, biomass, imports, other
 """
 
+import os
+
 import numpy as np
 import pandas as pd
 
@@ -197,6 +199,35 @@ def load_demand(region_name, all_configs, data_dir=None):
           .sort_values("hour").reset_index(drop=True))
     return pd.DatetimeIndex(df["hour"]), df[
         ["demand_actual_mw", "demand_forecast_mw"]].values.astype(np.float32)
+
+
+def load_nwp_forecast(region_name, all_configs, data_dir=None):
+    """Load archived multi-model NWP forecasts (FD-43, GFS + ICON).
+
+    ``data_2023/nwp/{stem}_nwp_{year}_hourly.csv`` per model-pair, hourly
+    wind100 (m/s) + 2m temperature (C) keyed by VALID time — the
+    deployment-real day-ahead weather that was publicly available,
+    unlike the ERA5 reanalysis proxy.  Returns ``(hours, array(T, 4))``
+    or ``(None, None)``.
+    """
+    if data_dir is None:
+        data_dir = DATA_DIR
+    info = all_configs.get(region_name)
+    if info is None:
+        return None, None
+    stem = info["file"].replace("_2023_hourly.csv", "")
+    paths = sorted((data_dir / "nwp").glob(f"{stem}_nwp_*_hourly.csv"))
+    if not paths:
+        return None, None
+    frames = []
+    for path in paths:
+        d = pd.read_csv(path, parse_dates=["hour"])
+        frames.append(d)
+    df = (pd.concat(frames, ignore_index=True)
+          .drop_duplicates("hour", keep="last")
+          .sort_values("hour").reset_index(drop=True))
+    cols = ["gfs_wind100", "icon_wind100", "gfs_temp", "icon_temp"]
+    return pd.DatetimeIndex(df["hour"]), df[cols].values.astype(np.float32)
 
 
 def load_regional_state(region_name, all_configs, data_dir=None):
@@ -423,6 +454,28 @@ def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None,
         coal_z = lagged[month_idx, 0].astype(np.float32)
         gas_z = lagged[month_idx, 1].astype(np.float32)
 
+    # NWP inter-model disagreement (FD-43): |GFS - ICON| of wind100 and
+    # 2m temperature, z-scored on the train split.  Forecast-spread is a
+    # deployment-causal predictability signal — hedge spike confidence
+    # when the models disagree.  Env-gated; default off keeps fd41
+    # bit-reproducible.
+    nwp_spread = None
+    if os.environ.get("NWP_SPREAD", "0") == "1":
+        n_hours, n_raw = load_nwp_forecast(region_name, all_configs, data_dir)
+        if n_hours is not None:
+            ndf = pd.DataFrame(n_raw, index=n_hours)
+            ndf = ndf[~ndf.index.duplicated(keep="first")]
+            nj = ndf.reindex(hours_utc)
+            sw = np.abs(nj.iloc[:, 0].values - nj.iloc[:, 1].values)
+            st = np.abs(nj.iloc[:, 2].values - nj.iloc[:, 3].values)
+            split = int(T * 0.8)
+            out = np.zeros((T, 2), dtype=np.float32)
+            for i, arr in enumerate((sw, st)):
+                arr = np.nan_to_num(arr, nan=0.0)
+                mu, sd = arr[:split].mean(), arr[:split].std()
+                out[:, i] = (arr - mu) / (sd if sd > 1e-6 else 1.0)
+            nwp_spread = out
+
     data["fuel_shares"] = fuel_shares
     data["has_fuel"] = has_fuel
     data["ef_vec"] = calibrated_fuel_efs(data, region_name)
@@ -434,6 +487,8 @@ def attach_fuel_and_exog(data, region_name, all_configs, data_dir=None,
         "hdh": hdh, "cdh": cdh, "coal_z": coal_z, "gas_z": gas_z,
         "demand_fut": dem_fut, "interchange_z": inter,
     }
+    if nwp_spread is not None:
+        data["exog"]["nwp_spread_fut"] = nwp_spread
     return data
 
 
@@ -738,6 +793,8 @@ def build_fd_windows(data, seq_len=SEQ_LEN, horizon=HORIZON, stride=TRAIN_STRIDE
         parts += [regime24[:, None], tend6[:, None]]
     if ex.get("interchange_z") is not None:
         parts += [ex["interchange_z"][:, None]]
+    if ex.get("nwp_spread_fut") is not None:
+        parts += [ex["nwp_spread_fut"]]
     fut_exog_full = np.concatenate(parts, axis=1).astype(np.float32)
     hours = data["hours"]
 

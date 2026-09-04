@@ -76,7 +76,7 @@ class FuelDecompNet(nn.Module):
     inline differentiable physics layer, and per-fuel shares (B, H, F).
     """
 
-    def __init__(self, seq_len=336, horizon=24, n_weather=10, n_exog=18,
+    def __init__(self, seq_len=336, horizon=24, n_weather=10, n_exog=None,
                  config_dim=16, hidden=32, use_hypernet=False,
                  ef_corr_bound=0.35, solar_mod_bound=0.4,
                  wind_route_tau=1.1, dynamic_residual=False,
@@ -92,6 +92,11 @@ class FuelDecompNet(nn.Module):
         # telemetry-free regions still take the aggregate path via
         # ``has_fuel``.  tau >= 1.1 means fuel-first, while 0.0 means
         # aggregate-first.  Keep this configurable for ablations.
+        if n_exog is None:
+            # FD-43: NWP spread channels (+2) are env-gated; keep the
+            # default consistent with the exog builder.
+            import os  # noqa: PLC0415
+            n_exog = 20 if os.environ.get("NWP_SPREAD", "0") == "1" else 18
         self.wind_route_tau = float(wind_route_tau)
         self.ef_corr_bound = ef_corr_bound
         self.solar_mod_bound = solar_mod_bound

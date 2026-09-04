@@ -1,0 +1,408 @@
+[
+ {
+  "target": "QLD1",
+  "seed": 0,
+  "mae_cfg": 40.2446174621582,
+  "mae_i0": 37.08823776245117,
+  "train_s": 33.9
+ },
+ {
+  "target": "QLD1",
+  "seed": 1,
+  "mae_cfg": 37.07676315307617,
+  "mae_i0": 33.1739501953125,
+  "train_s": 32.0
+ },
+ {
+  "target": "NSW1",
+  "seed": 0,
+  "mae_cfg": 78.36165618896484,
+  "mae_i0": 66.08109283447266,
+  "train_s": 31.9
+ },
+ {
+  "target": "NSW1",
+  "seed": 1,
+  "mae_cfg": 78.65387725830078,
+  "mae_i0": 65.06771850585938,
+  "train_s": 32.2
+ },
+ {
+  "target": "VIC1",
+  "seed": 0,
+  "mae_cfg": 78.37073516845703,
+  "mae_i0": 84.44068145751953,
+  "train_s": 32.4
+ },
+ {
+  "target": "VIC1",
+  "seed": 1,
+  "mae_cfg": 79.89403533935547,
+  "mae_i0": 85.47090148925781,
+  "train_s": 32.4
+ },
+ {
+  "target": "SA1",
+  "seed": 0,
+  "mae_cfg": 79.16423797607422,
+  "mae_i0": 71.66930389404297,
+  "train_s": 32.4
+ },
+ {
+  "target": "SA1",
+  "seed": 1,
+  "mae_cfg": 82.43917083740234,
+  "mae_i0": 73.97199249267578,
+  "train_s": 32.6
+ },
+ {
+  "target": "UK_01_North_Scotland",
+  "seed": 0,
+  "mae_cfg": 47.66209030151367,
+  "mae_i0": 44.74516296386719,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_01_North_Scotland",
+  "seed": 1,
+  "mae_cfg": 47.88694381713867,
+  "mae_i0": 44.74274444580078,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_02_South_Scotland",
+  "seed": 0,
+  "mae_cfg": 16.370168685913086,
+  "mae_i0": 19.437400817871094,
+  "train_s": 32.6
+ },
+ {
+  "target": "UK_02_South_Scotland",
+  "seed": 1,
+  "mae_cfg": 16.439619064331055,
+  "mae_i0": 19.114439010620117,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_03_North_West_England",
+  "seed": 0,
+  "mae_cfg": 24.2811279296875,
+  "mae_i0": 19.029495239257812,
+  "train_s": 32.7
+ },
+ {
+  "target": "UK_03_North_West_England",
+  "seed": 1,
+  "mae_cfg": 24.311363220214844,
+  "mae_i0": 20.077726364135742,
+  "train_s": 32.5
+ },
+ {
+  "target": "UK_05_Yorkshire",
+  "seed": 0,
+  "mae_cfg": 52.070404052734375,
+  "mae_i0": 56.98966598510742,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_05_Yorkshire",
+  "seed": 1,
+  "mae_cfg": 39.56888198852539,
+  "mae_i0": 38.57139205932617,
+  "train_s": 32.8
+ },
+ {
+  "target": "UK_06_North_Wales_Merseyside",
+  "seed": 0,
+  "mae_cfg": 41.016326904296875,
+  "mae_i0": 32.90239715576172,
+  "train_s": 32.7
+ },
+ {
+  "target": "UK_06_North_Wales_Merseyside",
+  "seed": 1,
+  "mae_cfg": 41.47438430786133,
+  "mae_i0": 33.14703369140625,
+  "train_s": 32.7
+ },
+ {
+  "target": "UK_07_South_Wales",
+  "seed": 0,
+  "mae_cfg": 59.752830505371094,
+  "mae_i0": 54.29308319091797,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_07_South_Wales",
+  "seed": 1,
+  "mae_cfg": 58.613948822021484,
+  "mae_i0": 53.33958435058594,
+  "train_s": 33.1
+ },
+ {
+  "target": "UK_08_West_Midlands",
+  "seed": 0,
+  "mae_cfg": 70.23971557617188,
+  "mae_i0": 57.69918441772461,
+  "train_s": 32.5
+ },
+ {
+  "target": "UK_08_West_Midlands",
+  "seed": 1,
+  "mae_cfg": 71.97427368164062,
+  "mae_i0": 58.36571502685547,
+  "train_s": 32.8
+ },
+ {
+  "target": "UK_09_East_Midlands",
+  "seed": 0,
+  "mae_cfg": 75.59857177734375,
+  "mae_i0": 64.66830444335938,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_09_East_Midlands",
+  "seed": 1,
+  "mae_cfg": 78.74176788330078,
+  "mae_i0": 68.10811614990234,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_10_East_England",
+  "seed": 0,
+  "mae_cfg": 32.93622589111328,
+  "mae_i0": 27.746322631835938,
+  "train_s": 32.9
+ },
+ {
+  "target": "UK_10_East_England",
+  "seed": 1,
+  "mae_cfg": 32.488094329833984,
+  "mae_i0": 27.249765396118164,
+  "train_s": 32.6
+ },
+ {
+  "target": "UK_11_South_West_England",
+  "seed": 0,
+  "mae_cfg": 48.73576736450195,
+  "mae_i0": 43.74968719482422,
+  "train_s": 32.6
+ },
+ {
+  "target": "UK_11_South_West_England",
+  "seed": 1,
+  "mae_cfg": 48.474491119384766,
+  "mae_i0": 44.67145538330078,
+  "train_s": 33.0
+ },
+ {
+  "target": "UK_12_South_England",
+  "seed": 0,
+  "mae_cfg": 50.42146682739258,
+  "mae_i0": 39.733394622802734,
+  "train_s": 32.7
+ },
+ {
+  "target": "UK_12_South_England",
+  "seed": 1,
+  "mae_cfg": 48.83517837524414,
+  "mae_i0": 39.498748779296875,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_13_London",
+  "seed": 0,
+  "mae_cfg": 37.97092819213867,
+  "mae_i0": 37.80283737182617,
+  "train_s": 32.9
+ },
+ {
+  "target": "UK_13_London",
+  "seed": 1,
+  "mae_cfg": 36.545677185058594,
+  "mae_i0": 37.24887466430664,
+  "train_s": 32.8
+ },
+ {
+  "target": "UK_14_South_East_England",
+  "seed": 0,
+  "mae_cfg": 44.484710693359375,
+  "mae_i0": 45.02200698852539,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_14_South_East_England",
+  "seed": 1,
+  "mae_cfg": 43.804466247558594,
+  "mae_i0": 43.85865020751953,
+  "train_s": 32.8
+ },
+ {
+  "target": "UK_15_England",
+  "seed": 0,
+  "mae_cfg": 32.81681823730469,
+  "mae_i0": 27.52725601196289,
+  "train_s": 32.1
+ },
+ {
+  "target": "UK_15_England",
+  "seed": 1,
+  "mae_cfg": 33.61845397949219,
+  "mae_i0": 27.704092025756836,
+  "train_s": 32.5
+ },
+ {
+  "target": "UK_16_Scotland",
+  "seed": 0,
+  "mae_cfg": 21.073495864868164,
+  "mae_i0": 21.323814392089844,
+  "train_s": 32.4
+ },
+ {
+  "target": "UK_16_Scotland",
+  "seed": 1,
+  "mae_cfg": 19.36566162109375,
+  "mae_i0": 20.18419075012207,
+  "train_s": 33.1
+ },
+ {
+  "target": "UK_17_Wales",
+  "seed": 0,
+  "mae_cfg": 47.95838928222656,
+  "mae_i0": 48.14910125732422,
+  "train_s": 33.2
+ },
+ {
+  "target": "UK_17_Wales",
+  "seed": 1,
+  "mae_cfg": 47.33084487915039,
+  "mae_i0": 46.464481353759766,
+  "train_s": 33.2
+ },
+ {
+  "target": "UK_18_GB",
+  "seed": 0,
+  "mae_cfg": 31.554777145385742,
+  "mae_i0": 25.353702545166016,
+  "train_s": 33.4
+ },
+ {
+  "target": "UK_18_GB",
+  "seed": 1,
+  "mae_cfg": 31.227083206176758,
+  "mae_i0": 24.738998413085938,
+  "train_s": 33.4
+ },
+ {
+  "target": "US_CISO",
+  "seed": 0,
+  "mae_cfg": 51.11329650878906,
+  "mae_i0": 36.27642822265625,
+  "train_s": 33.0
+ },
+ {
+  "target": "US_CISO",
+  "seed": 1,
+  "mae_cfg": 48.38532257080078,
+  "mae_i0": 36.0018196105957,
+  "train_s": 33.3
+ },
+ {
+  "target": "US_PJM",
+  "seed": 0,
+  "mae_cfg": 21.398792266845703,
+  "mae_i0": 21.421701431274414,
+  "train_s": 33.2
+ },
+ {
+  "target": "US_PJM",
+  "seed": 1,
+  "mae_cfg": 20.266006469726562,
+  "mae_i0": 20.33430290222168,
+  "train_s": 33.7
+ },
+ {
+  "target": "US_MISO",
+  "seed": 0,
+  "mae_cfg": 32.599464416503906,
+  "mae_i0": 31.922203063964844,
+  "train_s": 33.5
+ },
+ {
+  "target": "US_MISO",
+  "seed": 1,
+  "mae_cfg": 34.60895538330078,
+  "mae_i0": 34.462398529052734,
+  "train_s": 33.3
+ },
+ {
+  "target": "US_ERCO",
+  "seed": 0,
+  "mae_cfg": 37.567161560058594,
+  "mae_i0": 38.3713264465332,
+  "train_s": 33.5
+ },
+ {
+  "target": "US_ERCO",
+  "seed": 1,
+  "mae_cfg": 36.9184455871582,
+  "mae_i0": 37.298648834228516,
+  "train_s": 33.3
+ },
+ {
+  "target": "US_ISNE",
+  "seed": 0,
+  "mae_cfg": 24.607149124145508,
+  "mae_i0": 20.596446990966797,
+  "train_s": 33.3
+ },
+ {
+  "target": "US_ISNE",
+  "seed": 1,
+  "mae_cfg": 23.969886779785156,
+  "mae_i0": 18.717716217041016,
+  "train_s": 33.7
+ },
+ {
+  "target": "US_NYIS",
+  "seed": 0,
+  "mae_cfg": 18.688867568969727,
+  "mae_i0": 17.998628616333008,
+  "train_s": 33.7
+ },
+ {
+  "target": "US_NYIS",
+  "seed": 1,
+  "mae_cfg": 24.140544891357422,
+  "mae_i0": 24.22776222229004,
+  "train_s": 33.2
+ },
+ {
+  "target": "US_FPL",
+  "seed": 0,
+  "mae_cfg": 23.39887237548828,
+  "mae_i0": 20.80605697631836,
+  "train_s": 33.4
+ },
+ {
+  "target": "US_FPL",
+  "seed": 1,
+  "mae_cfg": 23.53559684753418,
+  "mae_i0": 19.192415237426758,
+  "train_s": 33.2
+ },
+ {
+  "target": "US_BPAT",
+  "seed": 0,
+  "mae_cfg": 21.03903579711914,
+  "mae_i0": 11.858858108520508,
+  "train_s": 33.3
+ },
+ {
+  "target": "US_BPAT",
+  "seed": 1,
+  "mae_cfg": 23.399030685424805,
+  "mae_i0": 13.48648452758789,
+  "train_s": 33.1
+ }
+]

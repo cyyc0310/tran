@@ -48,10 +48,10 @@ ROUTE_TAU = {"UK_01_North_Scotland": 1.1, "UK_02_South_Scotland": 1.1,
 
 def region_curves(target, fd_regions, device):
     import copy
-    model = train_fuel_zero_shot(fd_regions, target, seed=0, epochs=600,
+    model = train_fuel_zero_shot(fd_regions, target, seed=0, epochs=900,
                                  device=device, use_monthly=True,
                                  dynamic_residual=True,
-                                 wind_route_tau=ROUTE_TAU.get(target, 0.45))
+                                 wind_route_tau=ROUTE_TAU.get(target, 1.1))
 
     data = fd_regions[target]
     split = int(len(data["rs"]) * TRAIN_FRACTION)
@@ -97,7 +97,7 @@ def main():
 
     # Sort panels by I_cfg MAE (the headline telemetry-free tier).
     import json
-    rows = json.load(open(RESULTS_DIR / "fuel_decomp_eval_full_fd35.json"))["rows"]
+    rows = json.load(open(RESULTS_DIR / "fuel_decomp_eval_full_fd41.json"))["rows"]
     from collections import defaultdict
     mae = defaultdict(list)
     for r in rows:
