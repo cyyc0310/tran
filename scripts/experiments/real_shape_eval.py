@@ -413,12 +413,17 @@ def run_shanghai(day_step, device):
           f"| 峰 {int(np.argmax(Lh))}:00 / 谷 {int(np.argmin(Lh))}:00")
 
     # 本地火电结构与电量 (2023 官方口径, 与 cif_5min_daily 常量同源)
-    sc = sum(SH_COAL := [65, 59, 61, 56, 53, 55, 57, 56, 54, 56, 60, 64])
-    sg = sum(SH_GAS := [19, 17, 18, 17, 16, 20, 22, 22, 19, 17, 18, 20])
-    sp = 0.4 * 12
-    ssolar = sum([0.9, 1.2, 1.9, 2.6, 3.1, 3.4, 3.3, 3.0, 2.3, 1.7, 1.1, 0.9])
-    swind = sum([1.9, 2.0, 2.2, 2.2, 2.0, 1.8, 1.6, 1.6, 1.9, 2.1, 2.1, 1.9])
-    ef_th = (448.0 * sc + 490.0 * sg + 720.0 * sp) / (sc + sg + sp)
+    from cif_5min_daily import (SHANGHAI_GEN_2023, SHANGHAI_THERMAL_EFS,
+                                SHANGHAI_IMPORTS_2023)
+    sc = sum(SHANGHAI_GEN_2023["coal"])
+    sg = sum(SHANGHAI_GEN_2023["gas"])
+    sp = sum(SHANGHAI_GEN_2023["petroleum"])
+    ssolar = sum(SHANGHAI_GEN_2023["solar"])
+    swind = sum(SHANGHAI_GEN_2023["wind"])
+    ef_coal, ef_gas, ef_oil = (SHANGHAI_THERMAL_EFS["coal"],
+                               SHANGHAI_THERMAL_EFS["gas"],
+                               SHANGHAI_THERMAL_EFS["petroleum"])
+    ef_th = (ef_coal * sc + ef_gas * sg + ef_oil * sp) / (sc + sg + sp)
     ef_imp = float(np.mean([
         sum(SHANGHAI_FLOW_SHARES[k][m] * SHANGHAI_SENDER_CIF[k][m]
             for k in SHANGHAI_SENDER_CIF)
@@ -453,8 +458,8 @@ def run_shanghai(day_step, device):
     print(f"[infer] 上界 A (受电平坦+光伏鸭子): 峰 {mA['peak_h']}:00 / 谷 "
           f"{mA['trough_h']}:00 / 峰谷幅 {mA['amp']*100:.1f}% "
           f"(CIF {cif_A.min():.0f}-{cif_A.max():.0f} g/kWh)")
-    print(f"[infer] 光伏鸭子贡献: 本地光伏份额 {solar_share_ann*100:.1f}% "
-          f"(2023 月表口径 25.4/1015 亿 kWh, 与 SH_SOLAR_12 同源)")
+    print(f"[infer] 光伏鸭子贡献: 本地光伏份额 {solar_share_ann*100:.2f}% "
+          f"(2023 规上真实月表 {ssolar:.2f} 亿 kWh, NBS 月度链条)")
     print("[infer] 受电跟随下界 B: 恒平 (幅 0%) — 真实形状幅值 ∈ [0, A]")
 
     # 模型形状

@@ -91,48 +91,61 @@ def prepare_sources(cfgs):
 # 1. Scenario inputs (hypothetical provinces, realistic public statistics).
 # ---------------------------------------------------------------------------
 
-# Shanxi-class northern coal sender: coal-heavy with wind/solar buildout.
+# Shanxi-class northern coal sender — REAL 2023 NBS above-scale monthly
+# generation (100 GWh units, official cumulative differencing; the full
+# provenance is documented in cif_5min_daily.py SHANXI_GEN_2023).
 SHANXI_GEN = {
-    "coal":    [34, 30, 32, 28, 26, 24, 26, 25, 27, 30, 33, 35],
-    "gas":     [4.0, 3.6, 3.8, 3.4, 3.2, 3.6, 4.2, 4.2, 3.4, 3.2, 3.6, 4.2],
-    "petroleum": [0.1] * 12,
-    "nuclear": [0.0] * 12,
-    "hydro":   [0.6, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.5, 1.2, 0.9, 0.7, 0.6],
-    "solar":   [1.6, 2.0, 2.6, 3.2, 3.7, 3.9, 3.7, 3.4, 2.9, 2.3, 1.7, 1.4],
-    "wind":    [2.8, 3.0, 3.4, 3.6, 3.2, 2.6, 2.2, 2.2, 2.8, 3.4, 3.6, 3.4],
-    "biomass": [0.3] * 12,
+    "coal":      [2.831, 2.776, 2.838, 2.304, 2.369, 2.837,
+                  3.245, 3.307, 2.687, 2.608, 2.710, 3.425],
+    "gas":       [0.229, 0.224, 0.229, 0.186, 0.191, 0.229,
+                  0.262, 0.267, 0.217, 0.211, 0.219, 0.277],
+    "petroleum": [0.0] * 12,
+    "nuclear":   [0.0] * 12,
+    "hydro":     [0.036, 0.033, 0.034, 0.031, 0.025, 0.021,
+                  0.023, 0.022, 0.020, 0.035, 0.034, 0.027],
+    "solar":     [0.102, 0.112, 0.155, 0.126, 0.134, 0.154,
+                  0.144, 0.165, 0.125, 0.141, 0.141, 0.107],
+    "wind":      [0.545, 0.324, 0.471, 0.529, 0.412, 0.301,
+                  0.325, 0.196, 0.231, 0.268, 0.585, 0.586],
+    "biomass":   [0.0305] * 12,
 }
 SHANXI_META = {"lat": 37.87, "lon": 112.55, "tz": 8.0, "province": "shanxi",
                "label": "Shanxi-class coal sender (best case)"}
 
-# Shanghai-class eastern receiver (2023 official, 沪经信运〔2024〕306号):
-# local generation thermal-heavy (coal ~68% + gas ~22% of local gen),
-# received energy 45.1% of consumption (834 vs 1849 亿kWh) from
-# southwest UHVDC hydro (~479亿, 葛南/宜华/林枫/复奉) + Anhui coal
-# (~240亿, 皖电东送) + Qinshan nuclear & green trades (~118亿).
+# Shanghai-class eastern receiver — REAL 2023 NBS above-scale monthly
+# generation (100 GWh units; provenance in cif_5min_daily.py
+# SHANGHAI_GEN_2023: KPI annual split coal 75.16/gas 24.30/oil 0.54,
+# biomass 41.04 KPI, solar monthly chain 5.4509 vs annual 5.1029 noted).
 SHANGHAI_GEN = {
-    "coal":    [65, 59, 61, 56, 53, 55, 57, 56, 54, 56, 60, 64],
-    "gas":     [19, 17, 18, 17, 16, 20, 22, 22, 19, 17, 18, 20],
-    "petroleum": [0.4] * 12,
-    "nuclear": [0.0] * 12,
-    "hydro":   [0.0] * 12,
-    "solar":   [0.9, 1.2, 1.9, 2.6, 3.1, 3.4, 3.3, 3.0, 2.3, 1.7, 1.1, 0.9],
-    "wind":    [1.9, 2.0, 2.2, 2.2, 2.0, 1.8, 1.6, 1.6, 1.9, 2.1, 2.1, 1.9],
-    "biomass": [3.4] * 12,
+    "coal":      [0.494, 0.513, 0.582, 0.488, 0.455, 0.573,
+                  0.779, 0.692, 0.485, 0.451, 0.467, 0.674],
+    "gas":       [0.160, 0.166, 0.188, 0.158, 0.147, 0.185,
+                  0.252, 0.224, 0.157, 0.146, 0.151, 0.218],
+    "petroleum": [0.0036, 0.0037, 0.0042, 0.0035, 0.0033, 0.0041,
+                  0.0056, 0.0050, 0.0035, 0.0032, 0.0034, 0.0048],
+    "nuclear":   [0.0] * 12,
+    "hydro":     [0.0] * 12,
+    "solar":     [0.0030, 0.0028, 0.0044, 0.0065, 0.0047, 0.0047,
+                  0.0051, 0.0057, 0.0056, 0.0045, 0.0040, 0.0035],
+    "wind":      [0.0204, 0.0206, 0.0200, 0.0240, 0.0240, 0.0130,
+                  0.0200, 0.0160, 0.0120, 0.0150, 0.0250, 0.0220],
+    "biomass":   [0.0342] * 12,
 }
-# Received energy (GWh/month): annual 834亿 kWh anchored to the official
-# KPI report; summer peak (max reception 2023-07, 1812万kW scale) and
-# winter cold-surge secondary peak; spring/autumn troughs.
-SHANGHAI_IMPORTS_GWH = [74, 65, 60, 58, 62, 70, 80, 78, 72, 68, 72, 75]
+# Received energy (100 GWh/month): annual 834 GWh-official anchor (KPI
+# 45.1%); provincial monthly absolutes unpublished — uniform + noted.
+SHANGHAI_IMPORTS_GWH = [0.695] * 12
+# Sender CIFs: MEE+NBS 2022 provincial power-average CO2 factors
+# (公告 2024 年第 33 号): Sichuan 140.4 / Yunnan 107.3 (XN hydro zone
+# mean 123.9) / Anhui 678.2; nuclear+green 12 (IPCC lifecycle median).
 SHANGHAI_SENDER_CIF = {
-    "XN_hydro":   [25, 25, 25, 20, 15, 10, 8, 8, 12, 18, 22, 25],
-    "AH_coal":    [880, 875, 870, 865, 860, 855, 850, 850, 860, 870, 875, 880],
-    "QN_nuclear": [15] * 12,
+    "XN_hydro":   [123.9] * 12,
+    "AH_coal":    [678.2] * 12,
+    "QN_nuclear": [12.0] * 12,
 }
-SHANGHAI_FLOW_SHARES = {  # rows sum to 1: hydro 479 / AH coal ~240 / nuc+green ~118
-    "XN_hydro":   [0.50, 0.48, 0.49, 0.53, 0.58, 0.63, 0.67, 0.67, 0.64, 0.59, 0.53, 0.50],
-    "AH_coal":    [0.33, 0.34, 0.34, 0.31, 0.28, 0.25, 0.22, 0.22, 0.24, 0.28, 0.32, 0.34],
-    "QN_nuclear": [0.17, 0.18, 0.17, 0.16, 0.14, 0.12, 0.11, 0.11, 0.12, 0.13, 0.15, 0.16],
+SHANGHAI_FLOW_SHARES = {  # annual real shares 479/240/118 ÷ 834, constant
+    "XN_hydro":   [0.574] * 12,
+    "AH_coal":    [0.288] * 12,
+    "QN_nuclear": [0.141] * 12,
 }
 SHANGHAI_META = {"lat": 31.23, "lon": 121.47, "tz": 8.0, "province": None,
                  "label": "Shanghai-class eastern receiver (hardest case)"}
