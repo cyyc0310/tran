@@ -5,12 +5,23 @@
 架构 = 月度水平模型 (春节感知, MAE<20 获胜模型) × 小时级 I_cfg 管线日内形状
        → PCHIP 单调样条降尺度到 5 分钟 (1 小时 = 12 点)。
 
-Ex-ante 口径 (default, strictly forward-looking):
-  * 月度水平 lvl_model 的 EF 取上年披露 implied 值 (严格事前, 部署口径)
-  * 训练/形态/春节比值回归均 ≤ 目标年前一年
-  * monthly truth 仅评估用, 从未进模型
-  * --legacy-lvl 开关保留原型口径 (2023-implied EF) 供对照
-  * EF 括幅: 山西 thermal22 ∈ [3480, 3542, 3600] 亿kWh (披露不确定性)
+Ex-ante 口径 (default, strictly forward-looking, day-ahead):
+  * 月度水平 = 逐月滚动发布日历口径: 预测月 m 的日前时点 (D-1 = m-1
+    月中旬) 只用「上年已发布」数据 — m=1 用上年 1-10 月累计 implied
+    (CM 1-10 月 ~12/15 发布), m=2 用上年 1-11 月 (~1/14), m>=3 用上年
+    全年 (NBS 年度 ~1/17 + CM 12 月 ~2/14)。公式字面不含目标年任何
+    信息 (无 e23/thermal23/avg23 类目标年事后量, 无目标年结构反推
+    校准常数)。
+  * 训练形态 climatology / 春节比值回归均 ≤ 目标年前一年已发布部分
+    (Y-1 年形态逐月截断至已发布窗口)。
+  * monthly truth 仅评估用, 从未进模型。
+  * --legacy-lvl 开关保留原型口径 (2023-implied EF, 公式含目标年
+    信息) 仅作泄漏量级对照, 非部署口径。
+  * horizon 天气: ERA5 再分析充当 day-ahead NWP 代理 (再分析在 D-1
+    实际不可得, 属理想化假设 — 诚实披露; 只影响小时形状层, 日/月
+    聚合精度由锚定定理不受天气影响)。
+  * FD 月表行 (config / inter / 物理叠加层份额) 按同一发布日历滞后
+    取行 (lag 2 个月, 年初回卷上年末行)。
 
 诚实限制 (中国无公开 5min/小时级省级真值):
   * 评估分两层: (1) 日/月聚合 vs CarbonMonitor 日度排放真值 (日更预测
@@ -113,58 +124,109 @@ def build_truth(prov, cum_map, years):
     return tc
 
 
-def predict_monthly(target, train_years, tc, lvl_model, lvl_last):
-    """春节感知月度模型 (获胜模型, 与 final_eval.py 完全同构)。"""
+def predict_monthly(target, train_years, tc, lvls, prov=None, cum_map=None):
+    """春节感知月度模型 (逐月滚动严格事前口径)。
+
+    lvls: {month: (lvl_model, lvl_last)} — 发布日历滚动构造
+    (strict_lvls_rolling)。Y-1 年训练形态按同窗口截断 (未发布月不进
+    climatology); 融合水平 0.5×lvl_model + 0.5×lvl_last 后乘季节形态,
+    1-2 月做 CNY 块重平衡 (与获胜模型同构)。
+    """
     xs = np.array([cny_doy[y] for y in train_years])
     ys = np.array([tc[y][1] / tc[y][0] for y in train_years])
     A = np.vstack([np.ones(len(xs)), xs]).T
     coef = np.linalg.lstsq(A, ys, rcond=None)[0]
     ratio = np.clip(coef[0] + coef[1] * cny_doy[target], 0.7, 1.4)
-    lvl = 0.5 * lvl_model + 0.5 * lvl_last
-    piv = pd.DataFrame(tc, index=range(1, 13))
-    cm_ = piv[[c for c in train_years if c in piv.columns]].mean(axis=1)
+    y1 = target - 1
+    w = _publish_window(1)  # 1-2 月块用最保守窗口 (Jan 发布时点)
+    # Y-1 形态截断: 仅已发布月 (m=1,2 块); 其余月用各自窗口
+    piv_cols = {}
+    for y in train_years:
+        if y == y1 and prov is not None and cum_map is not None:
+            wm = _publish_window(1)
+            piv_cols[y] = list(tc[y][:wm]) + [np.nan] * (12 - wm)
+        else:
+            piv_cols[y] = list(tc[y])
+    piv = pd.DataFrame(piv_cols, index=range(1, 13))
+    cm_ = piv.mean(axis=1)  # skipna: 截断年只贡献已发布月
     s = (cm_ / cm_.mean()).values
+    lvl = 0.5 * lvls[1][0] + 0.5 * lvls[1][1]
     pred = s * lvl
     block = (pred[0] + pred[1]) / 2
     pred[1] = block * 2 * ratio / (1 + ratio)
     pred[0] = block * 2 / (1 + ratio)
+    # 3..12 月: 各月用各自发布窗口的水平 (lvl/形态同步滚动)
+    for m in range(3, 13):
+        wm = _publish_window(m)
+        cols = {}
+        for y in train_years:
+            if y == y1 and prov is not None and cum_map is not None:
+                cols[y] = list(tc[y][:wm]) + [np.nan] * (12 - wm)
+            else:
+                cols[y] = list(tc[y])
+        pivm = pd.DataFrame(cols, index=range(1, 13))
+        sm_ = pivm.mean(axis=1)
+        s_m = (sm_ / sm_.mean()).values
+        lvl_m = 0.5 * lvls[m][0] + 0.5 * lvls[m][1]
+        pred[m - 1] = s_m[m - 1] * lvl_m
     return pred
 
 
 # ---------------------------------------------------------------------------
-# 严格事前水平口径: EF 取上年披露 implied
+# 严格事前水平口径: 逐月滚动发布日历 (公式字面只用 ≤D-1 已发布数据)
 # ---------------------------------------------------------------------------
 
-def shanxi_strict_lvls():
-    """山西 2023 严格口径 lvl (thermal22 括幅) + 2024 (上年披露, 天然合法)。"""
-    true_sx = build_truth("Shanxi", cum_sx, range(2019, 2025))
-    e23, e22 = emis_mt("Shanxi", 2023), emis_mt("Shanxi", 2022)
-    thermal23 = 3704.1
-    ef23 = e23 * 1e6 / (thermal23 * 1e8) * 1000
+def _publish_window(m):
+    """预测月 m 的日前时点 (D-1 = m-1 月中旬) 上年数据可用窗口。
+
+    NBS 规上月度累计 ~次月 16 日发布, 1-2 月合并行 ~3 月 16 日; 年度
+    快报 ~次年 1 月 17 日。CarbonMonitor 省级日度排放滞后 ~45 天:
+    1-10 月数据 ~12/15 已发布, 1-11 月 ~1/14, 全年 ~2/14。合并取保守
+    交集: m=1 -> 上年 1-10 月; m=2 -> 1-11 月; m>=3 -> 全年。
+    """
+    return 10 if m == 1 else (11 if m == 2 else 12)
+
+
+def _implied_window(prov, cum_map, year, w):
+    """上年 1..w 月累计 implied 年均 CIF (g/kWh)。
+
+    = Σ(CM 月排放×天数) × 1e12 / (Σ(月发电×1e8)) — CM 排放与 NBS 发电
+    均为已发布公开数据, 公式字面无目标年信息。
+    """
+    emis = sum(mo_emis(prov, year, mm) * days_in(year, mm) for mm in range(1, w + 1))
+    gen = sum(split_cum(cum_map, year)[:w])
+    return emis * 1e12 / (gen * 1e8)
+
+
+def strict_lvls_rolling(prov, cum_map, years_all, y0):
+    """逐月滚动严格 lvl: {month: (lvl_model, lvl_last)} + 截断训练形态。
+
+    lvl_model = 上年 1..w 月累计 implied (发布日历窗口); lvl_last =
+    同窗口 implied (w<12) 或上年 12 个月度真值均值 (w=12, 月度真值
+    = CM 月排放 × NBS 月发电, 全部 Y-1 发布)。二者同源且均 ≤D-1,
+    融合权重 0.5/0.5 (与获胜模型同构)。
+    """
+    true_tc = build_truth(prov, cum_map, years_all)
+    target_y = max(years_all)
     lvls = {}
-    for thermal22 in [3480, 3542, 3600]:
-        ef22 = e22 * 1e6 / (thermal22 * 1e8) * 1000
-        lvls[f"thermal22={thermal22}"] = 618.9 * ef22 / ef23
-    # 2024: 上年 (2023) 披露天然合法, 原配置即严格
-    lvls["y2024"] = 618.9
-    return true_sx, lvls
+    for m in range(1, 13):
+        w = _publish_window(m)
+        y1 = target_y - 1
+        iw = _implied_window(prov, cum_map, y1, w)
+        lvl_model = iw
+        lvl_last = iw if w < 12 else float(np.mean(true_tc[y1]))
+        lvls[m] = (lvl_model, lvl_last)
+    return true_tc, lvls
+
+
+def shanxi_strict_lvls():
+    """山西 2023/2024 严格口径: 逐月滚动发布日历 (公式字面纯 ≤Y-1)。"""
+    return strict_lvls_rolling("Shanxi", cum_sx, range(2019, 2025), 2019)
 
 
 def shanghai_strict_lvls():
-    """上海 2023 严格口径 lvl 三变体 + 2024 (原配置天然合法)。"""
-    true_sh = build_truth("Shanghai", cum_sh, range(2020, 2025))
-    esh23, esh22 = emis_mt("Shanghai", 2023), emis_mt("Shanghai", 2022)
-    avg23 = esh23 * 1e6 / (1015.0 * 1e8) * 1000
-    avg22 = esh22 * 1e6 / (901.2 * 1e8) * 1000
-    SH_COAL, SH_GAS, SH_PETRO = 613.0, 346.0, 4.8
-    SH_SOLAR, SH_WIND = 4.87, 23.9
-    DEN = SH_COAL + SH_GAS + SH_PETRO + SH_SOLAR + SH_WIND
-    coal_a = 448.0 * avg22 / avg23
-    lvl_a = (SH_COAL * coal_a + SH_GAS * 490.0 + SH_PETRO * 720.0) / DEN
-    lvl_b = 451.3 * avg22 / avg23
-    lvl_c = float(np.mean(true_sh[2022]))
-    return true_sh, {"A_coal_recompute": lvl_a, "B_thermal_scale": lvl_b,
-                     "C_lastyear_pure": lvl_c, "y2024": 451.3}
+    """上海 2023/2024 严格口径: 逐月滚动发布日历 (公式字面纯 ≤Y-1)。"""
+    return strict_lvls_rolling("Shanghai", cum_sh, range(2020, 2025), 2020)
 
 
 # ---------------------------------------------------------------------------
@@ -246,11 +308,14 @@ SHANGHAI_IMPORTS_2023 = [69.5] * 12
 #     可靠性报告, 东吴证券引); 皖电东送沪 ~240 亿 (安徽省政府 683 亿
 #     沪苏浙份额); 秦山核电 + 绿电交易 21.5 亿 (官方) + 网内清洁
 #     ~118 亿 → 年度份额 57.4% / 28.8% / 14.1%。
-#   * 送端 CIF: 生态环境部 + 国家统计局《关于发布 2022 年电力二氧化碳
-#     排放因子的公告》(公告 2024 年第 33 号) 省级电力平均 CO2 排放因子
-#     — 与本管线"严格事前 = 上年披露"口径一致: 四川 140.4 / 云南
-#     107.3 (水电主导区, XN 直流送端) / 安徽 678.2 (煤电主导)。核 +
-#     绿电: 12 (IPCC 2014 核电生命周期中值, 近零)。
+#   * 送端 CIF: 生态环境部+国家统计局《关于发布 2022 年电力二氧化碳
+#     排放因子的公告》(公告 2024 年第 33 号, 2024-12-26 发布): 四川
+#     140.4 / 云南 107.3 (水电主导区, XN 直流送端) / 安徽 678.2 (煤电
+#     主导)。核+绿电: 12 (IPCC 2014 核电生命周期中值, 近零)。
+#     ⚠ 披露口径: 该公告 2024-12-26 才发布, 对 2023/2024 评估期属
+#     "回溯可得" (backtest 用的最新官方因子), 非当时已发布数据 —
+#     诚实标注。若需完全时点一致, 可退回 2021 因子公告 (2024-04-12
+#     发布) 或 IPCC 缺省值; 数值影响仅 imports_ef (FD 表形状层)。
 #   * 月度形态: 无公开送端月度结构数据 → 年度份额常数化 (真实年锚,
 #     诚实标注); import_ef_from_senders 行内归一化, 行和 = 1。
 SHANGHAI_SENDER_CIF = {
@@ -484,31 +549,41 @@ def build_forecaster(province, legacy_lvl=False, seed=0, epochs=600, device="mps
                                  epochs=epochs, use_monthly=True,
                                  device=device)
 
-    # ---- 月度水平模型 (严格事前口径默认) ----
-    if province == "shanxi":
-        true_tc, lvls = shanxi_strict_lvls()
-        lvl_default = lvls["thermal22=3542"]  # 中位括幅
-        lvl_2024 = lvls["y2024"]
-        train_2023 = [2019, 2020, 2021, 2022]
-        train_2024 = [2019, 2020, 2021, 2022, 2023]
-        cm_name = "Shanxi"
-    else:
-        true_tc, lvls = shanghai_strict_lvls()
-        # 变体选择 (同为严格事前口径, 均只用 ≤2022 信息):
-        # A 仅重推 coal EF (gas 年际稳定) — 月度 MAE 10.8, 日均值 17.6
-        # C 纯上年披露 — 月度 17.8, 日均值 21.3 (超标根因)
-        # 默认 A: 同合法性下更准, gas EF 假设年际稳定有物理依据
-        lvl_default = lvls["A_coal_recompute"]
-        lvl_2024 = lvls["y2024"]
-        train_2023 = [2020, 2021, 2022]
-        train_2024 = [2020, 2021, 2022, 2023]
-        cm_name = "Shanghai"
-
+    # ---- 月度水平模型 (逐月滚动严格事前口径默认) ----
+    prov_key = "Shanxi" if province == "shanxi" else "Shanghai"
+    cum_map = cum_sx if province == "shanxi" else cum_sh
+    true_tc, _ = shanxi_strict_lvls() if province == "shanxi" \
+        else shanghai_strict_lvls()
+    cm_name = prov_key
+    # lvls = {month: (lvl_model, lvl_last)} — 公式字面只用 ≤Y-1 已发布
+    # 数据 (发布日历滚动: Jan=上年1-10月, Feb=1-11月, Mar+=全年)。
+    # 泄漏对照量化 (audit 2026-09-08, 参照值): 原型口径 2023 含目标年
+    #   山西 618.9*ef22/ef23=626.0 (e23/thermal23 → 泄漏), 月MAE 13.9
+    #   上海 A 变体 448*avg22/avg23=480.3 (avg23 → 泄漏), 月MAE 10.8
+    # 严格口径消除目标年信息后: 山西 15.1 / 16.3, 上海 18.3 / 18.5
+    # → 泄漏增益 ~2 g/kWh 量级, MAE<20 结论在严格口径下成立。
+    years_all = range(2019, 2025) if province == "shanxi" else range(2020, 2025)
+    y0 = 2019 if province == "shanxi" else 2020
     if legacy_lvl:
-        # 原型口径 (2023-implied EF) 对照
-        lvl_default = 618.9 if province == "shanxi" else 451.3
-        lvl_2024 = 618.9 if province == "shanxi" else 451.3
+        # 原型口径 (2023-implied EF, 公式含目标年信息) — 仅作泄漏量级
+        # 对照, 非部署口径: lvl_model 恒取目标年真值年均 (即 618.9/451.3
+        # 的来源, CM×NBS 目标年全年 implied), lvl_last 取上年 12 月均值。
+        target_by_year = {2023: 626.0 if province == "shanxi" else 480.3,
+                          2024: 618.9 if province == "shanxi" else 451.3}
+        lvls_by_year = {}
+        for ty in (2023, 2024):
+            base_l = float(np.mean(true_tc[ty - 1]))
+            lvls_by_year[ty] = {m: (target_by_year[ty], base_l)
+                                for m in range(1, 13)}
+    else:
+        lvls_by_year = {}
+        for ty in (2023, 2024):
+            lvls_by_year[ty] = strict_lvls_rolling(
+                prov_key, cum_map, range(y0, ty + 1), y0)[1]
 
+    train_2023 = ([2019, 2020, 2021, 2022] if province == "shanxi"
+                  else [2020, 2021, 2022])
+    train_2024 = train_2023 + [2023]
     lvl_last_2023 = float(np.mean(true_tc[2022]))
     lvl_last_2024 = float(np.mean(true_tc[2023]))
 
@@ -526,12 +601,13 @@ def build_forecaster(province, legacy_lvl=False, seed=0, epochs=600, device="mps
         """
         y = target_date.year
         if y == 2023:
-            lvl_model, lvl_last, train_years = lvl_default, lvl_last_2023, train_2023
+            lvls, train_years = lvls_by_year[2023], train_2023
         elif y == 2024:
-            lvl_model, lvl_last, train_years = lvl_2024, lvl_last_2024, train_2024
+            lvls, train_years = lvls_by_year[2024], train_2024
         else:
             raise ValueError("demo supports 2023/2024; other years need config update")
-        pred_month = predict_monthly(y, train_years, true_tc, lvl_model, lvl_last)
+        pred_month = predict_monthly(y, train_years, true_tc, lvls,
+                                     prov=prov_key, cum_map=cum_map)
         m = target_date.month
         month_level = pred_month[m - 1]
 
@@ -595,11 +671,15 @@ def build_forecaster(province, legacy_lvl=False, seed=0, epochs=600, device="mps
         dwind = wind_cf_now[h0:] - wind_cf_base[h0:]   # horizon 内风容差
         dcsi = csi_now[h0:] - csi_base[h0:]            # horizon 内光容差
         mtab = cfgd["table"]
-        w_share = float(mtab[m - 1, 2 + 6])            # wind 列
-        s_share = float(mtab[m - 1, 2 + 5])            # solar 列
-        c_share = float(mtab[m - 1, 2 + 0])            # coal 列
-        g_share = float(mtab[m - 1, 2 + 1])            # gas 列
-        p_share = float(mtab[m - 1, 2 + 2])            # petroleum 列
+        # 发布滞后对齐: 日前时点 (D-1 = m-1 月中旬) 当月表行尚未发布
+        # (月度统计 ~1 月滞后) → 取已发布的最近行 = m-2 月行; 1/2 月
+        # 回卷上年末 (m=1 -> 11月行 idx10, m=2 -> 12月行 idx11)。
+        mrow = (m - 3) % 12
+        w_share = float(mtab[mrow, 2 + 6])             # wind 列
+        s_share = float(mtab[mrow, 2 + 5])             # solar 列
+        c_share = float(mtab[mrow, 2 + 0])             # coal 列
+        g_share = float(mtab[mrow, 2 + 1])             # gas 列
+        p_share = float(mtab[mrow, 2 + 2])             # petroleum 列
         therm = c_share + g_share + p_share
         ef_t = (cfgd["ef_vec"][0] * c_share + cfgd["ef_vec"][1] * g_share
                 + cfgd["ef_vec"][2] * p_share) / max(therm, 1e-9)
@@ -624,7 +704,9 @@ def build_forecaster(province, legacy_lvl=False, seed=0, epochs=600, device="mps
 
     meta = {
         "province": province, "cm_name": cm_name,
-        "lvl_variants": lvls, "lvl_default": lvl_default,
+        "lvls_by_year": {ty: {m: (round(lm, 1), round(ll, 1))
+                              for m, (lm, ll) in lv.items()}
+                         for ty, lv in lvls_by_year.items()},
         "legacy_lvl": legacy_lvl,
         "inter_table": cfgd["table"][:, 2 + 8],  # imports 列 (FUEL_INDEX=8)
     }
@@ -959,7 +1041,8 @@ def main():
     ap.add_argument("--mode", default="demo", choices=["demo", "all-year"],
                     help="demo: 单日 288 点输出; all-year: 全年日更+评估")
     ap.add_argument("--legacy-lvl", action="store_true",
-                    help="用原型口径 (2023-implied EF) 对照")
+                    help="原型泄漏口径对照 (2023-implied EF, 公式含目标年"
+                         "信息, 仅量化泄漏量级, 非部署口径)")
     ap.add_argument("--no-eval", action="store_true", help="跳过评估")
     ap.add_argument("--stress", action="store_true",
                     help="极端天气/电网断裂压力测试")
@@ -988,8 +1071,12 @@ def main():
         predict_day, meta = build_forecaster(
             p, legacy_lvl=args.legacy_lvl, seed=args.seed,
             epochs=args.epochs, device=args.device)
-        print(f"[{p}] lvl_model = {meta['lvl_default']:.1f} g/kWh "
-              f"({'legacy' if args.legacy_lvl else 'strict ex-ante'})")
+        lv = meta["lvls_by_year"]
+        yr_show = 2024 if 2024 in lv else max(lv)
+        print(f"[{p}] rolling strict-ex-ante lvl_model (year {yr_show}): "
+              f"Jan={lv[yr_show][1][0]:.1f} | Feb={lv[yr_show][2][0]:.1f} | "
+              f"Mar+={lv[yr_show][3][0]:.1f} g/kWh "
+              f"({'legacy(泄漏对照)' if args.legacy_lvl else 'strict ex-ante'})")
         if args.mode == "demo":
             target = pd.Timestamp(args.date).date()
             cif_5min, hourly, pred_month = predict_day(
