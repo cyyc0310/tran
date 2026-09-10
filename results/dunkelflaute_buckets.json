@@ -4,23 +4,23 @@
    "target": "QLD1",
    "method": "i_cfg",
    "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 70,
-   "mae_event": 40.63,
-   "mae_regular": 36.14,
-   "ratio": 1.124,
-   "p_perm": 0.4566
+   "n_event_days": 2,
+   "n_regular_days": 71,
+   "mae_event": 24.83,
+   "mae_regular": 28.12,
+   "ratio": 0.883,
+   "p_perm": 0.5736
   },
   {
    "target": "QLD1",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 34.04,
-   "mae_regular": 36.82,
-   "ratio": 0.924,
-   "p_perm": 0.3444
+   "n_event_days": 16,
+   "n_regular_days": 57,
+   "mae_event": 29.68,
+   "mae_regular": 27.57,
+   "ratio": 1.077,
+   "p_perm": 0.3508
   },
   {
    "target": "QLD1",
@@ -28,32 +28,32 @@
    "bucket": "solar_dim",
    "n_event_days": 6,
    "n_regular_days": 67,
-   "mae_event": 36.73,
-   "mae_regular": 36.29,
-   "ratio": 1.012,
-   "p_perm": 0.9207
+   "mae_event": 22.34,
+   "mae_regular": 28.54,
+   "ratio": 0.783,
+   "p_perm": 0.0672
   },
   {
    "target": "QLD1",
    "method": "i0",
    "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 70,
-   "mae_event": 27.94,
-   "mae_regular": 33.45,
-   "ratio": 0.835,
-   "p_perm": 0.1169
+   "n_event_days": 2,
+   "n_regular_days": 71,
+   "mae_event": 26.36,
+   "mae_regular": 25.66,
+   "ratio": 1.028,
+   "p_perm": 0.916
   },
   {
    "target": "QLD1",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 32.02,
-   "mae_regular": 33.49,
-   "ratio": 0.956,
-   "p_perm": 0.4185
+   "n_event_days": 16,
+   "n_regular_days": 57,
+   "mae_event": 29.03,
+   "mae_regular": 24.73,
+   "ratio": 1.174,
+   "p_perm": 0.0675
   },
   {
    "target": "QLD1",
@@ -61,32 +61,32 @@
    "bucket": "solar_dim",
    "n_event_days": 6,
    "n_regular_days": 67,
-   "mae_event": 29.66,
-   "mae_regular": 33.55,
-   "ratio": 0.884,
-   "p_perm": 0.1309
+   "mae_event": 22.24,
+   "mae_regular": 25.98,
+   "ratio": 0.856,
+   "p_perm": 0.2963
   },
   {
    "target": "QLD1",
    "method": "persistence",
    "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 70,
-   "mae_event": 19.58,
-   "mae_regular": 20.17,
-   "ratio": 0.97,
-   "p_perm": 0.9
+   "n_event_days": 2,
+   "n_regular_days": 71,
+   "mae_event": 19.09,
+   "mae_regular": 20.18,
+   "ratio": 0.946,
+   "p_perm": 0.847
   },
   {
    "target": "QLD1",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 20.43,
-   "mae_regular": 20.09,
-   "ratio": 1.017,
-   "p_perm": 0.8803
+   "n_event_days": 16,
+   "n_regular_days": 57,
+   "mae_event": 20.5,
+   "mae_regular": 20.05,
+   "ratio": 1.022,
+   "p_perm": 0.833
   },
   {
    "target": "QLD1",
@@ -103,23 +103,23 @@
    "target": "QLD1",
    "method": "config_constant",
    "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 70,
-   "mae_event": 51.74,
-   "mae_regular": 51.65,
-   "ratio": 1.002,
-   "p_perm": 0.9891
+   "n_event_days": 2,
+   "n_regular_days": 71,
+   "mae_event": 50.51,
+   "mae_regular": 51.69,
+   "ratio": 0.977,
+   "p_perm": 0.8772
   },
   {
    "target": "QLD1",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 50.45,
-   "mae_regular": 51.92,
-   "ratio": 0.972,
-   "p_perm": 0.6417
+   "n_event_days": 16,
+   "n_regular_days": 57,
+   "mae_event": 55.18,
+   "mae_regular": 50.67,
+   "ratio": 1.089,
+   "p_perm": 0.1209
   },
   {
    "target": "QLD1",
@@ -144,10 +144,10 @@
    "bucket": "wind_lull",
    "n_event_days": 14,
    "n_regular_days": 59,
-   "mae_event": 54.09,
-   "mae_regular": 57.01,
-   "ratio": 0.949,
-   "p_perm": 0.6701
+   "mae_event": 78.52,
+   "mae_regular": 63.96,
+   "ratio": 1.228,
+   "p_perm": 0.117
   },
   {
    "target": "NSW1",
@@ -155,10 +155,10 @@
    "bucket": "solar_dim",
    "n_event_days": 4,
    "n_regular_days": 69,
-   "mae_event": 53.16,
-   "mae_regular": 56.65,
-   "ratio": 0.938,
-   "p_perm": 0.7725
+   "mae_event": 40.54,
+   "mae_regular": 68.27,
+   "ratio": 0.594,
+   "p_perm": 0.0747
   },
   {
    "target": "NSW1",
@@ -172,10 +172,10 @@
    "bucket": "wind_lull",
    "n_event_days": 14,
    "n_regular_days": 59,
-   "mae_event": 48.98,
-   "mae_regular": 44.7,
-   "ratio": 1.096,
-   "p_perm": 0.3976
+   "mae_event": 62.28,
+   "mae_regular": 53.3,
+   "ratio": 1.169,
+   "p_perm": 0.1306
   },
   {
    "target": "NSW1",
@@ -183,10 +183,10 @@
    "bucket": "solar_dim",
    "n_event_days": 4,
    "n_regular_days": 69,
-   "mae_event": 45.94,
-   "mae_regular": 45.5,
-   "ratio": 1.01,
-   "p_perm": 0.9636
+   "mae_event": 35.41,
+   "mae_regular": 56.16,
+   "ratio": 0.631,
+   "p_perm": 0.039
   },
   {
    "target": "NSW1",
@@ -200,10 +200,10 @@
    "bucket": "wind_lull",
    "n_event_days": 14,
    "n_regular_days": 59,
-   "mae_event": 45.8,
-   "mae_regular": 48.51,
-   "ratio": 0.944,
-   "p_perm": 0.6147
+   "mae_event": 48.12,
+   "mae_regular": 47.96,
+   "ratio": 1.003,
+   "p_perm": 0.9761
   },
   {
    "target": "NSW1",
@@ -228,10 +228,10 @@
    "bucket": "wind_lull",
    "n_event_days": 14,
    "n_regular_days": 59,
-   "mae_event": 61.31,
-   "mae_regular": 61.64,
-   "ratio": 0.995,
-   "p_perm": 0.9616
+   "mae_event": 62.48,
+   "mae_regular": 61.36,
+   "ratio": 1.018,
+   "p_perm": 0.8809
   },
   {
    "target": "NSW1",
@@ -254,12 +254,12 @@
    "target": "VIC1",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 7,
-   "n_regular_days": 66,
-   "mae_event": 177.63,
-   "mae_regular": 127.25,
-   "ratio": 1.396,
-   "p_perm": 0.0009
+   "n_event_days": 11,
+   "n_regular_days": 62,
+   "mae_event": 107.16,
+   "mae_regular": 73.14,
+   "ratio": 1.465,
+   "p_perm": 0.0002
   },
   {
    "target": "VIC1",
@@ -267,10 +267,10 @@
    "bucket": "solar_dim",
    "n_event_days": 4,
    "n_regular_days": 69,
-   "mae_event": 85.44,
-   "mae_regular": 134.78,
-   "ratio": 0.634,
-   "p_perm": 0.0089
+   "mae_event": 53.93,
+   "mae_regular": 79.67,
+   "ratio": 0.677,
+   "p_perm": 0.0376
   },
   {
    "target": "VIC1",
@@ -282,12 +282,12 @@
    "target": "VIC1",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 7,
-   "n_regular_days": 66,
-   "mae_event": 90.55,
-   "mae_regular": 87.57,
-   "ratio": 1.034,
-   "p_perm": 0.8471
+   "n_event_days": 11,
+   "n_regular_days": 62,
+   "mae_event": 110.03,
+   "mae_regular": 72.87,
+   "ratio": 1.51,
+   "p_perm": 0.0002
   },
   {
    "target": "VIC1",
@@ -295,10 +295,10 @@
    "bucket": "solar_dim",
    "n_event_days": 4,
    "n_regular_days": 69,
-   "mae_event": 104.86,
-   "mae_regular": 86.87,
-   "ratio": 1.207,
-   "p_perm": 0.3649
+   "mae_event": 60.79,
+   "mae_regular": 79.49,
+   "ratio": 0.765,
+   "p_perm": 0.1683
   },
   {
    "target": "VIC1",
@@ -310,12 +310,12 @@
    "target": "VIC1",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 7,
-   "n_regular_days": 66,
-   "mae_event": 95.18,
-   "mae_regular": 98.95,
-   "ratio": 0.962,
-   "p_perm": 0.8291
+   "n_event_days": 11,
+   "n_regular_days": 62,
+   "mae_event": 91.34,
+   "mae_regular": 99.88,
+   "ratio": 0.915,
+   "p_perm": 0.5515
   },
   {
    "target": "VIC1",
@@ -338,12 +338,12 @@
    "target": "VIC1",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 7,
-   "n_regular_days": 66,
-   "mae_event": 116.06,
-   "mae_regular": 87.16,
-   "ratio": 1.332,
-   "p_perm": 0.0235
+   "n_event_days": 11,
+   "n_regular_days": 62,
+   "mae_event": 113.7,
+   "mae_regular": 85.72,
+   "ratio": 1.326,
+   "p_perm": 0.0066
   },
   {
    "target": "VIC1",
@@ -366,12 +366,12 @@
    "target": "SA1",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 14,
-   "n_regular_days": 59,
-   "mae_event": 74.02,
-   "mae_regular": 70.33,
-   "ratio": 1.052,
-   "p_perm": 0.6492
+   "n_event_days": 7,
+   "n_regular_days": 66,
+   "mae_event": 101.88,
+   "mae_regular": 84.85,
+   "ratio": 1.201,
+   "p_perm": 0.1206
   },
   {
    "target": "SA1",
@@ -379,10 +379,10 @@
    "bucket": "solar_dim",
    "n_event_days": 2,
    "n_regular_days": 71,
-   "mae_event": 56.48,
-   "mae_regular": 71.45,
-   "ratio": 0.791,
-   "p_perm": 0.436
+   "mae_event": 57.22,
+   "mae_regular": 87.31,
+   "ratio": 0.655,
+   "p_perm": 0.1339
   },
   {
    "target": "SA1",
@@ -394,12 +394,12 @@
    "target": "SA1",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 14,
-   "n_regular_days": 59,
-   "mae_event": 77.63,
-   "mae_regular": 77.44,
-   "ratio": 1.002,
-   "p_perm": 0.9848
+   "n_event_days": 7,
+   "n_regular_days": 66,
+   "mae_event": 100.39,
+   "mae_regular": 79.88,
+   "ratio": 1.257,
+   "p_perm": 0.0625
   },
   {
    "target": "SA1",
@@ -407,10 +407,10 @@
    "bucket": "solar_dim",
    "n_event_days": 2,
    "n_regular_days": 71,
-   "mae_event": 118.64,
-   "mae_regular": 76.32,
-   "ratio": 1.555,
-   "p_perm": 0.0698
+   "mae_event": 56.05,
+   "mae_regular": 82.57,
+   "ratio": 0.679,
+   "p_perm": 0.1854
   },
   {
    "target": "SA1",
@@ -422,12 +422,12 @@
    "target": "SA1",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 14,
-   "n_regular_days": 59,
-   "mae_event": 98.2,
-   "mae_regular": 72.65,
-   "ratio": 1.352,
-   "p_perm": 0.0257
+   "n_event_days": 7,
+   "n_regular_days": 66,
+   "mae_event": 106.79,
+   "mae_regular": 74.45,
+   "ratio": 1.434,
+   "p_perm": 0.0351
   },
   {
    "target": "SA1",
@@ -450,12 +450,12 @@
    "target": "SA1",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 14,
-   "n_regular_days": 59,
-   "mae_event": 78.04,
-   "mae_regular": 92.17,
-   "ratio": 0.847,
-   "p_perm": 0.1007
+   "n_event_days": 7,
+   "n_regular_days": 66,
+   "mae_event": 83.77,
+   "mae_regular": 90.07,
+   "ratio": 0.93,
+   "p_perm": 0.584
   },
   {
    "target": "SA1",
@@ -470,86 +470,982 @@
   },
   {
    "target": "UK_01_North_Scotland",
-   "status": "weather_missing"
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 87.09,
+   "mae_regular": 43.99,
+   "ratio": 1.98,
+   "p_perm": 0.0037
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 13,
+   "n_regular_days": 59,
+   "mae_event": 100.66,
+   "mae_regular": 36.62,
+   "ratio": 2.749,
+   "p_perm": 0.0001
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 50,
+   "n_regular_days": 22,
+   "mae_event": 43.71,
+   "mae_regular": 58.33,
+   "ratio": 0.749,
+   "p_perm": 0.1419
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 59.27,
+   "mae_regular": 42.94,
+   "ratio": 1.38,
+   "p_perm": 0.1805
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 13,
+   "n_regular_days": 59,
+   "mae_event": 72.21,
+   "mae_regular": 38.43,
+   "ratio": 1.879,
+   "p_perm": 0.0001
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 50,
+   "n_regular_days": 22,
+   "mae_event": 41.22,
+   "mae_regular": 52.05,
+   "ratio": 0.792,
+   "p_perm": 0.1697
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 81.12,
+   "mae_regular": 29.99,
+   "ratio": 2.705,
+   "p_perm": 0.004
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 13,
+   "n_regular_days": 59,
+   "mae_event": 60.0,
+   "mae_regular": 29.44,
+   "ratio": 2.038,
+   "p_perm": 0.0205
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 50,
+   "n_regular_days": 22,
+   "mae_event": 33.6,
+   "mae_regular": 38.04,
+   "ratio": 0.883,
+   "p_perm": 0.7033
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 170.69,
+   "mae_regular": 40.74,
+   "ratio": 4.19,
+   "p_perm": 0.0001
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 13,
+   "n_regular_days": 59,
+   "mae_event": 113.55,
+   "mae_regular": 40.11,
+   "ratio": 2.831,
+   "p_perm": 0.0001
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 50,
+   "n_regular_days": 22,
+   "mae_event": 57.46,
+   "mae_regular": 44.09,
+   "ratio": 1.303,
+   "p_perm": 0.2849
   },
   {
    "target": "UK_02_South_Scotland",
-   "status": "weather_missing"
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 28.66,
+   "mae_regular": 15.8,
+   "ratio": 1.815,
+   "p_perm": 0.0523
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 24.64,
+   "mae_regular": 15.44,
+   "ratio": 1.596,
+   "p_perm": 0.048
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 41,
+   "n_regular_days": 31,
+   "mae_event": 13.97,
+   "mae_regular": 19.46,
+   "ratio": 0.718,
+   "p_perm": 0.0506
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 28.07,
+   "mae_regular": 19.3,
+   "ratio": 1.454,
+   "p_perm": 0.3141
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 28.94,
+   "mae_regular": 18.67,
+   "ratio": 1.55,
+   "p_perm": 0.0806
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 41,
+   "n_regular_days": 31,
+   "mae_event": 19.25,
+   "mae_regular": 20.21,
+   "ratio": 0.953,
+   "p_perm": 0.7939
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 35.42,
+   "mae_regular": 21.5,
+   "ratio": 1.647,
+   "p_perm": 0.223
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 29.66,
+   "mae_regular": 21.26,
+   "ratio": 1.395,
+   "p_perm": 0.2713
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 41,
+   "n_regular_days": 31,
+   "mae_event": 19.11,
+   "mae_regular": 26.01,
+   "ratio": 0.735,
+   "p_perm": 0.1281
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 83.71,
+   "mae_regular": 23.54,
+   "ratio": 3.556,
+   "p_perm": 0.0014
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 54.59,
+   "mae_regular": 22.97,
+   "ratio": 2.376,
+   "p_perm": 0.0041
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 41,
+   "n_regular_days": 31,
+   "mae_event": 24.5,
+   "mae_regular": 28.1,
+   "ratio": 0.872,
+   "p_perm": 0.5286
   },
   {
    "target": "UK_03_North_West_England",
-   "status": "weather_missing"
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 62.71,
+   "mae_regular": 24.85,
+   "ratio": 2.523,
+   "p_perm": 0.0051
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 61.86,
+   "mae_regular": 23.78,
+   "ratio": 2.601,
+   "p_perm": 0.0004
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 23.56,
+   "mae_regular": 30.68,
+   "ratio": 0.768,
+   "p_perm": 0.1541
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 43.52,
+   "mae_regular": 20.51,
+   "ratio": 2.122,
+   "p_perm": 0.0159
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 45.67,
+   "mae_regular": 19.66,
+   "ratio": 2.323,
+   "p_perm": 0.001
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 19.35,
+   "mae_regular": 24.61,
+   "ratio": 0.786,
+   "p_perm": 0.1566
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 45.57,
+   "mae_regular": 28.56,
+   "ratio": 1.596,
+   "p_perm": 0.2062
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 47.75,
+   "mae_regular": 27.89,
+   "ratio": 1.712,
+   "p_perm": 0.0536
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 27.6,
+   "mae_regular": 31.74,
+   "ratio": 0.87,
+   "p_perm": 0.4557
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 81.59,
+   "mae_regular": 37.57,
+   "ratio": 2.172,
+   "p_perm": 0.0033
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 87.76,
+   "mae_regular": 35.79,
+   "ratio": 2.452,
+   "p_perm": 0.0001
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 39.26,
+   "mae_regular": 39.61,
+   "ratio": 0.991,
+   "p_perm": 0.9438
   },
   {
    "target": "UK_05_Yorkshire",
-   "status": "weather_missing"
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 53.56,
+   "mae_regular": 53.55,
+   "ratio": 1.0,
+   "p_perm": 0.9983
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 55.1,
+   "mae_regular": 53.43,
+   "ratio": 1.031,
+   "p_perm": 0.8082
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 51.23,
+   "mae_regular": 56.98,
+   "ratio": 0.899,
+   "p_perm": 0.0898
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 55.95,
+   "mae_regular": 59.83,
+   "ratio": 0.935,
+   "p_perm": 0.6449
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 58.21,
+   "mae_regular": 59.78,
+   "ratio": 0.974,
+   "p_perm": 0.8154
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 55.44,
+   "mae_regular": 65.94,
+   "ratio": 0.841,
+   "p_perm": 0.0016
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 57.92,
+   "mae_regular": 49.62,
+   "ratio": 1.167,
+   "p_perm": 0.5752
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 55.93,
+   "mae_regular": 49.52,
+   "ratio": 1.129,
+   "p_perm": 0.5887
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 49.09,
+   "mae_regular": 51.27,
+   "ratio": 0.957,
+   "p_perm": 0.7327
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 71.65,
+   "mae_regular": 66.94,
+   "ratio": 1.07,
+   "p_perm": 0.8056
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 78.12,
+   "mae_regular": 66.31,
+   "ratio": 1.178,
+   "p_perm": 0.4059
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 74.18,
+   "mae_regular": 56.67,
+   "ratio": 1.309,
+   "p_perm": 0.0166
   },
   {
    "target": "UK_06_North_Wales_Merseyside",
-   "status": "weather_missing"
-  },
-  {
-   "target": "UK_07_South_Wales",
-   "status": "weather_missing"
-  },
-  {
-   "target": "UK_08_West_Midlands",
-   "status": "weather_missing"
-  },
-  {
-   "target": "UK_09_East_Midlands",
    "method": "i_cfg",
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 69,
-   "mae_event": 162.16,
-   "mae_regular": 97.84,
-   "ratio": 1.657,
-   "p_perm": 0.033
+   "mae_event": 84.1,
+   "mae_regular": 43.13,
+   "ratio": 1.95,
+   "p_perm": 0.0533
   },
   {
-   "target": "UK_09_East_Midlands",
+   "target": "UK_06_North_Wales_Merseyside",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 9,
-   "n_regular_days": 63,
-   "mae_event": 160.41,
-   "mae_regular": 91.96,
-   "ratio": 1.744,
-   "p_perm": 0.0002
-  },
-  {
-   "target": "UK_09_East_Midlands",
-   "method": "i_cfg",
-   "bucket": "solar_dim",
-   "n_event_days": 43,
-   "n_regular_days": 29,
-   "mae_event": 87.53,
-   "mae_regular": 119.78,
-   "ratio": 0.731,
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 86.8,
+   "mae_regular": 41.71,
+   "ratio": 2.081,
    "p_perm": 0.0119
   },
   {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 41.2,
+   "mae_regular": 50.24,
+   "ratio": 0.82,
+   "p_perm": 0.3393
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 62.74,
+   "mae_regular": 34.45,
+   "ratio": 1.821,
+   "p_perm": 0.0587
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 63.2,
+   "mae_regular": 33.57,
+   "ratio": 1.883,
+   "p_perm": 0.0185
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 32.8,
+   "mae_regular": 39.82,
+   "ratio": 0.824,
+   "p_perm": 0.2885
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 71.35,
+   "mae_regular": 53.64,
+   "ratio": 1.33,
+   "p_perm": 0.5052
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 69.0,
+   "mae_regular": 53.29,
+   "ratio": 1.295,
+   "p_perm": 0.4361
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 49.48,
+   "mae_regular": 61.65,
+   "ratio": 0.803,
+   "p_perm": 0.2342
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 126.08,
+   "mae_regular": 66.95,
+   "ratio": 1.883,
+   "p_perm": 0.0193
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 137.21,
+   "mae_regular": 64.36,
+   "ratio": 2.132,
+   "p_perm": 0.0003
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 67.39,
+   "mae_regular": 72.41,
+   "ratio": 0.931,
+   "p_perm": 0.598
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 49.68,
+   "mae_regular": 66.84,
+   "ratio": 0.743,
+   "p_perm": 0.185
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 52.17,
+   "mae_regular": 67.17,
+   "ratio": 0.777,
+   "p_perm": 0.143
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 72.07,
+   "mae_regular": 57.31,
+   "ratio": 1.258,
+   "p_perm": 0.0038
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 31.73,
+   "mae_regular": 59.06,
+   "ratio": 0.537,
+   "p_perm": 0.0229
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 33.66,
+   "mae_regular": 59.73,
+   "ratio": 0.563,
+   "p_perm": 0.0051
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 60.13,
+   "mae_regular": 54.66,
+   "ratio": 1.1,
+   "p_perm": 0.2454
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 37.16,
+   "mae_regular": 77.9,
+   "ratio": 0.477,
+   "p_perm": 0.0871
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 49.97,
+   "mae_regular": 78.16,
+   "ratio": 0.639,
+   "p_perm": 0.1416
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 73.77,
+   "mae_regular": 79.8,
+   "ratio": 0.925,
+   "p_perm": 0.5545
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 78.69,
+   "mae_regular": 104.97,
+   "ratio": 0.75,
+   "p_perm": 0.3507
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 89.82,
+   "mae_regular": 104.92,
+   "ratio": 0.856,
+   "p_perm": 0.5059
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 114.27,
+   "mae_regular": 88.46,
+   "ratio": 1.292,
+   "p_perm": 0.0207
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 131.91,
+   "mae_regular": 71.43,
+   "ratio": 1.847,
+   "p_perm": 0.0163
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 129.06,
+   "mae_regular": 69.83,
+   "ratio": 1.848,
+   "p_perm": 0.0041
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 63.72,
+   "mae_regular": 89.11,
+   "ratio": 0.715,
+   "p_perm": 0.016
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 80.99,
+   "mae_regular": 58.86,
+   "ratio": 1.376,
+   "p_perm": 0.2768
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 84.69,
+   "mae_regular": 57.93,
+   "ratio": 1.462,
+   "p_perm": 0.094
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 52.6,
+   "mae_regular": 70.44,
+   "ratio": 0.747,
+   "p_perm": 0.0335
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 63.42,
+   "mae_regular": 82.25,
+   "ratio": 0.771,
+   "p_perm": 0.5883
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 81.43,
+   "mae_regular": 81.47,
+   "ratio": 1.0,
+   "p_perm": 0.9992
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 73.28,
+   "mae_regular": 93.62,
+   "ratio": 0.783,
+   "p_perm": 0.1387
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 189.13,
+   "mae_regular": 114.25,
+   "ratio": 1.655,
+   "p_perm": 0.0045
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 196.18,
+   "mae_regular": 111.49,
+   "ratio": 1.76,
+   "p_perm": 0.0002
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 116.73,
+   "mae_regular": 118.33,
+   "ratio": 0.986,
+   "p_perm": 0.8766
+  },
+  {
+   "target": "UK_09_East_Midlands",
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 90.88,
+   "mae_regular": 78.55,
+   "ratio": 1.157,
+   "p_perm": 0.6134
+  },
+  {
+   "target": "UK_09_East_Midlands",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 92.68,
+   "mae_regular": 78.05,
+   "ratio": 1.187,
+   "p_perm": 0.4356
+  },
+  {
+   "target": "UK_09_East_Midlands",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 74.44,
+   "mae_regular": 85.93,
+   "ratio": 0.866,
+   "p_perm": 0.226
+  },
+  {
    "target": "UK_09_East_Midlands",
    "method": "i0",
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 69,
-   "mae_event": 124.66,
-   "mae_regular": 98.24,
-   "ratio": 1.269,
-   "p_perm": 0.4668
+   "mae_event": 78.1,
+   "mae_regular": 68.2,
+   "ratio": 1.145,
+   "p_perm": 0.696
   },
   {
    "target": "UK_09_East_Midlands",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 9,
-   "n_regular_days": 63,
-   "mae_event": 145.68,
-   "mae_regular": 92.72,
-   "ratio": 1.571,
-   "p_perm": 0.016
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 75.86,
+   "mae_regular": 68.07,
+   "ratio": 1.115,
+   "p_perm": 0.6883
   },
   {
    "target": "UK_09_East_Midlands",
@@ -557,10 +1453,10 @@
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 86.86,
-   "mae_regular": 117.84,
-   "ratio": 0.737,
-   "p_perm": 0.0339
+   "mae_event": 60.97,
+   "mae_regular": 79.93,
+   "ratio": 0.763,
+   "p_perm": 0.0555
   },
   {
    "target": "UK_09_East_Midlands",
@@ -577,12 +1473,12 @@
    "target": "UK_09_East_Midlands",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 9,
-   "n_regular_days": 63,
-   "mae_event": 86.89,
-   "mae_regular": 92.55,
-   "ratio": 0.939,
-   "p_perm": 0.7963
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 70.5,
+   "mae_regular": 93.43,
+   "ratio": 0.755,
+   "p_perm": 0.4357
   },
   {
    "target": "UK_09_East_Midlands",
@@ -590,10 +1486,10 @@
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 83.21,
-   "mae_regular": 104.64,
-   "ratio": 0.795,
-   "p_perm": 0.1529
+   "mae_event": 83.82,
+   "mae_regular": 103.73,
+   "ratio": 0.808,
+   "p_perm": 0.1818
   },
   {
    "target": "UK_09_East_Midlands",
@@ -610,12 +1506,12 @@
    "target": "UK_09_East_Midlands",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 9,
-   "n_regular_days": 63,
-   "mae_event": 180.82,
-   "mae_regular": 118.28,
-   "ratio": 1.529,
-   "p_perm": 0.0001
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 180.83,
+   "mae_regular": 122.01,
+   "ratio": 1.482,
+   "p_perm": 0.0051
   },
   {
    "target": "UK_09_East_Midlands",
@@ -623,32 +1519,32 @@
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 119.78,
-   "mae_regular": 135.47,
-   "ratio": 0.884,
-   "p_perm": 0.1565
+   "mae_event": 121.38,
+   "mae_regular": 133.1,
+   "ratio": 0.912,
+   "p_perm": 0.2864
   },
   {
    "target": "UK_10_East_England",
    "method": "i_cfg",
    "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 60.62,
-   "mae_regular": 40.8,
-   "ratio": 1.486,
-   "p_perm": 0.052
+   "n_event_days": 4,
+   "n_regular_days": 68,
+   "mae_event": 43.16,
+   "mae_regular": 32.76,
+   "ratio": 1.317,
+   "p_perm": 0.187
   },
   {
    "target": "UK_10_East_England",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 9,
-   "n_regular_days": 63,
-   "mae_event": 49.6,
-   "mae_regular": 40.49,
-   "ratio": 1.225,
-   "p_perm": 0.1506
+   "n_event_days": 10,
+   "n_regular_days": 62,
+   "mae_event": 40.64,
+   "mae_regular": 32.17,
+   "ratio": 1.263,
+   "p_perm": 0.1035
   },
   {
    "target": "UK_10_East_England",
@@ -656,32 +1552,32 @@
    "bucket": "solar_dim",
    "n_event_days": 45,
    "n_regular_days": 27,
-   "mae_event": 41.69,
-   "mae_regular": 41.53,
-   "ratio": 1.004,
-   "p_perm": 0.9669
+   "mae_event": 33.04,
+   "mae_regular": 33.84,
+   "ratio": 0.976,
+   "p_perm": 0.8265
   },
   {
    "target": "UK_10_East_England",
    "method": "i0",
    "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 89.66,
-   "mae_regular": 59.6,
-   "ratio": 1.504,
-   "p_perm": 0.1286
+   "n_event_days": 4,
+   "n_regular_days": 68,
+   "mae_event": 30.27,
+   "mae_regular": 26.02,
+   "ratio": 1.163,
+   "p_perm": 0.5104
   },
   {
    "target": "UK_10_East_England",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 9,
-   "n_regular_days": 63,
-   "mae_event": 68.02,
-   "mae_regular": 59.82,
-   "ratio": 1.137,
-   "p_perm": 0.5077
+   "n_event_days": 10,
+   "n_regular_days": 62,
+   "mae_event": 28.13,
+   "mae_regular": 25.95,
+   "ratio": 1.084,
+   "p_perm": 0.5913
   },
   {
    "target": "UK_10_East_England",
@@ -689,32 +1585,32 @@
    "bucket": "solar_dim",
    "n_event_days": 45,
    "n_regular_days": 27,
-   "mae_event": 60.63,
-   "mae_regular": 61.21,
-   "ratio": 0.991,
-   "p_perm": 0.9426
+   "mae_event": 26.47,
+   "mae_regular": 25.89,
+   "ratio": 1.022,
+   "p_perm": 0.844
   },
   {
    "target": "UK_10_East_England",
    "method": "persistence",
    "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 100.73,
-   "mae_regular": 59.36,
-   "ratio": 1.697,
-   "p_perm": 0.0613
+   "n_event_days": 4,
+   "n_regular_days": 68,
+   "mae_event": 89.52,
+   "mae_regular": 59.42,
+   "ratio": 1.507,
+   "p_perm": 0.1273
   },
   {
    "target": "UK_10_East_England",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 9,
-   "n_regular_days": 63,
-   "mae_event": 77.44,
-   "mae_regular": 58.75,
-   "ratio": 1.318,
-   "p_perm": 0.1787
+   "n_event_days": 10,
+   "n_regular_days": 62,
+   "mae_event": 78.57,
+   "mae_regular": 58.27,
+   "ratio": 1.348,
+   "p_perm": 0.1233
   },
   {
    "target": "UK_10_East_England",
@@ -731,23 +1627,23 @@
    "target": "UK_10_East_England",
    "method": "config_constant",
    "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 79.38,
-   "mae_regular": 85.36,
-   "ratio": 0.93,
-   "p_perm": 0.8013
+   "n_event_days": 4,
+   "n_regular_days": 68,
+   "mae_event": 67.48,
+   "mae_regular": 86.14,
+   "ratio": 0.783,
+   "p_perm": 0.355
   },
   {
    "target": "UK_10_East_England",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 9,
-   "n_regular_days": 63,
-   "mae_event": 75.65,
-   "mae_regular": 86.46,
-   "ratio": 0.875,
-   "p_perm": 0.436
+   "n_event_days": 10,
+   "n_regular_days": 62,
+   "mae_event": 71.53,
+   "mae_regular": 87.3,
+   "ratio": 0.819,
+   "p_perm": 0.235
   },
   {
    "target": "UK_10_East_England",
@@ -766,10 +1662,10 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 69,
-   "mae_event": 81.43,
-   "mae_regular": 74.05,
-   "ratio": 1.1,
-   "p_perm": 0.5654
+   "mae_event": 47.1,
+   "mae_regular": 53.67,
+   "ratio": 0.878,
+   "p_perm": 0.6203
   },
   {
    "target": "UK_11_South_West_England",
@@ -777,21 +1673,21 @@
    "bucket": "wind_lull",
    "n_event_days": 5,
    "n_regular_days": 67,
-   "mae_event": 86.45,
-   "mae_regular": 73.45,
-   "ratio": 1.177,
-   "p_perm": 0.1801
+   "mae_event": 45.19,
+   "mae_regular": 54.01,
+   "ratio": 0.837,
+   "p_perm": 0.3986
   },
   {
    "target": "UK_11_South_West_England",
    "method": "i_cfg",
    "bucket": "solar_dim",
-   "n_event_days": 46,
-   "n_regular_days": 26,
-   "mae_event": 71.81,
-   "mae_regular": 78.86,
-   "ratio": 0.911,
-   "p_perm": 0.1844
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 58.01,
+   "mae_regular": 46.55,
+   "ratio": 1.246,
+   "p_perm": 0.0304
   },
   {
    "target": "UK_11_South_West_England",
@@ -799,10 +1695,10 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 69,
-   "mae_event": 24.19,
-   "mae_regular": 51.77,
-   "ratio": 0.467,
-   "p_perm": 0.0852
+   "mae_event": 29.62,
+   "mae_regular": 44.43,
+   "ratio": 0.667,
+   "p_perm": 0.2427
   },
   {
    "target": "UK_11_South_West_England",
@@ -810,357 +1706,362 @@
    "bucket": "wind_lull",
    "n_event_days": 5,
    "n_regular_days": 67,
-   "mae_event": 38.12,
-   "mae_regular": 51.55,
-   "ratio": 0.739,
-   "p_perm": 0.3227
-  },
-  {
-   "target": "UK_11_South_West_England",
-   "method": "i0",
-   "bucket": "solar_dim",
-   "n_event_days": 46,
-   "n_regular_days": 26,
-   "mae_event": 54.64,
-   "mae_regular": 43.51,
-   "ratio": 1.256,
-   "p_perm": 0.1155
-  },
-  {
-   "target": "UK_11_South_West_England",
-   "method": "persistence",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 27.9,
-   "mae_regular": 54.13,
-   "ratio": 0.515,
-   "p_perm": 0.1173
-  },
-  {
-   "target": "UK_11_South_West_England",
-   "method": "persistence",
-   "bucket": "wind_lull",
-   "n_event_days": 5,
-   "n_regular_days": 67,
-   "mae_event": 33.51,
-   "mae_regular": 54.5,
-   "ratio": 0.615,
-   "p_perm": 0.1224
-  },
-  {
-   "target": "UK_11_South_West_England",
-   "method": "persistence",
-   "bucket": "solar_dim",
-   "n_event_days": 46,
-   "n_regular_days": 26,
-   "mae_event": 58.32,
-   "mae_regular": 43.7,
-   "ratio": 1.335,
-   "p_perm": 0.0441
-  },
-  {
-   "target": "UK_11_South_West_England",
-   "method": "config_constant",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 103.17,
-   "mae_regular": 77.0,
-   "ratio": 1.34,
-   "p_perm": 0.1227
-  },
-  {
-   "target": "UK_11_South_West_England",
-   "method": "config_constant",
-   "bucket": "wind_lull",
-   "n_event_days": 5,
-   "n_regular_days": 67,
-   "mae_event": 102.6,
-   "mae_regular": 76.26,
-   "ratio": 1.345,
-   "p_perm": 0.0406
-  },
-  {
-   "target": "UK_11_South_West_England",
-   "method": "config_constant",
-   "bucket": "solar_dim",
-   "n_event_days": 46,
-   "n_regular_days": 26,
-   "mae_event": 83.42,
-   "mae_regular": 68.67,
-   "ratio": 1.215,
-   "p_perm": 0.0329
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "i_cfg",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 95.54,
-   "mae_regular": 67.27,
-   "ratio": 1.42,
-   "p_perm": 0.1186
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "i_cfg",
-   "bucket": "wind_lull",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 79.29,
-   "mae_regular": 67.81,
-   "ratio": 1.169,
-   "p_perm": 0.4765
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "i_cfg",
-   "bucket": "solar_dim",
-   "n_event_days": 44,
-   "n_regular_days": 28,
-   "mae_event": 75.49,
-   "mae_regular": 57.38,
-   "ratio": 1.315,
-   "p_perm": 0.0127
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "i0",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 64.25,
-   "mae_regular": 65.81,
-   "ratio": 0.976,
-   "p_perm": 0.9216
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "i0",
-   "bucket": "wind_lull",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 57.08,
-   "mae_regular": 66.26,
-   "ratio": 0.861,
-   "p_perm": 0.4964
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "i0",
-   "bucket": "solar_dim",
-   "n_event_days": 44,
-   "n_regular_days": 28,
-   "mae_event": 60.96,
-   "mae_regular": 73.26,
-   "ratio": 0.832,
-   "p_perm": 0.047
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "persistence",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 56.82,
-   "mae_regular": 57.39,
-   "ratio": 0.99,
-   "p_perm": 0.976
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "persistence",
-   "bucket": "wind_lull",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 53.11,
-   "mae_regular": 57.62,
-   "ratio": 0.922,
-   "p_perm": 0.7766
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "persistence",
-   "bucket": "solar_dim",
-   "n_event_days": 44,
-   "n_regular_days": 28,
-   "mae_event": 54.54,
-   "mae_regular": 61.82,
-   "ratio": 0.882,
-   "p_perm": 0.3297
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "config_constant",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 109.03,
-   "mae_regular": 80.07,
-   "ratio": 1.362,
-   "p_perm": 0.1553
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "config_constant",
-   "bucket": "wind_lull",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 90.63,
-   "mae_regular": 80.73,
-   "ratio": 1.123,
-   "p_perm": 0.5918
-  },
-  {
-   "target": "UK_12_South_England",
-   "method": "config_constant",
-   "bucket": "solar_dim",
-   "n_event_days": 44,
-   "n_regular_days": 28,
-   "mae_event": 91.32,
-   "mae_regular": 65.5,
-   "ratio": 1.394,
-   "p_perm": 0.0006
-  },
-  {
-   "target": "UK_13_London",
-   "method": "i_cfg",
-   "bucket": "dunkelflaute",
-   "n_event_days": 1,
-   "n_regular_days": 71,
-   "mae_event": 17.96,
-   "mae_regular": 49.79,
-   "ratio": 0.361,
-   "p_perm": 0.1131
-  },
-  {
-   "target": "UK_13_London",
-   "method": "i_cfg",
-   "bucket": "wind_lull",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 40.31,
-   "mae_regular": 49.87,
-   "ratio": 0.808,
-   "p_perm": 0.3226
-  },
-  {
-   "target": "UK_13_London",
-   "method": "i_cfg",
-   "bucket": "solar_dim",
-   "n_event_days": 44,
-   "n_regular_days": 28,
-   "mae_event": 51.79,
-   "mae_regular": 45.5,
-   "ratio": 1.138,
-   "p_perm": 0.164
-  },
-  {
-   "target": "UK_13_London",
-   "method": "i0",
-   "bucket": "dunkelflaute",
-   "n_event_days": 1,
-   "n_regular_days": 71,
-   "mae_event": 31.81,
-   "mae_regular": 64.33,
-   "ratio": 0.495,
-   "p_perm": 0.2378
-  },
-  {
-   "target": "UK_13_London",
-   "method": "i0",
-   "bucket": "wind_lull",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 57.91,
-   "mae_regular": 64.23,
-   "ratio": 0.902,
-   "p_perm": 0.6772
-  },
-  {
-   "target": "UK_13_London",
-   "method": "i0",
-   "bucket": "solar_dim",
-   "n_event_days": 44,
-   "n_regular_days": 28,
-   "mae_event": 63.56,
-   "mae_regular": 64.38,
-   "ratio": 0.987,
-   "p_perm": 0.9061
-  },
-  {
-   "target": "UK_13_London",
-   "method": "persistence",
-   "bucket": "dunkelflaute",
-   "n_event_days": 1,
-   "n_regular_days": 71,
-   "mae_event": 63.78,
-   "mae_regular": 52.58,
-   "ratio": 1.213,
-   "p_perm": 0.8171
-  },
-  {
-   "target": "UK_13_London",
-   "method": "persistence",
-   "bucket": "wind_lull",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 70.66,
-   "mae_regular": 51.69,
-   "ratio": 1.367,
-   "p_perm": 0.2921
-  },
-  {
-   "target": "UK_13_London",
-   "method": "persistence",
-   "bucket": "solar_dim",
-   "n_event_days": 44,
-   "n_regular_days": 28,
-   "mae_event": 49.28,
-   "mae_regular": 58.18,
-   "ratio": 0.847,
-   "p_perm": 0.2785
-  },
-  {
-   "target": "UK_13_London",
-   "method": "config_constant",
-   "bucket": "dunkelflaute",
-   "n_event_days": 1,
-   "n_regular_days": 71,
-   "mae_event": 44.98,
-   "mae_regular": 79.31,
+   "mae_event": 25.62,
+   "mae_regular": 45.17,
    "ratio": 0.567,
-   "p_perm": 0.4088
+   "p_perm": 0.0529
+  },
+  {
+   "target": "UK_11_South_West_England",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 48.15,
+   "mae_regular": 37.39,
+   "ratio": 1.288,
+   "p_perm": 0.0466
+  },
+  {
+   "target": "UK_11_South_West_England",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 54.46,
+   "mae_regular": 52.98,
+   "ratio": 1.028,
+   "p_perm": 0.9416
+  },
+  {
+   "target": "UK_11_South_West_England",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 46.16,
+   "mae_regular": 53.55,
+   "ratio": 0.862,
+   "p_perm": 0.6138
+  },
+  {
+   "target": "UK_11_South_West_England",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 60.95,
+   "mae_regular": 41.32,
+   "ratio": 1.475,
+   "p_perm": 0.004
+  },
+  {
+   "target": "UK_11_South_West_England",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 107.9,
+   "mae_regular": 76.8,
+   "ratio": 1.405,
+   "p_perm": 0.0615
+  },
+  {
+   "target": "UK_11_South_West_England",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 100.2,
+   "mae_regular": 76.44,
+   "ratio": 1.311,
+   "p_perm": 0.0663
+  },
+  {
+   "target": "UK_11_South_West_England",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 83.79,
+   "mae_regular": 69.65,
+   "ratio": 1.203,
+   "p_perm": 0.0366
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 76.59,
+   "mae_regular": 53.23,
+   "ratio": 1.439,
+   "p_perm": 0.105
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 77.18,
+   "mae_regular": 52.49,
+   "ratio": 1.47,
+   "p_perm": 0.0288
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 56.44,
+   "mae_regular": 50.88,
+   "ratio": 1.109,
+   "p_perm": 0.341
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 58.69,
+   "mae_regular": 43.45,
+   "ratio": 1.351,
+   "p_perm": 0.1392
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 57.12,
+   "mae_regular": 43.11,
+   "ratio": 1.325,
+   "p_perm": 0.0933
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 43.14,
+   "mae_regular": 45.49,
+   "ratio": 0.948,
+   "p_perm": 0.6042
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 47.82,
+   "mae_regular": 57.78,
+   "ratio": 0.828,
+   "p_perm": 0.6176
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 54.97,
+   "mae_regular": 57.55,
+   "ratio": 0.955,
+   "p_perm": 0.8607
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 60.12,
+   "mae_regular": 53.29,
+   "ratio": 1.128,
+   "p_perm": 0.3528
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 117.09,
+   "mae_regular": 79.72,
+   "ratio": 1.469,
+   "p_perm": 0.0592
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 120.98,
+   "mae_regular": 78.31,
+   "ratio": 1.545,
+   "p_perm": 0.0064
+  },
+  {
+   "target": "UK_12_South_England",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 87.14,
+   "mae_regular": 72.59,
+   "ratio": 1.2,
+   "p_perm": 0.0752
+  },
+  {
+   "target": "UK_13_London",
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 34.94,
+   "mae_regular": 38.6,
+   "ratio": 0.905,
+   "p_perm": 0.7327
+  },
+  {
+   "target": "UK_13_London",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 37.66,
+   "mae_regular": 38.51,
+   "ratio": 0.978,
+   "p_perm": 0.9153
+  },
+  {
+   "target": "UK_13_London",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 40.67,
+   "mae_regular": 35.15,
+   "ratio": 1.157,
+   "p_perm": 0.1749
+  },
+  {
+   "target": "UK_13_London",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 35.45,
+   "mae_regular": 38.43,
+   "ratio": 0.923,
+   "p_perm": 0.7249
+  },
+  {
+   "target": "UK_13_London",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 33.15,
+   "mae_regular": 38.69,
+   "ratio": 0.857,
+   "p_perm": 0.405
+  },
+  {
+   "target": "UK_13_London",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 39.68,
+   "mae_regular": 36.27,
+   "ratio": 1.094,
+   "p_perm": 0.3356
+  },
+  {
+   "target": "UK_13_London",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 67.9,
+   "mae_regular": 52.08,
+   "ratio": 1.304,
+   "p_perm": 0.4412
+  },
+  {
+   "target": "UK_13_London",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 62.4,
+   "mae_regular": 52.02,
+   "ratio": 1.2,
+   "p_perm": 0.5261
+  },
+  {
+   "target": "UK_13_London",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 56.35,
+   "mae_regular": 47.38,
+   "ratio": 1.189,
+   "p_perm": 0.2713
+  },
+  {
+   "target": "UK_13_London",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 55.28,
+   "mae_regular": 79.86,
+   "ratio": 0.692,
+   "p_perm": 0.2696
   },
   {
    "target": "UK_13_London",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 63.04,
-   "mae_regular": 79.76,
-   "ratio": 0.79,
-   "p_perm": 0.3739
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 66.98,
+   "mae_regular": 79.72,
+   "ratio": 0.84,
+   "p_perm": 0.4535
   },
   {
    "target": "UK_13_London",
    "method": "config_constant",
    "bucket": "solar_dim",
-   "n_event_days": 44,
-   "n_regular_days": 28,
-   "mae_event": 89.48,
-   "mae_regular": 62.11,
-   "ratio": 1.441,
-   "p_perm": 0.001
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 85.42,
+   "mae_regular": 69.07,
+   "ratio": 1.237,
+   "p_perm": 0.0583
   },
   {
    "target": "UK_14_South_East_England",
    "method": "i_cfg",
    "bucket": "dunkelflaute",
-   "status": "no_event_days"
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 31.45,
+   "mae_regular": 45.58,
+   "ratio": 0.69,
+   "p_perm": 0.1695
   },
   {
    "target": "UK_14_South_East_England",
@@ -1168,27 +2069,32 @@
    "bucket": "wind_lull",
    "n_event_days": 5,
    "n_regular_days": 67,
-   "mae_event": 53.98,
-   "mae_regular": 62.7,
-   "ratio": 0.861,
-   "p_perm": 0.4542
+   "mae_event": 37.98,
+   "mae_regular": 45.52,
+   "ratio": 0.834,
+   "p_perm": 0.3537
   },
   {
    "target": "UK_14_South_East_England",
    "method": "i_cfg",
    "bucket": "solar_dim",
-   "n_event_days": 41,
-   "n_regular_days": 31,
-   "mae_event": 69.44,
-   "mae_regular": 52.38,
-   "ratio": 1.326,
-   "p_perm": 0.0032
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 47.38,
+   "mae_regular": 41.45,
+   "ratio": 1.143,
+   "p_perm": 0.1497
   },
   {
    "target": "UK_14_South_East_England",
    "method": "i0",
    "bucket": "dunkelflaute",
-   "status": "no_event_days"
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 33.61,
+   "mae_regular": 44.66,
+   "ratio": 0.753,
+   "p_perm": 0.2169
   },
   {
    "target": "UK_14_South_East_England",
@@ -1196,27 +2102,32 @@
    "bucket": "wind_lull",
    "n_event_days": 5,
    "n_regular_days": 67,
-   "mae_event": 53.44,
-   "mae_regular": 61.91,
-   "ratio": 0.863,
-   "p_perm": 0.4193
+   "mae_event": 35.29,
+   "mae_regular": 44.87,
+   "ratio": 0.786,
+   "p_perm": 0.1797
   },
   {
    "target": "UK_14_South_East_England",
    "method": "i0",
    "bucket": "solar_dim",
-   "n_event_days": 41,
-   "n_regular_days": 31,
-   "mae_event": 63.77,
-   "mae_regular": 58.09,
-   "ratio": 1.098,
-   "p_perm": 0.2931
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 46.58,
+   "mae_regular": 40.68,
+   "ratio": 1.145,
+   "p_perm": 0.108
   },
   {
    "target": "UK_14_South_East_England",
    "method": "persistence",
    "bucket": "dunkelflaute",
-   "status": "no_event_days"
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 54.7,
+   "mae_regular": 50.52,
+   "ratio": 1.083,
+   "p_perm": 0.8117
   },
   {
    "target": "UK_14_South_East_England",
@@ -1224,27 +2135,32 @@
    "bucket": "wind_lull",
    "n_event_days": 5,
    "n_regular_days": 67,
-   "mae_event": 60.48,
-   "mae_regular": 49.96,
-   "ratio": 1.21,
-   "p_perm": 0.4442
+   "mae_event": 53.14,
+   "mae_regular": 50.51,
+   "ratio": 1.052,
+   "p_perm": 0.8542
   },
   {
    "target": "UK_14_South_East_England",
    "method": "persistence",
    "bucket": "solar_dim",
-   "n_event_days": 41,
-   "n_regular_days": 31,
-   "mae_event": 46.26,
-   "mae_regular": 56.56,
-   "ratio": 0.818,
-   "p_perm": 0.1344
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 53.97,
+   "mae_regular": 45.84,
+   "ratio": 1.177,
+   "p_perm": 0.2465
   },
   {
    "target": "UK_14_South_East_England",
    "method": "config_constant",
    "bucket": "dunkelflaute",
-   "status": "no_event_days"
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 41.86,
+   "mae_regular": 72.16,
+   "ratio": 0.58,
+   "p_perm": 0.0891
   },
   {
    "target": "UK_14_South_East_England",
@@ -1252,21 +2168,21 @@
    "bucket": "wind_lull",
    "n_event_days": 5,
    "n_regular_days": 67,
-   "mae_event": 60.35,
-   "mae_regular": 71.68,
-   "ratio": 0.842,
-   "p_perm": 0.427
+   "mae_event": 54.05,
+   "mae_regular": 72.15,
+   "ratio": 0.749,
+   "p_perm": 0.2053
   },
   {
    "target": "UK_14_South_East_England",
    "method": "config_constant",
    "bucket": "solar_dim",
-   "n_event_days": 41,
-   "n_regular_days": 31,
-   "mae_event": 80.17,
-   "mae_regular": 58.63,
-   "ratio": 1.367,
-   "p_perm": 0.0025
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 76.98,
+   "mae_regular": 61.87,
+   "ratio": 1.244,
+   "p_perm": 0.0382
   },
   {
    "target": "UK_15_England",
@@ -1274,21 +2190,21 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 69,
-   "mae_event": 93.7,
-   "mae_regular": 44.07,
-   "ratio": 2.126,
-   "p_perm": 0.0018
+   "mae_event": 47.85,
+   "mae_regular": 35.24,
+   "ratio": 1.358,
+   "p_perm": 0.2017
   },
   {
    "target": "UK_15_England",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 64,
-   "mae_event": 78.39,
-   "mae_regular": 42.11,
-   "ratio": 1.862,
-   "p_perm": 0.0006
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 51.22,
+   "mae_regular": 34.61,
+   "ratio": 1.48,
+   "p_perm": 0.0334
   },
   {
    "target": "UK_15_England",
@@ -1296,10 +2212,10 @@
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 44.14,
-   "mae_regular": 49.1,
-   "ratio": 0.899,
-   "p_perm": 0.392
+   "mae_event": 36.86,
+   "mae_regular": 34.14,
+   "ratio": 1.08,
+   "p_perm": 0.5109
   },
   {
    "target": "UK_15_England",
@@ -1307,21 +2223,21 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 69,
-   "mae_event": 77.55,
-   "mae_regular": 51.02,
-   "ratio": 1.52,
-   "p_perm": 0.0865
+   "mae_event": 34.25,
+   "mae_regular": 27.78,
+   "ratio": 1.233,
+   "p_perm": 0.4104
   },
   {
    "target": "UK_15_England",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 64,
-   "mae_event": 69.85,
-   "mae_regular": 49.91,
-   "ratio": 1.399,
-   "p_perm": 0.0512
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 33.63,
+   "mae_regular": 27.63,
+   "ratio": 1.217,
+   "p_perm": 0.3242
   },
   {
    "target": "UK_15_England",
@@ -1329,10 +2245,10 @@
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 50.84,
-   "mae_regular": 54.04,
-   "ratio": 0.941,
-   "p_perm": 0.6369
+   "mae_event": 28.74,
+   "mae_regular": 27.01,
+   "ratio": 1.064,
+   "p_perm": 0.586
   },
   {
    "target": "UK_15_England",
@@ -1349,12 +2265,12 @@
    "target": "UK_15_England",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 64,
-   "mae_event": 39.1,
-   "mae_regular": 49.76,
-   "ratio": 0.786,
-   "p_perm": 0.3667
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 51.5,
+   "mae_regular": 48.35,
+   "ratio": 1.065,
+   "p_perm": 0.8346
   },
   {
    "target": "UK_15_England",
@@ -1362,10 +2278,10 @@
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 47.16,
-   "mae_regular": 50.67,
-   "ratio": 0.931,
-   "p_perm": 0.6336
+   "mae_event": 48.65,
+   "mae_regular": 48.45,
+   "ratio": 1.004,
+   "p_perm": 0.9752
   },
   {
    "target": "UK_15_England",
@@ -1382,12 +2298,12 @@
    "target": "UK_15_England",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 64,
-   "mae_event": 95.63,
-   "mae_regular": 68.55,
-   "ratio": 1.395,
-   "p_perm": 0.009
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 108.96,
+   "mae_regular": 68.77,
+   "ratio": 1.584,
+   "p_perm": 0.0016
   },
   {
    "target": "UK_15_England",
@@ -1395,31 +2311,31 @@
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 76.69,
-   "mae_regular": 63.96,
-   "ratio": 1.199,
-   "p_perm": 0.0588
+   "mae_event": 75.57,
+   "mae_regular": 65.62,
+   "ratio": 1.152,
+   "p_perm": 0.1404
   },
   {
    "target": "UK_16_Scotland",
    "method": "i_cfg",
    "bucket": "dunkelflaute",
-   "n_event_days": 5,
-   "n_regular_days": 67,
-   "mae_event": 101.03,
-   "mae_regular": 34.06,
-   "ratio": 2.966,
-   "p_perm": 0.0007
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 66.99,
+   "mae_regular": 18.17,
+   "ratio": 3.686,
+   "p_perm": 0.0001
   },
   {
    "target": "UK_16_Scotland",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 10,
-   "n_regular_days": 62,
-   "mae_event": 91.99,
-   "mae_regular": 30.12,
-   "ratio": 3.054,
+   "n_event_days": 12,
+   "n_regular_days": 60,
+   "mae_event": 61.13,
+   "mae_regular": 15.27,
+   "ratio": 4.002,
    "p_perm": 0.0001
   },
   {
@@ -1428,32 +2344,32 @@
    "bucket": "solar_dim",
    "n_event_days": 48,
    "n_regular_days": 24,
-   "mae_event": 38.53,
-   "mae_regular": 39.08,
-   "ratio": 0.986,
-   "p_perm": 0.9486
+   "mae_event": 20.91,
+   "mae_regular": 26.92,
+   "ratio": 0.777,
+   "p_perm": 0.3303
   },
   {
    "target": "UK_16_Scotland",
    "method": "i0",
    "bucket": "dunkelflaute",
-   "n_event_days": 5,
-   "n_regular_days": 67,
-   "mae_event": 60.3,
-   "mae_regular": 35.81,
-   "ratio": 1.684,
-   "p_perm": 0.0723
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 55.59,
+   "mae_regular": 18.62,
+   "ratio": 2.985,
+   "p_perm": 0.0002
   },
   {
    "target": "UK_16_Scotland",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 10,
-   "n_regular_days": 62,
-   "mae_event": 58.11,
-   "mae_regular": 34.19,
-   "ratio": 1.699,
-   "p_perm": 0.021
+   "n_event_days": 12,
+   "n_regular_days": 60,
+   "mae_event": 53.79,
+   "mae_regular": 15.9,
+   "ratio": 3.383,
+   "p_perm": 0.0001
   },
   {
    "target": "UK_16_Scotland",
@@ -1461,32 +2377,32 @@
    "bucket": "solar_dim",
    "n_event_days": 48,
    "n_regular_days": 24,
-   "mae_event": 37.02,
-   "mae_regular": 38.5,
-   "ratio": 0.962,
-   "p_perm": 0.8542
+   "mae_event": 20.55,
+   "mae_regular": 25.54,
+   "ratio": 0.805,
+   "p_perm": 0.3496
   },
   {
    "target": "UK_16_Scotland",
    "method": "persistence",
    "bucket": "dunkelflaute",
-   "n_event_days": 5,
-   "n_regular_days": 67,
-   "mae_event": 62.0,
-   "mae_regular": 33.35,
-   "ratio": 1.859,
-   "p_perm": 0.0628
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 81.65,
+   "mae_regular": 30.35,
+   "ratio": 2.69,
+   "p_perm": 0.0004
   },
   {
    "target": "UK_16_Scotland",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 10,
-   "n_regular_days": 62,
-   "mae_event": 57.97,
-   "mae_regular": 31.69,
-   "ratio": 1.829,
-   "p_perm": 0.0244
+   "n_event_days": 12,
+   "n_regular_days": 60,
+   "mae_event": 65.2,
+   "mae_regular": 29.37,
+   "ratio": 2.22,
+   "p_perm": 0.0013
   },
   {
    "target": "UK_16_Scotland",
@@ -1503,22 +2419,22 @@
    "target": "UK_16_Scotland",
    "method": "config_constant",
    "bucket": "dunkelflaute",
-   "n_event_days": 5,
-   "n_regular_days": 67,
-   "mae_event": 98.5,
-   "mae_regular": 40.19,
-   "ratio": 2.451,
-   "p_perm": 0.0008
+   "n_event_days": 7,
+   "n_regular_days": 65,
+   "mae_event": 102.89,
+   "mae_regular": 37.93,
+   "ratio": 2.713,
+   "p_perm": 0.0001
   },
   {
    "target": "UK_16_Scotland",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 10,
-   "n_regular_days": 62,
-   "mae_event": 89.15,
-   "mae_regular": 37.0,
-   "ratio": 2.409,
+   "n_event_days": 12,
+   "n_regular_days": 60,
+   "mae_event": 92.02,
+   "mae_regular": 34.69,
+   "ratio": 2.653,
    "p_perm": 0.0001
   },
   {
@@ -1538,186 +2454,186 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 69,
-   "mae_event": 75.36,
-   "mae_regular": 74.98,
-   "ratio": 1.005,
-   "p_perm": 0.9805
+   "mae_event": 56.95,
+   "mae_regular": 54.81,
+   "ratio": 1.039,
+   "p_perm": 0.8528
   },
   {
    "target": "UK_17_Wales",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 64,
-   "mae_event": 76.02,
-   "mae_regular": 74.87,
-   "ratio": 1.015,
-   "p_perm": 0.9062
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 59.04,
+   "mae_regular": 54.59,
+   "ratio": 1.081,
+   "p_perm": 0.6319
   },
   {
    "target": "UK_17_Wales",
-   "method": "i_cfg",
-   "bucket": "solar_dim",
-   "n_event_days": 41,
-   "n_regular_days": 31,
-   "mae_event": 74.38,
-   "mae_regular": 75.81,
-   "ratio": 0.981,
-   "p_perm": 0.8165
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "i0",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 64.65,
-   "mae_regular": 71.76,
-   "ratio": 0.901,
-   "p_perm": 0.7305
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "i0",
-   "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 64,
-   "mae_event": 77.64,
-   "mae_regular": 70.69,
-   "ratio": 1.098,
-   "p_perm": 0.6302
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "i0",
-   "bucket": "solar_dim",
-   "n_event_days": 41,
-   "n_regular_days": 31,
-   "mae_event": 71.62,
-   "mae_regular": 71.25,
-   "ratio": 1.005,
-   "p_perm": 0.9711
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "persistence",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 66.42,
-   "mae_regular": 73.31,
-   "ratio": 0.906,
-   "p_perm": 0.7803
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "persistence",
-   "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 64,
-   "mae_event": 73.52,
-   "mae_regular": 72.96,
-   "ratio": 1.008,
-   "p_perm": 0.9739
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "persistence",
-   "bucket": "solar_dim",
-   "n_event_days": 41,
-   "n_regular_days": 31,
-   "mae_event": 71.16,
-   "mae_regular": 75.49,
-   "ratio": 0.943,
-   "p_perm": 0.6687
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "config_constant",
-   "bucket": "dunkelflaute",
-   "n_event_days": 3,
-   "n_regular_days": 69,
-   "mae_event": 99.52,
-   "mae_regular": 107.7,
-   "ratio": 0.924,
-   "p_perm": 0.7393
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "config_constant",
-   "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 64,
-   "mae_event": 103.58,
-   "mae_regular": 107.83,
-   "ratio": 0.961,
-   "p_perm": 0.7696
-  },
-  {
-   "target": "UK_17_Wales",
-   "method": "config_constant",
-   "bucket": "solar_dim",
-   "n_event_days": 41,
-   "n_regular_days": 31,
-   "mae_event": 117.66,
-   "mae_regular": 93.73,
-   "ratio": 1.255,
-   "p_perm": 0.0092
-  },
-  {
-   "target": "UK_18_GB",
-   "method": "i_cfg",
-   "bucket": "dunkelflaute",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 74.44,
-   "mae_regular": 41.18,
-   "ratio": 1.808,
-   "p_perm": 0.0168
-  },
-  {
-   "target": "UK_18_GB",
-   "method": "i_cfg",
-   "bucket": "wind_lull",
-   "n_event_days": 12,
-   "n_regular_days": 60,
-   "mae_event": 53.52,
-   "mae_regular": 40.93,
-   "ratio": 1.308,
-   "p_perm": 0.0987
-  },
-  {
-   "target": "UK_18_GB",
    "method": "i_cfg",
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 41.07,
-   "mae_regular": 45.93,
+   "mae_event": 52.39,
+   "mae_regular": 58.61,
    "ratio": 0.894,
-   "p_perm": 0.42
+   "p_perm": 0.1924
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 42.53,
+   "mae_regular": 51.19,
+   "ratio": 0.831,
+   "p_perm": 0.39
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 42.67,
+   "mae_regular": 51.44,
+   "ratio": 0.83,
+   "p_perm": 0.2597
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 48.24,
+   "mae_regular": 54.66,
+   "ratio": 0.882,
+   "p_perm": 0.1108
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 63.94,
+   "mae_regular": 73.42,
+   "ratio": 0.871,
+   "p_perm": 0.704
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 64.93,
+   "mae_regular": 73.63,
+   "ratio": 0.882,
+   "p_perm": 0.6741
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 68.91,
+   "mae_regular": 79.12,
+   "ratio": 0.871,
+   "p_perm": 0.3174
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 96.68,
+   "mae_regular": 107.82,
+   "ratio": 0.897,
+   "p_perm": 0.6463
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 108.53,
+   "mae_regular": 107.27,
+   "ratio": 1.012,
+   "p_perm": 0.9432
+  },
+  {
+   "target": "UK_17_Wales",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 114.76,
+   "mae_regular": 96.38,
+   "ratio": 1.191,
+   "p_perm": 0.052
+  },
+  {
+   "target": "UK_18_GB",
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 43.49,
+   "mae_regular": 34.85,
+   "ratio": 1.248,
+   "p_perm": 0.3988
+  },
+  {
+   "target": "UK_18_GB",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 47.69,
+   "mae_regular": 34.28,
+   "ratio": 1.391,
+   "p_perm": 0.0884
+  },
+  {
+   "target": "UK_18_GB",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 43,
+   "n_regular_days": 29,
+   "mae_event": 35.62,
+   "mae_regular": 34.61,
+   "ratio": 1.029,
+   "p_perm": 0.8123
   },
   {
    "target": "UK_18_GB",
    "method": "i0",
    "bucket": "dunkelflaute",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 63.08,
-   "mae_regular": 44.9,
-   "ratio": 1.405,
-   "p_perm": 0.2052
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 30.4,
+   "mae_regular": 25.97,
+   "ratio": 1.171,
+   "p_perm": 0.5658
   },
   {
    "target": "UK_18_GB",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 12,
-   "n_regular_days": 60,
-   "mae_event": 57.72,
-   "mae_regular": 43.54,
-   "ratio": 1.326,
-   "p_perm": 0.1115
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 31.3,
+   "mae_regular": 25.77,
+   "ratio": 1.215,
+   "p_perm": 0.3474
   },
   {
    "target": "UK_18_GB",
@@ -1725,32 +2641,32 @@
    "bucket": "solar_dim",
    "n_event_days": 43,
    "n_regular_days": 29,
-   "mae_event": 44.56,
-   "mae_regular": 47.91,
-   "ratio": 0.93,
-   "p_perm": 0.6249
+   "mae_event": 26.0,
+   "mae_regular": 26.38,
+   "ratio": 0.985,
+   "p_perm": 0.8941
   },
   {
    "target": "UK_18_GB",
    "method": "persistence",
    "bucket": "dunkelflaute",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 45.11,
-   "mae_regular": 46.04,
-   "ratio": 0.98,
-   "p_perm": 0.9523
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 47.5,
+   "mae_regular": 45.92,
+   "ratio": 1.035,
+   "p_perm": 0.9299
   },
   {
    "target": "UK_18_GB",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 12,
-   "n_regular_days": 60,
-   "mae_event": 46.05,
-   "mae_regular": 45.97,
-   "ratio": 1.002,
-   "p_perm": 0.9919
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 48.72,
+   "mae_regular": 45.78,
+   "ratio": 1.064,
+   "p_perm": 0.8356
   },
   {
    "target": "UK_18_GB",
@@ -1767,23 +2683,23 @@
    "target": "UK_18_GB",
    "method": "config_constant",
    "bucket": "dunkelflaute",
-   "n_event_days": 4,
-   "n_regular_days": 68,
-   "mae_event": 87.5,
-   "mae_regular": 68.05,
-   "ratio": 1.286,
-   "p_perm": 0.1843
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 100.85,
+   "mae_regular": 67.75,
+   "ratio": 1.489,
+   "p_perm": 0.0325
   },
   {
    "target": "UK_18_GB",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 12,
-   "n_regular_days": 60,
-   "mae_event": 69.65,
-   "mae_regular": 69.03,
-   "ratio": 1.009,
-   "p_perm": 0.9453
+   "n_event_days": 5,
+   "n_regular_days": 67,
+   "mae_event": 108.69,
+   "mae_regular": 66.18,
+   "ratio": 1.642,
+   "p_perm": 0.001
   },
   {
    "target": "UK_18_GB",
@@ -1800,23 +2716,23 @@
    "target": "US_CISO",
    "method": "i_cfg",
    "bucket": "dunkelflaute",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 65.82,
-   "mae_regular": 58.75,
-   "ratio": 1.12,
-   "p_perm": 0.1888
+   "n_event_days": 17,
+   "n_regular_days": 56,
+   "mae_event": 48.17,
+   "mae_regular": 53.25,
+   "ratio": 0.905,
+   "p_perm": 0.2174
   },
   {
    "target": "US_CISO",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 30,
-   "n_regular_days": 43,
-   "mae_event": 65.6,
-   "mae_regular": 56.11,
-   "ratio": 1.169,
-   "p_perm": 0.0208
+   "n_event_days": 32,
+   "n_regular_days": 41,
+   "mae_event": 54.7,
+   "mae_regular": 50.02,
+   "ratio": 1.094,
+   "p_perm": 0.1845
   },
   {
    "target": "US_CISO",
@@ -1824,32 +2740,32 @@
    "bucket": "solar_dim",
    "n_event_days": 35,
    "n_regular_days": 38,
-   "mae_event": 62.97,
-   "mae_regular": 57.28,
-   "ratio": 1.099,
-   "p_perm": 0.1679
+   "mae_event": 47.01,
+   "mae_regular": 56.73,
+   "ratio": 0.829,
+   "p_perm": 0.0031
   },
   {
    "target": "US_CISO",
    "method": "i0",
    "bucket": "dunkelflaute",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 43.42,
-   "mae_regular": 43.2,
-   "ratio": 1.005,
-   "p_perm": 0.9616
+   "n_event_days": 17,
+   "n_regular_days": 56,
+   "mae_event": 30.16,
+   "mae_regular": 38.69,
+   "ratio": 0.779,
+   "p_perm": 0.0691
   },
   {
    "target": "US_CISO",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 30,
-   "n_regular_days": 43,
-   "mae_event": 48.2,
-   "mae_regular": 39.78,
-   "ratio": 1.212,
-   "p_perm": 0.0276
+   "n_event_days": 32,
+   "n_regular_days": 41,
+   "mae_event": 37.86,
+   "mae_regular": 35.81,
+   "ratio": 1.057,
+   "p_perm": 0.6313
   },
   {
    "target": "US_CISO",
@@ -1857,32 +2773,32 @@
    "bucket": "solar_dim",
    "n_event_days": 35,
    "n_regular_days": 38,
-   "mae_event": 40.15,
-   "mae_regular": 46.08,
-   "ratio": 0.871,
-   "p_perm": 0.1232
+   "mae_event": 32.69,
+   "mae_regular": 40.4,
+   "ratio": 0.809,
+   "p_perm": 0.0562
   },
   {
    "target": "US_CISO",
    "method": "persistence",
    "bucket": "dunkelflaute",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 21.28,
-   "mae_regular": 28.76,
-   "ratio": 0.74,
-   "p_perm": 0.3536
+   "n_event_days": 17,
+   "n_regular_days": 56,
+   "mae_event": 19.33,
+   "mae_regular": 29.88,
+   "ratio": 0.647,
+   "p_perm": 0.1224
   },
   {
    "target": "US_CISO",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 30,
-   "n_regular_days": 43,
-   "mae_event": 29.12,
-   "mae_regular": 26.24,
-   "ratio": 1.11,
-   "p_perm": 0.6741
+   "n_event_days": 32,
+   "n_regular_days": 41,
+   "mae_event": 26.23,
+   "mae_regular": 28.36,
+   "ratio": 0.925,
+   "p_perm": 0.7547
   },
   {
    "target": "US_CISO",
@@ -1899,23 +2815,23 @@
    "target": "US_CISO",
    "method": "config_constant",
    "bucket": "dunkelflaute",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 81.21,
-   "mae_regular": 77.09,
-   "ratio": 1.054,
-   "p_perm": 0.416
+   "n_event_days": 17,
+   "n_regular_days": 56,
+   "mae_event": 82.26,
+   "mae_regular": 76.48,
+   "ratio": 1.076,
+   "p_perm": 0.2028
   },
   {
    "target": "US_CISO",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 30,
-   "n_regular_days": 43,
-   "mae_event": 84.44,
-   "mae_regular": 73.21,
-   "ratio": 1.153,
-   "p_perm": 0.004
+   "n_event_days": 32,
+   "n_regular_days": 41,
+   "mae_event": 87.06,
+   "mae_regular": 70.61,
+   "ratio": 1.233,
+   "p_perm": 0.0001
   },
   {
    "target": "US_CISO",
@@ -1934,10 +2850,10 @@
    "bucket": "dunkelflaute",
    "n_event_days": 5,
    "n_regular_days": 67,
-   "mae_event": 23.31,
-   "mae_regular": 22.25,
-   "ratio": 1.047,
-   "p_perm": 0.8551
+   "mae_event": 22.22,
+   "mae_regular": 18.82,
+   "ratio": 1.181,
+   "p_perm": 0.3499
   },
   {
    "target": "US_PJM",
@@ -1945,10 +2861,10 @@
    "bucket": "wind_lull",
    "n_event_days": 10,
    "n_regular_days": 62,
-   "mae_event": 18.34,
-   "mae_regular": 22.97,
-   "ratio": 0.799,
-   "p_perm": 0.2542
+   "mae_event": 20.61,
+   "mae_regular": 18.8,
+   "ratio": 1.096,
+   "p_perm": 0.5051
   },
   {
    "target": "US_PJM",
@@ -1956,10 +2872,10 @@
    "bucket": "solar_dim",
    "n_event_days": 25,
    "n_regular_days": 47,
-   "mae_event": 22.4,
-   "mae_regular": 22.29,
-   "ratio": 1.005,
-   "p_perm": 0.9717
+   "mae_event": 18.67,
+   "mae_regular": 19.26,
+   "ratio": 0.97,
+   "p_perm": 0.7683
   },
   {
    "target": "US_PJM",
@@ -1967,10 +2883,10 @@
    "bucket": "dunkelflaute",
    "n_event_days": 5,
    "n_regular_days": 67,
-   "mae_event": 21.39,
-   "mae_regular": 20.42,
-   "ratio": 1.048,
-   "p_perm": 0.8473
+   "mae_event": 22.93,
+   "mae_regular": 19.23,
+   "ratio": 1.192,
+   "p_perm": 0.3623
   },
   {
    "target": "US_PJM",
@@ -1978,10 +2894,10 @@
    "bucket": "wind_lull",
    "n_event_days": 10,
    "n_regular_days": 62,
-   "mae_event": 16.84,
-   "mae_regular": 21.08,
-   "ratio": 0.799,
-   "p_perm": 0.2249
+   "mae_event": 20.01,
+   "mae_regular": 19.4,
+   "ratio": 1.031,
+   "p_perm": 0.8358
   },
   {
    "target": "US_PJM",
@@ -1989,10 +2905,10 @@
    "bucket": "solar_dim",
    "n_event_days": 25,
    "n_regular_days": 47,
-   "mae_event": 20.42,
-   "mae_regular": 20.53,
-   "ratio": 0.995,
-   "p_perm": 0.9658
+   "mae_event": 19.28,
+   "mae_regular": 19.6,
+   "ratio": 0.984,
+   "p_perm": 0.8893
   },
   {
    "target": "US_PJM",
@@ -2066,32 +2982,32 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 70,
-   "mae_event": 31.81,
-   "mae_regular": 43.99,
+   "mae_event": 19.72,
+   "mae_regular": 34.07,
+   "ratio": 0.579,
+   "p_perm": 0.1743
+  },
+  {
+   "target": "US_MISO",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 7,
+   "n_regular_days": 66,
+   "mae_event": 19.04,
+   "mae_regular": 35.01,
+   "ratio": 0.544,
+   "p_perm": 0.032
+  },
+  {
+   "target": "US_MISO",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 28,
+   "n_regular_days": 45,
+   "mae_event": 27.08,
+   "mae_regular": 37.46,
    "ratio": 0.723,
-   "p_perm": 0.3067
-  },
-  {
-   "target": "US_MISO",
-   "method": "i_cfg",
-   "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 65,
-   "mae_event": 27.39,
-   "mae_regular": 45.47,
-   "ratio": 0.602,
-   "p_perm": 0.0161
-  },
-  {
-   "target": "US_MISO",
-   "method": "i_cfg",
-   "bucket": "solar_dim",
-   "n_event_days": 28,
-   "n_regular_days": 45,
-   "mae_event": 43.06,
-   "mae_regular": 43.75,
-   "ratio": 0.984,
-   "p_perm": 0.8865
+   "p_perm": 0.0181
   },
   {
    "target": "US_MISO",
@@ -2099,21 +3015,21 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 70,
-   "mae_event": 30.43,
-   "mae_regular": 49.26,
-   "ratio": 0.618,
-   "p_perm": 0.0996
+   "mae_event": 12.17,
+   "mae_regular": 34.03,
+   "ratio": 0.357,
+   "p_perm": 0.0336
   },
   {
    "target": "US_MISO",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 65,
-   "mae_event": 30.23,
-   "mae_regular": 50.73,
-   "ratio": 0.596,
-   "p_perm": 0.0056
+   "n_event_days": 7,
+   "n_regular_days": 66,
+   "mae_event": 16.26,
+   "mae_regular": 34.92,
+   "ratio": 0.466,
+   "p_perm": 0.0061
   },
   {
    "target": "US_MISO",
@@ -2121,10 +3037,10 @@
    "bucket": "solar_dim",
    "n_event_days": 28,
    "n_regular_days": 45,
-   "mae_event": 50.01,
-   "mae_regular": 47.54,
-   "ratio": 1.052,
-   "p_perm": 0.5973
+   "mae_event": 28.6,
+   "mae_regular": 35.95,
+   "ratio": 0.796,
+   "p_perm": 0.0725
   },
   {
    "target": "US_MISO",
@@ -2132,21 +3048,21 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 70,
-   "mae_event": 34.85,
-   "mae_regular": 56.49,
-   "ratio": 0.617,
-   "p_perm": 0.116
+   "mae_event": 37.66,
+   "mae_regular": 56.37,
+   "ratio": 0.668,
+   "p_perm": 0.1775
   },
   {
    "target": "US_MISO",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 65,
-   "mae_event": 46.95,
-   "mae_regular": 56.67,
-   "ratio": 0.829,
-   "p_perm": 0.2671
+   "n_event_days": 7,
+   "n_regular_days": 66,
+   "mae_event": 54.06,
+   "mae_regular": 55.76,
+   "ratio": 0.969,
+   "p_perm": 0.855
   },
   {
    "target": "US_MISO",
@@ -2165,21 +3081,21 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 70,
-   "mae_event": 46.93,
-   "mae_regular": 45.07,
-   "ratio": 1.041,
-   "p_perm": 0.8785
+   "mae_event": 59.86,
+   "mae_regular": 44.52,
+   "ratio": 1.345,
+   "p_perm": 0.1954
   },
   {
    "target": "US_MISO",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 8,
-   "n_regular_days": 65,
-   "mae_event": 31.98,
-   "mae_regular": 46.77,
-   "ratio": 0.684,
-   "p_perm": 0.0574
+   "n_event_days": 7,
+   "n_regular_days": 66,
+   "mae_event": 55.47,
+   "mae_regular": 44.06,
+   "ratio": 1.259,
+   "p_perm": 0.165
   },
   {
    "target": "US_MISO",
@@ -2196,23 +3112,23 @@
    "target": "US_ERCO",
    "method": "i_cfg",
    "bucket": "dunkelflaute",
-   "n_event_days": 5,
-   "n_regular_days": 68,
-   "mae_event": 48.4,
-   "mae_regular": 61.3,
-   "ratio": 0.79,
-   "p_perm": 0.1833
+   "n_event_days": 6,
+   "n_regular_days": 67,
+   "mae_event": 48.25,
+   "mae_regular": 37.27,
+   "ratio": 1.295,
+   "p_perm": 0.0719
   },
   {
    "target": "US_ERCO",
    "method": "i_cfg",
    "bucket": "wind_lull",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 50.76,
-   "mae_regular": 62.51,
-   "ratio": 0.812,
-   "p_perm": 0.0591
+   "n_event_days": 16,
+   "n_regular_days": 57,
+   "mae_event": 36.62,
+   "mae_regular": 38.61,
+   "ratio": 0.949,
+   "p_perm": 0.6284
   },
   {
    "target": "US_ERCO",
@@ -2220,32 +3136,32 @@
    "bucket": "solar_dim",
    "n_event_days": 34,
    "n_regular_days": 39,
-   "mae_event": 63.84,
-   "mae_regular": 57.44,
-   "ratio": 1.112,
-   "p_perm": 0.185
+   "mae_event": 38.9,
+   "mae_regular": 37.53,
+   "ratio": 1.036,
+   "p_perm": 0.6891
   },
   {
    "target": "US_ERCO",
    "method": "i0",
    "bucket": "dunkelflaute",
-   "n_event_days": 5,
-   "n_regular_days": 68,
-   "mae_event": 70.03,
-   "mae_regular": 66.29,
-   "ratio": 1.056,
-   "p_perm": 0.7425
+   "n_event_days": 6,
+   "n_regular_days": 67,
+   "mae_event": 44.4,
+   "mae_regular": 37.11,
+   "ratio": 1.197,
+   "p_perm": 0.1995
   },
   {
    "target": "US_ERCO",
    "method": "i0",
    "bucket": "wind_lull",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 62.86,
-   "mae_regular": 67.35,
-   "ratio": 0.933,
-   "p_perm": 0.5369
+   "n_event_days": 16,
+   "n_regular_days": 57,
+   "mae_event": 36.15,
+   "mae_regular": 38.15,
+   "ratio": 0.948,
+   "p_perm": 0.603
   },
   {
    "target": "US_ERCO",
@@ -2253,32 +3169,32 @@
    "bucket": "solar_dim",
    "n_event_days": 34,
    "n_regular_days": 39,
-   "mae_event": 69.39,
-   "mae_regular": 64.07,
-   "ratio": 1.083,
-   "p_perm": 0.3422
+   "mae_event": 38.18,
+   "mae_regular": 37.3,
+   "ratio": 1.023,
+   "p_perm": 0.7851
   },
   {
    "target": "US_ERCO",
    "method": "persistence",
    "bucket": "dunkelflaute",
-   "n_event_days": 5,
-   "n_regular_days": 68,
-   "mae_event": 74.33,
-   "mae_regular": 64.09,
-   "ratio": 1.16,
-   "p_perm": 0.5063
+   "n_event_days": 6,
+   "n_regular_days": 67,
+   "mae_event": 56.11,
+   "mae_regular": 65.57,
+   "ratio": 0.856,
+   "p_perm": 0.5082
   },
   {
    "target": "US_ERCO",
    "method": "persistence",
    "bucket": "wind_lull",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 60.07,
-   "mae_regular": 65.82,
-   "ratio": 0.913,
-   "p_perm": 0.5765
+   "n_event_days": 16,
+   "n_regular_days": 57,
+   "mae_event": 63.43,
+   "mae_regular": 65.18,
+   "ratio": 0.973,
+   "p_perm": 0.8566
   },
   {
    "target": "US_ERCO",
@@ -2295,23 +3211,23 @@
    "target": "US_ERCO",
    "method": "config_constant",
    "bucket": "dunkelflaute",
-   "n_event_days": 5,
-   "n_regular_days": 68,
-   "mae_event": 48.72,
-   "mae_regular": 67.07,
-   "ratio": 0.726,
-   "p_perm": 0.0895
+   "n_event_days": 6,
+   "n_regular_days": 67,
+   "mae_event": 94.96,
+   "mae_regular": 63.2,
+   "ratio": 1.503,
+   "p_perm": 0.0008
   },
   {
    "target": "US_ERCO",
    "method": "config_constant",
    "bucket": "wind_lull",
-   "n_event_days": 13,
-   "n_regular_days": 60,
-   "mae_event": 56.02,
-   "mae_regular": 67.93,
-   "ratio": 0.825,
-   "p_perm": 0.095
+   "n_event_days": 16,
+   "n_regular_days": 57,
+   "mae_event": 82.47,
+   "mae_regular": 61.13,
+   "ratio": 1.349,
+   "p_perm": 0.0009
   },
   {
    "target": "US_ERCO",
@@ -2330,10 +3246,10 @@
    "bucket": "dunkelflaute",
    "n_event_days": 5,
    "n_regular_days": 68,
-   "mae_event": 34.62,
-   "mae_regular": 25.0,
-   "ratio": 1.385,
-   "p_perm": 0.0887
+   "mae_event": 46.24,
+   "mae_regular": 23.06,
+   "ratio": 2.005,
+   "p_perm": 0.0009
   },
   {
    "target": "US_ISNE",
@@ -2341,10 +3257,10 @@
    "bucket": "wind_lull",
    "n_event_days": 10,
    "n_regular_days": 63,
-   "mae_event": 34.95,
-   "mae_regular": 24.19,
-   "ratio": 1.445,
-   "p_perm": 0.0082
+   "mae_event": 37.29,
+   "mae_regular": 22.64,
+   "ratio": 1.647,
+   "p_perm": 0.0015
   },
   {
    "target": "US_ISNE",
@@ -2352,10 +3268,10 @@
    "bucket": "solar_dim",
    "n_event_days": 26,
    "n_regular_days": 47,
-   "mae_event": 29.52,
-   "mae_regular": 23.52,
-   "ratio": 1.255,
-   "p_perm": 0.045
+   "mae_event": 28.83,
+   "mae_regular": 22.33,
+   "ratio": 1.291,
+   "p_perm": 0.0527
   },
   {
    "target": "US_ISNE",
@@ -2363,10 +3279,10 @@
    "bucket": "dunkelflaute",
    "n_event_days": 5,
    "n_regular_days": 68,
-   "mae_event": 28.49,
-   "mae_regular": 19.96,
-   "ratio": 1.427,
-   "p_perm": 0.0625
+   "mae_event": 24.88,
+   "mae_regular": 17.71,
+   "ratio": 1.405,
+   "p_perm": 0.1161
   },
   {
    "target": "US_ISNE",
@@ -2374,10 +3290,10 @@
    "bucket": "wind_lull",
    "n_event_days": 10,
    "n_regular_days": 63,
-   "mae_event": 26.84,
-   "mae_regular": 19.55,
-   "ratio": 1.373,
-   "p_perm": 0.0296
+   "mae_event": 18.27,
+   "mae_regular": 18.19,
+   "ratio": 1.005,
+   "p_perm": 0.9804
   },
   {
    "target": "US_ISNE",
@@ -2385,10 +3301,10 @@
    "bucket": "solar_dim",
    "n_event_days": 26,
    "n_regular_days": 47,
-   "mae_event": 23.68,
-   "mae_regular": 18.81,
-   "ratio": 1.258,
-   "p_perm": 0.0469
+   "mae_event": 19.2,
+   "mae_regular": 17.64,
+   "ratio": 1.088,
+   "p_perm": 0.5435
   },
   {
    "target": "US_ISNE",
@@ -2462,10 +3378,10 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 70,
-   "mae_event": 11.46,
-   "mae_regular": 16.5,
-   "ratio": 0.694,
-   "p_perm": 0.3034
+   "mae_event": 15.08,
+   "mae_regular": 22.03,
+   "ratio": 0.685,
+   "p_perm": 0.1326
   },
   {
    "target": "US_NYIS",
@@ -2473,10 +3389,10 @@
    "bucket": "wind_lull",
    "n_event_days": 6,
    "n_regular_days": 67,
-   "mae_event": 12.86,
-   "mae_regular": 16.6,
-   "ratio": 0.775,
-   "p_perm": 0.2976
+   "mae_event": 18.48,
+   "mae_regular": 22.03,
+   "ratio": 0.839,
+   "p_perm": 0.3018
   },
   {
    "target": "US_NYIS",
@@ -2484,10 +3400,10 @@
    "bucket": "solar_dim",
    "n_event_days": 33,
    "n_regular_days": 40,
-   "mae_event": 14.83,
-   "mae_regular": 17.5,
-   "ratio": 0.847,
-   "p_perm": 0.1649
+   "mae_event": 20.34,
+   "mae_regular": 22.9,
+   "ratio": 0.888,
+   "p_perm": 0.1699
   },
   {
    "target": "US_NYIS",
@@ -2495,10 +3411,10 @@
    "bucket": "dunkelflaute",
    "n_event_days": 3,
    "n_regular_days": 70,
-   "mae_event": 10.11,
-   "mae_regular": 14.84,
-   "ratio": 0.681,
-   "p_perm": 0.2197
+   "mae_event": 14.62,
+   "mae_regular": 20.89,
+   "ratio": 0.7,
+   "p_perm": 0.0651
   },
   {
    "target": "US_NYIS",
@@ -2506,10 +3422,10 @@
    "bucket": "wind_lull",
    "n_event_days": 6,
    "n_regular_days": 67,
-   "mae_event": 11.43,
-   "mae_regular": 14.93,
-   "ratio": 0.765,
-   "p_perm": 0.2131
+   "mae_event": 17.22,
+   "mae_regular": 20.94,
+   "ratio": 0.822,
+   "p_perm": 0.1494
   },
   {
    "target": "US_NYIS",
@@ -2517,10 +3433,10 @@
    "bucket": "solar_dim",
    "n_event_days": 33,
    "n_regular_days": 40,
-   "mae_event": 13.57,
-   "mae_regular": 15.53,
+   "mae_event": 19.11,
+   "mae_regular": 21.89,
    "ratio": 0.873,
-   "p_perm": 0.1965
+   "p_perm": 0.0441
   },
   {
    "target": "US_NYIS",
@@ -2590,11 +3506,267 @@
   },
   {
    "target": "US_FPL",
-   "status": "weather_missing"
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 2,
+   "n_regular_days": 70,
+   "mae_event": 25.11,
+   "mae_regular": 23.99,
+   "ratio": 1.047,
+   "p_perm": 0.8345
+  },
+  {
+   "target": "US_FPL",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 20.66,
+   "mae_regular": 24.17,
+   "ratio": 0.855,
+   "p_perm": 0.4732
+  },
+  {
+   "target": "US_FPL",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 42,
+   "n_regular_days": 30,
+   "mae_event": 25.52,
+   "mae_regular": 21.93,
+   "ratio": 1.163,
+   "p_perm": 0.1014
+  },
+  {
+   "target": "US_FPL",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 2,
+   "n_regular_days": 70,
+   "mae_event": 17.34,
+   "mae_regular": 21.74,
+   "ratio": 0.798,
+   "p_perm": 0.5186
+  },
+  {
+   "target": "US_FPL",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 16.07,
+   "mae_regular": 21.86,
+   "ratio": 0.735,
+   "p_perm": 0.3096
+  },
+  {
+   "target": "US_FPL",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 42,
+   "n_regular_days": 30,
+   "mae_event": 23.12,
+   "mae_regular": 19.51,
+   "ratio": 1.185,
+   "p_perm": 0.1117
+  },
+  {
+   "target": "US_FPL",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 2,
+   "n_regular_days": 70,
+   "mae_event": 8.78,
+   "mae_regular": 13.52,
+   "ratio": 0.65,
+   "p_perm": 0.4222
+  },
+  {
+   "target": "US_FPL",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 7.71,
+   "mae_regular": 13.63,
+   "ratio": 0.565,
+   "p_perm": 0.2475
+  },
+  {
+   "target": "US_FPL",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 42,
+   "n_regular_days": 30,
+   "mae_event": 14.83,
+   "mae_regular": 11.37,
+   "ratio": 1.305,
+   "p_perm": 0.1079
+  },
+  {
+   "target": "US_FPL",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 2,
+   "n_regular_days": 70,
+   "mae_event": 22.53,
+   "mae_regular": 27.15,
+   "ratio": 0.83,
+   "p_perm": 0.4215
+  },
+  {
+   "target": "US_FPL",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 3,
+   "n_regular_days": 69,
+   "mae_event": 23.84,
+   "mae_regular": 27.16,
+   "ratio": 0.878,
+   "p_perm": 0.4949
+  },
+  {
+   "target": "US_FPL",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 42,
+   "n_regular_days": 30,
+   "mae_event": 26.03,
+   "mae_regular": 28.41,
+   "ratio": 0.916,
+   "p_perm": 0.238
   },
   {
    "target": "US_BPAT",
-   "status": "weather_missing"
+   "method": "i_cfg",
+   "bucket": "dunkelflaute",
+   "n_event_days": 4,
+   "n_regular_days": 69,
+   "mae_event": 34.97,
+   "mae_regular": 20.16,
+   "ratio": 1.735,
+   "p_perm": 0.005
+  },
+  {
+   "target": "US_BPAT",
+   "method": "i_cfg",
+   "bucket": "wind_lull",
+   "n_event_days": 11,
+   "n_regular_days": 62,
+   "mae_event": 29.02,
+   "mae_regular": 19.54,
+   "ratio": 1.485,
+   "p_perm": 0.0025
+  },
+  {
+   "target": "US_BPAT",
+   "method": "i_cfg",
+   "bucket": "solar_dim",
+   "n_event_days": 35,
+   "n_regular_days": 38,
+   "mae_event": 20.24,
+   "mae_regular": 21.64,
+   "ratio": 0.935,
+   "p_perm": 0.5291
+  },
+  {
+   "target": "US_BPAT",
+   "method": "i0",
+   "bucket": "dunkelflaute",
+   "n_event_days": 4,
+   "n_regular_days": 69,
+   "mae_event": 15.52,
+   "mae_regular": 11.58,
+   "ratio": 1.34,
+   "p_perm": 0.1201
+  },
+  {
+   "target": "US_BPAT",
+   "method": "i0",
+   "bucket": "wind_lull",
+   "n_event_days": 11,
+   "n_regular_days": 62,
+   "mae_event": 13.69,
+   "mae_regular": 11.46,
+   "ratio": 1.194,
+   "p_perm": 0.1835
+  },
+  {
+   "target": "US_BPAT",
+   "method": "i0",
+   "bucket": "solar_dim",
+   "n_event_days": 35,
+   "n_regular_days": 38,
+   "mae_event": 11.83,
+   "mae_regular": 11.76,
+   "ratio": 1.006,
+   "p_perm": 0.9537
+  },
+  {
+   "target": "US_BPAT",
+   "method": "persistence",
+   "bucket": "dunkelflaute",
+   "n_event_days": 4,
+   "n_regular_days": 69,
+   "mae_event": 4.24,
+   "mae_regular": 6.43,
+   "ratio": 0.659,
+   "p_perm": 0.3785
+  },
+  {
+   "target": "US_BPAT",
+   "method": "persistence",
+   "bucket": "wind_lull",
+   "n_event_days": 11,
+   "n_regular_days": 62,
+   "mae_event": 7.16,
+   "mae_regular": 6.15,
+   "ratio": 1.164,
+   "p_perm": 0.528
+  },
+  {
+   "target": "US_BPAT",
+   "method": "persistence",
+   "bucket": "solar_dim",
+   "n_event_days": 35,
+   "n_regular_days": 38,
+   "mae_event": 5.69,
+   "mae_regular": 6.87,
+   "ratio": 0.829,
+   "p_perm": 0.3089
+  },
+  {
+   "target": "US_BPAT",
+   "method": "config_constant",
+   "bucket": "dunkelflaute",
+   "n_event_days": 4,
+   "n_regular_days": 69,
+   "mae_event": 11.87,
+   "mae_regular": 11.22,
+   "ratio": 1.058,
+   "p_perm": 0.8878
+  },
+  {
+   "target": "US_BPAT",
+   "method": "config_constant",
+   "bucket": "wind_lull",
+   "n_event_days": 11,
+   "n_regular_days": 62,
+   "mae_event": 14.87,
+   "mae_regular": 10.61,
+   "ratio": 1.401,
+   "p_perm": 0.0943
+  },
+  {
+   "target": "US_BPAT",
+   "method": "config_constant",
+   "bucket": "solar_dim",
+   "n_event_days": 35,
+   "n_regular_days": 38,
+   "mae_event": 10.35,
+   "mae_regular": 12.09,
+   "ratio": 0.856,
+   "p_perm": 0.3497
   }
  ]
 }

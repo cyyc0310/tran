@@ -285,7 +285,13 @@ CISO_FARMS = [
 ]
 
 
-YEARS = [2023, 2022, 2024]  # multi-year blends for the multi_year protocol
+# NOTE (FD-48, 2026-09-09): the multi-year protocol years (2022/2024) are
+# NOT present in this tree — only {region}_weather_2023_hourly.csv exists.
+# Years list narrowed to 2023 so the script restores the asset the FD-17/22/26
+# era actually used for the 2023 protocol.  When the multi-year protocol is
+# revived, extend YEARS back to [2023, 2022, 2024] AND download the matching
+# centroid weather files first.
+YEARS = [2023]  # multi-year blends deferred until multi_year protocol revives
 
 
 def build_region(region, farms):

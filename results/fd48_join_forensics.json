@@ -1,0 +1,1192 @@
+{
+ "NSW1": {
+  "T": 8761,
+  "split": 7008,
+  "has_farmblend": false,
+  "n_axis_hours": 8761,
+  "axis_dup_hours": 1,
+  "dst_rule_error": "Cannot infer dst time from 2023-04-02 02:00:00, try using the 'ambiguous' argume",
+  "models": {
+   "gfs": {
+    "holes_total": 11,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.6813,
+       "-2": 0.7446,
+       "-1": 0.7905,
+       "0": 0.8051,
+       "1": 0.7803,
+       "2": 0.7205,
+       "3": 0.649
+      },
+      "best_lag": 0,
+      "best_corr": 0.8051,
+      "corr_lag0": 0.8051
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.1261,
+       "-2": 0.4838,
+       "-1": 0.7921,
+       "0": 0.9154,
+       "1": 0.8055,
+       "2": 0.5083,
+       "3": 0.1537
+      },
+      "best_lag": 0,
+      "best_corr": 0.9154,
+      "corr_lag0": 0.9154
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.6813,
+       "-2": 0.7446,
+       "-1": 0.7905,
+       "0": 0.8051,
+       "1": 0.7803,
+       "2": 0.7205,
+       "3": 0.649
+      },
+      "best_lag": 0,
+      "best_corr": 0.8051,
+      "corr_lag0": 0.8051
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 15,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 18
+    }
+   },
+   "icon": {
+    "holes_total": 11,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.6753,
+       "-2": 0.7486,
+       "-1": 0.8095,
+       "0": 0.838,
+       "1": 0.817,
+       "2": 0.7574,
+       "3": 0.6842
+      },
+      "best_lag": 0,
+      "best_corr": 0.838,
+      "corr_lag0": 0.838
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.1431,
+       "-2": 0.5242,
+       "-1": 0.8426,
+       "0": 0.956,
+       "1": 0.8401,
+       "2": 0.5278,
+       "3": 0.1573
+      },
+      "best_lag": 0,
+      "best_corr": 0.956,
+      "corr_lag0": 0.956
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.6753,
+       "-2": 0.7486,
+       "-1": 0.8095,
+       "0": 0.838,
+       "1": 0.817,
+       "2": 0.7574,
+       "3": 0.6842
+      },
+      "best_lag": 0,
+      "best_corr": 0.838,
+      "corr_lag0": 0.838
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 18,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 18
+    }
+   }
+  }
+ },
+ "QLD1": {
+  "T": 8761,
+  "split": 7008,
+  "has_farmblend": false,
+  "n_axis_hours": 8761,
+  "axis_dup_hours": 0,
+  "dst_rule_mismatch_hours": 0,
+  "dst_rule_mismatch_test_zone": 0,
+  "models": {
+   "gfs": {
+    "holes_total": 10,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.6559,
+       "-2": 0.6837,
+       "-1": 0.6873,
+       "0": 0.6561,
+       "1": 0.6004,
+       "2": 0.5331,
+       "3": 0.4689
+      },
+      "best_lag": -1,
+      "best_corr": 0.6873,
+      "corr_lag0": 0.6561
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.0023,
+       "-2": 0.3866,
+       "-1": 0.7443,
+       "0": 0.899,
+       "1": 0.796,
+       "2": 0.4886,
+       "3": 0.1085
+      },
+      "best_lag": 0,
+      "best_corr": 0.899,
+      "corr_lag0": 0.899
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.6559,
+       "-2": 0.6837,
+       "-1": 0.6873,
+       "0": 0.6561,
+       "1": 0.6004,
+       "2": 0.5331,
+       "3": 0.4689
+      },
+      "best_lag": -1,
+      "best_corr": 0.6873,
+      "corr_lag0": 0.6561
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 15,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 18
+    }
+   },
+   "icon": {
+    "holes_total": 10,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.6181,
+       "-2": 0.6792,
+       "-1": 0.7306,
+       "0": 0.7558,
+       "1": 0.7367,
+       "2": 0.6846,
+       "3": 0.6165
+      },
+      "best_lag": 0,
+      "best_corr": 0.7558,
+      "corr_lag0": 0.7558
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.0339,
+       "-2": 0.4436,
+       "-1": 0.8079,
+       "0": 0.9485,
+       "1": 0.836,
+       "2": 0.5041,
+       "3": 0.104
+      },
+      "best_lag": 0,
+      "best_corr": 0.9485,
+      "corr_lag0": 0.9485
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.6181,
+       "-2": 0.6792,
+       "-1": 0.7306,
+       "0": 0.7558,
+       "1": 0.7367,
+       "2": 0.6846,
+       "3": 0.6165
+      },
+      "best_lag": 0,
+      "best_corr": 0.7558,
+      "corr_lag0": 0.7558
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 17,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 18
+    }
+   }
+  }
+ },
+ "VIC1": {
+  "T": 8761,
+  "split": 7008,
+  "has_farmblend": false,
+  "n_axis_hours": 8761,
+  "axis_dup_hours": 1,
+  "dst_rule_error": "Cannot infer dst time from 2023-04-02 02:00:00, try using the 'ambiguous' argume",
+  "models": {
+   "gfs": {
+    "holes_total": 11,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.7981,
+       "-2": 0.8422,
+       "-1": 0.877,
+       "0": 0.8875,
+       "1": 0.866,
+       "2": 0.829,
+       "3": 0.7786
+      },
+      "best_lag": 0,
+      "best_corr": 0.8875,
+      "corr_lag0": 0.8875
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.2794,
+       "-2": 0.5761,
+       "-1": 0.8234,
+       "0": 0.918,
+       "1": 0.8234,
+       "2": 0.5727,
+       "3": 0.2697
+      },
+      "best_lag": 0,
+      "best_corr": 0.918,
+      "corr_lag0": 0.918
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.7981,
+       "-2": 0.8422,
+       "-1": 0.877,
+       "0": 0.8875,
+       "1": 0.866,
+       "2": 0.829,
+       "3": 0.7786
+      },
+      "best_lag": 0,
+      "best_corr": 0.8875,
+      "corr_lag0": 0.8875
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 13,
+     "nwp_w100_peak_local_hour": 15,
+     "era5_pipeline_swr_peak_local_hour": 13,
+     "era5_pipeline_w100_peak_local_hour": 16
+    }
+   },
+   "icon": {
+    "holes_total": 11,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.801,
+       "-2": 0.8459,
+       "-1": 0.8845,
+       "0": 0.9043,
+       "1": 0.8935,
+       "2": 0.8595,
+       "3": 0.8136
+      },
+      "best_lag": 0,
+      "best_corr": 0.9043,
+      "corr_lag0": 0.9043
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.2905,
+       "-2": 0.6117,
+       "-1": 0.8696,
+       "0": 0.9595,
+       "1": 0.8568,
+       "2": 0.5939,
+       "3": 0.2781
+      },
+      "best_lag": 0,
+      "best_corr": 0.9595,
+      "corr_lag0": 0.9595
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.801,
+       "-2": 0.8459,
+       "-1": 0.8845,
+       "0": 0.9043,
+       "1": 0.8935,
+       "2": 0.8595,
+       "3": 0.8136
+      },
+      "best_lag": 0,
+      "best_corr": 0.9043,
+      "corr_lag0": 0.9043
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 13,
+     "nwp_w100_peak_local_hour": 18,
+     "era5_pipeline_swr_peak_local_hour": 13,
+     "era5_pipeline_w100_peak_local_hour": 16
+    }
+   }
+  }
+ },
+ "SA1": {
+  "T": 8761,
+  "split": 7008,
+  "has_farmblend": false,
+  "n_axis_hours": 8761,
+  "axis_dup_hours": 1,
+  "dst_rule_error": "Cannot infer dst time from 2023-04-02 02:00:00, try using the 'ambiguous' argume",
+  "models": {
+   "gfs": {
+    "holes_total": 11,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.7313,
+       "-2": 0.7851,
+       "-1": 0.8281,
+       "0": 0.8478,
+       "1": 0.8374,
+       "2": 0.805,
+       "3": 0.7588
+      },
+      "best_lag": 0,
+      "best_corr": 0.8478,
+      "corr_lag0": 0.8478
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.2356,
+       "-2": 0.5768,
+       "-1": 0.8522,
+       "0": 0.9513,
+       "1": 0.8469,
+       "2": 0.5632,
+       "3": 0.2199
+      },
+      "best_lag": 0,
+      "best_corr": 0.9513,
+      "corr_lag0": 0.9513
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.7313,
+       "-2": 0.7851,
+       "-1": 0.8281,
+       "0": 0.8478,
+       "1": 0.8374,
+       "2": 0.805,
+       "3": 0.7588
+      },
+      "best_lag": 0,
+      "best_corr": 0.8478,
+      "corr_lag0": 0.8478
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 13,
+     "nwp_w100_peak_local_hour": 21,
+     "era5_pipeline_swr_peak_local_hour": 14,
+     "era5_pipeline_w100_peak_local_hour": 21
+    }
+   },
+   "icon": {
+    "holes_total": 11,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.6947,
+       "-2": 0.7452,
+       "-1": 0.7868,
+       "0": 0.8126,
+       "1": 0.8173,
+       "2": 0.8021,
+       "3": 0.7736
+      },
+      "best_lag": 1,
+      "best_corr": 0.8173,
+      "corr_lag0": 0.8126
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.282,
+       "-2": 0.6159,
+       "-1": 0.8785,
+       "0": 0.9661,
+       "1": 0.8586,
+       "2": 0.5782,
+       "3": 0.2413
+      },
+      "best_lag": 0,
+      "best_corr": 0.9661,
+      "corr_lag0": 0.9661
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.6947,
+       "-2": 0.7452,
+       "-1": 0.7868,
+       "0": 0.8126,
+       "1": 0.8173,
+       "2": 0.8021,
+       "3": 0.7736
+      },
+      "best_lag": 1,
+      "best_corr": 0.8173,
+      "corr_lag0": 0.8126
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 13,
+     "nwp_w100_peak_local_hour": 19,
+     "era5_pipeline_swr_peak_local_hour": 14,
+     "era5_pipeline_w100_peak_local_hour": 21
+    }
+   }
+  }
+ },
+ "US_BPAT": {
+  "T": 8760,
+  "split": 7008,
+  "has_farmblend": false,
+  "n_axis_hours": 8760,
+  "axis_dup_hours": 0,
+  "models": {
+   "gfs": {
+    "holes_total": 9,
+    "holes_test_zone": 9,
+    "hole_positions_test_zone": [
+     8751,
+     8752,
+     8753,
+     8754,
+     8755,
+     8756,
+     8757,
+     8758,
+     8759
+    ],
+    "hole_hours_test_zone": [
+     "2024-01-01 00:00:00",
+     "2024-01-01 01:00:00",
+     "2024-01-01 02:00:00",
+     "2024-01-01 03:00:00",
+     "2024-01-01 04:00:00",
+     "2024-01-01 05:00:00",
+     "2024-01-01 06:00:00",
+     "2024-01-01 07:00:00",
+     "2024-01-01 08:00:00"
+    ],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": null,
+       "-2": null,
+       "-1": null,
+       "0": null,
+       "1": null,
+       "2": null,
+       "3": null
+      },
+      "best_lag": null,
+      "best_corr": null,
+      "corr_lag0": null
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": null,
+       "-2": null,
+       "-1": null,
+       "0": null,
+       "1": null,
+       "2": null,
+       "3": null
+      },
+      "best_lag": null,
+      "best_corr": null,
+      "corr_lag0": null
+     }
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 15,
+     "era5_pipeline_swr_peak_local_hour": 0,
+     "era5_pipeline_w100_peak_local_hour": 0
+    }
+   },
+   "icon": {
+    "holes_total": 9,
+    "holes_test_zone": 9,
+    "hole_positions_test_zone": [
+     8751,
+     8752,
+     8753,
+     8754,
+     8755,
+     8756,
+     8757,
+     8758,
+     8759
+    ],
+    "hole_hours_test_zone": [
+     "2024-01-01 00:00:00",
+     "2024-01-01 01:00:00",
+     "2024-01-01 02:00:00",
+     "2024-01-01 03:00:00",
+     "2024-01-01 04:00:00",
+     "2024-01-01 05:00:00",
+     "2024-01-01 06:00:00",
+     "2024-01-01 07:00:00",
+     "2024-01-01 08:00:00"
+    ],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": null,
+       "-2": null,
+       "-1": null,
+       "0": null,
+       "1": null,
+       "2": null,
+       "3": null
+      },
+      "best_lag": null,
+      "best_corr": null,
+      "corr_lag0": null
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": null,
+       "-2": null,
+       "-1": null,
+       "0": null,
+       "1": null,
+       "2": null,
+       "3": null
+      },
+      "best_lag": null,
+      "best_corr": null,
+      "corr_lag0": null
+     }
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 14,
+     "era5_pipeline_swr_peak_local_hour": 0,
+     "era5_pipeline_w100_peak_local_hour": 0
+    }
+   }
+  }
+ },
+ "US_CISO": {
+  "T": 8758,
+  "split": 7006,
+  "has_farmblend": false,
+  "n_axis_hours": 8758,
+  "axis_dup_hours": 0,
+  "models": {
+   "gfs": {
+    "holes_total": 9,
+    "holes_test_zone": 9,
+    "hole_positions_test_zone": [
+     8749,
+     8750,
+     8751,
+     8752,
+     8753,
+     8754,
+     8755,
+     8756,
+     8757
+    ],
+    "hole_hours_test_zone": [
+     "2024-01-01 00:00:00",
+     "2024-01-01 01:00:00",
+     "2024-01-01 02:00:00",
+     "2024-01-01 03:00:00",
+     "2024-01-01 04:00:00",
+     "2024-01-01 05:00:00",
+     "2024-01-01 06:00:00",
+     "2024-01-01 07:00:00",
+     "2024-01-01 08:00:00"
+    ],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.3909,
+       "-2": 0.3952,
+       "-1": 0.3913,
+       "0": 0.3769,
+       "1": 0.3535,
+       "2": 0.329,
+       "3": 0.3047
+      },
+      "best_lag": -2,
+      "best_corr": 0.3952,
+      "corr_lag0": 0.3769
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.249,
+       "-2": 0.6105,
+       "-1": 0.8736,
+       "0": 0.9289,
+       "1": 0.7756,
+       "2": 0.4595,
+       "3": 0.1178
+      },
+      "best_lag": 0,
+      "best_corr": 0.9289,
+      "corr_lag0": 0.9289
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.3909,
+       "-2": 0.3952,
+       "-1": 0.3913,
+       "0": 0.3769,
+       "1": 0.3535,
+       "2": 0.329,
+       "3": 0.3047
+      },
+      "best_lag": -2,
+      "best_corr": 0.3952,
+      "corr_lag0": 0.3769
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 19,
+     "era5_pipeline_swr_peak_local_hour": 13,
+     "era5_pipeline_w100_peak_local_hour": 20
+    }
+   },
+   "icon": {
+    "holes_total": 9,
+    "holes_test_zone": 9,
+    "hole_positions_test_zone": [
+     8749,
+     8750,
+     8751,
+     8752,
+     8753,
+     8754,
+     8755,
+     8756,
+     8757
+    ],
+    "hole_hours_test_zone": [
+     "2024-01-01 00:00:00",
+     "2024-01-01 01:00:00",
+     "2024-01-01 02:00:00",
+     "2024-01-01 03:00:00",
+     "2024-01-01 04:00:00",
+     "2024-01-01 05:00:00",
+     "2024-01-01 06:00:00",
+     "2024-01-01 07:00:00",
+     "2024-01-01 08:00:00"
+    ],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.3995,
+       "-2": 0.4134,
+       "-1": 0.4211,
+       "0": 0.4201,
+       "1": 0.4089,
+       "2": 0.3912,
+       "3": 0.3701
+      },
+      "best_lag": -1,
+      "best_corr": 0.4211,
+      "corr_lag0": 0.4201
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.2519,
+       "-2": 0.6145,
+       "-1": 0.8798,
+       "0": 0.9499,
+       "1": 0.8181,
+       "2": 0.5114,
+       "3": 0.1547
+      },
+      "best_lag": 0,
+      "best_corr": 0.9499,
+      "corr_lag0": 0.9499
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.3995,
+       "-2": 0.4134,
+       "-1": 0.4211,
+       "0": 0.4201,
+       "1": 0.4089,
+       "2": 0.3912,
+       "3": 0.3701
+      },
+      "best_lag": -1,
+      "best_corr": 0.4211,
+      "corr_lag0": 0.4201
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 19,
+     "era5_pipeline_swr_peak_local_hour": 13,
+     "era5_pipeline_w100_peak_local_hour": 20
+    }
+   }
+  }
+ },
+ "US_NYIS": {
+  "T": 8760,
+  "split": 7008,
+  "has_farmblend": false,
+  "n_axis_hours": 8760,
+  "axis_dup_hours": 0,
+  "models": {
+   "gfs": {
+    "holes_total": 6,
+    "holes_test_zone": 6,
+    "hole_positions_test_zone": [
+     8754,
+     8755,
+     8756,
+     8757,
+     8758,
+     8759
+    ],
+    "hole_hours_test_zone": [
+     "2024-01-01 00:00:00",
+     "2024-01-01 01:00:00",
+     "2024-01-01 02:00:00",
+     "2024-01-01 03:00:00",
+     "2024-01-01 04:00:00",
+     "2024-01-01 05:00:00"
+    ],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.6453,
+       "-2": 0.6451,
+       "-1": 0.6294,
+       "0": 0.6051,
+       "1": 0.5738,
+       "2": 0.5372,
+       "3": 0.4969
+      },
+      "best_lag": -3,
+      "best_corr": 0.6453,
+      "corr_lag0": 0.6051
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.2844,
+       "-2": 0.5659,
+       "-1": 0.7965,
+       "0": 0.8794,
+       "1": 0.7991,
+       "2": 0.5898,
+       "3": 0.3391
+      },
+      "best_lag": 0,
+      "best_corr": 0.8794,
+      "corr_lag0": 0.8794
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.6453,
+       "-2": 0.6451,
+       "-1": 0.6294,
+       "0": 0.6051,
+       "1": 0.5738,
+       "2": 0.5372,
+       "3": 0.4969
+      },
+      "best_lag": -3,
+      "best_corr": 0.6453,
+      "corr_lag0": 0.6051
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 14,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 18
+    }
+   },
+   "icon": {
+    "holes_total": 6,
+    "holes_test_zone": 6,
+    "hole_positions_test_zone": [
+     8754,
+     8755,
+     8756,
+     8757,
+     8758,
+     8759
+    ],
+    "hole_hours_test_zone": [
+     "2024-01-01 00:00:00",
+     "2024-01-01 01:00:00",
+     "2024-01-01 02:00:00",
+     "2024-01-01 03:00:00",
+     "2024-01-01 04:00:00",
+     "2024-01-01 05:00:00"
+    ],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.6866,
+       "-2": 0.6906,
+       "-1": 0.6801,
+       "0": 0.6563,
+       "1": 0.6226,
+       "2": 0.5818,
+       "3": 0.5384
+      },
+      "best_lag": -2,
+      "best_corr": 0.6906,
+      "corr_lag0": 0.6563
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.3374,
+       "-2": 0.6196,
+       "-1": 0.8435,
+       "0": 0.9267,
+       "1": 0.8445,
+       "2": 0.6199,
+       "3": 0.3319
+      },
+      "best_lag": 0,
+      "best_corr": 0.9267,
+      "corr_lag0": 0.9267
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.6866,
+       "-2": 0.6906,
+       "-1": 0.6801,
+       "0": 0.6563,
+       "1": 0.6226,
+       "2": 0.5818,
+       "3": 0.5384
+      },
+      "best_lag": -2,
+      "best_corr": 0.6906,
+      "corr_lag0": 0.6563
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 12,
+     "nwp_w100_peak_local_hour": 16,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 18
+    }
+   }
+  }
+ },
+ "UK_16_Scotland": {
+  "T": 8720,
+  "split": 6976,
+  "has_farmblend": false,
+  "n_axis_hours": 8720,
+  "axis_dup_hours": 0,
+  "models": {
+   "gfs": {
+    "holes_total": 1,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.6792,
+       "-2": 0.6947,
+       "-1": 0.7047,
+       "0": 0.7075,
+       "1": 0.7037,
+       "2": 0.693,
+       "3": 0.6787
+      },
+      "best_lag": 0,
+      "best_corr": 0.7075,
+      "corr_lag0": 0.7075
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.4004,
+       "-2": 0.5828,
+       "-1": 0.7299,
+       "0": 0.794,
+       "1": 0.7442,
+       "2": 0.6076,
+       "3": 0.4273
+      },
+      "best_lag": 0,
+      "best_corr": 0.794,
+      "corr_lag0": 0.794
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.6792,
+       "-2": 0.6947,
+       "-1": 0.7047,
+       "0": 0.7075,
+       "1": 0.7037,
+       "2": 0.693,
+       "3": 0.6787
+      },
+      "best_lag": 0,
+      "best_corr": 0.7075,
+      "corr_lag0": 0.7075
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 13,
+     "nwp_w100_peak_local_hour": 14,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 22
+    }
+   },
+   "icon": {
+    "holes_total": 1,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.7333,
+       "-2": 0.7465,
+       "-1": 0.7544,
+       "0": 0.7568,
+       "1": 0.7521,
+       "2": 0.7409,
+       "3": 0.7238
+      },
+      "best_lag": 0,
+      "best_corr": 0.7568,
+      "corr_lag0": 0.7568
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.4289,
+       "-2": 0.6381,
+       "-1": 0.8036,
+       "0": 0.8746,
+       "1": 0.8185,
+       "2": 0.6643,
+       "3": 0.4623
+      },
+      "best_lag": 0,
+      "best_corr": 0.8746,
+      "corr_lag0": 0.8746
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.7333,
+       "-2": 0.7465,
+       "-1": 0.7544,
+       "0": 0.7568,
+       "1": 0.7521,
+       "2": 0.7409,
+       "3": 0.7238
+      },
+      "best_lag": 0,
+      "best_corr": 0.7568,
+      "corr_lag0": 0.7568
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 13,
+     "nwp_w100_peak_local_hour": 14,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 22
+    }
+   }
+  }
+ },
+ "UK_11_South_West_England": {
+  "T": 8720,
+  "split": 6976,
+  "has_farmblend": false,
+  "n_axis_hours": 8720,
+  "axis_dup_hours": 0,
+  "models": {
+   "gfs": {
+    "holes_total": 1,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.8091,
+       "-2": 0.8259,
+       "-1": 0.829,
+       "0": 0.8203,
+       "1": 0.8009,
+       "2": 0.7761,
+       "3": 0.7492
+      },
+      "best_lag": -1,
+      "best_corr": 0.829,
+      "corr_lag0": 0.8203
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.4,
+       "-2": 0.6268,
+       "-1": 0.8125,
+       "0": 0.8847,
+       "1": 0.816,
+       "2": 0.632,
+       "3": 0.3975
+      },
+      "best_lag": 0,
+      "best_corr": 0.8847,
+      "corr_lag0": 0.8847
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.8091,
+       "-2": 0.8259,
+       "-1": 0.829,
+       "0": 0.8203,
+       "1": 0.8009,
+       "2": 0.7761,
+       "3": 0.7492
+      },
+      "best_lag": -1,
+      "best_corr": 0.829,
+      "corr_lag0": 0.8203
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 13,
+     "nwp_w100_peak_local_hour": 14,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 21
+    }
+   },
+   "icon": {
+    "holes_total": 1,
+    "holes_test_zone": 0,
+    "hole_positions_test_zone": [],
+    "hole_hours_test_zone": [],
+    "lag_scans": {
+     "era5_pipeline_w100": {
+      "corr_by_lag": {
+       "-3": 0.8027,
+       "-2": 0.8243,
+       "-1": 0.8326,
+       "0": 0.8271,
+       "1": 0.81,
+       "2": 0.7871,
+       "3": 0.7605
+      },
+      "best_lag": -1,
+      "best_corr": 0.8326,
+      "corr_lag0": 0.8271
+     },
+     "era5_pipeline_swr": {
+      "corr_by_lag": {
+       "-3": 0.4043,
+       "-2": 0.6495,
+       "-1": 0.8456,
+       "0": 0.9236,
+       "1": 0.8612,
+       "2": 0.682,
+       "3": 0.4453
+      },
+      "best_lag": 0,
+      "best_corr": 0.9236,
+      "corr_lag0": 0.9236
+     },
+     "era5_centroid_w100": {
+      "corr_by_lag": {
+       "-3": 0.8027,
+       "-2": 0.8243,
+       "-1": 0.8326,
+       "0": 0.8271,
+       "1": 0.81,
+       "2": 0.7871,
+       "3": 0.7605
+      },
+      "best_lag": -1,
+      "best_corr": 0.8326,
+      "corr_lag0": 0.8271
+     },
+     "era5_gridmismatch_w100": 1.0
+    },
+    "diurnal_phase": {
+     "nwp_swr_peak_local_hour": 13,
+     "nwp_w100_peak_local_hour": 14,
+     "era5_pipeline_swr_peak_local_hour": 12,
+     "era5_pipeline_w100_peak_local_hour": 21
+    }
+   }
+  }
+ }
+}

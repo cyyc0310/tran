@@ -2,6 +2,27 @@
 
 **日期**: 2026-09-09 ｜ **协议**: 29 区 × seed 0, ep900/p_cold0.3/monthly/tau1.1（FD-41 官方口径），逐窗 `(n,24)` 预测 dump 后按日分桶。
 
+> **[SUPERSEDED 2026-09-10, restored-asset rerun]**  The table below
+> was computed on the degraded asset (9 weather-blind regions, no
+> farmblend, AU+UK fuel telemetry lost).  Full rerun on the restored
+> asset (all 29 regions with weather + fuel monthly tables):
+> - significant inflations (p<0.05, ratio>1) **37 -> 62** across
+>   methods/buckets; the wind_lull i_cfg headline strengthens:
+>   UK_16 3.05 -> **4.00x** (p=0.0001), and UK_01/UK_02/UK_03 (which
+>   were weather-blind in the degraded run) now show the largest
+>   compound dunkelflaute inflations in the suite (UK_01 4.19x,
+>   UK_02 3.56x, UK_03 2.52x).
+> - The UK_09/CISO wind_lull rows lose significance (training noise),
+>   replaced by UK_06/UK_08/UK_18/VIC1/ERCO/BPAT rows — the
+>   phenomenon (zero-telemetry event-day fragility is systematic)
+>   survives and is STRONGER on the full asset; the C5 narrative
+>   (compound-event inflation concentrates in high-renewables
+>   northern UK) upgrades from "6 regions" to "the entire Scottish /
+>   North England belt".
+> - Numbers for the paper must cite the restored-asset run:
+>   `dunkelflaute_buckets.json` (2026-09-10); the 2026-09-09 backup is
+>   `dunkelflaute_buckets_degraded_asset.json`.
+
 ## 协议要点
 
 1. 逐窗预测导出：`results/dunkelflaute/{REGION}_seed0.npz`（i_cfg / i0 / persistence / config_constant 四方法 × 73-81 窗 × 24h）。

@@ -3,6 +3,27 @@
 **Status: POSITIVE — adopted as the deployment-default weather protocol.**
 Date: 2026-09-09 (follow-up to FD-45/FD-46).
 
+> **[SUPERSEDED 2026-09-10, FD-48 full-asset rerun]**  Every number
+> below was computed on the DEGRADED data asset (post the 2026-09-06
+> rebuild: farmblend files lost, 9 centroid files lost, AU+UK fuel
+> telemetry lost).  The four arms were re-run on the fully restored
+> asset on 2026-09-10 and the headline REVERSES:
+> - pooled `era5` 56.05 (degraded) -> 43.98 (restored) — now matches
+>   the FD-41 official baseline (42.89, repro pooled 42.86).
+> - pooled `ensemble` 51.37 -> 50.41: the "zero deployment penalty"
+>   finding (-1.44) is an artifact of the degraded asset; on the
+>   restored asset the operational-forecast ensemble costs **+6.4
+>   pooled MAE vs the ERA5 proxy**.
+> - The infrastructure-gain story survives (gfs/icon give weather to
+>   previously blind regions), but the fallback-family pooled -11.87
+>   must be re-read as partially "gains from having weather at all"
+>   vs the weather-blind state rather than forecast skill.
+> - Deployment-default recommendation REVERSED: keep the ERA5-proxy
+>   pipeline for the paper's headline; treat GFS/ICON as a
+>   sensitivity/servability ablation (report the +6.4 penalty
+>   honestly).  See `fd47_nwp_fut_weather.json` (restored) and the
+>   backup `fd47_nwp_fut_weather_degraded_asset.json`.
+
 ## Question (pre-registered)
 
 The FD stack feeds the 24 h horizon with an ERA5 *reanalysis proxy* for
@@ -93,6 +114,13 @@ that the framework converts into skill.
 4. **Where forecasts lose (VIC1 +2.8, NSW1 +1.8, BPAT +3.4-4.1)**:
    AU summer DST seam and BPAT hour-offset — both are join/timeline
    artifacts to fix in FD-48 rather than forecast-skill issues.
+   **[ERRATUM 2026-09-09, FD-48]**: this attribution is FALSIFIED by
+   FD-48 join forensics (lag scans r=0.80-0.90 at best_lag=0, diurnal
+   phase within 1 h, zero test-zone holes, seams train-zone-only and
+   arm-symmetric).  The VIC1/NSW1 degradations are genuine day-ahead
+   forecast error on high-wind-share regions; BPAT is an OOD
+   composition effect (hydro region never trained with weather).  See
+   `results/fd48_join_forensics.md` and `results/fd48_verdict.md`.
 5. **No coverage gaps**: all 29 regions join at ≥ 99.87% coverage;
    GFS/ICON columns full-year non-null.
 
@@ -111,6 +139,13 @@ forecast skill.
 - FD-48 (small): fix the AU DST seam in the AU timeline correction
   (VIC1/NSW1), re-examine BPAT hour offset; expected to recover the
   remaining degradations in the era5-real family.
+  **[ERRATUM 2026-09-09, FD-48]**: the seam/offset attribution above
+  was falsified; FD-48 ran as join forensics instead (see
+  `results/fd48_verdict.md`).  Separately, FD-48 discovered the
+  `data_2023/weather/` asset degradation (2026-09-06 rebuild lost all
+  farmblend files + 9 centroid files).  FD-45/47 numbers in this
+  verdict were computed on the degraded (centroid-only) asset and must
+  be re-run after restoration before entering the paper.
 - FD-49 (P1, pre-registered earlier): merit-order dispatch prior for
   event-day phase (FD-46 showed shallow statistical fixes have no
   space; FD-45's 6 significant event-inflation regions await).

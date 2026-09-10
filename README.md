@@ -341,8 +341,22 @@ provinces). See `docs/BENCHMARK.md` for the full benchmark definition.
 .venv/bin/python scripts/benchmark/run_benchmark.py
 
 # Telemetry-free province deployment demo (monthly fuel-mix input only)
-.venv/bin/python scripts/experiments/demo_cn_province.py
+.venv-nemed/bin/python scripts/experiments/demo_cn_province.py            # shanxi scenario
+.venv-nemed/bin/python scripts/experiments/demo_cn_province.py shanghai   # receiving-province scenario
 ```
+
+**China deployment layer** (`src/transcif/data/cn_deploy.py`): the
+telemetry-free province path hardened for Chinese public statistics —
+official holiday/调休/heating calendars with an input-space remap,
+sender-weighted monthly imports EF (flow-weighted sender-province CIF,
+replacing the constant-250 fallback), a proxy anchor-trust gate that
+degrades to the annual config when no public proxy can audit the monthly
+table, and a full deployment-window builder.  Capability boundaries
+(untrained CNY collapse, northern CHP shape, receiving-province intra-day
+imports) are surfaced as advisories, never silent.  See
+`docs/CN_DEPLOYMENT.md` for the interface, fixes and the Phase B/C
+roadmap; `tests/test_cn_deploy.py` covers the calendar facts (2026
+State-Council notice), EF weighting and window contract.
 
 **Deployment interface for telemetry-free provinces** (the China scenario): the
 model consumes only monthly generation-by-fuel statistics for the past year
