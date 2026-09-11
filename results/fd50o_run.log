@@ -1,0 +1,73 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 20215.81it/s]
+[NSW1] base 50.4 | J5 40.8 | C 37.6 | J5+C 35.0 | J5||C 36.7 | scale 34.7 (1s)
+[QLD1] base 28.2 | J5 20.6 | C 18.7 | J5+C 17.9 | J5||C 18.5 | scale 18.2 (1s)
+[SA1] base 87.2 | J5 58.4 | C 52.3 | J5+C 50.1 | J5||C 52.1 | scale 52.9 (1s)
+[UK_01_North_Scotland] base 46.7 | J5 35.5 | C 35.7 | J5+C 35.9 | J5||C 34.6 | scale 48.2 (1s)
+[UK_02_South_Scotland] base 18.2 | J5 15.0 | C 17.1 | J5+C 14.8 | J5||C 14.0 | scale 15.7 (1s)
+[UK_03_North_West_England] base 27.0 | J5 17.1 | C 14.2 | J5+C 16.1 | J5||C 14.0 | scale 17.5 (1s)
+[UK_05_Yorkshire] base 51.4 | J5 26.6 | C 32.6 | J5+C 24.9 | J5||C 24.0 | scale 25.3 (1s)
+[UK_06_North_Wales_Merseyside] base 50.4 | J5 35.2 | C 33.7 | J5+C 34.4 | J5||C 32.1 | scale 36.6 (1s)
+[UK_07_South_Wales] base 71.7 | J5 48.5 | C 47.0 | J5+C 47.7 | J5||C 45.3 | scale 49.2 (1s)
+[UK_08_West_Midlands] base 66.0 | J5 42.0 | C 38.8 | J5+C 39.4 | J5||C 36.6 | scale 41.5 (1s)
+[UK_09_East_Midlands] base 60.8 | J5 44.3 | C 45.0 | J5+C 42.5 | J5||C 42.2 | scale 44.2 (1s)
+[UK_10_East_England] base 30.4 | J5 24.5 | C 33.6 | J5+C 24.1 | J5||C 22.0 | scale 24.8 (1s)
+[UK_11_South_West_England] base 60.4 | J5 43.3 | C 43.1 | J5+C 40.6 | J5||C 42.0 | scale 43.6 (1s)
+[UK_12_South_England] base 60.8 | J5 39.8 | C 39.6 | J5+C 36.6 | J5||C 38.0 | scale 40.6 (1s)
+[UK_13_London] base 42.4 | J5 34.9 | C 31.4 | J5+C 33.3 | J5||C 32.0 | scale 35.8 (1s)
+[UK_14_South_East_England] base 52.0 | J5 41.4 | C 35.4 | J5+C 39.7 | J5||C 36.1 | scale 42.4 (1s)
+[UK_15_England] base 33.9 | J5 21.3 | C 26.1 | J5+C 19.7 | J5||C 20.4 | scale 20.4 (1s)
+[UK_16_Scotland] base 25.7 | J5 24.1 | C 24.9 | J5+C 23.7 | J5||C 23.4 | scale 24.4 (1s)
+[UK_17_Wales] base 56.8 | J5 42.2 | C 44.7 | J5+C 40.5 | J5||C 40.3 | scale 41.7 (1s)
+[UK_18_GB] base 32.9 | J5 20.1 | C 24.3 | J5+C 18.1 | J5||C 19.3 | scale 18.8 (1s)
+[US_BPAT] base 21.0 | J5 5.8 | C 3.8 | J5+C 5.5 | J5||C 3.8 | scale 7.5 (1s)
+[US_CISO] base 48.1 | J5 18.6 | C 16.6 | J5+C 16.4 | J5||C 16.3 | scale 17.4 (1s)
+[US_ERCO] base 39.4 | J5 36.4 | C 45.9 | J5+C 36.4 | J5||C 35.4 | scale 36.4 (1s)
+[US_FPL] base 25.2 | J5 13.9 | C 12.3 | J5+C 13.2 | J5||C 12.2 | scale 13.7 (1s)
+[US_ISNE] base 30.8 | J5 15.0 | C 12.1 | J5+C 13.6 | J5||C 12.0 | scale 16.7 (1s)
+[US_MISO] base 30.7 | J5 30.2 | C 35.3 | J5+C 29.6 | J5||C 29.2 | scale 29.9 (1s)
+[US_NYIS] base 19.3 | J5 12.7 | C 9.6 | J5+C 10.2 | J5||C 9.6 | scale 11.7 (1s)
+[US_PJM] base 21.2 | J5 16.2 | C 11.5 | J5+C 14.0 | J5||C 12.2 | scale 15.8 (1s)
+[VIC1] base 74.7 | J5 67.4 | C 71.5 | J5+C 64.3 | J5||C 65.5 | scale 64.3 (1s)
+
+TOTAL 37s
+# FD-50o TSFM（Chronos-2 零样本）融合 J5 — late 半段（诚实）
+
+信息层级：与 persistence/J5 相同（1 日延迟标签，I_lag）。Chronos-2 零样本、无微调。
+模型：amazon/chronos-2，上下文 = 全部 origin+24h ≤ 当窗 origin 的真值（最长 2048h）。
+
+## all（n=29）
+- base 43.58 | R 40.32 | persistence 42.96
+- J5 30.76 | C(纯Chronos) 30.83 | J5+C(分量替换) 28.91 | J5||C(外混合) 28.27 | scale(水平锚定) 30.69
+- 胜场 vs J5: J5+C 27/29 | J5||C 29/29 | scale 15/29 | 任一 29/29
+- 全周期: base 43.98 | J5 32.31 | C 33.83 | J5+C 30.09 | J5||C 29.95 | scale 31.38
+
+## gt30（n=21）
+- base 51.33 | R 47.70 | persistence 51.96
+- J5 36.50 | C(纯Chronos) 37.25 | J5+C(分量替换) 34.43 | J5||C(外混合) 33.90 | scale(水平锚定) 36.45
+- 胜场 vs J5: J5+C 19/21 | J5||C 21/21 | scale 11/21 | 任一 21/21
+- 全周期: base 52.18 | J5 38.74 | C 41.15 | J5+C 36.12 | J5||C 36.19 | scale 37.54
+
+## gt40（n=15）
+- base 58.65 | R 53.64 | persistence 55.02
+- J5 41.26 | C(纯Chronos) 40.33 | J5+C(分量替换) 38.76 | J5||C(外混合) 38.24 | scale(水平锚定) 41.23
+- 胜场 vs J5: J5+C 14/15 | J5||C 15/15 | scale 8/15 | 任一 15/15
+- 全周期: base 59.68 | J5 43.69 | C 44.77 | J5+C 40.60 | J5||C 40.70 | scale 42.36
+
+## 逐区明细（late，按 base 降序）
+
+| target | base | per | J5 | C | J5+C | J5||C | scale | w_e | w2 |
+|---|---|---|---|---|---|---|---|---|---|
+| SA1 | 87.2 | 77.6 | 58.4 | 52.3 | 50.1 | 52.1 | 52.9 | 0.45 | 0.40 |
+| VIC1 | 74.7 | 92.7 | 67.4 | 71.5 | 64.3 | 65.5 | 64.3 | 0.20 | 0.40 |
+| UK_07_South_Wales | 71.7 | 64.3 | 48.5 | 47.0 | 47.7 | 45.3 | 49.2 | 0.10 | 0.20 |
+| UK_08_West_Midlands | 66.0 | 57.8 | 42.0 | 38.8 | 39.4 | 36.6 | 41.5 | 0.15 | 0.30 |
+| UK_12_South_England | 60.8 | 55.4 | 39.8 | 39.6 | 36.6 | 38.0 | 40.6 | 0.30 | 0.80 |
+| UK_09_East_Midlands | 60.8 | 60.7 | 44.3 | 45.0 | 42.5 | 42.2 | 44.2 | 0.20 | 0.10 |
+| UK_11_South_West_England | 60.4 | 55.9 | 43.3 | 43.1 | 40.6 | 42.0 | 43.6 | 0.35 | 0.20 |
+| UK_17_Wales | 56.8 | 61.8 | 42.2 | 44.7 | 40.5 | 40.3 | 41.7 | 0.15 | 0.20 |
+| UK_14_South_East_England | 52.0 | 52.0 | 41.4 | 35.4 | 39.7 | 36.1 | 42.4 | 0.25 | 0.50 |
+| UK_05_Yorkshire | 51.4 | 46.0 | 26.6 | 32.6 | 24.9 | 24.0 | 25.3 | 0.20 | 0.40 |
+| NSW1 | 50.4 | 47.5 | 40.8 | 37.6 | 35.0 | 36.7 | 34.7 | 0.70 | 0.70 |
+| UK_06_North_Wales_Merseyside | 50.4 | 46.5 | 35.2 | 33.7 | 34.4 | 32.1 | 36.6 | 0.15 | 0.50 |
+| US_CISO | 48.1 | 21.2 | 18.6 | 16.6 | 16.4 | 16.3 | 17.4 | 0.60 | 0.90 |
