@@ -1,0 +1,323 @@
+{
+ "rows": [
+  {
+   "target": "NSW1",
+   "n_evt_late": 2,
+   "base_late": 50.43,
+   "R0": 46.96,
+   "A": 44.93,
+   "B": 45.45,
+   "ORC": 44.93,
+   "evt_cfg": 82.9,
+   "evt_per": 37.3
+  },
+  {
+   "target": "QLD1",
+   "n_evt_late": 10,
+   "base_late": 28.24,
+   "R0": 25.04,
+   "A": 24.91,
+   "B": 24.51,
+   "ORC": 24.91,
+   "evt_cfg": 29.7,
+   "evt_per": 24.2
+  },
+  {
+   "target": "SA1",
+   "n_evt_late": 3,
+   "base_late": 87.19,
+   "R0": 75.1,
+   "A": 74.38,
+   "B": 74.71,
+   "ORC": 74.38,
+   "evt_cfg": 97.1,
+   "evt_per": 67.0
+  },
+  {
+   "target": "UK_01_North_Scotland",
+   "n_evt_late": 5,
+   "base_late": 46.68,
+   "R0": 45.75,
+   "A": 45.75,
+   "B": 46.14,
+   "ORC": 45.75,
+   "evt_cfg": 19.8,
+   "evt_per": 46.5
+  },
+  {
+   "target": "UK_02_South_Scotland",
+   "n_evt_late": 5,
+   "base_late": 18.23,
+   "R0": 15.93,
+   "A": 15.93,
+   "B": 16.26,
+   "ORC": 15.93,
+   "evt_cfg": 6.7,
+   "evt_per": 14.4
+  },
+  {
+   "target": "UK_03_North_West_England",
+   "n_evt_late": 3,
+   "base_late": 27.04,
+   "R0": 26.86,
+   "A": 26.86,
+   "B": 26.36,
+   "ORC": 25.87,
+   "evt_cfg": 50.0,
+   "evt_per": 37.0
+  },
+  {
+   "target": "UK_05_Yorkshire",
+   "n_evt_late": 3,
+   "base_late": 51.39,
+   "R0": 31.8,
+   "A": 31.07,
+   "B": 31.1,
+   "ORC": 31.07,
+   "evt_cfg": 57.9,
+   "evt_per": 36.6
+  },
+  {
+   "target": "UK_06_North_Wales_Merseyside",
+   "n_evt_late": 3,
+   "base_late": 50.42,
+   "R0": 49.39,
+   "A": 49.39,
+   "B": 49.31,
+   "ORC": 48.75,
+   "evt_cfg": 86.1,
+   "evt_per": 71.2
+  },
+  {
+   "target": "UK_07_South_Wales",
+   "n_evt_late": 3,
+   "base_late": 71.68,
+   "R0": 66.06,
+   "A": 66.06,
+   "B": 65.94,
+   "ORC": 65.85,
+   "evt_cfg": 74.6,
+   "evt_per": 64.5
+  },
+  {
+   "target": "UK_08_West_Midlands",
+   "n_evt_late": 3,
+   "base_late": 65.99,
+   "R0": 65.63,
+   "A": 65.63,
+   "B": 64.29,
+   "ORC": 62.74,
+   "evt_cfg": 102.6,
+   "evt_per": 61.4
+  },
+  {
+   "target": "UK_09_East_Midlands",
+   "n_evt_late": 3,
+   "base_late": 60.82,
+   "R0": 65.67,
+   "A": 65.67,
+   "B": 63.79,
+   "ORC": 63.72,
+   "evt_cfg": 51.0,
+   "evt_per": 38.7
+  },
+  {
+   "target": "UK_10_East_England",
+   "n_evt_late": 6,
+   "base_late": 30.36,
+   "R0": 28.98,
+   "A": 28.98,
+   "B": 29.96,
+   "ORC": 28.98,
+   "evt_cfg": 24.2,
+   "evt_per": 48.7
+  },
+  {
+   "target": "UK_11_South_West_England",
+   "n_evt_late": 3,
+   "base_late": 60.39,
+   "R0": 56.95,
+   "A": 56.14,
+   "B": 55.26,
+   "ORC": 56.14,
+   "evt_cfg": 51.5,
+   "evt_per": 42.8
+  },
+  {
+   "target": "UK_12_South_England",
+   "n_evt_late": 3,
+   "base_late": 60.85,
+   "R0": 59.72,
+   "A": 59.72,
+   "B": 58.4,
+   "ORC": 57.24,
+   "evt_cfg": 72.9,
+   "evt_per": 38.8
+  },
+  {
+   "target": "UK_13_London",
+   "n_evt_late": 3,
+   "base_late": 42.41,
+   "R0": 42.18,
+   "A": 42.18,
+   "B": 41.03,
+   "ORC": 42.18,
+   "evt_cfg": 36.0,
+   "evt_per": 38.0
+  },
+  {
+   "target": "UK_14_South_East_England",
+   "n_evt_late": 3,
+   "base_late": 51.98,
+   "R0": 51.91,
+   "A": 51.91,
+   "B": 49.97,
+   "ORC": 50.94,
+   "evt_cfg": 50.8,
+   "evt_per": 39.6
+  },
+  {
+   "target": "UK_15_England",
+   "n_evt_late": 3,
+   "base_late": 33.94,
+   "R0": 33.56,
+   "A": 33.56,
+   "B": 33.59,
+   "ORC": 33.56,
+   "evt_cfg": 24.7,
+   "evt_per": 30.9
+  },
+  {
+   "target": "UK_16_Scotland",
+   "n_evt_late": 6,
+   "base_late": 25.66,
+   "R0": 25.2,
+   "A": 25.2,
+   "B": 27.44,
+   "ORC": 25.2,
+   "evt_cfg": 8.1,
+   "evt_per": 38.5
+  },
+  {
+   "target": "UK_17_Wales",
+   "n_evt_late": 3,
+   "base_late": 56.79,
+   "R0": 56.55,
+   "A": 56.55,
+   "B": 56.77,
+   "ORC": 56.55,
+   "evt_cfg": 66.6,
+   "evt_per": 76.4
+  },
+  {
+   "target": "UK_18_GB",
+   "n_evt_late": 3,
+   "base_late": 32.91,
+   "R0": 32.09,
+   "A": 32.09,
+   "B": 32.41,
+   "ORC": 32.09,
+   "evt_cfg": 26.5,
+   "evt_per": 33.5
+  },
+  {
+   "target": "US_BPAT",
+   "n_evt_late": 6,
+   "base_late": 21.01,
+   "R0": 17.84,
+   "A": 15.45,
+   "B": 16.58,
+   "ORC": 15.45,
+   "evt_cfg": 20.1,
+   "evt_per": 3.9
+  },
+  {
+   "target": "US_CISO",
+   "n_evt_late": 7,
+   "base_late": 48.12,
+   "R0": 30.96,
+   "A": 28.89,
+   "B": 29.85,
+   "ORC": 28.89,
+   "evt_cfg": 44.0,
+   "evt_per": 24.7
+  },
+  {
+   "target": "US_ERCO",
+   "n_evt_late": 3,
+   "base_late": 39.41,
+   "R0": 40.21,
+   "A": 40.21,
+   "B": 40.34,
+   "ORC": 40.21,
+   "evt_cfg": 48.7,
+   "evt_per": 73.1
+  },
+  {
+   "target": "US_FPL",
+   "n_evt_late": 0,
+   "base_late": 25.16,
+   "R0": 22.53,
+   "A": 22.53,
+   "B": 22.53,
+   "ORC": 22.53,
+   "evt_cfg": null,
+   "evt_per": null
+  },
+  {
+   "target": "US_ISNE",
+   "n_evt_late": 1,
+   "base_late": 30.77,
+   "R0": 31.09,
+   "A": 31.09,
+   "B": 30.39,
+   "ORC": 30.5,
+   "evt_cfg": 37.4,
+   "evt_per": 17.4
+  },
+  {
+   "target": "US_MISO",
+   "n_evt_late": 1,
+   "base_late": 30.71,
+   "R0": 30.0,
+   "A": 30.0,
+   "B": 30.26,
+   "ORC": 30.0,
+   "evt_cfg": 45.0,
+   "evt_per": 64.5
+  },
+  {
+   "target": "US_NYIS",
+   "n_evt_late": 2,
+   "base_late": 19.3,
+   "R0": 14.77,
+   "A": 14.23,
+   "B": 14.46,
+   "ORC": 14.23,
+   "evt_cfg": 26.2,
+   "evt_per": 14.2
+  },
+  {
+   "target": "US_PJM",
+   "n_evt_late": 2,
+   "base_late": 21.24,
+   "R0": 19.68,
+   "A": 19.76,
+   "B": 19.56,
+   "ORC": 19.76,
+   "evt_cfg": 13.8,
+   "evt_per": 13.0
+  },
+  {
+   "target": "VIC1",
+   "n_evt_late": 7,
+   "base_late": 74.65,
+   "R0": 71.63,
+   "A": 71.63,
+   "B": 72.65,
+   "ORC": 71.63,
+   "evt_cfg": 72.0,
+   "evt_per": 101.3
+  }
+ ]
+}
