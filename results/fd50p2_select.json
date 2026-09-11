@@ -1,0 +1,631 @@
+{
+ "rows": {
+  "NSW1": {
+   "J5_late": 40.847,
+   "J5OC_late": 36.657,
+   "best3f_late": 35.007,
+   "select_late": 35.007,
+   "meta_late": 35.007,
+   "sel": "best3f",
+   "w3f": [
+    0.35,
+    0.1,
+    0.55
+   ],
+   "w2": 0.7,
+   "wm": 0.0,
+   "select_full": 36.307,
+   "meta_full": 36.307,
+   "best3f_full": 36.307,
+   "J5OC_full": 37.799,
+   "J5_full": 41.759
+  },
+  "QLD1": {
+   "J5_late": 20.597,
+   "J5OC_late": 18.547,
+   "best3f_late": 18.499,
+   "select_late": 18.547,
+   "meta_late": 18.547,
+   "sel": "J5OC",
+   "w3f": [
+    0.1,
+    0.2,
+    0.7
+   ],
+   "w2": 0.7,
+   "wm": 1.0,
+   "select_full": 17.002,
+   "meta_full": 17.002,
+   "best3f_full": 16.979,
+   "J5OC_full": 17.002,
+   "J5_full": 18.602
+  },
+  "SA1": {
+   "J5_late": 58.42,
+   "J5OC_late": 52.142,
+   "best3f_late": 49.783,
+   "select_late": 49.783,
+   "meta_late": 49.783,
+   "sel": "best3f",
+   "w3f": [
+    0.5,
+    0.05,
+    0.45
+   ],
+   "w2": 0.4,
+   "wm": 0.0,
+   "select_full": 50.649,
+   "meta_full": 50.649,
+   "best3f_full": 50.649,
+   "J5OC_full": 53.122,
+   "J5_full": 58.065
+  },
+  "UK_01_North_Scotland": {
+   "J5_late": 35.516,
+   "J5OC_late": 34.616,
+   "best3f_late": 34.756,
+   "select_late": 34.616,
+   "meta_late": 34.616,
+   "sel": "J5OC",
+   "w3f": [
+    0.05,
+    0.05,
+    0.9
+   ],
+   "w2": 0.9,
+   "wm": 1.0,
+   "select_full": 29.934,
+   "meta_full": 29.934,
+   "best3f_full": 30.041,
+   "J5OC_full": 29.934,
+   "J5_full": 34.88
+  },
+  "UK_02_South_Scotland": {
+   "J5_late": 15.024,
+   "J5OC_late": 13.967,
+   "best3f_late": 13.92,
+   "select_late": 13.92,
+   "meta_late": 13.92,
+   "sel": "best3f",
+   "w3f": [
+    0.6,
+    0.0,
+    0.4
+   ],
+   "w2": 0.3,
+   "wm": 0.0,
+   "select_full": 13.014,
+   "meta_full": 13.014,
+   "best3f_full": 13.014,
+   "J5OC_full": 13.121,
+   "J5_full": 14.075
+  },
+  "UK_03_North_West_England": {
+   "J5_late": 17.123,
+   "J5OC_late": 14.023,
+   "best3f_late": 13.959,
+   "select_late": 13.959,
+   "meta_late": 13.959,
+   "sel": "best3f",
+   "w3f": [
+    0.45,
+    0.0,
+    0.55
+   ],
+   "w2": 0.6,
+   "wm": 0.0,
+   "select_full": 17.44,
+   "meta_full": 17.44,
+   "best3f_full": 17.44,
+   "J5OC_full": 17.762,
+   "J5_full": 20.824
+  },
+  "UK_05_Yorkshire": {
+   "J5_late": 26.637,
+   "J5OC_late": 24.023,
+   "best3f_late": 23.363,
+   "select_late": 23.363,
+   "meta_late": 23.363,
+   "sel": "best3f",
+   "w3f": [
+    0.5,
+    0.0,
+    0.5
+   ],
+   "w2": 0.4,
+   "wm": 0.0,
+   "select_full": 24.032,
+   "meta_full": 24.032,
+   "best3f_full": 24.032,
+   "J5OC_full": 25.027,
+   "J5_full": 28.313
+  },
+  "UK_06_North_Wales_Merseyside": {
+   "J5_late": 35.207,
+   "J5OC_late": 32.106,
+   "best3f_late": 32.147,
+   "select_late": 32.147,
+   "meta_late": 32.147,
+   "sel": "best3f",
+   "w3f": [
+    0.55,
+    0.0,
+    0.45
+   ],
+   "w2": 0.5,
+   "wm": 0.0,
+   "select_full": 33.224,
+   "meta_full": 33.224,
+   "best3f_full": 33.224,
+   "J5OC_full": 33.908,
+   "J5_full": 37.104
+  },
+  "UK_07_South_Wales": {
+   "J5_late": 48.457,
+   "J5OC_late": 45.265,
+   "best3f_late": 45.28,
+   "select_late": 45.28,
+   "meta_late": 45.28,
+   "sel": "best3f",
+   "w3f": [
+    0.75,
+    0.0,
+    0.25
+   ],
+   "w2": 0.2,
+   "wm": 0.0,
+   "select_full": 48.662,
+   "meta_full": 48.662,
+   "best3f_full": 48.662,
+   "J5OC_full": 49.284,
+   "J5_full": 51.59
+  },
+  "UK_08_West_Midlands": {
+   "J5_late": 41.957,
+   "J5OC_late": 36.591,
+   "best3f_late": 37.493,
+   "select_late": 37.493,
+   "meta_late": 37.493,
+   "sel": "best3f",
+   "w3f": [
+    0.75,
+    0.0,
+    0.25
+   ],
+   "w2": 0.3,
+   "wm": 0.0,
+   "select_full": 48.13,
+   "meta_full": 48.13,
+   "best3f_full": 48.13,
+   "J5OC_full": 49.149,
+   "J5_full": 52.579
+  },
+  "UK_09_East_Midlands": {
+   "J5_late": 44.256,
+   "J5OC_late": 42.167,
+   "best3f_late": 43.705,
+   "select_late": 43.705,
+   "meta_late": 43.705,
+   "sel": "best3f",
+   "w3f": [
+    0.85,
+    0.0,
+    0.15
+   ],
+   "w2": 0.1,
+   "wm": 0.0,
+   "select_full": 55.222,
+   "meta_full": 55.222,
+   "best3f_full": 55.222,
+   "J5OC_full": 56.962,
+   "J5_full": 58.079
+  },
+  "UK_10_East_England": {
+   "J5_late": 24.506,
+   "J5OC_late": 22.009,
+   "best3f_late": 22.347,
+   "select_late": 22.347,
+   "meta_late": 22.347,
+   "sel": "best3f",
+   "w3f": [
+    0.8,
+    0.0,
+    0.2
+   ],
+   "w2": 0.2,
+   "wm": 0.0,
+   "select_full": 27.241,
+   "meta_full": 27.241,
+   "best3f_full": 27.241,
+   "J5OC_full": 27.723,
+   "J5_full": 29.379
+  },
+  "UK_11_South_West_England": {
+   "J5_late": 43.315,
+   "J5OC_late": 41.96,
+   "best3f_late": 40.914,
+   "select_late": 40.914,
+   "meta_late": 40.914,
+   "sel": "best3f",
+   "w3f": [
+    0.7,
+    0.0,
+    0.3
+   ],
+   "w2": 0.2,
+   "wm": 0.0,
+   "select_full": 37.535,
+   "meta_full": 37.535,
+   "best3f_full": 37.535,
+   "J5OC_full": 38.743,
+   "J5_full": 39.704
+  },
+  "UK_12_South_England": {
+   "J5_late": 39.792,
+   "J5OC_late": 37.95,
+   "best3f_late": 36.493,
+   "select_late": 36.493,
+   "meta_late": 36.493,
+   "sel": "best3f",
+   "w3f": [
+    0.35,
+    0.0,
+    0.65
+   ],
+   "w2": 0.8,
+   "wm": 0.0,
+   "select_full": 36.814,
+   "meta_full": 36.814,
+   "best3f_full": 36.814,
+   "J5OC_full": 38.201,
+   "J5_full": 41.7
+  },
+  "UK_13_London": {
+   "J5_late": 34.904,
+   "J5OC_late": 31.951,
+   "best3f_late": 30.374,
+   "select_late": 30.374,
+   "meta_late": 30.374,
+   "sel": "best3f",
+   "w3f": [
+    0.6,
+    0.0,
+    0.4
+   ],
+   "w2": 0.2,
+   "wm": 0.0,
+   "select_full": 30.771,
+   "meta_full": 30.771,
+   "best3f_full": 30.771,
+   "J5OC_full": 31.889,
+   "J5_full": 33.649
+  },
+  "UK_14_South_East_England": {
+   "J5_late": 41.392,
+   "J5OC_late": 36.119,
+   "best3f_late": 36.506,
+   "select_late": 36.506,
+   "meta_late": 36.506,
+   "sel": "best3f",
+   "w3f": [
+    0.5,
+    0.0,
+    0.5
+   ],
+   "w2": 0.5,
+   "wm": 0.0,
+   "select_full": 34.261,
+   "meta_full": 34.261,
+   "best3f_full": 34.261,
+   "J5OC_full": 34.7,
+   "J5_full": 38.338
+  },
+  "UK_15_England": {
+   "J5_late": 21.298,
+   "J5OC_late": 20.368,
+   "best3f_late": 19.677,
+   "select_late": 19.677,
+   "meta_late": 19.677,
+   "sel": "best3f",
+   "w3f": [
+    0.75,
+    0.0,
+    0.25
+   ],
+   "w2": 0.1,
+   "wm": 0.0,
+   "select_full": 21.773,
+   "meta_full": 21.773,
+   "best3f_full": 21.773,
+   "J5OC_full": 23.604,
+   "J5_full": 24.111
+  },
+  "UK_16_Scotland": {
+   "J5_late": 24.136,
+   "J5OC_late": 23.436,
+   "best3f_late": 23.256,
+   "select_late": 23.256,
+   "meta_late": 23.256,
+   "sel": "best3f",
+   "w3f": [
+    0.8,
+    0.0,
+    0.2
+   ],
+   "w2": 0.2,
+   "wm": 0.0,
+   "select_full": 22.375,
+   "meta_full": 22.375,
+   "best3f_full": 22.375,
+   "J5OC_full": 22.539,
+   "J5_full": 23.089
+  },
+  "UK_17_Wales": {
+   "J5_late": 42.182,
+   "J5OC_late": 40.272,
+   "best3f_late": 39.489,
+   "select_late": 39.489,
+   "meta_late": 39.489,
+   "sel": "best3f",
+   "w3f": [
+    0.75,
+    0.0,
+    0.25
+   ],
+   "w2": 0.2,
+   "wm": 0.0,
+   "select_full": 42.546,
+   "meta_full": 42.546,
+   "best3f_full": 42.546,
+   "J5OC_full": 43.746,
+   "J5_full": 45.661
+  },
+  "UK_18_GB": {
+   "J5_late": 20.139,
+   "J5OC_late": 19.295,
+   "best3f_late": 18.086,
+   "select_late": 18.086,
+   "meta_late": 18.086,
+   "sel": "best3f",
+   "w3f": [
+    0.7,
+    0.0,
+    0.3
+   ],
+   "w2": 0.1,
+   "wm": 0.0,
+   "select_full": 20.359,
+   "meta_full": 20.359,
+   "best3f_full": 20.359,
+   "J5OC_full": 22.59,
+   "J5_full": 23.091
+  },
+  "US_BPAT": {
+   "J5_late": 5.833,
+   "J5OC_late": 3.764,
+   "best3f_late": 3.805,
+   "select_late": 3.805,
+   "meta_late": 3.805,
+   "sel": "best3f",
+   "w3f": [
+    0.05,
+    0.0,
+    0.95
+   ],
+   "w2": 1.0,
+   "wm": 0.0,
+   "select_full": 4.903,
+   "meta_full": 4.903,
+   "best3f_full": 4.903,
+   "J5OC_full": 4.9,
+   "J5_full": 6.895
+  },
+  "US_CISO": {
+   "J5_late": 18.595,
+   "J5OC_late": 16.295,
+   "best3f_late": 16.068,
+   "select_late": 16.068,
+   "meta_late": 16.068,
+   "sel": "best3f",
+   "w3f": [
+    0.25,
+    0.0,
+    0.75
+   ],
+   "w2": 0.9,
+   "wm": 0.0,
+   "select_full": 19.598,
+   "meta_full": 19.598,
+   "best3f_full": 19.598,
+   "J5OC_full": 20.224,
+   "J5_full": 23.971
+  },
+  "US_ERCO": {
+   "J5_late": 36.416,
+   "J5OC_late": 35.391,
+   "best3f_late": 35.709,
+   "select_late": 35.709,
+   "meta_late": 35.584,
+   "sel": "best3f",
+   "w3f": [
+    0.55,
+    0.0,
+    0.45
+   ],
+   "w2": 0.4,
+   "wm": 0.35,
+   "select_full": 34.554,
+   "meta_full": 34.487,
+   "best3f_full": 34.554,
+   "J5OC_full": 34.394,
+   "J5_full": 36.978
+  },
+  "US_FPL": {
+   "J5_late": 13.931,
+   "J5OC_late": 12.228,
+   "best3f_late": 12.483,
+   "select_late": 12.483,
+   "meta_late": 12.483,
+   "sel": "best3f",
+   "w3f": [
+    0.15,
+    0.05,
+    0.8
+   ],
+   "w2": 0.8,
+   "wm": 0.0,
+   "select_full": 11.4,
+   "meta_full": 11.4,
+   "best3f_full": 11.4,
+   "J5OC_full": 11.351,
+   "J5_full": 12.792
+  },
+  "US_ISNE": {
+   "J5_late": 15.047,
+   "J5OC_late": 12.048,
+   "best3f_late": 12.321,
+   "select_late": 12.321,
+   "meta_late": 12.321,
+   "sel": "best3f",
+   "w3f": [
+    0.15,
+    0.0,
+    0.85
+   ],
+   "w2": 0.9,
+   "wm": 0.0,
+   "select_full": 12.113,
+   "meta_full": 12.113,
+   "best3f_full": 12.113,
+   "J5OC_full": 12.019,
+   "J5_full": 14.617
+  },
+  "US_MISO": {
+   "J5_late": 30.176,
+   "J5OC_late": 29.192,
+   "best3f_late": 28.936,
+   "select_late": 28.936,
+   "meta_late": 28.936,
+   "sel": "best3f",
+   "w3f": [
+    0.8,
+    0.0,
+    0.2
+   ],
+   "w2": 0.2,
+   "wm": 0.0,
+   "select_full": 28.592,
+   "meta_full": 28.592,
+   "best3f_full": 28.592,
+   "J5OC_full": 29.037,
+   "J5_full": 29.875
+  },
+  "US_NYIS": {
+   "J5_late": 12.677,
+   "J5OC_late": 9.649,
+   "best3f_late": 9.488,
+   "select_late": 9.488,
+   "meta_late": 9.488,
+   "sel": "best3f",
+   "w3f": [
+    0.15,
+    0.0,
+    0.85
+   ],
+   "w2": 0.8,
+   "wm": 0.0,
+   "select_full": 10.236,
+   "meta_full": 10.236,
+   "best3f_full": 10.236,
+   "J5OC_full": 10.363,
+   "J5_full": 13.003
+  },
+  "US_PJM": {
+   "J5_late": 16.179,
+   "J5OC_late": 12.189,
+   "best3f_late": 12.729,
+   "select_late": 12.729,
+   "meta_late": 12.729,
+   "sel": "best3f",
+   "w3f": [
+    0.35,
+    0.0,
+    0.65
+   ],
+   "w2": 0.7,
+   "wm": 0.0,
+   "select_full": 11.82,
+   "meta_full": 11.82,
+   "best3f_full": 11.82,
+   "J5OC_full": 11.682,
+   "J5_full": 14.349
+  },
+  "VIC1": {
+   "J5_late": 67.396,
+   "J5OC_late": 65.515,
+   "best3f_late": 63.976,
+   "select_late": 63.976,
+   "meta_late": 63.976,
+   "sel": "best3f",
+   "w3f": [
+    0.65,
+    0.0,
+    0.35
+   ],
+   "w2": 0.4,
+   "wm": 0.0,
+   "select_full": 65.82,
+   "meta_full": 65.82,
+   "best3f_full": 65.82,
+   "J5OC_full": 67.863,
+   "J5_full": 70.008
+  }
+ },
+ "agg": {
+  "all": {
+   "n": 29,
+   "J5_late": 30.757,
+   "J5OC_late": 28.267,
+   "best3f_late": 27.951,
+   "select_late": 27.947,
+   "meta_late": 27.943,
+   "J5_full": 32.313,
+   "J5OC_full": 29.953,
+   "best3f_full": 29.187,
+   "select_full": 29.184,
+   "meta_full": 29.181,
+   "select_wins_vs_best3f": 28,
+   "n_sel_best3f": 27
+  },
+  "gt30": {
+   "n": 15,
+   "J5_late": 42.682,
+   "J5OC_late": 39.86,
+   "best3f_late": 39.371,
+   "select_late": 39.362,
+   "meta_late": 39.354,
+   "J5_full": 44.664,
+   "J5OC_full": 41.915,
+   "best3f_full": 40.875,
+   "select_full": 40.868,
+   "meta_full": 40.864,
+   "select_wins_vs_best3f": 15,
+   "n_sel_best3f": 14
+  },
+  "gt40": {
+   "n": 9,
+   "J5_late": 47.58,
+   "J5OC_late": 44.076,
+   "best3f_late": 43.573,
+   "select_late": 43.573,
+   "meta_late": 43.573,
+   "J5_full": 50.642,
+   "J5OC_full": 47.93,
+   "best3f_full": 46.57,
+   "select_full": 46.57,
+   "meta_full": 46.57,
+   "select_wins_vs_best3f": 9,
+   "n_sel_best3f": 9
+  }
+ }
+}

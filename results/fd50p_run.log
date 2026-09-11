@@ -1,0 +1,97 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/170 [00:00<?, ?it/s]Loading weights: 100%|██████████| 170/170 [00:00<00:00, 20118.27it/s]
+[cache] NSW1 2s
+[cache] QLD1 2s
+[cache] SA1 2s
+[cache] UK_01_North_Scotland 2s
+[cache] UK_02_South_Scotland 2s
+[cache] UK_03_North_West_England 2s
+[cache] UK_05_Yorkshire 2s
+[cache] UK_06_North_Wales_Merseyside 2s
+[cache] UK_07_South_Wales 2s
+[cache] UK_08_West_Midlands 2s
+[cache] UK_09_East_Midlands 2s
+[cache] UK_10_East_England 2s
+[cache] UK_11_South_West_England 2s
+[cache] UK_12_South_England 2s
+[cache] UK_13_London 2s
+[cache] UK_14_South_East_England 2s
+[cache] UK_15_England 2s
+[cache] UK_16_Scotland 2s
+[cache] UK_17_Wales 2s
+[cache] UK_18_GB 2s
+[cache] US_BPAT 2s
+[cache] US_CISO 2s
+[cache] US_ERCO 2s
+[cache] US_FPL 2s
+[cache] US_ISNE 2s
+[cache] US_MISO 2s
+[cache] US_NYIS 2s
+[cache] US_PJM 2s
+[cache] VIC1 2s
+[NSW1] J5 40.8 | C 37.6 | CE 37.3 | CEp 37.5 | best3 35.0 | CExJ5 36.7 | ce720 37.3 | ce336 38.0 (0s)
+[QLD1] J5 20.6 | C 18.7 | CE 19.1 | CEp 19.3 | best3 18.5 | CExJ5 18.9 | ce720 19.2 | ce336 19.5 (0s)
+[SA1] J5 58.4 | C 52.3 | CE 55.6 | CEp 56.6 | best3 49.4 | CExJ5 54.4 | ce720 56.3 | ce336 60.0 (0s)
+[UK_01_North_Scotland] J5 35.5 | C 35.7 | CE 37.6 | CEp 35.2 | best3 34.6 | CExJ5 34.9 | ce720 35.0 | ce336 34.4 (0s)
+[UK_02_South_Scotland] J5 15.0 | C 17.1 | CE 18.3 | CEp 18.2 | best3 13.9 | CExJ5 14.8 | ce720 18.6 | ce336 17.3 (0s)
+[UK_03_North_West_England] J5 17.1 | C 14.2 | CE 15.0 | CEp 15.0 | best3 13.8 | CExJ5 14.7 | ce720 15.1 | ce336 15.0 (0s)
+[UK_05_Yorkshire] J5 26.6 | C 32.6 | CE 33.3 | CEp 33.3 | best3 23.4 | CExJ5 24.0 | ce720 32.2 | ce336 32.8 (0s)
+[UK_06_North_Wales_Merseyside] J5 35.2 | C 33.7 | CE 35.6 | CEp 35.6 | best3 31.9 | CExJ5 33.0 | ce720 36.8 | ce336 34.9 (0s)
+[UK_07_South_Wales] J5 48.5 | C 47.0 | CE 47.9 | CEp 48.0 | best3 46.0 | CExJ5 44.9 | ce720 48.4 | ce336 46.8 (0s)
+[UK_08_West_Midlands] J5 42.0 | C 38.8 | CE 39.8 | CEp 39.8 | best3 36.7 | CExJ5 38.4 | ce720 41.0 | ce336 41.1 (0s)
+[UK_09_East_Midlands] J5 44.3 | C 45.0 | CE 45.6 | CEp 45.6 | best3 42.5 | CExJ5 41.9 | ce720 46.9 | ce336 47.1 (0s)
+[UK_10_East_England] J5 24.5 | C 33.6 | CE 33.9 | CEp 33.9 | best3 22.3 | CExJ5 22.7 | ce720 33.6 | ce336 34.0 (0s)
+[UK_11_South_West_England] J5 43.3 | C 43.1 | CE 43.8 | CEp 43.7 | best3 40.9 | CExJ5 41.9 | ce720 43.7 | ce336 42.7 (0s)
+[UK_12_South_England] J5 39.8 | C 39.6 | CE 39.8 | CEp 39.8 | best3 36.4 | CExJ5 37.2 | ce720 39.4 | ce336 38.2 (0s)
+[UK_13_London] J5 34.9 | C 31.4 | CE 32.4 | CEp 32.4 | best3 30.4 | CExJ5 31.8 | ce720 32.9 | ce336 35.1 (0s)
+[UK_14_South_East_England] J5 41.4 | C 35.4 | CE 36.2 | CEp 36.2 | best3 36.5 | CExJ5 36.8 | ce720 36.8 | ce336 38.9 (0s)
+[UK_15_England] J5 21.3 | C 26.1 | CE 26.2 | CEp 26.2 | best3 19.2 | CExJ5 21.3 | ce720 26.1 | ce336 26.6 (0s)
+[UK_16_Scotland] J5 24.1 | C 24.9 | CE 26.6 | CEp 26.9 | best3 23.3 | CExJ5 23.8 | ce720 26.9 | ce336 27.4 (0s)
+[UK_17_Wales] J5 42.2 | C 44.7 | CE 46.1 | CEp 46.1 | best3 39.1 | CExJ5 40.5 | ce720 47.0 | ce336 45.4 (0s)
+[UK_18_GB] J5 20.1 | C 24.3 | CE 24.7 | CEp 24.7 | best3 18.1 | CExJ5 19.2 | ce720 24.4 | ce336 24.6 (0s)
+[US_BPAT] J5 5.8 | C 3.8 | CE 3.9 | CEp 3.9 | best3 4.0 | CExJ5 3.9 | ce720 3.9 | ce336 4.0 (0s)
+[US_CISO] J5 18.6 | C 16.6 | CE 17.2 | CEp 17.2 | best3 16.1 | CExJ5 16.7 | ce720 17.4 | ce336 17.8 (0s)
+[US_ERCO] J5 36.4 | C 45.9 | CE 47.4 | CEp 47.2 | best3 35.4 | CExJ5 35.8 | ce720 47.5 | ce336 49.1 (0s)
+[US_FPL] J5 13.9 | C 12.3 | CE 12.6 | CEp 12.6 | best3 12.7 | CExJ5 12.6 | ce720 12.6 | ce336 13.8 (0s)
+[US_ISNE] J5 15.0 | C 12.1 | CE 12.6 | CEp 12.6 | best3 12.5 | CExJ5 12.5 | ce720 12.7 | ce336 13.2 (0s)
+[US_MISO] J5 30.2 | C 35.3 | CE 36.6 | CEp 36.6 | best3 28.9 | CExJ5 29.3 | ce720 38.2 | ce336 40.1 (0s)
+[US_NYIS] J5 12.7 | C 9.6 | CE 9.9 | CEp 9.9 | best3 9.5 | CExJ5 10.0 | ce720 10.1 | ce336 10.6 (0s)
+[US_PJM] J5 16.2 | C 11.5 | CE 12.0 | CEp 12.1 | best3 13.0 | CExJ5 12.6 | ce720 12.0 | ce336 11.7 (0s)
+[VIC1] J5 67.4 | C 71.5 | CE 73.5 | CEp 73.5 | best3 64.0 | CExJ5 66.8 | ce720 73.4 | ce336 76.7 (0s)
+DONE
+# FD-50p 二轮 TSFM 压降 — late 半段（诚实）
+
+基线 J5（官方口径复现）与 FD-50o 的 J5||C 参照：all 30.76 → 28.27。
+
+## all（n=29）
+- J5 30.76 | C 30.83 | CE 31.74 | CEp 31.71
+- best3 27.86 | CExJ5 28.69 | ce720 31.92 | ce336 32.31 | qtrim 31.14
+- 胜场 vs J5: CE 14/29 | CEp 15/29 | best3 29/29 | CExJ5 28/29
+- 全周期: J5 32.31 | CE 34.98 | CEp 34.92 | best3 29.15 | CExJ5 30.42
+
+## gt30_J5（n=15）
+- J5 42.68 | C 42.46 | CE 43.68 | CEp 43.58
+- best3 39.19 | CExJ5 40.28 | ce720 44.05 | ce336 44.57 | qtrim 42.88
+- 胜场 vs J5: CE 6/15 | CEp 7/15 | best3 15/15 | CExJ5 15/15
+- 全周期: J5 44.66 | CE 47.98 | CEp 47.85 | best3 40.80 | CExJ5 42.45
+
+## gt40_J5（n=9）
+- J5 47.58 | C 46.15 | CE 47.31 | CEp 47.44
+- best3 43.36 | CExJ5 44.70 | ce720 47.87 | ce336 48.53 | qtrim 46.82
+- 胜场 vs J5: CE 5/9 | CEp 5/9 | best3 9/9 | CExJ5 9/9
+- 全周期: J5 50.64 | CE 54.25 | CEp 54.25 | best3 46.48 | CExJ5 48.50
+
+## 逐区明细（late，按 J5 降序）
+
+| target | J5 | C | CE | CEp | best3 | CExJ5 | ce720 | ce336 | w3 | best3_w |
+|---|---|---|---|---|---|---|---|---|---|---|
+| VIC1 | 67.4 | 71.5 | 73.5 | 73.5 | 64.0 | 66.8 | 73.4 | 76.7 | 0.3 | 0.7/0.0/0.3 |
+| SA1 | 58.4 | 52.3 | 55.6 | 56.6 | 49.4 | 54.4 | 56.3 | 60.0 | 0.3 | 0.5/0.0/0.5 |
+| UK_07_South_Wales | 48.5 | 47.0 | 47.9 | 48.0 | 46.0 | 44.9 | 48.4 | 46.8 | 0.2 | 0.8/0.0/0.2 |
+| UK_09_East_Midlands | 44.3 | 45.0 | 45.6 | 45.6 | 42.5 | 41.9 | 46.9 | 47.1 | 0.1 | 0.8/0.0/0.2 |
+| UK_11_South_West_England | 43.3 | 43.1 | 43.8 | 43.7 | 40.9 | 41.9 | 43.7 | 42.7 | 0.2 | 0.7/0.0/0.3 |
+| UK_17_Wales | 42.2 | 44.7 | 46.1 | 46.1 | 39.1 | 40.5 | 47.0 | 45.4 | 0.2 | 0.7/0.0/0.3 |
+| UK_08_West_Midlands | 42.0 | 38.8 | 39.8 | 39.8 | 36.7 | 38.4 | 41.0 | 41.1 | 0.2 | 0.7/0.0/0.3 |
+| UK_14_South_East_England | 41.4 | 35.4 | 36.2 | 36.2 | 36.5 | 36.8 | 36.8 | 38.9 | 0.4 | 0.5/0.0/0.5 |
+| NSW1 | 40.8 | 37.6 | 37.3 | 37.5 | 35.0 | 36.7 | 37.3 | 38.0 | 0.7 | 0.4/0.1/0.5 |
+| UK_12_South_England | 39.8 | 39.6 | 39.8 | 39.8 | 36.4 | 37.2 | 39.4 | 38.2 | 0.7 | 0.4/0.0/0.6 |
