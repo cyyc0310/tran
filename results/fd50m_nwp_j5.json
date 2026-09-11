@@ -1,0 +1,816 @@
+{
+ "rows": {
+  "NSW1": {
+   "era5": {
+    "base_late": 50.434,
+    "R_late": 45.452,
+    "J5_late": 38.439,
+    "w_e": 0.35
+   },
+   "gfs": {
+    "base_late": 77.172,
+    "R_late": 56.601,
+    "J5_late": 45.087,
+    "w_e": 0.7
+   },
+   "icon": {
+    "base_late": 71.739,
+    "R_late": 52.224,
+    "J5_late": 44.52,
+    "w_e": 0.7
+   },
+   "ensemble": {
+    "base_late": 73.34,
+    "R_late": 54.311,
+    "J5_late": 44.856,
+    "w_e": 0.7
+   }
+  },
+  "QLD1": {
+   "era5": {
+    "base_late": 28.241,
+    "R_late": 24.508,
+    "J5_late": 20.597,
+    "w_e": 0.7
+   },
+   "gfs": {
+    "base_late": 28.76,
+    "R_late": 25.73,
+    "J5_late": 21.085,
+    "w_e": 0.7
+   },
+   "icon": {
+    "base_late": 29.945,
+    "R_late": 25.955,
+    "J5_late": 21.283,
+    "w_e": 0.7
+   },
+   "ensemble": {
+    "base_late": 29.055,
+    "R_late": 25.609,
+    "J5_late": 21.148,
+    "w_e": 0.7
+   }
+  },
+  "SA1": {
+   "era5": {
+    "base_late": 87.193,
+    "R_late": 74.707,
+    "J5_late": 58.096,
+    "w_e": 0.25
+   },
+   "gfs": {
+    "base_late": 88.727,
+    "R_late": 67.692,
+    "J5_late": 59.802,
+    "w_e": 0.4
+   },
+   "icon": {
+    "base_late": 105.088,
+    "R_late": 93.818,
+    "J5_late": 63.511,
+    "w_e": 0.35
+   },
+   "ensemble": {
+    "base_late": 91.346,
+    "R_late": 78.729,
+    "J5_late": 60.007,
+    "w_e": 0.35
+   }
+  },
+  "UK_01_North_Scotland": {
+   "era5": {
+    "base_late": 46.682,
+    "R_late": 46.136,
+    "J5_late": 35.516,
+    "w_e": 0.7
+   },
+   "gfs": {
+    "base_late": 67.623,
+    "R_late": 68.365,
+    "J5_late": 40.629,
+    "w_e": 0.7
+   },
+   "icon": {
+    "base_late": 60.707,
+    "R_late": 60.592,
+    "J5_late": 39.09,
+    "w_e": 0.7
+   },
+   "ensemble": {
+    "base_late": 63.001,
+    "R_late": 63.131,
+    "J5_late": 39.363,
+    "w_e": 0.7
+   }
+  },
+  "UK_02_South_Scotland": {
+   "era5": {
+    "base_late": 18.234,
+    "R_late": 16.256,
+    "J5_late": 14.981,
+    "w_e": 0.2
+   },
+   "gfs": {
+    "base_late": 22.473,
+    "R_late": 19.821,
+    "J5_late": 16.783,
+    "w_e": 0.45
+   },
+   "icon": {
+    "base_late": 19.985,
+    "R_late": 17.024,
+    "J5_late": 15.76,
+    "w_e": 0.35
+   },
+   "ensemble": {
+    "base_late": 21.115,
+    "R_late": 18.222,
+    "J5_late": 16.164,
+    "w_e": 0.4
+   }
+  },
+  "UK_03_North_West_England": {
+   "era5": {
+    "base_late": 27.039,
+    "R_late": 26.364,
+    "J5_late": 17.489,
+    "w_e": 0.0
+   },
+   "gfs": {
+    "base_late": 23.443,
+    "R_late": 23.23,
+    "J5_late": 18.255,
+    "w_e": 0.0
+   },
+   "icon": {
+    "base_late": 23.547,
+    "R_late": 23.822,
+    "J5_late": 18.533,
+    "w_e": 0.0
+   },
+   "ensemble": {
+    "base_late": 23.275,
+    "R_late": 23.304,
+    "J5_late": 18.171,
+    "w_e": 0.0
+   }
+  },
+  "UK_05_Yorkshire": {
+   "era5": {
+    "base_late": 51.388,
+    "R_late": 31.101,
+    "J5_late": 26.637,
+    "w_e": 0.2
+   },
+   "gfs": {
+    "base_late": 60.296,
+    "R_late": 38.674,
+    "J5_late": 27.372,
+    "w_e": 0.4
+   },
+   "icon": {
+    "base_late": 59.246,
+    "R_late": 36.998,
+    "J5_late": 27.239,
+    "w_e": 0.4
+   },
+   "ensemble": {
+    "base_late": 58.62,
+    "R_late": 37.345,
+    "J5_late": 26.854,
+    "w_e": 0.4
+   }
+  },
+  "UK_06_North_Wales_Merseyside": {
+   "era5": {
+    "base_late": 50.424,
+    "R_late": 49.308,
+    "J5_late": 36.159,
+    "w_e": 0.0
+   },
+   "gfs": {
+    "base_late": 48.646,
+    "R_late": 47.177,
+    "J5_late": 38.278,
+    "w_e": 0.15
+   },
+   "icon": {
+    "base_late": 49.726,
+    "R_late": 48.407,
+    "J5_late": 36.77,
+    "w_e": 0.1
+   },
+   "ensemble": {
+    "base_late": 48.085,
+    "R_late": 47.128,
+    "J5_late": 36.46,
+    "w_e": 0.15
+   }
+  },
+  "UK_07_South_Wales": {
+   "era5": {
+    "base_late": 71.685,
+    "R_late": 65.944,
+    "J5_late": 49.091,
+    "w_e": 0.05
+   },
+   "gfs": {
+    "base_late": 76.96,
+    "R_late": 73.976,
+    "J5_late": 53.932,
+    "w_e": 0.1
+   },
+   "icon": {
+    "base_late": 74.376,
+    "R_late": 69.601,
+    "J5_late": 48.737,
+    "w_e": 0.15
+   },
+   "ensemble": {
+    "base_late": 75.023,
+    "R_late": 70.916,
+    "J5_late": 50.751,
+    "w_e": 0.1
+   }
+  },
+  "UK_08_West_Midlands": {
+   "era5": {
+    "base_late": 65.988,
+    "R_late": 64.289,
+    "J5_late": 43.12,
+    "w_e": 0.0
+   },
+   "gfs": {
+    "base_late": 75.513,
+    "R_late": 74.343,
+    "J5_late": 52.749,
+    "w_e": 0.15
+   },
+   "icon": {
+    "base_late": 76.942,
+    "R_late": 76.119,
+    "J5_late": 56.249,
+    "w_e": 0.1
+   },
+   "ensemble": {
+    "base_late": 75.636,
+    "R_late": 75.134,
+    "J5_late": 53.72,
+    "w_e": 0.15
+   }
+  },
+  "UK_09_East_Midlands": {
+   "era5": {
+    "base_late": 60.825,
+    "R_late": 63.789,
+    "J5_late": 48.144,
+    "w_e": 0.0
+   },
+   "gfs": {
+    "base_late": 61.732,
+    "R_late": 65.204,
+    "J5_late": 54.176,
+    "w_e": 0.0
+   },
+   "icon": {
+    "base_late": 64.59,
+    "R_late": 67.133,
+    "J5_late": 54.19,
+    "w_e": 0.0
+   },
+   "ensemble": {
+    "base_late": 61.688,
+    "R_late": 64.969,
+    "J5_late": 53.061,
+    "w_e": 0.0
+   }
+  },
+  "UK_10_East_England": {
+   "era5": {
+    "base_late": 30.364,
+    "R_late": 29.962,
+    "J5_late": 26.217,
+    "w_e": 0.0
+   },
+   "gfs": {
+    "base_late": 37.797,
+    "R_late": 33.35,
+    "J5_late": 29.425,
+    "w_e": 0.1
+   },
+   "icon": {
+    "base_late": 32.481,
+    "R_late": 28.846,
+    "J5_late": 26.25,
+    "w_e": 0.05
+   },
+   "ensemble": {
+    "base_late": 33.803,
+    "R_late": 30.29,
+    "J5_late": 27.527,
+    "w_e": 0.05
+   }
+  },
+  "UK_11_South_West_England": {
+   "era5": {
+    "base_late": 60.388,
+    "R_late": 55.265,
+    "J5_late": 43.135,
+    "w_e": 0.15
+   },
+   "gfs": {
+    "base_late": 69.163,
+    "R_late": 63.151,
+    "J5_late": 45.501,
+    "w_e": 0.3
+   },
+   "icon": {
+    "base_late": 72.037,
+    "R_late": 65.815,
+    "J5_late": 45.82,
+    "w_e": 0.25
+   },
+   "ensemble": {
+    "base_late": 70.227,
+    "R_late": 64.204,
+    "J5_late": 45.501,
+    "w_e": 0.25
+   }
+  },
+  "UK_12_South_England": {
+   "era5": {
+    "base_late": 60.849,
+    "R_late": 58.402,
+    "J5_late": 38.817,
+    "w_e": 0.05
+   },
+   "gfs": {
+    "base_late": 72.023,
+    "R_late": 69.15,
+    "J5_late": 44.632,
+    "w_e": 0.15
+   },
+   "icon": {
+    "base_late": 74.836,
+    "R_late": 72.56,
+    "J5_late": 46.62,
+    "w_e": 0.15
+   },
+   "ensemble": {
+    "base_late": 72.823,
+    "R_late": 70.465,
+    "J5_late": 45.813,
+    "w_e": 0.15
+   }
+  },
+  "UK_13_London": {
+   "era5": {
+    "base_late": 42.411,
+    "R_late": 41.028,
+    "J5_late": 35.375,
+    "w_e": 0.15
+   },
+   "gfs": {
+    "base_late": 45.837,
+    "R_late": 42.705,
+    "J5_late": 33.213,
+    "w_e": 0.3
+   },
+   "icon": {
+    "base_late": 50.265,
+    "R_late": 46.541,
+    "J5_late": 35.335,
+    "w_e": 0.3
+   },
+   "ensemble": {
+    "base_late": 46.983,
+    "R_late": 43.644,
+    "J5_late": 33.685,
+    "w_e": 0.3
+   }
+  },
+  "UK_14_South_East_England": {
+   "era5": {
+    "base_late": 51.976,
+    "R_late": 49.968,
+    "J5_late": 41.789,
+    "w_e": 0.2
+   },
+   "gfs": {
+    "base_late": 52.56,
+    "R_late": 49.769,
+    "J5_late": 40.231,
+    "w_e": 0.2
+   },
+   "icon": {
+    "base_late": 51.18,
+    "R_late": 48.374,
+    "J5_late": 39.522,
+    "w_e": 0.15
+   },
+   "ensemble": {
+    "base_late": 51.424,
+    "R_late": 48.591,
+    "J5_late": 39.56,
+    "w_e": 0.2
+   }
+  },
+  "UK_15_England": {
+   "era5": {
+    "base_late": 33.94,
+    "R_late": 33.586,
+    "J5_late": 22.764,
+    "w_e": 0.05
+   },
+   "gfs": {
+    "base_late": 34.432,
+    "R_late": 30.047,
+    "J5_late": 25.059,
+    "w_e": 0.05
+   },
+   "icon": {
+    "base_late": 36.841,
+    "R_late": 32.961,
+    "J5_late": 27.113,
+    "w_e": 0.1
+   },
+   "ensemble": {
+    "base_late": 34.962,
+    "R_late": 30.79,
+    "J5_late": 25.854,
+    "w_e": 0.05
+   }
+  },
+  "UK_16_Scotland": {
+   "era5": {
+    "base_late": 25.663,
+    "R_late": 27.443,
+    "J5_late": 24.136,
+    "w_e": 0.05
+   },
+   "gfs": {
+    "base_late": 43.489,
+    "R_late": 43.837,
+    "J5_late": 35.024,
+    "w_e": 0.5
+   },
+   "icon": {
+    "base_late": 30.056,
+    "R_late": 30.89,
+    "J5_late": 30.138,
+    "w_e": 0.15
+   },
+   "ensemble": {
+    "base_late": 35.059,
+    "R_late": 36.517,
+    "J5_late": 33.005,
+    "w_e": 0.35
+   }
+  },
+  "UK_17_Wales": {
+   "era5": {
+    "base_late": 56.785,
+    "R_late": 56.774,
+    "J5_late": 42.332,
+    "w_e": 0.05
+   },
+   "gfs": {
+    "base_late": 66.975,
+    "R_late": 63.111,
+    "J5_late": 49.047,
+    "w_e": 0.15
+   },
+   "icon": {
+    "base_late": 63.719,
+    "R_late": 62.061,
+    "J5_late": 46.056,
+    "w_e": 0.2
+   },
+   "ensemble": {
+    "base_late": 63.427,
+    "R_late": 61.455,
+    "J5_late": 47.145,
+    "w_e": 0.2
+   }
+  },
+  "UK_18_GB": {
+   "era5": {
+    "base_late": 32.911,
+    "R_late": 32.406,
+    "J5_late": 21.061,
+    "w_e": 0.1
+   },
+   "gfs": {
+    "base_late": 33.007,
+    "R_late": 29.282,
+    "J5_late": 24.354,
+    "w_e": 0.1
+   },
+   "icon": {
+    "base_late": 37.665,
+    "R_late": 33.919,
+    "J5_late": 27.034,
+    "w_e": 0.05
+   },
+   "ensemble": {
+    "base_late": 33.977,
+    "R_late": 30.563,
+    "J5_late": 25.546,
+    "w_e": 0.05
+   }
+  },
+  "US_BPAT": {
+   "era5": {
+    "base_late": 21.009,
+    "R_late": 16.578,
+    "J5_late": 5.833,
+    "w_e": 0.7
+   },
+   "gfs": {
+    "base_late": 46.631,
+    "R_late": 41.694,
+    "J5_late": 6.384,
+    "w_e": 0.7
+   },
+   "icon": {
+    "base_late": 47.732,
+    "R_late": 42.433,
+    "J5_late": 6.803,
+    "w_e": 0.7
+   },
+   "ensemble": {
+    "base_late": 47.133,
+    "R_late": 42.165,
+    "J5_late": 6.516,
+    "w_e": 0.7
+   }
+  },
+  "US_CISO": {
+   "era5": {
+    "base_late": 48.125,
+    "R_late": 29.849,
+    "J5_late": 18.466,
+    "w_e": 0.45
+   },
+   "gfs": {
+    "base_late": 54.168,
+    "R_late": 32.489,
+    "J5_late": 20.246,
+    "w_e": 0.65
+   },
+   "icon": {
+    "base_late": 51.501,
+    "R_late": 30.827,
+    "J5_late": 19.905,
+    "w_e": 0.6
+   },
+   "ensemble": {
+    "base_late": 52.729,
+    "R_late": 31.502,
+    "J5_late": 20.048,
+    "w_e": 0.65
+   }
+  },
+  "US_ERCO": {
+   "era5": {
+    "base_late": 39.405,
+    "R_late": 40.339,
+    "J5_late": 36.416,
+    "w_e": 0.0
+   },
+   "gfs": {
+    "base_late": 45.654,
+    "R_late": 46.998,
+    "J5_late": 43.185,
+    "w_e": 0.1
+   },
+   "icon": {
+    "base_late": 49.466,
+    "R_late": 48.627,
+    "J5_late": 41.581,
+    "w_e": 0.0
+   },
+   "ensemble": {
+    "base_late": 45.666,
+    "R_late": 46.304,
+    "J5_late": 40.979,
+    "w_e": 0.05
+   }
+  },
+  "US_FPL": {
+   "era5": {
+    "base_late": 25.155,
+    "R_late": 22.533,
+    "J5_late": 13.931,
+    "w_e": 0.7
+   },
+   "gfs": {
+    "base_late": 25.041,
+    "R_late": 22.111,
+    "J5_late": 14.004,
+    "w_e": 0.65
+   },
+   "icon": {
+    "base_late": 23.585,
+    "R_late": 20.698,
+    "J5_late": 13.766,
+    "w_e": 0.6
+   },
+   "ensemble": {
+    "base_late": 24.116,
+    "R_late": 21.137,
+    "J5_late": 13.8,
+    "w_e": 0.65
+   }
+  },
+  "US_ISNE": {
+   "era5": {
+    "base_late": 30.769,
+    "R_late": 30.387,
+    "J5_late": 16.235,
+    "w_e": 0.2
+   },
+   "gfs": {
+    "base_late": 30.939,
+    "R_late": 30.303,
+    "J5_late": 16.546,
+    "w_e": 0.15
+   },
+   "icon": {
+    "base_late": 31.05,
+    "R_late": 30.199,
+    "J5_late": 16.025,
+    "w_e": 0.25
+   },
+   "ensemble": {
+    "base_late": 30.967,
+    "R_late": 30.214,
+    "J5_late": 16.222,
+    "w_e": 0.2
+   }
+  },
+  "US_MISO": {
+   "era5": {
+    "base_late": 30.71,
+    "R_late": 30.259,
+    "J5_late": 30.001,
+    "w_e": 0.0
+   },
+   "gfs": {
+    "base_late": 36.729,
+    "R_late": 35.104,
+    "J5_late": 33.033,
+    "w_e": 0.0
+   },
+   "icon": {
+    "base_late": 34.951,
+    "R_late": 31.346,
+    "J5_late": 31.796,
+    "w_e": 0.0
+   },
+   "ensemble": {
+    "base_late": 34.451,
+    "R_late": 32.632,
+    "J5_late": 32.058,
+    "w_e": 0.0
+   }
+  },
+  "US_NYIS": {
+   "era5": {
+    "base_late": 19.3,
+    "R_late": 14.459,
+    "J5_late": 12.578,
+    "w_e": 0.45
+   },
+   "gfs": {
+    "base_late": 21.745,
+    "R_late": 16.47,
+    "J5_late": 13.232,
+    "w_e": 0.7
+   },
+   "icon": {
+    "base_late": 20.994,
+    "R_late": 15.931,
+    "J5_late": 13.204,
+    "w_e": 0.7
+   },
+   "ensemble": {
+    "base_late": 21.413,
+    "R_late": 16.12,
+    "J5_late": 13.176,
+    "w_e": 0.7
+   }
+  },
+  "US_PJM": {
+   "era5": {
+    "base_late": 21.236,
+    "R_late": 19.563,
+    "J5_late": 16.215,
+    "w_e": 0.4
+   },
+   "gfs": {
+    "base_late": 20.563,
+    "R_late": 18.24,
+    "J5_late": 15.957,
+    "w_e": 0.35
+   },
+   "icon": {
+    "base_late": 20.02,
+    "R_late": 18.2,
+    "J5_late": 16.183,
+    "w_e": 0.35
+   },
+   "ensemble": {
+    "base_late": 20.177,
+    "R_late": 18.206,
+    "J5_late": 16.109,
+    "w_e": 0.35
+   }
+  },
+  "VIC1": {
+   "era5": {
+    "base_late": 74.655,
+    "R_late": 72.646,
+    "J5_late": 65.66,
+    "w_e": 0.0
+   },
+   "gfs": {
+    "base_late": 88.494,
+    "R_late": 80.495,
+    "J5_late": 73.214,
+    "w_e": 0.0
+   },
+   "icon": {
+    "base_late": 85.943,
+    "R_late": 80.036,
+    "J5_late": 72.857,
+    "w_e": 0.0
+   },
+   "ensemble": {
+    "base_late": 85.779,
+    "R_late": 80.166,
+    "J5_late": 72.978,
+    "w_e": 0.0
+   }
+  }
+ },
+ "agg": {
+  "era5": {
+   "base": 43.579,
+   "J5": 31.008
+  },
+  "gfs": {
+   "base": 50.227,
+   "J5": 34.153
+  },
+  "icon": {
+   "base": 50.007,
+   "J5": 33.858
+  },
+  "ensemble": {
+   "base": 49.148,
+   "J5": 33.658
+  },
+  "era5_era5real": {
+   "n": 26,
+   "base": 44.855,
+   "J5": 32.801
+  },
+  "era5_no_era5": {
+   "n": 3,
+   "base": 32.517,
+   "J5": 15.467
+  },
+  "gfs_era5real": {
+   "n": 26,
+   "base": 50.947,
+   "J5": 36.257
+  },
+  "gfs_no_era5": {
+   "n": 3,
+   "base": 43.989,
+   "J5": 15.92
+  },
+  "icon_era5real": {
+   "n": 26,
+   "base": 50.756,
+   "J5": 35.926
+  },
+  "icon_no_era5": {
+   "n": 3,
+   "base": 43.521,
+   "J5": 15.936
+  },
+  "ensemble_era5real": {
+   "n": 26,
+   "base": 49.824,
+   "J5": 35.727
+  },
+  "ensemble_no_era5": {
+   "n": 3,
+   "base": 43.29,
+   "J5": 15.723
+  }
+ }
+}

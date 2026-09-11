@@ -1,0 +1,213 @@
+{
+ "summary": {
+  "base_late": 43.579,
+  "my_late": 43.722,
+  "j5_base_late": 31.008,
+  "j5_my_late": 31.028
+ },
+ "rows": {
+  "NSW1": {
+   "n": 73,
+   "base_late": 50.434,
+   "my_late": 50.717,
+   "j5_base_late": 38.439,
+   "j5_my_late": 38.636
+  },
+  "QLD1": {
+   "n": 73,
+   "base_late": 28.241,
+   "my_late": 27.508,
+   "j5_base_late": 20.597,
+   "j5_my_late": 20.555
+  },
+  "SA1": {
+   "n": 73,
+   "base_late": 87.193,
+   "my_late": 85.607,
+   "j5_base_late": 58.096,
+   "j5_my_late": 57.998
+  },
+  "UK_01_North_Scotland": {
+   "n": 72,
+   "base_late": 46.682,
+   "my_late": 46.899,
+   "j5_base_late": 35.516,
+   "j5_my_late": 35.593
+  },
+  "UK_02_South_Scotland": {
+   "n": 72,
+   "base_late": 18.234,
+   "my_late": 18.6,
+   "j5_base_late": 14.981,
+   "j5_my_late": 15.578
+  },
+  "UK_03_North_West_England": {
+   "n": 72,
+   "base_late": 27.039,
+   "my_late": 28.923,
+   "j5_base_late": 17.489,
+   "j5_my_late": 18.511
+  },
+  "UK_05_Yorkshire": {
+   "n": 72,
+   "base_late": 51.388,
+   "my_late": 56.293,
+   "j5_base_late": 26.637,
+   "j5_my_late": 26.134
+  },
+  "UK_06_North_Wales_Merseyside": {
+   "n": 72,
+   "base_late": 50.424,
+   "my_late": 50.446,
+   "j5_base_late": 36.159,
+   "j5_my_late": 36.518
+  },
+  "UK_07_South_Wales": {
+   "n": 72,
+   "base_late": 71.685,
+   "my_late": 71.854,
+   "j5_base_late": 49.091,
+   "j5_my_late": 49.107
+  },
+  "UK_08_West_Midlands": {
+   "n": 72,
+   "base_late": 65.988,
+   "my_late": 66.027,
+   "j5_base_late": 43.12,
+   "j5_my_late": 43.715
+  },
+  "UK_09_East_Midlands": {
+   "n": 72,
+   "base_late": 60.825,
+   "my_late": 61.178,
+   "j5_base_late": 48.144,
+   "j5_my_late": 49.215
+  },
+  "UK_10_East_England": {
+   "n": 72,
+   "base_late": 30.364,
+   "my_late": 30.091,
+   "j5_base_late": 26.217,
+   "j5_my_late": 26.159
+  },
+  "UK_11_South_West_England": {
+   "n": 72,
+   "base_late": 60.388,
+   "my_late": 60.43,
+   "j5_base_late": 43.135,
+   "j5_my_late": 42.878
+  },
+  "UK_12_South_England": {
+   "n": 72,
+   "base_late": 60.849,
+   "my_late": 60.74,
+   "j5_base_late": 38.817,
+   "j5_my_late": 38.906
+  },
+  "UK_13_London": {
+   "n": 72,
+   "base_late": 42.411,
+   "my_late": 41.605,
+   "j5_base_late": 35.375,
+   "j5_my_late": 35.43
+  },
+  "UK_14_South_East_England": {
+   "n": 72,
+   "base_late": 51.976,
+   "my_late": 51.969,
+   "j5_base_late": 41.789,
+   "j5_my_late": 41.802
+  },
+  "UK_15_England": {
+   "n": 72,
+   "base_late": 33.94,
+   "my_late": 34.106,
+   "j5_base_late": 22.764,
+   "j5_my_late": 22.289
+  },
+  "UK_16_Scotland": {
+   "n": 72,
+   "base_late": 25.663,
+   "my_late": 24.235,
+   "j5_base_late": 24.136,
+   "j5_my_late": 22.812
+  },
+  "UK_17_Wales": {
+   "n": 72,
+   "base_late": 56.785,
+   "my_late": 55.535,
+   "j5_base_late": 42.332,
+   "j5_my_late": 42.017
+  },
+  "UK_18_GB": {
+   "n": 72,
+   "base_late": 32.911,
+   "my_late": 32.984,
+   "j5_base_late": 21.061,
+   "j5_my_late": 21.122
+  },
+  "US_BPAT": {
+   "n": 73,
+   "base_late": 21.009,
+   "my_late": 20.668,
+   "j5_base_late": 5.833,
+   "j5_my_late": 5.826
+  },
+  "US_CISO": {
+   "n": 73,
+   "base_late": 48.125,
+   "my_late": 48.056,
+   "j5_base_late": 18.466,
+   "j5_my_late": 18.719
+  },
+  "US_ERCO": {
+   "n": 73,
+   "base_late": 39.405,
+   "my_late": 38.853,
+   "j5_base_late": 36.416,
+   "j5_my_late": 36.212
+  },
+  "US_FPL": {
+   "n": 72,
+   "base_late": 25.155,
+   "my_late": 24.71,
+   "j5_base_late": 13.931,
+   "j5_my_late": 13.897
+  },
+  "US_ISNE": {
+   "n": 73,
+   "base_late": 30.769,
+   "my_late": 31.235,
+   "j5_base_late": 16.235,
+   "j5_my_late": 16.074
+  },
+  "US_MISO": {
+   "n": 73,
+   "base_late": 30.71,
+   "my_late": 31.823,
+   "j5_base_late": 30.001,
+   "j5_my_late": 30.424
+  },
+  "US_NYIS": {
+   "n": 73,
+   "base_late": 19.3,
+   "my_late": 16.707,
+   "j5_base_late": 12.578,
+   "j5_my_late": 11.921
+  },
+  "US_PJM": {
+   "n": 72,
+   "base_late": 21.236,
+   "my_late": 21.258,
+   "j5_base_late": 16.215,
+   "j5_my_late": 16.265
+  },
+  "VIC1": {
+   "n": 73,
+   "base_late": 74.655,
+   "my_late": 78.878,
+   "j5_base_late": 65.66,
+   "j5_my_late": 65.498
+  }
+ }
+}
