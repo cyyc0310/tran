@@ -154,14 +154,20 @@ had monthly tables then).
 
 **Post-restoration re-runs (pre-registered; status 2026-09-10):**
 - FD-41 headline reproduction: DONE, pooled 42.89 -> 42.86 (reproducible).
-- FD-47 four arms on the fully restored asset: PENDING — current
-  verdict numbers are the degraded-asset version; rerun required
-  before paper citation (note: with UK fuel restored, the UK regions
-  regain monthly tables and the earlier "fallback family" framing
-  fully dissolves).
-- FD-45 Dunkelflaute buckets: PENDING — event labels and per-bucket
-  errors must be re-measured on the restored asset before the C5
-  protocol numbers enter the paper.
+- FD-47 four arms on the fully restored asset: DONE (2026-09-10
+  12:54) — pooled era5 43.98 vs ensemble 50.41: the deployment-real
+  penalty is **+6.4 pooled MAE**, and the previous "zero-penalty"
+  (-1.44) was a degraded-asset artifact.  Deployment-default
+  recommendation withdrawn: the paper headline keeps the ERA5-proxy
+  pipeline, GFS/ICON retained as a servability ablation.  With UK
+  fuel restored, UK regions regained monthly tables and the earlier
+  "fallback family" framing fully dissolves.  See the SUPERSEDED
+  block in fd47_verdict.md.
+- FD-45 Dunkelflaute buckets: DONE (2026-09-10 13:12) — significant
+  event inflations 37 -> 62; UK_16 wind_lull 3.05 -> 4.00x; new UK_01
+  4.19x compound headline; C5 narrative upgraded to the Scottish /
+  North-England belt.  See the SUPERSEDED block in
+  dunkelflaute_verdict.md.
 
 ## What actually explains the FD-47 residual degradations
 
@@ -193,6 +199,7 @@ survey's P1, and FD-48's forensics remove the join-artifact alibi: the
 errors to attack are real forecast/dispatch errors, not fixable by
 timeline surgery.
 
-Lower priority: re-download farmblend files (F4) before any future
-farmblend claim; document the 2024-01-01 tail-hole convention in the
-FD-47 protocol note.
+Lower priority: ~~re-download farmblend files (F4) before any future
+farmblend claim~~ (RESOLVED 2026-09-10 — farmblend 12/12 restored, see
+Restoration actions above); document the 2024-01-01 tail-hole
+convention in the FD-47 protocol note.
