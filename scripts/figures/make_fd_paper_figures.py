@@ -122,26 +122,23 @@ def fig_lojo():
 
     iplus = [next(x for x in lojo if x["target"] == t)["mae_ensemble_iplus"] for t in targets]
     persist = [gap4[t]["persistence_mae"] for t in targets]
-    sup_2023 = [30.3, 46.8, 92.3, 50.6]  # 2023-protocol supervised (paper Table 2)
-    sup_retrain = [(gap4[t]["patchtst_mae_s0"] + gap4[t]["patchtst_mae_s1"]) / 2
-                   for t in targets]
+    sup = [(gap4[t]["patchtst_mae_s0"] + gap4[t]["patchtst_mae_s1"]) / 2
+           for t in targets]
 
     x = np.arange(4)
-    w = 0.2
+    w = 0.26
     fig, ax = plt.subplots(figsize=(7.0, 3.9))
-    b1 = ax.bar(x - 1.5 * w, iplus, w, color=C["green"], label="I_+ (US+UK-trained)")
-    b2 = ax.bar(x - 0.5 * w, persist, w, color=C["grey"], label="Persistence")
-    b3 = ax.bar(x + 0.5 * w, sup_retrain, w, color=C["black"], label="PatchTST-sup (same-window retrain)")
-    b4 = ax.bar(x + 1.5 * w, sup_2023, w, color=C["black"], alpha=0.35,
-                label="PatchTST-sup (2023 protocol)")
-    for bars in (b1, b2, b3, b4):
-        ax.bar_label(bars, fmt="%.0f", fontsize=7.5, padding=2)
+    b1 = ax.bar(x - w, iplus, w, color=C["green"], label="I_+ (US+UK-trained)")
+    b2 = ax.bar(x, persist, w, color=C["grey"], label="Persistence")
+    b3 = ax.bar(x + w, sup, w, color=C["black"], label="PatchTST-sup (same-window retrain)")
+    for bars in (b1, b2, b3):
+        ax.bar_label(bars, fmt="%.0f", fontsize=8, padding=2)
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
     ax.set_ylabel("MAE (gCO$_2$/kWh)")
     ax.set_title("LOJO: train on US+UK only, predict all 4 Australian grids")
-    ax.legend(frameon=False, ncols=2, loc="upper left")
-    ax.set_ylim(0, 108)
+    ax.legend(frameon=False, ncols=3, loc="upper left", fontsize=8)
+    ax.set_ylim(0, 112)
     save(fig, "lojo")
 
 
