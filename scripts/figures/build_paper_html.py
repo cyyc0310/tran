@@ -23,7 +23,11 @@ REPO = Path(__file__).resolve().parent.parent.parent
 FIG_DIR = REPO / "figures"
 
 import sys
-if len(sys.argv) > 1 and sys.argv[1] == "--zh":
+args = sys.argv[1:]
+if "--fd" in args:
+    MD_PATH = REPO / "docs/paper/2026-09-17-transcif-fd-paper-zh.md"
+    OUT_PATH = REPO / "docs/paper/transcif_fd_paper_zh.html"
+elif "--zh" in args:
     MD_PATH = REPO / "docs/paper/2026-07-26-zeroshot-config-cif-paper-zh.md"
     OUT_PATH = REPO / "docs/paper/transcif_paper_zh.html"
 else:
@@ -203,7 +207,7 @@ def main():
         slug = slugify(title)
         toc_items.append((level, title, slug))
 
-    toc_html = f'<div id="sidebar"><h2>{"目录" if "--zh" in sys.argv else "Contents"}</h2><ul>\n'
+    toc_html = f'<div id="sidebar"><h2>{"目录" if ("--zh" in sys.argv or "--fd" in sys.argv) else "Contents"}</h2><ul>\n'
     for level, title, slug in toc_items:
         cls = f"toc-h{level}"
         toc_html += f'<li class="{cls}"><a href="#{slug}">{title}</a></li>\n'
@@ -221,7 +225,7 @@ def main():
 
     title_match = re.match(r'^#\s+(.+)$', orig, re.MULTILINE)
     title = title_match.group(1) if title_match else "TransCIF Paper"
-    is_zh = "--zh" in sys.argv
+    is_zh = ("--zh" in sys.argv or "--fd" in sys.argv)
     lang = "zh-CN" if is_zh else "en"
 
     html = f"""<!DOCTYPE html>
