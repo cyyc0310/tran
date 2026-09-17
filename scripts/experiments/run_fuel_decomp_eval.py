@@ -185,6 +185,7 @@ def evaluate_one(target, fd_regions, seed, epochs, device, p_cold=0.3,
                  dynamic_residual=False,
                  dynamic_residual_bound=220.0,
                  same_jurisdiction=False,
+                 cross_jurisdiction=False,
                  physics_target=False, source_route_select=False,
                  route_candidates=(0.0, 0.45, 1.1),
                  source_bias_calibrate=False,
@@ -202,6 +203,7 @@ def evaluate_one(target, fd_regions, seed, epochs, device, p_cold=0.3,
         wind_route_tau=wind_route_tau, dynamic_residual=dynamic_residual,
         dynamic_residual_bound=dynamic_residual_bound,
         same_jurisdiction=same_jurisdiction,
+        cross_jurisdiction=cross_jurisdiction,
         domain_penalty=domain_penalty,
         physics_target=physics_target, lambda_fuel=lambda_fuel,
         lambda_rs=lambda_rs)
@@ -368,6 +370,9 @@ def main():
                     help="centered forecast smoothing width; 1 disables")
     ap.add_argument("--same-jurisdiction-sources", action="store_true",
                     help="train only on other regions in target jurisdiction")
+    ap.add_argument("--cross-jurisdiction-sources", action="store_true",
+                    help="LOJO: train only on regions OUTSIDE the target "
+                         "jurisdiction (cross-continent transfer)")
     ap.add_argument("--full", action="store_true",
                     help="29-region protocol, seeds 0-4")
     ap.add_argument("--multi-year", action="store_true",
@@ -421,6 +426,7 @@ def main():
         "au_state": bool(args.au_state),
         "dynamic_residual": bool(args.dynamic_residual),
         "same_jurisdiction_sources": bool(args.same_jurisdiction_sources),
+        "cross_jurisdiction_sources": bool(args.cross_jurisdiction_sources),
         "route_candidates": args.route_candidates,
         "source_bias_calibrate": bool(args.source_bias_calibrate),
         "smooth_hours": args.smooth_hours,
@@ -473,6 +479,7 @@ def main():
                                    dynamic_residual=args.dynamic_residual,
                                    dynamic_residual_bound=args.dynamic_residual_bound,
                                    same_jurisdiction=args.same_jurisdiction_sources,
+                                   cross_jurisdiction=args.cross_jurisdiction_sources,
                                    domain_penalty=args.domain_penalty,
                                    route_candidates=tuple(args.route_candidates),
                                    source_bias_calibrate=args.source_bias_calibrate,

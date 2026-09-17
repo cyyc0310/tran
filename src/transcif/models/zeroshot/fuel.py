@@ -146,6 +146,7 @@ def train_fuel_zero_shot(fd_regions, target_name, seed=42,
                          dynamic_residual=False,
                          dynamic_residual_bound=220.0,
                          same_jurisdiction=False,
+                         cross_jurisdiction=False,
                          domain_penalty=0.0, physics_target=False,
                          device=None, pbar=None, model=None):
     """Train FuelDecompNet on all source regions for one LORO target.
@@ -205,6 +206,8 @@ def train_fuel_zero_shot(fd_regions, target_name, seed=42,
             continue
         if same_jurisdiction and jurisdiction_of(name) != jurisdiction_of(target_name):
             continue
+        if cross_jurisdiction and jurisdiction_of(name) == jurisdiction_of(target_name):
+            continue
         offsets[name] = int((data["hours"][0] - epoch0).total_seconds() // 3600)
     window = SEQ_LEN + HORIZON
     abs_start_min = max(offsets.values())
@@ -222,6 +225,8 @@ def train_fuel_zero_shot(fd_regions, target_name, seed=42,
         if name == target_name:
             continue
         if same_jurisdiction and jurisdiction_of(name) != jurisdiction_of(target_name):
+            continue
+        if cross_jurisdiction and jurisdiction_of(name) == jurisdiction_of(target_name):
             continue
         region_names.append(name)
         starts = shared_starts - offsets[name]

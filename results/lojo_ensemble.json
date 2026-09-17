@@ -1,0 +1,42 @@
+[
+ {
+  "target": "QLD1",
+  "mae_seed_mean_cfg": 35.772010803222656,
+  "mae_ensemble_cfg": 33.091285705566406,
+  "mae_seed_mean_i0": 33.6962890625,
+  "mae_ensemble_i0": 30.83245849609375,
+  "mae_seed_mean_iplus": 19.13374111025905,
+  "mae_ensemble_iplus": 19.132862815905963,
+  "train_s": 80.6
+ },
+ {
+  "target": "NSW1",
+  "mae_seed_mean_cfg": 60.20524978637695,
+  "mae_ensemble_cfg": 59.121864318847656,
+  "mae_seed_mean_i0": 53.63539505004883,
+  "mae_ensemble_i0": 52.47990798950195,
+  "mae_seed_mean_iplus": 42.315743841218726,
+  "mae_ensemble_iplus": 42.30723920773061,
+  "train_s": 79.1
+ },
+ {
+  "target": "VIC1",
+  "mae_seed_mean_cfg": 88.33711242675781,
+  "mae_ensemble_cfg": 87.62334442138672,
+  "mae_seed_mean_i0": 89.63532257080078,
+  "mae_ensemble_i0": 88.89383697509766,
+  "mae_seed_mean_iplus": 81.31735357335927,
+  "mae_ensemble_iplus": 81.31733702039459,
+  "train_s": 78.2
+ },
+ {
+  "target": "SA1",
+  "mae_seed_mean_cfg": 74.7531967163086,
+  "mae_ensemble_cfg": 74.55843353271484,
+  "mae_seed_mean_i0": 70.890869140625,
+  "mae_ensemble_i0": 70.72306823730469,
+  "mae_seed_mean_iplus": 69.25904821413768,
+  "mae_ensemble_iplus": 69.25899007942385,
+  "train_s": 83.0
+ }
+]

@@ -34,6 +34,8 @@ Traditional CIF forecasting requires months of local historical data and per-reg
 | **TransCIF-ZS+** (with test-time calibration) | Median ratio 1.08; beats persistence in **29/29 regions** (median ratio 0.94); outperforms all cross-domain methods in 27/29 regions |
 | **vs. zero-shot CarbonCast** | ZS+ wins in 8/9 representative regions (mean ratio 0.73); CarbonCast degrades up to 2.4× in cross-domain |
 | **Fused-5 + joint training** (Phase 8/9) | Five-direction fusion + differentiable ZS+ calibration → **median MAE 39.53 gCO₂/kWh** on full 29×5 LORO (sub-40); significant +1.62 vs frozen-proxy (Wilcoxon p=5×10⁻¹⁴, 79% pair-wise win); competitive with supervised PatchTST (41.47; 61% win) |
+| **FD stack vs supervised (2026-09-17)** | FuelDecomp stack (FD-41 official, 900 ep × 5 seeds): I_cfg zero-telemetry median **38.39** < PatchTST-supervised **43.47** (retrained, same windows); I_0 **36.91**, beats supervised in 17/29 regions (max win −23.5 UK_08); CarbonCast-supervised 43.42 ≈ PatchTST |
+| **LOJO cross-continent (2026-09-17)** | US+UK-trained → all 4 AU grids (FD-41 protocol): QLD1 I_+ **19.1** vs supervised 30.3 / persistence 20.2; beats supervised on **3/4** AU grids (QLD1 −37%, NSW1 −10%, VIC1 −12%); 4/4 beat persistence |
 | **Theorem 1** (error propagation identity) | Verified at floating-point precision (error 1.3×10⁻⁴) across 29 regions |
 | **Theorem 2** (transfer difficulty analysis) | U-shaped difficulty curve over renewable share; weighted config distance correlates with zero-shot ratio r=0.58 (p=0.001) |
 | **Conformal prediction** | Valid 90% coverage in 25/29 zero-shot regions, step-stratified split calibration |
