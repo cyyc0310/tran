@@ -145,6 +145,7 @@ def train_fuel_zero_shot(fd_regions, target_name, seed=42,
                          wind_route_tau=1.1,
                          dynamic_residual=False,
                          dynamic_residual_bound=220.0,
+                         cold_wx_hist=False,
                          same_jurisdiction=False,
                          cross_jurisdiction=False,
                          domain_penalty=0.0, physics_target=False,
@@ -187,7 +188,8 @@ def train_fuel_zero_shot(fd_regions, target_name, seed=42,
                               solar_mod_bound=solar_mod_bound,
                               wind_route_tau=wind_route_tau,
                               dynamic_residual=dynamic_residual,
-                              dynamic_residual_bound=dynamic_residual_bound)
+                              dynamic_residual_bound=dynamic_residual_bound,
+                              cold_wx_hist=cold_wx_hist)
     if device:
         model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)

@@ -80,9 +80,15 @@ class FuelDecompNet(nn.Module):
                  config_dim=16, hidden=32, use_hypernet=False,
                  ef_corr_bound=0.35, solar_mod_bound=0.4,
                  wind_route_tau=1.1, dynamic_residual=False,
-                 dynamic_residual_bound=220.0):
+                 dynamic_residual_bound=220.0, cold_wx_hist=False):
         super().__init__()
         self.horizon = horizon
+        # FD-48 (opt-in): cold-mode wind reference may blend the OBSERVED
+        # trailing-week weather with the climatology slot.  Reanalysis
+        # history is public and carries no share/CIF telemetry, so the
+        # I_cfg "no live telemetry" semantics are preserved.  Default off
+        # keeps the FD-41 forward bit-identical.
+        self.cold_wx_hist = bool(cold_wx_hist)
         self.n_weather = n_weather
         self.n_exog = n_exog
         self.use_hypernet = use_hypernet
@@ -317,6 +323,19 @@ class FuelDecompNet(nn.Module):
             lull = torch.sigmoid(8.0 * (0.75 - reg_ratio))  # 1 -> lull
             wcf_ref = (1.0 - 0.6 * lull) * wcf_ref + 0.6 * lull * wcf_cfg_ref
         # Bounded ratio: wind CF forecasts are noisy proxies, never 10x.
+        # FD-48 (opt-in, default off): in cold mode blend the observed
+        # trailing-week wind regime into the reference BEFORE the ratio so
+        # the normalisation tracks the current season instead of the annual
+        # climatology.  Reanalysis history is public and carries no
+        # share/CIF telemetry, so I_cfg semantics are preserved.
+        if self.cold_wx_hist:
+            wx_wind_raw = x_weather[:, -w168:, _WX_WIND_CF]
+            has_hist_wx = (wx_wind_raw != 0).any(dim=1, keepdim=True)
+            wx_hist_ref = wx_wind_raw.mean(dim=1, keepdim=True)
+            wx_ref_cold = torch.where(has_hist_wx, wx_hist_ref,
+                                      wcf_cfg_ref)
+            wcf_ref = torch.where(hm > 0.5, wcf_ref,
+                                  0.7 * wx_ref_cold + 0.3 * wcf_cfg_ref)
         wcf_norm = (wcf_fut / wcf_ref).clamp(0.2, 3.0)   # mean ~ 1 in history mode
 
         hist_wind = x_fuel_g[:, -w168:, _IDX_WIND].mean(dim=1, keepdim=True)

@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """Build a self-contained, publication-style HTML page from the paper markdown.
 
-Key fixes vs v1:
-  - Images: base64-embedded (no relative path issues, works with file://)
-  - Math: protect $...$ and $$...$$ before markdown parsing, restore after,
-    so underscores/subscripts are not mangled into <em> tags
-  - MathJax 3 with pre-process protection
+v3 (2026-09-18) — UI redesign:
+  - Hero header with metrics band (fd mode), serif display headings
+  - Sticky scrollspy sidebar TOC, top progress bar, back-to-top button
+  - Carded paper body: rounded figures, tinted tables, soft quote blocks
+  - Pipeline unchanged: math protection, base64 images, python-markdown, MathJax 3
 
 Usage:
-    python scripts/figures/build_paper_html.py
+    python scripts/figures/build_paper_html.py --fd | --zh | (none)
 Output:
-    docs/paper/transcif_paper.html
+    docs/paper/transcif_fd_paper_zh.html | transcif_paper_zh.html | transcif_paper.html
 """
 
 import base64
 import re
+import sys
 from pathlib import Path
 
 import markdown
@@ -22,9 +23,9 @@ import markdown
 REPO = Path(__file__).resolve().parent.parent.parent
 FIG_DIR = REPO / "figures"
 
-import sys
 args = sys.argv[1:]
-if "--fd" in args:
+FD_MODE = "--fd" in args
+if FD_MODE:
     MD_PATH = REPO / "docs/paper/2026-09-17-transcif-fd-paper-zh.md"
     OUT_PATH = REPO / "docs/paper/transcif_fd_paper_zh.html"
 elif "--zh" in args:
@@ -37,7 +38,6 @@ else:
 MIME = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
         ".gif": "image/gif", ".svg": "image/svg+xml"}
 
-
 def img_to_base64(img_path: Path) -> str:
     """Read an image file and return a data URI."""
     suffix = img_path.suffix.lower()
@@ -45,14 +45,8 @@ def img_to_base64(img_path: Path) -> str:
     data = base64.b64encode(img_path.read_bytes()).decode("ascii")
     return f"data:{mime};base64,{data}"
 
-
 def preprocess(md_text: str) -> tuple[str, dict]:
-    """Protect math and convert image paths to base64 placeholders.
-
-    Returns (processed_markdown, math_store) where math_store maps
-    placeholders back to original LaTeX.
-    """
-    # --- Step 1: Protect all math from markdown mangling ---
+    """Protect math and convert image paths to base64 placeholders."""
     math_store = {}
     counter = [0]
 
@@ -63,18 +57,15 @@ def preprocess(md_text: str) -> tuple[str, dict]:
         counter[0] += 1
         return key
 
-    # Protect display math first ($$...$$), then inline ($...$)
     md_text = re.sub(r'\$\$[^\$]+\$\$', stash_math, md_text)
     md_text = re.sub(r'\$[^\$\n]+?\$', stash_math, md_text)
 
-    # --- Step 2: Convert <img src="...figures/xxx.png"> to base64 ---
     def replace_img(match):
         full_match = match.group(0)
         src_match = re.search(r'src="([^"]+)"', full_match)
         if not src_match:
             return full_match
         src = src_match.group(1)
-        # Normalize path: remove any ../ or leading figures/
         fname = Path(src).name
         img_path = FIG_DIR / fname
         if img_path.exists():
@@ -84,21 +75,14 @@ def preprocess(md_text: str) -> tuple[str, dict]:
 
     md_text = re.sub(r'<img[^>]+src="[^"]+"[^>]*/?>', replace_img, md_text)
 
-    # --- Step 3: Convert inline figure references like `figures/xxx.png`
-    # (used in Chinese version as "图：`figures/xxx.png`") to <img> tags ---
     def inline_fig_to_img(match):
-        fname = match.group(1)
-        # Extract just the filename
-        fname = Path(fname).name
+        fname = Path(match.group(1)).name
         img_path = FIG_DIR / fname
         if img_path.exists():
             data_uri = img_to_base64(img_path)
             return f'<p align="center"><img src="{data_uri}" width="70%"></p>'
         return match.group(0)
 
-    # Match: 图：`figures/xxx.png`  or  Figure: `figures/xxx.png`
-    # Also match patterns like: `figures/xxx.png`、`figures/yyy.png` (Chinese enumeration)
-    # Replace each `figures/xxx.png` code span with an embedded image
     md_text = re.sub(r'`figures/([a-zA-Z0-9_./-]+\.png)`',
                      lambda m: (lambda f: f'<p align="center"><img src="{img_to_base64(FIG_DIR / Path(m.group(1)).name)}" width="70%"></p>'
                                if (FIG_DIR / Path(m.group(1)).name).exists() else m.group(0))(m),
@@ -106,84 +90,194 @@ def preprocess(md_text: str) -> tuple[str, dict]:
 
     return md_text, math_store
 
-
 def restore_math(html: str, math_store: dict) -> str:
-    """Restore LaTeX from placeholders in the generated HTML."""
     for key, original in math_store.items():
         html = html.replace(key, original)
     return html
-
-
-CSS = """
-:root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --muted: #666;
-  --accent: #2563eb;
-  --border: #ddd;
-  --code-bg: #f0f0f0;
-  --sidebar-bg: #f7f8fa;
-  --table-stripe: #f7f8fa;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1a1a2e; --fg: #d4d4d4; --muted: #999; --accent: #60a5fa;
-    --border: #333; --code-bg: #252535; --sidebar-bg: #161628; --table-stripe: #202030;
-  }
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg); color: var(--fg); line-height: 1.75; font-size: 15px;
-}
-#sidebar {
-  position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
-  overflow-y: auto; background: var(--sidebar-bg); border-right: 1px solid var(--border);
-  padding: 20px 14px; font-size: 13px; z-index: 100;
-}
-#sidebar h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 8px; }
-#sidebar ul { list-style: none; }
-#sidebar li { margin: 1px 0; }
-#sidebar a { color: var(--fg); text-decoration: none; display: block; padding: 3px 8px; border-radius: 4px; }
-#sidebar a:hover { background: var(--border); color: var(--accent); }
-#sidebar .toc-h2 { padding-left: 8px; font-weight: 600; }
-#sidebar .toc-h3 { padding-left: 24px; font-size: 12px; color: var(--muted); }
-#content { margin-left: 260px; max-width: 820px; padding: 40px 48px 80px; }
-h1 { font-size: 25px; line-height: 1.35; margin-bottom: 6px; }
-h2 { font-size: 21px; margin-top: 36px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 2px solid var(--accent); }
-h3 { font-size: 17px; margin-top: 26px; margin-bottom: 6px; }
-p { margin: 8px 0; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-strong { font-weight: 700; }
-code { background: var(--code-bg); padding: 1px 5px; border-radius: 3px; font-family: 'SF Mono','Fira Code',Consolas,monospace; font-size: .88em; }
-pre { background: var(--code-bg); padding: 12px 16px; border-radius: 6px; overflow-x: auto; margin: 10px 0; }
-pre code { background: none; padding: 0; }
-table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 12.5px; }
-th, td { border: 1px solid var(--border); padding: 5px 9px; text-align: left; }
-th { background: var(--sidebar-bg); font-weight: 700; }
-tr:nth-child(even) { background: var(--table-stripe); }
-p[align="center"] { margin: 18px auto; text-align: center; }
-p[align="center"] img { max-width: 100%; border-radius: 6px; box-shadow: 0 1px 10px rgba(0,0,0,.1); border: 1px solid var(--border); }
-p[align="center"] em { display: block; font-size: 12.5px; color: var(--muted); margin-top: 6px; max-width: 92%; margin-left: auto; margin-right: auto; }
-hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
-blockquote { border-left: 3px solid var(--accent); padding-left: 14px; margin: 12px 0; color: var(--muted); }
-@media (max-width: 900px) {
-  #sidebar { display: none; }
-  #content { margin-left: 0; padding: 20px; }
-}
-@media print {
-  #sidebar { display: none; }
-  #content { margin: 0; padding: 0; max-width: 100%; }
-  p[align="center"] img { box-shadow: none; }
-}
-"""
-
 
 def slugify(text: str) -> str:
     s = re.sub(r'[^\w\s-]', '', text.lower())
     return re.sub(r'[\s]+', '-', s.strip())
 
+CSS = """
+:root{
+  --bg:#f5f6f3; --paper:#ffffff; --ink:#20261f; --muted:#6b736c; --line:#e4e7e1;
+  --primary:#0a6e4e; --primary-deep:#07412f; --soft:#eaf3ee; --soft-2:#f4f9f6;
+  --amber:#b45309; --code-bg:#13211b; --code-ink:#d9e7df; --sel:#bfe3d2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+::selection{background:var(--sel)}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC",
+     "Segoe UI",Roboto,"Microsoft YaHei",sans-serif;
+     background:var(--bg);color:var(--ink);font-size:16px;line-height:1.9;
+     -webkit-font-smoothing:antialiased;}
+
+/* ---- progress bar & back-to-top ---- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:300;
+  background:linear-gradient(90deg,#0a6e4e,#2fa47f);}
+#totop{position:fixed;right:28px;bottom:28px;width:44px;height:44px;border-radius:50%;
+  background:var(--primary);color:#fff;border:none;cursor:pointer;font-size:17px;
+  box-shadow:0 6px 20px rgba(10,110,78,.35);opacity:0;pointer-events:none;
+  transition:opacity .25s,background .2s;z-index:200;}
+#totop.show{opacity:1;pointer-events:auto}
+#totop:hover{background:var(--primary-deep)}
+
+/* ---- hero ---- */
+.hero{margin-left:264px;
+  background:radial-gradient(1100px 480px at 82% -12%,rgba(47,164,127,.28),transparent 62%),
+             linear-gradient(135deg,#0b1f18 0%,#0f3327 55%,#0a4a37 100%);
+  color:#f3f7f4;padding:64px 48px 104px;}
+.hero-inner{max-width:920px;margin:0 auto;}
+.hero-kicker{font-size:12px;letter-spacing:.24em;color:#7fd0ae;margin-bottom:18px;
+  font-weight:600;}
+.hero h1{font-family:"Songti SC","Noto Serif SC","Source Han Serif SC","Times New Roman",serif;
+  font-size:34px;line-height:1.5;font-weight:700;color:#fff;margin-bottom:14px;}
+.hero-sub{font-size:15.5px;color:#b9cdc2;line-height:1.8;}
+.hero-metrics{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+.hero-metrics .m{flex:1 1 190px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:16px 18px 14px;}
+.hero-metrics b{display:block;font-size:27px;color:#fff;font-weight:700;line-height:1.25;
+  font-variant-numeric:tabular-nums;}
+.hero-metrics span{font-size:12.5px;color:#a8bfb2;line-height:1.5;display:block;margin-top:3px;}
+
+/* ---- sidebar TOC ---- */
+#sidebar{position:fixed;top:0;left:0;width:264px;height:100vh;overflow-y:auto;
+  background:#fbfcfa;border-right:1px solid var(--line);
+  padding:30px 16px 48px;font-size:13.5px;z-index:100;}
+#sidebar h2{font-size:11.5px;letter-spacing:.2em;color:var(--muted);font-weight:600;
+  margin:0 0 14px 10px;border:none;padding:0;}
+#sidebar ul{list-style:none}
+#sidebar li{margin:2px 0}
+#sidebar a{display:block;color:#3d4640;text-decoration:none;padding:5px 10px;
+  border-radius:6px;border-left:2px solid transparent;line-height:1.55;}
+#sidebar a:hover{background:var(--soft);color:var(--primary)}
+#sidebar a.active{background:var(--soft);color:var(--primary);font-weight:600;
+  border-left-color:var(--primary)}
+#sidebar .toc-h3{padding-left:26px;font-size:12.5px;color:var(--muted)}
+#sidebar .toc-h3.active{color:var(--primary)}
+
+/* ---- content ---- */
+#content{margin-left:264px;padding:0 48px;}
+.paper{max-width:880px;margin:-64px auto 80px;background:var(--paper);
+  border:1px solid var(--line);border-radius:16px;padding:56px 64px 72px;
+  box-shadow:0 1px 2px rgba(20,40,30,.04),0 16px 44px rgba(20,40,30,.07);position:relative;}
+#content h1:first-child{display:none}
+h2,h3{font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",serif;letter-spacing:.02em;}
+h2{font-size:23px;font-weight:700;margin:52px 0 20px;padding-bottom:12px;
+  border-bottom:1px solid var(--line);position:relative;line-height:1.5;}
+h2:first-child{margin-top:0}
+h2::before{content:"";position:absolute;left:0;bottom:-2px;width:64px;height:3px;
+  background:var(--primary);border-radius:2px;}
+h3{font-size:18.5px;font-weight:700;margin:36px 0 14px;padding-left:14px;
+  border-left:4px solid var(--primary);line-height:1.55;}
+p{margin:13px 0;text-align:justify;}
+a{color:var(--primary);text-decoration:none;border-bottom:1px solid transparent;}
+a:hover{border-bottom-color:var(--primary)}
+strong{font-weight:700;color:#17402f;}
+em{color:inherit}
+ul,ol{margin:12px 0;padding-left:1.6em}
+li{margin:6px 0}
+code{background:#eef2ee;border:1px solid #e0e6e0;padding:1.5px 6px;border-radius:5px;
+  font-size:.87em;font-family:"SF Mono",Menlo,Consolas,"JetBrains Mono",monospace;}
+pre{background:var(--code-bg);color:var(--code-ink);padding:16px 20px;border-radius:10px;
+  overflow-x:auto;margin:18px 0;font-size:13px;line-height:1.75;}
+pre code{background:none;border:none;padding:0;color:inherit;font-size:1em;}
+blockquote{border-left:4px solid var(--primary);background:var(--soft);
+  padding:14px 20px;border-radius:0 10px 10px 0;margin:18px 0;color:#2c3a33;}
+blockquote p{margin:8px 0}
+hr{border:none;border-top:1px solid var(--line);margin:32px 0;}
+
+/* ---- tables ---- */
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;line-height:1.6;}
+th{background:var(--primary-deep);color:#fff;font-weight:600;padding:9px 12px;
+  text-align:left;border-bottom:2px solid #05281d;}
+td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+tr:nth-child(even) td{background:var(--soft-2);}
+tbody tr:hover td{background:var(--soft);}
+caption{caption-side:bottom;font-size:12.5px;color:var(--muted);padding-top:8px;}
+
+/* ---- figures ---- */
+p[align="center"]{margin:28px auto 10px;text-align:center;}
+p[align="center"] img{max-width:100%;height:auto;border-radius:10px;
+  border:1px solid var(--line);box-shadow:0 10px 30px rgba(15,50,35,.09);}
+p[align="center"] em{display:block;font-size:13px;color:var(--muted);margin-top:12px;
+  max-width:92%;margin-left:auto;margin-right:auto;line-height:1.7;text-align:center;}
+
+/* ---- misc ---- */
+.MathJax_Display{margin:20px 0!important;}
+@media (max-width:1080px){
+  #sidebar{display:none}
+  .hero{margin-left:0;padding:52px 22px 84px}
+  .hero h1{font-size:26px}
+  #content{margin-left:0;padding:0 0}
+  .paper{margin:-48px 16px 56px;padding:34px 22px 44px;border-radius:12px}
+}
+@media print{
+  #sidebar,#totop,#progress{display:none!important}
+  body{background:#fff;font-size:12.5px}
+  .hero{background:#fff!important;color:#000;margin:0;padding:20px 0 16px;
+        border-bottom:2px solid #222}
+  .hero h1{color:#000;font-size:21px;margin-bottom:6px}
+  .hero-kicker{color:#555}.hero-sub{color:#444}
+  .hero-metrics{display:none}
+  #content{margin:0;padding:0}
+  .paper{border:none;box-shadow:none;border-radius:0;max-width:100%;
+         margin:0;padding:10px 0}
+  p[align="center"] img{box-shadow:none}
+  a{color:#000}
+}
+"""
+
+SCRIPT = """
+(function(){
+  var bar=document.getElementById('progress');
+  var toTop=document.getElementById('totop');
+  var links=Array.prototype.slice.call(document.querySelectorAll('#sidebar a'));
+  var heads=Array.prototype.slice.call(document.querySelectorAll('#content h2[id], #content h3[id]'));
+  function onScroll(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    if(bar) bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+    if(toTop) toTop.classList.toggle('show',h.scrollTop>600);
+    var cur='';
+    for(var i=0;i<heads.length;i++){
+      if(heads[i].getBoundingClientRect().top<=150) cur=heads[i].id;
+    }
+    for(var j=0;j<links.length;j++){
+      var href=links[j].getAttribute('href')||'';
+      links[j].classList.toggle('active', href==='#'+cur);
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+  if(toTop) toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+"""
+
+def build_hero(title: str, zh: bool) -> str:
+    if FD_MODE:
+        return f"""<header class="hero"><div class="hero-inner">
+  <div class="hero-kicker">FD STACK · REVISED 2026-09-17</div>
+  <h1>{title}</h1>
+  <p class="hero-sub">FuelDecompNet 物理分解 · 信息层级 · 跨洲迁移 —— 零遥测条件下的日前碳强度预测</p>
+  <div class="hero-metrics">
+    <div class="m"><b>38.4</b><span>零遥测中位 MAE · gCO₂/kWh</span></div>
+    <div class="m"><b>29</b><span>真实电力区域 · 3 司法辖区</span></div>
+    <div class="m"><b>+6.4</b><span>真实业务天气惩罚 · pooled MAE</span></div>
+    <div class="m"><b>4.19×</b><span>事件日最大误差膨胀</span></div>
+  </div>
+</div></header>"""
+    sub = ("Zero-shot cross-region carbon intensity forecasting · "
+           "config-only paradigm") if not zh else "零样本跨区域碳强度预测 · config-only 范式"
+    return f"""<header class="hero"><div class="hero-inner">
+  <div class="hero-kicker">TECHNICAL REPORT</div>
+  <h1>{title}</h1>
+  <p class="hero-sub">{sub}</p>
+</div></header>"""
 
 def main():
     md_text = MD_PATH.read_text()
@@ -191,11 +285,8 @@ def main():
 
     md = markdown.Markdown(extensions=['tables', 'fenced_code', 'sane_lists'])
     body_html = md.convert(md_text)
-
-    # Restore protected math
     body_html = restore_math(body_html, math_store)
 
-    # Build TOC from original headings (before math protection doesn't matter for titles)
     orig = MD_PATH.read_text()
     toc_items = []
     for line in orig.split('\n'):
@@ -203,30 +294,30 @@ def main():
         if not m:
             continue
         level = len(m.group(1))
-        title = m.group(2).strip()
-        slug = slugify(title)
-        toc_items.append((level, title, slug))
+        title_h = m.group(2).strip()
+        toc_items.append((level, title_h, slugify(title_h)))
 
-    toc_html = f'<div id="sidebar"><h2>{"目录" if ("--zh" in sys.argv or "--fd" in sys.argv) else "Contents"}</h2><ul>\n'
-    for level, title, slug in toc_items:
+    is_zh = FD_MODE or "--zh" in args
+    lang = "zh-CN" if is_zh else "en"
+    toc_label = "目录" if is_zh else "Contents"
+    toc_html = f'<div id="sidebar"><h2>{toc_label}</h2><ul>\n'
+    for level, title_h, slug in toc_items:
         cls = f"toc-h{level}"
-        toc_html += f'<li class="{cls}"><a href="#{slug}">{title}</a></li>\n'
+        toc_html += f'<li class="{cls}"><a href="#{slug}">{title_h}</a></li>\n'
     toc_html += '</ul></div>'
 
-    # Add id attributes to h2/h3 headings in body for TOC anchors
-    for level, title, slug in toc_items:
+    for level, title_h, slug in toc_items:
         tag = f'h{level}'
-        # Find the heading in body_html and add id
-        # Markdown may have already added id via toc extension, but we disabled it
-        # So let's add manually
-        escaped_title = re.escape(title)
-        pattern = f'(<{tag}>){escaped_title}'
-        body_html = re.sub(pattern, rf'\1 id="{slug}">{title}', body_html, count=1)
+        escaped_title = re.escape(title_h)
+        pattern = f'<{tag}>{escaped_title}</{tag}>'
+        body_html = re.sub(pattern,
+                           lambda m: f'<{tag} id="{slug}">{title_h}</{tag}>',
+                           body_html, count=1)
 
     title_match = re.match(r'^#\s+(.+)$', orig, re.MULTILINE)
-    title = title_match.group(1) if title_match else "TransCIF Paper"
-    is_zh = ("--zh" in sys.argv or "--fd" in sys.argv)
-    lang = "zh-CN" if is_zh else "en"
+    title = title_match.group(1).strip() if title_match else "TransCIF Paper"
+
+    hero = build_hero(title, is_zh)
 
     html = f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -245,10 +336,16 @@ window.MathJax = {{
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
+<div id="progress"></div>
+{hero}
 {toc_html}
 <div id="content">
+  <div class="paper">
 {body_html}
+  </div>
 </div>
+<button id="totop" aria-label="回到顶部">↑</button>
+<script>{SCRIPT}</script>
 </body>
 </html>"""
 
@@ -257,7 +354,6 @@ window.MathJax = {{
     print(f"[WRITE] {OUT_PATH} ({size_kb:.0f} KB)")
     print(f"  Math placeholders restored: {len(math_store)}")
     print(f"  Open: open {OUT_PATH}")
-
 
 if __name__ == "__main__":
     main()

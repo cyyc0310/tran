@@ -1,6 +1,6 @@
 # Zero-Shot Cross-Region Carbon Intensity Forecasting via Physics-Informed Adaptive Decomposition with Configuration-Driven Domain Transfer
 
-**Draft status:** full-length draft (target: *Applied Energy*; alternates: IEEE TSTE, *Energy*). This draft supersedes `2026-07-22-transcif-full-paper.md` (the fine-tuning-era draft) and is organized around the **config-only zero-shot** paradigm validated in Phases 1–3 of the Q1 submission plan.
+**Draft status:** full-length draft. This draft supersedes `2026-07-22-transcif-full-paper.md` (the fine-tuning-era draft) and is organized around the **config-only zero-shot** paradigm validated in Phases 1–3 of the Q1 submission plan.
 
 **Data disclosure.** All numerical results are computed on real hourly data from 29 electricity regions across three jurisdictions: 4 Australian NEM regions (AEMO 2023), 17 UK DNO regions (National Grid ESO Carbon Intensity API), and 8 US balancing authorities (EIA-930). No synthetic data underlies any reported metric. Every number is traceable to `results/*.json` produced by the scripts listed in the Reproducibility section.
 

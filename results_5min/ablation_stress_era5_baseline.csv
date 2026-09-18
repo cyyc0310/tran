@@ -1,0 +1,13 @@
+prov,scenario,delta
+shanxi,baseline,0.0
+shanxi,heatwave_+12C_calm,8.7
+shanxi,cold_snap_-15C,1.5
+shanxi,typhoon_gale_30ms,9.6
+shanxi,dunkelflaute_-12C_nowind_nosun,13.1
+shanxi,nan_input_corrupt,raise(fail-fast)
+shanghai,baseline,0.0
+shanghai,heatwave_+12C_calm,0.6
+shanghai,cold_snap_-15C,0.2
+shanghai,typhoon_gale_30ms,0.7
+shanghai,dunkelflaute_-12C_nowind_nosun,1.1
+shanghai,nan_input_corrupt,raise(fail-fast)

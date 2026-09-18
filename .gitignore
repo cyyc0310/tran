@@ -30,6 +30,18 @@ results/joint_train_runs/
 out/
 .zcode/
 
+# run logs & scratch
+nohup.out
+results/*.log
+
+# HF models cache
+.hf_cache/
+
+# npz run caches
+results/fd47_mwx_ab/
+results/fd50p_cache/
+results/gap4_sup_cache/
+
 # build / install metadata (editable install)
 *.egg-info/
 build/

@@ -1,6 +1,6 @@
 # 基于物理信息自适应分解与配置驱动域迁移的零样本跨区域碳强度预测
 
-**草稿状态：** 完整篇幅草稿（目标期刊：*Applied Energy*；备选：IEEE TSTE、*Energy*）。本稿取代 `2026-07-22-transcif-full-paper.md`（微调时代草稿），围绕 Q1 投稿计划 Phase 1–3 验证的 **config-only 零样本** 范式组织。本文为 `2026-07-26-zeroshot-config-cif-paper.md` 的中文对照版，两版数字与结论完全一致。
+**草稿状态：** 完整篇幅草稿。本稿取代 `2026-07-22-transcif-full-paper.md`（微调时代草稿），围绕 Q1 投稿计划 Phase 1–3 验证的 **config-only 零样本** 范式组织。本文为 `2026-07-26-zeroshot-config-cif-paper.md` 的中文对照版，两版数字与结论完全一致。
 
 **数据声明。** 所有数值结果均基于 3 个司法辖区、29 个电力区域的真实逐时数据：4 个澳大利亚 NEM 区域（AEMO 2023）、17 个英国 DNO 区域（National Grid ESO Carbon Intensity API）、8 个美国平衡区（EIA-930）。任何报告指标均不含合成数据。每个数字均可追溯至 Reproducibility 一节所列脚本产出的 `results/*.json`。
 
