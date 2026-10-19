@@ -1,1 +1,1 @@
-"""Physics decomposition layer (Theorem 1 / Theorem 2)."""
+"""Capacity-constrained dispatch and approximate renewable transforms."""

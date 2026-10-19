@@ -1,1 +1,1 @@
-"""Evaluation metrics and LORO experiment orchestration."""
+"""Forecast diagnostics and fixed-energy scheduling proxy costs."""

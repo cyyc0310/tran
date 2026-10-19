@@ -1,1 +1,1 @@
-"""Data loading, windowing, and dataset wrappers."""
+"""Publication-aware public inputs and separate supervision labels."""

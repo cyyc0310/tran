@@ -1,36 +1,17 @@
-"""Local-time calendar features for TransCIF-FD.
-
-Datetime cyclicals in LOCAL time (EnsembleCI, arXiv 2505.01959, finds
-sin/cos hour/day-of-week/day-of-year among the most important cross-grid
-features).  Dataset timestamps are UTC; local time is reconstructed with
-the per-region standard-time offset from ``region_meta`` (DST ignored,
-< 1 h effect at hourly resolution).
-"""
+"""Calendar covariates with an explicit civil timezone or fixed market offset."""
 
 import numpy as np
 import pandas as pd
 
+from transcif.data.asof import utc
 
-def calendar_features(hours, tz_offset=0.0):
-    """Cyclical local-time calendar features.
 
-    Args:
-        hours     : pd.DatetimeIndex / array of pd.Timestamp in UTC
-        tz_offset : standard-time UTC offset in hours (e.g. -8 for PST)
-
-    Returns (T, 6) float32: [sin h, cos h, sin dow, cos dow, sin doy, cos doy]
-    with h = local hour-of-day / 24, dow = local day-of-week / 7 and
-    doy = local day-of-year / 365.25, each mapped to the unit circle.
-    """
-    if not isinstance(hours, pd.DatetimeIndex):
-        hours = pd.DatetimeIndex(hours)
-    local = hours + pd.to_timedelta(tz_offset, unit="h")
-    h = (local.hour.values + 0.5) / 24.0
-    dow = local.dayofweek.values.astype(np.float64) / 7.0
-    doy = (local.dayofyear.values - 0.5) / 365.25
-    feats = np.stack([
-        np.sin(2 * np.pi * h), np.cos(2 * np.pi * h),
-        np.sin(2 * np.pi * dow), np.cos(2 * np.pi * dow),
-        np.sin(2 * np.pi * doy), np.cos(2 * np.pi * doy),
-    ], axis=1)
-    return feats.astype(np.float32)
+def calendar_features(hours, timezone="UTC", tz_offset=None):
+    times = utc(hours)
+    local = (times + pd.to_timedelta(tz_offset, unit="h") if tz_offset is not None
+             else times.tz_convert(timezone))
+    phases = ((local.hour.to_numpy() + 0.5) / 24,
+              local.dayofweek.to_numpy() / 7,
+              (local.dayofyear.to_numpy() - 0.5) / 365.25)
+    return np.stack([f(2 * np.pi * phase) for phase in phases
+                     for f in (np.sin, np.cos)], axis=-1).astype(np.float32)

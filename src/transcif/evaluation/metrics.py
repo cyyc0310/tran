@@ -1,12 +1,31 @@
-"""Evaluation metrics for CIF forecasting (MAE, RMSE, sMAPE)."""
+"""Point, empirical-distribution and path diagnostics (no coverage guarantees)."""
 
 import numpy as np
 
 
-def compute_metrics(pred, true):
-    """Return MAE, RMSE, sMAPE between predictions and ground truth."""
-    mae = float(np.abs(pred - true).mean())
-    rmse = float(np.sqrt(np.mean((pred - true) ** 2)))
-    denom = (np.abs(pred) + np.abs(true)) / 2 + 1e-8
-    smape = float(np.mean(np.abs(pred - true) / denom) * 100)
-    return {"mae": mae, "rmse": rmse, "smape": smape}
+def ensemble_crps(truth, samples):
+    """Exact empirical-CDF CRPS, samples (N,S,H), truth (N,H)."""
+    samples, truth = np.asarray(samples, float), np.asarray(truth, float)
+    if (samples.ndim != 3 or truth.shape != samples.shape[::2] or samples.shape[1] < 2
+            or not np.isfinite(samples).all() or not np.isfinite(truth).all()):
+        raise ValueError("finite samples (N,S,H), S>=2, truth (N,H) required")
+    s = samples.shape[1]
+    coeff = (2 * np.arange(1, s + 1) - s - 1)[None, :, None]
+    spread = (np.sort(samples, axis=1) * coeff).sum(1) / s**2
+    return float((np.abs(samples - truth[:, None]).mean(1) - spread).mean())
+
+
+def forecast_metrics(truth, samples):
+    truth, samples = np.asarray(truth, float), np.asarray(samples, float)
+    crps = ensemble_crps(truth, samples)
+    point = samples.mean(1)
+    lo, hi = np.quantile(samples, [.05, .95], axis=1)
+    covered = (truth >= lo) & (truth <= hi)
+    norm = np.linalg.norm(samples - truth[:, None], axis=-1).mean()
+    spread = np.linalg.norm(samples[:, :, None] - samples[:, None, :], axis=-1).mean()
+    return {"mae": float(np.abs(point - truth).mean()),
+            "rmse": float(np.sqrt(np.square(point - truth).mean())), "crps": crps,
+            "energy_score": float((norm - spread / 2) / truth.shape[1]**.5),
+            "pointwise_90_coverage": float(covered.mean()),
+            "path_coverage_of_pointwise_90_band": float(covered.all(-1).mean()),
+            "mean_90_width": float((hi - lo).mean())}

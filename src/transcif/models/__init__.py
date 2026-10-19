@@ -1,1 +1,1 @@
-"""Model definitions: base models and zero-shot research directions."""
+"""Probabilistic dispatch model and matched-public-input references."""

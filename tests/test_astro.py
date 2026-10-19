@@ -1,4 +1,4 @@
-"""Tests for astronomy / calendar physics features (TransCIF-FD Phase FD-0)."""
+"""Sanity checks for approximate astronomy and wind transforms."""
 
 import numpy as np
 import pandas as pd

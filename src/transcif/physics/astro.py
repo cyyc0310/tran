@@ -1,20 +1,12 @@
-"""Astronomy and weather-physics features for TransCIF-FD.
+"""Approximate solar geometry and wind-power features with explicit units.
 
-Deterministic, region-transferable exogenous features computed from
-(timestamp, lat, lon) and reanalysis weather:
-
-    sin_solar_elevation  — solar geometry (Cooper declination + hour angle)
-    clearsky_ghi         — Haurwitz clear-sky envelope (W/m^2)
-    wind_capacity_factor — IEC-style turbine power curve transform
-
-These features are deployable anywhere: solar geometry needs only the
-calendar and a coordinate, and reanalysis weather (Open-Meteo) is globally
-available — the exact interface a telemetry-free target region (e.g. a
-Chinese province with monthly fuel-mix data only) can supply.
+Transforms do not certify weather availability or represent outages,
+curtailment, turbine diversity, or a full photovoltaic conversion model.
 """
 
 import numpy as np
-import pandas as pd
+
+from transcif.data.asof import utc
 
 
 def solar_declination(dayofyear):
@@ -33,8 +25,7 @@ def sin_solar_elevation(hours, lat, lon):
 
     Returns float64 array in [-1, 1].  Nighttime values <= 0.
     """
-    if not isinstance(hours, pd.DatetimeIndex):
-        hours = pd.DatetimeIndex(hours)
+    hours = utc(hours)
     doy = hours.dayofyear.values.astype(np.float64)
     dec = solar_declination(doy)
     # Decimal UTC hour
@@ -49,7 +40,7 @@ def sin_solar_elevation(hours, lat, lon):
 def clearsky_ghi(sin_elev):
     """Haurwitz clear-sky global horizontal irradiance (W/m^2).
 
-    GHI_cs = 1098 * sin(elev) * exp(-0.057 / sin(elev)) for sin(elev) > 0,
+    GHI_cs = 1098 * sin(elev) * exp(-0.059 / sin(elev)) for sin(elev) > 0,
     else 0.  A smooth, parameter-free envelope used to normalise observed
     shortwave radiation into a clear-sky index.
     """
@@ -61,7 +52,7 @@ def clearsky_ghi(sin_elev):
 
 
 def wind_capacity_factor(wind_speed_ms, v_in=3.0, v_rated=12.0, v_out=25.0):
-    """IEC-style turbine capacity factor from 100 m wind speed.
+    """Illustrative turbine capacity factor from 100 m wind speed.
 
     Piecewise: 0 below cut-in, cubic ramp ((v^3 - v_in^3) / (v_rated^3 -
     v_in^3)) between cut-in and rated, 1.0 between rated and cut-out, 0

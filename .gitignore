@@ -1,53 +1,25 @@
-.venv/
-.venv-nemed/
-.venv-nemed311/
+.venv*/
 __pycache__/
-*.pyc
+*.py[cod]
 .pytest_cache/
 .coverage
 htmlcov/
-data/raw/
-data/processed/
-
-# large generated data & cache
-.nemed_cache/
-cache_nemed/
-data_2023/
-data_2023_gen.log
-external/
-
-# partial / temp results
-*.partial.json
-scripts/results/
-scripts/**/results/
-results/joint_train_runs/
-
-# macOS / editor / agent junk
-.DS_Store
-.claude/
-.superpowers/
-.harness-worktrees/
-out/
-.zcode/
-
-# run logs & scratch
-nohup.out
-results/*.log
-
-# HF models cache
-.hf_cache/
-
-# npz run caches
-results/fd47_mwx_ab/
-results/fd50p_cache/
-results/gap4_sup_cache/
-
-# build / install metadata (editable install)
 *.egg-info/
 build/
 dist/
-*.egg
-
-
-# accidental nested project copy
+.DS_Store
+.hf_cache/
+.nemed_cache/
+cache_nemed/
+data_2023/
+/data/
+/results/
+/external/
+*.log
+nohup.out
+.claude/
+.superpowers/
+.harness-worktrees/
+.zcode/
+out/
 未命名/

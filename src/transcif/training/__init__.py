@@ -1,1 +1,1 @@
-"""Training utilities (schedulers, etc.)."""
+"""Source-only fitting and proper Monte Carlo probability scores."""
