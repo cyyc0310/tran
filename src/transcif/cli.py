@@ -5,7 +5,7 @@ def add_training_arguments(parser):
     parser.add_argument("--objective", choices=["point", "crps"], default="point")
     parser.add_argument("--selection-metric", choices=["mae", "rmse", "crps"])
     parser.add_argument("--point-estimator", choices=["mean", "median", "physical"])
-    parser.add_argument("--backbone", choices=["tcn", "context"], default="tcn")
+    parser.add_argument("--backbone", choices=["tcn", "context", "shared"], default="tcn")
     parser.add_argument("--hidden", type=int)
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--batch-size", type=int, default=16)

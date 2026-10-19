@@ -55,13 +55,14 @@ def test_explicit_point_metric_keeps_probability_scores_separate():
     assert metrics["point_definition"] == "explicit_point"
 
 
-def test_point_training_selects_source_mae_and_retains_physical_scenarios(bundle):
+@pytest.mark.parametrize("backbone", ["context", "shared"])
+def test_point_training_selects_source_mae_and_retains_physical_scenarios(bundle, backbone):
     _, doc, grids = bundle
     grid = grids["source_coal"]
     train = [grid.example(o) for o in doc["origins"][:4]]
     val = [grid.example(o) for o in doc["origins"][4:6]]
     model, result = fit(train, [grid.labels(e) for e in train], val, [grid.labels(e) for e in val],
-        steps=3, objective="point", model_config={"backbone": "context", "hidden": 16},
+        steps=3, objective="point", model_config={"backbone": backbone, "hidden": 16},
         schedule="cosine", sampler="region_balanced")
     assert result["selection_metric"] == "mae"
     assert result["selection_score"] == min(h["selection_score"] for h in result["history"])
@@ -76,9 +77,10 @@ def test_point_training_selects_source_mae_and_retains_physical_scenarios(bundle
     np.testing.assert_array_equal(pred["point_cif"], wide["point_cif"])
 
 
-def test_point_ensemble_checkpoint_cli_and_target_isolation(bundle, tmp_path):
+@pytest.mark.parametrize("backbone", ["context", "shared"])
+def test_point_ensemble_checkpoint_cli_and_target_isolation(bundle, tmp_path, backbone):
     manifest, doc, grids = bundle
-    options = {"objective": "point", "model_config": {"backbone": "context", "hidden": 16},
+    options = {"objective": "point", "model_config": {"backbone": backbone, "hidden": 16},
                "schedule": "cosine", "sampler": "region_balanced"}
     a, b = tmp_path / "a", tmp_path / "b"
     summary = run(manifest, a, steps=2, scenarios=4, mechanism_ensemble=True,

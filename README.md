@@ -30,6 +30,8 @@ python scripts/run_experiment.py --demo --demo-seed 19 --objective point \
 
 `context` 使用膨胀残差卷积、全时域均值上下文、配置 FiLM、公开净负荷特征及可学习调度平滑度。`--steps`、`--learning-rate`、`--batch-size`、`--schedule cosine` 和 `--sampler region_balanced` 可用于源域开发；外层结果不能用于选择这些设置。模拟器仍只有四个固定电网配置，更换随机种子不代表新的配置分布。
 
+`--backbone shared` 提供仅 22 个参数的共享调度对照：全局潜在位置/尺度、时间相关性及调度平滑度由源域学习，目标配置和天气通过物理层影响输出。它用于检验配置条件网络是否过拟合，不是新增的 SOTA 声明。所有模型在采样数超过天气成员数时复用成员编码；checkpoint 中 `encode_members=False` 可恢复逐情景编码以核验数值和梯度。
+
 源域留组机制集合和外层电网/种子对照可选开启：
 
 ```bash
