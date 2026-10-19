@@ -16,6 +16,16 @@ python -m pytest -q
 python scripts/run_experiment.py --demo --output results/demo
 ```
 
+源域留组机制集合和外层电网/种子对照可选开启：
+
+```bash
+python scripts/run_experiment.py --demo --mechanism-ensemble --output results/transfer
+python scripts/run_benchmark.py --manifest results/transfer/synthetic_data/manifest.json \
+  --mechanism-ensemble --seeds 0 1 2 --output results/outer-benchmark
+```
+
+集合模式中 `--scenarios` 是每个机制的路径数，其他概率基线同步使用相同总路径数。`--inner-unit jurisdiction` 将同国源域一起留出；覆盖范围有直接或间接交集的源域始终成组。至少需要两个独立源组；集合包含全源模型及每个留组模型，训练成本随源组数增长。
+
 `--demo` 生成明确标注的人工电网，只用于验证完整流程。它使用硬排序模拟调度，模型使用凸松弛调度；两者仍共享简化的物理假设。模拟分数不能作为真实电网性能证据。
 
 真实数据需按 [数据协议](docs/DATA.md) 提供 manifest：
@@ -35,6 +45,8 @@ python scripts/predict.py --checkpoint results/demo/model.pt \
   --origin '2023-03-20T00:00:00Z' --output results/prediction.json
 ```
 
+集合运行另保存 `ensemble.pt` 和 `mechanisms.npz`；将推理命令的 checkpoint 换成 `ensemble.pt` 即可得到配置支持诊断、模型间分歧和四种时段方案。配置超出源支持或任一机制的平均缺电比例超过 1% 时，推荐时段返回 `null`，候选方案仍保留用于审计。这是启发式弃权规则，没有可靠性保证。
+
 ## 实现
 
 | 模块 | 作用 |
@@ -43,9 +55,11 @@ python scripts/predict.py --checkpoint results/demo/model.pt \
 | `models/dispatch.py` | 配置条件 TCN、相关潜在状态、联合发电/CIF 情景 |
 | `physics/dispatch.py` | 容量约束凸调度及隐式梯度；显式返回未满足负荷 |
 | `training/` | 源域 CRPS、路径 energy score、燃料占比监督；源验证集选模型 |
+| `training/transfer.py`, `models/ensemble.py` | 独立源组交叉拟合、源留域尺度选择、有限机制集合及配置支持诊断 |
 | `models/baselines.py` | 同输入岭回归、公开能源占比常数；源验证残差路径构造分布 |
 | `evaluation/` | 点预测、概率与路径指标；均值/CVaR 连续时段选择 |
 | `experiment.py` | 排除目标及覆盖重叠区域，时间前推，预测完成后才评分 |
+| `benchmark.py` | 固定协议逐目标/种子运行，先平均种子再汇总电网与国家 |
 
 模型不会拟合目标排放因子或添加 CIF 残差修正。源验证残差仅用于两个对照基线。所有超参数和源域选择都应在查看外层目标分数前固定。
 

@@ -25,6 +25,10 @@ def main():
     parser.add_argument("--scenarios", type=int, default=64)
     parser.add_argument("--demo-days", type=int, default=90)
     parser.add_argument("--leave-jurisdiction-out", action="store_true")
+    parser.add_argument("--mechanism-ensemble", action="store_true",
+                        help="cross-fit independent source groups; scenarios are per mechanism")
+    parser.add_argument("--inner-unit", choices=["region", "jurisdiction"], default="region")
+    parser.add_argument("--scale-candidates", type=float, nargs="+", default=[.5, 1., 2., 4.])
     parser.add_argument("--no-target-scoring", action="store_true",
                         help="train and forecast without opening target labels")
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
@@ -40,7 +44,8 @@ def main():
         manifest = make_bundle(args.output / "synthetic_data", args.demo_days)
     summary = run(manifest, args.output, args.target, args.steps, args.seed,
                   args.scenarios, args.leave_jurisdiction_out, args.device,
-                  score_target=not args.no_target_scoring)
+                  score_target=not args.no_target_scoring, mechanism_ensemble=args.mechanism_ensemble,
+                  inner_unit=args.inner_unit, scale_candidates=args.scale_candidates)
     print(f"track={summary['track']} target={summary['target']} sources={summary['sources']}")
     for name, metric in summary["metrics"].items():
         print(f"{name}: MAE={metric['mae']:.3f} CRPS={metric['crps']:.3f} "

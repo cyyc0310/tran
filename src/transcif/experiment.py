@@ -12,13 +12,17 @@ import torch
 from transcif.data.asof import utc
 from transcif.data.dataset import FUELS, load_bundle, source_names
 from transcif.evaluation.metrics import forecast_metrics
-from transcif.evaluation.scheduling import scheduling_metrics
+from transcif.evaluation.scheduling import scheduling_metrics, mechanism_decisions, score_blocks
 from transcif.models.baselines import PublicRidge, mix_constant, residual_scenarios
+from transcif.models.ensemble import (predict_components, mixture, uncertainty_decomposition,
+                                     independent_hour_ablation, save_ensemble)
 from transcif.training.fit import fit, predict
+from transcif.training.transfer import fit_mechanisms, support_diagnostics
 
 
 def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
-        leave_jurisdiction_out=False, device="cpu", score_target=True):
+        leave_jurisdiction_out=False, device="cpu", score_target=True,
+        mechanism_ensemble=False, inner_unit="region", scale_candidates=(.5, 1., 2., 4.)):
     path, output = Path(manifest), Path(output)
     output.mkdir(parents=True, exist_ok=True)
     if (output / "summary.json").exists() or (output / "model.pt").exists():
@@ -59,25 +63,61 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
     data["test"] = [grids[target].example(o, horizon) for o in origins[masks["test"]]]
     model, training = fit(data["train"], labels["train"], data["validation"], labels["validation"],
                            steps=steps, seed=seed, device=device)
+    transfer, inner_models = None, []
+    if mechanism_ensemble:
+        inner_models, transfer = fit_mechanisms(data["train"], labels["train"],
+            data["validation"], labels["validation"], {name: grids[name] for name in sources},
+            steps=steps, seed=seed, device=device, unit=inner_unit, scale_candidates=scale_candidates)
+    # Match the total empirical scenario budget across stochastic methods.
+    draw_budget = scenarios * (len(inner_models) + 1)
     ridge = PublicRidge().fit(data["train"], labels["train"])
     val_truth = np.stack([y["cif"] for y in labels["validation"]])
     residuals = val_truth - ridge.predict(data["validation"])
-    prediction = predict(model, data["test"], scenarios, seed + 20000)
+    prediction = predict(model, data["test"], draw_budget, seed + 20000)
     ridge_draws = residual_scenarios(ridge.predict(data["test"]), residuals,
-                                    data["test"], scenarios, seed)
+                                    data["test"], draw_budget, seed)
     constant = mix_constant(data["test"])
     # Source-derived uncertainty for the constant uses its OWN residuals.
     const_residuals = val_truth - mix_constant(data["validation"])
-    constant_draws = residual_scenarios(constant, const_residuals, data["test"], scenarios, seed)
-    torch.save({"schema_version": 1, "fuels": list(FUELS),
-                "accounting": doc["accounting"], "training_track": doc["track"],
-                "cost_currency": doc["cost_currency"],
+    constant_draws = residual_scenarios(constant, const_residuals, data["test"], draw_budget, seed)
+    metadata = {"accounting": doc["accounting"], "training_track": doc["track"],
+                "cost_currency": doc["cost_currency"], "sources": sources, "target_excluded": target,
+                "train_until": str(train_until), "validation_until": str(val_until), "seed": seed}
+    torch.save({**metadata, "schema_version": 1, "fuels": list(FUELS),
                 "model_config": {"hidden": model.hidden,
                                  "dispatch_temperature": model.dispatch_temperature},
-                "state_dict": model.state_dict(), "sources": sources, "target_excluded": target,
-                "train_until": str(train_until), "validation_until": str(val_until),
-                "seed": seed}, output / "model.pt")
-    np.savez_compressed(output / "forecasts.npz", **prediction, ridge=ridge_draws,
+                "state_dict": model.state_dict()}, output / "model.pt")
+    extra, transfer_summary, decisions = {}, None, None
+    duration = min(4, horizon)
+    if transfer is not None:
+        components = predict_components([model] + inner_models, data["test"], scenarios,
+                                        seed + 40000, transfer["latent_scale"])
+        mixed = mixture(components)
+        uncertainty = uncertainty_decomposition(components["cif"])
+        support = support_diagnostics(data["test"], transfer["support"])
+        decisions = mechanism_decisions(components, support["supported"], duration)
+        scaled = predict(model, data["test"], draw_budget, seed + 20000,
+                         latent_scale=transfer["latent_scale"])
+        deterministic = predict(model, data["test"], 2, seed, deterministic=True)
+        extra = {"mechanism_mixture": mixed["cif"], "source_scaled_dispatch": scaled["cif"],
+            "independent_hour_ablation": independent_hour_ablation(mixed["cif"], seed),
+            "deterministic_dispatch": deterministic["cif"],
+            "source_scaled_unserved": scaled["unserved"], "source_scaled_demand": scaled["demand"],
+            "deterministic_unserved": deterministic["unserved"],
+            "deterministic_demand": deterministic["demand"]}
+        transfer["member_names"] = ["pooled"] + ["leave_" + "+".join(g) for g in transfer["groups"]]
+        transfer["decision_policy"] = {"duration_hours": duration, "alpha": .9,
+                                       "max_shortage": .01, "ambiguity_set": "finite_mechanisms"}
+        save_ensemble(output / "ensemble.pt", [model] + inner_models, metadata, transfer)
+        np.savez_compressed(output / "mechanisms.npz", **components, **uncertainty,
+            **{"support_" + k: v for k, v in support.items()},
+            **{"decision_" + k: v for k, v in decisions.items()})
+        transfer_summary = {**transfer, "mechanisms": len(inner_models) + 1,
+            "scenarios_per_mechanism": scenarios,
+            "unsupported_window_fraction": float((~support["supported"]).mean()),
+            "recommendation_rate": float(decisions["accepted"].mean()),
+            "mean_pointwise_variance": {k: float(v.mean()) for k, v in uncertainty.items()}}
+    np.savez_compressed(output / "forecasts.npz", **prediction, **extra, ridge=ridge_draws,
                         mix_constant=constant_draws,
                         origins=np.array([str(e.origin) for e in data["test"]]))
     metrics = {}
@@ -85,12 +125,19 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
     if scored:
         # Labels enter only here, after all predictions and fitting.
         truth = np.stack([grids[target].labels(e)["cif"] for e in data["test"]])
-        for name, draws in (("probabilistic_dispatch", prediction["cif"]),
+        distributions = [("probabilistic_dispatch", prediction["cif"]),
                              ("public_ridge_source_residuals", ridge_draws),
-                             ("published_mix_source_residuals", constant_draws)):
+                             ("published_mix_source_residuals", constant_draws)]
+        distributions += [(name, extra[name]) for name in ("mechanism_mixture", "source_scaled_dispatch",
+                            "independent_hour_ablation", "deterministic_dispatch") if name in extra]
+        for name, draws in distributions:
             metrics[name] = {**forecast_metrics(truth, draws),
                              "scheduling_mean": scheduling_metrics(truth, draws, min(4, horizon), "mean"),
                              "scheduling_cvar": scheduling_metrics(truth, draws, min(4, horizon), "cvar")}
+        if decisions is not None:
+            metrics["mechanism_mixture"]["finite_mechanism_policies"] = {
+                name: score_blocks(truth, decisions[name], duration, decisions["accepted"])
+                for name in ("mixture_mean", "mixture_cvar", "worst_mechanism_mean", "worst_mechanism_cvar")}
     shortage_fraction = float(
         np.mean(prediction["unserved"] / np.maximum(prediction["demand"], 1e-9)))
     # Fingerprint only declared, used files. Prediction-only runs do not even
@@ -115,7 +162,8 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
         "train_until": str(train_until), "validation_until": str(val_until),
         "n_windows": {key: len(values) for key, values in data.items()},
         "source_regions_only_for_fitting_and_model_selection": True,
-        "steps": steps, "seed": seed, "scenarios": scenarios, "training": training,
+        "steps": steps, "seed": seed, "scenarios": draw_budget, "training": training,
+        "transfer": transfer_summary,
         "model_parameters": sum(p.numel() for p in model.parameters()), "metrics": metrics,
         "target_scored": scored, "unserved_forecast_load_fraction": shortage_fraction,
         "runtime": {name: importlib.metadata.version(name) for name in ("torch", "numpy", "pandas")},

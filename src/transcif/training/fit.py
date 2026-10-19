@@ -11,7 +11,8 @@ from transcif.models.dispatch import ProbabilisticDispatchNet
 from transcif.training.losses import dispatch_loss
 
 
-def predict(model, examples, num_scenarios=64, seed=0, batch_size=32):
+def predict(model, examples, num_scenarios=64, seed=0, batch_size=32,
+            latent_scale=1., deterministic=False):
     if not examples:
         raise ValueError("no public examples to predict")
     model.eval()
@@ -21,7 +22,7 @@ def predict(model, examples, num_scenarios=64, seed=0, batch_size=32):
     with torch.no_grad():
         for start in range(0, len(examples), batch_size):
             forecast = model(stack_inputs(examples[start:start + batch_size], device),
-                             num_scenarios, generator)
+                             num_scenarios, generator, latent_scale, deterministic)
             for key in outputs:
                 outputs[key].append(getattr(forecast, key).cpu().numpy())
     return {key: np.concatenate(values) for key, values in outputs.items()}

@@ -50,17 +50,24 @@ class ProbabilisticDispatchNet(nn.Module):
         nn.init.zeros_(self.scale.weight)
         nn.init.constant_(self.scale.bias, -1.5)
 
-    def forward(self, inputs: ModelInputs, num_scenarios=32, generator=None):
+    def forward(self, inputs: ModelInputs, num_scenarios=32, generator=None,
+                latent_scale=1., deterministic=False):
         if num_scenarios < 2:
             raise ValueError("at least two scenarios required")
+        if not math.isfinite(latent_scale) or latent_scale <= 0:
+            raise ValueError("finite positive latent_scale required")
         b, m, h, _ = inputs.weather.shape
         device, dtype = inputs.capacity.device, inputs.capacity.dtype
         scale_mw = inputs.capacity.sum(-1).clamp_min(1)
         cfg = torch.cat([inputs.capacity / scale_mw[:, None], inputs.mix,
                          inputs.ef / 1000, inputs.cost / 100], -1)
-        member = torch.randint(m, (b, num_scenarios), device=device, generator=generator)
-        row = torch.arange(b, device=device)[:, None]
-        wx, load_forecast = inputs.weather[row, member], inputs.demand[row, member]
+        if deterministic:
+            wx = inputs.weather.mean(1)[:, None].expand(-1, num_scenarios, -1, -1)
+            load_forecast = inputs.demand.mean(1)[:, None].expand(-1, num_scenarios, -1)
+        else:
+            member = torch.randint(m, (b, num_scenarios), device=device, generator=generator)
+            row = torch.arange(b, device=device)[:, None]
+            wx, load_forecast = inputs.weather[row, member], inputs.demand[row, member]
         cfg_seq = cfg[:, None, None].expand(-1, num_scenarios, h, -1)
         calendar = inputs.calendar[:, None].expand(-1, num_scenarios, -1, -1)
         wx_scaled = wx / wx.new_tensor([30., 15., 1000.])
@@ -76,7 +83,7 @@ class ProbabilisticDispatchNet(nn.Module):
         for t in range(1, h):
             history.append(rho * history[-1] + (1 - rho.square()).sqrt() * eps[:, :, t])
         correlated = 0.6 * day_state + 0.8 * torch.stack(history, dim=2)
-        state = loc + sigma * correlated
+        state = loc if deterministic else loc + latent_scale * sigma * correlated
         availability = torch.sigmoid(2 + state[..., :6])
         capacity = inputs.capacity[:, None, None] / scale_mw[:, None, None, None]
         available = capacity * availability

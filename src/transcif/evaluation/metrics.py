@@ -6,7 +6,8 @@ import numpy as np
 def ensemble_crps(truth, samples):
     """Exact empirical-CDF CRPS, samples (N,S,H), truth (N,H)."""
     samples, truth = np.asarray(samples, float), np.asarray(truth, float)
-    if (samples.ndim != 3 or truth.shape != samples.shape[::2] or samples.shape[1] < 2
+    if (samples.ndim != 3 or min(samples.shape) < 1 or
+            truth.shape != samples.shape[::2] or samples.shape[1] < 2
             or not np.isfinite(samples).all() or not np.isfinite(truth).all()):
         raise ValueError("finite samples (N,S,H), S>=2, truth (N,H) required")
     s = samples.shape[1]
@@ -22,7 +23,12 @@ def forecast_metrics(truth, samples):
     lo, hi = np.quantile(samples, [.05, .95], axis=1)
     covered = (truth >= lo) & (truth <= hi)
     norm = np.linalg.norm(samples - truth[:, None], axis=-1).mean()
-    spread = np.linalg.norm(samples[:, :, None] - samples[:, None, :], axis=-1).mean()
+    # Accumulate paths in bounded chunks, avoiding an N*S*S*H allocation.
+    spread = 0.
+    for paths in samples:
+        for start in range(0, len(paths), 32):
+            spread += np.linalg.norm(paths[start:start + 32, None] - paths[None], axis=-1).sum()
+    spread /= samples.shape[0] * samples.shape[1]**2
     return {"mae": float(np.abs(point - truth).mean()),
             "rmse": float(np.sqrt(np.square(point - truth).mean())), "crps": crps,
             "energy_score": float((norm - spread / 2) / truth.shape[1]**.5),
