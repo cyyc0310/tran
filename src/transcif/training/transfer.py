@@ -131,6 +131,9 @@ def fit_mechanisms(train_examples, train_labels, validation_examples, validation
             "selected_step": training["selected_step"],
             "selection_metric": training["selection_metric"],
             "selection_score": training["selection_score"],
+            "learning_rate": training["learning_rate"],
+            **({"learning_rate_search": training["learning_rate_search"]}
+               if "learning_rate_search" in training else {}),
             "within_source_validation_crps": training["source_validation_crps"],
             "held_group_crps_by_scale": fold_scores})
     macro = np.mean(scores, axis=0)

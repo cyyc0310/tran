@@ -82,10 +82,17 @@ def test_point_ensemble_checkpoint_cli_and_target_isolation(bundle, tmp_path, ba
     manifest, doc, grids = bundle
     options = {"objective": "point", "model_config": {"backbone": backbone, "hidden": 16},
                "schedule": "cosine", "sampler": "region_balanced"}
+    if backbone == "shared":
+        options["lr_candidates"] = [.001, .01]
     a, b = tmp_path / "a", tmp_path / "b"
     summary = run(manifest, a, steps=2, scenarios=4, mechanism_ensemble=True,
                   scale_candidates=(1., 2.), training_options=options)
     assert summary["training"]["selection_metric"] == "mae"
+    if backbone == "shared":
+        search = summary["training"]["learning_rate_search"]
+        assert search["total_training_steps"] == 4
+        assert summary["training"]["selection_score"] == min(
+            candidate["selection_score"] for candidate in search["candidates"])
     assert summary["metrics"]["probabilistic_dispatch"]["point_definition"] == "explicit_point"
     grids["target_mixed"].labels_path.unlink()
     run(manifest, b, steps=2, scenarios=4, mechanism_ensemble=True,

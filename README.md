@@ -32,6 +32,8 @@ python scripts/run_experiment.py --demo --demo-seed 19 --objective point \
 
 `--backbone shared` 提供仅 22 个参数的共享调度对照：全局潜在位置/尺度、时间相关性及调度平滑度由源域学习，目标配置和天气通过物理层影响输出。它用于检验配置条件网络是否过拟合，不是新增的 SOTA 声明。所有模型在采样数超过天气成员数时复用成员编码；checkpoint 中 `encode_members=False` 可恢复逐情景编码以核验数值和梯度。
 
+`--learning-rate-candidates 0.001 0.01 0.03` 可仅按源验证分数选择学习率，各候选使用相同种子；覆盖 `--learning-rate`，训练步数按候选数倍增，完整学习曲线写入运行记录。机制集合对各自可见源域分别选择，不读取被留出源组的标签选模型。
+
 源域留组机制集合和外层电网/种子对照可选开启：
 
 ```bash

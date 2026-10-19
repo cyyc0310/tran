@@ -45,8 +45,8 @@ def predict(model, examples, num_scenarios=64, seed=0, batch_size=32,
 def fit(train_examples, train_labels, validation_examples, validation_labels,
         steps=250, seed=0, batch_size=16, scenarios=16, lr=1e-3, device="cpu",
         objective="crps", selection_metric=None, model_config=None,
-        schedule="constant", sampler="uniform"):
-    if steps < 1 or batch_size < 1 or scenarios < 2 or lr <= 0:
+        schedule="constant", sampler="uniform", lr_candidates=None):
+    if steps < 1 or batch_size < 1 or scenarios < 2 or not math.isfinite(lr) or lr <= 0:
         raise ValueError("positive training options and at least two scenarios required")
     if (not train_examples or not validation_examples or len(train_examples) != len(train_labels)
             or len(validation_examples) != len(validation_labels)):
@@ -55,6 +55,26 @@ def fit(train_examples, train_labels, validation_examples, validation_labels,
     if (objective not in ("point", "crps") or selection_metric not in ("mae", "rmse", "crps")
             or schedule not in ("constant", "cosine") or sampler not in ("uniform", "region_balanced")):
         raise ValueError("valid objective, selection_metric, schedule and sampler required")
+    if lr_candidates is not None:
+        rates = list(lr_candidates)
+        if (not rates or len(set(rates)) != len(rates) or
+                any(not math.isfinite(rate) or rate <= 0 for rate in rates)):
+            raise ValueError("nonempty unique finite positive learning-rate candidates required")
+        best_model, best_record, candidates = None, None, []
+        for rate in rates:
+            candidate, record = fit(train_examples, train_labels, validation_examples, validation_labels,
+                steps=steps, seed=seed, batch_size=batch_size, scenarios=scenarios, lr=rate,
+                device=device, objective=objective, selection_metric=selection_metric,
+                model_config=model_config, schedule=schedule, sampler=sampler)
+            candidates.append(record)
+            if best_record is None or record["selection_score"] < best_record["selection_score"]:
+                best_model, best_record = candidate, record
+        best_record["learning_rate_search"] = {
+            "selection": "source_validation_" + selection_metric,
+            "total_training_steps": steps * len(rates),
+            "candidates": [{key: record[key] for key in
+                ("learning_rate", "selected_step", "selection_score", "history")} for record in candidates]}
+        return best_model, best_record
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
     config = {**(model_config or {}), "point_forecast": objective == "point"}
