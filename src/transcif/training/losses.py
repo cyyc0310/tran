@@ -40,3 +40,19 @@ def dispatch_loss(forecast, labels):
     loss = crps + 0.25 * energy + 50 * share_error + 1000 * shortage
     return loss, {"crps": float(crps.detach()), "energy": float(energy.detach()),
                   "share_mae": float(share_error.detach()), "unserved_fraction": float(shortage.detach())}
+
+
+def point_dispatch_loss(forecast, point, labels, capacity):
+    """MAE-first physical point head; probability and source generation auxiliary tasks."""
+    point_mae = (point.cif[:, 0] - labels["cif"]).abs().mean()
+    # Absolute source production supervision identifies scale hidden by fuel-share ratios.
+    production = (point.generation[:, 0] - labels["generation"]).abs()
+    production = (production / capacity.sum(-1)[:, None, None].clamp_min(1.)).mean()
+    shortage = .5 * ((point.unserved / point.demand.clamp_min(1e-9)).mean() +
+                      (forecast.unserved / forecast.demand.clamp_min(1e-9)).mean())
+    crps = fair_crps(forecast.cif, labels["cif"])
+    energy = energy_score(forecast.cif, labels["cif"])
+    loss = point_mae + .1 * crps + .025 * energy + 500 * production + 1000 * shortage
+    return loss, {"point_mae": float(point_mae.detach()), "crps": float(crps.detach()),
+        "energy": float(energy.detach()), "normalized_generation_mae": float(production.detach()),
+        "unserved_fraction": float(shortage.detach())}

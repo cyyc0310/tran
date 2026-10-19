@@ -11,10 +11,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from transcif.data.synthetic import make_bundle
 from transcif.experiment import run
+from transcif.cli import add_training_arguments, training_options
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    add_training_arguments(parser)
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument("--manifest", type=Path)
     source.add_argument("--demo", action="store_true")
@@ -24,6 +26,7 @@ def main():
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--scenarios", type=int, default=64)
     parser.add_argument("--demo-days", type=int, default=90)
+    parser.add_argument("--demo-seed", type=int, default=7)
     parser.add_argument("--leave-jurisdiction-out", action="store_true")
     parser.add_argument("--mechanism-ensemble", action="store_true",
                         help="cross-fit independent source groups; scenarios are per mechanism")
@@ -41,11 +44,12 @@ def main():
     if args.demo:
         if args.output.exists() and any(args.output.iterdir()):
             parser.error("demo output must be empty; existing runs are never overwritten")
-        manifest = make_bundle(args.output / "synthetic_data", args.demo_days)
+        manifest = make_bundle(args.output / "synthetic_data", args.demo_days, args.demo_seed)
     summary = run(manifest, args.output, args.target, args.steps, args.seed,
                   args.scenarios, args.leave_jurisdiction_out, args.device,
                   score_target=not args.no_target_scoring, mechanism_ensemble=args.mechanism_ensemble,
-                  inner_unit=args.inner_unit, scale_candidates=args.scale_candidates)
+                  inner_unit=args.inner_unit, scale_candidates=args.scale_candidates,
+                  training_options=training_options(args), tree_baseline=args.tree_baseline)
     print(f"track={summary['track']} target={summary['target']} sources={summary['sources']}")
     for name, metric in summary["metrics"].items():
         print(f"{name}: MAE={metric['mae']:.3f} CRPS={metric['crps']:.3f} "

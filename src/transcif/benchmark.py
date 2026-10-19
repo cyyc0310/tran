@@ -8,7 +8,7 @@ import numpy as np
 from transcif.data.dataset import load_bundle
 from transcif.experiment import run
 
-METRICS = ("mae", "crps", "energy_score", "pointwise_90_coverage", "mean_90_width")
+METRICS = ("mae", "rmse", "crps", "energy_score", "pointwise_90_coverage", "mean_90_width")
 
 
 def benchmark(manifest, output, targets=None, seeds=(0, 1, 2), **options):

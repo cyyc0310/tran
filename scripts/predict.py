@@ -76,6 +76,8 @@ def main():
     output = {"region": args.target, "origin": args.origin,
         "accounting": checkpoint["accounting"], "training_track": checkpoint["training_track"],
         "input_track": doc["track"], "provenance": example.provenance, **details,
+        "point_definition": "supervised_physical_location" if "point_cif" in forecast else "scenario_mean",
+        "point_g_per_kwh": forecast.get("point_cif", forecast["cif"].mean(1))[0].tolist(),
         "mean_g_per_kwh": draws.mean(0).tolist(),
         "p05_g_per_kwh": np.quantile(draws, .05, axis=0).tolist(),
         "p95_g_per_kwh": np.quantile(draws, .95, axis=0).tolist(),

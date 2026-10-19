@@ -97,6 +97,7 @@ def make_bundle(directory, days=90, seed=7):
             "releases": f"{name}/releases.csv", "forecasts": f"{name}/forecasts.csv",
             "labels": f"{name}/labels.csv"})
     doc = {"schema_version": 1, "track": "synthetic", "accounting": "production_direct_co2",
+           "synthetic_generator": {"seed": seed, "days": days, "configuration_family": "four_fixed_grids"},
            "cost_currency": "synthetic_currency",
            "target": "target_mixed", "horizon": 24,
            "origins": [str(o) for o in origins],

@@ -16,6 +16,18 @@ python -m pytest -q
 python scripts/run_experiment.py --demo --output results/demo
 ```
 
+命令行现在默认 `--objective point`：MAE 主导训练，按源域宏平均 MAE 选 checkpoint；概率评分作为辅助。`--objective crps` 可复现概率主导模式。点预测单独输出 `point_g_per_kwh`，评估同时记录显式点预测、情景均值/中位数 MAE，避免把更换点估计方式当作模型收益。
+
+更强的条件编码器和非线性树对照：
+
+```bash
+python -m pip install -e '.[dev,trees]'
+python scripts/run_experiment.py --demo --demo-seed 19 --objective point \
+  --backbone context --tree-baseline --output results/point-development
+```
+
+`context` 使用膨胀残差卷积、全时域均值上下文、配置 FiLM、公开净负荷特征及可学习调度平滑度。`--steps`、`--learning-rate`、`--batch-size`、`--schedule cosine` 和 `--sampler region_balanced` 可用于源域开发；外层结果不能用于选择这些设置。模拟器仍只有四个固定电网配置，更换随机种子不代表新的配置分布。
+
 源域留组机制集合和外层电网/种子对照可选开启：
 
 ```bash
@@ -53,10 +65,11 @@ python scripts/predict.py --checkpoint results/demo/model.pt \
 | --- | --- |
 | `data/asof.py`, `dataset.py` | 按发布时间选配置和完整预报批次；输入、标签分别读取 |
 | `models/dispatch.py` | 配置条件 TCN、相关潜在状态、联合发电/CIF 情景 |
+| `models/context.py` | 全时域公开协变量上下文、配置调制和门控残差编码 |
 | `physics/dispatch.py` | 容量约束凸调度及隐式梯度；显式返回未满足负荷 |
-| `training/` | 源域 CRPS、路径 energy score、燃料占比监督；源验证集选模型 |
+| `training/` | 可选 MAE 主导点预测或 CRPS 主导分布训练，源域选模与训练诊断 |
 | `training/transfer.py`, `models/ensemble.py` | 独立源组交叉拟合、源留域尺度选择、有限机制集合及配置支持诊断 |
-| `models/baselines.py` | 同输入岭回归、公开能源占比常数；源验证残差路径构造分布 |
+| `models/baselines.py` | 同输入岭回归、MAE 提升树、公开占比常数；源验证残差路径构造分布 |
 | `evaluation/` | 点预测、概率与路径指标；均值/CVaR 连续时段选择 |
 | `experiment.py` | 排除目标及覆盖重叠区域，时间前推，预测完成后才评分 |
 | `benchmark.py` | 固定协议逐目标/种子运行，先平均种子再汇总电网与国家 |

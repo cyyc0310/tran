@@ -13,7 +13,7 @@ from transcif.data.asof import utc
 from transcif.data.dataset import FUELS, load_bundle, source_names
 from transcif.evaluation.metrics import forecast_metrics
 from transcif.evaluation.scheduling import scheduling_metrics, mechanism_decisions, score_blocks
-from transcif.models.baselines import PublicRidge, mix_constant, residual_scenarios
+from transcif.models.baselines import PublicRidge, PublicBoosting, mix_constant, residual_scenarios
 from transcif.models.ensemble import (predict_components, mixture, uncertainty_decomposition,
                                      independent_hour_ablation, save_ensemble)
 from transcif.training.fit import fit, predict
@@ -22,7 +22,8 @@ from transcif.training.transfer import fit_mechanisms, support_diagnostics
 
 def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
         leave_jurisdiction_out=False, device="cpu", score_target=True,
-        mechanism_ensemble=False, inner_unit="region", scale_candidates=(.5, 1., 2., 4.)):
+        mechanism_ensemble=False, inner_unit="region", scale_candidates=(.5, 1., 2., 4.),
+        training_options=None, tree_baseline=False):
     path, output = Path(manifest), Path(output)
     output.mkdir(parents=True, exist_ok=True)
     if (output / "summary.json").exists() or (output / "model.pt").exists():
@@ -62,12 +63,13 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
     # The outer target contributes PUBLIC INPUTS only until inference finishes.
     data["test"] = [grids[target].example(o, horizon) for o in origins[masks["test"]]]
     model, training = fit(data["train"], labels["train"], data["validation"], labels["validation"],
-                           steps=steps, seed=seed, device=device)
+                           steps=steps, seed=seed, device=device, **(training_options or {}))
     transfer, inner_models = None, []
     if mechanism_ensemble:
         inner_models, transfer = fit_mechanisms(data["train"], labels["train"],
             data["validation"], labels["validation"], {name: grids[name] for name in sources},
-            steps=steps, seed=seed, device=device, unit=inner_unit, scale_candidates=scale_candidates)
+            steps=steps, seed=seed, device=device, unit=inner_unit, scale_candidates=scale_candidates,
+            training_options=training_options)
     # Match the total empirical scenario budget across stochastic methods.
     draw_budget = scenarios * (len(inner_models) + 1)
     ridge = PublicRidge().fit(data["train"], labels["train"])
@@ -82,12 +84,24 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
     constant_draws = residual_scenarios(constant, const_residuals, data["test"], draw_budget, seed)
     metadata = {"accounting": doc["accounting"], "training_track": doc["track"],
                 "cost_currency": doc["cost_currency"], "sources": sources, "target_excluded": target,
-                "train_until": str(train_until), "validation_until": str(val_until), "seed": seed}
+                "train_until": str(train_until), "validation_until": str(val_until), "seed": seed,
+                "training_options": training_options or {}}
     torch.save({**metadata, "schema_version": 1, "fuels": list(FUELS),
-                "model_config": {"hidden": model.hidden,
-                                 "dispatch_temperature": model.dispatch_temperature},
+                "model_config": model.model_config,
                 "state_dict": model.state_dict()}, output / "model.pt")
-    extra, transfer_summary, decisions = {}, None, None
+    ridge_point = ridge.predict(data["test"])
+    extra = {"public_ridge_point_cif": ridge_point, "published_mix_point_cif": constant}
+    transfer_summary, decisions = None, None
+    points = {"public_ridge_source_residuals": ridge_point, "published_mix_source_residuals": constant}
+    if model.point_forecast:
+        points["probabilistic_dispatch"] = prediction["point_cif"]
+    if tree_baseline:
+        tree = PublicBoosting(seed).fit(data["train"], labels["train"])
+        tree_point = tree.predict(data["test"])
+        extra["public_boosting_source_residuals"] = residual_scenarios(tree_point,
+            val_truth - tree.predict(data["validation"]), data["test"], draw_budget, seed)
+        extra["public_boosting_point_cif"] = tree_point
+        points["public_boosting_source_residuals"] = tree_point
     duration = min(4, horizon)
     if transfer is not None:
         components = predict_components([model] + inner_models, data["test"], scenarios,
@@ -99,12 +113,18 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
         scaled = predict(model, data["test"], draw_budget, seed + 20000,
                          latent_scale=transfer["latent_scale"])
         deterministic = predict(model, data["test"], 2, seed, deterministic=True)
-        extra = {"mechanism_mixture": mixed["cif"], "source_scaled_dispatch": scaled["cif"],
+        extra.update({"mechanism_mixture": mixed["cif"], "source_scaled_dispatch": scaled["cif"],
             "independent_hour_ablation": independent_hour_ablation(mixed["cif"], seed),
             "deterministic_dispatch": deterministic["cif"],
             "source_scaled_unserved": scaled["unserved"], "source_scaled_demand": scaled["demand"],
             "deterministic_unserved": deterministic["unserved"],
-            "deterministic_demand": deterministic["demand"]}
+            "deterministic_demand": deterministic["demand"]})
+        if model.point_forecast:
+            points.update({"mechanism_mixture": mixed["point_cif"],
+                "source_scaled_dispatch": scaled["point_cif"],
+                "independent_hour_ablation": mixed["point_cif"],
+                "deterministic_dispatch": deterministic["point_cif"]})
+            extra["mechanism_point_cif"] = mixed["point_cif"]
         transfer["member_names"] = ["pooled"] + ["leave_" + "+".join(g) for g in transfer["groups"]]
         transfer["decision_policy"] = {"duration_hours": duration, "alpha": .9,
                                        "max_shortage": .01, "ambiguity_set": "finite_mechanisms"}
@@ -129,9 +149,10 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
                              ("public_ridge_source_residuals", ridge_draws),
                              ("published_mix_source_residuals", constant_draws)]
         distributions += [(name, extra[name]) for name in ("mechanism_mixture", "source_scaled_dispatch",
-                            "independent_hour_ablation", "deterministic_dispatch") if name in extra]
+                            "independent_hour_ablation", "deterministic_dispatch",
+                            "public_boosting_source_residuals") if name in extra]
         for name, draws in distributions:
-            metrics[name] = {**forecast_metrics(truth, draws),
+            metrics[name] = {**forecast_metrics(truth, draws, points.get(name)),
                              "scheduling_mean": scheduling_metrics(truth, draws, min(4, horizon), "mean"),
                              "scheduling_cvar": scheduling_metrics(truth, draws, min(4, horizon), "cvar")}
         if decisions is not None:
@@ -164,9 +185,11 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
         "source_regions_only_for_fitting_and_model_selection": True,
         "steps": steps, "seed": seed, "scenarios": draw_budget, "training": training,
         "transfer": transfer_summary,
+        "tree_baseline": tree_baseline,
         "model_parameters": sum(p.numel() for p in model.parameters()), "metrics": metrics,
         "target_scored": scored, "unserved_forecast_load_fraction": shortage_fraction,
-        "runtime": {name: importlib.metadata.version(name) for name in ("torch", "numpy", "pandas")},
+        "runtime": {name: importlib.metadata.version(name) for name in
+                    (("torch", "numpy", "pandas", "scikit-learn") if tree_baseline else ("torch", "numpy", "pandas"))},
         "manifest_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "input_sha256": hashes,
         "source_sha256": {str(p.relative_to(source_root)): hashlib.sha256(p.read_bytes()).hexdigest()
                            for p in sorted(source_root.rglob("*.py"))},

@@ -10,10 +10,12 @@ import torch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from transcif.benchmark import benchmark
+from transcif.cli import add_training_arguments, training_options
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    add_training_arguments(parser)
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--targets", nargs="+")
@@ -33,7 +35,8 @@ def main():
     summary = benchmark(args.manifest, args.output, args.targets, args.seeds,
         steps=args.steps, scenarios=args.scenarios, mechanism_ensemble=args.mechanism_ensemble,
         inner_unit=args.inner_unit, scale_candidates=args.scale_candidates,
-        leave_jurisdiction_out=args.leave_jurisdiction_out, device=args.device)
+        leave_jurisdiction_out=args.leave_jurisdiction_out, device=args.device,
+        training_options=training_options(args), tree_baseline=args.tree_baseline)
     for name, metrics in summary["target_macro"].items():
         print(f"{name}: target-macro MAE={metrics['mae']:.3f} CRPS={metrics['crps']:.3f}")
     print(args.output / "benchmark.json")

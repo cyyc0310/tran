@@ -16,6 +16,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0,<10.0"]
+trees = ["scikit-learn>=1.5,<2.0"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

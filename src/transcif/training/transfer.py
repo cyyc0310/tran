@@ -80,7 +80,7 @@ def support_diagnostics(examples, support):
 
 def fit_mechanisms(train_examples, train_labels, validation_examples, validation_labels,
                    source_grids, steps=250, seed=0, device="cpu", unit="region",
-                   scale_candidates=(.5, 1., 2., 4.), scenarios=32):
+                   scale_candidates=(.5, 1., 2., 4.), scenarios=32, training_options=None):
     """Each held source group is absent from fitting AND checkpoint selection.
 
     Its forward-time validation labels are then used to select one shared
@@ -108,7 +108,7 @@ def fit_mechanisms(train_examples, train_labels, validation_examples, validation
             raise ValueError("each inner fold needs training, selection and held-group windows")
         model, training = fit([train_examples[j] for j in train], [train_labels[j] for j in train],
             [validation_examples[j] for j in val], [validation_labels[j] for j in val],
-            steps=steps, seed=seed + 1000 * (i + 1), device=device)
+            steps=steps, seed=seed + 1000 * (i + 1), device=device, **(training_options or {}))
         held_examples = [validation_examples[j] for j in test]
         truth = np.stack([validation_labels[j]["cif"] for j in test])
         fold_scores = []
@@ -129,6 +129,8 @@ def fit_mechanisms(train_examples, train_labels, validation_examples, validation
             "training_regions": sorted({train_examples[j].region for j in train}),
             "selection_regions": sorted({validation_examples[j].region for j in val}),
             "selected_step": training["selected_step"],
+            "selection_metric": training["selection_metric"],
+            "selection_score": training["selection_score"],
             "within_source_validation_crps": training["source_validation_crps"],
             "held_group_crps_by_scale": fold_scores})
     macro = np.mean(scores, axis=0)

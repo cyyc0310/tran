@@ -34,8 +34,10 @@ class _CappedDispatch(torch.autograd.Function):
         total = slope.sum(-1, keepdim=True)
         average_grad = torch.where(total > 0, (grad * slope).sum(-1, keepdim=True)
                                    / total.clamp_min(1e-15), torch.zeros_like(total))
-        return (utilization * (grad - average_grad),
-                slope * (average_grad - grad), average_grad.squeeze(-1), None)
+        cost_grad = slope * (average_grad - grad)
+        temperature_grad = (cost_grad * utilization).sum() if ctx.needs_input_grad[3] else None
+        return (utilization * (grad - average_grad), cost_grad,
+                average_grad.squeeze(-1), temperature_grad)
 
 
 def capped_dispatch(capacity, cost, load, temperature=0.3):
@@ -44,12 +46,14 @@ def capped_dispatch(capacity, cost, load, temperature=0.3):
     Cost and temperature share units. Capacity and load share units. This
     single-bus relaxation has no ramps, unit commitment, storage or imports.
     """
-    if (temperature <= 0 or capacity.shape != cost.shape or capacity.ndim < 1
+    temperature = torch.as_tensor(temperature, dtype=capacity.dtype, device=capacity.device)
+    if (temperature.numel() != 1 or not torch.isfinite(temperature).all() or temperature <= 0
+            or capacity.shape != cost.shape or capacity.ndim < 1
             or capacity.shape[-1] == 0 or load.shape != capacity.shape[:-1]):
         raise ValueError("aligned capacity/cost (...,F), load (...), positive temperature required")
     if (not torch.isfinite(capacity).all() or not torch.isfinite(cost).all()
             or not torch.isfinite(load).all() or (capacity < 0).any() or (load < 0).any()):
         raise ValueError("finite inputs and nonnegative capacity/load required")
     served = torch.minimum(load, capacity.sum(-1))
-    generation = _CappedDispatch.apply(capacity, cost, served, float(temperature))
+    generation = _CappedDispatch.apply(capacity, cost, served, temperature.reshape(()))
     return generation, (load - generation.sum(-1)).clamp_min(0)

@@ -19,7 +19,7 @@ def predict_components(models, examples, scenarios=32, seed=0, latent_scale=1.):
 
 def mixture(components):
     """Equal-weight empirical mixture, N,K,S,... -> N,K*S,... ."""
-    return {key: values.reshape(values.shape[0], -1, *values.shape[3:])
+    return {key: values.mean(1) if key == "point_cif" else values.reshape(values.shape[0], -1, *values.shape[3:])
             for key, values in components.items()}
 
 
@@ -50,8 +50,7 @@ def independent_hour_ablation(cif, seed=0):
 def save_ensemble(path, models, metadata, transfer):
     checkpoint = {**metadata, "schema_version": 2, "kind": "dispatch_mechanism_ensemble",
         "fuels": list(FUELS), "transfer": transfer,
-        "members": [{"model_config": {"hidden": m.hidden,
-                     "dispatch_temperature": m.dispatch_temperature},
+        "members": [{"model_config": m.model_config,
                      "state_dict": m.state_dict()} for m in models]}
     torch.save(checkpoint, path)
 

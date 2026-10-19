@@ -38,6 +38,42 @@ class PublicRidge:
         return np.clip(x @ self.weight, 0, upper)
 
 
+class PublicBoosting:
+    """MAE-trained nonlinear reference with the same 31 public input summaries.
+
+    Fixed training budget; no random validation split, target IDs or target fit.
+    This is not an EnsembleCI or foundation-model reproduction.
+    """
+
+    def __init__(self, seed=0):
+        try:
+            from sklearn.ensemble import HistGradientBoostingRegressor
+        except ImportError as exc:
+            raise ImportError("tree baseline requires: pip install -e '.[trees]'") from exc
+        self.model = HistGradientBoostingRegressor(loss="absolute_error", max_iter=300,
+            learning_rate=.05, max_leaf_nodes=15, l2_regularization=1.,
+            early_stopping=False, random_state=seed)
+
+    def fit(self, examples, labels):
+        features = public_features(examples)
+        truth = np.stack([y["cif"] for y in labels])
+        from threadpoolctl import threadpool_limits
+        regions = [e.region for e in examples]
+        counts = {name: regions.count(name) for name in set(regions)}
+        weights = np.repeat([1 / counts[name] for name in regions], features.shape[1])
+        with threadpool_limits(limits=1):
+            self.model.fit(features.reshape(-1, 31), truth.ravel(), sample_weight=weights / weights.mean())
+        return self
+
+    def predict(self, examples):
+        from threadpoolctl import threadpool_limits
+        features = public_features(examples)
+        with threadpool_limits(limits=1):
+            point = self.model.predict(features.reshape(-1, 31)).reshape(features.shape[:2])
+        upper = np.array([e.values["ef"].max() for e in examples])[:, None]
+        return np.clip(point, 0, upper)
+
+
 def mix_constant(examples):
     return np.stack([np.full(e.values["demand"].shape[-1],
                             e.values["mix"] @ e.values["ef"]) for e in examples])

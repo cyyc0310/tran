@@ -16,10 +16,13 @@ def ensemble_crps(truth, samples):
     return float((np.abs(samples - truth[:, None]).mean(1) - spread).mean())
 
 
-def forecast_metrics(truth, samples):
+def forecast_metrics(truth, samples, point=None):
     truth, samples = np.asarray(truth, float), np.asarray(samples, float)
     crps = ensemble_crps(truth, samples)
-    point = samples.mean(1)
+    point_definition = "explicit_point" if point is not None else "scenario_mean"
+    point = samples.mean(1) if point is None else np.asarray(point, float)
+    if point.shape != truth.shape or not np.isfinite(point).all():
+        raise ValueError("finite point predictions must match truth")
     lo, hi = np.quantile(samples, [.05, .95], axis=1)
     covered = (truth >= lo) & (truth <= hi)
     norm = np.linalg.norm(samples - truth[:, None], axis=-1).mean()
@@ -29,8 +32,10 @@ def forecast_metrics(truth, samples):
         for start in range(0, len(paths), 32):
             spread += np.linalg.norm(paths[start:start + 32, None] - paths[None], axis=-1).sum()
     spread /= samples.shape[0] * samples.shape[1]**2
-    return {"mae": float(np.abs(point - truth).mean()),
+    return {"point_definition": point_definition, "mae": float(np.abs(point - truth).mean()),
             "rmse": float(np.sqrt(np.square(point - truth).mean())), "crps": crps,
+            "scenario_mean_mae": float(np.abs(samples.mean(1) - truth).mean()),
+            "scenario_median_mae": float(np.abs(np.median(samples, axis=1) - truth).mean()),
             "energy_score": float((norm - spread / 2) / truth.shape[1]**.5),
             "pointwise_90_coverage": float(covered.mean()),
             "path_coverage_of_pointwise_90_band": float(covered.all(-1).mean()),
