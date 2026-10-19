@@ -109,3 +109,18 @@ def test_tree_reference_runs_without_target_labels(bundle, tmp_path):
     with np.load(tmp_path / "tree" / "forecasts.npz") as predictions:
         assert predictions["public_boosting_point_cif"].shape == (3, 24)
         assert np.isfinite(predictions["public_boosting_source_residuals"]).all()
+
+
+def test_mae_selected_distribution_exports_median_not_mean(bundle):
+    _, doc, grids = bundle
+    grid = grids["source_coal"]
+    examples = [grid.example(o) for o in doc["origins"][:3]]
+    labels = [grid.labels(e) for e in examples]
+    model, history = fit(examples[:2], labels[:2], examples[2:], labels[2:],
+        steps=1, objective="crps", selection_metric="mae")
+    assert not model.point_forecast
+    assert history["selection_metric"] == "mae"
+    assert model.point_estimator == "median"
+    forecast = predict(model, examples[2:], 64, seed=7)
+    np.testing.assert_allclose(forecast["point_cif"], np.median(forecast["cif"], axis=1), atol=1e-4)
+    assert model.model_config["point_estimator"] == "median"

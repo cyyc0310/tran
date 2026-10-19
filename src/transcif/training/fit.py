@@ -20,7 +20,8 @@ def predict(model, examples, num_scenarios=64, seed=0, batch_size=32,
     device = next(model.parameters()).device
     generator = torch.Generator(device=device).manual_seed(seed)
     outputs = {key: [] for key in ("cif", "generation", "demand", "unserved", "curtailment")}
-    if model.point_forecast:
+    explicit_point = model.point_forecast or model.point_estimator != "mean"
+    if explicit_point:
         outputs["point_cif"] = []
     with torch.no_grad():
         for start in range(0, len(examples), batch_size):
@@ -29,10 +30,15 @@ def predict(model, examples, num_scenarios=64, seed=0, batch_size=32,
             for key in outputs:
                 if key != "point_cif":
                     outputs[key].append(getattr(forecast, key).cpu().numpy())
-            if model.point_forecast:
-                point = forecast if deterministic else model(
-                    stack_inputs(examples[start:start + batch_size], device), 2, deterministic=True)
-                outputs["point_cif"].append(point.cif[:, 0].cpu().numpy())
+            if explicit_point:
+                if model.point_estimator == "physical":
+                    point = forecast if deterministic else model(
+                        stack_inputs(examples[start:start + batch_size], device), 2, deterministic=True)
+                    point_value = point.cif[:, 0]
+                else:
+                    point_value = (forecast.cif.quantile(.5, dim=1) if model.point_estimator == "median"
+                                   else forecast.cif.mean(1))
+                outputs["point_cif"].append(point_value.cpu().numpy())
     return {key: np.concatenate(values) for key, values in outputs.items()}
 
 
@@ -52,6 +58,9 @@ def fit(train_examples, train_labels, validation_examples, validation_labels,
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
     config = {**(model_config or {}), "point_forecast": objective == "point"}
+    if config.get("point_estimator") is None:
+        config["point_estimator"] = ("physical" if objective == "point" else
+                                      ("median" if selection_metric == "mae" else "mean"))
     model = ProbabilisticDispatchNet(**config).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
     truth_val = np.stack([y["cif"] for y in validation_labels])

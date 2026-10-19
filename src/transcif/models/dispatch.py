@@ -34,7 +34,8 @@ class ProbabilisticDispatchNet(nn.Module):
     fixed. No region ID, target label fit, additive CIF residual or anchor.
     """
 
-    def __init__(self, hidden=32, dispatch_temperature=0.3, backbone="tcn", point_forecast=False):
+    def __init__(self, hidden=32, dispatch_temperature=0.3, backbone="tcn", point_forecast=False,
+                 point_estimator=None):
         super().__init__()
         if backbone not in ("tcn", "context") or hidden < 1 or dispatch_temperature <= .01:
             raise ValueError("valid backbone, positive hidden and temperature>.01 required")
@@ -42,6 +43,9 @@ class ProbabilisticDispatchNet(nn.Module):
         self.dispatch_temperature = dispatch_temperature
         self.backbone = backbone
         self.point_forecast = point_forecast
+        self.point_estimator = point_estimator or ("physical" if point_forecast else "mean")
+        if self.point_estimator not in ("mean", "median", "physical"):
+            raise ValueError("point_estimator must be mean, median or physical")
         # weather(3), load(1), calendar(6), capacity/mix/EF(18), costs(3).
         self.encoder = nn.Sequential(
             nn.Conv1d(31, hidden, 3, padding=1), nn.GELU(),
@@ -61,7 +65,8 @@ class ProbabilisticDispatchNet(nn.Module):
     @property
     def model_config(self):
         return {"hidden": self.hidden, "dispatch_temperature": self.dispatch_temperature,
-                "backbone": self.backbone, "point_forecast": self.point_forecast}
+                "backbone": self.backbone, "point_forecast": self.point_forecast,
+                "point_estimator": self.point_estimator}
 
     def forward(self, inputs: ModelInputs, num_scenarios=32, generator=None,
                 latent_scale=1., deterministic=False):

@@ -44,6 +44,7 @@ def main():
     details = {}
     if checkpoint["schema_version"] == 2:
         models = load_ensemble(checkpoint)
+        point_definition = "mean_of_mechanism_" + models[0].point_estimator
         transfer = checkpoint["transfer"]
         components = predict_components(models, [example], args.scenarios, args.seed,
                                         transfer["latent_scale"])
@@ -71,12 +72,13 @@ def main():
     else:
         model = ProbabilisticDispatchNet(**checkpoint["model_config"])
         model.load_state_dict(checkpoint["state_dict"])
+        point_definition = model.point_estimator
         forecast = predict(model, [example], args.scenarios, args.seed)
     draws = forecast["cif"][0]
     output = {"region": args.target, "origin": args.origin,
         "accounting": checkpoint["accounting"], "training_track": checkpoint["training_track"],
         "input_track": doc["track"], "provenance": example.provenance, **details,
-        "point_definition": "supervised_physical_location" if "point_cif" in forecast else "scenario_mean",
+        "point_definition": point_definition,
         "point_g_per_kwh": forecast.get("point_cif", forecast["cif"].mean(1))[0].tolist(),
         "mean_g_per_kwh": draws.mean(0).tolist(),
         "p05_g_per_kwh": np.quantile(draws, .05, axis=0).tolist(),

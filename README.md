@@ -18,6 +18,8 @@ python scripts/run_experiment.py --demo --output results/demo
 
 命令行现在默认 `--objective point`：MAE 主导训练，按源域宏平均 MAE 选 checkpoint；概率评分作为辅助。`--objective crps` 可复现概率主导模式。点预测单独输出 `point_g_per_kwh`，评估同时记录显式点预测、情景均值/中位数 MAE，避免把更换点估计方式当作模型收益。
 
+`--objective crps --selection-metric mae --point-estimator median` 保留分布训练并按源域中位数 MAE 选模，是 MAE 任务必须比较的低成本基线。`--point-estimator mean/median/physical` 显式确定点输出并写入 checkpoint；MAE 主导模式默认使用已监督的物理点输出。
+
 更强的条件编码器和非线性树对照：
 
 ```bash

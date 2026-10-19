@@ -93,7 +93,7 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
     extra = {"public_ridge_point_cif": ridge_point, "published_mix_point_cif": constant}
     transfer_summary, decisions = None, None
     points = {"public_ridge_source_residuals": ridge_point, "published_mix_source_residuals": constant}
-    if model.point_forecast:
+    if "point_cif" in prediction:
         points["probabilistic_dispatch"] = prediction["point_cif"]
     if tree_baseline:
         tree = PublicBoosting(seed).fit(data["train"], labels["train"])
@@ -119,7 +119,7 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
             "source_scaled_unserved": scaled["unserved"], "source_scaled_demand": scaled["demand"],
             "deterministic_unserved": deterministic["unserved"],
             "deterministic_demand": deterministic["demand"]})
-        if model.point_forecast:
+        if "point_cif" in mixed:
             points.update({"mechanism_mixture": mixed["point_cif"],
                 "source_scaled_dispatch": scaled["point_cif"],
                 "independent_hour_ablation": mixed["point_cif"],
