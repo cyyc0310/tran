@@ -14,12 +14,13 @@ def differentiable_copy(inputs):
 
 @pytest.mark.parametrize("backbone", ["tcn", "context", "shared", "covariate"])
 @pytest.mark.parametrize("deterministic", [False, True])
-def test_member_encoding_preserves_paths_and_gradients(bundle, backbone, deterministic):
+@pytest.mark.parametrize("weather_calibration", [False, True])
+def test_member_encoding_preserves_paths_and_gradients(bundle, backbone, deterministic, weather_calibration):
     _, doc, grids = bundle
     inputs = stack_inputs([grids[name].example(doc["origins"][0])
                            for name in ("source_coal", "source_wind")])
     torch.manual_seed(9)
-    efficient = ProbabilisticDispatchNet(hidden=8, backbone=backbone).double()
+    efficient = ProbabilisticDispatchNet(hidden=8, backbone=backbone, weather_calibration=weather_calibration).double()
     # Nonzero heads exercise encoder/input gradients as well as decoder gradients.
     with torch.no_grad():
         efficient.location.weight.normal_(0, .03)

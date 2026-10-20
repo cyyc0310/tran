@@ -35,11 +35,13 @@ class ProbabilisticDispatchNet(nn.Module):
     """
 
     def __init__(self, hidden=32, dispatch_temperature=0.3, backbone="tcn", point_forecast=False,
-                 point_estimator=None, encode_members=True):
+                 point_estimator=None, encode_members=True, weather_calibration=False):
         super().__init__()
         if backbone not in ("tcn", "context", "shared", "covariate") or hidden < 1 or dispatch_temperature <= .01:
             raise ValueError("valid backbone, positive hidden and temperature>.01 required")
         self.encode_members = encode_members
+        self.weather_calibration = weather_calibration
+        self.latent_dim = 12 if weather_calibration else 10
         self.hidden = hidden
         self.dispatch_temperature = dispatch_temperature
         self.backbone = backbone
@@ -52,14 +54,14 @@ class ProbabilisticDispatchNet(nn.Module):
             # A 22-parameter transfer diagnostic: grid differences enter only
             # the physical decoder, not a configuration-conditioned network.
             self.encoder = None
-            self.location = nn.Linear(1, 10, bias=False)
-            self.scale = nn.Linear(1, 10, bias=False)
+            self.location = nn.Linear(1, self.latent_dim, bias=False)
+            self.scale = nn.Linear(1, self.latent_dim, bias=False)
         else:
             self.encoder = nn.Sequential(
                 nn.Conv1d(10 if backbone == "covariate" else 31, hidden, 3, padding=1), nn.GELU(),
                 nn.Conv1d(hidden, hidden, 3, padding=1), nn.GELU()) if backbone in ("tcn", "covariate") else ContextEncoder(38, hidden)
-            self.location = nn.Linear(hidden, 10)
-            self.scale = nn.Linear(hidden, 10)
+            self.location = nn.Linear(hidden, self.latent_dim)
+            self.scale = nn.Linear(hidden, self.latent_dim)
             nn.init.zeros_(self.location.bias)
             nn.init.constant_(self.scale.bias, -1.5)
         if backbone == "context":
@@ -70,12 +72,21 @@ class ProbabilisticDispatchNet(nn.Module):
         self.raw_rho = nn.Parameter(torch.tensor(math.log(4.0)))
         nn.init.zeros_(self.location.weight)
         nn.init.constant_(self.scale.weight, -1.5 if backbone == "shared" else 0.)
+        if weather_calibration:
+            with torch.no_grad():
+                # Wind error initially spans roughly 1.45 m/s, enabling
+                # learning across the cut-in dead zone of the power curve.
+                if backbone == "shared":
+                    self.scale.weight[10:] = 0
+                else:
+                    self.scale.bias[10:] = 0
 
     @property
     def model_config(self):
         return {"hidden": self.hidden, "dispatch_temperature": self.dispatch_temperature,
                 "backbone": self.backbone, "point_forecast": self.point_forecast,
-                "point_estimator": self.point_estimator, "encode_members": self.encode_members}
+                "point_estimator": self.point_estimator, "encode_members": self.encode_members,
+                "weather_calibration": self.weather_calibration}
 
     def forward(self, inputs: ModelInputs, num_scenarios=32, generator=None,
                 latent_scale=1., deterministic=False):
@@ -117,16 +128,31 @@ class ProbabilisticDispatchNet(nn.Module):
             loc, sigma = select(loc), select(sigma)
             wind_factor, solar_factor = select(wind_factor), select(solar_factor)
             load_forecast = select(load_forecast)
+            wx = select(wx)
         state = loc
         if not deterministic:
             rho = 0.98 * torch.sigmoid(self.raw_rho)
-            eps = torch.randn(b, num_scenarios, h, 10, device=device, dtype=dtype, generator=generator)
-            day_state = torch.randn(b, num_scenarios, 1, 10, device=device, dtype=dtype, generator=generator)
+            eps = torch.randn(b, num_scenarios, h, self.latent_dim, device=device, dtype=dtype, generator=generator)
+            day_state = torch.randn(b, num_scenarios, 1, self.latent_dim, device=device, dtype=dtype, generator=generator)
             history = [eps[:, :, 0]]
             for t in range(1, h):
                 history.append(rho * history[-1] + (1 - rho.square()).sqrt() * eps[:, :, t])
             correlated = 0.6 * day_state + 0.8 * torch.stack(history, dim=2)
             state = loc + latent_scale * sigma * correlated
+        if self.weather_calibration:
+            def calibrated_solar(base, shift):
+                value = torch.sigmoid(torch.logit(base.clamp(1e-6, 1 - 1e-6)) + shift)
+                # Without geolocation/astronomy, preserve the issued daylight
+                # support. This cannot recover missed sunlight at forecast-zero hours.
+                return torch.where(base > 0, value, torch.zeros_like(value))
+            if deterministic:
+                wind_factor = wind_cf((inputs.weather[:, None, ..., 1] +
+                    2 * state[..., 10][:, :, None]).clamp_min(0)).mean(2)
+                base_solar = (.85 * inputs.weather[:, None, ..., 2] / 1000).clamp(0, 1)
+                solar_factor = calibrated_solar(base_solar, state[..., 11][:, :, None]).mean(2)
+            else:
+                wind_factor = wind_cf((wx[..., 1] + 2 * state[..., 10]).clamp_min(0))
+                solar_factor = calibrated_solar(solar_factor, state[..., 11])
         bias = self.availability_bias if self.backbone == "context" else 2
         availability = torch.sigmoid(bias + state[..., :6])
         capacity = inputs.capacity[:, None, None] / scale_mw[:, None, None, None]

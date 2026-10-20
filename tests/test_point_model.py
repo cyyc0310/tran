@@ -14,7 +14,7 @@ from transcif.models.context import ContextEncoder
 from transcif.physics.dispatch import capped_dispatch
 from transcif.models.dispatch import ProbabilisticDispatchNet
 from transcif.models.dispatch import DispatchForecast
-from transcif.training.losses import point_dispatch_loss
+from transcif.training.losses import point_dispatch_loss, joint_dispatch_loss
 from transcif.training.fit import fit, predict
 from transcif.experiment import run
 
@@ -66,6 +66,44 @@ def test_covariate_state_excludes_static_configuration_but_dispatch_uses_it(bund
     hook.remove()
     torch.testing.assert_close(states[0], states[1])
     assert not torch.allclose(left.cif, right.cif)
+
+
+def test_source_weather_calibration_can_recover_wind_above_all_issued_member_potentials(bundle):
+    _, doc, grids = bundle
+    example = grids["source_coal"].example(doc["origins"][0])
+    example.values["capacity"][:] = [0, 1000, 0, 0, 1000, 500]
+    example.values["weather"][..., 1] = 1
+    example.values["weather"][..., 2] = 0
+    example.values["demand"][:] = 500
+    inputs = stack_inputs([example])
+    original = ProbabilisticDispatchNet(backbone="covariate")
+    calibrated = ProbabilisticDispatchNet(backbone="covariate", weather_calibration=True)
+    with torch.no_grad():
+        calibrated.location.bias[10:] = 2
+    assert torch.count_nonzero(original(inputs, 2, deterministic=True).generation[..., 4]) == 0
+    assert (calibrated(inputs, 2, deterministic=True).generation[..., 4] > 0).all()
+    forecast = calibrated(inputs, 64, torch.Generator().manual_seed(3))
+    assert (forecast.generation[..., 5] == 0).all()
+    assert (forecast.generation <= inputs.capacity[:, None, None] + 1e-3).all()
+    torch.testing.assert_close(forecast.generation.sum(-1) + forecast.unserved, forecast.demand,
+                               rtol=1e-5, atol=1e-3)
+
+
+def test_joint_generation_score_distinguishes_dispatch_laws_with_the_same_cif():
+    generator = torch.Generator().manual_seed(7)
+    b, s = 128, 64
+    draw = torch.randint(2, (b, s, 1), generator=generator).float()
+    generation = torch.stack([draw, 1 - draw], dim=-1)
+    truth = torch.randint(2, (b, 1), generator=generator).float()
+    labels = {"cif": torch.zeros(b, 1), "generation": torch.stack([truth, 1 - truth], dim=-1)}
+    def forecast(gen):
+        return DispatchForecast(torch.zeros(b, s, 1), gen, torch.ones(b, s, 1),
+                                torch.zeros(b, s, 1), torch.zeros(b, s, 1))
+    capacity = torch.ones(b, 2)
+    proper, proper_record = joint_dispatch_loss(forecast(generation), labels, capacity)
+    collapsed, collapsed_record = joint_dispatch_loss(forecast(torch.full_like(generation, .5)), labels, capacity)
+    assert proper_record["crps"] == collapsed_record["crps"] == 0
+    assert proper < collapsed
 
 
 def test_explicit_point_metric_keeps_probability_scores_separate():
@@ -159,13 +197,14 @@ def test_tree_reference_runs_without_target_labels(bundle, tmp_path):
         assert np.isfinite(predictions["public_generation_boosting_source_residuals"]).all()
 
 
-def test_mae_selected_distribution_exports_median_not_mean(bundle):
+@pytest.mark.parametrize("objective", ["crps", "joint"])
+def test_mae_selected_distribution_exports_median_not_mean(bundle, objective):
     _, doc, grids = bundle
     grid = grids["source_coal"]
     examples = [grid.example(o) for o in doc["origins"][:3]]
     labels = [grid.labels(e) for e in examples]
     model, history = fit(examples[:2], labels[:2], examples[2:], labels[2:],
-        steps=1, objective="crps", selection_metric="mae")
+        steps=1, objective=objective, selection_metric="mae", model_config={"weather_calibration": True})
     assert not model.point_forecast
     assert history["selection_metric"] == "mae"
     assert model.point_estimator == "median"

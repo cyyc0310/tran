@@ -80,7 +80,7 @@ def fit_source_model(train_examples, train_labels, validation_examples, validati
     rates = [options.get("lr", 1e-3)] if rates is None else list(rates)
     if not rates or len(set(rates)) != len(rates) or any(not np.isfinite(r) or r <= 0 for r in rates):
         raise ValueError("nonempty unique finite positive learning-rate candidates required")
-    metric = options.get("selection_metric") or ("mae" if options.get("objective") == "point" else "crps")
+    metric = options.get("selection_metric") or ("mae" if options.get("objective") in ("point", "joint") else "crps")
     if metric not in ("mae", "rmse", "crps"):
         raise ValueError("valid source selection metric required")
     folds = []

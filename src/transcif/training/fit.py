@@ -9,7 +9,7 @@ import torch
 from transcif.data.dataset import stack_inputs
 from transcif.evaluation.metrics import ensemble_crps
 from transcif.models.dispatch import ProbabilisticDispatchNet
-from transcif.training.losses import dispatch_loss, point_dispatch_loss
+from transcif.training.losses import dispatch_loss, point_dispatch_loss, joint_dispatch_loss
 
 
 def predict(model, examples, num_scenarios=64, seed=0, batch_size=32,
@@ -51,8 +51,8 @@ def fit(train_examples, train_labels, validation_examples, validation_labels,
     if (not train_examples or not validation_examples or len(train_examples) != len(train_labels)
             or len(validation_examples) != len(validation_labels)):
         raise ValueError("nonempty aligned source training and validation sets required")
-    selection_metric = selection_metric or ("mae" if objective == "point" else "crps")
-    if (objective not in ("point", "crps") or selection_metric not in ("mae", "rmse", "crps")
+    selection_metric = selection_metric or ("mae" if objective in ("point", "joint") else "crps")
+    if (objective not in ("point", "crps", "joint") or selection_metric not in ("mae", "rmse", "crps")
             or schedule not in ("constant", "cosine") or sampler not in ("uniform", "region_balanced")):
         raise ValueError("valid objective, selection_metric, schedule and sampler required")
     if lr_candidates is not None:
@@ -111,6 +111,8 @@ def fit(train_examples, train_labels, validation_examples, validation_labels,
         if objective == "point":
             point = model(public, num_scenarios=2, deterministic=True) if model.point_estimator == "physical" else None
             loss, diagnostic = point_dispatch_loss(forecast, point, labels, public.capacity, model.point_estimator)
+        elif objective == "joint":
+            loss, diagnostic = joint_dispatch_loss(forecast, labels, public.capacity)
         else:
             loss, diagnostic = dispatch_loss(forecast, labels)
         if not torch.isfinite(loss):

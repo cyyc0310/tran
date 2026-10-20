@@ -42,6 +42,25 @@ def dispatch_loss(forecast, labels):
                   "share_mae": float(share_error.detach()), "unserved_fraction": float(shortage.detach())}
 
 
+def joint_dispatch_loss(forecast, labels, capacity):
+    """Proper CIF scores plus joint normalized source-generation energy score.
+
+    This supervises a generation distribution even when multiple dispatch
+    mechanisms have the same CIF, without penalizing a noisy sample median.
+    The shortage penalty remains a modeling assumption, not a proper score.
+    """
+    scale = capacity.sum(-1).clamp_min(1.)
+    samples = (forecast.generation / scale[:, None, None, None]).flatten(2)
+    truth = (labels["generation"] / scale[:, None, None]).flatten(1)
+    generation = energy_score(samples, truth)
+    crps = fair_crps(forecast.cif, labels["cif"])
+    energy = energy_score(forecast.cif, labels["cif"])
+    shortage = (forecast.unserved / forecast.demand.clamp_min(1e-9)).mean()
+    loss = crps + .25 * energy + 500 * generation + 1000 * shortage
+    return loss, {"crps": float(crps.detach()), "energy": float(energy.detach()),
+        "generation_energy_score": float(generation.detach()), "unserved_fraction": float(shortage.detach())}
+
+
 def point_dispatch_loss(forecast, point, labels, capacity, estimator="physical"):
     """MAE-first estimator-aligned supervision plus probability/production losses.
 

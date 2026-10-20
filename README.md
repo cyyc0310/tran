@@ -22,6 +22,8 @@ python scripts/run_experiment.py --demo --output results/demo
 
 `--objective point --point-estimator median` 直接监督采样 CIF 的中位数，并保留辅助概率评分；`mean` 同理监督情景均值。各燃料的边际摘要仅用于源发电辅助损失，不把边际中位数向量解释为一条可行调度路径。
 
+`--objective joint` 采用 CIF CRPS/路径评分与容量归一化联合发电 energy score，默认仍按源 MAE 选模、输出情景中位数。`--weather-calibration` 另学习风速及太阳能资源修正，允许风电超过原预报成员的潜力、同时保持装机上限；光伏仍保留预报的非零时段支持。仅凭源发电标签不能把资源误差与可用率分别识别为真实物理参数。
+
 更强的条件编码器和非线性树对照：
 
 ```bash
@@ -34,7 +36,7 @@ python scripts/run_experiment.py --demo --demo-seed 19 --objective point \
 
 `--backbone shared` 提供仅 22 个参数的共享调度对照：全局潜在位置/尺度、时间相关性及调度平滑度由源域学习，目标配置和天气通过物理层影响输出。它用于检验配置条件网络是否过拟合，不是新增的 SOTA 声明。所有模型在采样数超过天气成员数时复用成员编码；checkpoint 中 `encode_members=False` 可恢复逐情景编码以核验数值和梯度。
 
-`--backbone covariate` 用天气、按总容量归一化的预报负荷和日历编码潜在状态，静态配置通过物理层进入；采用无界位置头与可学习调度平滑度。它检验减少配置记忆的迁移假设，不保证真实调度状态独立于配置。
+`--backbone covariate` 用天气、按总容量归一化的预报负荷和日历编码潜在状态，容量占比、能源占比、EF 与成本不直接进入编码器；采用无界位置头与可学习调度平滑度。它检验减少配置记忆的迁移假设，不保证真实调度状态独立于配置。
 
 `--learning-rate-candidates 0.001 0.01 0.03` 可仅按源验证分数选择学习率，各候选使用相同种子；覆盖 `--learning-rate`，训练步数按候选数倍增，完整学习曲线写入运行记录。机制集合对各自可见源域分别选择，不读取被留出源组的标签选模型。
 
