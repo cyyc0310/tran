@@ -37,7 +37,7 @@ class ProbabilisticDispatchNet(nn.Module):
     def __init__(self, hidden=32, dispatch_temperature=0.3, backbone="tcn", point_forecast=False,
                  point_estimator=None, encode_members=True):
         super().__init__()
-        if backbone not in ("tcn", "context", "shared") or hidden < 1 or dispatch_temperature <= .01:
+        if backbone not in ("tcn", "context", "shared", "covariate") or hidden < 1 or dispatch_temperature <= .01:
             raise ValueError("valid backbone, positive hidden and temperature>.01 required")
         self.encode_members = encode_members
         self.hidden = hidden
@@ -56,15 +56,15 @@ class ProbabilisticDispatchNet(nn.Module):
             self.scale = nn.Linear(1, 10, bias=False)
         else:
             self.encoder = nn.Sequential(
-                nn.Conv1d(31, hidden, 3, padding=1), nn.GELU(),
-                nn.Conv1d(hidden, hidden, 3, padding=1), nn.GELU()) if backbone == "tcn" else ContextEncoder(38, hidden)
+                nn.Conv1d(10 if backbone == "covariate" else 31, hidden, 3, padding=1), nn.GELU(),
+                nn.Conv1d(hidden, hidden, 3, padding=1), nn.GELU()) if backbone in ("tcn", "covariate") else ContextEncoder(38, hidden)
             self.location = nn.Linear(hidden, 10)
             self.scale = nn.Linear(hidden, 10)
             nn.init.zeros_(self.location.bias)
             nn.init.constant_(self.scale.bias, -1.5)
         if backbone == "context":
             self.availability_bias = nn.Parameter(torch.full((6,), 2.))
-        if backbone in ("context", "shared"):
+        if backbone in ("context", "shared", "covariate"):
             self.raw_temperature = nn.Parameter(torch.tensor(math.log(math.expm1(dispatch_temperature - .01))))
         # Six availability logits, three merit-order costs, one load state.
         self.raw_rho = nn.Parameter(torch.tensor(math.log(4.0)))
@@ -104,7 +104,7 @@ class ProbabilisticDispatchNet(nn.Module):
             wx, load_forecast = inputs.weather[row, member], inputs.demand[row, member]
         wind_factor = wind_cf(wx[..., 1])
         solar_factor = (0.85 * wx[..., 2] / 1000).clamp(0, 1)
-        if deterministic and self.backbone in ("context", "shared"):
+        if deterministic and self.backbone in ("context", "shared", "covariate"):
             # E[power(weather)] differs from power(E[weather]).
             wind_factor = wind_cf(inputs.weather[..., 1]).mean(1)[:, None].expand(-1, wx.shape[1], -1)
             solar_factor = (.85 * inputs.weather[..., 2] / 1000).clamp(0, 1).mean(1)[:, None].expand(
@@ -144,7 +144,7 @@ class ProbabilisticDispatchNet(nn.Module):
         cost = inputs.cost[:, None, None] / 100 + 0.25 * state[..., 6:9]
         dispatchable, unserved = capped_dispatch(available[..., list(DISPATCHABLE)], cost,
             residual_load, .01 + F.softplus(self.raw_temperature)
-            if self.backbone in ("context", "shared") else self.dispatch_temperature)
+            if self.backbone in ("context", "shared", "covariate") else self.dispatch_temperature)
         generation = torch.stack([dispatchable[..., 0], dispatchable[..., 1],
             served_nondisp[..., 0], dispatchable[..., 2], served_nondisp[..., 1],
             served_nondisp[..., 2]], -1)
@@ -178,7 +178,12 @@ class ProbabilisticDispatchNet(nn.Module):
                 context = self.encoder(features.reshape(b * n, h, 38),
                     cfg[:, None].expand(-1, n, -1).reshape(b * n, 21))
             else:
-                context = self.encoder(features.reshape(b * n, h, 31).transpose(1, 2)).transpose(1, 2)
+                if self.backbone == "covariate":
+                    # Infer weather/load state without directly encoding the
+                    # static capacity shares, mix, EFs or costs. Configuration
+                    # still acts through the physical dispatch decoder.
+                    features = features[..., :10]
+                context = self.encoder(features.reshape(b * n, h, features.shape[-1]).transpose(1, 2)).transpose(1, 2)
             context = context.reshape(b, n, h, self.hidden)
         loc = self.location(context)
         if self.backbone == "tcn":

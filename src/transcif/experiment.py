@@ -13,7 +13,7 @@ from transcif.data.asof import utc
 from transcif.data.dataset import FUELS, load_bundle, source_names
 from transcif.evaluation.metrics import forecast_metrics
 from transcif.evaluation.scheduling import scheduling_metrics, mechanism_decisions, score_blocks
-from transcif.models.baselines import PublicRidge, PublicBoosting, mix_constant, residual_scenarios
+from transcif.models.baselines import PublicRidge, PublicBoosting, PublicGenerationBoosting, mix_constant, residual_scenarios
 from transcif.models.ensemble import (predict_components, mixture, uncertainty_decomposition,
                                      independent_hour_ablation, save_ensemble)
 from transcif.training.fit import predict
@@ -103,6 +103,12 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
             val_truth - tree.predict(data["validation"]), data["test"], draw_budget, seed)
         extra["public_boosting_point_cif"] = tree_point
         points["public_boosting_source_residuals"] = tree_point
+        generation_tree = PublicGenerationBoosting(seed).fit(data["train"], labels["train"])
+        generation_point = generation_tree.predict(data["test"])
+        extra["public_generation_boosting_point_cif"] = generation_point
+        extra["public_generation_boosting_source_residuals"] = residual_scenarios(generation_point,
+            val_truth - generation_tree.predict(data["validation"]), data["test"], draw_budget, seed)
+        points["public_generation_boosting_source_residuals"] = generation_point
     duration = min(4, horizon)
     if transfer is not None:
         components = predict_components([model] + inner_models, data["test"], scenarios,
@@ -151,7 +157,7 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
                              ("published_mix_source_residuals", constant_draws)]
         distributions += [(name, extra[name]) for name in ("mechanism_mixture", "source_scaled_dispatch",
                             "independent_hour_ablation", "deterministic_dispatch",
-                            "public_boosting_source_residuals") if name in extra]
+                            "public_boosting_source_residuals", "public_generation_boosting_source_residuals") if name in extra]
         for name, draws in distributions:
             metrics[name] = {**forecast_metrics(truth, draws, points.get(name)),
                              "scheduling_mean": scheduling_metrics(truth, draws, min(4, horizon), "mean"),
@@ -187,6 +193,11 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
         "steps": steps, "seed": seed, "scenarios": draw_budget, "training": training,
         "transfer": transfer_summary,
         "tree_baseline": tree_baseline,
+        "baseline_training": ({"public_boosting": {"models": 1, "max_iter_per_model": 300,
+            "features": 31, "supervision": "source CIF"},
+            "public_generation_boosting": {"models": 6, "max_iter_per_model": 300,
+            "features": 38, "supervision": "source generation / public capacity",
+            "constraint": "capacity bounded, not demand balanced"}} if tree_baseline else {}),
         "model_parameters": sum(p.numel() for p in model.parameters()), "metrics": metrics,
         "target_scored": scored, "unserved_forecast_load_fraction": shortage_fraction,
         "runtime": {name: importlib.metadata.version(name) for name in

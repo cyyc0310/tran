@@ -12,7 +12,7 @@ def differentiable_copy(inputs):
                           for f in fields(inputs)})
 
 
-@pytest.mark.parametrize("backbone", ["tcn", "context", "shared"])
+@pytest.mark.parametrize("backbone", ["tcn", "context", "shared", "covariate"])
 @pytest.mark.parametrize("deterministic", [False, True])
 def test_member_encoding_preserves_paths_and_gradients(bundle, backbone, deterministic):
     _, doc, grids = bundle

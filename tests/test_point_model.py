@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from copy import deepcopy
 import subprocess
 import sys
 
@@ -46,6 +47,25 @@ def test_context_can_represent_below_fifty_percent_availability(bundle):
     assert (result.generation[..., 3] < 500).all()
     torch.testing.assert_close(result.generation.sum(-1) + result.unserved, result.demand,
                                atol=1e-3, rtol=1e-5)
+
+
+def test_covariate_state_excludes_static_configuration_but_dispatch_uses_it(bundle):
+    _, doc, grids = bundle
+    example = grids["source_coal"].example(doc["origins"][0])
+    alternate = deepcopy(example)
+    alternate.values["capacity"][:2] = alternate.values["capacity"][:2][::-1].copy()
+    alternate.values["mix"] = alternate.values["mix"][::-1].copy()
+    alternate.values["cost"] += 10
+    model = ProbabilisticDispatchNet(backbone="covariate")
+    with torch.no_grad():
+        model.location.weight.normal_(0, .05)
+    states = []
+    hook = model.location.register_forward_hook(lambda _, args, result: states.append(result.detach().clone()))
+    left = model(stack_inputs([example]), 2, deterministic=True)
+    right = model(stack_inputs([alternate]), 2, deterministic=True)
+    hook.remove()
+    torch.testing.assert_close(states[0], states[1])
+    assert not torch.allclose(left.cif, right.cif)
 
 
 def test_explicit_point_metric_keeps_probability_scores_separate():
@@ -135,6 +155,8 @@ def test_tree_reference_runs_without_target_labels(bundle, tmp_path):
     with np.load(tmp_path / "tree" / "forecasts.npz") as predictions:
         assert predictions["public_boosting_point_cif"].shape == (3, 24)
         assert np.isfinite(predictions["public_boosting_source_residuals"]).all()
+        assert predictions["public_generation_boosting_point_cif"].shape == (3, 24)
+        assert np.isfinite(predictions["public_generation_boosting_source_residuals"]).all()
 
 
 def test_mae_selected_distribution_exports_median_not_mean(bundle):

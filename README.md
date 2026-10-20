@@ -34,6 +34,8 @@ python scripts/run_experiment.py --demo --demo-seed 19 --objective point \
 
 `--backbone shared` 提供仅 22 个参数的共享调度对照：全局潜在位置/尺度、时间相关性及调度平滑度由源域学习，目标配置和天气通过物理层影响输出。它用于检验配置条件网络是否过拟合，不是新增的 SOTA 声明。所有模型在采样数超过天气成员数时复用成员编码；checkpoint 中 `encode_members=False` 可恢复逐情景编码以核验数值和梯度。
 
+`--backbone covariate` 用天气、按总容量归一化的预报负荷和日历编码潜在状态，静态配置通过物理层进入；采用无界位置头与可学习调度平滑度。它检验减少配置记忆的迁移假设，不保证真实调度状态独立于配置。
+
 `--learning-rate-candidates 0.001 0.01 0.03` 可仅按源验证分数选择学习率，各候选使用相同种子；覆盖 `--learning-rate`，训练步数按候选数倍增，完整学习曲线写入运行记录。机制集合对各自可见源域分别选择，不读取被留出源组的标签选模型。
 
 `--selection-protocol source_group --backbone-candidates tcn shared --selection-unit jurisdiction` 可按源域内部留国任务联合选择架构与学习率。每折用其他源组的时间验证选 checkpoint，再在被留组评分，最后用胜出超参数重训全部可见源域；源组不足两个时报错。`source_model_selection` 记录划分、候选分数和总训练预算。默认 `temporal` 保留时间选模；两种协议的搜索预算须单列比较。
@@ -49,6 +51,8 @@ python scripts/run_benchmark.py --manifest results/transfer/synthetic_data/manif
 集合模式中 `--scenarios` 是每个机制的路径数，其他概率基线同步使用相同总路径数。`--inner-unit jurisdiction` 将同国源域一起留出；覆盖范围有直接或间接交集的源域始终成组。至少需要两个独立源组；集合包含全源模型及每个留组模型，训练成本随源组数增长。
 
 `--demo` 生成明确标注的人工电网，只用于验证完整流程。它使用硬排序模拟调度，模型使用凸松弛调度；两者仍共享简化的物理假设。模拟分数不能作为真实电网性能证据。
+
+`scripts/compare_benchmarks.py --reference RUN_A --candidate RUN_B --manifest MANIFEST --output REPORT.json` 对匹配预测做电网/国家和时间块配对重采样。默认每块七个预测窗口，需按采样间隔调整；少量电网的开发区间不能当作域外性能保证。
 
 真实数据需按 [数据协议](docs/DATA.md) 提供 manifest：
 
@@ -79,7 +83,7 @@ python scripts/predict.py --checkpoint results/demo/model.pt \
 | `physics/dispatch.py` | 容量约束凸调度及隐式梯度；显式返回未满足负荷 |
 | `training/` | 可选 MAE 主导点预测或 CRPS 主导分布训练，源域选模与训练诊断 |
 | `training/transfer.py`, `models/ensemble.py` | 独立源组交叉拟合、源留域尺度选择、有限机制集合及配置支持诊断 |
-| `models/baselines.py` | 同输入岭回归、MAE 提升树、公开占比常数；源验证残差路径构造分布 |
+| `models/baselines.py` | 岭回归、CIF 提升树、容量归一化逐燃料提升树、占比常数；各自源验证残差构造分布 |
 | `evaluation/` | 点预测、概率与路径指标；均值/CVaR 连续时段选择 |
 | `experiment.py` | 排除目标及覆盖重叠区域，时间前推，预测完成后才评分 |
 | `benchmark.py` | 固定协议逐目标/种子运行，先平均种子再汇总电网与国家 |
