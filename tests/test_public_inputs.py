@@ -83,6 +83,37 @@ def test_source_label_publication_cutoff(bundle):
         grid.labels(example, available_by=end - pd.Timedelta(seconds=1))
 
 
+def test_label_cache_keeps_revision_cutoffs_and_invalidates_changed_or_deleted_files(bundle, monkeypatch):
+    _, doc, grids = bundle
+    grid = grids["source_coal"]
+    example = grid.example(doc["origins"][0])
+    end = example.origin + pd.Timedelta(hours=24)
+    original_read = pd.read_csv
+    reads = []
+
+    def read(*args, **kwargs):
+        reads.append(args[0])
+        return original_read(*args, **kwargs)
+
+    monkeypatch.setattr(pd, "read_csv", read)
+    before = grid.labels(example, available_by=end)["cif"].copy()
+    grid.labels(example, available_by=end)
+    with pytest.raises(ValueError, match="missing, late"):
+        grid.labels(example, available_by=end - pd.Timedelta(seconds=1))
+    assert reads == [grid.labels_path]
+    frame = original_read(grid.labels_path)
+    revision = frame.iloc[[0]].copy()
+    revision["available_at"] = str(end + pd.Timedelta(hours=1))
+    revision["cif_g_per_kwh"] += 100
+    pd.concat([frame, revision], ignore_index=True).to_csv(grid.labels_path, index=False)
+    np.testing.assert_array_equal(before, grid.labels(example, available_by=end)["cif"])
+    assert grid.labels(example)["cif"][0] == pytest.approx(before[0] + 100, abs=1e-4)
+    assert reads == [grid.labels_path, grid.labels_path]
+    grid.labels_path.unlink()
+    with pytest.raises(FileNotFoundError):
+        grid.labels(example)
+
+
 def test_coverage_and_jurisdiction_exclusion(bundle):
     _, _, grids = bundle
     held = grids["target_mixed"]

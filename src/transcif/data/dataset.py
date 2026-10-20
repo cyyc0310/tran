@@ -1,6 +1,6 @@
 """Public model inputs and separately loaded source/scoring labels."""
 
-from dataclasses import dataclass, fields
+from dataclasses import dataclass, field, fields
 from pathlib import Path
 import json
 
@@ -58,6 +58,9 @@ class GridData:
     config_source: str
     forecast_source: str
     label_kind: str
+    _labels_signature: tuple | None = field(default=None, init=False, repr=False)
+    _labels_frame: pd.DataFrame | None = field(default=None, init=False, repr=False)
+    _label_views: dict = field(default_factory=dict, init=False, repr=False)
 
     def example(self, origin, horizon=24):
         origin = utc([origin], "origin")[0]
@@ -87,19 +90,30 @@ class GridData:
         """Used only for source supervision or after inference for scoring."""
         if self.labels_path is None:
             raise ValueError(f"no labels for {self.name}")
-        frame = pd.read_csv(self.labels_path)
-        frame["valid_at"] = utc(frame.valid_at, "label valid_at")
-        frame["available_at"] = utc(frame.available_at, "label available_at")
-        if (frame.available_at < frame.valid_at + pd.Timedelta(hours=1)).any():
-            raise ValueError("hourly labels must be available after their interval ends")
-        if frame.duplicated(["valid_at", "available_at"]).any():
-            raise ValueError("ambiguous label revisions")
-        if available_by is not None:
-            cutoff = utc([available_by], "label cutoff")[0]
-            frame = frame[frame.available_at <= cutoff]
+        # Lazy: public examples never touch labels, including for cache keys.
+        # Reuse parsed data and cutoff-specific revision views across windows;
+        # changed/deleted files invalidate the cache rather than returning stale truth.
+        status = self.labels_path.stat()
+        signature = (str(self.labels_path.resolve()), status.st_size, status.st_mtime_ns)
+        if self._labels_signature != signature:
+            frame = pd.read_csv(self.labels_path)
+            frame["valid_at"] = utc(frame.valid_at, "label valid_at")
+            frame["available_at"] = utc(frame.available_at, "label available_at")
+            if (frame.available_at < frame.valid_at + pd.Timedelta(hours=1)).any():
+                raise ValueError("hourly labels must be available after their interval ends")
+            if frame.duplicated(["valid_at", "available_at"]).any():
+                raise ValueError("ambiguous label revisions")
+            self._labels_frame, self._labels_signature = frame, signature
+            self._label_views.clear()
+        cutoff = utc([available_by], "label cutoff")[0] if available_by is not None else None
+        if cutoff not in self._label_views:
+            frame = self._labels_frame
+            if cutoff is not None:
+                frame = frame[frame.available_at <= cutoff]
+            self._label_views[cutoff] = (frame.sort_values("available_at")
+                .drop_duplicates("valid_at", keep="last").set_index("valid_at"))
         hours = pd.date_range(example.origin, periods=example.values["demand"].shape[-1], freq="h")
-        frame = (frame.sort_values("available_at").drop_duplicates("valid_at", keep="last")
-                 .set_index("valid_at").reindex(hours))
+        frame = self._label_views[cutoff].reindex(hours)
         columns = ["cif_g_per_kwh"] + [f"generation_{f}_mw" for f in FUELS]
         if not np.isfinite(frame[columns].to_numpy(dtype=float)).all():
             raise ValueError(f"missing, late or nonfinite labels for {self.name} at {example.origin}")
