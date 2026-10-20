@@ -20,6 +20,8 @@ python scripts/run_experiment.py --demo --output results/demo
 
 `--objective crps --selection-metric mae --point-estimator median` 保留分布训练并按源域中位数 MAE 选模，是 MAE 任务必须比较的低成本基线。`--point-estimator mean/median/physical` 显式确定点输出并写入 checkpoint；MAE 主导模式默认使用已监督的物理点输出。
 
+`--objective point --point-estimator median` 直接监督采样 CIF 的中位数，并保留辅助概率评分；`mean` 同理监督情景均值。各燃料的边际摘要仅用于源发电辅助损失，不把边际中位数向量解释为一条可行调度路径。
+
 更强的条件编码器和非线性树对照：
 
 ```bash

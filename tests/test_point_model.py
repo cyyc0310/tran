@@ -12,6 +12,8 @@ from transcif.evaluation.metrics import forecast_metrics
 from transcif.models.context import ContextEncoder
 from transcif.physics.dispatch import capped_dispatch
 from transcif.models.dispatch import ProbabilisticDispatchNet
+from transcif.models.dispatch import DispatchForecast
+from transcif.training.losses import point_dispatch_loss
 from transcif.training.fit import fit, predict
 from transcif.experiment import run
 
@@ -53,6 +55,20 @@ def test_explicit_point_metric_keeps_probability_scores_separate():
     assert metrics["mae"] == metrics["rmse"] == 0
     assert metrics["crps"] == metrics["scenario_mean_mae"] == 1
     assert metrics["point_definition"] == "explicit_point"
+
+
+@pytest.mark.parametrize("estimator, expected", [("median", 0.), ("mean", 25.), ("physical", 50.)])
+def test_point_training_supervises_the_estimator_used_for_inference(estimator, expected):
+    cif = torch.tensor([[[0.], [0.], [0.], [100.]]], requires_grad=True)
+    forecast = DispatchForecast(cif, torch.zeros(1, 4, 1, 6), torch.ones(1, 4, 1),
+                                torch.zeros(1, 4, 1), torch.zeros(1, 4, 1))
+    point = DispatchForecast(torch.full((1, 2, 1), 50.), torch.zeros(1, 2, 1, 6),
+                            torch.ones(1, 2, 1), torch.zeros(1, 2, 1), torch.zeros(1, 2, 1))
+    loss, record = point_dispatch_loss(forecast, point, {"cif": torch.zeros(1, 1),
+        "generation": torch.zeros(1, 1, 6)}, torch.ones(1, 6), estimator)
+    assert record["point_mae"] == expected
+    loss.backward()
+    assert torch.isfinite(cif.grad).all()
 
 
 @pytest.mark.parametrize("backbone", ["context", "shared"])

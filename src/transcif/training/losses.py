@@ -42,14 +42,27 @@ def dispatch_loss(forecast, labels):
                   "share_mae": float(share_error.detach()), "unserved_fraction": float(shortage.detach())}
 
 
-def point_dispatch_loss(forecast, point, labels, capacity):
-    """MAE-first physical point head; probability and source generation auxiliary tasks."""
-    point_mae = (point.cif[:, 0] - labels["cif"]).abs().mean()
+def point_dispatch_loss(forecast, point, labels, capacity, estimator="physical"):
+    """MAE-first estimator-aligned supervision plus probability/production losses.
+
+    Componentwise generation summaries are auxiliary statistics, not an
+    assertion that the vector of marginal medians is a feasible dispatch.
+    Every sampled path continues to pass through the physical decoder.
+    """
+    if estimator == "physical":
+        point_cif, point_generation = point.cif[:, 0], point.generation[:, 0]
+    elif estimator in ("mean", "median"):
+        summarize = (lambda x: x.mean(1)) if estimator == "mean" else (lambda x: x.quantile(.5, dim=1))
+        point_cif, point_generation = summarize(forecast.cif), summarize(forecast.generation)
+    else:
+        raise ValueError("point estimator must be physical, mean or median")
+    point_mae = (point_cif - labels["cif"]).abs().mean()
     # Absolute source production supervision identifies scale hidden by fuel-share ratios.
-    production = (point.generation[:, 0] - labels["generation"]).abs()
+    production = (point_generation - labels["generation"]).abs()
     production = (production / capacity.sum(-1)[:, None, None].clamp_min(1.)).mean()
-    shortage = .5 * ((point.unserved / point.demand.clamp_min(1e-9)).mean() +
-                      (forecast.unserved / forecast.demand.clamp_min(1e-9)).mean())
+    shortage = (forecast.unserved / forecast.demand.clamp_min(1e-9)).mean()
+    if estimator == "physical":
+        shortage = .5 * (shortage + (point.unserved / point.demand.clamp_min(1e-9)).mean())
     crps = fair_crps(forecast.cif, labels["cif"])
     energy = energy_score(forecast.cif, labels["cif"])
     loss = point_mae + .1 * crps + .025 * energy + 500 * production + 1000 * shortage

@@ -109,8 +109,8 @@ def fit(train_examples, train_labels, validation_examples, validation_labels,
         optimizer.zero_grad()
         forecast = model(public, num_scenarios=scenarios)
         if objective == "point":
-            point = model(public, num_scenarios=2, deterministic=True)
-            loss, diagnostic = point_dispatch_loss(forecast, point, labels, public.capacity)
+            point = model(public, num_scenarios=2, deterministic=True) if model.point_estimator == "physical" else None
+            loss, diagnostic = point_dispatch_loss(forecast, point, labels, public.capacity, model.point_estimator)
         else:
             loss, diagnostic = dispatch_loss(forecast, labels)
         if not torch.isfinite(loss):
