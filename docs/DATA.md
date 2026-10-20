@@ -84,4 +84,8 @@ MAE 模式默认监督物理层的确定性位置解；显式指定 `median/mean
 
 天气优先核实完整单次签发档案。[Open-Meteo Single Runs 文档](https://open-meteo.com/en/docs/single-runs-api)明确模型初始化时间不同于公开可用时间；不能直接把 `run` 写成 `available_at`。EIA balance 的 day-ahead demand forecast 也不自带完整签发/修订批次，仍需补原始版本证据。
 
+[NOAA GFS 公开档案](https://registry.opendata.aws/noaa-gfs-bdp-pds/)已实测能读取 2023 年原始预报。`scripts/collect_gfs.py --run 2023-01-01T00:00Z --lead 24 --output NEW_DIRECTORY` 通过带 `If-Match` 的 HTTP Range 只保存 2 m 温度、100 m 风矢量和地表短波 GRIB 消息，同时验证 206 状态、字节范围、对象 ETag、GRIB 长度，保存索引、哈希及 S3 写入时间。初始化、对象写入及当前下载时间分别记录，不自动生成公开时间。
+
+安装 `.[weather]` 后，`scripts/decode_gfs.py --snapshot DIRECTORY --points POINTS.json --output NEW_REPORT.json` 用 ecCodes 复核实际编码的变量、高度、单位、签发批次和平均时段，再提取显式坐标。`hourly_gfs_points` 仅对同一次签发的完整相邻时次，按“平均值 × 窗口长度”差分还原小时短波，保留每小时起点的瞬时温度/风；缺锚点、混合批次或负还原量均报错。实测 `f024` 短波是 18–24 h 平均，不能直接标成小时值。23/24/25 h 三时次及美英澳三个示例坐标已完成真实解码与小时还原；示例点不是区域加权天气，也不是性能实验。完整签发预报、空间权重、档案可用性协议和匹配配置/需求仍待补齐，staging 维持不可直接进入真实公开基准。
+
 公开目标历史统计不是逐时遥测，但仍必须证明当时可用。禁止用全年目标 CIF 拟合 EF、从目标标签反推配置、从实测负荷伪造预报，或补造历史预报发布时间。缺乏发布档案的现有数据只能进入明确标注的开发轨道，不能自动升级为真实公开实验。
