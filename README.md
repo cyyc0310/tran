@@ -34,6 +34,8 @@ python scripts/run_experiment.py --demo --demo-seed 19 --objective point \
 
 `--learning-rate-candidates 0.001 0.01 0.03` 可仅按源验证分数选择学习率，各候选使用相同种子；覆盖 `--learning-rate`，训练步数按候选数倍增，完整学习曲线写入运行记录。机制集合对各自可见源域分别选择，不读取被留出源组的标签选模型。
 
+`--selection-protocol source_group --backbone-candidates tcn shared --selection-unit jurisdiction` 可按源域内部留国任务联合选择架构与学习率。每折用其他源组的时间验证选 checkpoint，再在被留组评分，最后用胜出超参数重训全部可见源域；源组不足两个时报错。`source_model_selection` 记录划分、候选分数和总训练预算。默认 `temporal` 保留时间选模；两种协议的搜索预算须单列比较。
+
 源域留组机制集合和外层电网/种子对照可选开启：
 
 ```bash

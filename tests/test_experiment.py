@@ -115,24 +115,27 @@ def test_ensemble_target_poisoning_and_label_free_cli(bundle, tmp_path):
                for p in prediction["schedule_proposals"].values())
 
 
-@pytest.mark.parametrize("rates", [None, [.001, .01]])
-def test_inner_held_source_never_changes_its_own_model_or_checkpoint_selection(bundle, tmp_path, rates):
+@pytest.mark.parametrize("rates, protocol", [(None, "temporal"), ([.001, .01], "temporal"),
+                                            ([.001, .01], "source_group")])
+def test_inner_held_source_never_changes_its_own_model_or_checkpoint_selection(bundle, tmp_path, rates, protocol):
     manifest, _, grids = bundle
     first, second = tmp_path / "before", tmp_path / "poisoned-source"
     run(manifest, first, steps=2, scenarios=4, seed=4,
-        mechanism_ensemble=True, scale_candidates=(1., 2.), training_options={"lr_candidates": rates})
+        mechanism_ensemble=True, scale_candidates=(1., 2.),
+        training_options={"lr_candidates": rates, "selection_protocol": protocol})
     coal = grids["source_coal"].labels_path
     labels = pd.read_csv(coal)
     labels.cif_g_per_kwh = 100000.
     labels.to_csv(coal, index=False)
     run(manifest, second, steps=2, scenarios=4, seed=4,
-        mechanism_ensemble=True, scale_candidates=(1., 2.), training_options={"lr_candidates": rates})
+        mechanism_ensemble=True, scale_candidates=(1., 2.),
+        training_options={"lr_candidates": rates, "selection_protocol": protocol})
     a, b = (torch.load(p / "ensemble.pt", weights_only=True) for p in (first, second))
     index = a["transfer"]["member_names"].index("leave_source_coal")
     left, right = a["members"][index]["state_dict"], b["members"][index]["state_dict"]
     assert all(torch.equal(left[k], right[k]) for k in left)
     assert a["transfer"]["folds"][index - 1]["selected_step"] == b["transfer"]["folds"][index - 1]["selected_step"]
-    for key in ("learning_rate", "learning_rate_search"):
+    for key in ("learning_rate", "learning_rate_search", "source_model_selection"):
         assert a["transfer"]["folds"][index - 1].get(key) == b["transfer"]["folds"][index - 1].get(key)
 
 

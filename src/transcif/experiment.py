@@ -16,8 +16,8 @@ from transcif.evaluation.scheduling import scheduling_metrics, mechanism_decisio
 from transcif.models.baselines import PublicRidge, PublicBoosting, mix_constant, residual_scenarios
 from transcif.models.ensemble import (predict_components, mixture, uncertainty_decomposition,
                                      independent_hour_ablation, save_ensemble)
-from transcif.training.fit import fit, predict
-from transcif.training.transfer import fit_mechanisms, support_diagnostics
+from transcif.training.fit import predict
+from transcif.training.transfer import fit_source_model, fit_mechanisms, support_diagnostics
 
 
 def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
@@ -62,7 +62,8 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
                 labels[split].append(observed)
     # The outer target contributes PUBLIC INPUTS only until inference finishes.
     data["test"] = [grids[target].example(o, horizon) for o in origins[masks["test"]]]
-    model, training = fit(data["train"], labels["train"], data["validation"], labels["validation"],
+    model, training = fit_source_model(data["train"], labels["train"], data["validation"], labels["validation"],
+                           {name: grids[name] for name in sources},
                            steps=steps, seed=seed, device=device, **(training_options or {}))
     transfer, inner_models = None, []
     if mechanism_ensemble:

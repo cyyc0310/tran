@@ -1,5 +1,7 @@
 """Source-domain cross-fitting, latent-scale selection and metadata support."""
 
+import json
+
 import numpy as np
 
 from transcif.evaluation.metrics import ensemble_crps
@@ -30,6 +32,108 @@ def independent_groups(grids, unit="region"):
                     frontier.append(other)
         groups.append(sorted(group))
     return groups
+
+
+def _held_metrics(model, examples, labels, seed, scenarios=32):
+    forecast = predict(model, examples, scenarios, seed)
+    point = forecast.get("point_cif", forecast["cif"].mean(1))
+    truth = np.stack([label["cif"] for label in labels])
+    scores = []
+    for region in sorted({example.region for example in examples}):
+        mask = np.array([example.region == region for example in examples])
+        error = truth[mask] - point[mask]
+        scores.append({"mae": float(np.abs(error).mean()),
+                       "rmse": float(np.square(error).mean() ** .5),
+                       "crps": ensemble_crps(truth[mask], forecast["cif"][mask])})
+    return {key: float(np.mean([score[key] for score in scores])) for key in scores[0]}
+
+
+def fit_source_model(train_examples, train_labels, validation_examples, validation_labels,
+                     source_grids, steps=250, seed=0, device="cpu",
+                     selection_protocol="temporal", selection_unit="region",
+                     model_candidates=None, **options):
+    """Choose public model configuration/LR without any outer-target labels.
+
+    In source_group mode, each candidate is checkpointed on other sources'
+    temporal validation, then scored on a held independent source group. The
+    winning hyperparameters are refit on all supplied sources. A mechanism's
+    permanently held group must be excluded from source_grids and both splits.
+    """
+    if selection_protocol not in ("temporal", "source_group"):
+        raise ValueError("selection_protocol must be temporal or source_group")
+    if selection_protocol == "temporal" and model_candidates is None:
+        return fit(train_examples, train_labels, validation_examples, validation_labels,
+                   steps=steps, seed=seed, device=device, **options)
+    if (not train_examples or not validation_examples or
+            len(train_examples) != len(train_labels) or len(validation_examples) != len(validation_labels)):
+        raise ValueError("nonempty aligned source splits required")
+    if any(e.region not in source_grids for e in train_examples + validation_examples):
+        raise ValueError("model selection accepts declared source regions only")
+    groups = independent_groups(source_grids, selection_unit) if selection_protocol == "source_group" else []
+    if selection_protocol == "source_group" and len(groups) < 2:
+        raise ValueError("source-group selection needs at least two independent source groups")
+    base = options.get("model_config") or {}
+    configs = [base] if model_candidates is None else [base | cfg for cfg in model_candidates]
+    if not configs or len({json.dumps(cfg, sort_keys=True, allow_nan=False) for cfg in configs}) != len(configs):
+        raise ValueError("nonempty unique model candidates required")
+    rates = options.pop("lr_candidates", None)
+    rates = [options.get("lr", 1e-3)] if rates is None else list(rates)
+    if not rates or len(set(rates)) != len(rates) or any(not np.isfinite(r) or r <= 0 for r in rates):
+        raise ValueError("nonempty unique finite positive learning-rate candidates required")
+    metric = options.get("selection_metric") or ("mae" if options.get("objective") == "point" else "crps")
+    if metric not in ("mae", "rmse", "crps"):
+        raise ValueError("valid source selection metric required")
+    folds = []
+    for held in groups:
+        train = [i for i, e in enumerate(train_examples) if e.region not in held]
+        val = [i for i, e in enumerate(validation_examples) if e.region not in held]
+        test = [i for i, e in enumerate(validation_examples) if e.region in held]
+        if not train or not val or not test or any(
+                not any(validation_examples[i].region == name for i in test) for name in held):
+            raise ValueError("each source-selection fold needs fit, checkpoint and held-group windows")
+        folds.append((held, train, val, test))
+    records, best_model, best_training = [], None, None
+    for config in configs:
+        for rate in rates:
+            candidate_options = {**options, "model_config": config, "lr": rate}
+            if selection_protocol == "temporal":
+                model, training = fit(train_examples, train_labels, validation_examples, validation_labels,
+                    steps=steps, seed=seed, device=device, **candidate_options)
+                score, fold_records = training["selection_score"], []
+                if best_training is None or score < best_training["selection_score"]:
+                    best_model, best_training = model, training
+            else:
+                fold_records = []
+                for fold, (held, train, val, test) in enumerate(folds):
+                    model, training = fit([train_examples[i] for i in train], [train_labels[i] for i in train],
+                        [validation_examples[i] for i in val], [validation_labels[i] for i in val],
+                        steps=steps, seed=seed + 1000 * (fold + 1), device=device, **candidate_options)
+                    held_scores = _held_metrics(model, [validation_examples[i] for i in test],
+                        [validation_labels[i] for i in test], seed + 50000 + fold)
+                    fold_records.append({"held_regions": held,
+                        "training_regions": sorted({train_examples[i].region for i in train}),
+                        "checkpoint_regions": sorted({validation_examples[i].region for i in val}),
+                        "selected_step": training["selected_step"],
+                        "checkpoint_score": training["selection_score"],
+                        "checkpoint_history": training.get("history", []), "held_metrics": held_scores})
+                score = float(np.mean([record["held_metrics"][metric] for record in fold_records]))
+            records.append({"model_config": config, "learning_rate": rate,
+                            "selection_score": score, "folds": fold_records,
+                            **({"history": training.get("history", [])} if not groups else {})})
+    selected = int(np.argmin([record["selection_score"] for record in records]))
+    if selection_protocol == "source_group":
+        winner = records[selected]
+        best_model, best_training = fit(train_examples, train_labels, validation_examples, validation_labels,
+            steps=steps, seed=seed, device=device,
+            **{**options, "model_config": winner["model_config"], "lr": winner["learning_rate"]})
+    fits = len(records) * (len(groups) if groups else 1) + (1 if groups else 0)
+    best_training["source_model_selection"] = {"protocol": selection_protocol,
+        "grouping": selection_unit, "metric": metric, "groups": groups,
+        "selected_candidate": selected, "selection_score": records[selected]["selection_score"],
+        "candidates": records, "selection_scenarios": 32,
+        "total_model_fits": fits, "total_training_steps": fits * steps,
+        "limitation": "source-selected score is not an unbiased outer-target performance estimate"}
+    return best_model, best_training
 
 
 def metadata_vector(example):
@@ -106,8 +210,9 @@ def fit_mechanisms(train_examples, train_labels, validation_examples, validation
         test = [j for j, e in enumerate(validation_examples) if e.region in held]
         if not train or not val or not test:
             raise ValueError("each inner fold needs training, selection and held-group windows")
-        model, training = fit([train_examples[j] for j in train], [train_labels[j] for j in train],
+        model, training = fit_source_model([train_examples[j] for j in train], [train_labels[j] for j in train],
             [validation_examples[j] for j in val], [validation_labels[j] for j in val],
+            {name: grid for name, grid in source_grids.items() if name not in held},
             steps=steps, seed=seed + 1000 * (i + 1), device=device, **(training_options or {}))
         held_examples = [validation_examples[j] for j in test]
         truth = np.stack([validation_labels[j]["cif"] for j in test])
@@ -134,6 +239,8 @@ def fit_mechanisms(train_examples, train_labels, validation_examples, validation
             "learning_rate": training["learning_rate"],
             **({"learning_rate_search": training["learning_rate_search"]}
                if "learning_rate_search" in training else {}),
+            **({"source_model_selection": training["source_model_selection"]}
+               if "source_model_selection" in training else {}),
             "within_source_validation_crps": training["source_validation_crps"],
             "held_group_crps_by_scale": fold_scores})
     macro = np.mean(scores, axis=0)
