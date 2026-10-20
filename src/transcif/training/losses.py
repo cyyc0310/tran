@@ -20,7 +20,10 @@ def energy_score(samples, truth):
     if s < 2:
         raise ValueError("at least two scenarios required")
     fit = torch.linalg.vector_norm(samples - truth[:, None], dim=-1).mean()
-    spread = torch.cdist(samples, samples).sum() / (samples.shape[0] * s * (s - 1))
+    # The matrix-multiplication shortcut can produce nonzero self-distances
+    # and lose translation invariance for large, nearly equal CIF paths.
+    spread = torch.cdist(samples, samples, compute_mode="donot_use_mm_for_euclid_dist").sum() / (
+        samples.shape[0] * s * (s - 1))
     return (fit - spread / 2) / h**0.5
 
 
