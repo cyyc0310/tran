@@ -72,6 +72,8 @@ def test_source_weather_calibration_can_recover_wind_above_all_issued_member_pot
     _, doc, grids = bundle
     example = grids["source_coal"].example(doc["origins"][0])
     example.values["capacity"][:] = [0, 1000, 0, 0, 1000, 500]
+    example.values["weather"] = example.values["weather"].copy()
+    example.values["demand"] = example.values["demand"].copy()
     example.values["weather"][..., 1] = 1
     example.values["weather"][..., 2] = 0
     example.values["demand"][:] = 500
