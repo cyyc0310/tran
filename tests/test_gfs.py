@@ -143,7 +143,7 @@ def decoded_windows():
             fields[name] = {"units": units, "measurement_kind": "interval_mean" if name == "shortwave_surface" else "instantaneous",
                 "forecast_end_at": str(run + pd.Timedelta(hours=lead)),
                 "averaging_start_at": str(run + pd.Timedelta(hours=start)) if name == "shortwave_surface" else None,
-                "samples": [{"id": "A", "value": value}]}
+                "samples": [{"id": "A", "value": value, "latitude": 40., "longitude": 260.}]}
         records.append({"initialization_at": str(run), "lead_hours": lead,
             "points": [{"id": "A", "latitude": 40, "longitude": -100}],
             "fields": fields, "snapshot_metadata_sha256": str(lead)})
@@ -159,7 +159,7 @@ def test_hourly_shortwave_deaccumulates_native_window_and_handles_reset():
     assert report["available_at"] is None and not report["eligible_for_issued_public"]
 
 
-@pytest.mark.parametrize("change", ["missing", "cycle", "points", "window", "negative", "units", "duplicate"])
+@pytest.mark.parametrize("change", ["missing", "cycle", "points", "window", "negative", "units", "duplicate", "grid"])
 def test_hourly_weather_never_stitches_cycles_interpolates_or_clamps(change):
     records = deepcopy(decoded_windows())
     if change == "missing":
@@ -174,7 +174,35 @@ def test_hourly_weather_never_stitches_cycles_interpolates_or_clamps(change):
         records[0]["fields"]["shortwave_surface"]["samples"][0]["value"] = 1000
     elif change == "units":
         records[0]["fields"]["temperature_2m"]["units"] = "C"
+    elif change == "grid":
+        records[1]["fields"]["shortwave_surface"]["samples"][0]["latitude"] = 40.25
     else:
         records.append(deepcopy(records[0]))
     with pytest.raises(ValueError):
         hourly_gfs_points(records, 23, 25)
+
+
+def test_packing_resolution_correction_is_opt_in_and_preserves_negative_raw_value():
+    records = decoded_windows()
+    for record in records:
+        record["fields"]["shortwave_surface"]["packing"] = {
+            "type": "grid_complex_spatial_differencing", "scaling_step_native": .02}
+    records[0]["fields"]["shortwave_surface"]["samples"][0]["value"] = 144.01
+    with pytest.raises(ValueError, match="negative implied"):
+        hourly_gfs_points(records, 23, 25)
+    result = hourly_gfs_points(records, 23, 25, "packing_resolution")
+    row = result["rows"][0]
+    assert row["shortwave_w_per_m2"] == 0
+    assert row["shortwave_raw_w_per_m2"] == pytest.approx(-.05)
+    assert row["shortwave_resolution_tolerance_w_per_m2"] == pytest.approx(.22)
+    assert row["shortwave_projected_within_resolution"]
+    assert result["shortwave_adjusted_point_hours"] == 1
+    records[0]["fields"]["shortwave_surface"]["samples"][0]["value"] = 145
+    with pytest.raises(ValueError, match="negative implied"):
+        hourly_gfs_points(records, 23, 25, "packing_resolution")
+
+
+def test_packing_policy_rejects_missing_or_unsupported_encoding_evidence():
+    records = decoded_windows()
+    with pytest.raises(ValueError, match="scaling-step evidence"):
+        hourly_gfs_points(records, 23, 25, "packing_resolution")

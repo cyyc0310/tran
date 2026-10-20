@@ -88,6 +88,11 @@ def decode_gfs_points(snapshot, points):
                 fields[name] = {"units": get("units"), "native_step": record["native_step"],
                     "measurement_kind": record["measurement_kind"], "forecast_end_at": record["forecast_end_at"],
                     "averaging_start_at": record["averaging_start_at"], "samples": samples}
+                if solar:
+                    fields[name]["packing"] = {"type": get("packingType"),
+                        "binary_scale": get("binaryScaleFactor"), "decimal_scale": get("decimalScaleFactor"),
+                        "reference_value": get("referenceValue"),
+                        "scaling_step_native": 2. ** get("binaryScaleFactor") * 10. ** (-get("decimalScaleFactor"))}
             finally:
                 eccodes.codes_release(handle)
     return {"initialization_at": str(run), "lead_hours": lead, "points": points, "fields": fields,
@@ -97,18 +102,23 @@ def decode_gfs_points(snapshot, points):
         "interpretation": "native point forecasts, not regional averages or model-ready hourly weather"}
 
 
-def hourly_gfs_points(decoded, first_lead, end_lead):
+def hourly_gfs_points(decoded, first_lead, end_lead, solar_negative_policy="error"):
     """Form [first_lead,end_lead) point hours from one verified forecast run.
 
     Temperature and vector wind are sampled at the hour start. Shortwave is
     the hour mean obtained by differencing cumulative-window mean * duration.
     A reset window needs no earlier anchor. A missing anchor, changing points,
-    mixed run or negative implied energy is rejected, never interpolated or
-    clamped. No availability time or regional weighting is assigned.
+    mixed run or negative implied energy is rejected by default. Explicit
+    packing_resolution policy projects only small negative values within a
+    duration-weighted encoded scaling-step tolerance. Raw values and all such
+    adjustments are retained. This tolerance is not a meteorological error
+    interval or a certified bound on pre-packing model values.
     """
     if (not decoded or any(not isinstance(x, int) or isinstance(x, bool) for x in (first_lead, end_lead))
             or not (1 <= first_lead < end_lead <= 120)):
         raise ValueError("nonempty single-run forecasts and positive hourly lead range required")
+    if solar_negative_policy not in ("error", "packing_resolution"):
+        raise ValueError("solar_negative_policy must be error or packing_resolution")
     by_lead = {record["lead_hours"]: record for record in decoded}
     run = run_timestamp(decoded[0]["initialization_at"])
     points = decoded[0]["points"]
@@ -116,16 +126,30 @@ def hourly_gfs_points(decoded, first_lead, end_lead):
             or x["points"] != points for x in decoded)):
         raise ValueError("unique leads from one initialization and unchanged points required")
 
+    point_locations = None
     def values(record, field):
+        nonlocal point_locations
         samples = record["fields"][field]["samples"]
         if [x["id"] for x in samples] != [p["id"] for p in points]:
             raise ValueError("aligned native forecast point IDs required")
         data = [x["value"] for x in samples]
         if not all(math.isfinite(x) for x in data):
             raise ValueError("finite native forecast values required")
+        locations = [(x["latitude"], x["longitude"]) for x in samples]
+        if point_locations is not None and locations != point_locations:
+            raise ValueError("unchanged sampled grid coordinates across fields/leads required")
+        point_locations = locations
         return data
 
-    rows = []
+    def resolution(field):
+        packing = field.get("packing", {})
+        value = packing.get("scaling_step_native", float("nan"))
+        if (packing.get("type") not in ("grid_simple", "grid_complex", "grid_complex_spatial_differencing")
+                or not math.isfinite(value) or value <= 0):
+            raise ValueError("reviewed GRIB scaling-step evidence required for packing_resolution policy")
+        return value
+
+    rows, adjusted = [], 0
     for lead in range(first_lead, end_lead):
         if lead not in by_lead or lead + 1 not in by_lead:
             raise ValueError("complete consecutive forecast leads required, without cycle stitching")
@@ -145,6 +169,7 @@ def hourly_gfs_points(decoded, first_lead, end_lead):
             raise ValueError("reviewed shortwave window ending at next hour required")
         duration = lead + 1 - start
         energy = [value * duration for value in values(next_hour, "shortwave_surface")]
+        tolerance = duration * resolution(solar) if solar_negative_policy == "packing_resolution" else 0.
         if start < lead:
             previous = current["fields"]["shortwave_surface"]
             if (previous["units"] != "W m**-2" or previous["measurement_kind"] != "interval_mean"
@@ -153,13 +178,21 @@ def hourly_gfs_points(decoded, first_lead, end_lead):
                 raise ValueError("matching prior accumulation window required for hourly shortwave")
             energy = [total - value * (duration - 1) for total, value in
                       zip(energy, values(current, "shortwave_surface"))]
+            if solar_negative_policy == "packing_resolution":
+                tolerance += (duration - 1) * resolution(previous)
         for i, point in enumerate(points):
-            if energy[i] < 0:
+            raw = energy[i]
+            if raw < -tolerance:
                 raise ValueError("negative implied hourly shortwave; resolve packing/forecast inconsistency explicitly")
+            projected = raw < 0
+            adjusted += int(projected)
             rows.append({"point": point["id"], "valid_at": str(run + pd.Timedelta(hours=lead)),
                 "temperature_c": temperature[i] - 273.15,
-                "wind_speed_ms": math.hypot(u[i], v[i]), "shortwave_w_per_m2": energy[i]})
+                "wind_speed_ms": math.hypot(u[i], v[i]), "shortwave_w_per_m2": max(0., raw),
+                "shortwave_raw_w_per_m2": raw, "shortwave_resolution_tolerance_w_per_m2": tolerance,
+                "shortwave_projected_within_resolution": projected})
     return {"initialization_at": str(run), "first_lead": first_lead, "end_lead": end_lead,
         "points": points, "rows": rows, "available_at": None, "eligible_for_issued_public": False,
+        "solar_negative_policy": solar_negative_policy, "shortwave_adjusted_point_hours": adjusted,
         "interpretation": "hourly point weather; instantaneous start-of-hour temperature/wind and deaccumulated hour-mean shortwave; not regional fleet/demand averages",
         "input_metadata_sha256": [x["snapshot_metadata_sha256"] for x in decoded]}
