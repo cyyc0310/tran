@@ -82,10 +82,14 @@ MAE 模式默认监督物理层的确定性位置解；显式指定 `median/mean
 
 [SCADA 文档](https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_123.htm)描述的是调度开始时的瞬时 MW。适配器仅将原生区间键按固定 UTC+10 转换，保留 `SETTLEMENTDATE`，不推断五分钟偏移、不生成小时能量或 CIF。注册表保持各快照、原生燃料文本及多机组映射，不按后来的注册快照回填目标配置；报表创建时间和 `LASTCHANGED` 均不写成公开时间。[GENUNITS 的 EF 字段为 CO₂e](https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_250.htm)，不能直接宣称与当前直接 CO₂ 核算一致。staging 仍为 `eligible_for_issued_public=false`。
 
+`scripts/audit_aemo_registry.py --staging data/staging/aemo-native-2023 --registration-month 202312 --output NEW_REPORT.json` 用显式指定的注册快照，逐月在月中时点检查当月 DUID 清单。保留最新生效日期下各原生版本的机组集合，不擅自解释删除/修订语义；一个 DUID 始终只有一行，避免多机组 join 重复计算 MW。任一候选机组 EF 缺失时不补零或对剩余值取平均。实测每月有 34 个多机组 DUID，26–27 个标为 GENERATOR 的 DUID 缺完整候选 EF。此为事后清单诊断，既非发电量加权缺失率，也非整月逐时映射。[2019 年适用的 CDEII 规程](https://www.aemo.com.au/-/media/files/stakeholder_consultation/consultations/nem-consultations/2019/cdeii/carbon-dioxide-equivalent-intensity-index-procedure-v40final.pdf)还纳入逸散排放，不能通过单位换算得到直接 CO₂ 标签。
+
 天气优先核实完整单次签发档案。[Open-Meteo Single Runs 文档](https://open-meteo.com/en/docs/single-runs-api)明确模型初始化时间不同于公开可用时间；不能直接把 `run` 写成 `available_at`。EIA balance 的 day-ahead demand forecast 也不自带完整签发/修订批次，仍需补原始版本证据。
 
 [NOAA GFS 公开档案](https://registry.opendata.aws/noaa-gfs-bdp-pds/)已实测能读取 2023 年原始预报。`scripts/collect_gfs.py --run 2023-01-01T00:00Z --lead 24 --output NEW_DIRECTORY` 通过带 `If-Match` 的 HTTP Range 只保存 2 m 温度、100 m 风矢量和地表短波 GRIB 消息，同时验证 206 状态、字节范围、对象 ETag、GRIB 长度，保存索引、哈希及 S3 写入时间。初始化、对象写入及当前下载时间分别记录，不自动生成公开时间。
 
-安装 `.[weather]` 后，`scripts/decode_gfs.py --snapshot DIRECTORY --points POINTS.json --output NEW_REPORT.json` 用 ecCodes 复核实际编码的变量、高度、单位、签发批次和平均时段，再提取显式坐标。`hourly_gfs_points` 仅对同一次签发的完整相邻时次，按“平均值 × 窗口长度”差分还原小时短波，保留每小时起点的瞬时温度/风；缺锚点、混合批次或负还原量均报错。实测 `f024` 短波是 18–24 h 平均，不能直接标成小时值。23/24/25 h 三时次及美英澳三个示例坐标已完成真实解码与小时还原；示例点不是区域加权天气，也不是性能实验。完整签发预报、空间权重、档案可用性协议和匹配配置/需求仍待补齐，staging 维持不可直接进入真实公开基准。
+安装 `.[weather]` 后，`scripts/decode_gfs.py --snapshot DIRECTORY --points POINTS.json --output NEW_REPORT.json` 用 ecCodes 复核实际编码的变量、高度、单位、签发批次和平均时段，再提取显式坐标。`hourly_gfs_points` 仅对同一次签发、同一采样坐标的完整相邻时次，按“平均值 × 窗口长度”差分还原小时短波，保留每小时起点的瞬时温度/风；缺锚点或混合批次均报错。负还原量默认报错；显式 `packing_resolution` 策略只将加权编码分辨率阈值内的微小负值投影为零，并保存原值、阈值与次数，更大负值仍拒绝。这是数值处理策略，不是气象误差或概率区间。实测 `f024` 短波是 18–24 h 平均，不能直接标成小时值。
+
+`scripts/collect_gfs_window.py --run 2023-01-01T00:00Z --points POINTS.json --cache CACHE --output NEW_DIRECTORY --solar-negative-policy packing_resolution` 默认构造 06 UTC 起的 24 h 点天气窗口，需 25 个相邻原生时次。网络并发、暂时故障重试和哈希校验后的断点续传均已实现；缓存损坏拒绝覆盖，完整解码后才整体提交输出。对象写入时间须介于初始化与预测起点之间，但仍不自动认证首次公开时间。该真实窗口在美英澳三个示例点已跑通，共 72 点小时，两次微小负短波修正均留痕；示例点不是区域加权天气，也不是性能实验。空间权重、档案可用性协议和匹配配置/需求仍待补齐，staging 维持不可直接进入真实公开基准。
 
 公开目标历史统计不是逐时遥测，但仍必须证明当时可用。禁止用全年目标 CIF 拟合 EF、从目标标签反推配置、从实测负荷伪造预报，或补造历史预报发布时间。缺乏发布档案的现有数据只能进入明确标注的开发轨道，不能自动升级为真实公开实验。
