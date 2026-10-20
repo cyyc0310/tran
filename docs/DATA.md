@@ -78,6 +78,10 @@ MAE 模式默认监督物理层的确定性位置解；显式指定 `median/mean
 
 `scripts/collect_neso.py --start 2022-01-01T00:00Z --end 2025-01-01T00:00Z --output data/staging/neso-national-2022-2024` 从国家接口另存实际估计与预测字段，并保留原始快照、URL、哈希、下载时间。只有两个半小时实际值均存在才形成逐时实际标签；不会用 forecast 回填。下载版本不等于原始发布版本，核算边界、逐燃料 MW 及签发预报仍需补齐。
 
+`scripts/prepare_aemo.py --inputs RAW_DVD_FILES --output NEW_DIRECTORY` 流式整理 AEMO DVD 快照，逐文件验证表版本、完整 footer 记录数及跨数据块主键唯一性，压缩输出和元数据整体提交；失败不留下完整目录。2023 年 28 份快照已整理到 `data/staging/aemo-native-2023`，包括 47,482,096 条 SCADA 记录、473 个 DUID，其中 513,728 条读数为负；读数非空不代表网络边界完整。输入和输出哈希均已复核，原始缓存未修改。
+
+[SCADA 文档](https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_123.htm)描述的是调度开始时的瞬时 MW。适配器仅将原生区间键按固定 UTC+10 转换，保留 `SETTLEMENTDATE`，不推断五分钟偏移、不生成小时能量或 CIF。注册表保持各快照、原生燃料文本及多机组映射，不按后来的注册快照回填目标配置；报表创建时间和 `LASTCHANGED` 均不写成公开时间。[GENUNITS 的 EF 字段为 CO₂e](https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_250.htm)，不能直接宣称与当前直接 CO₂ 核算一致。staging 仍为 `eligible_for_issued_public=false`。
+
 天气优先核实完整单次签发档案。[Open-Meteo Single Runs 文档](https://open-meteo.com/en/docs/single-runs-api)明确模型初始化时间不同于公开可用时间；不能直接把 `run` 写成 `available_at`。EIA balance 的 day-ahead demand forecast 也不自带完整签发/修订批次，仍需补原始版本证据。
 
 公开目标历史统计不是逐时遥测，但仍必须证明当时可用。禁止用全年目标 CIF 拟合 EF、从目标标签反推配置、从实测负荷伪造预报，或补造历史预报发布时间。缺乏发布档案的现有数据只能进入明确标注的开发轨道，不能自动升级为真实公开实验。
