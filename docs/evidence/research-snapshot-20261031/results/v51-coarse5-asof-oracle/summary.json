@@ -1,0 +1,60 @@
+{
+  "status": "COMPLETE_EXPLORATORY_COARSE5_ASOF_VS_ORACLE_HOURLY_CIF",
+  "coarse_schema": {
+    "thermal": "coal+gas+oil+other proxy; this is not an asserted Chinese thermal mapping",
+    "nuclear": "nuclear",
+    "hydro": "hydro",
+    "wind": "wind",
+    "solar": "solar"
+  },
+  "forecast_period": "2025H1, up to 37 region-months",
+  "asof_rule": "same-calendar-month previous eligible monthly row; require period_end and available_at <= target month start",
+  "source_training": "2024 donor hourly month\u00d7hour fuel profiles, equal-source; donor thermal internal split from donor 2024 monthly detail; held target fuel detail never used for prediction",
+  "oracle": "target-month observed coarse five-category totals used only in oracle diagnostic arm; still no target within-thermal fuel split used for prediction",
+  "ef_g_kwh": {
+    "coal": 1000.0,
+    "gas": 400.0,
+    "oil": 800.0,
+    "nuclear": 0.0,
+    "hydro": 0.0,
+    "wind": 0.0,
+    "solar": 0.0,
+    "other": 400.0
+  },
+  "interpretation": "Exploratory proxy stress test on inspected EIA-like sources. Chinese category mapping, emission factors, vintage, and full coverage are unverified. Target region/source labels previously viewed; not untouched-region evidence.",
+  "input_sha256": {
+    "monthly": "e7c805960f0b6b013dfe8e5f83020c84adee64504c6b9876fa2bde8aa8c5b67d",
+    "hourly": {
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/BPAT_hourly.csv": "72cf83af8fde5f17d5ccb29a1157db26758eb3cc0721186384b5e474cfc933ac",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/CISO_hourly.csv": "34a714dcb07ef66b807c444fe1ac260755716c91edab642c64c8f2c2a94c6d2b",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/ERCO_hourly.csv": "56abb6996e7b9fdf0d59ddd28743afb5ec77629570b6358ad9ee5c3e007f466c",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/FPL_hourly.csv": "423f8166dfcda13f6d6f6e5f9d262c88a3321ee1a6401c65977f2ac0fbbad569",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/ISNE_hourly.csv": "a6ff6602dfcb34dabdb76a1d28003c63f5013c4f11a4f5d9097c278fe67ccd09",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/MISO_hourly.csv": "0b33187fefb609992a2a6550af48ea1f59ff6349f690b0277d73ec537bd2ddfc",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/NYIS_hourly.csv": "f173c238df2c019b49623959ecf7dac74045dfb03c6b160717b86f9dc0ec1e59"
+    }
+  },
+  "macro": [
+    {
+      "model": "coarse_asof",
+      "region_months": 37,
+      "coarse_total_abs_error_fraction": 0.12139060502303631,
+      "cif_mae": 57.69701032913313,
+      "cif_rmse": 66.66031005317468,
+      "cif_bias": -9.277812136446446
+    },
+    {
+      "model": "coarse_month_oracle",
+      "region_months": 37,
+      "coarse_total_abs_error_fraction": 0.0,
+      "cif_mae": 56.792238913391515,
+      "cif_rmse": 65.86288431111772,
+      "cif_bias": -11.886536761460501
+    }
+  ],
+  "outputs_sha256": {
+    "region_month_metrics.csv": "18aa8d6ae3fddcd599467f7a67b7c4486513994716a1c6883289e4098bff0913",
+    "source_macro.csv": "d4e010b427a05f02af1f13bc772ec5838db01c7ea4dec29c888abb6d48e2d35f",
+    "macro.csv": "ee0b5cf10fe797ef1733d4cefbc814c2d436c9d6b450b359d56b892c58ff6d2d"
+  }
+}

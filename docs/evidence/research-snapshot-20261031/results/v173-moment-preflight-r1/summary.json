@@ -1,0 +1,191 @@
+{
+  "assertion_failures": 0,
+  "cases": [
+    {
+      "case": "mixed",
+      "results": [
+        {
+          "mode": "GE",
+          "status": "certified",
+          "iterations": 4,
+          "rank": 2,
+          "moment_error": 1.0449157878825003e-16,
+          "used_prior_fallback": false,
+          "probability": [
+            0.11256910667458803,
+            0.11033319374195617,
+            0.10886731271377215,
+            0.1489068995243746,
+            0.14692853026327032,
+            0.14401015051688051,
+            0.11533785701199639,
+            0.11304694955316175
+          ],
+          "cif_mean_before": 481.25,
+          "cif_mean_after": 483.2773505795646
+        },
+        {
+          "mode": "fuel8",
+          "status": "certified",
+          "iterations": 4,
+          "rank": 3,
+          "moment_error": 5.224578939412501e-17,
+          "used_prior_fallback": false,
+          "probability": [
+            0.11222422194021393,
+            0.11222422194021399,
+            0.10764295453526594,
+            0.15055155611957216,
+            0.14440567312844352,
+            0.14440567312844357,
+            0.11427284960392345,
+            0.11427284960392345
+          ],
+          "cif_mean_before": 481.25,
+          "cif_mean_after": 483.57046327403015
+        }
+      ]
+    },
+    {
+      "case": "complementary_zero",
+      "results": [
+        {
+          "mode": "GE",
+          "status": "certified",
+          "iterations": 5,
+          "rank": 1,
+          "moment_error": 2.859790182441202e-11,
+          "used_prior_fallback": false,
+          "probability": [
+            0.30000000004766303,
+            0.6999999999523371
+          ],
+          "cif_mean_before": 580.0,
+          "cif_mean_after": 580.0000000285979
+        },
+        {
+          "mode": "fuel8",
+          "status": "certified",
+          "iterations": 5,
+          "rank": 1,
+          "moment_error": 4.766309569248506e-11,
+          "used_prior_fallback": false,
+          "probability": [
+            0.3000000000476631,
+            0.6999999999523369
+          ],
+          "cif_mean_before": 580.0,
+          "cif_mean_after": 580.0000000285978
+        }
+      ]
+    },
+    {
+      "case": "constant",
+      "results": [
+        {
+          "mode": "GE",
+          "status": "already_feasible",
+          "iterations": 0,
+          "rank": 0,
+          "moment_error": 0.0,
+          "used_prior_fallback": false,
+          "probability": [
+            0.2,
+            0.3,
+            0.5
+          ],
+          "cif_mean_before": 399.99999999999994,
+          "cif_mean_after": 400.0
+        },
+        {
+          "mode": "fuel8",
+          "status": "already_feasible",
+          "iterations": 0,
+          "rank": 0,
+          "moment_error": 0.0,
+          "used_prior_fallback": false,
+          "probability": [
+            0.2,
+            0.3,
+            0.5
+          ],
+          "cif_mean_before": 399.99999999999994,
+          "cif_mean_after": 400.0
+        }
+      ]
+    },
+    {
+      "case": "collinear_constant_cif",
+      "results": [
+        {
+          "mode": "GE",
+          "status": "certified",
+          "iterations": 4,
+          "rank": 1,
+          "moment_error": 1.0889067425523535e-13,
+          "used_prior_fallback": false,
+          "probability": [
+            0.3438938015148314,
+            0.18460861932303999,
+            0.09910135680915354,
+            0.3723962223529751
+          ],
+          "cif_mean_before": 400.0,
+          "cif_mean_after": 400.0
+        },
+        {
+          "mode": "fuel8",
+          "status": "certified",
+          "iterations": 4,
+          "rank": 1,
+          "moment_error": 1.0889067425523535e-13,
+          "used_prior_fallback": false,
+          "probability": [
+            0.3438938015148314,
+            0.18460861932303999,
+            0.09910135680915354,
+            0.3723962223529751
+          ],
+          "cif_mean_before": 400.0,
+          "cif_mean_after": 400.0
+        }
+      ]
+    },
+    {
+      "case": "rare",
+      "results": [
+        {
+          "mode": "GE",
+          "status": "certified",
+          "iterations": 22,
+          "rank": 1,
+          "moment_error": 5.0014326014036214e-11,
+          "used_prior_fallback": false,
+          "probability": [
+            0.9999999999156428,
+            8.435718097874435e-11
+          ],
+          "cif_mean_before": 999.9999999994,
+          "cif_mean_after": 999.9999999493856
+        },
+        {
+          "mode": "fuel8",
+          "status": "certified",
+          "iterations": 22,
+          "rank": 1,
+          "moment_error": 8.335721002339369e-11,
+          "used_prior_fallback": false,
+          "probability": [
+            0.9999999999156428,
+            8.435720904304267e-11
+          ],
+          "cif_mean_before": 999.9999999994,
+          "cif_mean_after": 999.9999999493857
+        }
+      ]
+    }
+  ],
+  "script_sha256": "6edd4825e9cc33878232c6a208ba7c67871ae93686b9b0dc8e61fc09de136459",
+  "helper_sha256": "b63e48d45f8175b865791323d868595092a5755391e4c67249513589c44296a1",
+  "scope": "Synthetic only. Protected generator moments do not fix the nonlinear CIF time law."
+}

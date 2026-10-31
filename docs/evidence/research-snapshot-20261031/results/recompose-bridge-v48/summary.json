@@ -1,0 +1,23 @@
+{
+  "new_fits": 0,
+  "new_arms": 75,
+  "inherited_arms": 63,
+  "arms": 138,
+  "new_day_rows": 429375,
+  "inherited_day_rows_numeric_exact": 360675,
+  "source_days": 1145,
+  "prediction_queries": 1267,
+  "raw_diagnostics": 95025,
+  "fixed_factors": [
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "primary_factor": 1.0,
+  "method_innovation_claim": false,
+  "independent_confirmation": false,
+  "method_frozen": false,
+  "new_holdout_authorized": false
+}

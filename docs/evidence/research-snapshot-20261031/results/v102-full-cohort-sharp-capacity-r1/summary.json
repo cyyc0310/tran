@@ -1,0 +1,203 @@
+{
+  "status": "EXACT_SHARP_GROUP_CAPACITY_VS_OUTER_SET_FULL_V100_COHORT",
+  "region_months": 513,
+  "scored_rows": 3078,
+  "frontier": [
+    {
+      "tau": 100,
+      "rate": 0.01,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "exact_width": 423.48165306366883,
+      "outer_width": 423.48165306366883,
+      "endpoint_match_rate": 1.0,
+      "integer_set_match_rate": 1.0,
+      "coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 100,
+      "rate": 0.05,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "exact_width": 423.48165306366883,
+      "outer_width": 423.48165306366883,
+      "endpoint_match_rate": 1.0,
+      "integer_set_match_rate": 1.0,
+      "coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 100,
+      "rate": 0.1,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "exact_width": 423.48165306366883,
+      "outer_width": 423.48165306366883,
+      "endpoint_match_rate": 1.0,
+      "integer_set_match_rate": 1.0,
+      "coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 300,
+      "rate": 0.01,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "exact_width": 439.73287220026344,
+      "outer_width": 439.73287220026344,
+      "endpoint_match_rate": 1.0,
+      "integer_set_match_rate": 1.0,
+      "coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 300,
+      "rate": 0.05,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "exact_width": 439.73287220026344,
+      "outer_width": 439.73287220026344,
+      "endpoint_match_rate": 1.0,
+      "integer_set_match_rate": 1.0,
+      "coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 300,
+      "rate": 0.1,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "exact_width": 439.73287220026344,
+      "outer_width": 439.73287220026344,
+      "endpoint_match_rate": 1.0,
+      "integer_set_match_rate": 1.0,
+      "coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    }
+  ],
+  "capacity_source_sha256": {
+    "2023": "1447e23e608bea1523961542a90eb93ea86715067a37f211282541461049b46f",
+    "2024": "0aaae04812cd4ab87a3e346bdf93848a3cc15053fd4dc2a4cf82d2aeac95f12b"
+  },
+  "hourly_source_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "DOPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "EPE": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "GCPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TIDC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    }
+  },
+  "protocol_sha256": "d0806546de23725189886635e5bb770e6bab90ddf89d4dcf844901fe300ab81e",
+  "script_sha256": "6bbaf01ba798ae076b224131c8385b9ee21eb0d2db62a13854ca9e173a1907d3",
+  "limitations": [
+    "Previously opened EIA regions, fixed-EF generation proxy; this is not blind, unseen-region, or China validation.",
+    "Sharpness is conditional on exact detailed monthly fuel margins, lagged shared group caps, positive output in both blocks, and no cross-hour constraints.",
+    "The 513-month cohort is selected only by hourly coverage and monthly-total feasibility; target-hour peak failures remain included."
+  ]
+}

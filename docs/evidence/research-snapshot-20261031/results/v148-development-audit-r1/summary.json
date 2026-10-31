@@ -1,0 +1,17 @@
+{
+  "assertion_failures": 0,
+  "verified_hashes": 79,
+  "v147_matched_target_rows": 2112,
+  "v147_changed_bounds": 0,
+  "v148_preflight_matched_rows": 9504,
+  "v148_preflight_changed_bounds": 0,
+  "source_gradient_blocks": 432,
+  "source_gradient_values": 272736,
+  "script_sha256": "0a44b7c303c1295ac883bd9a34ffe60ca050755c401b5b992d5e8c99b5dc16e3",
+  "output_hashes": {
+    "gradient_contract_audit.csv": "b383a2ab972306304bad1f612bdfb4f70b60a6f2c600d0215b5898f970931bb8",
+    "individual_endpoint_coverage.csv": "d262ea0685b9643742fa860bbb442c2efbc4694a7bec10b2295379b6cb71cc47",
+    "verified_hashes.csv": "908f7c1694b743317be0ff0d2f119c2749eacbe814e711319a6c82d346254040"
+  },
+  "scope": "V148 r2 preserves r1 predictions while repairing helper API contracts and saving full source gradients."
+}

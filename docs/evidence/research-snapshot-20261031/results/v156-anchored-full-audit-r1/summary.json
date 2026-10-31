@@ -1,0 +1,12 @@
+{
+  "assertion_failures": 0,
+  "source_sampling_rows_verified": 360,
+  "source_hour_uses_verified": 2542344,
+  "whole_region_oof_role_rows": 180,
+  "comparison_cells": 24,
+  "paired_bootstrap_cells": 8,
+  "source_mode": "full",
+  "script_sha256": "b114bb30ffcd062a31c7c434724651c15d044431092df295cb15dda4b95b71a5",
+  "source_summary_sha256": "ec59858527a85c3a8d2af0c53fd817973bfca0b9681ff48ae73198905b242fd6",
+  "scope": "Opened-target descriptive comparisons and data-contract verification; no independent-region or novelty confirmation."
+}

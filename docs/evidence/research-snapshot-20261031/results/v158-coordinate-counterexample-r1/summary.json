@@ -1,0 +1,29 @@
+{
+  "assertion_failures": 0,
+  "fuels": [
+    "coal",
+    "zero_carbon"
+  ],
+  "source_monthly_energy_shares": [
+    0.2,
+    0.8
+  ],
+  "target_monthly_energy_shares": [
+    0.8,
+    0.2
+  ],
+  "shared_generation_shapes": [
+    [
+      1.8,
+      0.2
+    ],
+    [
+      0.2,
+      1.8
+    ]
+  ],
+  "additive_mean_absolute_error": 173.1808731808732,
+  "multiplicative_max_absolute_error": 0.0,
+  "source_and_target_monthly_energy_totals_exact": true,
+  "scope": "Algebraic constructed example; neither real accuracy nor an independent target experiment."
+}

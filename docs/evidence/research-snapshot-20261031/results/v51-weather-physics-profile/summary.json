@@ -1,0 +1,58 @@
+{
+  "status": "COMPLETE_EXPLORATORY_PHYSICAL_WEATHER_PROFILE",
+  "held_regions": 7,
+  "training_regions_per_fold": 6,
+  "training_period": "2024-01-25 to 2024-12-31, excluding held region",
+  "evaluation_period": "2025H1 source rows, previously inspected",
+  "weather_profile": "V10 archived weather valid time t+1h aligned to hourly generation interval beginning t",
+  "solar_shape": "nonnegative archived shortwave radiation",
+  "wind_shape": "capped cubic proxy max(v^3-3^3,0), cap at v=12; fixed typical turbine curve, no fitting",
+  "month_total": "each target month exact observed wind/solar group total rescales hourly proxy; oracle only to isolate within-month shape",
+  "support": "valid generation-weather matched hours; months with at least648 of expected hours included; not complete-month labels for every source",
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/BPAT_hourly.csv": "72cf83af8fde5f17d5ccb29a1157db26758eb3cc0721186384b5e474cfc933ac",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/CISO_hourly.csv": "34a714dcb07ef66b807c444fe1ac260755716c91edab642c64c8f2c2a94c6d2b",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/ERCO_hourly.csv": "56abb6996e7b9fdf0d59ddd28743afb5ec77629570b6358ad9ee5c3e007f466c",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/FPL_hourly.csv": "423f8166dfcda13f6d6f6e5f9d262c88a3321ee1a6401c65977f2ac0fbbad569",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/ISNE_hourly.csv": "a6ff6602dfcb34dabdb76a1d28003c63f5013c4f11a4f5d9097c278fe67ccd09",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/MISO_hourly.csv": "0b33187fefb609992a2a6550af48ea1f59ff6349f690b0277d73ec537bd2ddfc",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/NYIS_hourly.csv": "f173c238df2c019b49623959ecf7dac74045dfb03c6b160717b86f9dc0ec1e59"
+  },
+  "weather_sha256": "31498e67aa51e4c248df17d0e89c740932cef596c427875f4327577c81fd6a0e",
+  "params": {
+    "wind_cut_in_mps": 3,
+    "wind_rated_mps": 12
+  },
+  "macro": [
+    {
+      "fuel": "solar",
+      "model": "weather_physics",
+      "region_months": 36,
+      "tvd": 0.1455441504752851,
+      "profile_rmse_x_hours": 0.5124102565310624,
+      "max_month_sum_error": 4.656612873077393e-10
+    },
+    {
+      "fuel": "wind",
+      "model": "weather_physics",
+      "region_months": 36,
+      "tvd": 0.41117465115728613,
+      "profile_rmse_x_hours": 1.6630586882410134,
+      "max_month_sum_error": 1.862645149230957e-09
+    },
+    {
+      "fuel": "wind_plus_solar",
+      "model": "weather_physics",
+      "region_months": 36,
+      "tvd": 0.3105386921686286,
+      "profile_rmse_x_hours": 1.0728302641340912,
+      "max_month_sum_error": 3.725290298461914e-09
+    }
+  ],
+  "outputs_sha256": {
+    "held_region_month_profiles.csv": "3077c6d9f65bb667703207c90b4e2fbf36a18ee0a5c01dcee487febf0f04f0b8",
+    "source_macro.csv": "3ef6a7ff60fc6f5c4bbc43354539b26ac32d33aa902ae2c80fa0ab21e0b3e69e",
+    "macro.csv": "fc2a90aad51084cd62bc168cf28a1d0dbc7817deeaf0ab7e411b2246bd4af512"
+  },
+  "interpretation": "Exploratory cross-source intermediate target; already-viewed regions and labels. Target month totals are oracle. No CIF forecast or deployment claim."
+}

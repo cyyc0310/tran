@@ -1,0 +1,291 @@
+{
+  "status": "EXTERNAL_CHINA_MODEL_PROJECTION_STRESS_TEST_NOT_OBSERVED_VALIDATION",
+  "target": "2025 hourly provincial consumption-based CEF projections across five CISPO scenarios, gCO2/kWh",
+  "asof_inputs": "official MEE/NBS 2021 provincial factor (published 2024-04-12), 2022 provincial factor (published 2024-12-26), and 2022 national average; all precede the 2025 target start",
+  "baselines": "flat local 2022 factor, flat national 2022 factor, untuned local 2021-2022 linear trend extrapolated three years, and leave-one-province-out linear mapping from official 2021/2022 factors to the held-out scenario's annual mean; hourly-shape rows are explicitly same-year cross-province oracle diagnostics and are not deployable forecasts",
+  "scope_limit": "This evaluates as-of annual anchoring against model-generated 2025 scenarios. It does not validate observed hourly CIF, cross-country transfer, uncertainty coverage, or real China forecasts; the hourly-shape variants use held-out-year outcomes from other provinces.",
+  "n_provinces": 30,
+  "n_scenarios": 5,
+  "n_hours_per_province": 8760,
+  "inputs_sha256": {
+    "projection_S1": "8e23df4a39707077a2c772e9ab0a275b388fe4ded04d0db4fe0937616499486d",
+    "projection_S2": "e1f9e4cf31d96754d56d32dfbdfb26b333486a0eea74dc4579c3ff0247087cce",
+    "projection_S3": "575038a2d0ba7de48e96e2f17cd58bbfa8fad881eecd7c6c114a0c2153bd6817",
+    "projection_S4": "46609e3608fe8b8d657da08b8cdd406b64002c3ab74e8a2171ff7ef1312369de",
+    "projection_S5": "c9bef615c36e52ff07a85456332de6301afc8c42cdf054667ac52ba38c6ddad5",
+    "annotation_pdf": "75d3d0a265cc3e1df044f00c8a10f4328f85c9de776582df4f22b2a75916691d",
+    "figshare_metadata": "6c929e308b12b2f971505d3a74300894232abc2b5d2ae0a941a634c0d2ff90b0"
+  },
+  "macro": [
+    {
+      "scenario": "S1",
+      "method": "local_MEE_2021_2022_linear_extrapolation_to_2025",
+      "provinces": 30,
+      "source_equal_mae": 151.35923477929984,
+      "source_equal_rmse": 172.80305317635222,
+      "source_equal_abs_bias": 119.59260235920851,
+      "mean_hourly_target_sd": 101.93200683787548
+    },
+    {
+      "scenario": "S1",
+      "method": "local_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 157.8069813546423,
+      "source_equal_rmse": 183.89898293255277,
+      "source_equal_abs_bias": 143.27070357686452,
+      "mean_hourly_target_sd": 101.93200683787548
+    },
+    {
+      "scenario": "S1",
+      "method": "national_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 225.05305289193305,
+      "source_equal_rmse": 245.53153486631146,
+      "source_equal_abs_bias": 204.33627435312022,
+      "mean_hourly_target_sd": 101.93200683787548
+    },
+    {
+      "scenario": "S1",
+      "method": "source_LOO_level_plus_cross_region_hourly_shape",
+      "provinces": 30,
+      "source_equal_mae": 120.66429266159994,
+      "source_equal_rmse": 138.45499996189682,
+      "source_equal_abs_bias": 102.88685026883564,
+      "mean_hourly_target_sd": 101.93200683787548
+    },
+    {
+      "scenario": "S1",
+      "method": "source_LOO_level_plus_local_factor_conditioned_shape",
+      "provinces": 30,
+      "source_equal_mae": 121.0295249796026,
+      "source_equal_rmse": 137.8926783951602,
+      "source_equal_abs_bias": 102.88685026883564,
+      "mean_hourly_target_sd": 101.93200683787548
+    },
+    {
+      "scenario": "S1",
+      "method": "source_LOO_level_transfer_linear",
+      "provinces": 30,
+      "source_equal_mae": 132.71648754949976,
+      "source_equal_rmse": 154.07020954985032,
+      "source_equal_abs_bias": 102.88685026883562,
+      "mean_hourly_target_sd": 101.93200683787548
+    },
+    {
+      "scenario": "S2",
+      "method": "local_MEE_2021_2022_linear_extrapolation_to_2025",
+      "provinces": 30,
+      "source_equal_mae": 150.6801594368341,
+      "source_equal_rmse": 172.22329707672841,
+      "source_equal_abs_bias": 118.78827739726029,
+      "mean_hourly_target_sd": 102.13542736135553
+    },
+    {
+      "scenario": "S2",
+      "method": "local_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 157.43060616438353,
+      "source_equal_rmse": 183.54552736999506,
+      "source_equal_abs_bias": 142.56673554033483,
+      "mean_hourly_target_sd": 102.13542736135553
+    },
+    {
+      "scenario": "S2",
+      "method": "national_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 224.40280783866058,
+      "source_equal_rmse": 244.88900976374504,
+      "source_equal_abs_bias": 203.76530479452057,
+      "mean_hourly_target_sd": 102.13542736135553
+    },
+    {
+      "scenario": "S2",
+      "method": "source_LOO_level_plus_cross_region_hourly_shape",
+      "provinces": 30,
+      "source_equal_mae": 120.31890652383886,
+      "source_equal_rmse": 138.04818875573832,
+      "source_equal_abs_bias": 102.53771693454316,
+      "mean_hourly_target_sd": 102.13542736135553
+    },
+    {
+      "scenario": "S2",
+      "method": "source_LOO_level_plus_local_factor_conditioned_shape",
+      "provinces": 30,
+      "source_equal_mae": 120.79585648809673,
+      "source_equal_rmse": 137.59703976822948,
+      "source_equal_abs_bias": 102.53771693454316,
+      "mean_hourly_target_sd": 102.13542736135553
+    },
+    {
+      "scenario": "S2",
+      "method": "source_LOO_level_transfer_linear",
+      "provinces": 30,
+      "source_equal_mae": 132.60076976394194,
+      "source_equal_rmse": 153.98699191868627,
+      "source_equal_abs_bias": 102.53771693454316,
+      "mean_hourly_target_sd": 102.13542736135553
+    },
+    {
+      "scenario": "S3",
+      "method": "local_MEE_2021_2022_linear_extrapolation_to_2025",
+      "provinces": 30,
+      "source_equal_mae": 151.55612823439878,
+      "source_equal_rmse": 172.94867585587548,
+      "source_equal_abs_bias": 119.82216704718417,
+      "mean_hourly_target_sd": 102.17649557029605
+    },
+    {
+      "scenario": "S3",
+      "method": "local_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 157.7464897260274,
+      "source_equal_rmse": 183.90697900949144,
+      "source_equal_abs_bias": 143.28812671232876,
+      "mean_hourly_target_sd": 102.17649557029605
+    },
+    {
+      "scenario": "S3",
+      "method": "national_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 225.1054684170472,
+      "source_equal_rmse": 245.58838977377582,
+      "source_equal_abs_bias": 204.36127359208527,
+      "mean_hourly_target_sd": 102.17649557029605
+    },
+    {
+      "scenario": "S3",
+      "method": "source_LOO_level_plus_cross_region_hourly_shape",
+      "provinces": 30,
+      "source_equal_mae": 121.30173657181045,
+      "source_equal_rmse": 139.16068995552178,
+      "source_equal_abs_bias": 103.53663679422878,
+      "mean_hourly_target_sd": 102.17649557029605
+    },
+    {
+      "scenario": "S3",
+      "method": "source_LOO_level_plus_local_factor_conditioned_shape",
+      "provinces": 30,
+      "source_equal_mae": 121.48633414360842,
+      "source_equal_rmse": 138.41463458264835,
+      "source_equal_abs_bias": 103.53663679422877,
+      "mean_hourly_target_sd": 102.17649557029605
+    },
+    {
+      "scenario": "S3",
+      "method": "source_LOO_level_transfer_linear",
+      "provinces": 30,
+      "source_equal_mae": 133.27808825568826,
+      "source_equal_rmse": 154.67567246914905,
+      "source_equal_abs_bias": 103.5366367942288,
+      "mean_hourly_target_sd": 102.17649557029605
+    },
+    {
+      "scenario": "S4",
+      "method": "local_MEE_2021_2022_linear_extrapolation_to_2025",
+      "provinces": 30,
+      "source_equal_mae": 151.0231107305936,
+      "source_equal_rmse": 172.52664647209332,
+      "source_equal_abs_bias": 119.05348592085235,
+      "mean_hourly_target_sd": 102.4610915046283
+    },
+    {
+      "scenario": "S4",
+      "method": "local_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 157.4761404109589,
+      "source_equal_rmse": 183.65873420230176,
+      "source_equal_abs_bias": 142.84037328767124,
+      "mean_hourly_target_sd": 102.4610915046283
+    },
+    {
+      "scenario": "S4",
+      "method": "national_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 224.7657279299848,
+      "source_equal_rmse": 245.39822383989667,
+      "source_equal_abs_bias": 204.0169737442923,
+      "mean_hourly_target_sd": 102.4610915046283
+    },
+    {
+      "scenario": "S4",
+      "method": "source_LOO_level_plus_cross_region_hourly_shape",
+      "provinces": 30,
+      "source_equal_mae": 120.69040836720315,
+      "source_equal_rmse": 138.73223248177413,
+      "source_equal_abs_bias": 102.9280230451848,
+      "mean_hourly_target_sd": 102.4610915046283
+    },
+    {
+      "scenario": "S4",
+      "method": "source_LOO_level_plus_local_factor_conditioned_shape",
+      "provinces": 30,
+      "source_equal_mae": 120.99566437714047,
+      "source_equal_rmse": 138.08330239782245,
+      "source_equal_abs_bias": 102.9280230451848,
+      "mean_hourly_target_sd": 102.4610915046283
+    },
+    {
+      "scenario": "S4",
+      "method": "source_LOO_level_transfer_linear",
+      "provinces": 30,
+      "source_equal_mae": 132.79788313223568,
+      "source_equal_rmse": 154.36382164585174,
+      "source_equal_abs_bias": 102.9280230451848,
+      "mean_hourly_target_sd": 102.4610915046283
+    },
+    {
+      "scenario": "S5",
+      "method": "local_MEE_2021_2022_linear_extrapolation_to_2025",
+      "provinces": 30,
+      "source_equal_mae": 151.25493873668185,
+      "source_equal_rmse": 172.75370011979845,
+      "source_equal_abs_bias": 119.10290677321154,
+      "mean_hourly_target_sd": 102.30069854959301
+    },
+    {
+      "scenario": "S5",
+      "method": "local_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 157.58562290715372,
+      "source_equal_rmse": 183.72473164872198,
+      "source_equal_abs_bias": 142.90448515981734,
+      "mean_hourly_target_sd": 102.30069854959301
+    },
+    {
+      "scenario": "S5",
+      "method": "national_MEE_2022_flat",
+      "provinces": 30,
+      "source_equal_mae": 224.56595547945207,
+      "source_equal_rmse": 245.18063823018778,
+      "source_equal_abs_bias": 204.00692732115675,
+      "mean_hourly_target_sd": 102.30069854959301
+    },
+    {
+      "scenario": "S5",
+      "method": "source_LOO_level_plus_cross_region_hourly_shape",
+      "provinces": 30,
+      "source_equal_mae": 120.08115636282626,
+      "source_equal_rmse": 137.95557481249864,
+      "source_equal_abs_bias": 102.0368764794294,
+      "mean_hourly_target_sd": 102.30069854959301
+    },
+    {
+      "scenario": "S5",
+      "method": "source_LOO_level_plus_local_factor_conditioned_shape",
+      "provinces": 30,
+      "source_equal_mae": 120.53351930053694,
+      "source_equal_rmse": 137.4427798142947,
+      "source_equal_abs_bias": 102.03687647942938,
+      "mean_hourly_target_sd": 102.30069854959301
+    },
+    {
+      "scenario": "S5",
+      "method": "source_LOO_level_transfer_linear",
+      "provinces": 30,
+      "source_equal_mae": 132.21812256602774,
+      "source_equal_rmse": 153.70317356729228,
+      "source_equal_abs_bias": 102.0368764794294,
+      "mean_hourly_target_sd": 102.30069854959301
+    }
+  ]
+}

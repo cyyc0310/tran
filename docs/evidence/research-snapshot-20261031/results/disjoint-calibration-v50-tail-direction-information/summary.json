@@ -1,0 +1,128 @@
+{
+  "status": "COMPLETE_MONTHLY_TAIL_DIRECTION_LOO_DIAGNOSTIC",
+  "protocol": "docs/V50_TAIL_DIRECTION_INFORMATION_PROTOCOL.md",
+  "protocol_sha256": "5f99c624faf8f7ca08e57dfc4dfa46e724f5a75803d1af0a2ddb0edf0c63d281",
+  "script_sha256": "a3cb171b1e82a0230427d64c9220880c2985402b674c32af59017726add38580",
+  "independent_units": 10,
+  "hourly_label_values_opened": false,
+  "target_or_unseen_values_opened": false,
+  "features": [
+    "mean_3month_EF",
+    "mean_fossil_share",
+    "mean_wind_solar_share"
+  ],
+  "feature_values": {
+    "SWPP": {
+      "mean_3month_EF": 327.82081739824173,
+      "mean_fossil_share": 0.4993284038174705,
+      "mean_wind_solar_share": 0.4186536424967351
+    },
+    "AVA": {
+      "mean_3month_EF": 86.75164361706959,
+      "mean_fossil_share": 0.21687910904267355,
+      "mean_wind_solar_share": 0.10063117670363993
+    },
+    "BANC": {
+      "mean_3month_EF": 160.79213908773707,
+      "mean_fossil_share": 0.4019803477193427,
+      "mean_wind_solar_share": 0.06646610703724422
+    },
+    "JEA": {
+      "mean_3month_EF": 628.4242928882508,
+      "mean_fossil_share": 0.9928354001012777,
+      "mean_wind_solar_share": 0.007164599898723356
+    },
+    "SC": {
+      "mean_3month_EF": 806.619661782857,
+      "mean_fossil_share": 0.930600635755225,
+      "mean_wind_solar_share": 0.041644469641854656
+    },
+    "NWMT": {
+      "mean_3month_EF": 364.57282067224156,
+      "mean_fossil_share": 0.3862506364177348,
+      "mean_wind_solar_share": 0.3185114542756956
+    },
+    "SCL": {
+      "mean_3month_EF": 0.0,
+      "mean_fossil_share": 0.0,
+      "mean_wind_solar_share": 0.0
+    },
+    "WACM": {
+      "mean_3month_EF": 505.16044811454293,
+      "mean_fossil_share": 0.5544649222886613,
+      "mean_wind_solar_share": 0.20561296259311299
+    },
+    "SEC": {
+      "mean_3month_EF": 500.18135484630113,
+      "mean_fossil_share": 0.9997997997027787,
+      "mean_wind_solar_share": 0.00020020029722024824
+    },
+    "SCEG": {
+      "mean_3month_EF": 299.07971055334235,
+      "mean_fossil_share": 0.5617913459943286,
+      "mean_wind_solar_share": 0.0874561461157829
+    }
+  },
+  "tail_imbalance": {
+    "SWPP": 0.0588837685611879,
+    "AVA": 0.0125379939209726,
+    "BANC": 0.0010131712259371,
+    "JEA": 0.001216077828981,
+    "SC": -0.0352710233029382,
+    "NWMT": -0.0686701509872241,
+    "SCL": 0.0,
+    "WACM": -0.1683307731694828,
+    "SEC": 0.0577507598784194,
+    "SCEG": -0.0446755625327054
+  },
+  "summaries": [
+    {
+      "feature": "mean_3month_EF",
+      "loo_mae_null": 0.05393982545813545,
+      "loo_mae_linear": 0.05288599389747034,
+      "loo_rmse_null": 0.07010593642972243,
+      "loo_rmse_linear": 0.07083354277582529,
+      "direction_accuracy_null": 0.4,
+      "direction_accuracy_linear": 0.4,
+      "sources": 10
+    },
+    {
+      "feature": "mean_fossil_share",
+      "loo_mae_null": 0.05393982545813545,
+      "loo_mae_linear": 0.060140388420846916,
+      "loo_rmse_null": 0.07010593642972243,
+      "loo_rmse_linear": 0.07411637274761682,
+      "direction_accuracy_null": 0.4,
+      "direction_accuracy_linear": 0.4,
+      "sources": 10
+    },
+    {
+      "feature": "mean_wind_solar_share",
+      "loo_mae_null": 0.05393982545813545,
+      "loo_mae_linear": 0.06594939066046676,
+      "loo_rmse_null": 0.07010593642972243,
+      "loo_rmse_linear": 0.09492075077402956,
+      "direction_accuracy_null": 0.4,
+      "direction_accuracy_linear": 0.4,
+      "sources": 10
+    }
+  ],
+  "input_hashes": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/freeze.json": "6fd51f0c32cab38dfb59db135521411b44a830dfdcbdcfc3ec43a1fbc09687f3",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50-crossfit-asymmetric-risk/source_macro_metrics.csv": "b568e390f40c20c7e51e981195bf5ce9f49c52cd34edeb0df51e9b3725b2f21e",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v4-data/monthly.csv": "f079ca2f5899e4ef4f2a4cd21c5601315da62ffb4aced609a17de6932a24e8a9",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v5-data/monthly.csv": "dfff10a6091f208432557f54dc84b6216e7a05888f3f7074186a92d2d61605ad",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/SWPP.npz": "b17463a1312298fdc470552b2ff07894a5a6a176830b200f84091cf0a97a165b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/AVA.npz": "e11a00fac4b9a025ef0f36510fbbe6a37f6fb56c9306d22ea4910ebd7d52152a",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/BANC.npz": "880d10823303a1bd49dcf74cb54350b6cbfc8bdc8058b8716fcf3dcedbae672f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/JEA.npz": "eb407d61823c4d15d09ff790cbe5407592b27e2395b3f14719cda529db84a0da",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/SC.npz": "76922882cb4e8f52be6492462500e25d9502768ba61401a5da93868e731e28f6",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/NWMT.npz": "fcd8d41fb6c180c7d96fca20dad4f780be4eaecf0a1e26954ac6968a25066bfe",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/SCL.npz": "bf5759d88d4799532d7acef6cb4c108f898ba0f0c2163ca3978346a258dd2d09",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/WACM.npz": "649c5291afc8faeb5c6ec23f75d7805adb709f8c6a802ba3ef1edaf39a52a9da",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/SEC.npz": "43e2fafe1263f21389baccc7f527c5d7cf5889342544e4e2d90b965fb5f98395",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/disjoint-calibration-v50/external_labels/SCEG.npz": "bd3c0637dc9a8a4fca4cd30a049307d586deab43e965129bab8b27b46f3dce00"
+  },
+  "source_predictions_sha256": "35a1e16b359cca617597e384b4e92fab4e7e82339f3769d4d85d99a6cafc8dd5",
+  "interpretation_limit": "Ten previously used regions; descriptive LOO diagnostic only."
+}

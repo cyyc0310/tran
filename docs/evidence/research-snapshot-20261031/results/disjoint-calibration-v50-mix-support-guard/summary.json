@@ -1,0 +1,148 @@
+{
+  "status": "COMPLETE_MONTHLY_MIX_SUPPORT_GUARD",
+  "protocol": "docs/V50_MIX_SUPPORT_GUARD_PROTOCOL.md",
+  "protocol_sha256": "d078d2495a2843aacc7bdf5151c782676e34672255f77c70017c59794b459333",
+  "script_sha256": "2d61f1ed5297d95d5198cdd23965f74b1354844850c8fcd1ec947b5c7f111241",
+  "source_units": 10,
+  "prediction_packages_opened": 70,
+  "external_label_packages_opened": 10,
+  "target_prediction_packages_opened": 0,
+  "target_or_unseen_scores_opened": 0,
+  "point_or_risk_refits": 0,
+  "source_heldout_wls_fits": 70,
+  "source_heldout_rows": 630,
+  "lag_days": 90,
+  "season_basis": "annual sin/cos, period 365.25 days, query-date calendar day",
+  "fixed_mix_offset_shrinkage": [
+    0.75
+  ],
+  "support_guard": "apply zero offset when held query-date feature is outside eligible training-source min/max",
+  "full_mix_EF_definition": "mean fixed-EF intensity of three latest legally released monthly eight-fuel records at each query date",
+  "daily_source_bias_mae": {
+    "no_correction": 138.40831274489403,
+    "global_correction": 136.56183643526512,
+    "daily_asof_mix_correction": 88.9267786483293,
+    "mix_beats_global_source_count": 7
+  },
+  "source_macro_metrics": [
+    {
+      "method": "no_correction_factor2_anchor",
+      "hourly_crps": 125.13579218441456,
+      "daily_mean_crps": 123.49853821898088,
+      "daily_level_mae": 144.61201736417388,
+      "coverage90": 0.8849718932386053,
+      "width90": 527.9794726782422,
+      "interval_score90": 712.1641612105279,
+      "lower_miss": 7.38388720292733e-05,
+      "upper_miss": 0.11495426788936554,
+      "fraction_clipped_after_shift": 0.05659207922311699
+    },
+    {
+      "method": "global_source_bias_shift",
+      "hourly_crps": 112.8013306380969,
+      "daily_mean_crps": 111.46598169938632,
+      "daily_level_mae": 141.69231152829354,
+      "coverage90": 0.8482791479458417,
+      "width90": 518.3583570404032,
+      "interval_score90": 784.4616311830555,
+      "lower_miss": 0.12375524559333531,
+      "upper_miss": 0.027965606460822988,
+      "fraction_clipped_after_shift": 0.0010971750064344545
+    },
+    {
+      "method": "daily_asof_monthly_mix_shift",
+      "hourly_crps": 71.42928724075014,
+      "daily_mean_crps": 68.01667230986526,
+      "daily_level_mae": 93.46876574788641,
+      "coverage90": 0.9526737177867339,
+      "width90": 478.64098302819065,
+      "interval_score90": 510.4179803661592,
+      "lower_miss": 0.03171438841312622,
+      "upper_miss": 0.015611893800139779,
+      "fraction_clipped_after_shift": 0.10051477283907873
+    },
+    {
+      "method": "monthly_mix_shrink_025",
+      "hourly_crps": 102.76107664971755,
+      "daily_mean_crps": 100.47011776785084,
+      "daily_level_mae": 119.40717223211712,
+      "coverage90": 0.9229881893106887,
+      "width90": 522.6001038475274,
+      "interval_score90": 625.7301833525568,
+      "lower_miss": 8.835687435215366e-05,
+      "upper_miss": 0.0769234538149592,
+      "fraction_clipped_after_shift": 0.0665653579644354
+    },
+    {
+      "method": "monthly_mix_shrink_050",
+      "hourly_crps": 85.42138059565019,
+      "daily_mean_crps": 81.85497355974833,
+      "daily_level_mae": 102.50630136602206,
+      "coverage90": 0.9516185720797484,
+      "width90": 512.8416391861408,
+      "interval_score90": 567.4595849054542,
+      "lower_miss": 0.00024922570654277974,
+      "upper_miss": 0.04813220221370888,
+      "fraction_clipped_after_shift": 0.08020222549562321
+    },
+    {
+      "method": "monthly_mix_shrink_075",
+      "hourly_crps": 74.57797147411245,
+      "daily_mean_crps": 71.31130372993957,
+      "daily_level_mae": 92.21152636910026,
+      "coverage90": 0.968164752039845,
+      "width90": 497.6900560456128,
+      "interval_score90": 526.64351970599,
+      "lower_miss": 0.004005925709811074,
+      "upper_miss": 0.02782932225034392,
+      "fraction_clipped_after_shift": 0.08973519996769155
+    },
+    {
+      "method": "monthly_mix_shrink_075_support_guard",
+      "hourly_crps": 92.7752483685772,
+      "daily_mean_crps": 89.66830719487082,
+      "daily_level_mae": 114.06806335715302,
+      "coverage90": 0.9438929688584873,
+      "width90": 508.5621378955837,
+      "interval_score90": 577.5292694895323,
+      "lower_miss": 0.004005925709811074,
+      "upper_miss": 0.052101105431701565,
+      "fraction_clipped_after_shift": 0.05970817877024981
+    },
+    {
+      "method": "season_only_shift",
+      "hourly_crps": 113.28147248645871,
+      "daily_mean_crps": 112.00573586902264,
+      "daily_level_mae": 142.32548471476176,
+      "coverage90": 0.8455860794473022,
+      "width90": 518.3907432198142,
+      "interval_score90": 786.9493986870668,
+      "lower_miss": 0.12617685561495512,
+      "upper_miss": 0.02823706493774279,
+      "fraction_clipped_after_shift": 0.0010756762900910766
+    },
+    {
+      "method": "monthly_mix_plus_season_shift",
+      "hourly_crps": 71.61963293269966,
+      "daily_mean_crps": 68.15791050994315,
+      "daily_level_mae": 93.7617317709818,
+      "coverage90": 0.9524075124913562,
+      "width90": 478.88960714913844,
+      "interval_score90": 510.1684541496804,
+      "lower_miss": 0.030922780303398678,
+      "upper_miss": 0.016669707205245125,
+      "fraction_clipped_after_shift": 0.09497660137482841
+    }
+  ],
+  "frozen_input_hashes": {
+    "freeze": "6fd51f0c32cab38dfb59db135521411b44a830dfdcbdcfc3ec43a1fbc09687f3",
+    "prediction_seal": "07580823d07b7e47906d7630a384da235fc25e2f0720b82dfd7794dfbb17ce75",
+    "calibration_seal": "7d883be2afb9032637a14bb9f312520ed11b70440ef5ec1d222fa623eec6d60d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v4-data/monthly.csv": "f079ca2f5899e4ef4f2a4cd21c5601315da62ffb4aced609a17de6932a24e8a9",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v5-data/monthly.csv": "dfff10a6091f208432557f54dc84b6216e7a05888f3f7074186a92d2d61605ad"
+  },
+  "held_source_fold_metrics_sha256": "b9642555adc810208e3f2884c0fb3bf9400ac82019d01213ad267dcc11f320a3",
+  "held_source_bias_sha256": "d8207a1cc4228fb63dd4cbb63ff016ac2e205ad15d4d603558a663270146eff8",
+  "source_macro_metrics_sha256": "509128113fa2b38436909bfa902c9d06be51efac5848ab832b59b7e95251a21c",
+  "interpretation_limit": "Ten previously used sources only; source-held-out descriptive evidence, not China transfer, novel method proof, or a coverage guarantee."
+}

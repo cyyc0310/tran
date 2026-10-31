@@ -1,0 +1,24 @@
+{
+  "sklearn_fits": 448,
+  "point_ET_fits": 56,
+  "point_Ridge_fits": 7,
+  "risk_HGB_fits": 385,
+  "risk_calibration_refits": 0,
+  "external_calibration_sources": 10,
+  "source2025_score_days": 1145,
+  "configurations": 180,
+  "raw_reference_curves": 25,
+  "interval_CRPS_fabricated": false,
+  "previously_viewed_development": true,
+  "independent_confirmation": false,
+  "method_innovation_claim": false,
+  "actual_first_release_verified": false,
+  "risk_mean_OOF_is_base_teacher_third_source_exclusion": false,
+  "target_values_opened": false,
+  "unseen_values_opened": false,
+  "publication_lags": [
+    90,
+    30,
+    7
+  ]
+}

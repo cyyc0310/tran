@@ -1,0 +1,42 @@
+{
+  "status": "QUANTILE_OPTIMIZER_STABILITY_DEVELOPMENT",
+  "scored_rows": 9504,
+  "target_region_months": 66,
+  "canonical_baseline_reproduced_rows": 1584,
+  "canonical_baseline_mismatches": 0,
+  "assertion_failures": 0,
+  "source_gradient_blocks": 432,
+  "source_gradient_values": 272736,
+  "sklearn_version": "1.8.0",
+  "numpy_version": "2.4.5",
+  "input_hashes": {
+    "docs/V148_QUANTILE_STABILITY_PROTOCOL.md": "ff84723e088ba176091a54e3c2de194840045796531f828162817bb39258c2ee",
+    "results/v144-canonical-profile-cache-r1/canonical_monthly_panel.csv": "47fac51f5c2217491abfd305b391b3401b084db891cead49227b5c50d2b96437",
+    "results/v144-canonical-profile-cache-r1/summary.json": "6c9640d193ee9dad4354aa9969c45cd1485c4fbac53146e0409570619c6bbc19",
+    "results/v145-recomposed-risk-baselines-r1/summary.json": "510150b4cb1fa1741ae55a1bc1d3498ca3fa50141ae62b1fef204ac63210f552",
+    "results/v145-recomposed-risk-baselines-r1/query_response_features.csv": "a484115e136546a0e7726936866967e553b8b8788e677888855cf48fb4551dd5",
+    "results/v145-recomposed-risk-baselines-r1/region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "results/v145-recomposed-risk-baselines-r1/target_rows.csv": "8c4266b5e65e28fe32770d436f0190cb764de1229cd42f078325b85623547e81",
+    "scripts/v148_quantile_stability.py": "4fa3669563cd345f9eb1b1b805e191b939fbd956bdf8a690faf12b46e97eee68",
+    "scripts/strict_tie_quantile.py": "cedc98c6402fdd8d333693d7876861e6f4cee64aa844c78ca786fb0003b9e047",
+    "scripts/monthly_tail_response.py": "46731a41b7dcc9068cb65d5d03b4eca08110e43c90bbdb1a0c068727ef7ab0c0",
+    "scripts/v145_recomposed_risk_baselines.py": "5080836d8ef563b07299db03e1b61d8f31d0e1b6047350947795a1730839f66c",
+    "scripts/v142_pace_lgee_monthly_holdout.py": "a5670903d67997e5743871c98d65b6ec4bfe923e3ebf60ae8e9c333856703bfe"
+  },
+  "output_hashes": {
+    "calibration_radii.csv": "2960481b5471a5cbdabb95590a4e791ff94b48584574e52d259e7e8051eb229a",
+    "calibration_region_scores.csv": "bad10c26a2365665a2f20534e286a314c0555ec536f3999c95cacd9155727c14",
+    "fit_order_manifest.csv": "6719fea45b0e1d229cc4fc478327cfc9ebeb55a69d8a653c8e209d356654df81",
+    "gradient_manifest.csv": "6079d52a8bef4db646b0f8246cda0e902423cbebbdc9e3f5f78da33672f4c0e5",
+    "initial_source_gradients.npz": "a5dd59f9d9d9c36b27e0c82c5debd53119e9e3b8daaf003d844fa28749323c92",
+    "region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "target_frontier.csv": "93f1e94cb4f08ed1b1fd95195c5be64857a74516836d88088e90594c97994bfd",
+    "target_rows.csv": "3522c47df8dab26090757b4609da7c99bcd99c450d1ebedb70086d4a961cbeec",
+    "training_diagnostics.csv": "0a5f4a717f1d54a9cc9527671dc26326ec9bc498128e9b872a1a331e0976847c"
+  },
+  "limitations": [
+    "Numerical/optimization controls are established baseline choices, not new methodology.",
+    "Both fitting orders are reported; no target-selected order is deployed.",
+    "Monthly proxy tail-count endpoints only; no hourly forecast gate or unopened-region confirmation."
+  ]
+}

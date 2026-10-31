@@ -1,0 +1,26 @@
+{
+  "status": "OPENED_COHORT_SOURCE_PROFILE_COMPOSITION_RESPONSE_CACHE",
+  "queries": 936,
+  "donor_profiles": 936,
+  "response_count_cells": 3504384,
+  "own_composition_identity_checks": 3744,
+  "cross_region_checks": 96,
+  "assertion_failures": 0,
+  "near_boundary_exact_decisions": 17,
+  "floating_signs_corrected": 0,
+  "normalization": "uniform complete donor-month observed-support law; absent fuel is flat",
+  "input_hashes": {
+    "results/v144-canonical-profile-cache-r1/summary.json": "6c9640d193ee9dad4354aa9969c45cd1485c4fbac53146e0409570619c6bbc19",
+    "results/v144-canonical-profile-cache-r1/profiles.npz": "4e40a83eb4b917f591c8f4bda15a54283eecbad4407a7b1d9cc7e9e23055b17a",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v144-canonical-profile-cache-r1/canonical_monthly_panel.csv": "47fac51f5c2217491abfd305b391b3401b084db891cead49227b5c50d2b96437",
+    "docs/V144_CANONICAL_PROFILE_RESPONSE_PROTOCOL.md": "22d6a29b276333183019256fd38b0bc4f0941818e937c7ef4df1501413209d53"
+  },
+  "script_sha256": "98616886a3f056104dc3acf51d574436d3b07d1ff54703274fb3994e19c0587a",
+  "response_sha256": "ea7ac349a0fecbc19e62640c158e64923931f22d78203438222bf90a3eebd2fb",
+  "limitations": [
+    "Donor-profile invariance under composition change is an assumption, not causal identification.",
+    "Later models must exclude target/calibration identities before accessing response donors.",
+    "These hypothetical source responses do not add independent calibration regions or target labels."
+  ]
+}

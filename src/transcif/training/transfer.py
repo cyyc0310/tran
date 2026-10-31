@@ -4,8 +4,9 @@ import json
 
 import numpy as np
 
-from transcif.evaluation.metrics import ensemble_crps
-from transcif.training.fit import fit, predict
+from transcif.evaluation.metrics import ensemble_crps, source_validation_metrics
+from transcif.training.fit import fit
+from transcif.inference import predict
 
 
 def independent_groups(grids, unit="region"):
@@ -36,16 +37,9 @@ def independent_groups(grids, unit="region"):
 
 def _held_metrics(model, examples, labels, seed, scenarios=32):
     forecast = predict(model, examples, scenarios, seed)
-    point = forecast.get("point_cif", forecast["cif"].mean(1))
     truth = np.stack([label["cif"] for label in labels])
-    scores = []
-    for region in sorted({example.region for example in examples}):
-        mask = np.array([example.region == region for example in examples])
-        error = truth[mask] - point[mask]
-        scores.append({"mae": float(np.abs(error).mean()),
-                       "rmse": float(np.square(error).mean() ** .5),
-                       "crps": ensemble_crps(truth[mask], forecast["cif"][mask])})
-    return {key: float(np.mean([score[key] for score in scores])) for key in scores[0]}
+    _, macro = source_validation_metrics(truth, forecast, [e.region for e in examples])
+    return macro
 
 
 def fit_source_model(train_examples, train_labels, validation_examples, validation_labels,

@@ -1,0 +1,100 @@
+{
+  "experiment": "V321 bounds with explicit below-size annual generation remainder",
+  "n_provinces": 31,
+  "n_reporting_periods": 11,
+  "periods": [
+    "Jan-Feb",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12"
+  ],
+  "n_annual_od_routes": 116,
+  "annual_generation_remainder_TWh_sum": 601.5800000000002,
+  "annual_generation_remainder_TWh_min": 1.664999999999992,
+  "annual_generation_remainder_TWh_max": 66.77800000000002,
+  "unobserved_ef_support_kgco2e_kwh": [
+    0.0,
+    1.0
+  ],
+  "unobserved_ef_support_note": "Upper endpoint equals the maximum 2023 Ember source-month factor (1.0); this is a declared proxy support, not a validated engineering limit.",
+  "missing_technology_rows": 11,
+  "missing_category_handling": "For a missing category, no zero cap is imposed; its upper cap is the province-period reported total, also subject to the combined reported total cap.",
+  "monthly_receipt_budget": 310,
+  "target": "source-weighted imports divided by NBS above-size local generation within each reported period; Jan-Feb is a two-month aggregate; not consumption CIF or hourly risk",
+  "category_cap_value_no_receipt": {
+    "mean_paired_shrink_vs_total_only": 0.036215315678704625,
+    "median_paired_shrink_vs_total_only": 0.0,
+    "positive_cells": 131,
+    "n_cells": 341
+  },
+  "category_cap_value_with_receipt": {
+    "mean_paired_shrink_vs_total_only": 0.1120101365888818,
+    "median_paired_shrink_vs_total_only": 0.002994703048959546,
+    "positive_cells": 187,
+    "n_cells": 341
+  },
+  "summary_by_information_set": [
+    {
+      "supply_information": "total_only",
+      "monthly_receipts_observed": false,
+      "additional_independent_receipt_fields": 0,
+      "mean_diameter": 3.1887109916883607,
+      "median_diameter": 1.9477401716546208,
+      "mean_paired_receipt_shrink": 0.0,
+      "median_paired_receipt_shrink": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "total_only",
+      "monthly_receipts_observed": true,
+      "additional_independent_receipt_fields": 310,
+      "mean_diameter": 3.1886576431929186,
+      "median_diameter": 1.9477401716546208,
+      "mean_paired_receipt_shrink": 8.318882590916601e-06,
+      "median_paired_receipt_shrink": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "five_categories",
+      "monthly_receipts_observed": false,
+      "additional_independent_receipt_fields": 0,
+      "mean_diameter": 3.038400910546291,
+      "median_diameter": 1.735307032304453,
+      "mean_paired_receipt_shrink": 0.0,
+      "median_paired_receipt_shrink": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "five_categories",
+      "monthly_receipts_observed": true,
+      "additional_independent_receipt_fields": 310,
+      "mean_diameter": 2.6583966061529276,
+      "median_diameter": 1.5045781015185757,
+      "mean_paired_receipt_shrink": 0.0803203193937524,
+      "median_paired_receipt_shrink": 0.002994703048959546,
+      "zero_width_cells": 0
+    }
+  ],
+  "limitations": [
+    "NBS monthly generation is above-designated-size coverage, while the annual remainder is not monthly resolved",
+    "V310 annual OD is an external accounting source not reconciled with the NBS tables",
+    "Ember category factors and the unobserved EF support are proxy assumptions",
+    "the denominator is local reported generation, not electricity consumption",
+    "this is a structural partial-identification experiment, not hourly prediction validation"
+  ],
+  "sha256": {
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_annual_generation_by_tech.csv": "70f376aa96eaee53bfb01b98ae6e40a8c21cbd4d9659fe8eae80b4ee260f5a24",
+    "results/v310_zenodo_interprovincial_audit_r1/5_interprovincial transfer matrix.xlsx": "1b336512717a11e5619792f8f5fd2441b44caf59eb86aa98e0b752c6910d3b14",
+    "results/v294-china-ember-lineage-r1/ember_china_monthly_generation.csv": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+    "docs/V321_UNOBSERVED_GENERATION_REMAINDER_PROTOCOL.md": "cc62cc88849c51cbfe3b858e6a33d1ba0ddcf1fa79d0bc979b2e41e7eea14eae",
+    "scripts/v321_unobserved_generation_remainder_bounds.py": "65a673bb69f7959148309938ffad96efae418c58317c023299ca46ad80dd4de3"
+  }
+}

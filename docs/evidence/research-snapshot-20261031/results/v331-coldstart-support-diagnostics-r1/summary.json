@@ -1,0 +1,71 @@
+{
+  "status": "TRAINING_ONLY_SUPPORT_DIAGNOSTICS_FOR_ANNUAL_MEE_TRANSFER",
+  "n_case_rows": 60,
+  "n_regions": 7,
+  "ridge_gain_mean": 0.02317106019821893,
+  "ridge_improves_fraction": 0.5333333333333333,
+  "diagnostic_associations": {
+    "nearest_training_hellinger": {
+      "abs_error_nnls": {
+        "spearman_rho": 0.013892747985551545,
+        "region_cluster_bootstrap_95pct": [
+          -0.38432756194222,
+          0.43435780359036436
+        ],
+        "positive_ridge_gain_auc": 0.5022321428571429
+      },
+      "ridge_gain": {
+        "spearman_rho": 0.10136148930258407,
+        "region_cluster_bootstrap_95pct": [
+          -0.3179248604348567,
+          0.34514610559241304
+        ],
+        "positive_ridge_gain_auc": 0.5022321428571429
+      }
+    },
+    "regularization_adjustment": {
+      "abs_error_nnls": {
+        "spearman_rho": 0.28013337038066133,
+        "region_cluster_bootstrap_95pct": [
+          -0.3132319520479717,
+          0.5282212529983927
+        ],
+        "positive_ridge_gain_auc": 0.6194196428571429
+      },
+      "ridge_gain": {
+        "spearman_rho": 0.2844679077521534,
+        "region_cluster_bootstrap_95pct": [
+          -0.6902541285613034,
+          0.7218595768141018
+        ],
+        "positive_ridge_gain_auc": 0.6194196428571429
+      }
+    },
+    "nbs_ember_disagreement": {
+      "abs_error_nnls": {
+        "spearman_rho": 0.28463462072798007,
+        "region_cluster_bootstrap_95pct": [
+          -0.12462934002196023,
+          0.5678175906976224
+        ],
+        "positive_ridge_gain_auc": 0.640625
+      },
+      "ridge_gain": {
+        "spearman_rho": 0.35276465684912484,
+        "region_cluster_bootstrap_95pct": [
+          -0.13757910097677378,
+          0.6552728827786417
+        ],
+        "positive_ridge_gain_auc": 0.640625
+      }
+    }
+  },
+  "interpretation_guardrail": "Exploratory correlations over 60 province-year rows and seven region clusters; no province gate is validated.",
+  "sha256": {
+    "data/china/mee_provincial_grid_co2_factors_2021_2023.csv": "d29b51e591bd81722443508b4afd9bac5d2740da56f4052029c6bb30efc15b19",
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "results/china-monthly-ember-audit-r1/ember_china_province_monthly.csv": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+    "docs/V331_COLDSTART_SUPPORT_DIAGNOSTIC_PROTOCOL.md": "08a2314275cf1d02301ee53bd00189c321c4a291b9f43374de1c2128ddb7c37c",
+    "scripts/v331_coldstart_support_diagnostics.py": "679db17894dfd61baca8c243cc72f85a3422481e8912d188393c4b6d81a14d8b"
+  }
+}

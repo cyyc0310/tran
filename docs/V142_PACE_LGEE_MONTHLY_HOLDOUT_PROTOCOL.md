@@ -1,0 +1,14 @@
+# V142 — PACE and LGEE under Complete Monthly Inputs and Expanded Source Support
+
+This is a targeted development audit on already examined identities and already prepared historical responses. It is not blind confirmation. The question is whether the source-support gain in V141 survives when PACE and LGEE become the held-out target, and whether strong anchors using the available source budget can match ordinary CQR.
+
+## Frozen design
+
+- Use the V140 original 25-region monthly panel plus the 18 eligible V141 additional source panels. Monthly-only local inputs, the same two thresholds, EF-box contract, feature whitelist and model parameters.
+- Targets: all prepared PACE and LGEE 2024–25 months (18 and 24 months respectively). For each target, remove its identity from every source role.
+- Seeds 41/83. Order the original 25 source identities by SHA-256(seed/target/source). The first 12 are calibration regions; the remaining 13 are fit regions. Add every other eligible V141 donor to fitting, excluding the held-out target. This gives 30 fit and 12 calibration identities per target. Save exact membership.
+- Alpha=0.10/0.20. Group calibration uses source-region maximum monthly endpoint score with the same finite-sample rank and outward integer rounding.
+- Methods: physical monthly hull; anchor with only the 12 disjoint calibration regions; anchor calibrated over all 42 allowed source identities (permitted because its fixed monthly-constant function has no fitted stage); a local anchor using the 12 nearest source-region mean eight-fuel-share vectors to each target month's shares (L1 distance, lexicographic tie break), calibrated on each selected region's maximum monthly score; direct CQR on all fit months; direct CQR on active fit months; physical-coordinate CQR as a final diagnostic control. All learned models use the same 30-fit/12-calibration split. Whole-source and local anchors are explicitly allowed their no-fitting calibration advantage. The local selection is an empirical strong baseline, not a finite-sample coverage guarantee under arbitrary target-dependent selection.
+- Source labels of a held-out identity must never enter its fit or calibration pool. Save role separation, all-source anchor membership, radii, predictions and hashes. Targets, feature rows and factor-box endpoints are reused from immutable saved panels without relabelling.
+
+Report each target, seed, threshold and alpha separately, including coverage, width, endpoint-stress score, nonzero-tail conditional coverage and ≥1/5/10% certificate errors. Assert exact denominator, nonempty physical subset and alpha nesting. Do not choose a winner or tune using PACE/LGEE responses. Ordinary CQR success is a baseline/data result, not an algorithmic novelty claim; failure determines the next mechanism experiment. Prospective Chinese hourly CIF prediction and the original hourly coverage/CRPS gate remain outside this retrospective tail-count audit.

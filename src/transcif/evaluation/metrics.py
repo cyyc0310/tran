@@ -40,3 +40,27 @@ def forecast_metrics(truth, samples, point=None):
             "pointwise_90_coverage": float(covered.mean()),
             "path_coverage_of_pointwise_90_band": float(covered.all(-1).mean()),
             "mean_90_width": float((hi - lo).mean())}
+
+
+def source_validation_metrics(truth, forecast, regions):
+    """Pooled and equal-region scores; never use outer-target labels here.
+
+    Temporal CRPS checkpointing uses the pooled score. Source-group selection
+    uses region-macro scores. Keeping both explicit preserves those protocols.
+    """
+    truth, samples = np.asarray(truth), forecast["cif"]
+    point = forecast.get("point_cif", samples.mean(1))
+    regions = np.asarray(regions)
+    if regions.shape != (len(truth),):
+        raise ValueError("one source region per validation window required")
+
+    def scores(y, draws, estimate):
+        error = y - estimate
+        return {"crps": ensemble_crps(y, draws),
+                "mae": float(np.abs(error).mean()),
+                "rmse": float(np.square(error).mean() ** .5)}
+
+    pooled = scores(truth, samples, point)
+    by_region = [scores(truth[regions == name], samples[regions == name], point[regions == name])
+                 for name in sorted(set(regions))]
+    return pooled, {key: float(np.mean([row[key] for row in by_region])) for key in pooled}

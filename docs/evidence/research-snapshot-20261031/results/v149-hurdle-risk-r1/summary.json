@@ -1,0 +1,41 @@
+{
+  "status": "SOURCE_OCCURRENCE_SEVERITY_DEVELOPMENT",
+  "scored_rows": 4224,
+  "assertion_failures": 0,
+  "input_hashes": {
+    "docs/V149_HURDLE_RISK_PROTOCOL.md": "36ec1705cc8f629bc3ee9c99c11dccf5b47917328cbdf2b10ebbb6c920a6cfc2",
+    "scripts/v149_hurdle_risk.py": "d27cc75fafab6315d71f95f2e2349e91d7caeed82deb43ebfdfbef32598254fe",
+    "scripts/strict_tie_quantile.py": "cedc98c6402fdd8d333693d7876861e6f4cee64aa844c78ca786fb0003b9e047",
+    "scripts/v146_critical_composition_calibration.py": "ccb5d345cfe4518f520dfca02edbbdc4bd60a2c2f61cf6a6079e316f16671a01",
+    "scripts/v142_pace_lgee_monthly_holdout.py": "a5670903d67997e5743871c98d65b6ec4bfe923e3ebf60ae8e9c333856703bfe",
+    "results/v147-conditional-curve-scale-r1/summary.json": "ab55a406af78dd0b7106d2930ef9bfe3e6bfb9561ed97316bd2d537b0c157a82",
+    "results/v147-conditional-curve-scale-r1/fit_inverse_labels.csv": "1ed5f9380418084e2521b3d3d7bacaafe6506afdffe4f8abb7cbebd6fccb4438",
+    "results/v147-conditional-curve-scale-r1/scale_features.csv": "3a38abab9f1d2acc798b9f90504b91c3377561b85b775e2cd44706ad83d29c2d",
+    "results/v147-conditional-curve-scale-r1/region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "results/v146-critical-composition-calibration-r1/summary.json": "23d4eecba9f1c6a3c0d7e1c8d2f7dd3e2f9d70d8776224889922e4682b429e39",
+    "results/v146-critical-composition-calibration-r1/curves.npz": "19e33bd082213d96fbf52f5ec6409d4d9721995fc71922b9b46da483e5e58a36",
+    "results/v146-critical-composition-calibration-r1/curve_index.csv": "b2bddf8b31d0ab9eedc4ddd16b4fafefea8c1daa0a81db9395c9b542c617748b",
+    "results/v146-critical-composition-calibration-r1/calibration_inverse_scores.csv": "40e85e8566765cf96076aa2b74125b490382ced008689b9f7229e63a6b428539",
+    "results/v146-critical-composition-calibration-r1/target_rows.csv": "badb8d346b2d698118f2a22df59ba6b3baf7bd8b0cf8ad6e1c9ac2494c2321da",
+    "results/v145-recomposed-risk-baselines-r1/target_rows.csv": "8c4266b5e65e28fe32770d436f0190cb764de1229cd42f078325b85623547e81",
+    "results/v145-recomposed-risk-baselines-r1/summary.json": "510150b4cb1fa1741ae55a1bc1d3498ca3fa50141ae62b1fef204ac63210f552",
+    "results/v144-canonical-profile-cache-r1/canonical_monthly_panel.csv": "47fac51f5c2217491abfd305b391b3401b084db891cead49227b5c50d2b96437"
+  },
+  "output_hashes": {
+    "calibration_radii.csv": "cfdb591ada0e4b80e9b376247c9dfba2f8b6ddc974400c48bc0952c8fbf46791",
+    "calibration_scores.csv": "6b7aeb2439e7afcb9a6de05c91d93f9075a520163e4ab34db0da9ac2d92af70b",
+    "comparison_frontier.csv": "2cedc97e1b9eea808ccf1c85ee476d5fe372e9cb78a9419028e66c47c5bc27f3",
+    "individual_coverage.csv": "2cfd6756f7f462ab4804e33ee1c540afe3b648c9f0f6e00df9f92be82c4f831b",
+    "joint_coverage.csv": "fc2f4fc1ba552444b219bee366c3ae06b73c3d602487e08bb5248679161a839a",
+    "occurrence_diagnostics.csv": "433dd303971ba8bc1600589205ea6f5a264667ef68fc38e0c9eafff051b37a2a",
+    "probabilities.csv": "74700af719b2a27712b25182d70b4785028f2e89abd642fd991f9fffa4289e24",
+    "region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "scales.csv": "dca4502d8eab034f112620063d831be45e3ba8a109148aa0e59bc28a1eef79c4",
+    "target_rows.csv": "a4ec97a47dc4fc789ce8d086a81cb724e49d8978f1db02ab56931908990e8370"
+  },
+  "limitations": [
+    "Opened development targets; monthly tail-count proxy endpoints, not hourly forecasts.",
+    "Hurdle/Ridge/strict quantile are baseline controls, not original algorithms.",
+    "Fit teachers exclude each own region; 29-to-30 teacher change remains an approximation."
+  ]
+}

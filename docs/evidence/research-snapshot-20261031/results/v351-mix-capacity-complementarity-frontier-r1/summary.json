@@ -1,0 +1,66 @@
+{
+  "status": "COMPLETED_SHARE_ERROR_SENSITIVITY_NOT_EMPIRICAL_VALIDATION",
+  "frontier": [
+    {
+      "relative_share_error": 0.0,
+      "province_periods": 328,
+      "mean_mix_gain_no_capacity_h": 0.8719512195121951,
+      "mean_mix_gain_with_capacity_h": 275.219512195122,
+      "mean_complementarity_h": 274.3475609756098,
+      "median_complementarity_h": 285.0,
+      "positive_complementarity_cells": 327,
+      "negative_complementarity_cells": 0
+    },
+    {
+      "relative_share_error": 0.1,
+      "province_periods": 328,
+      "mean_mix_gain_no_capacity_h": 0.8689024390243902,
+      "mean_mix_gain_with_capacity_h": 273.6219512195122,
+      "mean_complementarity_h": 272.7530487804878,
+      "median_complementarity_h": 284.0,
+      "positive_complementarity_cells": 326,
+      "negative_complementarity_cells": 0
+    },
+    {
+      "relative_share_error": 0.25,
+      "province_periods": 328,
+      "mean_mix_gain_no_capacity_h": 0.8689024390243902,
+      "mean_mix_gain_with_capacity_h": 270.9237804878049,
+      "mean_complementarity_h": 270.0548780487805,
+      "median_complementarity_h": 280.0,
+      "positive_complementarity_cells": 325,
+      "negative_complementarity_cells": 0
+    },
+    {
+      "relative_share_error": 0.5,
+      "province_periods": 328,
+      "mean_mix_gain_no_capacity_h": 0.8628048780487805,
+      "mean_mix_gain_with_capacity_h": 265.5121951219512,
+      "mean_complementarity_h": 264.6493902439024,
+      "median_complementarity_h": 275.5,
+      "positive_complementarity_cells": 320,
+      "negative_complementarity_cells": 0
+    },
+    {
+      "relative_share_error": 1.0,
+      "province_periods": 328,
+      "mean_mix_gain_no_capacity_h": 0.8140243902439024,
+      "mean_mix_gain_with_capacity_h": 254.48170731707316,
+      "mean_complementarity_h": 253.66768292682926,
+      "median_complementarity_h": 266.5,
+      "positive_complementarity_cells": 276,
+      "negative_complementarity_cells": 0
+    }
+  ],
+  "limits": [
+    "Reuses V348 Ember share-error scenario sets and V350 collapsed-group widths.",
+    "Share-error bands are analyst-defined scenarios, not measured source error.",
+    "No hourly labels or interval coverage are available."
+  ],
+  "sha256": {
+    "results/v348-ember-share-error-frontier-r1/province_period_share_error_frontier.csv": "e6209d48f630b312f0fd10d4129e89d1d0999897ba310f2b6dff673e7e988d86",
+    "results/v350-fuel-mix-capacity-factorial-r1/paired_factorial_province_period.csv": "d0ab8b9127e21a84c120e46d9afa838c77822d21c9f558d16902180cdce81e8e",
+    "docs/V351_MIX_CAPACITY_COMPLEMENTARITY_FRONTIER_PROTOCOL.md": "5e343a64c8dfa53cacacddba23f162e1d92f0e1acd054a53dd6be2080f260af3",
+    "scripts/v351_mix_capacity_complementarity_frontier.py": "efeabb77c54ba214e33999041074f6906fe796573b220b715f7b7261055aa523"
+  }
+}

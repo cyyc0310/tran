@@ -1,0 +1,123 @@
+{
+  "experiment": "V375 monthly residual constraint versus local-mix K-width information frontier",
+  "status": "CELLWISE_OUTER_HULL_SENSITIVITY_NOT_EMPIRICAL_PREDICTION",
+  "cohort": "V373 2023 paired-feasible 262 province-periods; 2022 lagged capacity",
+  "threshold_g_kwh": 300,
+  "alpha_grid": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "thermal_ef_support_g_kwh": [
+    400,
+    1000
+  ],
+  "residual_ef_support_g_kwh": [
+    0,
+    1000
+  ],
+  "summary": [
+    {
+      "alpha": 0.0,
+      "paired_feasible_n": 262,
+      "local_infeasible_n": 0,
+      "national_infeasible_n": 0,
+      "local_mean_width_h": 713.5038167938932,
+      "national_mean_width_h": 796.8549618320611,
+      "mean_local_reduction_h": 83.35114503816794,
+      "local_narrower_n": 129,
+      "local_wider_n": 0,
+      "equal_n": 133,
+      "local_full_month_hull_n": 133,
+      "national_full_month_hull_n": 262
+    },
+    {
+      "alpha": 0.1,
+      "paired_feasible_n": 262,
+      "local_infeasible_n": 0,
+      "national_infeasible_n": 0,
+      "local_mean_width_h": 761.1603053435115,
+      "national_mean_width_h": 796.8549618320611,
+      "mean_local_reduction_h": 35.69465648854962,
+      "local_narrower_n": 74,
+      "local_wider_n": 0,
+      "equal_n": 188,
+      "local_full_month_hull_n": 188,
+      "national_full_month_hull_n": 262
+    },
+    {
+      "alpha": 0.25,
+      "paired_feasible_n": 262,
+      "local_infeasible_n": 0,
+      "national_infeasible_n": 0,
+      "local_mean_width_h": 788.175572519084,
+      "national_mean_width_h": 796.8549618320611,
+      "mean_local_reduction_h": 8.679389312977099,
+      "local_narrower_n": 23,
+      "local_wider_n": 0,
+      "equal_n": 239,
+      "local_full_month_hull_n": 239,
+      "national_full_month_hull_n": 262
+    },
+    {
+      "alpha": 0.5,
+      "paired_feasible_n": 262,
+      "local_infeasible_n": 0,
+      "national_infeasible_n": 0,
+      "local_mean_width_h": 796.8549618320611,
+      "national_mean_width_h": 796.8549618320611,
+      "mean_local_reduction_h": 0.0,
+      "local_narrower_n": 0,
+      "local_wider_n": 0,
+      "equal_n": 262,
+      "local_full_month_hull_n": 262,
+      "national_full_month_hull_n": 262
+    },
+    {
+      "alpha": 0.75,
+      "paired_feasible_n": 262,
+      "local_infeasible_n": 0,
+      "national_infeasible_n": 0,
+      "local_mean_width_h": 796.8549618320611,
+      "national_mean_width_h": 796.8549618320611,
+      "mean_local_reduction_h": 0.0,
+      "local_narrower_n": 0,
+      "local_wider_n": 0,
+      "equal_n": 262,
+      "local_full_month_hull_n": 262,
+      "national_full_month_hull_n": 262
+    },
+    {
+      "alpha": 1.0,
+      "paired_feasible_n": 262,
+      "local_infeasible_n": 0,
+      "national_infeasible_n": 0,
+      "local_mean_width_h": 796.8549618320611,
+      "national_mean_width_h": 796.8549618320611,
+      "mean_local_reduction_h": 0.0,
+      "local_narrower_n": 0,
+      "local_wider_n": 0,
+      "equal_n": 262,
+      "local_full_month_hull_n": 262,
+      "national_full_month_hull_n": 262
+    }
+  ],
+  "limitations": [
+    "Alpha is a sensitivity fraction of the V345 annual scope gap, not an observed accuracy level or a public data field.",
+    "Residual mass can be assigned independently in each month; annual cross-month residual conservation is not solved.",
+    "Scope residual uses the V346 independent province-total capacity relaxation.",
+    "V320 is an NBS-derived transcription, not raw response from the user-provided portal; no hourly China label or coverage metric is available."
+  ],
+  "sha256": {
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "results/v341-china-complete-category-hull-r2/monthly_margin_capacity_audit.csv": "0fdf3711092638bf4e8e3fadf5191244e890b0899e70b26aaebd5afd809af62b",
+    "results/v345-china-residual-monthly-scope-r1/province_period_residual_ranges.csv": "9c9a0203e74b5e386415d83d7a2a8c94d3a691bbbec935fcbbcc830b837e2748",
+    "results/v373-national-vs-local-mix-sharp-k-r1/province_period_comparison.csv": "a759c3cd78363ff6362e0c867b80fa68f29f6f2587f589242981df2f90815b8b",
+    "scripts/v342_china_sharp_group_hull.py": "cf8b6bfe972a3a5c9ad771706beb94751ea21c4d3f02783f46b96163a781b105",
+    "docs/V375_SCOPE_RESIDUAL_INFORMATION_FRONTIER_PROTOCOL.md": "14ed014ae547083f9b1742e0eb93e7fdd38bd97acb9c8b5bec0de901f9437122",
+    "scripts/v375_scope_residual_information_frontier.py": "e2f2fa6d5a5eecc72c1cbf77fa2421f34bbf3db37fbf095055819ef046780e6a"
+  }
+}

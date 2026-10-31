@@ -1,0 +1,141 @@
+{
+  "experiment": "V367 leave-one-region-out information value of local monthly generation mix",
+  "input_files": [
+    "results/research/data/BPAT_hourly.csv",
+    "results/research/data/CISO_hourly.csv",
+    "results/research/data/ERCO_hourly.csv",
+    "results/research/data/FPL_hourly.csv",
+    "results/research/data/ISNE_hourly.csv",
+    "results/research/data/MISO_hourly.csv",
+    "results/research/data/NYIS_hourly.csv"
+  ],
+  "target": "positive_reported_generation_eight_bucket_proxy; derived CIF, not measured emissions",
+  "fuel_columns": [
+    "generation_coal",
+    "generation_gas",
+    "generation_oil",
+    "generation_nuclear",
+    "generation_hydro",
+    "generation_wind",
+    "generation_solar",
+    "generation_other"
+  ],
+  "fixed_emission_factors_g_kwh": [
+    1000.0,
+    400.0,
+    800.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "thresholds_g_kwh_strict": [
+    300.0,
+    500.0,
+    700.0
+  ],
+  "regions": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "ISNE",
+    "MISO",
+    "NYIS"
+  ],
+  "n_region_months": 245,
+  "n_scored_month_threshold_methods": 2940,
+  "valid_hours": 175560,
+  "methods": [
+    "pooled_flat_monthly_anchor",
+    "local_flat_monthly_anchor",
+    "pooled_level_plus_donor_shape",
+    "local_level_plus_donor_shape"
+  ],
+  "primary_pair": "local_level_plus_donor_shape vs pooled_level_plus_donor_shape; identical donor shape, differing only in month-level CIF anchor",
+  "metrics": {
+    "300": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 109.9826090584404,
+        "ci95_low": 53.34944880732826,
+        "ci95_high": 178.82103947286038,
+        "regions_won": 7,
+        "region_count": 7
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 460.50685425685435,
+        "ci95_low": 290.7665945165945,
+        "ci95_high": 586.25,
+        "regions_won": 7,
+        "region_count": 7
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.6406208710601238,
+        "ci95_low": 0.40600187796644577,
+        "ci95_high": 0.8113249031633681,
+        "regions_won": 7,
+        "region_count": 7
+      }
+    },
+    "500": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 109.9826090584404,
+        "ci95_low": 53.34944880732826,
+        "ci95_high": 178.82103947286038,
+        "regions_won": 7,
+        "region_count": 7
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 9.186507936507937,
+        "ci95_low": 0.0,
+        "ci95_high": 27.559523809523814,
+        "regions_won": 1,
+        "region_count": 7
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.012553772899593653,
+        "ci95_low": 0.0,
+        "ci95_high": 0.03766131869878096,
+        "regions_won": 1,
+        "region_count": 7
+      }
+    },
+    "700": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 109.9826090584404,
+        "ci95_low": 53.34944880732826,
+        "ci95_high": 178.82103947286038,
+        "regions_won": 7,
+        "region_count": 7
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "regions_won": 0,
+        "region_count": 7
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "regions_won": 0,
+        "region_count": 7
+      }
+    }
+  },
+  "bootstrap": {
+    "unit": "held-out region; region-months averaged within region before resampling",
+    "resamples": 10000,
+    "seed": 367,
+    "regions": 7,
+    "interpretation": "descriptive cluster interval with only seven region clusters"
+  },
+  "limitations": [
+    "Hourly labels are fixed-factor generation proxies, not direct CO2 emissions or full-grid truth.",
+    "All regions were previously opened; leave-one-region-out here means no target-region hourly outcomes enter its donor curve, not a sealed external holdout.",
+    "Monthly generation margins are computed retrospectively from the same source as proxy labels; original release vintages are unknown.",
+    "The experiment tests regional level information on a US analog and cannot establish China transfer or interval coverage."
+  ]
+}

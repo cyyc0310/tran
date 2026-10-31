@@ -5,7 +5,7 @@ import torch
 
 from transcif.data.dataset import FUELS
 from transcif.models.dispatch import ProbabilisticDispatchNet
-from transcif.training.fit import predict
+from transcif.inference import predict
 
 
 def predict_components(models, examples, scenarios=32, seed=0, latent_scale=1.):

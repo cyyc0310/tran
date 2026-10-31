@@ -1,0 +1,37 @@
+{
+  "status": "POSTHOC_SUPPORT_GATE_DIAGNOSTIC",
+  "rule": "Use the normalized pooled-q90 radius when target monthly risk features are inside the calibration source axis-aligned bounding box; use max-source normalized-q90 radius outside.",
+  "selection": "Post-hoc diagnostic, not preregistered or an algorithm claim; gate is deliberately a simple support check.",
+  "inputs_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/v51-identification-width-risk-r3-h1/outer_source_month_intervals.csv": "4c94141aae278b709e9d3ff50e9abd687fa617230639dc882abd9c8a278dc066",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/v51-identification-width-risk-r3-h2/outer_source_month_intervals.csv": "b44fc74006c1cabe57ccf2b260110a03b254d05f46cba80adc173dcb0a0e1514"
+  },
+  "outputs_sha256": {
+    "gated_source_month.csv": "672587d5ce25056dfc9d3013866ffac8d90f06e7b6e0b77ea1545d8fcfefe851",
+    "source_summary.csv": "40b78ed4cedce65553f7a05fd0f87701d0ab6c2f787d99ee1ac80fba12170b28",
+    "macro.csv": "6d8bfca3dfedf0f68dea746047a1012bc203ce26db04de89a77607d891331f7b"
+  },
+  "macro": [
+    {
+      "half": "H1",
+      "sources": 7,
+      "coverage": 0.9539658771987352,
+      "width": 312.8072621804526,
+      "interval_score": 337.6492404763493,
+      "lower_miss": 0.011590934266426866,
+      "upper_miss": 0.03444318853483797,
+      "outside_fraction": 0.42857142857142855
+    },
+    {
+      "half": "H2",
+      "sources": 6,
+      "coverage": 0.9727511449621665,
+      "width": 451.20545182683435,
+      "interval_score": 464.4506016344596,
+      "lower_miss": 0.02724885503783352,
+      "upper_miss": 0.0,
+      "outside_fraction": 0.7611111111111111
+    }
+  ],
+  "interpretation": "Does not guarantee coverage. The same feature-support violations occur in covered sources and the H1 MISO tail failure remains."
+}

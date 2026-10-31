@@ -1,0 +1,17 @@
+{
+  "assertion_failures": 0,
+  "counterexample_flat_cif": [
+    700.0,
+    700.0
+  ],
+  "counterexample_variable_cif": [
+    1000.0,
+    600.0
+  ],
+  "reference_law_max_error": 0.0,
+  "direct_source_generation_cases": 24,
+  "direct_cif_max_error": 5.684341886080802e-14,
+  "script_sha256": "736fe331affcf17d20434dbf603143c194332ed2bd273474171ae30c0d07d4dc",
+  "helper_sha256": "046fb605505efecc6dd80e3d3a0fcc8ac8f1bed5222437cf96840edf2b9df090",
+  "scope": "Synthetic construction and proper-source numerical identities; no held-out hourly scoring."
+}

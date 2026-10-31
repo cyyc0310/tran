@@ -1,0 +1,66 @@
+{
+  "version": "33-schema",
+  "status": "METADATA_ONLY_VERIFIED",
+  "created_utc": "2026-10-26T11:59:08.175295+00:00",
+  "purpose": "Official inventory acquisition and old-workbook schema audit only; no regional capacity numbers or model outcome",
+  "budget_definition": {
+    "B0": "Existing public monthly generation statistics",
+    "B1": "Separate additional public fleet-structure information; no B1 predictive result yet"
+  },
+  "data_years": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "official_release_dates": {
+    "2020": "2021-09-09",
+    "2021": "2022-09-22",
+    "2022": "2023-09-19",
+    "2023": "2024-09-23"
+  },
+  "release_record_titles": "See preserved literal titles, body-years and moving pagination links in schema-review.md;2021title has year typo",
+  "current_files_are_authenticated_first_release_bytes": false,
+  "immutable_release_html_snapshot_saved": false,
+  "historical_field_semantics_fully_verified": false,
+  "historical_sheet_headers_consistent": true,
+  "zip_count": 4,
+  "workbooks_checked": 12,
+  "sheet_headers_checked": 28,
+  "worksheet_rows_checked": [
+    1,
+    2
+  ],
+  "region_data_rows_parsed": false,
+  "numeric_capacity_values_converted": false,
+  "source_BA_join_coverage_checked": false,
+  "generator_keys_uniqueness_checked": false,
+  "models_trained": false,
+  "hourly_values_read": false,
+  "target_labels_opened": false,
+  "unseen_labels_opened": false,
+  "certified_capacity_bounds_established": false,
+  "novelty_established": false,
+  "independent_schema_review_status": "PASS",
+  "schema_audit_sha256": "ba38bb6ab5303e2662a76e85d394b77252532e95186de2dd8dead3aa1de45fe5",
+  "independent_schema_review_sha256": "4552fa01733b2961caa2e650cf093dab627798c2ffdd7898e66d31e4882b58f4",
+  "artifact_hashes": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/raw/eia8602020.zip": "ce519fd0b02c74b8c4231dc023bf07f922ae5f2a018fcaf88914502f61aa89ea",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/raw/eia8602021.zip": "ac35e582335ed5f82c1177361d6e8e82cff083ae85a5ec668815d21e0aef3ee5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/raw/eia8602022.zip": "a6f6b00f480ccfb7436804f5cb9984f27c3e0c20cfcbe9b4ed057285b5a68980",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/raw/eia8602023.zip": "1447e23e608bea1523961542a90eb93ea86715067a37f211282541461049b46f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/acquisition-2020.json": "fa3176a61fbc8c55a15943d43f5fc0f66fd2260d721f6e87f4dda71be9c89a39",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/acquisition-2021.json": "3cf197d4e1dc23fe5babcbfc32a6bc34d22a5d23418628eea553c55ea5677d35",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/acquisition-2022.json": "1cf97168ec8d1383406f458565ef56387fc509018e1d583293f15ed364096e82",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/acquisition-2023.json": "01fcefc5a9a6b5d9f8e9ca231437fd701a4f42c76e4e3cd309b2bdf3f7152c8a",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/schema-audit.json": "ba38bb6ab5303e2662a76e85d394b77252532e95186de2dd8dead3aa1de45fe5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/fleet-schema-v33/schema-review.md": "4552fa01733b2961caa2e650cf093dab627798c2ffdd7898e66d31e4882b58f4",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/docs/FLEET_INFORMATION_V33_DATA_PROTOCOL.md": "86ecaf193408c868f17da1ef22159ee44fec527ee634b5eba1715540989435df",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/docs/FLEET_INFORMATION_V33_DATA_RESULTS.md": "8c6afc424a4e0c3410dc056f06cd7c88c5da2c0a09939156304ef25647dfc049"
+  },
+  "artifact_count": 12,
+  "parent_research_manifest_path": "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/docs/evidence/history-signature-v32-verification.json",
+  "parent_research_manifest_sha256": "8e3cbfe354deab91e4f6f42e518f8340677c075339a88a55558791fe1d081a4a",
+  "scope": "Parent is contextual research provenance, not a claim that B1 experiment exists; numerical curation needs its own frozen contract",
+  "excluded_mutable_or_sidecar": "BREAKTHROUGH_SEARCH ledger, this metadata manifest, later numeric/model studies and independent metadata-manifest-review sidecar"
+}

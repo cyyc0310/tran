@@ -1,0 +1,96 @@
+{
+  "status": "POSTHOC_PROXY_SHAPE_IDENTIFIABILITY_SENSITIVITY_NOT_FORECAST_OR_VALIDATION",
+  "region_month_shape_rows": 3612,
+  "period": [
+    "2016-01",
+    "2024-12"
+  ],
+  "provinces": [
+    "Anhui",
+    "Beijing",
+    "Chongqing",
+    "Fujian",
+    "Gansu",
+    "Guangdong",
+    "Guangxi",
+    "Guizhou",
+    "Hainan",
+    "Hebei",
+    "Heilongjiang",
+    "Henan",
+    "Hubei",
+    "Hunan",
+    "Inner Mongolia",
+    "Jiangsu",
+    "Jiangxi",
+    "Jilin",
+    "Liaoning",
+    "Ningxia",
+    "Qinghai",
+    "Shaanxi",
+    "Shandong",
+    "Shanghai",
+    "Shanxi",
+    "Sichuan",
+    "Tianjin",
+    "Tibet (Xizang)",
+    "Xinjiang",
+    "Yunnan",
+    "Zhejiang"
+  ],
+  "sources": [
+    {
+      "shape_source": "weather_reconstructed",
+      "rows": 3240,
+      "provinces": 30,
+      "mean_margin_width": 918.7704185460898,
+      "mean_proxy_shape_width": 53.97654183177213,
+      "mean_flat_slot_width": -7.01770603219852e-17,
+      "median_width_reduction": 0.9478015975375809,
+      "mean_width_reduction": 0.9412429902654812,
+      "median_shape_vs_flat_reduction": 0.0,
+      "mean_shape_vs_flat_reduction": -195535321272.9821,
+      "positive_shape_vs_flat_fraction": 0.0,
+      "p10_width_reduction": 0.8882024228510885,
+      "positive_reduction_fraction": 1.0
+    },
+    {
+      "shape_source": "zenodo_template",
+      "rows": 372,
+      "provinces": 31,
+      "mean_margin_width": 896.4473368999512,
+      "mean_proxy_shape_width": 53.28462246315944,
+      "mean_flat_slot_width": 0.0,
+      "median_width_reduction": 0.9532837132953417,
+      "mean_width_reduction": 0.9419020824155931,
+      "median_shape_vs_flat_reduction": 0.0,
+      "mean_shape_vs_flat_reduction": 0.0,
+      "positive_shape_vs_flat_fraction": 0.0,
+      "p10_width_reduction": 0.8860617235080083,
+      "positive_reduction_fraction": 1.0
+    }
+  ],
+  "ef_gco2e_kwh": {
+    "Coal": 1000.0,
+    "Gas": 400.0,
+    "Other fossil": 400.0,
+    "Nuclear": 0.0,
+    "Hydro": 0.0,
+    "Wind": 0.0,
+    "Solar": 0.0,
+    "Bioenergy": 0.0
+  },
+  "protocol_sha256": "df6df0ee1c7ed38c248f5c23a9699ad0aaa3286de31dd8b9df3cd67abba36995",
+  "script_sha256": "e4133d1b20de7510d7085d8fde2a6598823abd9ba38455c56a6b8e64d33403cb",
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/china-hourly-load-dataset-audit-v64-r1/Data output.xlsx": "a93ff6d4a2f4f8c36538fdc4704e2e88bef16347d217c456a99a7a97d56a19e0",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/china-hourly-load-dataset-audit-v64-r1/Appendix 1_Hourly electric power load final.csv": "d8f5c26f3d8b4f639c64ecebf732ff360a303780252a8f498956833c9b4d6059",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/china-monthly-ember-audit-r1/ember_china_province_monthly.csv": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3"
+  },
+  "limitations": [
+    "The load curves are model-derived demand, not hourly generation or CIF measurements.",
+    "Fuel margins are the target-month retrospective Ember snapshot; this is not a forecast experiment.",
+    "The calculation assumes within-month generation follows the load-derived hour-of-day profile.",
+    "A narrower feasible set under this assumption does not establish empirical coverage or predictive validity."
+  ]
+}

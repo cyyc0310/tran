@@ -1,0 +1,40 @@
+{
+  "status": "COMPLETED_FACTORIAL_INFORMATION_VALUE_NOT_EMPIRICAL_VALIDATION",
+  "tau_g_kwh": 300,
+  "fuel_share_relative_error": 1.0,
+  "thermal_ef_outer_support": [
+    0,
+    1100
+  ],
+  "frontier": {
+    "province_periods": 328,
+    "mean_broad_no_capacity_width_h": 796.6310975609756,
+    "mean_broad_with_capacity_width_h": 773.5548780487804,
+    "mean_mix_pm100_no_capacity_width_h": 795.8170731707318,
+    "mean_mix_pm100_with_capacity_width_h": 519.0731707317074,
+    "mean_mix_gain_no_capacity_h": 0.8140243902439024,
+    "mean_mix_gain_with_capacity_h": 254.48170731707316,
+    "mean_capacity_gain_broad_h": 23.076219512195124,
+    "mean_capacity_gain_mix_h": 276.7439024390244,
+    "mean_mix_capacity_complementarity_h": 253.66768292682926,
+    "median_mix_capacity_complementarity_h": 266.5,
+    "cells_mix_gain_no_capacity_positive": 267,
+    "cells_mix_gain_with_capacity_positive": 276,
+    "cells_positive_complementarity": 276,
+    "cells_negative_complementarity": 0
+  },
+  "limits": [
+    "All fuel margins are based on estimated Ember provincial monthly generation.",
+    "The ±100% share error band is a stress scenario, not an error distribution estimate.",
+    "No China hourly CIF labels or empirical interval coverage are used.",
+    "The with-capacity arm uses lagged 2022 capacity as a retrospective proxy; Tibet infeasible cells are excluded."
+  ],
+  "sha256": {
+    "results/v341-china-complete-category-hull-r2/monthly_margin_capacity_audit.csv": "0fdf3711092638bf4e8e3fadf5191244e890b0899e70b26aaebd5afd809af62b",
+    "results/v348-ember-share-error-frontier-r1/province_period_share_error_frontier.csv": "e6209d48f630b312f0fd10d4129e89d1d0999897ba310f2b6dff673e7e988d86",
+    "results/v349-ember-total-vs-mix-ablation-r2/paired_province_period_ablation.csv": "b916177eb1f4a8d61c6867f4e185075b8107f4e3e8fceb946d4976816286d25e",
+    "results/v294-china-ember-lineage-r1/ember_china_monthly_generation.csv": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+    "docs/V350_FUEL_MIX_CAPACITY_FACTORIAL_PROTOCOL.md": "cec0014ba565f79f7227d00b8edd73520bb79293a2b99198d20295577e2b311b",
+    "scripts/v350_fuel_mix_capacity_factorial.py": "1129e8a47881b09339cf80c2490eba1625c0dcdd095a709882761a73fc45adf0"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "status": "COMPLETE_NESTED_FOSSIL_ROLE_SELECTION",
+  "protocol": "docs/V50_NESTED_FOSSIL_ROLE_PROTOCOL.md",
+  "protocol_sha256": "76a48df60bb0ebb2a0104ae3a2aa35cc8525acb77a1257ef1ad3b2aaa2accc9f",
+  "script_sha256": "2463da84f38912289cd57da08167f0e911e4f949920e311acaf9bf976a56455c",
+  "source_units": 10,
+  "prediction_packages_opened": 70,
+  "external_label_packages_opened": 10,
+  "target_prediction_packages_opened": 0,
+  "target_or_unseen_scores_opened": 0,
+  "point_or_risk_refits": 0,
+  "outer_source_heldout_fits": 70,
+  "nested_inner_source_heldout_fits": 630,
+  "selected_lambda_counts": {
+    "0.25": 33,
+    "0.0": 22,
+    "0.5": 13,
+    "0.75": 2
+  },
+  "source_heldout_rows": 350,
+  "lag_days": 90,
+  "full_mix_EF_definition": "mean fixed-EF intensity of three latest legally released monthly eight-fuel records at each query date",
+  "composition_groups": {
+    "fossil": [
+      "coal",
+      "gas",
+      "oil",
+      "other"
+    ]
+  },
+  "nested_lambda_grid": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "selection_rule": "min mean inner-source interval score subject to mean coverage>=0.90 and worst source>=0.85; fallback lambda=0",
+  "daily_source_bias_mae": {
+    "ef_only": 88.92677864832932,
+    "nested_selected": 77.6720865531843
+  },
+  "source_macro_metrics": [
+    {
+      "method": "no_correction_factor2_anchor",
+      "hourly_crps": 125.13579218441456,
+      "daily_mean_crps": 123.49853821898088,
+      "daily_level_mae": 144.61201736417388,
+      "coverage90": 0.8849718932386053,
+      "width90": 527.9794726782422,
+      "interval_score90": 712.1641612105279,
+      "lower_miss": 7.38388720292733e-05,
+      "upper_miss": 0.11495426788936554,
+      "fraction_clipped_after_shift": 0.05659207922311699
+    },
+    {
+      "method": "global_source_bias_shift",
+      "hourly_crps": 112.8013306380969,
+      "daily_mean_crps": 111.46598169938632,
+      "daily_level_mae": 141.69231152829354,
+      "coverage90": 0.8482791479458417,
+      "width90": 518.3583570404032,
+      "interval_score90": 784.4616311830555,
+      "lower_miss": 0.12375524559333531,
+      "upper_miss": 0.027965606460822988,
+      "fraction_clipped_after_shift": 0.0010971750064344545
+    },
+    {
+      "method": "ef_only_monthly_mix",
+      "hourly_crps": 71.42928724075017,
+      "daily_mean_crps": 68.01667230986527,
+      "daily_level_mae": 93.46876574788641,
+      "coverage90": 0.9526737177867339,
+      "width90": 478.64098302819065,
+      "interval_score90": 510.4179803661592,
+      "lower_miss": 0.03171438841312622,
+      "upper_miss": 0.015611893800139779,
+      "fraction_clipped_after_shift": 0.10051477283907873
+    },
+    {
+      "method": "full_fossil_increment_lambda1",
+      "hourly_crps": 64.52938159568824,
+      "daily_mean_crps": 60.829068763447445,
+      "daily_level_mae": 72.37548529984454,
+      "coverage90": 0.8634333802653151,
+      "width90": 483.74039885930426,
+      "interval_score90": 628.5510547803731,
+      "lower_miss": 0.12952020875366124,
+      "upper_miss": 0.007046410981023774,
+      "fraction_clipped_after_shift": 0.02056074406613606
+    },
+    {
+      "method": "nested_selected_fossil_increment",
+      "hourly_crps": 66.6217785644844,
+      "daily_mean_crps": 62.894457698083826,
+      "daily_level_mae": 86.73760617938225,
+      "coverage90": 0.9486502584103018,
+      "width90": 481.31401467915884,
+      "interval_score90": 517.9834422440915,
+      "lower_miss": 0.03920205060222972,
+      "upper_miss": 0.01214769098746844,
+      "fraction_clipped_after_shift": 0.038835359957069424
+    }
+  ],
+  "frozen_input_hashes": {
+    "freeze": "6fd51f0c32cab38dfb59db135521411b44a830dfdcbdcfc3ec43a1fbc09687f3",
+    "prediction_seal": "07580823d07b7e47906d7630a384da235fc25e2f0720b82dfd7794dfbb17ce75",
+    "calibration_seal": "7d883be2afb9032637a14bb9f312520ed11b70440ef5ec1d222fa623eec6d60d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v4-data/monthly.csv": "f079ca2f5899e4ef4f2a4cd21c5601315da62ffb4aced609a17de6932a24e8a9",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v5-data/monthly.csv": "dfff10a6091f208432557f54dc84b6216e7a05888f3f7074186a92d2d61605ad"
+  },
+  "held_source_fold_metrics_sha256": "40ecd410eec71a2a127a6105edd27c4eab265ea46aa13e3892429b2c51acdf56",
+  "held_source_bias_sha256": "5cad16984ffebcf9d428f94941463a37124ac7de6ff2509945fe86d02c71c639",
+  "nested_selection_sha256": "52cb0118c6dc265555b927b5161fa809f48e6fdfbd5a3920f79c775f3cc8c33b",
+  "source_macro_metrics_sha256": "7b562b5787ae056ff7c627c6c453e76a0952e5cbe9a99f627895abc0774f3ff3",
+  "interpretation_limit": "Ten previously used sources only; source-held-out descriptive evidence, not China transfer, novel method proof, or a coverage guarantee."
+}

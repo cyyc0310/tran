@@ -1,0 +1,38 @@
+{
+  "status": "RETROSPECTIVE_JOINT_MONTHLY_AND_BLOCK_IDENTIFICATION",
+  "contract": "Exact monthly totals for eight fuels, hourly total generation, and exact six-hour positive-EF-group totals. Score 24 hours on the first complete UTC date between day 13 and 17 in each source-month.",
+  "sources": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "ISNE",
+    "MISO",
+    "NYIS"
+  ],
+  "year": 2024,
+  "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/BPAT_hourly.csv": "8fc4377a7e37dd3ace5d84062fab8ab923760f3deb99ec634d84cfae649add9a",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/CISO_hourly.csv": "f1d69e13d35cc7c496532905a8a414e8f3e68e8c12ebd3394bdbc026db0b0caa",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/ERCO_hourly.csv": "e5d8cb8757f07e2a46f8a22d72e0bfc704c6ce3848196113559881dd7f47d925",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/FPL_hourly.csv": "5c0346cbafc08b73556c62baf4014c193fb8657bf9fcde4d194fb3818e3933e6",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/ISNE_hourly.csv": "f30cb202d839100352fd7aa81283a19ba3973cf07d754ab891d674644c4c0747",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/MISO_hourly.csv": "edc5d1b9fad671ae43bed234140eb146295e832cf4e2ac9e11f6b55a2279397d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/NYIS_hourly.csv": "2146d06400707f9973baf75cf3a98ce5b38b02ff9b5f202657d310a8186c123f"
+  },
+  "outputs_sha256": {
+    "sampled_hour_bounds.csv": "47a65d52e1aebc2df827b0a3a4e65960f98c1b3283f5f8218a8f2ab4b74308d3",
+    "source_summary.csv": "7fc47acd0f8fd5dd7ef0df622cfeda67b492f3ef739c05094aade7c17ad88610",
+    "overall_summary.csv": "ca071cf6d95841e4a34858158f763241d60cfa97b66c745d8a8f4df498647d4c"
+  },
+  "rows": 1008,
+  "interpretation": "Exact LP bounds for the stated finite information contract; target-month margins and six-hour totals are retrospective oracles, not forecast-time available inputs. No ramp, capacity, imports, or EF uncertainty."
+}

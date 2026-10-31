@@ -1,0 +1,340 @@
+{
+  "source_csv": "results/v364-china-nbs-threshold-crossing-certificate-r1/province_period_certificates.csv",
+  "source_sha256": "f0b7601d4ba56e3522f5cfd217fec1d2f0014feac6c5bb61843885d828435c78",
+  "rule": "critical EF e*=tau/thermal_share. If current support [L,U] straddles e*, nearest one-sided boundary contraction is min(e*-L,U-e*); this is support movement, not a validated measurement error/precision guarantee.",
+  "results": [
+    {
+      "support": "base_400_1000",
+      "threshold_g_kwh": 100,
+      "ambiguous_province_periods": 64,
+      "provinces_any": 3,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        435.972,
+        568.141,
+        895.47
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        25.845,
+        126.809,
+        256.672
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        12.922,
+        63.405,
+        128.336
+      ],
+      "province_year_2024": {
+        "Qinghai": 7,
+        "Sichuan": 6,
+        "Yunnan": 9
+      }
+    },
+    {
+      "support": "base_400_1000",
+      "threshold_g_kwh": 300,
+      "ambiguous_province_periods": 409,
+      "provinces_any": 20,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        408.249,
+        461.34,
+        629.008
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        8.249,
+        60.465,
+        208.824
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        4.124,
+        30.233,
+        104.412
+      ],
+      "province_year_2024": {
+        "Chongqing": 4,
+        "Fujian": 11,
+        "Gansu": 11,
+        "Guangdong": 11,
+        "Guangxi": 11,
+        "Guizhou": 8,
+        "Hainan": 10,
+        "Hebei": 6,
+        "Heilongjiang": 8,
+        "Hubei": 11,
+        "Hunan": 11,
+        "Inner Mongolia": 5,
+        "Jilin": 11,
+        "Liaoning": 11,
+        "Ningxia": 5,
+        "Sichuan": 1,
+        "Xinjiang": 7,
+        "Zhejiang": 8
+      }
+    },
+    {
+      "support": "base_400_1000",
+      "threshold_g_kwh": 500,
+      "ambiguous_province_periods": 833,
+      "provinces_any": 27,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        531.21,
+        641.705,
+        823.652
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        115.47,
+        207.54,
+        282.962
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        57.735,
+        103.77,
+        141.481
+      ],
+      "province_year_2024": {
+        "Anhui": 11,
+        "Beijing": 11,
+        "Chongqing": 11,
+        "Fujian": 11,
+        "Gansu": 5,
+        "Guangdong": 11,
+        "Guangxi": 4,
+        "Guizhou": 9,
+        "Hainan": 11,
+        "Hebei": 11,
+        "Heilongjiang": 11,
+        "Henan": 11,
+        "Hubei": 6,
+        "Hunan": 8,
+        "Inner Mongolia": 11,
+        "Jiangsu": 11,
+        "Jiangxi": 11,
+        "Jilin": 10,
+        "Liaoning": 9,
+        "Ningxia": 11,
+        "Shaanxi": 11,
+        "Shandong": 11,
+        "Shanghai": 11,
+        "Shanxi": 11,
+        "Tianjin": 11,
+        "Xinjiang": 11,
+        "Zhejiang": 11
+      }
+    },
+    {
+      "support": "narrow_700_900",
+      "threshold_g_kwh": 100,
+      "ambiguous_province_periods": 11,
+      "provinces_any": 3,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        727.797,
+        750.748,
+        889.556
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        3.571,
+        44.346,
+        50.748
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        1.786,
+        22.173,
+        25.374
+      ],
+      "province_year_2024": {
+        "Qinghai": 1,
+        "Sichuan": 1,
+        "Yunnan": 1
+      }
+    },
+    {
+      "support": "narrow_700_900",
+      "threshold_g_kwh": 300,
+      "ambiguous_province_periods": 18,
+      "provinces_any": 5,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        706.248,
+        729.65,
+        828.048
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        6.248,
+        27.325,
+        80.258
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        3.124,
+        13.663,
+        40.129
+      ],
+      "province_year_2024": {
+        "Gansu": 2,
+        "Guangxi": 2,
+        "Hubei": 1,
+        "Hunan": 3
+      }
+    },
+    {
+      "support": "narrow_700_900",
+      "threshold_g_kwh": 500,
+      "ambiguous_province_periods": 225,
+      "provinces_any": 17,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        709.476,
+        767.21,
+        851.655
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        7.407,
+        50.135,
+        90.532
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        3.703,
+        25.068,
+        45.266
+      ],
+      "province_year_2024": {
+        "Chongqing": 3,
+        "Fujian": 6,
+        "Gansu": 4,
+        "Guangdong": 7,
+        "Guangxi": 3,
+        "Guizhou": 4,
+        "Hainan": 9,
+        "Hebei": 4,
+        "Heilongjiang": 5,
+        "Hubei": 5,
+        "Hunan": 6,
+        "Inner Mongolia": 1,
+        "Jilin": 7,
+        "Liaoning": 6,
+        "Ningxia": 1,
+        "Xinjiang": 6,
+        "Zhejiang": 3
+      }
+    },
+    {
+      "support": "wide_350_1100",
+      "threshold_g_kwh": 100,
+      "ambiguous_province_periods": 83,
+      "provinces_any": 4,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        387.23,
+        543.502,
+        974.398
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        35.089,
+        144.063,
+        343.389
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        17.544,
+        72.032,
+        171.695
+      ],
+      "province_year_2024": {
+        "Qinghai": 8,
+        "Sichuan": 10,
+        "Yunnan": 9
+      }
+    },
+    {
+      "support": "wide_350_1100",
+      "threshold_g_kwh": 300,
+      "ambiguous_province_periods": 679,
+      "provinces_any": 24,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        361.983,
+        416.425,
+        588.146
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        11.834,
+        66.074,
+        221.457
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        5.917,
+        33.037,
+        110.729
+      ],
+      "province_year_2024": {
+        "Chongqing": 9,
+        "Fujian": 11,
+        "Gansu": 11,
+        "Guangdong": 11,
+        "Guangxi": 11,
+        "Guizhou": 11,
+        "Hainan": 11,
+        "Hebei": 11,
+        "Heilongjiang": 11,
+        "Henan": 10,
+        "Hubei": 11,
+        "Hunan": 11,
+        "Inner Mongolia": 11,
+        "Jiangsu": 10,
+        "Jiangxi": 9,
+        "Jilin": 11,
+        "Liaoning": 11,
+        "Ningxia": 11,
+        "Shaanxi": 2,
+        "Shandong": 8,
+        "Shanxi": 9,
+        "Sichuan": 2,
+        "Xinjiang": 11,
+        "Zhejiang": 11
+      }
+    },
+    {
+      "support": "wide_350_1100",
+      "threshold_g_kwh": 500,
+      "ambiguous_province_periods": 861,
+      "provinces_any": 27,
+      "critical_ef_g_kwh_p10_p50_p90": [
+        532.924,
+        645.99,
+        855.547
+      ],
+      "nearest_one_sided_bound_contraction_g_kwh_p10_p50_p90": [
+        165.385,
+        266.452,
+        350.0
+      ],
+      "symmetric_interval_halfwidth_reduction_g_kwh_p10_p50_p90": [
+        82.692,
+        133.226,
+        175.0
+      ],
+      "province_year_2024": {
+        "Anhui": 11,
+        "Beijing": 11,
+        "Chongqing": 11,
+        "Fujian": 11,
+        "Gansu": 8,
+        "Guangdong": 11,
+        "Guangxi": 7,
+        "Guizhou": 11,
+        "Hainan": 11,
+        "Hebei": 11,
+        "Heilongjiang": 11,
+        "Henan": 11,
+        "Hubei": 8,
+        "Hunan": 8,
+        "Inner Mongolia": 11,
+        "Jiangsu": 11,
+        "Jiangxi": 11,
+        "Jilin": 11,
+        "Liaoning": 11,
+        "Ningxia": 11,
+        "Shaanxi": 11,
+        "Shandong": 11,
+        "Shanghai": 11,
+        "Shanxi": 11,
+        "Tianjin": 11,
+        "Xinjiang": 11,
+        "Zhejiang": 11
+      }
+    }
+  ]
+}

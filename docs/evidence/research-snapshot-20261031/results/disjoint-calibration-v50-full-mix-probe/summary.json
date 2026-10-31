@@ -1,0 +1,34 @@
+{
+  "status": "COMPLETE_EXPLORATORY_INFORMATION_VALUE_PROBE",
+  "protocol": "docs/V50_MONTHLY_FULL_MIX_RISK_PROTOCOL.md",
+  "protocol_sha256": "829886c40d010d62d4d77ecb13e7ed056fc1c193ef13ab88c50931ec5a63b7f5",
+  "script_sha256": "d714d291f737b8f1a47f52204795fcbc68ac12d330d6bc5fa7b5587bf7d673e5",
+  "source_outcome_sha256": "b1aaa3f70684d65e3b35af176b05059e6f502086510b1b83d42fb320247a204a",
+  "monthly_input_hashes": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v4-data/monthly.csv": "f079ca2f5899e4ef4f2a4cd21c5601315da62ffb4aced609a17de6932a24e8a9",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v5-data/monthly.csv": "dfff10a6091f208432557f54dc84b6216e7a05888f3f7074186a92d2d61605ad"
+  },
+  "source_units": 10,
+  "source_heldout_folds": 10,
+  "point_or_risk_refits": 0,
+  "diagnostic_regressions": 20,
+  "target_or_unseen_source_read": false,
+  "feature_definition": "fixed EF-weighted monthly generation shares, averaged across three latest fully released contexts and July-Dec 2024 query dates",
+  "p90_LOO": {
+    "null_MAE": 2.008720162112947,
+    "monthly_mix_MAE": 1.4977163404489682,
+    "null_RMSE": 2.1543679846311488,
+    "monthly_mix_RMSE": 1.766797203893892,
+    "positive_slope_fold_fraction": 1.0
+  },
+  "p99_LOO_secondary": {
+    "null_MAE": 2.6821359766789157,
+    "monthly_mix_MAE": 2.063509575102883,
+    "null_RMSE": 2.8311115618428726,
+    "monthly_mix_RMSE": 2.4136715166079474,
+    "positive_slope_fold_fraction": 1.0
+  },
+  "feature_csv_sha256": "c207db1d6cb2cacb841bb45b8c470d9d7eb04d17ddf10b82efd18ae4bba0fd24",
+  "heldout_csv_sha256": "2320e70a0035f02d5c2cd514b8a3dace5d9c93d9c9fea809e8a029989661128a",
+  "interpretation_limit": "Ten previously used source regions with a project proxy-EF convention; exploratory only, not Chinese CIF validation or proof of interval efficiency."
+}

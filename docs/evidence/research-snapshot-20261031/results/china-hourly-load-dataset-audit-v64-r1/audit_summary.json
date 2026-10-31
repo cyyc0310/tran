@@ -1,0 +1,179 @@
+{
+  "status": "PUBLIC_MODEL_DERIVED_HOURLY_DEMAND_AUDIT_NOT_CIF_OR_GENERATION_VALIDATION",
+  "source_doi": "10.6084/m9.figshare.29832701.v3",
+  "article_doi": "10.1038/s41597-026-07327-8",
+  "workbook_sha256": "a93ff6d4a2f4f8c36538fdc4704e2e88bef16347d217c456a99a7a97d56a19e0",
+  "sheets": [
+    "Power coefficients",
+    "2015 load curve",
+    "2016 load curve",
+    "2017 load curve",
+    "2018 load curve",
+    "2019 load curve",
+    "2020 load curve",
+    "2021 load curve",
+    "2022 load curve",
+    "2023 load curve",
+    "2024 load curve"
+  ],
+  "annual": [
+    {
+      "year": 2015,
+      "rows": 8760,
+      "expected_hours": 8760,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2015-01-01 00:00:00",
+      "timestamp_last": "2015-12-31 23:00:00"
+    },
+    {
+      "year": 2016,
+      "rows": 8784,
+      "expected_hours": 8784,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2016-01-01 00:00:00",
+      "timestamp_last": "2016-12-31 23:00:00"
+    },
+    {
+      "year": 2017,
+      "rows": 8760,
+      "expected_hours": 8760,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2017-01-01 00:00:00",
+      "timestamp_last": "2017-12-31 23:00:00"
+    },
+    {
+      "year": 2018,
+      "rows": 8760,
+      "expected_hours": 8760,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2018-01-01 00:00:00",
+      "timestamp_last": "2018-12-31 23:00:00"
+    },
+    {
+      "year": 2019,
+      "rows": 8760,
+      "expected_hours": 8760,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2019-01-01 00:00:00",
+      "timestamp_last": "2019-12-31 23:00:00"
+    },
+    {
+      "year": 2020,
+      "rows": 8784,
+      "expected_hours": 8784,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2020-01-01 00:00:00",
+      "timestamp_last": "2020-12-31 23:00:00"
+    },
+    {
+      "year": 2021,
+      "rows": 8760,
+      "expected_hours": 8760,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2021-01-01 00:00:00",
+      "timestamp_last": "2021-12-31 23:00:00"
+    },
+    {
+      "year": 2022,
+      "rows": 8760,
+      "expected_hours": 8760,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2022-01-01 00:00:00",
+      "timestamp_last": "2022-12-31 23:00:00"
+    },
+    {
+      "year": 2023,
+      "rows": 8760,
+      "expected_hours": 8760,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2023-01-01 00:00:00",
+      "timestamp_last": "2023-12-31 23:00:00"
+    },
+    {
+      "year": 2024,
+      "rows": 8784,
+      "expected_hours": 8784,
+      "province_columns": 31,
+      "duplicate_timestamps": 0,
+      "complete_hourly_calendar": true,
+      "missing_cells": 0,
+      "negative_cells": 0,
+      "timestamp_first": "2024-01-01 00:00:00",
+      "timestamp_last": "2024-12-31 23:00:00"
+    }
+  ],
+  "shape_variation_summary": {
+    "province_year_rows": 310,
+    "median_daily_profile_corr": 0.9568842279322417,
+    "median_p10_daily_profile_corr": 0.715200112720775,
+    "median_mean_hourly_shape_cv": 0.04476915685552188,
+    "median_peak_hour_entropy_bits": 2.092276815140805
+  },
+  "load_vs_generation_comparison": {
+    "matched_province_month_rows": 3240,
+    "matched_provinces": 30,
+    "period_start": "2016-01-01",
+    "period_end": "2024-12-01",
+    "monthly_load_to_generation_ratio_median": 1.024960028561426,
+    "monthly_load_to_generation_ratio_p10": 0.6617441042533342,
+    "monthly_load_to_generation_ratio_p90": 1.4571810253635087,
+    "province_year_rows": 270,
+    "province_year_ratio_median": 1.0278531019076806,
+    "province_year_ratio_p10": 0.6688510174460757,
+    "province_year_ratio_p90": 1.3840517169800317,
+    "median_within_province_monthly_ratio_cv": 0.0995002022278824
+  },
+  "zenodo_2018_load_audit": {
+    "record_doi": "10.5281/zenodo.8322210",
+    "csv_sha256": "d8f5c26f3d8b4f639c64ecebf732ff360a303780252a8f498956833c9b4d6059",
+    "csv_expected_md5": "8066da6f9f86a68f3a35633c5eb2029c",
+    "csv_observed_md5": "8066da6f9f86a68f3a35633c5eb2029c",
+    "rows": 8760,
+    "province_columns": 31,
+    "median_daily_profile_corr_to_annual_mean": 0.985607025148104,
+    "median_p10_daily_profile_corr_to_annual_mean": 0.9195218646794464,
+    "interpretation": "2018 curves are reconstructed by affine rescaling of a representative workday or holiday template to each day's reported minimum and maximum; this is not independently observed hourly load."
+  },
+  "interpretation": "This is estimated provincial electricity demand, not generation or measured CIF. Subdaily variation is model-generated from released aggregate statistics, typical-day profiles and weather-driven adjustments; it can be a sensitivity input only, not independent hourly truth.",
+  "limits": [
+    "The dataset describes demand/load, not provincial generation, net imports, or CIF.",
+    "The paper states that hourly profiles are reconstructed from typical-day load curves, annual/load statistics, and meteorological variables.",
+    "High nominal time resolution does not make this an independent measured hourly observation."
+  ]
+}

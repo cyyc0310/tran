@@ -1,0 +1,216 @@
+{
+  "status": "CHINA_STYLE_COARSE_MONTHLY_GENERATION_BUDGET_RETROSPECTIVE_PROXY",
+  "region_months": 358,
+  "scored_rows": 2148,
+  "frontier": [
+    {
+      "tau": 100,
+      "rate": 0.01,
+      "no_capacity_positive": 0.051948051948051945,
+      "no_capacity_negative": 0.19047619047619047,
+      "no_capacity_abstain": 0.7575757575757576,
+      "capacity_positive": 0.7579365079365079,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.051587301587301584,
+      "no_capacity_width": 544.3738184747583,
+      "capacity_width": 425.27463400564903,
+      "detailed_month_width": 544.3559613319012,
+      "v90_detailed_capacity_width": 419.0096113299121
+    },
+    {
+      "tau": 100,
+      "rate": 0.05,
+      "no_capacity_positive": 0.051948051948051945,
+      "no_capacity_negative": 0.19047619047619047,
+      "no_capacity_abstain": 0.7575757575757576,
+      "capacity_positive": 0.751984126984127,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.057539682539682536,
+      "no_capacity_width": 544.3738184747583,
+      "capacity_width": 425.27463400564903,
+      "detailed_month_width": 544.3559613319012,
+      "v90_detailed_capacity_width": 419.0096113299121
+    },
+    {
+      "tau": 100,
+      "rate": 0.1,
+      "no_capacity_positive": 0.051948051948051945,
+      "no_capacity_negative": 0.19047619047619047,
+      "no_capacity_abstain": 0.7575757575757576,
+      "capacity_positive": 0.7371031746031745,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.07242063492063491,
+      "no_capacity_width": 544.3738184747583,
+      "capacity_width": 425.27463400564903,
+      "detailed_month_width": 544.3559613319012,
+      "v90_detailed_capacity_width": 419.0096113299121
+    },
+    {
+      "tau": 300,
+      "rate": 0.01,
+      "no_capacity_positive": 0.051948051948051945,
+      "no_capacity_negative": 0.19047619047619047,
+      "no_capacity_abstain": 0.7575757575757576,
+      "capacity_positive": 0.4166666666666667,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.39285714285714285,
+      "no_capacity_width": 544.697231173171,
+      "capacity_width": 488.4072823653651,
+      "detailed_month_width": 544.3559613319012,
+      "v90_detailed_capacity_width": 441.6641492349199
+    },
+    {
+      "tau": 300,
+      "rate": 0.05,
+      "no_capacity_positive": 0.051948051948051945,
+      "no_capacity_negative": 0.19047619047619047,
+      "no_capacity_abstain": 0.7575757575757576,
+      "capacity_positive": 0.36706349206349204,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.44246031746031744,
+      "no_capacity_width": 544.697231173171,
+      "capacity_width": 488.4072823653651,
+      "detailed_month_width": 544.3559613319012,
+      "v90_detailed_capacity_width": 441.6641492349199
+    },
+    {
+      "tau": 300,
+      "rate": 0.1,
+      "no_capacity_positive": 0.051948051948051945,
+      "no_capacity_negative": 0.19047619047619047,
+      "no_capacity_abstain": 0.7575757575757576,
+      "capacity_positive": 0.2997234247234247,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.5098003848003848,
+      "no_capacity_width": 544.697231173171,
+      "capacity_width": 488.4072823653651,
+      "detailed_month_width": 544.3559613319012,
+      "v90_detailed_capacity_width": 441.6641492349199
+    }
+  ],
+  "hourly_source_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "capacity_source_sha256": {
+    "2023": "1447e23e608bea1523961542a90eb93ea86715067a37f211282541461049b46f",
+    "2024": "0aaae04812cd4ab87a3e346bdf93848a3cc15053fd4dc2a4cf82d2aeac95f12b"
+  },
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "DOPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "EPE": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "GCPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TIDC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    }
+  },
+  "protocol_sha256": "dd4000262e974f48c52d808817490a6945fb4fdec30e5e89519296ea534ae447",
+  "script_sha256": "fdaeee46e7c41a1b30c46f05af80b108ad3dec67cef046717be0308724584bb8",
+  "limitations": [
+    "Monthly coarse generation margins are oracle-aggregated from EIA hourly fuel records, not Chinese public source rows.",
+    "Thermal subfuel EF composition is left unknown in [400,1000] and may vary between event and complement blocks.",
+    "The cohort is retrospectively selected by V90 target-hour capacity audits.",
+    "Fixed EF proxy is not actual CIF; no unseen-region or prospective coverage validation."
+  ]
+}

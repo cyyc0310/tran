@@ -1,0 +1,164 @@
+{
+  "status": "OFFICIAL_NBS_LAGGED_MIX_PROVINCIAL_ANNUAL_EF_LOPO_TRANSFER_RETROSPECTIVE",
+  "n_provinces": 30,
+  "target_years": [
+    2022,
+    2023
+  ],
+  "feature_years": {
+    "2022": 2021,
+    "2023": 2022
+  },
+  "training_target_years_for_each_test": {
+    "2022": [
+      2021
+    ],
+    "2023": [
+      2021,
+      2022
+    ]
+  },
+  "feature_groups": [
+    "thermal",
+    "hydro_or_remainder",
+    "nuclear",
+    "wind",
+    "solar"
+  ],
+  "category_scope": "monthly above-designated-size NBS-derived generation, Feb cumulative Jan-Feb through Dec",
+  "tianjin_hydro_handling": "missing hydro reconstructed as nonnegative remainder after subtracting reported thermal, nuclear, wind, solar from reported total; not set to zero",
+  "paired_NBS_vs_Ember": {
+    "mean_paired_absolute_error_difference_kgco2_kwh": -0.0028019062555622305,
+    "province_cluster_bootstrap_95pct": [
+      -0.009647983213023516,
+      0.0019402155601941004
+    ],
+    "provinces_nbs_better": 14,
+    "provinces_tied": 0
+  },
+  "models": [
+    {
+      "evaluation": "pooled_2022_2023",
+      "method": "training_mean",
+      "mae": 0.11643649425287356,
+      "rmse": 0.15820442561159762,
+      "mean_signed_error": 0.023168333333333308,
+      "p90_absolute_error": 0.20807431034482785,
+      "mae_reduction_vs_training_mean_pct": 0.0
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "method": "NBS_lagged_monthly_mix_NNLS",
+      "mae": 0.05173065387395675,
+      "rmse": 0.07060078799087352,
+      "mean_signed_error": 0.03685704172965552,
+      "p90_absolute_error": 0.11972425666375261,
+      "mae_reduction_vs_training_mean_pct": 55.571786830330396
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "method": "Ember_lagged_monthly_mix_NNLS",
+      "mae": 0.05453256012951899,
+      "rmse": 0.07922079884860511,
+      "mean_signed_error": 0.037728237196940934,
+      "p90_absolute_error": 0.12876319222304367,
+      "mae_reduction_vs_training_mean_pct": 53.16540533152202
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "method": "same_province_lagged_official_factor_reference",
+      "mae": 0.03144666666666667,
+      "rmse": 0.03893006978330931,
+      "mean_signed_error": 0.01735666666666667,
+      "p90_absolute_error": 0.06921999999999999,
+      "mae_reduction_vs_training_mean_pct": 72.99243087964184
+    },
+    {
+      "evaluation": "2022",
+      "method": "training_mean",
+      "mae": 0.12072436781609193,
+      "rmse": 0.16507270111916159,
+      "mean_signed_error": 0.02324666666666665,
+      "p90_absolute_error": 0.21160827586206926,
+      "mae_reduction_vs_training_mean_pct": 0.0
+    },
+    {
+      "evaluation": "2022",
+      "method": "NBS_lagged_monthly_mix_NNLS",
+      "mae": 0.057001716424353546,
+      "rmse": 0.07375385228568514,
+      "mean_signed_error": 0.03958690932837282,
+      "p90_absolute_error": 0.12072075938424555,
+      "mae_reduction_vs_training_mean_pct": 52.78358673106631
+    },
+    {
+      "evaluation": "2022",
+      "method": "Ember_lagged_monthly_mix_NNLS",
+      "mae": 0.05979159362611069,
+      "rmse": 0.08136219755411819,
+      "mean_signed_error": 0.04147759086001031,
+      "p90_absolute_error": 0.13053909178485712,
+      "mae_reduction_vs_training_mean_pct": 50.47263886509184
+    },
+    {
+      "evaluation": "2022",
+      "method": "same_province_lagged_official_factor_reference",
+      "mae": 0.03526666666666666,
+      "rmse": 0.04360282100965487,
+      "mean_signed_error": 0.02324666666666666,
+      "p90_absolute_error": 0.06924999999999998,
+      "mae_reduction_vs_training_mean_pct": 70.787449704942
+    },
+    {
+      "evaluation": "2023",
+      "method": "training_mean",
+      "mae": 0.11214862068965517,
+      "rmse": 0.15102411698604626,
+      "mean_signed_error": 0.023089999999999958,
+      "p90_absolute_error": 0.18951568965517263,
+      "mae_reduction_vs_training_mean_pct": 0.0
+    },
+    {
+      "evaluation": "2023",
+      "method": "NBS_lagged_monthly_mix_NNLS",
+      "mae": 0.04645959132355995,
+      "rmse": 0.06730016198261247,
+      "mean_signed_error": 0.03412717413093821,
+      "p90_absolute_error": 0.11769293818551192,
+      "mae_reduction_vs_training_mean_pct": 58.57319417942205
+    },
+    {
+      "evaluation": "2023",
+      "method": "Ember_lagged_monthly_mix_NNLS",
+      "mae": 0.04927352663292728,
+      "rmse": 0.07701988541660491,
+      "mean_signed_error": 0.03397888353387156,
+      "p90_absolute_error": 0.12173578983254328,
+      "mae_reduction_vs_training_mean_pct": 56.064081457336755
+    },
+    {
+      "evaluation": "2023",
+      "method": "same_province_lagged_official_factor_reference",
+      "mae": 0.027626666666666667,
+      "rmse": 0.03361390585258825,
+      "mean_signed_error": 0.011466666666666672,
+      "p90_absolute_error": 0.05518000000000001,
+      "mae_reduction_vs_training_mean_pct": 75.36602189418188
+    }
+  ],
+  "limitations": [
+    "Official MEE target is an annual consumption-accounting CO2 factor, not generation-side hourly CIF.",
+    "NBS-derived monthly features cover above-designated-size enterprises, not all plants; monthly scope is incomplete relative to annual all-plant totals.",
+    "The OREO/NBS and MEE files are retrospective snapshots with no verified as-of publication/revision vintage for each feature year.",
+    "Tianjin hydro is not observed in the monthly table and is represented by an unresolved residual feature.",
+    "Only two temporally forward target years are evaluated; LOPO provinces are not independent systems.",
+    "No hourly shape, hourly coverage, threshold-risk prediction, or consumption-flow mechanism is evaluated."
+  ],
+  "sha256": {
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "data/china/mee_provincial_grid_co2_factors_2021_2023.csv": "d29b51e591bd81722443508b4afd9bac5d2740da56f4052029c6bb30efc15b19",
+    "results/china-monthly-ember-audit-r1/ember_china_province_monthly.csv": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+    "docs/V327_NBS_REPORTED_MIX_TRANSFER_PROTOCOL.md": "4405d8e8ed6d6a5e2d0fc98fe554e0aad2bb71c4b10593d88d1574c4e6691b7b",
+    "scripts/v327_nbs_mix_transfer.py": "7d8336ef7975dd17e792e974e24021df7f6467121f12db9755b4f73b290983fe"
+  }
+}

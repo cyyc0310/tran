@@ -1,0 +1,10 @@
+{
+  "assertion_failures": 0,
+  "hash_checks": {
+    "v191-delayed-state-observability-r1": 24,
+    "v191-delayed-state-observability-audit-r4": 26
+  },
+  "scripts_ast_parsed": 2,
+  "effective_audit": "v191-delayed-state-observability-audit-r4",
+  "models_fitted": false
+}

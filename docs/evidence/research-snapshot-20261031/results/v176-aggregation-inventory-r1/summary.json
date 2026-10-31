@@ -1,0 +1,48 @@
+{
+  "assertion_failures": 0,
+  "inventory_rows": 12982,
+  "by_size": [
+    {
+      "k": 2,
+      "candidate_group_months": 9526,
+      "legal_group_months": 5338,
+      "legal_nonempty": 5338,
+      "legal_all24clocks": 5338,
+      "median_shared_hours_legal": 288.0,
+      "min_shared_hours_legal": 242
+    },
+    {
+      "k": 4,
+      "candidate_group_months": 3456,
+      "legal_group_months": 1064,
+      "legal_nonempty": 1064,
+      "legal_all24clocks": 951,
+      "median_shared_hours_legal": 119.0,
+      "min_shared_hours_legal": 85
+    }
+  ],
+  "hourly_generation_values_read": false,
+  "CIF_scored": false,
+  "new_unique_source_hours": 0,
+  "input_hashes": {
+    "scripts/v176_aggregation_inventory.py": "06f298759d5c5f6d14ffd96efd2f63c3b87bae4516cfb33e73d7f010ea89d397",
+    "docs/V176_AGGREGATION_INVENTORY_PROTOCOL.md": "2821fcff1810347def6c737201975aff0f1c785d1ca9663bca4ad71e6f001473",
+    "scripts/cif_pit_recalibration.py": "d933cc17ecbba9ee0ddf294aa4deea493a828ca4208e64e463c6739328b1b77f",
+    "scripts/v151_hourly_law.py": "0aba80e0141b7bd1e1028d66bbddffe846b0259cf03c4d4f3df87755188dc81d",
+    "scripts/v170_fuel_marginal_diagnosis.py": "e2edbdf28125ccbddc4a72e2a8d7d259d7fabd884c38e7125f51aef3888e24ee",
+    "results/v159-fuel-activity-source-pilot-r1/summary.json": "d321bc5abee5d68a85fd1559dbb07f37c3c3aa97ad8f8fbbf8ff5301fccde25d",
+    "results/v159-fuel-activity-source-pilot-r1/source_sampling.csv": "ff439d3dcc577014772db4b7a4045d40052a5f60a832d251972e9bb12c210dc0",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v153-calendar-times-r1/timestamps.npz": "0fb6504f175096893937f570cf76119d201ccbeb9e8a84ed123be225ffd4fb0c",
+    "results/v159-fuel-activity-source-pilot-r1/fold_0_asof_30d/summary.json": "8d902dc02cb59af5e356fc6016d0e4fb73dcc5f2552b836f50f3984c1e386d7a",
+    "results/v159-fuel-activity-source-pilot-r1/fold_1_asof_30d/summary.json": "01ac7485f18f516473be6a632334a03a54653887a1aed78eac8bad17fa93feeb",
+    "results/v159-fuel-activity-source-pilot-r1/fold_2_asof_30d/summary.json": "e2fea17f29601100344ee71152e67e9678a338fefcc16d69d37e9c2bff6f0f96",
+    "results/v159-fuel-activity-source-pilot-r1/fold_3_asof_30d/summary.json": "02f056553fb6099fb1ea5f45a04663aa6ebaa46898658b669ccb9a4474a40809",
+    "results/v159-fuel-activity-source-pilot-r1/fold_4_asof_30d/summary.json": "523a3ff04dfafeca39a8cae0c59f5934d205b2293d08ed69d1aaa2db01d74dfa",
+    "results/v159-fuel-activity-source-pilot-r1/fold_5_asof_30d/summary.json": "cdd29d1a53d9e3db373db91b0de58daa2b0e7718f0b8aa67378cba423a31d998"
+  },
+  "output_hashes": {
+    "portfolio_month_inventory.csv": "18606aba34c14bfb18b05fadb575461a75b9ed87e296eab5f4fb80a1c4f09fc1"
+  },
+  "scope": "Metadata feasibility only; parent-overlapping portfolios are not independent data or verified geographic unions."
+}

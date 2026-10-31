@@ -1,0 +1,43 @@
+{
+  "experiment": "V366 province-level versus pooled national monthly thermal-share information",
+  "input": "results/v364-china-nbs-threshold-crossing-certificate-r1/province_period_certificates.csv",
+  "input_scope": "NBS-derived above-designated-size provincial monthly generation, same source and periods for both arms",
+  "thermal_ef_support_g_kwh": [
+    400.0,
+    1000.0
+  ],
+  "strict_tail_threshold_g_kwh": 300.0,
+  "correct_full_range_condition": "low_EF * thermal_share <= threshold < high_EF * thermal_share",
+  "n_province_periods": 1023,
+  "national_mix_full_range_province_periods": 992,
+  "province_mix_full_range_province_periods": 409,
+  "province_mix_resolves_national_full_range_cases": 593,
+  "province_periods_resolved_fraction_of_national_ambiguous": 0.5977822580645161,
+  "yearly": [
+    {
+      "year": 2022,
+      "province_periods": 341,
+      "national_mix_full_range": 310,
+      "provincial_mix_full_range": 126,
+      "resolved_by_provincial_mix": 194,
+      "provinces_with_provincial_certificate": 17
+    },
+    {
+      "year": 2023,
+      "province_periods": 341,
+      "national_mix_full_range": 341,
+      "provincial_mix_full_range": 133,
+      "resolved_by_provincial_mix": 208,
+      "provinces_with_provincial_certificate": 17
+    },
+    {
+      "year": 2024,
+      "province_periods": 341,
+      "national_mix_full_range": 341,
+      "provincial_mix_full_range": 150,
+      "resolved_by_provincial_mix": 191,
+      "provinces_with_provincial_certificate": 18
+    }
+  ],
+  "interpretation": "Information-identification comparison only. The EF interval is a scenario, not locally validated. It does not establish actual CIF or hourly interval coverage. Provincial data have thermal/hydro/nuclear/wind/solar classes, not thermal fuel split."
+}

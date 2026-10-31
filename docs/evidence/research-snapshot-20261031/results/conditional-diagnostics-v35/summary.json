@@ -1,0 +1,23 @@
+{
+  "new_fits": 0,
+  "source_months": 35,
+  "fixed_ridge_max_reconstruction_error": 0.0,
+  "table_rows": {
+    "mg_case": 35,
+    "mg_region": 7,
+    "mg_macro": 1,
+    "point_case": 770,
+    "point_region": 154,
+    "point_macro": 22,
+    "oracle_ef_case": 140,
+    "oracle_ef_region": 28,
+    "oracle_ef_macro": 4,
+    "label_support": 42
+  },
+  "monthly_MG_empirical_coverage_evaluated": true,
+  "CIF_interval_coverage_evaluated": false,
+  "hourly_coverage_evaluated": false,
+  "oracle_deployment_comparison": false,
+  "mechanism_breakthrough": false,
+  "new_holdout_authorized": false
+}

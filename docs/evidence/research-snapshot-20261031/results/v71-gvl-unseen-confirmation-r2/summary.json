@@ -1,0 +1,162 @@
+{
+  "status": "SINGLE_UNSEEN_REGION_FROZEN_CONFIRMATION_NOT_GENERALIZATION",
+  "target_region": "GVL",
+  "target_months": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06"
+  ],
+  "tau": 600,
+  "rows": 12,
+  "source_regions": [
+    "AVA",
+    "BANC",
+    "BPAT",
+    "FMPP",
+    "FPL",
+    "GRID",
+    "IID",
+    "JEA",
+    "LDWP",
+    "MISO",
+    "NWMT",
+    "NYIS",
+    "PSEI",
+    "SC",
+    "SCEG",
+    "SEC",
+    "TEC"
+  ],
+  "arms": {
+    "ef_calendar": [
+      16,
+      18,
+      19
+    ],
+    "ef_scale_calendar": [
+      16,
+      17,
+      18,
+      19
+    ]
+  },
+  "estimator": {
+    "n_estimators": 100,
+    "min_samples_leaf": 12,
+    "max_features": 0.8,
+    "seed": 68027
+  },
+  "monthly_release_policy": "V54 period_end+30d",
+  "hourly_label_release_lag_assumption_days": 30,
+  "release_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    }
+  },
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "protocol_sha256": "2152b454a365a14c1fbdbd542629a9e1f81ae9953c9758f9d9ee01d0ae5532f8",
+  "script_sha256": "a6a77c638f45df9d939dc67e9ed47459f1f467ae14b42379bc03e27df6d4bc49",
+  "summary": [
+    {
+      "arm": "ef_calendar",
+      "months": 6,
+      "mae": 0.06117423155212228,
+      "rmse": 0.06389098092960256,
+      "mean_actual_rate": 0.0
+    },
+    {
+      "arm": "ef_scale_calendar",
+      "months": 6,
+      "mae": 0.07315687309282269,
+      "rmse": 0.07371679661807384,
+      "mean_actual_rate": 0.0
+    }
+  ],
+  "limitations": [
+    "One held-out region only; no region-level bootstrap or generalization claim.",
+    "Hourly label first-release vintage unavailable; 30-day lag is assumed.",
+    "Fixed-EF positive-generation proxy, not full-grid consumption CIF."
+  ]
+}

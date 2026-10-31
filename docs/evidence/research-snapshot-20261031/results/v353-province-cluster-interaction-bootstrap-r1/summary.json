@@ -1,0 +1,75 @@
+{
+  "status": "COMPLETED_PROVINCE_CLUSTER_BOOTSTRAP_NOT_EXTERNAL_VALIDATION",
+  "n_provinces": 30,
+  "bootstrap_replicates": 20000,
+  "seed": 13532,
+  "estimand": "equal-province average of each province's mean province-month interaction",
+  "thresholds": [
+    {
+      "tau_g_kwh": 100,
+      "provinces": 30,
+      "equal_province_mean_complementarity_h": 355.6767676767676,
+      "cluster_bootstrap_95_low_h": 318.58734848484846,
+      "cluster_bootstrap_95_high_h": 389.8284848484849,
+      "leave_one_province_out_min_h": 351.15464994775334,
+      "leave_one_province_out_max_h": 365.09090909090907,
+      "positive_province_means": 30,
+      "negative_province_means": 0
+    },
+    {
+      "tau_g_kwh": 300,
+      "provinces": 30,
+      "equal_province_mean_complementarity_h": 252.29730639730641,
+      "cluster_bootstrap_95_low_h": 200.87603535353537,
+      "cluster_bootstrap_95_high_h": 301.08797138047134,
+      "leave_one_province_out_min_h": 246.10379658655523,
+      "leave_one_province_out_max_h": 260.9972135144549,
+      "positive_province_means": 26,
+      "negative_province_means": 0
+    },
+    {
+      "tau_g_kwh": 500,
+      "provinces": 30,
+      "equal_province_mean_complementarity_h": 112.67676767676767,
+      "cluster_bootstrap_95_low_h": 54.1433585858586,
+      "cluster_bootstrap_95_high_h": 168.41833333333332,
+      "leave_one_province_out_min_h": 103.944618599791,
+      "leave_one_province_out_max_h": 130.33228840125392,
+      "positive_province_means": 22,
+      "negative_province_means": 1
+    }
+  ],
+  "paired_threshold_contrasts": [
+    {
+      "contrast": "tau100_minus_tau300",
+      "equal_province_mean_difference_h": 103.3794612794613,
+      "cluster_bootstrap_95_low_h": 79.84503367003364,
+      "cluster_bootstrap_95_high_h": 129.99100168350162,
+      "provinces_positive_difference": 30
+    },
+    {
+      "contrast": "tau300_minus_tau500",
+      "equal_province_mean_difference_h": 139.62053872053872,
+      "cluster_bootstrap_95_low_h": 106.44234848484854,
+      "cluster_bootstrap_95_high_h": 175.27281144781136,
+      "provinces_positive_difference": 26
+    },
+    {
+      "contrast": "tau100_minus_tau500",
+      "equal_province_mean_difference_h": 242.99999999999997,
+      "cluster_bootstrap_95_low_h": 204.52583333333342,
+      "cluster_bootstrap_95_high_h": 282.2789393939395,
+      "provinces_positive_difference": 30
+    }
+  ],
+  "limits": [
+    "Bootstrap resamples provinces, not months, to preserve within-province dependence.",
+    "The 30 provinces are a finite cohort; percentile intervals describe cluster resampling sensitivity, not a universal population guarantee.",
+    "All underlying generation mix values are Ember estimates; no hourly truth or coverage validation."
+  ],
+  "sha256": {
+    "results/v352-threshold-factorial-sweep-r1/paired_threshold_factorial.csv": "9f07a7cfc7af9f2d6dadb5bef161ffc6c17c6d9ccc40040b483b23ab5201c037",
+    "docs/V353_PROVINCE_CLUSTER_INTERACTION_BOOTSTRAP_PROTOCOL.md": "166390e5a5b7045024c974b48825fbad3f699275c74c5f5231e8b91bb44f7c67",
+    "scripts/v353_province_cluster_interaction_bootstrap.py": "5d1dabfd0baa5f930d90a4ed5fcaa1d01b3844c3d889bb51385118f2e3bb6304"
+  }
+}

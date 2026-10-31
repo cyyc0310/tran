@@ -1,0 +1,23 @@
+{
+  "assertion_failures": 0,
+  "query_rows": 3856,
+  "input_hashes": {
+    "scripts/v175_source_objective_diagnostic.py": "64d50f3d0efbd28f3f8e5216fcfa5dafa1ba7866ed37ffa1ca65d9ebc8d6e5c4",
+    "results/v175-cif-crps-map-r1/summary.json": "c787cc00fc70fb3e5450e920c1a8b6f6319f656ff6cd7e768f39ebe60fe7025a",
+    "results/v175-cif-crps-map-r1/test_month_metrics.csv": "4b9c05db8a967641ed0ebd7ac13bca7d04ddbba8565ac83a52bffafcd910198c",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v153-calendar-times-r1/timestamps.npz": "0fb6504f175096893937f570cf76119d201ccbeb9e8a84ed123be225ffd4fb0c",
+    "results/v175-cif-crps-map-r1/fold_0/map_certificates.csv": "3289c1e6cf3357933bc513e475c96b4d4fe739cae131739c394a6545efbfd3ac",
+    "results/v175-cif-crps-map-r1/fold_1/map_certificates.csv": "b8f5a3135904d83592f4e38382999119495d91d3b7d9f0152e6bfd786378ade8",
+    "results/v175-cif-crps-map-r1/fold_2/map_certificates.csv": "f48342b201e8d7b1b1055c60aa24b97df1f46098ecb3ebbd6b407b4c16892766",
+    "results/v175-cif-crps-map-r1/fold_3/map_certificates.csv": "4c4fa147c7ab0fe04e185630bd0c39d6ce3068c4864038b38cf075248c1a98d2",
+    "results/v175-cif-crps-map-r1/fold_4/map_certificates.csv": "c37b8260cefd61e246aa3870b72608750f08ae1593348bea9c6f84fba9fd608b",
+    "results/v175-cif-crps-map-r1/fold_5/map_certificates.csv": "1a20e29533e617d853b2c146ed8313d85ef790e229ca05a62a5969e33da8a6f9"
+  },
+  "output_hashes": {
+    "region_gains.csv": "0995702ebf6793dbb9b654d4d8f60073e9201e96b661db2d13228f2031be4447",
+    "query_gains.csv": "e3253a8076a771b2e5125789bf68e280a8bf2ac550dde2ddbb310a38bd6f6f38",
+    "macro_gains.csv": "13eee9114b0d4470a265db318f9fee3b27547b24d2852e976929c916c2278873"
+  },
+  "scope": "Post-hoc descriptive optimization diagnostic. Source objective decreases are fit-mixture quantities, not identified target-risk gains; group-max and held macro-mean are different objectives. No causal attribution or new model selection."
+}

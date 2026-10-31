@@ -1,0 +1,66 @@
+{
+  "tests": {
+    "passed": 276,
+    "failed": 0,
+    "skipped": 0
+  },
+  "inference": {
+    "development": {
+      "rows": 1300,
+      "methods": 13,
+      "cases": 5,
+      "actual_budget_checked": true,
+      "hash_mismatches": [],
+      "snapshot_note": "Copied after run; each byte hash matches pre-run hash"
+    },
+    "stress": {
+      "rows": 4160,
+      "methods": 13,
+      "cases": 8,
+      "actual_budget_checked": true,
+      "hash_mismatches": [],
+      "snapshot_note": "Copied after run; each byte hash matches pre-run hash"
+    }
+  },
+  "dynamic": {
+    "dynamic-v2-20261023-r2": {
+      "rows": 22860,
+      "regions": 7,
+      "unique_region_days": 2540,
+      "source_or_protocol_hash_mismatches": [],
+      "data_hash_mismatches": [],
+      "all_prediction_seals_match": true
+    },
+    "dynamic-v2-20261023-r3-extra30": {
+      "rows": 22860,
+      "regions": 7,
+      "unique_region_days": 2540,
+      "source_or_protocol_hash_mismatches": [],
+      "data_hash_mismatches": [],
+      "all_prediction_seals_match": true
+    },
+    "dynamic-v2-20261023-r3-extra90": {
+      "rows": 22860,
+      "regions": 7,
+      "unique_region_days": 2540,
+      "source_or_protocol_hash_mismatches": [],
+      "data_hash_mismatches": [],
+      "all_prediction_seals_match": true
+    }
+  },
+  "total_inference_trials": 5460,
+  "total_dynamic_method_days": 68580,
+  "original_gate3_frozen_files_mismatches": [],
+  "code_review": "APPROVE: generic code review plus final gpt-6.1-sol code reviewer, no remaining findings",
+  "scientific_review": {
+    "model": "gpt-6.1-sol",
+    "decision": "BLOCK positive algorithm-superiority claim; experiments may be retained as negative exploratory evidence",
+    "findings": [
+      "Current CDF candidate loses strong same-budget baselines",
+      "Dynamic persistence confounds permanent regional structure with short-term state",
+      "Point correction plus fixed source residual bank is not a full age-conditioned state posterior"
+    ],
+    "scope": "Independent source/results review; parent ran full 276 tests"
+  },
+  "model_preference": "Astra task stopped at user request; final scientific and code reviews use Sol"
+}

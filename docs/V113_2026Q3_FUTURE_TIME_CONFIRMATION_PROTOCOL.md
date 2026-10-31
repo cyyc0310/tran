@@ -1,0 +1,9 @@
+# V113 protocol: 2026Q3 future-time confirmation
+
+Frozen 2026-10-28 before opening 2026Q3 hourly outcomes. Use the EIA-930 2026 Jul–Dec source file for target months July, August, and September 2026; October is excluded because it is incomplete at the freeze date. Evaluate exactly CPLE/FPC/IPCO/PNM/SOCO, the five V104 region-heldout areas, in all 15 region-month slots. The roster, month window, thresholds, event rates, factors, calibration constants, and capacity vintage are frozen independently of target CIF/K values.
+
+Eligibility: require at least 80% valid complete-proxy hourly coverage for a month. Use one-year-lagged 2025 EIA-860 group capacities. A month failing coverage or group-energy compatibility is reported unavailable; preserve all 15 slots in availability accounting. No hourly peak screen or performance-based exclusion.
+
+Frozen methods: (A) factor-robust monthly-mean anchor with the V112 worst-source-region q90 radii calibrated only on 2024–2025 source regions; (B) monthly detailed-fuel-margin identified-set hull under coordinated ±10% thermal EFs; (C) the same plus lagged shared thermal/nuclear/hydro/wind/solar group capacities. Compute low/nominal/high proxy K and require each interval to contain the full endpoint K range. Report widths, factor-box coverage, selective positive/negative/abstain frontiers, and unavailable slots. No target-season recalibration, parameter tuning, or roster changes.
+
+This is a true future-time validation relative to the prior 2026H1 experiments, but only three months and five already seen regions. It remains retrospective nowcasting because target-month totals are inputs. EIA fixed-factor labels and U.S. capacities are proxies, not Chinese real CIF. Empirical anchor calibration is not a formal finite-sample guarantee. Record the EIA file URL, modification metadata, SHA-256, parser/source hashes, and all omissions.

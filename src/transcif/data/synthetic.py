@@ -8,7 +8,7 @@ import pandas as pd
 
 from transcif.data.dataset import (FUELS, DISPATCHABLE, CAPACITY_FIELDS, MIX_FIELDS,
                                     EF_FIELDS, COST_FIELDS, WEATHER_FIELDS)
-from transcif.physics.astro import wind_capacity_factor
+from transcif.physics.wind import wind_capacity_factor
 
 
 def make_bundle(directory, days=90, seed=7):

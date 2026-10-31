@@ -1,0 +1,74 @@
+{
+  "assertion_failures": 0,
+  "current_archives": [
+    {
+      "archive": "v190-source-event-cif-preflight-r2",
+      "status": "current",
+      "input_hashes_checked": 201,
+      "output_hashes_checked": 2
+    },
+    {
+      "archive": "v190-source-event-cif-r2",
+      "status": "current",
+      "input_hashes_checked": 204,
+      "output_hashes_checked": 70
+    },
+    {
+      "archive": "v190-source-event-cif-audit-r2",
+      "status": "current",
+      "input_hashes_checked": 276,
+      "output_hashes_checked": 3
+    }
+  ],
+  "retired_records_snapshot_resolved": [
+    {
+      "archive": "v190-runtime-smoke-r1",
+      "status": "retired",
+      "input_hashes_checked": 200,
+      "output_hashes_checked": 1
+    },
+    {
+      "archive": "v190-source-event-cif-preflight-r1",
+      "status": "retired",
+      "input_hashes_checked": 200,
+      "output_hashes_checked": 1
+    },
+    {
+      "archive": "v190-hgb-bit-diagnostic-r1",
+      "status": "retired_code_diagnostic",
+      "input_hashes_checked": 200,
+      "output_hashes_checked": 2
+    },
+    {
+      "archive": "v190-source-event-cif-r1",
+      "status": "failed_before_any_score_or_committed_fold",
+      "input_hashes_checked": 202,
+      "output_hashes_checked": 0
+    }
+  ],
+  "diagnostic_saved_node_pairs": 45,
+  "diagnostic_strict_prediction_pairs": 28,
+  "failure_snapshot_hashes": {
+    "results/v190-failed-source-r1/source_event_cif.py": "3fa4940baa711df91fb40594233ab4875c264b193ee9d629396101d513200dc9",
+    "results/v190-failed-source-r1/source_event_transport.py": "5bc9bba73bbee1dde3f43bec1641a6be06e044f68138a3214c261c2f7bcb9e82",
+    "results/v190-failed-source-r1/failed-formal.log": "21e9fb4ccf91a4c1f30aff9a3134de69469dcfe6e4ddbecd2e22c050795e5895",
+    "results/v190-failed-source-r1/V190_SOURCE_EVENT_CIF_LITERATURE.md": "32ac024eb92fb335f8d3f443d5be2af7e378863a69e380279a3c3e2adbd11f5b",
+    "results/v190-failed-source-r1/V190_SOURCE_EVENT_CIF_PROTOCOL.md": "1b832ceff072b1902b94a80b33b1e75ddc023b87e0b2c4b5f1f98f1c0f196fbf",
+    "results/v190-failed-source-r1/v190_source_event_cif.py": "33452985e8d73176977ad7b9871f74dce041302456a72069cf90e3685cfa841c",
+    "results/v190-audit-failed-source-r2/v190_audit_source_event_cif.py": "974292b37d19529123ce0076ed870d58e00b704f3006d4a013f1c3e868404b19",
+    "results/v190-audit-failed-source-r2/failed.log": "075976e6bdc9667ae12b4d3e7ce35584c2340acbd8ce36ab524decb15ebecb3f"
+  },
+  "syntax_checked": [
+    "scripts/source_event_transport.py",
+    "scripts/source_event_cif.py",
+    "scripts/v190_source_event_cif.py",
+    "scripts/v190_audit_source_event_cif.py"
+  ],
+  "static_tool_availability": {
+    "ruff": null,
+    "mypy": null,
+    "pylint": null,
+    "black": null
+  },
+  "scope": "Full SHA256 and AST, snapshot-resolved retired code, saved fresh-fit evidence. No claim to retain original r1 smoke/preflight model objects."
+}

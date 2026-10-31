@@ -1,0 +1,13 @@
+{
+  "assertion_failures": 0,
+  "identity_exact": true,
+  "numerical_atom_grouping": true,
+  "independent_PIT_target_formula": true,
+  "held_CIF_scored": false,
+  "input_hashes": {
+    "scripts/v174_preflight_pit.py": "ce3823fd8f1e34c1f926dd2f9d0e093758d4b744b7ca1997d712f0eedc69d53a",
+    "scripts/cif_pit_recalibration.py": "d933cc17ecbba9ee0ddf294aa4deea493a828ca4208e64e463c6739328b1b77f",
+    "docs/V174_CIF_RECALIBRATION_PROTOCOL.md": "577d0fc55eff3bda9e3bdb0beec67c4828a8d175561378cbdda39da0de8019d8"
+  },
+  "output_hashes": {}
+}

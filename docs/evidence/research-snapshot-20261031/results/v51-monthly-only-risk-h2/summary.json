@@ -1,0 +1,48 @@
+{
+  "status": "EXPLORATORY_STRICT_MONTHLY_ONLY_MIX_RISK",
+  "information_contract": "target supplies only legally published lagged five-group monthly generation totals; point thermal EF and hourly profile are donor-only; risk scale uses local thermal share and wind-plus-solar share",
+  "point_model": "target lagged five-group monthly totals combined with source-excluded prior-year five-group hourly shapes and source-equal prior-year thermal EF",
+  "risk_model": "source-balanced Ridge(alpha=10) predicts log monthly q90 absolute residual from two local mix shares; source-held-out OOF scale predictions calibrate normalized q90",
+  "comparison": "same strict-monthly-only point forecasts, conditional mix scale versus source-balanced pooled q90",
+  "support": "30 available heldout region-months across 6 previously inspected regions; 2024H2 calibration and 2025H2 evaluation; not unseen-region confirmation",
+  "input_sha256": {
+    "monthly": "e7c805960f0b6b013dfe8e5f83020c84adee64504c6b9876fa2bde8aa8c5b67d",
+    "hourly": {
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/BPAT_hourly.csv": "72cf83af8fde5f17d5ccb29a1157db26758eb3cc0721186384b5e474cfc933ac",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/CISO_hourly.csv": "34a714dcb07ef66b807c444fe1ac260755716c91edab642c64c8f2c2a94c6d2b",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/ERCO_hourly.csv": "56abb6996e7b9fdf0d59ddd28743afb5ec77629570b6358ad9ee5c3e007f466c",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/FPL_hourly.csv": "423f8166dfcda13f6d6f6e5f9d262c88a3321ee1a6401c65977f2ac0fbbad569",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/ISNE_hourly.csv": "a6ff6602dfcb34dabdb76a1d28003c63f5013c4f11a4f5d9097c278fe67ccd09",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/MISO_hourly.csv": "0b33187fefb609992a2a6550af48ea1f59ff6349f690b0277d73ec537bd2ddfc",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/NYIS_hourly.csv": "f173c238df2c019b49623959ecf7dac74045dfb03c6b160717b86f9dc0ec1e59"
+    }
+  },
+  "macro": [
+    {
+      "method": "conditional_mix_only",
+      "sources": 6,
+      "coverage": 0.8513924722599872,
+      "width": 270.47927151659246,
+      "interval_score": 459.78875468011023,
+      "lower_miss": 0.006248133213859021,
+      "upper_miss": 0.1423593945261539,
+      "point_mae": 61.65421941068009
+    },
+    {
+      "method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.831902066866379,
+      "width": 275.6343505618419,
+      "interval_score": 491.86487552166653,
+      "lower_miss": 0.0075994196961938895,
+      "upper_miss": 0.16049851343742705,
+      "point_mae": 61.65421941068009
+    }
+  ],
+  "outputs_sha256": {
+    "outer_source_month_intervals.csv": "c0795708cbd5213809371a45329f5bb3397fc5906a8ac16354a026d3b6e35ccc",
+    "source_macro.csv": "f15ff9d3e70204d27b604e00d9f1813e7d9dd01a86f78fb87495aa501d4d0d2c",
+    "macro.csv": "1013331ec004401fccd94dd9ba92dc4ca055599aefd4fe8eac4e9f1ffd87fbe7"
+  },
+  "interpretation": "Exploratory repeated-source forward diagnostics only; no arbitrary-domain-shift coverage guarantee or novelty claim."
+}

@@ -1,0 +1,96 @@
+{
+  "assertion_failures": 0,
+  "cutoff": "2024-07-01 00:00:00",
+  "query_count": 158,
+  "query_regions": [
+    "AVA",
+    "AVRN",
+    "AZPS",
+    "BPAT",
+    "CHPD",
+    "CISO",
+    "CPLE",
+    "DOPD",
+    "DUK",
+    "EPE",
+    "ERCO",
+    "FMPP",
+    "FPC",
+    "FPL",
+    "GVL",
+    "JEA",
+    "NYIS",
+    "PNM",
+    "PSCO",
+    "PSEI",
+    "SCL",
+    "SPA",
+    "SRP",
+    "TAL",
+    "TEC",
+    "TEPC",
+    "TVA"
+  ],
+  "proper_roster_regions_without_H2_test_query": [
+    "IPCO",
+    "SOCO"
+  ],
+  "queries_by_period": {
+    "Q3": 78,
+    "Q4": 80
+  },
+  "queries_by_fold": {
+    "0": 24,
+    "1": 20,
+    "2": 30,
+    "3": 30,
+    "4": 30,
+    "5": 24
+  },
+  "sampled_hour_count_by_fold": {
+    "0": 17262,
+    "1": 16417,
+    "2": 17630,
+    "3": 17649,
+    "4": 18542,
+    "5": 19368
+  },
+  "monthly_label_count_by_fold": {
+    "0": 464,
+    "1": 466,
+    "2": 469,
+    "3": 472,
+    "4": 503,
+    "5": 498
+  },
+  "hourly_generation_loaded": false,
+  "models_fitted": false,
+  "scores_computed": false,
+  "input_hashes": {
+    "scripts/v188_forward_risk_inventory.py": "97cc5f94e4cd314f37fc361906f54695eddc3d59b3bf91599575169e3190d6f7",
+    "docs/V188_FORWARD_RISK_PROTOCOL.md": "fa8c684982f3ff1e1c0a76df2fe64716e362c5c61b138547ff2c2b5148b86ea9",
+    "scripts/extended_monthly_information.py": "0ad69eb8204a8f9ce94f38daf595f1649b08ca5d6204c883d68d6147e6f9b0c1",
+    "scripts/monthly_history_features.py": "2f01ba4bb3dad23758c6be2225c5d83a0da339737ec85994e35977b020be3a07",
+    "results/v183-coarse-history-export-r1/monthly_history.csv": "b4f3b6e051b9f9fbd7338a2cc827a6a0be46c88bbf442d2e8f4a720eaf1da350",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v153-calendar-times-r1/timestamps.npz": "0fb6504f175096893937f570cf76119d201ccbeb9e8a84ed123be225ffd4fb0c",
+    "results/v159-fuel-activity-source-pilot-r1/source_sampling.csv": "ff439d3dcc577014772db4b7a4045d40052a5f60a832d251972e9bb12c210dc0",
+    "results/v159-fuel-activity-source-pilot-r1/fold_0_asof_30d/summary.json": "8d902dc02cb59af5e356fc6016d0e4fb73dcc5f2552b836f50f3984c1e386d7a",
+    "results/v159-fuel-activity-source-pilot-r1/fold_0_asof_30d/query_inputs.csv": "a58e64b9977bffe1e6d43fe62fa4d9719f9b828f2e70ac72d1b4a53ad5c03631",
+    "results/v159-fuel-activity-source-pilot-r1/fold_1_asof_30d/summary.json": "01ac7485f18f516473be6a632334a03a54653887a1aed78eac8bad17fa93feeb",
+    "results/v159-fuel-activity-source-pilot-r1/fold_1_asof_30d/query_inputs.csv": "83c38747c8e55494589ccfd21e849153a743553267729a54aa22bd255d70fe19",
+    "results/v159-fuel-activity-source-pilot-r1/fold_2_asof_30d/summary.json": "e2fea17f29601100344ee71152e67e9678a338fefcc16d69d37e9c2bff6f0f96",
+    "results/v159-fuel-activity-source-pilot-r1/fold_2_asof_30d/query_inputs.csv": "5d69cedd1d4f11ad8bf582459f1029ac18b34eb8465cba42f4964d0c3ec64b46",
+    "results/v159-fuel-activity-source-pilot-r1/fold_3_asof_30d/summary.json": "02f056553fb6099fb1ea5f45a04663aa6ebaa46898658b669ccb9a4474a40809",
+    "results/v159-fuel-activity-source-pilot-r1/fold_3_asof_30d/query_inputs.csv": "f90e3668bbfaf644c746452be951c82f06eaa8ddaae736b23722c9e5226bce46",
+    "results/v159-fuel-activity-source-pilot-r1/fold_4_asof_30d/summary.json": "523a3ff04dfafeca39a8cae0c59f5934d205b2293d08ed69d1aaa2db01d74dfa",
+    "results/v159-fuel-activity-source-pilot-r1/fold_4_asof_30d/query_inputs.csv": "c90c70942abad7b08a7499b4e4b08e55f74a8711e412004cbe7c9414efddcdf6",
+    "results/v159-fuel-activity-source-pilot-r1/fold_5_asof_30d/summary.json": "cdd29d1a53d9e3db373db91b0de58daa2b0e7718f0b8aa67378cba423a31d998",
+    "results/v159-fuel-activity-source-pilot-r1/fold_5_asof_30d/query_inputs.csv": "ecf1bf3ad91463d232ebe1a882a6cb8c0cebea85fe8507f3997cf803062033b3"
+  },
+  "output_hashes": {
+    "source_inventory.csv": "80883e3f577d64296d5c760cc8282f9e856324cb45ad93bfd1233ff505357096",
+    "queries.csv": "f8a578a0bca66f61f7ea1e45c85dab2da5eddcc19a68a76e4ba1adfac754e321",
+    "selections.json": "58b349ea9d94919e41ce4b1966ea07115ec36de20289aa574b8df75cb269afd5"
+  }
+}

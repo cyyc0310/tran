@@ -1,0 +1,60 @@
+{
+  "assertion_failures": 0,
+  "retired_r1_completed_folds": 5,
+  "folds": [
+    {
+      "fold": 0,
+      "fingerprints_exact": true,
+      "all_probability_arrays_exact": true
+    },
+    {
+      "fold": 1,
+      "fingerprints_exact": true,
+      "all_probability_arrays_exact": true
+    },
+    {
+      "fold": 2,
+      "fingerprints_exact": true,
+      "all_probability_arrays_exact": true
+    },
+    {
+      "fold": 3,
+      "fingerprints_exact": true,
+      "all_probability_arrays_exact": true
+    },
+    {
+      "fold": 4,
+      "fingerprints_exact": true,
+      "all_probability_arrays_exact": true
+    }
+  ],
+  "scope": "Completed r1 folds only; r1 had no successful root summary.",
+  "preflight_all_122_blocks_fingerprints_and_provenance_exact": true,
+  "input_hashes": {
+    "results/v189-source-block-oil-r1/fold_0/model_fingerprints.json": "7eeaacbe3ff1dc0890231045fb9c8bcbd951ab1ee7f9d9b0214b75b75a91f8a1",
+    "results/v189-source-block-oil-r1/fold_0/probabilities.npz": "84d4d5801decbbb2ea624c76f538481876b87d1bdff86618f1b9f502e3869d1f",
+    "results/v189-source-block-oil-r1/fold_1/model_fingerprints.json": "5dfe6ada9e4765f94b1e57ec3f410a1e4a43f8381d2f265c916c21a293ccd54b",
+    "results/v189-source-block-oil-r1/fold_1/probabilities.npz": "223978aa7ad37ea962673575edaf5877c35d77e9cd8de6f6e660700200ac7f02",
+    "results/v189-source-block-oil-r1/fold_2/model_fingerprints.json": "09d503444be8e2814c0b3961bcf29aaf329e38a0cc81591480b15d39fec538d3",
+    "results/v189-source-block-oil-r1/fold_2/probabilities.npz": "0aac9da01e54fde6a8ad7b503094afa01fb389ee7779093ce604319388de2eaa",
+    "results/v189-source-block-oil-r1/fold_3/model_fingerprints.json": "aedf911f1af67f88a083ec717cb5b326d9f37055827e2af402479dad1a78eb7a",
+    "results/v189-source-block-oil-r1/fold_3/probabilities.npz": "1bcea90ba022ee5ad4fc57db23e2ae859258ec8867685464585a3eeaa77eab8c",
+    "results/v189-source-block-oil-r1/fold_4/model_fingerprints.json": "a9d4d7145561ca1cb75b3f2b6b7c9b776faa2989c56d1cc0ed32cf3500d9e98b",
+    "results/v189-source-block-oil-r1/fold_4/probabilities.npz": "15e16f8b62371698151901030d53db9f2f3b9eb359e67c7f07138124ef14cbf3",
+    "results/v189-source-block-oil-preflight-r1/model_fingerprints.json": "7a8dd1224f36ecd472175f194dfdff1ebb3dc6bcae1e09e39c4324351510f9ba",
+    "results/v189-source-block-oil-preflight-r1/training_provenance.json": "10e943a4da61ce19d676a68758282e1d9a7a96804c4a34132997c9dacb89c8f1",
+    "results/v189-source-block-oil-r2/fold_0/model_fingerprints.json": "7eeaacbe3ff1dc0890231045fb9c8bcbd951ab1ee7f9d9b0214b75b75a91f8a1",
+    "results/v189-source-block-oil-r2/fold_0/probabilities.npz": "84d4d5801decbbb2ea624c76f538481876b87d1bdff86618f1b9f502e3869d1f",
+    "results/v189-source-block-oil-r2/fold_1/model_fingerprints.json": "5dfe6ada9e4765f94b1e57ec3f410a1e4a43f8381d2f265c916c21a293ccd54b",
+    "results/v189-source-block-oil-r2/fold_1/probabilities.npz": "223978aa7ad37ea962673575edaf5877c35d77e9cd8de6f6e660700200ac7f02",
+    "results/v189-source-block-oil-r2/fold_2/model_fingerprints.json": "09d503444be8e2814c0b3961bcf29aaf329e38a0cc81591480b15d39fec538d3",
+    "results/v189-source-block-oil-r2/fold_2/probabilities.npz": "0aac9da01e54fde6a8ad7b503094afa01fb389ee7779093ce604319388de2eaa",
+    "results/v189-source-block-oil-r2/fold_3/model_fingerprints.json": "aedf911f1af67f88a083ec717cb5b326d9f37055827e2af402479dad1a78eb7a",
+    "results/v189-source-block-oil-r2/fold_3/probabilities.npz": "1bcea90ba022ee5ad4fc57db23e2ae859258ec8867685464585a3eeaa77eab8c",
+    "results/v189-source-block-oil-r2/fold_4/model_fingerprints.json": "a9d4d7145561ca1cb75b3f2b6b7c9b776faa2989c56d1cc0ed32cf3500d9e98b",
+    "results/v189-source-block-oil-r2/fold_4/probabilities.npz": "15e16f8b62371698151901030d53db9f2f3b9eb359e67c7f07138124ef14cbf3",
+    "results/v189-source-block-oil-preflight-r2/model_fingerprints.json": "7a8dd1224f36ecd472175f194dfdff1ebb3dc6bcae1e09e39c4324351510f9ba",
+    "results/v189-source-block-oil-preflight-r2/training_provenance.json": "10e943a4da61ce19d676a68758282e1d9a7a96804c4a34132997c9dacb89c8f1"
+  },
+  "output_hashes": {}
+}

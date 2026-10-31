@@ -16,7 +16,7 @@ from transcif.evaluation.scheduling import scheduling_metrics, mechanism_decisio
 from transcif.models.baselines import PublicRidge, PublicBoosting, PublicGenerationBoosting, mix_constant, residual_scenarios
 from transcif.models.ensemble import (predict_components, mixture, uncertainty_decomposition,
                                      independent_hour_ablation, save_ensemble)
-from transcif.training.fit import predict
+from transcif.inference import predict
 from transcif.training.transfer import fit_source_model, fit_mechanisms, support_diagnostics
 
 
@@ -76,8 +76,9 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
     ridge = PublicRidge().fit(data["train"], labels["train"])
     val_truth = np.stack([y["cif"] for y in labels["validation"]])
     residuals = val_truth - ridge.predict(data["validation"])
+    ridge_point = ridge.predict(data["test"])
     prediction = predict(model, data["test"], draw_budget, seed + 20000)
-    ridge_draws = residual_scenarios(ridge.predict(data["test"]), residuals,
+    ridge_draws = residual_scenarios(ridge_point, residuals,
                                     data["test"], draw_budget, seed)
     constant = mix_constant(data["test"])
     # Source-derived uncertainty for the constant uses its OWN residuals.
@@ -90,25 +91,21 @@ def run(manifest, output, target=None, steps=250, seed=0, scenarios=64,
     torch.save({**metadata, "schema_version": 1, "fuels": list(FUELS),
                 "model_config": model.model_config,
                 "state_dict": model.state_dict()}, output / "model.pt")
-    ridge_point = ridge.predict(data["test"])
     extra = {"public_ridge_point_cif": ridge_point, "published_mix_point_cif": constant}
     transfer_summary, decisions = None, None
     points = {"public_ridge_source_residuals": ridge_point, "published_mix_source_residuals": constant}
     if "point_cif" in prediction:
         points["probabilistic_dispatch"] = prediction["point_cif"]
     if tree_baseline:
-        tree = PublicBoosting(seed).fit(data["train"], labels["train"])
-        tree_point = tree.predict(data["test"])
-        extra["public_boosting_source_residuals"] = residual_scenarios(tree_point,
-            val_truth - tree.predict(data["validation"]), data["test"], draw_budget, seed)
-        extra["public_boosting_point_cif"] = tree_point
-        points["public_boosting_source_residuals"] = tree_point
-        generation_tree = PublicGenerationBoosting(seed).fit(data["train"], labels["train"])
-        generation_point = generation_tree.predict(data["test"])
-        extra["public_generation_boosting_point_cif"] = generation_point
-        extra["public_generation_boosting_source_residuals"] = residual_scenarios(generation_point,
-            val_truth - generation_tree.predict(data["validation"]), data["test"], draw_budget, seed)
-        points["public_generation_boosting_source_residuals"] = generation_point
+        for name, baseline in (("public_boosting", PublicBoosting(seed)),
+                               ("public_generation_boosting", PublicGenerationBoosting(seed))):
+            baseline.fit(data["train"], labels["train"])
+            point = baseline.predict(data["test"])
+            key = name + "_source_residuals"
+            extra[key] = residual_scenarios(point,
+                val_truth - baseline.predict(data["validation"]), data["test"], draw_budget, seed)
+            extra[name + "_point_cif"] = point
+            points[key] = point
     duration = min(4, horizon)
     if transfer is not None:
         components = predict_components([model] + inner_models, data["test"], scenarios,

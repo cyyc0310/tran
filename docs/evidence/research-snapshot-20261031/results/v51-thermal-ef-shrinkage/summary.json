@@ -1,0 +1,130 @@
+{
+  "status": "COMPLETE_EXPLORATORY_CROSS_SOURCE_THERMAL_EF_SHRINKAGE",
+  "schema": "monthly five broad categories; thermal proxy coal+gas+oil+other, nuclear, hydro, wind, solar",
+  "asof_month_totals": "previous-year same calendar month only if period_end and available_at <= target month start",
+  "hourly_shape": "2024 donor region month\u00d7hour five-group mean, equal source, target excluded",
+  "thermal_EF_donor": "equal-source mean donor 2024 same-calendar-month within-thermal energy weighted fixed EF",
+  "legal_lagged_scalar": "held-region same-calendar-month previous-year thermal EF from eligible as-of report, available before target month start",
+  "oracle_ablation": "target month five group totals and/or target month within-thermal energy weighted EF used only as diagnostic oracle",
+  "target_period": "2025H1 source hours; 37 scored region-months, all inspected development data",
+  "EF_fuels_g_kwh": {
+    "coal": 1000.0,
+    "gas": 400.0,
+    "oil": 800.0,
+    "nuclear": 0.0,
+    "hydro": 0.0,
+    "wind": 0.0,
+    "solar": 0.0,
+    "other": 400.0
+  },
+  "input_sha256": {
+    "monthly": "e7c805960f0b6b013dfe8e5f83020c84adee64504c6b9876fa2bde8aa8c5b67d",
+    "hourly": {
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/BPAT_hourly.csv": "72cf83af8fde5f17d5ccb29a1157db26758eb3cc0721186384b5e474cfc933ac",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/CISO_hourly.csv": "34a714dcb07ef66b807c444fe1ac260755716c91edab642c64c8f2c2a94c6d2b",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/ERCO_hourly.csv": "56abb6996e7b9fdf0d59ddd28743afb5ec77629570b6358ad9ee5c3e007f466c",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/FPL_hourly.csv": "423f8166dfcda13f6d6f6e5f9d262c88a3321ee1a6401c65977f2ac0fbbad569",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/ISNE_hourly.csv": "a6ff6602dfcb34dabdb76a1d28003c63f5013c4f11a4f5d9097c278fe67ccd09",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/MISO_hourly.csv": "0b33187fefb609992a2a6550af48ea1f59ff6349f690b0277d73ec537bd2ddfc",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/NYIS_hourly.csv": "f173c238df2c019b49623959ecf7dac74045dfb03c6b160717b86f9dc0ec1e59"
+    }
+  },
+  "macro": [
+    {
+      "model": "coarse_asof_total__donor_thermal_EF",
+      "region_months": 37,
+      "cif_mae": 57.53054968161604,
+      "cif_rmse": 66.52000857730212,
+      "cif_bias": -9.211878335677566
+    },
+    {
+      "model": "coarse_asof_total__shrink_alpha_0",
+      "region_months": 37,
+      "cif_mae": 57.53054968161604,
+      "cif_rmse": 66.52000857730212,
+      "cif_bias": -9.211878335677566
+    },
+    {
+      "model": "coarse_asof_total__shrink_alpha_025",
+      "region_months": 37,
+      "cif_mae": 49.75095535530481,
+      "cif_rmse": 58.83933850500479,
+      "cif_bias": -7.75160321990398
+    },
+    {
+      "model": "coarse_asof_total__shrink_alpha_05",
+      "region_months": 37,
+      "cif_mae": 43.008252012677396,
+      "cif_rmse": 52.17157436106528,
+      "cif_bias": -6.291328104130395
+    },
+    {
+      "model": "coarse_asof_total__shrink_alpha_075",
+      "region_months": 37,
+      "cif_mae": 37.88365821113936,
+      "cif_rmse": 46.87241405733901,
+      "cif_bias": -4.8310529883568085
+    },
+    {
+      "model": "coarse_asof_total__shrink_alpha_1",
+      "region_months": 37,
+      "cif_mae": 34.93153501840245,
+      "cif_rmse": 43.610625794554764,
+      "cif_bias": -3.3707778725832265
+    },
+    {
+      "model": "coarse_asof_total__target_thermal_EF_lagged_asof",
+      "region_months": 37,
+      "cif_mae": 34.93153501840245,
+      "cif_rmse": 43.610625794554764,
+      "cif_bias": -3.3707778725832265
+    },
+    {
+      "model": "coarse_asof_total__target_thermal_EF_oracle",
+      "region_months": 37,
+      "cif_mae": 34.783874472873585,
+      "cif_rmse": 43.196747893182845,
+      "cif_bias": 4.2055319513967335
+    }
+  ],
+  "outer_cv_selected_alpha": {
+    "BPAT": 1.0,
+    "CISO": 1.0,
+    "ERCO": 1.0,
+    "FPL": 1.0,
+    "ISNE": 1.0,
+    "MISO": 1.0,
+    "NYIS": 1.0
+  },
+  "outer_cv_macro": [
+    {
+      "model": "donor_only",
+      "sources": 7,
+      "cif_mae": 57.906905726261456,
+      "cif_rmse": 66.65494825213024,
+      "cif_bias": -10.02040756652748
+    },
+    {
+      "model": "local_lag_only",
+      "sources": 7,
+      "cif_mae": 35.289640983303116,
+      "cif_rmse": 44.31042073266983,
+      "cif_bias": -5.484108337887994
+    },
+    {
+      "model": "outer_selected",
+      "sources": 7,
+      "cif_mae": 35.289640983303116,
+      "cif_rmse": 44.31042073266983,
+      "cif_bias": -5.484108337887994
+    }
+  ],
+  "outputs_sha256": {
+    "region_month_metrics.csv": "ed6a449a5312d36b05cbd1b1552bc28361c0fa4ac7e5ffd8ed1d6c0e77a40ea9",
+    "source_macro.csv": "3a5751493e3a0ac53b257269eef77df43374f200eb49084a2722b274b32ffb4c",
+    "macro.csv": "273f1d1c83e44cbcec3e461d5b26dc11f284a598dd2cd2969b148d228da1c1b1",
+    "outer_source_cv.csv": "2c3bb0f370c6ffd3b356fbb3927c60c1c292b5540af5882dcc9d28085eeb45bd",
+    "outer_source_cv_summary.csv": "24b4a4b10434c25abc3d81a1a3caf36b074fb00f54d68d4937442abcb418ec7c"
+  },
+  "caveat": "coarse group definitions and proxy EF do not establish Chinese thermal composition or emissions. Oracle EF is not forecastable under current reported coarse schema."
+}

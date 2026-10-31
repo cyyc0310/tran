@@ -1,0 +1,42 @@
+{
+  "design": "2024 donor same calendar month/fuel -> 2025 target same BA/month; BA excluded from donor pool",
+  "donor_archive_sha256": "ef81c20eb2314aa4bafb3aeb18d5440bc5f0a5e6d0db07f890e116465e495828",
+  "target_archive_sha256": "2ecdfd3dfbeb46eda8ad1936775ca30e843ded9108f574cf1702e4948f243fd3",
+  "donor_eia860_sha256": "0aaae04812cd4ab87a3e346bdf93848a3cc15053fd4dc2a4cf82d2aeac95f12b",
+  "target_eia860_sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+  "donor": {
+    "rows": 10135957,
+    "quarter_rows": {
+      "1": 2242318,
+      "2": 2390475,
+      "3": 3171811,
+      "4": 2331353
+    },
+    "ba_count": 50
+  },
+  "target": {
+    "rows": 10018395,
+    "quarter_rows": {
+      "1": 2245698,
+      "2": 2307831,
+      "3": 3144186,
+      "4": 2320680
+    },
+    "ba_count": 49
+  },
+  "paired_target_ba_months": 586,
+  "paired_ba_count": 49,
+  "paired_fuel_cells": 1251,
+  "target_generation_supported_share": 0.9976541777724931,
+  "generation_median_ape_pct": 5.419447840614944,
+  "heat_input_median_ape_pct": 0.31643130545399023,
+  "generation_mean_ape_pct": 7.292539992660287,
+  "heat_input_mean_ape_pct": 1.213500074255525,
+  "generation_wape_pct": 4.775283807881826,
+  "heat_input_wape_pct": 1.1777254276731612,
+  "generation_median_abs_intensity_error_g_kwh": 28.223715974203007,
+  "heat_input_median_abs_intensity_error_g_kwh": 1.6003879607521605,
+  "generation_mean_abs_intensity_error_g_kwh": 39.19202139118347,
+  "heat_input_mean_abs_intensity_error_g_kwh": 7.147989792626481,
+  "estimand": "CEMS-covered pure-primary-fuel fossil fleet gross-load monthly intensity; not whole-grid CIF"
+}

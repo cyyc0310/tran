@@ -1,0 +1,193 @@
+{
+  "status": "RETROSPECTIVE_EIA_MONTHLY_FUEL_CATEGORY_RESOLUTION_FRONTIER",
+  "regions": [
+    "AVA",
+    "BANC",
+    "BPAT",
+    "CHPD",
+    "DOPD",
+    "EPE",
+    "FMPP",
+    "FPL",
+    "GCPD",
+    "GRID",
+    "GVL",
+    "IID",
+    "JEA",
+    "MISO",
+    "NWMT",
+    "NYIS",
+    "PSEI",
+    "SC",
+    "SCEG",
+    "SCL",
+    "SEC",
+    "TEC",
+    "TIDC",
+    "TPWR"
+  ],
+  "n_regions": 24,
+  "n_target_region_months": 135,
+  "category_levels": {
+    "5_thermal_renewable": [
+      [
+        "coal",
+        "gas",
+        "oil",
+        "other"
+      ],
+      [
+        "nuclear"
+      ],
+      [
+        "hydro"
+      ],
+      [
+        "wind"
+      ],
+      [
+        "solar"
+      ]
+    ],
+    "6_coal_vs_other_thermal": [
+      [
+        "coal"
+      ],
+      [
+        "gas",
+        "oil",
+        "other"
+      ],
+      [
+        "nuclear"
+      ],
+      [
+        "hydro"
+      ],
+      [
+        "wind"
+      ],
+      [
+        "solar"
+      ]
+    ],
+    "7_coal_gas_vs_other_thermal": [
+      [
+        "coal"
+      ],
+      [
+        "gas"
+      ],
+      [
+        "oil",
+        "other"
+      ],
+      [
+        "nuclear"
+      ],
+      [
+        "hydro"
+      ],
+      [
+        "wind"
+      ],
+      [
+        "solar"
+      ]
+    ],
+    "8_fuel_specific": [
+      [
+        "coal"
+      ],
+      [
+        "gas"
+      ],
+      [
+        "oil"
+      ],
+      [
+        "other"
+      ],
+      [
+        "nuclear"
+      ],
+      [
+        "hydro"
+      ],
+      [
+        "wind"
+      ],
+      [
+        "solar"
+      ]
+    ]
+  },
+  "k_donors": 10,
+  "calibration": "nested leave-two-region-out absolute residual q90",
+  "target_window": "2026-01..2026-06",
+  "source_window": "2025-01..2025-12",
+  "fixed_ef_gco2_per_kwh": {
+    "coal": 1000.0,
+    "gas": 400.0,
+    "oil": 800.0,
+    "other": 400.0,
+    "nuclear": 0.0,
+    "hydro": 0.0,
+    "wind": 0.0,
+    "solar": 0.0
+  },
+  "radii": {
+    "5_thermal_renewable": 188.973074221047,
+    "6_coal_vs_other_thermal": 79.97694829360381,
+    "7_coal_gas_vs_other_thermal": 79.429109485769,
+    "8_fuel_specific": 79.21414888608581
+  },
+  "macro_metrics": {
+    "5_thermal_renewable": {
+      "coverage": 0.911385251644611,
+      "width": 377.946148442094,
+      "winkler90": 543.3330852732914,
+      "point_mae": 80.13788293600399,
+      "worst_region_coverage": 0.07880824372759856
+    },
+    "6_coal_vs_other_thermal": {
+      "coverage": 0.8783932548694611,
+      "width": 159.95389658720762,
+      "winkler90": 263.7353293662003,
+      "point_mae": 32.46973163454765,
+      "worst_region_coverage": 0.4550717507989477
+    },
+    "7_coal_gas_vs_other_thermal": {
+      "coverage": 0.8792182596237884,
+      "width": 158.858218971538,
+      "winkler90": 260.631217241071,
+      "point_mae": 32.36613534259762,
+      "worst_region_coverage": 0.4695850989635749
+    },
+    "8_fuel_specific": {
+      "coverage": 0.8793202077576643,
+      "width": 158.42829777217162,
+      "winkler90": 260.55151283220385,
+      "point_mae": 32.155875155107374,
+      "worst_region_coverage": 0.4569476005085015
+    }
+  },
+  "input_hashes": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "limits": [
+    "EIA hourly generation estimates converted to CIF with fixed EF, not measured CIF",
+    "target monthly categories are post-month information; not a month-ahead forecast",
+    "2026H1 and target regions were already examined in prior development work",
+    "unreported internal thermal split is allocated by source donor mean fuel shares",
+    "no method novelty or China field-schema validation claim"
+  ]
+}

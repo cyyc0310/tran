@@ -1,0 +1,22 @@
+{
+  "status": "ORACLE_FACTOR_CONTRACT_WIDTH_ACCOUNTING_NOT_A_PREDICTOR",
+  "source_rows": 1872,
+  "region_months": 936,
+  "regions": 43,
+  "prediction_rows": 73032,
+  "assertion_failures": 0,
+  "prediction_columns_exactly_preserved": true,
+  "input_hashes": {
+    "results/v140-monthly-conditional-risk-r1/monthly_feature_panel.csv": "db23fb734967953e0405011fc0ff0c5b2ccc87dcc0db6d089b0b33be78f95585",
+    "results/v141-source-expansion-input-r1/additional_monthly_panel.csv": "aa3a56ceb6904486bcf28bd3d3a1d5990886fca700e9232f73da3582414f4616",
+    "results/v141-source-diversity-ablation-r1/outer_fold_rows.csv": "be6fa85f667893f6185c112f4e9d051d28c94941c5deba0c007bc8b7d37c28f8",
+    "results/v142-pace-lgee-monthly-holdout-r1/target_rows.csv": "b7ba03b2be27e6c14c657f00ed46e4e80ab0fab04f896515c029646567bec711",
+    "docs/V143_FACTOR_FLOOR_DIAGNOSTIC_PROTOCOL.md": "e3422cb5d87b5f9d990c034821eccc8a167f8fc067806db82ed161df8f7394b9"
+  },
+  "script_sha256": "d07d35028e734a5cc7af8c4d9d88217864717121d4c551cfaffc3536d7a474e0",
+  "limitations": [
+    "The floor is conditional on the assumed factor-box support and observed proxy hourly allocation.",
+    "It is an evaluation oracle and must not enter target prediction or selection.",
+    "This is not measured Chinese factor uncertainty or a probabilistic lower bound without the stated contract."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "status": "JOINT_CRITICAL_COMPOSITION_DEVELOPMENT",
+  "target_region_months": 66,
+  "scored_rows": 1056,
+  "curve_queries": 1828,
+  "assertion_failures": 0,
+  "donor_count_identity_checks": 438720,
+  "noncoal_exact_decisions": 0,
+  "critical_tie_corrections": 0,
+  "pure_coal_queries": 0,
+  "input_hashes": {
+    "docs/V146_CRITICAL_COMPOSITION_PROTOCOL.md": "165729462bc7c1a3274da98ece0dd2cf7e4f99570effeb5fe062273d8ecf3af7",
+    "results/v144-canonical-profile-cache-r1/summary.json": "6c9640d193ee9dad4354aa9969c45cd1485c4fbac53146e0409570619c6bbc19",
+    "results/v144-canonical-profile-cache-r1/canonical_monthly_panel.csv": "47fac51f5c2217491abfd305b391b3401b084db891cead49227b5c50d2b96437",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v144-canonical-profile-cache-r1/profiles.npz": "4e40a83eb4b917f591c8f4bda15a54283eecbad4407a7b1d9cc7e9e23055b17a",
+    "results/v144-composition-response-cache-r1/summary.json": "59d06f1dddca1707c163c1984f8b241085287b54baa2cb07ccd1f699c3c06016",
+    "results/v144-composition-response-cache-r1/response_counts.npz": "ea7ac349a0fecbc19e62640c158e64923931f22d78203438222bf90a3eebd2fb",
+    "results/v145-recomposed-risk-baselines-r1/region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "results/v145-recomposed-risk-baselines-r1/target_rows.csv": "8c4266b5e65e28fe32770d436f0190cb764de1229cd42f078325b85623547e81",
+    "results/v145-recomposed-risk-baselines-r1/summary.json": "510150b4cb1fa1741ae55a1bc1d3498ca3fa50141ae62b1fef204ac63210f552",
+    "scripts/v146_critical_composition_calibration.py": "ccb5d345cfe4518f520dfca02edbbdc4bd60a2c2f61cf6a6079e316f16671a01",
+    "scripts/critical_composition_response.py": "1873921ac055138cffc547e40eae501f1a80ebb125625bd197d924610f0e2db3",
+    "scripts/monthly_tail_response.py": "46731a41b7dcc9068cb65d5d03b4eca08110e43c90bbdb1a0c068727ef7ab0c0",
+    "scripts/v142_pace_lgee_monthly_holdout.py": "a5670903d67997e5743871c98d65b6ec4bfe923e3ebf60ae8e9c333856703bfe",
+    "scripts/v144_cache_composition_responses.py": "98616886a3f056104dc3acf51d574436d3b07d1ff54703274fb3994e19c0587a",
+    "scripts/v144_prepare_profile_cache.py": "3f618dd719773a43d29b0deda41e122c19d6d0284b883960b3e5173ac6382341"
+  },
+  "output_hashes": {
+    "calibration_inverse_scores.csv": "40e85e8566765cf96076aa2b74125b490382ced008689b9f7229e63a6b428539",
+    "calibration_radii.csv": "18b020a95f6b5be67737c0b8329dc365711d026c9065e9970f75908649351bf4",
+    "comparison_frontier.csv": "f1631f9e7ae429c11bd0916f16cd6bd0562ffdf5b9d1b77e22289dfcf95356b2",
+    "curve_index.csv": "b2bddf8b31d0ab9eedc4ddd16b4fafefea8c1daa0a81db9395c9b542c617748b",
+    "curves.npz": "19e33bd082213d96fbf52f5ec6409d4d9721995fc71922b9b46da483e5e58a36",
+    "donor_provenance.csv": "6cf661089795ec7b104e23950e760001e5aa4fddb1bfd80ca6044e03f242f15c",
+    "joint_two_threshold_coverage.csv": "817833950f6392e289396d147bbc6442e01cbd4fa8897d5cf74f1977f7aefb17",
+    "region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "target_rows.csv": "badb8d346b2d698118f2a22df59ba6b3baf7bd8b0cf8ad6e1c9ac2494c2321da"
+  },
+  "limitations": [
+    "Opened development targets; no new region/time confirmation.",
+    "Virtual coal displacement measures model mismatch, not uncertainty in observed monthly shares.",
+    "Generic inverse conformal calibration is prior art; novelty is unproven.",
+    "Empirical monthly factor-box endpoint coverage is not hourly CIF forecast coverage.",
+    "Archived V145 references use separate per-threshold calibration; V146 uses a joint score."
+  ]
+}

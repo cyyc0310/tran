@@ -1,0 +1,510 @@
+{
+  "status": "EXACT_MINIMUM_FLOW_SCALAR_IDENTIFICATION_CONDITIONAL_ON_2023_REGION_GRAPH",
+  "n_routes": 13,
+  "constraint_rank": 11,
+  "flow_polytope_dimension": 2,
+  "minimum_bilateral_measurements_for_all_import_factor_functionals": 2,
+  "joint_minimal_subsets_named": [
+    [
+      "Northwest->East",
+      "Southwest->East"
+    ],
+    [
+      "Northwest->East",
+      "Southwest->Central"
+    ],
+    [
+      "Northwest->East",
+      "North->East"
+    ],
+    [
+      "Northwest->East",
+      "North->Central"
+    ],
+    [
+      "Northwest->Central",
+      "Southwest->East"
+    ],
+    [
+      "Northwest->Central",
+      "Southwest->Central"
+    ],
+    [
+      "Northwest->Central",
+      "North->East"
+    ],
+    [
+      "Northwest->Central",
+      "North->Central"
+    ],
+    [
+      "Southwest->East",
+      "North->East"
+    ],
+    [
+      "Southwest->East",
+      "North->Central"
+    ],
+    [
+      "Southwest->Central",
+      "North->East"
+    ],
+    [
+      "Southwest->Central",
+      "North->Central"
+    ]
+  ],
+  "per_destination": {
+    "North": {
+      "minimum_measurements": 0,
+      "minimal_subsets": [
+        []
+      ],
+      "minimal_subsets_named": [
+        []
+      ]
+    },
+    "East": {
+      "minimum_measurements": 2,
+      "minimal_subsets": [
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "minimal_subsets_named": [
+        [
+          "Northwest->East",
+          "Southwest->East"
+        ],
+        [
+          "Northwest->East",
+          "Southwest->Central"
+        ],
+        [
+          "Northwest->East",
+          "North->East"
+        ],
+        [
+          "Northwest->East",
+          "North->Central"
+        ],
+        [
+          "Northwest->Central",
+          "Southwest->East"
+        ],
+        [
+          "Northwest->Central",
+          "Southwest->Central"
+        ],
+        [
+          "Northwest->Central",
+          "North->East"
+        ],
+        [
+          "Northwest->Central",
+          "North->Central"
+        ],
+        [
+          "Southwest->East",
+          "North->East"
+        ],
+        [
+          "Southwest->East",
+          "North->Central"
+        ],
+        [
+          "Southwest->Central",
+          "North->East"
+        ],
+        [
+          "Southwest->Central",
+          "North->Central"
+        ]
+      ]
+    },
+    "Central": {
+      "minimum_measurements": 2,
+      "minimal_subsets": [
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      "minimal_subsets_named": [
+        [
+          "Northwest->East",
+          "Southwest->East"
+        ],
+        [
+          "Northwest->East",
+          "Southwest->Central"
+        ],
+        [
+          "Northwest->East",
+          "North->East"
+        ],
+        [
+          "Northwest->East",
+          "North->Central"
+        ],
+        [
+          "Northwest->Central",
+          "Southwest->East"
+        ],
+        [
+          "Northwest->Central",
+          "Southwest->Central"
+        ],
+        [
+          "Northwest->Central",
+          "North->East"
+        ],
+        [
+          "Northwest->Central",
+          "North->Central"
+        ],
+        [
+          "Southwest->East",
+          "North->East"
+        ],
+        [
+          "Southwest->East",
+          "North->Central"
+        ],
+        [
+          "Southwest->Central",
+          "North->East"
+        ],
+        [
+          "Southwest->Central",
+          "North->Central"
+        ]
+      ]
+    },
+    "South": {
+      "minimum_measurements": 0,
+      "minimal_subsets": [
+        []
+      ],
+      "minimal_subsets_named": [
+        []
+      ]
+    },
+    "Southwest": {
+      "minimum_measurements": 0,
+      "minimal_subsets": [
+        []
+      ],
+      "minimal_subsets_named": [
+        []
+      ]
+    }
+  },
+  "lp_collapse_checks": [
+    {
+      "destination": "North",
+      "subset": [],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        1,
+        4
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        1,
+        5
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        1,
+        6
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        1,
+        7
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        2,
+        4
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        2,
+        5
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        2,
+        6
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        2,
+        7
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        4,
+        6
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        4,
+        7
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        5,
+        6
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "East",
+      "subset": [
+        5,
+        7
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        1,
+        4
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        1,
+        5
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        1,
+        6
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        1,
+        7
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        2,
+        4
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        2,
+        5
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        2,
+        6
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        2,
+        7
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        4,
+        6
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        4,
+        7
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        5,
+        6
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "Central",
+      "subset": [
+        5,
+        7
+      ],
+      "width": 0.0
+    },
+    {
+      "destination": "South",
+      "subset": [],
+      "width": 0.0
+    },
+    {
+      "destination": "Southwest",
+      "subset": [],
+      "width": 0.0
+    }
+  ],
+  "protocol_sha256": "577e6524eb55f898cf3555222c8249c0026331e775fddccf25f799ac8fb21f41",
+  "margins_sha256": "038cecf07b68c8472ddce7e11bfdd7ac02cee681a5a085318aea3957331f301a",
+  "route_support_sha256": "b29a92ab35c9da4941b0ef930599e3b33c757fcd1a39442e6d0e365683608f0b",
+  "script_sha256": "1268094bd00120bedb3bf75908b9926ee97ffc25a857dd11557e918b73229388",
+  "limitations": [
+    "Identification is conditional on exact 2023 margins, exact official regional factors, and the article's listed route support.",
+    "This is a measurement-design calculation; the selected bilateral flows are not yet observed by this project.",
+    "No extension to 30 province-level flows, measurement noise, other years, or hourly CIF is established."
+  ]
+}

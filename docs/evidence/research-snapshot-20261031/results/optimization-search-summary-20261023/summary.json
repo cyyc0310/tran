@@ -1,0 +1,13 @@
+{
+  "purpose": "Post-score descriptive visualization; no model selection",
+  "2026_quality_regions": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "MISO",
+    "NYIS"
+  ],
+  "2026_unique_region_days": 1102,
+  "2026_bootstrap_note": "Six synchronized months; observed regions only, no global-grid guarantee"
+}

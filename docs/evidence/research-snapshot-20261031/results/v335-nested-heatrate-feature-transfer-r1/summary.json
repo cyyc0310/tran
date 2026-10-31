@@ -1,0 +1,422 @@
+{
+  "status": "NESTED_RIDGE_LOCAL_HEATRATE_WHOLE_REGION_ANNUAL_MEE_TRANSFER",
+  "lambda_candidates": [
+    0.0,
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "paired_region_bootstrap": {
+    "nbs5_generation_coal_consumption_gce_kwh_minus_NBS5_mix_region_mae": {
+      "difference": -0.004983079207900907,
+      "region_cluster_bootstrap_95pct": [
+        -0.012742162187186271,
+        0.0007481283703806847
+      ],
+      "regions_adjusted_better": 4,
+      "per_region_delta": {
+        "Central": 0.003094991882504873,
+        "East": 0.0037259448270581252,
+        "North": -0.0062171799168885405,
+        "Northeast": -0.02497829657010142,
+        "Northwest": -0.007116736377577624,
+        "South": -0.005119250552463442,
+        "Southwest": 0.0017289722521616827
+      }
+    },
+    "nbs5_supply_coal_consumption_gce_kwh_minus_NBS5_mix_region_mae": {
+      "difference": -0.0043134948106590635,
+      "region_cluster_bootstrap_95pct": [
+        -0.011234903816356816,
+        0.001788680851421225
+      ],
+      "regions_adjusted_better": 4,
+      "per_region_delta": {
+        "Central": 0.004356110381919555,
+        "East": -0.006601035541079263,
+        "North": 0.002531892664664623,
+        "Northeast": -0.02116978795139736,
+        "Northwest": -0.010862078353070886,
+        "South": -0.0039897792822409794,
+        "Southwest": 0.005540214406590867
+      }
+    },
+    "ember5_generation_coal_consumption_gce_kwh_minus_Ember5_mix_region_mae": {
+      "difference": -0.0041937626311088815,
+      "region_cluster_bootstrap_95pct": [
+        -0.00796973568556275,
+        -0.0004286629672074662
+      ],
+      "regions_adjusted_better": 4,
+      "per_region_delta": {
+        "Central": 0.0011822568397322555,
+        "East": 0.002459152222667238,
+        "North": -0.007847773188807652,
+        "Northeast": -0.004146920458408816,
+        "Northwest": -0.00986851364760356,
+        "South": -0.011142362357416183,
+        "Southwest": 7.822172074546663e-06
+      }
+    },
+    "ember5_supply_coal_consumption_gce_kwh_minus_Ember5_mix_region_mae": {
+      "difference": -0.003899802703119884,
+      "region_cluster_bootstrap_95pct": [
+        -0.008355960059176265,
+        0.00029416051308830244
+      ],
+      "regions_adjusted_better": 5,
+      "per_region_delta": {
+        "Central": 0.0022620836261138186,
+        "East": -0.0015798202921500429,
+        "North": -0.007127496671243683,
+        "Northeast": -0.0006779701502628091,
+        "Northwest": -0.012804889260806421,
+        "South": -0.010691765518158064,
+        "Southwest": 0.003321239344668013
+      }
+    }
+  },
+  "models": [
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "province_weighted",
+      "method": "NBS5_mix",
+      "mae": 0.05143922742707788,
+      "rmse": 0.06481903331906773,
+      "mean_signed_error": 0.021295667295188288,
+      "p90_absolute_error": 0.11883290233832285
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "region_equal",
+      "method": "NBS5_mix",
+      "mae": 0.05449783662510437,
+      "rmse": 0.06371152881228906,
+      "mean_signed_error": 0.025352455913837776,
+      "p90_absolute_error": 0.09489551703107087
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "province_weighted",
+      "method": "Ember5_mix",
+      "mae": 0.0489802027961284,
+      "rmse": 0.06288091170285975,
+      "mean_signed_error": 0.016951796273996046,
+      "p90_absolute_error": 0.1220494281677333
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "region_equal",
+      "method": "Ember5_mix",
+      "mae": 0.0511159156748744,
+      "rmse": 0.06097382720279171,
+      "mean_signed_error": 0.020082081637841122,
+      "p90_absolute_error": 0.09293238426384694
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "province_weighted",
+      "method": "nbs5_generation_coal_consumption_gce_kwh",
+      "mae": 0.04761656928059598,
+      "rmse": 0.05962408394363956,
+      "mean_signed_error": 0.01528925498542772,
+      "p90_absolute_error": 0.09839010459017092
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "region_equal",
+      "method": "nbs5_generation_coal_consumption_gce_kwh",
+      "mae": 0.049514757417203466,
+      "rmse": 0.05769822618118981,
+      "mean_signed_error": 0.017789599501336652,
+      "p90_absolute_error": 0.08739335264618686
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "province_weighted",
+      "method": "nbs5_supply_coal_consumption_gce_kwh",
+      "mae": 0.04716897108846526,
+      "rmse": 0.06049939215601125,
+      "mean_signed_error": 0.013210385954454888,
+      "p90_absolute_error": 0.10774462833835005
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "region_equal",
+      "method": "nbs5_supply_coal_consumption_gce_kwh",
+      "mae": 0.05018434181444531,
+      "rmse": 0.0586551412383692,
+      "mean_signed_error": 0.0169261449112091,
+      "p90_absolute_error": 0.08973966254799896
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "province_weighted",
+      "method": "ember5_generation_coal_consumption_gce_kwh",
+      "mae": 0.045191630867349564,
+      "rmse": 0.05847458292361888,
+      "mean_signed_error": 0.011517663335754375,
+      "p90_absolute_error": 0.09608459945482638
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "region_equal",
+      "method": "ember5_generation_coal_consumption_gce_kwh",
+      "mae": 0.04692215304376552,
+      "rmse": 0.05587382951449656,
+      "mean_signed_error": 0.014427092373197326,
+      "p90_absolute_error": 0.08692127041790217
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "province_weighted",
+      "method": "ember5_supply_coal_consumption_gce_kwh",
+      "mae": 0.04482158044767675,
+      "rmse": 0.05841694692448741,
+      "mean_signed_error": 0.01150674793090125,
+      "p90_absolute_error": 0.09969560235641847
+    },
+    {
+      "evaluation": "pooled_2022_2023",
+      "weighting": "region_equal",
+      "method": "ember5_supply_coal_consumption_gce_kwh",
+      "mae": 0.04721611297175451,
+      "rmse": 0.0559754698686813,
+      "mean_signed_error": 0.014996355396432154,
+      "p90_absolute_error": 0.08555258135428913
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "province_weighted",
+      "method": "NBS5_mix",
+      "mae": 0.05590592836497813,
+      "rmse": 0.06861402557177897,
+      "mean_signed_error": 0.026383863409761604,
+      "p90_absolute_error": 0.12163226088147443
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "region_equal",
+      "method": "NBS5_mix",
+      "mae": 0.059197746047754414,
+      "rmse": 0.06807558639841825,
+      "mean_signed_error": 0.030057332787829395,
+      "p90_absolute_error": 0.09155130277112115
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "province_weighted",
+      "method": "Ember5_mix",
+      "mae": 0.05683860995467751,
+      "rmse": 0.06990388967248762,
+      "mean_signed_error": 0.025508177317885142,
+      "p90_absolute_error": 0.12562006133374778
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "region_equal",
+      "method": "Ember5_mix",
+      "mae": 0.059943251632668525,
+      "rmse": 0.06900839957415741,
+      "mean_signed_error": 0.02952433568576021,
+      "p90_absolute_error": 0.0925516643760811
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "province_weighted",
+      "method": "nbs5_generation_coal_consumption_gce_kwh",
+      "mae": 0.055454023328569114,
+      "rmse": 0.06698915516984873,
+      "mean_signed_error": 0.0260416944726489,
+      "p90_absolute_error": 0.10340861260716432
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "region_equal",
+      "method": "nbs5_generation_coal_consumption_gce_kwh",
+      "mae": 0.058424377347544236,
+      "rmse": 0.06535201383350968,
+      "mean_signed_error": 0.029243725870321164,
+      "p90_absolute_error": 0.08723547277457698
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "province_weighted",
+      "method": "nbs5_supply_coal_consumption_gce_kwh",
+      "mae": 0.05571925040404803,
+      "rmse": 0.06880593573836799,
+      "mean_signed_error": 0.02133471283246614,
+      "p90_absolute_error": 0.11699003500298889
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "region_equal",
+      "method": "nbs5_supply_coal_consumption_gce_kwh",
+      "mae": 0.06010296152758112,
+      "rmse": 0.06746780297753235,
+      "mean_signed_error": 0.026293599406748525,
+      "p90_absolute_error": 0.08910501715386368
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "province_weighted",
+      "method": "ember5_generation_coal_consumption_gce_kwh",
+      "mae": 0.05162988462585737,
+      "rmse": 0.06438961636068953,
+      "mean_signed_error": 0.020465583294555088,
+      "p90_absolute_error": 0.11623248576678451
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "region_equal",
+      "method": "ember5_generation_coal_consumption_gce_kwh",
+      "mae": 0.05479451351496804,
+      "rmse": 0.06291963887492151,
+      "mean_signed_error": 0.024284718319485445,
+      "p90_absolute_error": 0.0847448320411516
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "province_weighted",
+      "method": "ember5_supply_coal_consumption_gce_kwh",
+      "mae": 0.051308088572254815,
+      "rmse": 0.06430368391231835,
+      "mean_signed_error": 0.019862214752708458,
+      "p90_absolute_error": 0.113377826461537
+    },
+    {
+      "evaluation": "2022",
+      "weighting": "region_equal",
+      "method": "ember5_supply_coal_consumption_gce_kwh",
+      "mae": 0.05521915099456961,
+      "rmse": 0.0628710637792723,
+      "mean_signed_error": 0.024194482548512596,
+      "p90_absolute_error": 0.08426387350833149
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "province_weighted",
+      "method": "NBS5_mix",
+      "mae": 0.04697252648917763,
+      "rmse": 0.060787578136261414,
+      "mean_signed_error": 0.016207471180614975,
+      "p90_absolute_error": 0.11238594150385559
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "region_equal",
+      "method": "NBS5_mix",
+      "mae": 0.04979792720245433,
+      "rmse": 0.058553043517987687,
+      "mean_signed_error": 0.02064757903984616,
+      "p90_absolute_error": 0.07788326018143917
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "province_weighted",
+      "method": "Ember5_mix",
+      "mae": 0.041121795637579305,
+      "rmse": 0.05496784807341805,
+      "mean_signed_error": 0.008395415230106925,
+      "p90_absolute_error": 0.10147621961649637
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "region_equal",
+      "method": "Ember5_mix",
+      "mae": 0.04228857971708026,
+      "rmse": 0.049835546335023066,
+      "mean_signed_error": 0.010639827589922038,
+      "p90_absolute_error": 0.06690687669010871
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "province_weighted",
+      "method": "nbs5_generation_coal_consumption_gce_kwh",
+      "mae": 0.039779115232622855,
+      "rmse": 0.05121050538577298,
+      "mean_signed_error": 0.004536815498206544,
+      "p90_absolute_error": 0.08040458249881724
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "region_equal",
+      "method": "nbs5_generation_coal_consumption_gce_kwh",
+      "mae": 0.040605137486862695,
+      "rmse": 0.04720707723019287,
+      "mean_signed_error": 0.006335473132352139,
+      "p90_absolute_error": 0.06233241108627748
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "province_weighted",
+      "method": "nbs5_supply_coal_consumption_gce_kwh",
+      "mae": 0.03861869177288247,
+      "rmse": 0.05085367351196221,
+      "mean_signed_error": 0.005086059076443633,
+      "p90_absolute_error": 0.07994721726842735
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "region_equal",
+      "method": "nbs5_supply_coal_consumption_gce_kwh",
+      "mae": 0.040265722101309485,
+      "rmse": 0.04717831465232126,
+      "mean_signed_error": 0.007558690415669675,
+      "p90_absolute_error": 0.062058140444992076
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "province_weighted",
+      "method": "ember5_generation_coal_consumption_gce_kwh",
+      "mae": 0.03875337710884175,
+      "rmse": 0.05188960397907833,
+      "mean_signed_error": 0.002569743376953662,
+      "p90_absolute_error": 0.08001371663906198
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "region_equal",
+      "method": "ember5_generation_coal_consumption_gce_kwh",
+      "mae": 0.03904979257256299,
+      "rmse": 0.04572270362681816,
+      "mean_signed_error": 0.0045694664269092106,
+      "p90_absolute_error": 0.05983852422547067
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "province_weighted",
+      "method": "ember5_supply_coal_consumption_gce_kwh",
+      "mae": 0.03833507232309867,
+      "rmse": 0.05186632444333614,
+      "mean_signed_error": 0.0031512811090940434,
+      "p90_absolute_error": 0.08343951906725086
+    },
+    {
+      "evaluation": "2023",
+      "weighting": "region_equal",
+      "method": "ember5_supply_coal_consumption_gce_kwh",
+      "mae": 0.03921307494893941,
+      "rmse": 0.046175102601229916,
+      "mean_signed_error": 0.005798228244351714,
+      "p90_absolute_error": 0.06017494431141592
+    }
+  ],
+  "limitations": [
+    "Targets are annual MEE consumption-side factors, not hourly CIF.",
+    "Only two forward years and seven correlated region clusters.",
+    "CEC yearbook values are retrospective; as-of forecast legality is unverified.",
+    "Standard-coal consumption is an efficiency proxy, not CO2 emission factor.",
+    "CEC and NBS plant-size scopes differ."
+  ],
+  "sha256": {
+    "data/china/mee_provincial_grid_co2_factors_2021_2023.csv": "d29b51e591bd81722443508b4afd9bac5d2740da56f4052029c6bb30efc15b19",
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "results/china-monthly-ember-audit-r1/ember_china_province_monthly.csv": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+    "data/china/cec_province_thermal_coal_consumption_rates_2020_2022.csv": "ec14c638ceb5455ab5bfc94c519f61a9eb02b0d640693314a9f5270c6a145f1a",
+    "docs/V335_NESTED_HEATRATE_FEATURE_TRANSFER_PROTOCOL.md": "c5bc3a057af7563afc0752fafa84977cdb5122f5c73edc94d6f28bddf567fd06",
+    "scripts/v335_nested_heatrate_feature_transfer.py": "4eca3936cfa5e263c1dafd0045234e6d0d24cb2b27eeeb95f1e393e96bab8936"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "prediction_queries": 1267,
+  "source_days": 1145,
+  "arms": 63,
+  "ET_reconstruction_fits": 42,
+  "Ridge_replays": 42,
+  "new_training_labels": false,
+  "legacy_rows_copied_numeric_exact": 11450,
+  "legacy_recompute_max_abs": 0.0,
+  "primary_factor": 1.0,
+  "fixed_factors": [
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "method_innovation_claim": false,
+  "independent_confirmation": false,
+  "method_frozen": false,
+  "new_holdout_authorized": false
+}

@@ -1,0 +1,95 @@
+{
+  "status": "COMPLETED_CROSS_SIMULATOR_PROJECTION_STRESS_TEST",
+  "queries": 15120,
+  "scored_rows": 75600,
+  "provinces": 30,
+  "scenarios": [
+    "higher_demand",
+    "lower_demand_update",
+    "neg_emis_700",
+    "no_emis_cap",
+    "rps_higher",
+    "vre_landuse_base"
+  ],
+  "years": [
+    2030,
+    2035,
+    2040,
+    2045,
+    2050,
+    2055,
+    2060
+  ],
+  "methods": [
+    "constant_anchor",
+    "k15_mean_shape",
+    "k15_pooled90",
+    "k15_dispersion_scaled90",
+    "k15_particle90"
+  ],
+  "macro": [
+    {
+      "method": "constant_anchor",
+      "point_mae": 48.35249009250974,
+      "point_rmse": 59.69841112425475,
+      "shape_mae": 48.35249009250974,
+      "shape_rmse": 59.69841112425475,
+      "coverage90": 0.7076556853077751,
+      "width90": 127.72548266780362,
+      "winkler90": 384.31648676769606,
+      "level_mae": 1.3529508895003177e-14
+    },
+    {
+      "method": "k15_dispersion_scaled90",
+      "point_mae": 45.34339917697615,
+      "point_rmse": 58.000327240237084,
+      "shape_mae": 45.34339917697615,
+      "shape_rmse": 58.000327240237084,
+      "coverage90": 0.6178812214352088,
+      "width90": 121.00141101346101,
+      "winkler90": 397.1945767016005,
+      "level_mae": 2.7106640160983265e-15
+    },
+    {
+      "method": "k15_mean_shape",
+      "point_mae": 45.34339917697615,
+      "point_rmse": 58.000327240237084,
+      "shape_mae": 45.34339917697615,
+      "shape_rmse": 58.000327240237084,
+      "coverage90": 6.953630217519107e-05,
+      "width90": 0.0,
+      "winkler90": 906.8679835395229,
+      "level_mae": 2.7106640160983265e-15
+    },
+    {
+      "method": "k15_particle90",
+      "point_mae": 45.34339917697615,
+      "point_rmse": 58.000327240237084,
+      "shape_mae": 45.34339917697615,
+      "shape_rmse": 58.000327240237084,
+      "coverage90": 0.5293259558029704,
+      "width90": 109.81233421069706,
+      "winkler90": 428.1247327235082,
+      "level_mae": 2.7106640160983265e-15
+    },
+    {
+      "method": "k15_pooled90",
+      "point_mae": 45.34339917697615,
+      "point_rmse": 58.000327240237084,
+      "shape_mae": 45.34339917697615,
+      "shape_rmse": 58.000327240237084,
+      "coverage90": 0.7033778479282992,
+      "width90": 127.72548266780362,
+      "winkler90": 366.4012007306625,
+      "level_mae": 2.7106640160983265e-15
+    }
+  ],
+  "seal_sha256": "6eeb206e0c9210c6b9516c6187976af4272bc87c936c5b00db6c91ea92906889",
+  "monthly_scores_sha256": "c0e324e2b46abdae2420f5332fcce78cb37eed4e0c4e56ee59f3145b9098e04b",
+  "limitations": [
+    "Both source and target are published model-generated projection worlds, not observed Chinese hourly grid labels.",
+    "The target monthly mean is an oracle derived from target monthly hourly values; it is stronger than the user's monthly generation table.",
+    "The version-pinned target JSON files are cached locally under the ignored results directory for resumability; they are not committed or redistributed. The target model redistribution license was not located.",
+    "An initial internal pilot or this full run does not establish statistical coverage guarantees or real-world transfer."
+  ]
+}

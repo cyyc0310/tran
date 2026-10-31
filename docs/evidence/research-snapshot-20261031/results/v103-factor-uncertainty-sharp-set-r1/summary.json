@@ -1,0 +1,327 @@
+{
+  "status": "SHARP_ENDPOINT_ENVELOPE_OVER_FUEL_EF_BOX_NOT_OFFICIAL_FACTOR_UNCERTAINTY",
+  "relative_factor_radius": 0.1,
+  "ef_nominal": {
+    "coal": 1000,
+    "gas": 400,
+    "oil": 800,
+    "nuclear": 0,
+    "hydro": 0,
+    "wind": 0,
+    "solar": 0,
+    "other": 400
+  },
+  "ef_lower": {
+    "coal": 900.0,
+    "gas": 360.0,
+    "oil": 720.0,
+    "nuclear": 0,
+    "hydro": 0,
+    "wind": 0,
+    "solar": 0,
+    "other": 360.0
+  },
+  "ef_upper": {
+    "coal": 1100.0,
+    "gas": 440.00000000000006,
+    "oil": 880.0000000000001,
+    "nuclear": 0,
+    "hydro": 0,
+    "wind": 0,
+    "solar": 0,
+    "other": 440.00000000000006
+  },
+  "region_months": 513,
+  "scored_rows": 3078,
+  "frontier_region_equal": [
+    {
+      "tau": 600,
+      "rate": 0.01,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "nominal_width": 224.45378082062868,
+      "robust_width": 235.82765472340571,
+      "nominal_positive": 0.07278138528138528,
+      "nominal_negative": 0.5394283746556474,
+      "robust_positive": 0.043560606060606064,
+      "robust_negative": 0.5394283746556474,
+      "robust_abstain": 0.41701101928374656,
+      "actual_coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 600,
+      "rate": 0.05,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "nominal_width": 224.45378082062868,
+      "robust_width": 235.82765472340571,
+      "nominal_positive": 0.04978354978354979,
+      "nominal_negative": 0.5547520661157025,
+      "robust_positive": 0.041666666666666664,
+      "robust_negative": 0.552858126721763,
+      "robust_abstain": 0.4054752066115702,
+      "actual_coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 600,
+      "rate": 0.1,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "nominal_width": 224.45378082062868,
+      "robust_width": 235.82765472340571,
+      "nominal_positive": 0.03598484848484848,
+      "nominal_negative": 0.5857438016528925,
+      "robust_positive": 0.022727272727272728,
+      "robust_negative": 0.5857438016528925,
+      "robust_abstain": 0.3915289256198347,
+      "actual_coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 900,
+      "rate": 0.01,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "nominal_width": 136.31681831014836,
+      "robust_width": 152.52300746026043,
+      "nominal_positive": 0.0,
+      "nominal_negative": 0.6711432506887053,
+      "robust_positive": 0.0,
+      "robust_negative": 0.6711432506887053,
+      "robust_abstain": 0.32885674931129477,
+      "actual_coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 900,
+      "rate": 0.05,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "nominal_width": 136.31681831014836,
+      "robust_width": 152.52300746026043,
+      "nominal_positive": 0.0,
+      "nominal_negative": 0.6754722550177096,
+      "robust_positive": 0.0,
+      "robust_negative": 0.6711432506887053,
+      "robust_abstain": 0.32885674931129477,
+      "actual_coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    },
+    {
+      "tau": 900,
+      "rate": 0.1,
+      "regions": 22,
+      "mean_region_months": 23.318181818181817,
+      "nominal_width": 136.31681831014836,
+      "robust_width": 152.52300746026043,
+      "nominal_positive": 0.0,
+      "nominal_negative": 0.696305588351043,
+      "robust_positive": 0.0,
+      "robust_negative": 0.674931129476584,
+      "robust_abstain": 0.325068870523416,
+      "actual_coverage": 1.0,
+      "peak_pass_rate": 0.688368367469158
+    }
+  ],
+  "frontier_pooled": [
+    {
+      "tau": 600,
+      "rate": 0.01,
+      "region_months": 24,
+      "nominal_width": 221.5438596491228,
+      "robust_width": 232.85769980506822,
+      "nominal_positive": 0.07407407407407407,
+      "robust_positive": 0.04483430799220273,
+      "robust_negative": 0.543859649122807,
+      "robust_abstain": 0.41130604288499023,
+      "actual_coverage": 1.0
+    },
+    {
+      "tau": 600,
+      "rate": 0.05,
+      "region_months": 24,
+      "nominal_width": 221.5438596491228,
+      "robust_width": 232.85769980506822,
+      "nominal_positive": 0.050682261208576995,
+      "robust_positive": 0.042884990253411304,
+      "robust_negative": 0.557504873294347,
+      "robust_abstain": 0.3996101364522417,
+      "actual_coverage": 1.0
+    },
+    {
+      "tau": 600,
+      "rate": 0.1,
+      "region_months": 24,
+      "nominal_width": 221.5438596491228,
+      "robust_width": 232.85769980506822,
+      "nominal_positive": 0.037037037037037035,
+      "robust_positive": 0.023391812865497075,
+      "robust_negative": 0.5906432748538012,
+      "robust_abstain": 0.38596491228070173,
+      "actual_coverage": 1.0
+    },
+    {
+      "tau": 900,
+      "rate": 0.01,
+      "region_months": 24,
+      "nominal_width": 135.953216374269,
+      "robust_width": 151.64522417153995,
+      "nominal_positive": 0.0,
+      "robust_positive": 0.0,
+      "robust_negative": 0.6744639376218323,
+      "robust_abstain": 0.3255360623781676,
+      "actual_coverage": 1.0
+    },
+    {
+      "tau": 900,
+      "rate": 0.05,
+      "region_months": 24,
+      "nominal_width": 135.953216374269,
+      "robust_width": 151.64522417153995,
+      "nominal_positive": 0.0,
+      "robust_positive": 0.0,
+      "robust_negative": 0.6744639376218323,
+      "robust_abstain": 0.3255360623781676,
+      "actual_coverage": 1.0
+    },
+    {
+      "tau": 900,
+      "rate": 0.1,
+      "region_months": 24,
+      "nominal_width": 135.953216374269,
+      "robust_width": 151.64522417153995,
+      "nominal_positive": 0.0,
+      "robust_positive": 0.0,
+      "robust_negative": 0.6783625730994152,
+      "robust_abstain": 0.3216374269005848,
+      "actual_coverage": 1.0
+    }
+  ],
+  "capacity_source_sha256": {
+    "2023": "1447e23e608bea1523961542a90eb93ea86715067a37f211282541461049b46f",
+    "2024": "0aaae04812cd4ab87a3e346bdf93848a3cc15053fd4dc2a4cf82d2aeac95f12b"
+  },
+  "hourly_source_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "DOPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "EPE": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "GCPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TIDC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    }
+  },
+  "protocol_sha256": "287aaf97403a378e7bc79d092ccdcfe49a05f5f3efc4214bf3c10deb503a9abc",
+  "script_sha256": "a1cffa4f9782c826c5060082f9c69e3ff71ed41cb15bf14bc4d88b2b1accc29a",
+  "limitations": [
+    "The ±10% EF box is a stress scenario, not an estimated or official factor uncertainty interval.",
+    "The robust interval is the sharp endpoint hull from factor-box monotonicity; not every interior K is proven jointly feasible under one global EF vector.",
+    "Fixed-EF EIA proxy labels and previously opened regions; no real China hourly CIF validation or blind confirmation.",
+    "Monthly energy and lagged annual capacity are target-month inputs; this is retrospective identification, not month-ahead forecasting."
+  ]
+}

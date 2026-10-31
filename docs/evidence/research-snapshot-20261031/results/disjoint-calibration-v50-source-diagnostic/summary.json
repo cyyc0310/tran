@@ -1,0 +1,217 @@
+{
+  "status": "COMPLETE_DIAGNOSTIC_ONLY",
+  "protocol": "docs/V50_CALIBRATION_SOURCE_DIAGNOSTIC_PROTOCOL.md",
+  "protocol_sha256": "a27bb8659379c74e316598725bd96b00a06815f06f015bcba1827a47ad192669",
+  "producer_script_sha256": "738c17846b7a7bbad9d3e0457fcf7e91c8fedbe6597529753795b6098e265fcd",
+  "prediction_packages_opened": 70,
+  "external_label_packages_opened": 10,
+  "target_prediction_packages_opened": 0,
+  "target_truth_or_scoring_files_opened": 0,
+  "refits": 0,
+  "configuration_count": 1260,
+  "source_configuration_rows": 12600,
+  "official_q_reconstruction_max_abs_delta": 0.0,
+  "loco_delta_summary": [
+    {
+      "lag": 7,
+      "rule": "HCP",
+      "min": -42.519428147022495,
+      "median": 67.41795627026296,
+      "mean": 101.18496101993998,
+      "max": 266.89104733277065
+    },
+    {
+      "lag": 7,
+      "rule": "equal_region",
+      "min": -85.3136487874059,
+      "median": 0.467736206107368,
+      "mean": -0.6087069012621609,
+      "max": 13.344222850961273
+    },
+    {
+      "lag": 30,
+      "rule": "HCP",
+      "min": -36.32179182848006,
+      "median": 66.65606475917396,
+      "mean": 101.22252662550717,
+      "max": 267.63125529890715
+    },
+    {
+      "lag": 30,
+      "rule": "equal_region",
+      "min": -77.66655230573105,
+      "median": 0.46170538178440523,
+      "mean": -0.5920144330674848,
+      "max": 12.152013715515807
+    },
+    {
+      "lag": 90,
+      "rule": "HCP",
+      "min": -59.30586080729279,
+      "median": 57.6450038183616,
+      "mean": 96.78101467427113,
+      "max": 267.6278161155916
+    },
+    {
+      "lag": 90,
+      "rule": "equal_region",
+      "min": -71.88116924400595,
+      "median": 0.5110727094259175,
+      "mean": -0.497228710220102,
+      "max": 13.347993413088318
+    }
+  ],
+  "source_local_tail_summary": [
+    {
+      "source": "AVA",
+      "local_score_p50": 8.248356334718938,
+      "local_score_p90": 29.048245487184445,
+      "local_score_p99": 50.86852916153745,
+      "local_exceedance_fraction_at_q": 0.0022239163697453574
+    },
+    {
+      "source": "BANC",
+      "local_score_p50": 8.652550695527127,
+      "local_score_p90": 25.663932231560043,
+      "local_score_p99": 39.839244289076795,
+      "local_exceedance_fraction_at_q": 0.0017878038155951883
+    },
+    {
+      "source": "JEA",
+      "local_score_p50": 86.6183846360295,
+      "local_score_p90": 124.35206763867039,
+      "local_score_p99": 144.54722729828674,
+      "local_exceedance_fraction_at_q": 0.04805778973836342
+    },
+    {
+      "source": "NWMT",
+      "local_score_p50": 135.97573062118883,
+      "local_score_p90": 192.79574477184178,
+      "local_score_p99": 223.60436792257616,
+      "local_exceedance_fraction_at_q": 0.1572604893823261
+    },
+    {
+      "source": "SC",
+      "local_score_p50": 138.73969397013337,
+      "local_score_p90": 207.81419159364467,
+      "local_score_p99": 246.5105006657831,
+      "local_exceedance_fraction_at_q": 0.15884155288944027
+    },
+    {
+      "source": "SCEG",
+      "local_score_p50": 50.33316147072136,
+      "local_score_p90": 129.06208508668863,
+      "local_score_p99": 176.73038864852856,
+      "local_exceedance_fraction_at_q": 0.05612339324319664
+    },
+    {
+      "source": "SCL",
+      "local_score_p50": 1.1018832303935757,
+      "local_score_p90": 1.8180986277103257,
+      "local_score_p99": 2.461980393663494,
+      "local_exceedance_fraction_at_q": 0.00035579635073577156
+    },
+    {
+      "source": "SEC",
+      "local_score_p50": 26.97237827304121,
+      "local_score_p90": 57.799635364478576,
+      "local_score_p99": 82.33870696468979,
+      "local_exceedance_fraction_at_q": 0.0063813554646071444
+    },
+    {
+      "source": "SWPP",
+      "local_score_p50": 20.5540216219384,
+      "local_score_p90": 66.98061256285418,
+      "local_score_p99": 100.8041741503666,
+      "local_exceedance_fraction_at_q": 0.003071250115166808
+    },
+    {
+      "source": "WACM",
+      "local_score_p50": 131.1458414258144,
+      "local_score_p90": 177.99639600847698,
+      "local_score_p99": 220.70472673002834,
+      "local_exceedance_fraction_at_q": 0.11034815661555837
+    }
+  ],
+  "source_loco_influence_summary": [
+    {
+      "source": "AVA",
+      "min": -0.2613520052236389,
+      "median": 8.761624155915715,
+      "mean": 54.90625304832318,
+      "max": 267.63125529890715
+    },
+    {
+      "source": "BANC",
+      "min": -0.9296601047051585,
+      "median": 8.761624155915715,
+      "mean": 54.80628523399617,
+      "max": 267.63125529890715
+    },
+    {
+      "source": "JEA",
+      "min": -63.013007592281895,
+      "median": 8.42521439201687,
+      "mean": 53.25241002352834,
+      "max": 267.63125529890715
+    },
+    {
+      "source": "NWMT",
+      "min": -48.83971049690581,
+      "median": 2.439021362234866,
+      "mean": 22.219039421268764,
+      "max": 256.40578772586156
+    },
+    {
+      "source": "SC",
+      "min": -85.3136487874059,
+      "median": 1.236479528941972,
+      "mean": 44.870596846897016,
+      "max": 267.63125529890715
+    },
+    {
+      "source": "SCEG",
+      "min": -13.888553714605564,
+      "median": 7.48930660949452,
+      "mean": 52.658534524044576,
+      "max": 267.63125529890715
+    },
+    {
+      "source": "SCL",
+      "min": 0.0,
+      "median": 8.691804097163214,
+      "mean": 54.90294591579435,
+      "max": 267.63125529890715
+    },
+    {
+      "source": "SEC",
+      "min": -18.9310116919807,
+      "median": 8.691804097163214,
+      "mean": 54.783068369914076,
+      "max": 267.63125529890715
+    },
+    {
+      "source": "SWPP",
+      "min": -0.5758217949972257,
+      "median": 8.761624155915715,
+      "mean": 54.89349875464977,
+      "max": 267.63125529890715
+    },
+    {
+      "source": "WACM",
+      "min": -45.1909901659692,
+      "median": 2.4342184241677147,
+      "mean": 48.524954986864635,
+      "max": 267.63125529890715
+    }
+  ],
+  "input_hashes": {
+    "freeze.json": "6fd51f0c32cab38dfb59db135521411b44a830dfdcbdcfc3ec43a1fbc09687f3",
+    "prediction_seal.json": "07580823d07b7e47906d7630a384da235fc25e2f0720b82dfd7794dfbb17ce75",
+    "calibration_seal.json": "7d883be2afb9032637a14bb9f312520ed11b70440ef5ec1d222fa623eec6d60d",
+    "calibration.json": "bde118154308cb575bd5b6a8787104bd0c8aa4b6ebb02dc924356ec1c86322b5",
+    "calibration.csv": "2127735429ca7dcb34889d434bc73a129fc4c69f3c0f31a76b82647e8fdca8b9"
+  },
+  "source_effects_csv_sha256": "828a13cb7f411625162d9bd445968519d97e64e68e77136077112b54c8451c6f",
+  "interpretation_limit": "Descriptive calibration-source influence only; not independent target validation, a coverage guarantee, or a basis for source/lag/threshold selection."
+}

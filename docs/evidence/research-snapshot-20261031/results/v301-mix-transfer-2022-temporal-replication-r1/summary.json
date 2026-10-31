@@ -1,0 +1,52 @@
+{
+  "status": "SAME_SOURCE_TEMPORAL_REPLICATION_RETROSPECTIVE",
+  "n_provinces": 30,
+  "training_target_year": 2021,
+  "training_mix_year": 2020,
+  "test_target_year": 2022,
+  "test_mix_year": 2021,
+  "models": [
+    {
+      "method": "global_mean",
+      "mae": 0.12072436781609192,
+      "rmse": 0.16507270111916159,
+      "mean_signed_error": 0.02324666666666666,
+      "p90_absolute_error": 0.21160827586206926,
+      "mae_reduction_vs_global_pct": 0.0
+    },
+    {
+      "method": "full8_mix",
+      "mae": 0.05964306786133711,
+      "rmse": 0.08476816389402478,
+      "mean_signed_error": 0.023297626799123086,
+      "p90_absolute_error": 0.11782740006587865,
+      "mae_reduction_vs_global_pct": 50.595667684758
+    },
+    {
+      "method": "coarse5_mix",
+      "mae": 0.05979159362611065,
+      "rmse": 0.08136219755411817,
+      "mean_signed_error": 0.041477590860010266,
+      "p90_absolute_error": 0.13053909178485723,
+      "mae_reduction_vs_global_pct": 50.47263886509187
+    },
+    {
+      "method": "local_2021_delayed_reference",
+      "mae": 0.03526666666666666,
+      "rmse": 0.04360282100965487,
+      "mean_signed_error": 0.02324666666666666,
+      "p90_absolute_error": 0.06924999999999998,
+      "mae_reduction_vs_global_pct": 70.78744970494199
+    }
+  ],
+  "protocol_sha256": "550f04d67d04c3ef94ad4ac2285ac5c20bec66659afb6df03ddcd1aeb7fbe0a4",
+  "factor_table_sha256": "d29b51e591bd81722443508b4afd9bac5d2740da56f4052029c6bb30efc15b19",
+  "ember_input_sha256": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+  "script_sha256": "2df20835c4cff19314ac62dc92d767e2e17e47706e942bc7c92e948186edd626",
+  "limitations": [
+    "Same official target series and same Ember retrospective input family as V300.",
+    "Official annual target is a consumption-accounting grid factor, not hourly generation CIF.",
+    "No Ember release vintage; lagged mix timing is not verified historical as-of availability.",
+    "No hourly shape, hourly coverage, or exceedance prediction is evaluated."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "assertion_failures": 0,
+  "archives": [
+    {
+      "archive": "v186-monthly-history-zero-risk-preflight-r1",
+      "input_hashes_checked": 569,
+      "output_hashes_checked": 1
+    },
+    {
+      "archive": "v186-monthly-history-zero-risk-r1",
+      "input_hashes_checked": 571,
+      "output_hashes_checked": 64
+    },
+    {
+      "archive": "v186-monthly-history-zero-risk-audit-r1",
+      "input_hashes_checked": 637,
+      "output_hashes_checked": 2
+    }
+  ],
+  "syntax_checked": [
+    "scripts/monthly_history_zero_risk.py",
+    "scripts/v186_monthly_history_zero_risk.py",
+    "scripts/v186_audit_monthly_history_zero_risk.py"
+  ],
+  "scope": "Read-only final input/output hash and AST verification; no new fitting or scoring."
+}

@@ -1,0 +1,6 @@
+{
+  "assertion_failures": 0,
+  "independent_cdf_integral_checks": 20,
+  "scope": "Finite observed cohort lower bound for one fixed CDF per month, not a lower bound for hour-conditioned prediction.",
+  "source_summary_sha256": "800459bee2820ba3dabda95b07ef09b9e09b6c1bd92951893225f834df22fe99"
+}

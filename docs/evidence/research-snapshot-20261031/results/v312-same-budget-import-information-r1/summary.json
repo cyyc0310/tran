@@ -1,0 +1,66 @@
+{
+  "experiment": "V312 robust same-budget information value for monthly imported carbon exposure",
+  "n_provinces": 31,
+  "n_months": 12,
+  "province_month_outcomes": 372,
+  "n_annual_routes": 116,
+  "route_measurement_design": "31 largest annual routes by volume or by volume times origin annual factor; 11 months per route, December inferred from annual total",
+  "risk_target": "imported source-factor-weighted electricity carbon exposure divided by local monthly generation",
+  "risk_target_is_hourly_cif": false,
+  "source_factor_vintage": "V310 annual technology-weighted generation factors from the same Zenodo record",
+  "monthly_generation_input": "V294 Ember estimate, used only for total-generation capacity constraints",
+  "method": "two-copy LP; maximum objective difference among feasible schedules that agree on observed fields",
+  "summary_by_information_set": [
+    {
+      "information_set": "annual_od_only",
+      "additional_independent_fields": 0,
+      "mean_baseline_width_kgco2e_kwh": 1.581780590067692,
+      "mean_remaining_width_kgco2e_kwh": 1.581780590067692,
+      "median_remaining_width_kgco2e_kwh": 1.0206294940451792,
+      "mean_guaranteed_relative_width_reduction": 0.0,
+      "median_guaranteed_relative_width_reduction": 0.0,
+      "province_months_with_zero_remaining_width": 0
+    },
+    {
+      "information_set": "national_monthly_receipts",
+      "additional_independent_fields": 11,
+      "mean_baseline_width_kgco2e_kwh": 1.581780590067692,
+      "mean_remaining_width_kgco2e_kwh": 1.581780590067692,
+      "median_remaining_width_kgco2e_kwh": 1.0206294940451792,
+      "mean_guaranteed_relative_width_reduction": 0.0,
+      "median_guaranteed_relative_width_reduction": 0.0,
+      "province_months_with_zero_remaining_width": 0
+    },
+    {
+      "information_set": "province_monthly_receipts",
+      "additional_independent_fields": 341,
+      "mean_baseline_width_kgco2e_kwh": 1.581780590067692,
+      "mean_remaining_width_kgco2e_kwh": 0.23821150555152684,
+      "median_remaining_width_kgco2e_kwh": 0.05372298505083678,
+      "mean_guaranteed_relative_width_reduction": 0.8533079163062323,
+      "median_guaranteed_relative_width_reduction": 0.931549500209781,
+      "province_months_with_zero_remaining_width": 24
+    },
+    {
+      "information_set": "top31_volume_routes_monthly",
+      "additional_independent_fields": 341,
+      "mean_baseline_width_kgco2e_kwh": 1.581780590067692,
+      "mean_remaining_width_kgco2e_kwh": 0.42928239542575386,
+      "median_remaining_width_kgco2e_kwh": 0.2771594141850982,
+      "mean_guaranteed_relative_width_reduction": 0.4219266246332348,
+      "median_guaranteed_relative_width_reduction": 0.2622726108122143,
+      "province_months_with_zero_remaining_width": 12
+    },
+    {
+      "information_set": "top31_carbon_mass_routes_monthly",
+      "additional_independent_fields": 341,
+      "mean_baseline_width_kgco2e_kwh": 1.581780590067692,
+      "mean_remaining_width_kgco2e_kwh": 0.40455202636009047,
+      "median_remaining_width_kgco2e_kwh": 0.1896685975741112,
+      "mean_guaranteed_relative_width_reduction": 0.4608796228581356,
+      "median_guaranteed_relative_width_reduction": 0.47447332164512324,
+      "province_months_with_zero_remaining_width": 48
+    }
+  ],
+  "interpretation": "Worst-case conditional diameter over all possible measured values; no synthetic monthly schedule is treated as truth."
+}

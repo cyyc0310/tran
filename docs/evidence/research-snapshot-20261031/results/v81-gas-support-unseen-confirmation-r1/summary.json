@@ -1,0 +1,319 @@
+{
+  "status": "UNSEEN_REGION_RETROSPECTIVE_IDENTIFICATION_CONFIRMATION_NOT_FORECAST",
+  "targets": [
+    "AVRN",
+    "DEAA"
+  ],
+  "periods": [
+    "2024H2",
+    "2025H1",
+    "2025H2"
+  ],
+  "taus": [
+    100,
+    300
+  ],
+  "quality": [
+    {
+      "region": "AVRN",
+      "period": "2024H2",
+      "complete_days": 182,
+      "expected_days": 184,
+      "fraction": 0.9891304347826086,
+      "quality_pass": true
+    },
+    {
+      "region": "DEAA",
+      "period": "2024H2",
+      "complete_days": 168,
+      "expected_days": 184,
+      "fraction": 0.9130434782608695,
+      "quality_pass": true
+    },
+    {
+      "region": "AVRN",
+      "period": "2025H1",
+      "complete_days": 164,
+      "expected_days": 181,
+      "fraction": 0.9060773480662984,
+      "quality_pass": true
+    },
+    {
+      "region": "DEAA",
+      "period": "2025H1",
+      "complete_days": 130,
+      "expected_days": 181,
+      "fraction": 0.7182320441988951,
+      "quality_pass": false
+    },
+    {
+      "region": "AVRN",
+      "period": "2025H2",
+      "complete_days": 184,
+      "expected_days": 184,
+      "fraction": 1.0,
+      "quality_pass": true
+    },
+    {
+      "region": "DEAA",
+      "period": "2025H2",
+      "complete_days": 177,
+      "expected_days": 184,
+      "fraction": 0.9619565217391305,
+      "quality_pass": true
+    }
+  ],
+  "rows": 1750,
+  "summary": [
+    {
+      "region": "AVRN",
+      "period": "2024H2",
+      "tau": 100,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.12087912087912088,
+      "localM_fullG_Kge8": 0.6043956043956044,
+      "localM_G2_Kge8": 0.5604395604395604,
+      "localM_L1_Kge8": 0.4065934065934066,
+      "days": 182
+    },
+    {
+      "region": "AVRN",
+      "period": "2024H2",
+      "tau": 300,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.0,
+      "localM_fullG_Kge8": 0.22527472527472528,
+      "localM_G2_Kge8": 0.2087912087912088,
+      "localM_L1_Kge8": 0.08241758241758242,
+      "days": 182
+    },
+    {
+      "region": "AVRN",
+      "period": "2025H1",
+      "tau": 100,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.06382978723404255,
+      "localM_fullG_Kge8": 0.49645390070921985,
+      "localM_G2_Kge8": 0.48226950354609927,
+      "localM_L1_Kge8": 0.375886524822695,
+      "days": 141
+    },
+    {
+      "region": "AVRN",
+      "period": "2025H1",
+      "tau": 100,
+      "local_support_M": 1000,
+      "globalM_fullG_Kge8": 0.0,
+      "localM_fullG_Kge8": 0.0,
+      "localM_G2_Kge8": 0.0,
+      "localM_L1_Kge8": 0.0,
+      "days": 23
+    },
+    {
+      "region": "AVRN",
+      "period": "2025H1",
+      "tau": 300,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.0,
+      "localM_fullG_Kge8": 0.2624113475177305,
+      "localM_G2_Kge8": 0.2198581560283688,
+      "localM_L1_Kge8": 0.0425531914893617,
+      "days": 141
+    },
+    {
+      "region": "AVRN",
+      "period": "2025H1",
+      "tau": 300,
+      "local_support_M": 1000,
+      "globalM_fullG_Kge8": 0.0,
+      "localM_fullG_Kge8": 0.0,
+      "localM_G2_Kge8": 0.0,
+      "localM_L1_Kge8": 0.0,
+      "days": 23
+    },
+    {
+      "region": "AVRN",
+      "period": "2025H2",
+      "tau": 100,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.08695652173913043,
+      "localM_fullG_Kge8": 0.6467391304347826,
+      "localM_G2_Kge8": 0.5652173913043478,
+      "localM_L1_Kge8": 0.44021739130434784,
+      "days": 184
+    },
+    {
+      "region": "AVRN",
+      "period": "2025H2",
+      "tau": 300,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.0,
+      "localM_fullG_Kge8": 0.19021739130434784,
+      "localM_G2_Kge8": 0.15760869565217392,
+      "localM_L1_Kge8": 0.03260869565217391,
+      "days": 184
+    },
+    {
+      "region": "DEAA",
+      "period": "2024H2",
+      "tau": 100,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.9933333333333333,
+      "localM_fullG_Kge8": 1.0,
+      "localM_G2_Kge8": 1.0,
+      "localM_L1_Kge8": 1.0,
+      "days": 150
+    },
+    {
+      "region": "DEAA",
+      "period": "2024H2",
+      "tau": 100,
+      "local_support_M": 1000,
+      "globalM_fullG_Kge8": 1.0,
+      "localM_fullG_Kge8": 1.0,
+      "localM_G2_Kge8": 0.7777777777777778,
+      "localM_L1_Kge8": 1.0,
+      "days": 18
+    },
+    {
+      "region": "DEAA",
+      "period": "2024H2",
+      "tau": 300,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.0,
+      "localM_fullG_Kge8": 1.0,
+      "localM_G2_Kge8": 1.0,
+      "localM_L1_Kge8": 1.0,
+      "days": 150
+    },
+    {
+      "region": "DEAA",
+      "period": "2024H2",
+      "tau": 300,
+      "local_support_M": 1000,
+      "globalM_fullG_Kge8": 0.0,
+      "localM_fullG_Kge8": 0.0,
+      "localM_G2_Kge8": 0.0,
+      "localM_L1_Kge8": 0.0,
+      "days": 18
+    },
+    {
+      "region": "DEAA",
+      "period": "2025H2",
+      "tau": 100,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.9830508474576272,
+      "localM_fullG_Kge8": 1.0,
+      "localM_G2_Kge8": 1.0,
+      "localM_L1_Kge8": 1.0,
+      "days": 177
+    },
+    {
+      "region": "DEAA",
+      "period": "2025H2",
+      "tau": 300,
+      "local_support_M": 400,
+      "globalM_fullG_Kge8": 0.0,
+      "localM_fullG_Kge8": 1.0,
+      "localM_G2_Kge8": 1.0,
+      "localM_L1_Kge8": 1.0,
+      "days": 177
+    }
+  ],
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "AVRN": {
+      "eligible_months": 45,
+      "dropped_months": 9
+    },
+    "DEAA": {
+      "eligible_months": 34,
+      "dropped_months": 20
+    }
+  },
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "protocol_sha256": "56796c25d7c97d08defdb30f1a86c8a01e65341c568e836cff35f937521d001c",
+  "script_sha256": "4f51c48f87863f732ddfe1e80158abffb30aa64c16e67fde093ee5ea50db054c",
+  "limitations": [
+    "Two regions selected by quality and annual fuel-column metadata only; limited descriptive confirmation.",
+    "Fixed EF EIA proxy and same-period identification, not forecasting or coverage.",
+    "Requires local 6h H/G and G2/L1 telemetry beyond monthly fuel support; not China monthly-only deployable."
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "status": "SAME_COARSE_CAPACITY_SIDE_VS_DETAIL_RETROSPECTIVE_PROXY",
+  "region_months": 358,
+  "scored_rows": 2148,
+  "frontier": [
+    {
+      "tau": 600,
+      "rate": 0.01,
+      "detailed_month_positive": 0.0,
+      "detailed_month_negative": 0.560064935064935,
+      "detailed_month_abstain": 0.4399350649350649,
+      "detailed_month_width": 315.93705285942127,
+      "threshold_side_month_positive": 0.0,
+      "threshold_side_month_negative": 0.560064935064935,
+      "threshold_side_month_abstain": 0.4399350649350649,
+      "threshold_side_month_width": 315.9699532923217,
+      "detailed_month_plus_coarse_cap_positive": 0.06926406926406926,
+      "detailed_month_plus_coarse_cap_negative": 0.560064935064935,
+      "detailed_month_plus_coarse_cap_abstain": 0.37067099567099565,
+      "detailed_month_plus_coarse_cap_width": 211.1709871269082,
+      "threshold_side_plus_coarse_cap_positive": 0.04285714285714286,
+      "threshold_side_plus_coarse_cap_negative": 0.560064935064935,
+      "threshold_side_plus_coarse_cap_abstain": 0.39707792207792203,
+      "threshold_side_plus_coarse_cap_width": 214.19416533758638,
+      "coarse_month_positive": 0.0,
+      "coarse_month_negative": 0.19047619047619047,
+      "coarse_month_abstain": 0.8095238095238095,
+      "coarse_month_width": 582.0048468031551,
+      "coarse_month_plus_capacity_positive": 0.0,
+      "coarse_month_plus_capacity_negative": 0.19047619047619047,
+      "coarse_month_plus_capacity_abstain": 0.8095238095238095,
+      "coarse_month_plus_capacity_width": 554.8375461109483
+    },
+    {
+      "tau": 600,
+      "rate": 0.05,
+      "detailed_month_positive": 0.0,
+      "detailed_month_negative": 0.560064935064935,
+      "detailed_month_abstain": 0.4399350649350649,
+      "detailed_month_width": 315.93705285942127,
+      "threshold_side_month_positive": 0.0,
+      "threshold_side_month_negative": 0.560064935064935,
+      "threshold_side_month_abstain": 0.4399350649350649,
+      "threshold_side_month_width": 315.9699532923217,
+      "detailed_month_plus_coarse_cap_positive": 0.047619047619047616,
+      "detailed_month_plus_coarse_cap_negative": 0.5733225108225108,
+      "detailed_month_plus_coarse_cap_abstain": 0.3790584415584416,
+      "detailed_month_plus_coarse_cap_width": 211.1709871269082,
+      "threshold_side_plus_coarse_cap_positive": 0.02619047619047619,
+      "threshold_side_plus_coarse_cap_negative": 0.5703463203463203,
+      "threshold_side_plus_coarse_cap_abstain": 0.40346320346320347,
+      "threshold_side_plus_coarse_cap_width": 214.19416533758638,
+      "coarse_month_positive": 0.0,
+      "coarse_month_negative": 0.19047619047619047,
+      "coarse_month_abstain": 0.8095238095238095,
+      "coarse_month_width": 582.0048468031551,
+      "coarse_month_plus_capacity_positive": 0.0,
+      "coarse_month_plus_capacity_negative": 0.19047619047619047,
+      "coarse_month_plus_capacity_abstain": 0.8095238095238095,
+      "coarse_month_plus_capacity_width": 554.8375461109483
+    },
+    {
+      "tau": 600,
+      "rate": 0.1,
+      "detailed_month_positive": 0.0,
+      "detailed_month_negative": 0.560064935064935,
+      "detailed_month_abstain": 0.4399350649350649,
+      "detailed_month_width": 315.93705285942127,
+      "threshold_side_month_positive": 0.0,
+      "threshold_side_month_negative": 0.560064935064935,
+      "threshold_side_month_abstain": 0.4399350649350649,
+      "threshold_side_month_width": 315.9699532923217,
+      "detailed_month_plus_coarse_cap_positive": 0.03571428571428571,
+      "detailed_month_plus_coarse_cap_negative": 0.6087662337662338,
+      "detailed_month_plus_coarse_cap_abstain": 0.3555194805194805,
+      "detailed_month_plus_coarse_cap_width": 211.1709871269082,
+      "threshold_side_plus_coarse_cap_positive": 0.016666666666666666,
+      "threshold_side_plus_coarse_cap_negative": 0.6087662337662338,
+      "threshold_side_plus_coarse_cap_abstain": 0.3745670995670996,
+      "threshold_side_plus_coarse_cap_width": 214.19416533758638,
+      "coarse_month_positive": 0.0,
+      "coarse_month_negative": 0.19047619047619047,
+      "coarse_month_abstain": 0.8095238095238095,
+      "coarse_month_width": 582.0048468031551,
+      "coarse_month_plus_capacity_positive": 0.0,
+      "coarse_month_plus_capacity_negative": 0.19047619047619047,
+      "coarse_month_plus_capacity_abstain": 0.8095238095238095,
+      "coarse_month_plus_capacity_width": 554.8375461109483
+    },
+    {
+      "tau": 900,
+      "rate": 0.01,
+      "detailed_month_positive": 0.0,
+      "detailed_month_negative": 0.7034632034632035,
+      "detailed_month_abstain": 0.29653679653679654,
+      "detailed_month_width": 213.37049441786283,
+      "threshold_side_month_positive": 0.0,
+      "threshold_side_month_negative": 0.7034632034632035,
+      "threshold_side_month_abstain": 0.29653679653679654,
+      "threshold_side_month_width": 213.3823991797676,
+      "detailed_month_plus_coarse_cap_positive": 0.0,
+      "detailed_month_plus_coarse_cap_negative": 0.7034632034632035,
+      "detailed_month_plus_coarse_cap_abstain": 0.29653679653679654,
+      "detailed_month_plus_coarse_cap_width": 137.25450748082326,
+      "threshold_side_plus_coarse_cap_positive": 0.0,
+      "threshold_side_plus_coarse_cap_negative": 0.7034632034632035,
+      "threshold_side_plus_coarse_cap_abstain": 0.29653679653679654,
+      "threshold_side_plus_coarse_cap_width": 142.1741323004481,
+      "coarse_month_positive": 0.0,
+      "coarse_month_negative": 0.19047619047619047,
+      "coarse_month_abstain": 0.8095238095238095,
+      "coarse_month_width": 581.6320556079954,
+      "coarse_month_plus_capacity_positive": 0.0,
+      "coarse_month_plus_capacity_negative": 0.19047619047619047,
+      "coarse_month_plus_capacity_abstain": 0.8095238095238095,
+      "coarse_month_plus_capacity_width": 439.0716188469008
+    },
+    {
+      "tau": 900,
+      "rate": 0.05,
+      "detailed_month_positive": 0.0,
+      "detailed_month_negative": 0.7034632034632035,
+      "detailed_month_abstain": 0.29653679653679654,
+      "detailed_month_width": 213.37049441786283,
+      "threshold_side_month_positive": 0.0,
+      "threshold_side_month_negative": 0.7034632034632035,
+      "threshold_side_month_abstain": 0.29653679653679654,
+      "threshold_side_month_width": 213.3823991797676,
+      "detailed_month_plus_coarse_cap_positive": 0.0,
+      "detailed_month_plus_coarse_cap_negative": 0.7034632034632035,
+      "detailed_month_plus_coarse_cap_abstain": 0.29653679653679654,
+      "detailed_month_plus_coarse_cap_width": 137.25450748082326,
+      "threshold_side_plus_coarse_cap_positive": 0.0,
+      "threshold_side_plus_coarse_cap_negative": 0.7034632034632035,
+      "threshold_side_plus_coarse_cap_abstain": 0.29653679653679654,
+      "threshold_side_plus_coarse_cap_width": 142.1741323004481,
+      "coarse_month_positive": 0.0,
+      "coarse_month_negative": 0.19047619047619047,
+      "coarse_month_abstain": 0.8095238095238095,
+      "coarse_month_width": 581.6320556079954,
+      "coarse_month_plus_capacity_positive": 0.0,
+      "coarse_month_plus_capacity_negative": 0.19047619047619047,
+      "coarse_month_plus_capacity_abstain": 0.8095238095238095,
+      "coarse_month_plus_capacity_width": 439.0716188469008
+    },
+    {
+      "tau": 900,
+      "rate": 0.1,
+      "detailed_month_positive": 0.0,
+      "detailed_month_negative": 0.7034632034632035,
+      "detailed_month_abstain": 0.29653679653679654,
+      "detailed_month_width": 213.37049441786283,
+      "threshold_side_month_positive": 0.0,
+      "threshold_side_month_negative": 0.7034632034632035,
+      "threshold_side_month_abstain": 0.29653679653679654,
+      "threshold_side_month_width": 213.3823991797676,
+      "detailed_month_plus_coarse_cap_positive": 0.0,
+      "detailed_month_plus_coarse_cap_negative": 0.7252886002886003,
+      "detailed_month_plus_coarse_cap_abstain": 0.2747113997113997,
+      "detailed_month_plus_coarse_cap_width": 137.25450748082326,
+      "threshold_side_plus_coarse_cap_positive": 0.0,
+      "threshold_side_plus_coarse_cap_negative": 0.7252886002886003,
+      "threshold_side_plus_coarse_cap_abstain": 0.2747113997113997,
+      "threshold_side_plus_coarse_cap_width": 142.1741323004481,
+      "coarse_month_positive": 0.0,
+      "coarse_month_negative": 0.19047619047619047,
+      "coarse_month_abstain": 0.8095238095238095,
+      "coarse_month_width": 581.6320556079954,
+      "coarse_month_plus_capacity_positive": 0.0,
+      "coarse_month_plus_capacity_negative": 0.22448979591836735,
+      "coarse_month_plus_capacity_abstain": 0.7755102040816326,
+      "coarse_month_plus_capacity_width": 439.0716188469008
+    }
+  ],
+  "capacity_source_sha256": {
+    "2023": "1447e23e608bea1523961542a90eb93ea86715067a37f211282541461049b46f",
+    "2024": "0aaae04812cd4ab87a3e346bdf93848a3cc15053fd4dc2a4cf82d2aeac95f12b"
+  },
+  "hourly_source_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "DOPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "EPE": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "GCPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TIDC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    }
+  },
+  "protocol_sha256": "5a503b45c26d30a25d2f83f7caf78256f4cf75ede5633307d782a187277d9198",
+  "script_sha256": "fb4c28da381bbfdd793938cfafd729ac28edc934de55d3528102048c74063a24",
+  "limitations": [
+    "Threshold-side energy is oracle-aggregated from EIA hourly fuel data.",
+    "The fixed 358-month cohort was selected using retrospective target-hour capacity audits.",
+    "EF intervals and source-specific mapping uncertainty are not validated for China."
+  ]
+}

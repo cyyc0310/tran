@@ -1,0 +1,25 @@
+{
+  "experiment": "V386 Shanghai annual consumption boundary audit",
+  "status": "SCOPE_AND_INFORMATION_BUDGET_AUDIT_NOT_FORECAST_VALIDATION",
+  "input_units": "100 million kWh",
+  "balance_closes": true,
+  "local_generation_share_of_use": 0.546875,
+  "outside_import_share_of_use": 0.453125,
+  "reported_renewable_consumption_share": 0.31350806451612906,
+  "local_new_energy_generation_share_of_use": 0.05216733870967742,
+  "local_new_energy_share_of_local_generation": 0.09539170506912442,
+  "renewable_consumption_minus_local_new_energy_generation_100m_kwh": 518.5,
+  "illustrative_import_factor_support_width_g_kwh_if_import_ef_in_0_to_1000": 453.125,
+  "illustrative_assumption": "Holding local annual factor fixed and varying only average imported direct EF over [0,1000] g/kWh; not an empirical EF interval.",
+  "limits": [
+    "Annual values do not identify monthly or hourly import volumes, sending regions, or imported generation mix.",
+    "Renewable consumption accounting and local new-energy generation are related but not asserted to be an exact source attribution identity.",
+    "NBS user exports are local generation statistics and do not supply the consumption-side cross-boundary carbon flow.",
+    "No hourly CIF labels, forecast accuracy, coverage, or interval efficiency are tested."
+  ],
+  "sha256": {
+    "data/china/shanghai_2024_power_balance_anchors.csv": "663efd1cd64ca4b4bc33c746079792a7d64bc1ff927f6b32b1b5163da844aaa6",
+    "docs/V386_SHANGHAI_CONSUMPTION_BOUNDARY_PROTOCOL.md": "afadb36b38c45103e26bc215d31127738aa7b6aeaccec12547f5bc87f14ed8f2",
+    "scripts/v386_shanghai_consumption_boundary_audit.py": "066ee5ccf1efa6f50bf435073ce21af3ea68ad1cf2385cbf7f5a0c9ee8efc033"
+  }
+}

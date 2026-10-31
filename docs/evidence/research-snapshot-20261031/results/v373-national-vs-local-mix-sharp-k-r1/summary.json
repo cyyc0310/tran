@@ -1,0 +1,94 @@
+{
+  "experiment": "V373 sharp K hull comparison: provincial monthly mix versus national pooled mix",
+  "status": "IDENTIFICATION_SENSITIVITY_NOT_FORECAST_VALIDATION",
+  "n_rows": 1320,
+  "n_provinces": 30,
+  "capacity_vintages": [
+    2022,
+    2023
+  ],
+  "thresholds_g_kwh": [
+    100,
+    300
+  ],
+  "thermal_ef_endpoints_g_kwh": [
+    400,
+    1000
+  ],
+  "group_factors": "thermal EF varies over endpoint hull [400,1000] g/kWh; hydro/nuclear/wind/solar/unresolved fixed at 0 direct g/kWh",
+  "summary": [
+    {
+      "capacity_vintage": 2022,
+      "threshold_g_kwh": 100,
+      "province_periods": 330,
+      "local_feasible_n": 330,
+      "national_mix_feasible_n": 262,
+      "both_feasible_n": 262,
+      "national_mix_infeasible_n": 68,
+      "local_mean_width_paired_h": 433.293893129771,
+      "national_mean_width_paired_h": 452.18702290076334,
+      "mean_width_reduction_from_local_mix_h": 18.893129770992367,
+      "local_narrower_n": 180,
+      "local_wider_n": 81,
+      "equal_width_n": 1
+    },
+    {
+      "capacity_vintage": 2022,
+      "threshold_g_kwh": 300,
+      "province_periods": 330,
+      "local_feasible_n": 330,
+      "national_mix_feasible_n": 262,
+      "both_feasible_n": 262,
+      "national_mix_infeasible_n": 68,
+      "local_mean_width_paired_h": 713.5038167938932,
+      "national_mean_width_paired_h": 796.8549618320611,
+      "mean_width_reduction_from_local_mix_h": 83.35114503816794,
+      "local_narrower_n": 129,
+      "local_wider_n": 0,
+      "equal_width_n": 133
+    },
+    {
+      "capacity_vintage": 2023,
+      "threshold_g_kwh": 100,
+      "province_periods": 330,
+      "local_feasible_n": 330,
+      "national_mix_feasible_n": 262,
+      "both_feasible_n": 262,
+      "national_mix_infeasible_n": 68,
+      "local_mean_width_paired_h": 448.6297709923664,
+      "national_mean_width_paired_h": 467.9618320610687,
+      "mean_width_reduction_from_local_mix_h": 19.33206106870229,
+      "local_narrower_n": 180,
+      "local_wider_n": 81,
+      "equal_width_n": 1
+    },
+    {
+      "capacity_vintage": 2023,
+      "threshold_g_kwh": 300,
+      "province_periods": 330,
+      "local_feasible_n": 330,
+      "national_mix_feasible_n": 262,
+      "both_feasible_n": 262,
+      "national_mix_infeasible_n": 68,
+      "local_mean_width_paired_h": 716.4160305343512,
+      "national_mean_width_paired_h": 796.8549618320611,
+      "mean_width_reduction_from_local_mix_h": 80.43893129770993,
+      "local_narrower_n": 129,
+      "local_wider_n": 0,
+      "equal_width_n": 133
+    }
+  ],
+  "limitations": [
+    "V320 OREO/NBS transcription, not raw response from the user-provided NBS portal; above-designated-size scope.",
+    "National-mix arm preserves each province's five-category total and annual unexplained remainder while replacing its within-five-category shares with pooled 2023 shares.",
+    "Annual installed capacity is a retrospective group-capacity proxy, not hourly available capacity.",
+    "Sharp hulls are conditional identification sets; no Chinese hourly labels, empirical interval coverage, or forecast skill are evaluated."
+  ],
+  "sha256": {
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "results/v341-china-complete-category-hull-r2/monthly_margin_capacity_audit.csv": "0fdf3711092638bf4e8e3fadf5191244e890b0899e70b26aaebd5afd809af62b",
+    "scripts/v342_china_sharp_group_hull.py": "cf8b6bfe972a3a5c9ad771706beb94751ea21c4d3f02783f46b96163a781b105",
+    "docs/V373_NATIONAL_VS_LOCAL_MIX_SHARP_K_PROTOCOL.md": "8a4f4cad40db7d8e05327a0a76a32cf1d8af2122d5b565cf475259f3cfd0d1b6",
+    "scripts/v373_national_vs_local_mix_sharp_k.py": "fa03948c060acdd040204eafbf70357100a0b1edfba7f2ef31d2ca828f31737f"
+  }
+}

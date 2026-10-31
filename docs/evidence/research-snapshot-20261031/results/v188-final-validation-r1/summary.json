@@ -1,0 +1,38 @@
+{
+  "assertion_failures": 0,
+  "archives": [
+    {
+      "archive": "v188-forward-risk-inventory-r1",
+      "input_hashes_checked": 20,
+      "output_hashes_checked": 3
+    },
+    {
+      "archive": "v188-forward-zero-risk-preflight-r1",
+      "input_hashes_checked": 35,
+      "output_hashes_checked": 2
+    },
+    {
+      "archive": "v188-forward-zero-risk-r1",
+      "input_hashes_checked": 38,
+      "output_hashes_checked": 76
+    },
+    {
+      "archive": "v188-forward-zero-risk-audit-r1",
+      "input_hashes_checked": 118,
+      "output_hashes_checked": 8
+    }
+  ],
+  "syntax_checked": [
+    "scripts/v188_forward_risk_inventory.py",
+    "scripts/forward_zero_risk.py",
+    "scripts/v188_forward_zero_risk.py",
+    "scripts/v188_audit_forward_zero_risk.py"
+  ],
+  "static_tool_availability": {
+    "ruff": null,
+    "mypy": null,
+    "pylint": null,
+    "black": null
+  },
+  "scope": "Read-only full archived input/output SHA256 and AST verification; no new fitting or scoring."
+}

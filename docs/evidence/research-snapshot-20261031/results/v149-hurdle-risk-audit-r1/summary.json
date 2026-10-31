@@ -1,0 +1,7 @@
+{
+  "assertion_failures": 0,
+  "independently_reconstructed_radii": 96,
+  "independently_reconstructed_intervals": 4224,
+  "source_summary_sha256": "afb6d124c915512e72a393bf8017bd0e54e68831a271c1f2529bd976771f2027",
+  "scope": "Saved scale/region score and curve reconstruction; not independent data validation."
+}

@@ -1,0 +1,176 @@
+{
+  "status": "FACTOR_SUPPORT_VALUE_SENSITIVITY_NO_HOURLY_LABELS",
+  "n_provinces": 30,
+  "n_province_periods": 330,
+  "n_fixed_factor_rows": 6930,
+  "expected_fixed_factor_rows": 6930,
+  "n_support_band_rows": 3960,
+  "expected_support_band_rows": 3960,
+  "tau_g_kwh": 300,
+  "thermal_ef_grid_g_kwh": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000
+  ],
+  "support_bands": [
+    [
+      400,
+      1000
+    ],
+    [
+      500,
+      900
+    ],
+    [
+      600,
+      800
+    ],
+    [
+      700,
+      700
+    ]
+  ],
+  "frontier": [
+    {
+      "arm": "monthly_only",
+      "thermal_ef_low": 400,
+      "thermal_ef_high": 1000,
+      "support_width_g_kwh": 600,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 795.7666666666667,
+      "median_K_hull_width_hours": 743.0,
+      "mean_hull_reduction_vs_400_1000_hours": 0.0
+    },
+    {
+      "arm": "monthly_only",
+      "thermal_ef_low": 500,
+      "thermal_ef_high": 900,
+      "support_width_g_kwh": 400,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 795.4727272727273,
+      "median_K_hull_width_hours": 743.0,
+      "mean_hull_reduction_vs_400_1000_hours": 0.293939393939354
+    },
+    {
+      "arm": "monthly_only",
+      "thermal_ef_low": 600,
+      "thermal_ef_high": 800,
+      "support_width_g_kwh": 200,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 795.4,
+      "median_K_hull_width_hours": 743.0,
+      "mean_hull_reduction_vs_400_1000_hours": 0.36666666666667425
+    },
+    {
+      "arm": "monthly_only",
+      "thermal_ef_low": 700,
+      "thermal_ef_high": 700,
+      "support_width_g_kwh": 0,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 795.3636363636364,
+      "median_K_hull_width_hours": 743.0,
+      "mean_hull_reduction_vs_400_1000_hours": 0.40303030303027754
+    },
+    {
+      "arm": "monthly_plus_2023_capacity",
+      "thermal_ef_low": 400,
+      "thermal_ef_high": 1000,
+      "support_width_g_kwh": 600,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 686.2030303030303,
+      "median_K_hull_width_hours": 700.0,
+      "mean_hull_reduction_vs_400_1000_hours": 0.0
+    },
+    {
+      "arm": "monthly_plus_2023_capacity",
+      "thermal_ef_low": 500,
+      "thermal_ef_high": 900,
+      "support_width_g_kwh": 400,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 594.2060606060606,
+      "median_K_hull_width_hours": 558.0,
+      "mean_hull_reduction_vs_400_1000_hours": 91.9969696969697
+    },
+    {
+      "arm": "monthly_plus_2023_capacity",
+      "thermal_ef_low": 600,
+      "thermal_ef_high": 800,
+      "support_width_g_kwh": 200,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 542.5575757575757,
+      "median_K_hull_width_hours": 504.0,
+      "mean_hull_reduction_vs_400_1000_hours": 143.64545454545464
+    },
+    {
+      "arm": "monthly_plus_2023_capacity",
+      "thermal_ef_low": 700,
+      "thermal_ef_high": 700,
+      "support_width_g_kwh": 0,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 511.6606060606061,
+      "median_K_hull_width_hours": 472.0,
+      "mean_hull_reduction_vs_400_1000_hours": 174.54242424242426
+    },
+    {
+      "arm": "monthly_plus_lagged_capacity",
+      "thermal_ef_low": 400,
+      "thermal_ef_high": 1000,
+      "support_width_g_kwh": 600,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 682.0484848484848,
+      "median_K_hull_width_hours": 695.0,
+      "mean_hull_reduction_vs_400_1000_hours": 0.0
+    },
+    {
+      "arm": "monthly_plus_lagged_capacity",
+      "thermal_ef_low": 500,
+      "thermal_ef_high": 900,
+      "support_width_g_kwh": 400,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 586.0575757575757,
+      "median_K_hull_width_hours": 551.0,
+      "mean_hull_reduction_vs_400_1000_hours": 95.9909090909091
+    },
+    {
+      "arm": "monthly_plus_lagged_capacity",
+      "thermal_ef_low": 600,
+      "thermal_ef_high": 800,
+      "support_width_g_kwh": 200,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 532.1121212121212,
+      "median_K_hull_width_hours": 489.0,
+      "mean_hull_reduction_vs_400_1000_hours": 149.93636363636358
+    },
+    {
+      "arm": "monthly_plus_lagged_capacity",
+      "thermal_ef_low": 700,
+      "thermal_ef_high": 700,
+      "support_width_g_kwh": 0,
+      "province_periods": 330,
+      "mean_K_hull_width_hours": 499.8757575757576,
+      "median_K_hull_width_hours": 460.0,
+      "mean_hull_reduction_vs_400_1000_hours": 182.17272727272723
+    }
+  ],
+  "limitations": [
+    "EF bands are sensitivity scenarios, not observed uncertainty intervals or data available from the NBS five-technology table.",
+    "Point-factor results are an oracle diagnostic, not a deployable forecast.",
+    "K is an exact set only under fixed-factor endpoint assumptions, monthly margins, group capacity bounds and positive output in both blocks.",
+    "No hourly China labels exist in this experiment; no empirical coverage or forecasting performance is measured."
+  ],
+  "sha256": {
+    "results/v341-china-complete-category-hull-r2/monthly_margin_capacity_audit.csv": "0fdf3711092638bf4e8e3fadf5191244e890b0899e70b26aaebd5afd809af62b",
+    "results/v341-china-complete-category-hull-r2/summary.json": "3d7c500ebdeaa78729e1562a73ef98315428ef50696fd941b886754849decc90",
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "data/china/cec_province_installed_capacity_2022_2023.csv": "d1cb23de66a206214a8ef3aec4e07f2f0b49402c56ac431e496c38e196669c27",
+    "scripts/v341_china_complete_category_hull.py": "64fdf2fdbae9774590656f7a71343733d796a37f45c740e609aae3e9afe9ccd4",
+    "scripts/v342_china_sharp_group_hull.py": "cf8b6bfe972a3a5c9ad771706beb94751ea21c4d3f02783f46b96163a781b105",
+    "scripts/v339_china_capacity_tail_identification.py": "25dc77fe096cec4a43efa97ba0b24775f945f0cce641238b5740ec81c7446e7c",
+    "docs/V343_THERMAL_EF_SUPPORT_VALUE_PROTOCOL.md": "62ad5cc5d5a880933d62df5068101e1a5fc1d7a871b825eb3f56922cbad0d42c",
+    "scripts/v343_thermal_ef_support_value.py": "ef95177438926f6cc7a71f11c4df32d3e6aec48dc3de87441701e879babc37e7"
+  }
+}

@@ -16,7 +16,7 @@ from transcif.models.dispatch import ProbabilisticDispatchNet
 from transcif.models.ensemble import (load_ensemble, predict_components, mixture,
                                      uncertainty_decomposition)
 from transcif.evaluation.scheduling import mechanism_decisions
-from transcif.training.fit import predict
+from transcif.inference import predict
 from transcif.training.transfer import support_diagnostics
 
 

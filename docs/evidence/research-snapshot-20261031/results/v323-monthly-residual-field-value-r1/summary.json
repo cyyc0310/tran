@@ -1,0 +1,200 @@
+{
+  "experiment": "V323 minimax value of monthly residual-generation measurements",
+  "n_provinces": 31,
+  "n_reporting_periods": 11,
+  "periods": [
+    "Jan-Feb",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12"
+  ],
+  "n_annual_od_routes": 116,
+  "monthly_residual_profile_fields": 310,
+  "annual_generation_remainder_TWh_sum": 601.5800000000002,
+  "annual_generation_remainder_TWh_min": 1.664999999999992,
+  "annual_generation_remainder_TWh_max": 66.77800000000002,
+  "unobserved_ef_support_kgco2e_kwh": [
+    0.0,
+    1.0
+  ],
+  "unobserved_ef_support_note": "Upper endpoint equals the maximum 2023 Ember source-month factor (1.0); this is a declared proxy support, not a validated engineering limit.",
+  "missing_technology_rows": 11,
+  "missing_category_handling": "For a missing category, no zero cap is imposed; its upper cap is the province-period reported total, also subject to the combined reported total cap.",
+  "monthly_receipt_budget": 310,
+  "target": "source-weighted imports divided by NBS above-size local generation within each reported period; Jan-Feb is a two-month aggregate; not consumption CIF or hourly risk",
+  "five_category_arm_information_value": {
+    "monthly_residual_profile_310_fields": {
+      "mean_paired_reduction": 0.0,
+      "median_paired_reduction": 0.0,
+      "positive_cells": 0,
+      "positive_provinces": 0,
+      "province_cluster_bootstrap_95pct": [
+        0.0,
+        0.0
+      ]
+    },
+    "monthly_receipts_310_fields": {
+      "mean_paired_reduction": 0.08032031939375239,
+      "median_paired_reduction": 0.002994703048959546,
+      "positive_cells": 187,
+      "positive_provinces": 17,
+      "province_cluster_bootstrap_95pct": [
+        0.04051986799899738,
+        0.1270950586944691
+      ]
+    },
+    "both_620_fields": {
+      "mean_paired_reduction": 0.0803203193937524,
+      "median_paired_reduction": 0.002994703048959546,
+      "positive_cells": 187,
+      "positive_provinces": 17,
+      "province_cluster_bootstrap_95pct": [
+        0.04076777251517608,
+        0.1259733529334751
+      ]
+    },
+    "residual_profile_vs_receipts_equal_budget": {
+      "mean_paired_reduction": -0.11429687282093294,
+      "median_paired_reduction": -0.0030036982332166673,
+      "positive_cells": 0,
+      "positive_provinces": 0,
+      "province_cluster_bootstrap_95pct": [
+        -0.19059324793372798,
+        -0.05208110797451928
+      ]
+    }
+  },
+  "measurement_constraint_monotonicity": {
+    "profile_never_widens_vs_base": true,
+    "receipts_never_widen_vs_base": true,
+    "combined_never_widens_vs_each_single_field_set": true
+  },
+  "summary_by_information_set": [
+    {
+      "supply_information": "total_only",
+      "monthly_residual_profile_observed": false,
+      "monthly_receipts_observed": false,
+      "additional_independent_residual_fields": 0,
+      "additional_independent_receipt_fields": 0,
+      "additional_independent_fields_total": 0,
+      "mean_diameter": 3.1887109916883607,
+      "median_diameter": 1.9477401716546208,
+      "mean_paired_shrink_vs_no_extra_fields": 0.0,
+      "median_paired_shrink_vs_no_extra_fields": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "total_only",
+      "monthly_residual_profile_observed": false,
+      "monthly_receipts_observed": true,
+      "additional_independent_residual_fields": 0,
+      "additional_independent_receipt_fields": 310,
+      "additional_independent_fields_total": 310,
+      "mean_diameter": 3.1886576431929186,
+      "median_diameter": 1.9477401716546208,
+      "mean_paired_shrink_vs_no_extra_fields": 8.318882590916601e-06,
+      "median_paired_shrink_vs_no_extra_fields": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "total_only",
+      "monthly_residual_profile_observed": true,
+      "monthly_receipts_observed": false,
+      "additional_independent_residual_fields": 310,
+      "additional_independent_receipt_fields": 0,
+      "additional_independent_fields_total": 310,
+      "mean_diameter": 3.1887109916883607,
+      "median_diameter": 1.9477401716546208,
+      "mean_paired_shrink_vs_no_extra_fields": 0.0,
+      "median_paired_shrink_vs_no_extra_fields": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "total_only",
+      "monthly_residual_profile_observed": true,
+      "monthly_receipts_observed": true,
+      "additional_independent_residual_fields": 310,
+      "additional_independent_receipt_fields": 310,
+      "additional_independent_fields_total": 620,
+      "mean_diameter": 3.1886576431929186,
+      "median_diameter": 1.9477401716546208,
+      "mean_paired_shrink_vs_no_extra_fields": 8.318882590917252e-06,
+      "median_paired_shrink_vs_no_extra_fields": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "five_categories",
+      "monthly_residual_profile_observed": false,
+      "monthly_receipts_observed": false,
+      "additional_independent_residual_fields": 0,
+      "additional_independent_receipt_fields": 0,
+      "additional_independent_fields_total": 0,
+      "mean_diameter": 3.038400910546291,
+      "median_diameter": 1.735307032304453,
+      "mean_paired_shrink_vs_no_extra_fields": 0.0,
+      "median_paired_shrink_vs_no_extra_fields": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "five_categories",
+      "monthly_residual_profile_observed": false,
+      "monthly_receipts_observed": true,
+      "additional_independent_residual_fields": 0,
+      "additional_independent_receipt_fields": 310,
+      "additional_independent_fields_total": 310,
+      "mean_diameter": 2.6583966061529276,
+      "median_diameter": 1.5045781015185757,
+      "mean_paired_shrink_vs_no_extra_fields": 0.0803203193937524,
+      "median_paired_shrink_vs_no_extra_fields": 0.002994703048959546,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "five_categories",
+      "monthly_residual_profile_observed": true,
+      "monthly_receipts_observed": false,
+      "additional_independent_residual_fields": 310,
+      "additional_independent_receipt_fields": 0,
+      "additional_independent_fields_total": 310,
+      "mean_diameter": 3.038400910546291,
+      "median_diameter": 1.735307032304453,
+      "mean_paired_shrink_vs_no_extra_fields": 0.0,
+      "median_paired_shrink_vs_no_extra_fields": 0.0,
+      "zero_width_cells": 0
+    },
+    {
+      "supply_information": "five_categories",
+      "monthly_residual_profile_observed": true,
+      "monthly_receipts_observed": true,
+      "additional_independent_residual_fields": 310,
+      "additional_independent_receipt_fields": 310,
+      "additional_independent_fields_total": 620,
+      "mean_diameter": 2.658396606152928,
+      "median_diameter": 1.504578101518576,
+      "mean_paired_shrink_vs_no_extra_fields": 0.0803203193937524,
+      "median_paired_shrink_vs_no_extra_fields": 0.002994703048959546,
+      "zero_width_cells": 0
+    }
+  ],
+  "limitations": [
+    "NBS monthly generation is above-designated-size coverage, while the annual remainder is not monthly resolved",
+    "V310 annual OD is an external accounting source not reconciled with the NBS tables",
+    "Ember category factors and the unobserved EF support are proxy assumptions",
+    "the denominator is local reported generation, not electricity consumption",
+    "this is a structural partial-identification experiment, not hourly prediction validation"
+  ],
+  "sha256": {
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_annual_generation_by_tech.csv": "70f376aa96eaee53bfb01b98ae6e40a8c21cbd4d9659fe8eae80b4ee260f5a24",
+    "results/v310_zenodo_interprovincial_audit_r1/5_interprovincial transfer matrix.xlsx": "1b336512717a11e5619792f8f5fd2441b44caf59eb86aa98e0b752c6910d3b14",
+    "results/v294-china-ember-lineage-r1/ember_china_monthly_generation.csv": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+    "docs/V323_MONTHLY_RESIDUAL_FIELD_VALUE_PROTOCOL.md": "5fe4b7996c0c7d649827d3f83d201828ac3db387131edb0f336e1fdc507f5f8e",
+    "scripts/v323_monthly_residual_field_value.py": "18dcf6fb87077925c9a76cb8231c45f26edbb7051eefce62adbaeb9f659e952c"
+  }
+}
