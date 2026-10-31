@@ -1,0 +1,260 @@
+{
+  "experiment": "nested region CV beta selection on 2022; outer region-held-out evaluation on 2023",
+  "target": "MEE/NBS 2023 provincial annual consumption-side CO2 factor; 30 provinces; 7 statistical regions",
+  "selection": "For each outer test region, choose beta in {0,.5,1} by equal-region 2022 interval score. Inner validation region excluded from its calibration residual models; outer test region excluded throughout.",
+  "outer_predictions": [
+    {
+      "method": "globalmean",
+      "beta": 0.0,
+      "nominal_coverage": 0.9,
+      "n": 30,
+      "coverage": 0.9333333333333333,
+      "mean_width_gco2_kwh": 781.5099051977771,
+      "mean_interval_score_gco2_kwh": 1088.2840199718923
+    },
+    {
+      "method": "globalmean",
+      "beta": 0.0,
+      "nominal_coverage": 0.95,
+      "n": 30,
+      "coverage": 0.9666666666666667,
+      "mean_width_gco2_kwh": 900.382921070793,
+      "mean_interval_score_gco2_kwh": 915.0586231464952
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 0.0,
+      "nominal_coverage": 0.9,
+      "n": 30,
+      "coverage": 0.9666666666666667,
+      "mean_width_gco2_kwh": 234.275273714769,
+      "mean_interval_score_gco2_kwh": 252.22566886987542
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 0.0,
+      "nominal_coverage": 0.95,
+      "n": 30,
+      "coverage": 0.9666666666666667,
+      "mean_width_gco2_kwh": 285.2464819256862,
+      "mean_interval_score_gco2_kwh": 307.5281999625376
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 0.5,
+      "nominal_coverage": 0.9,
+      "n": 30,
+      "coverage": 0.9333333333333333,
+      "mean_width_gco2_kwh": 243.93415936800042,
+      "mean_interval_score_gco2_kwh": 267.5319750750394
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 0.5,
+      "nominal_coverage": 0.95,
+      "n": 30,
+      "coverage": 1.0,
+      "mean_width_gco2_kwh": 270.1736150493844,
+      "mean_interval_score_gco2_kwh": 270.1736150493844
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 1.0,
+      "nominal_coverage": 0.9,
+      "n": 30,
+      "coverage": 0.9333333333333333,
+      "mean_width_gco2_kwh": 302.6093271910019,
+      "mean_interval_score_gco2_kwh": 327.2238150549734
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 1.0,
+      "nominal_coverage": 0.95,
+      "n": 30,
+      "coverage": 0.9333333333333333,
+      "mean_width_gco2_kwh": 336.90199059801085,
+      "mean_interval_score_gco2_kwh": 368.8761794565811
+    },
+    {
+      "method": "local700_nested_selected",
+      "beta": 0.0,
+      "nominal_coverage": 0.9,
+      "n": 27,
+      "coverage": 0.9629629629629629,
+      "mean_width_gco2_kwh": 233.58380224791043,
+      "mean_interval_score_gco2_kwh": 253.52868575358423
+    },
+    {
+      "method": "local700_nested_selected",
+      "beta": 0.0,
+      "nominal_coverage": 0.95,
+      "n": 27,
+      "coverage": 0.9629629629629629,
+      "mean_width_gco2_kwh": 283.8762860188082,
+      "mean_interval_score_gco2_kwh": 308.63375050419864
+    },
+    {
+      "method": "local700_nested_selected",
+      "beta": 1.0,
+      "nominal_coverage": 0.9,
+      "n": 3,
+      "coverage": 1.0,
+      "mean_width_gco2_kwh": 240.38048924881548,
+      "mean_interval_score_gco2_kwh": 240.38048924881548
+    },
+    {
+      "method": "local700_nested_selected",
+      "beta": 1.0,
+      "nominal_coverage": 0.95,
+      "n": 3,
+      "coverage": 1.0,
+      "mean_width_gco2_kwh": 301.5751762780896,
+      "mean_interval_score_gco2_kwh": 301.5751762780896
+    },
+    {
+      "method": "nbsnnls",
+      "beta": 0.0,
+      "nominal_coverage": 0.9,
+      "n": 30,
+      "coverage": 0.9,
+      "mean_width_gco2_kwh": 287.2240833039167,
+      "mean_interval_score_gco2_kwh": 477.3873616304232
+    },
+    {
+      "method": "nbsnnls",
+      "beta": 0.0,
+      "nominal_coverage": 0.95,
+      "n": 30,
+      "coverage": 0.9,
+      "mean_width_gco2_kwh": 623.7608963771826,
+      "mean_interval_score_gco2_kwh": 982.682584789776
+    }
+  ],
+  "equal_region_macro": [
+    {
+      "method": "globalmean",
+      "beta": 0.0,
+      "nominal_coverage": 0.9,
+      "coverage": 0.9285714285714286,
+      "mean_width_gco2_kwh": 781.2783464873364,
+      "mean_interval_score_gco2_kwh": 1109.9648980310312
+    },
+    {
+      "method": "globalmean",
+      "beta": 0.0,
+      "nominal_coverage": 0.95,
+      "coverage": 0.9642857142857143,
+      "mean_width_gco2_kwh": 903.9137206369962,
+      "mean_interval_score_gco2_kwh": 919.6376871466772
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 0.0,
+      "nominal_coverage": 0.9,
+      "coverage": 0.9714285714285714,
+      "mean_width_gco2_kwh": 235.1643084578729,
+      "mean_interval_score_gco2_kwh": 250.5503614479641
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 0.0,
+      "nominal_coverage": 0.95,
+      "coverage": 0.9714285714285714,
+      "mean_width_gco2_kwh": 287.00816237738644,
+      "mean_interval_score_gco2_kwh": 306.1067778375449
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 0.5,
+      "nominal_coverage": 0.9,
+      "coverage": 0.9428571428571428,
+      "mean_width_gco2_kwh": 239.88605008474457,
+      "mean_interval_score_gco2_kwh": 260.11274926220653
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 0.5,
+      "nominal_coverage": 0.95,
+      "coverage": 1.0,
+      "mean_width_gco2_kwh": 266.27855128367025,
+      "mean_interval_score_gco2_kwh": 266.27855128367025
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 1.0,
+      "nominal_coverage": 0.9,
+      "coverage": 0.9357142857142857,
+      "mean_width_gco2_kwh": 292.19496101108626,
+      "mean_interval_score_gco2_kwh": 316.22386070754783
+    },
+    {
+      "method": "local700_fixed",
+      "beta": 1.0,
+      "nominal_coverage": 0.95,
+      "coverage": 0.9357142857142857,
+      "mean_width_gco2_kwh": 326.29650913122674,
+      "mean_interval_score_gco2_kwh": 359.06416119691676
+    },
+    {
+      "method": "local700_nested_selected",
+      "beta": 0.0,
+      "nominal_coverage": 0.9,
+      "coverage": 0.9666666666666667,
+      "mean_width_gco2_kwh": 234.275273714769,
+      "mean_interval_score_gco2_kwh": 252.22566886987542
+    },
+    {
+      "method": "local700_nested_selected",
+      "beta": 0.0,
+      "nominal_coverage": 0.95,
+      "coverage": 0.9666666666666667,
+      "mean_width_gco2_kwh": 285.24648192568617,
+      "mean_interval_score_gco2_kwh": 307.5281999625376
+    },
+    {
+      "method": "local700_nested_selected",
+      "beta": 1.0,
+      "nominal_coverage": 0.9,
+      "coverage": 1.0,
+      "mean_width_gco2_kwh": 240.38048924881548,
+      "mean_interval_score_gco2_kwh": 240.38048924881548
+    },
+    {
+      "method": "local700_nested_selected",
+      "beta": 1.0,
+      "nominal_coverage": 0.95,
+      "coverage": 1.0,
+      "mean_width_gco2_kwh": 301.5751762780896,
+      "mean_interval_score_gco2_kwh": 301.5751762780896
+    },
+    {
+      "method": "nbsnnls",
+      "beta": 0.0,
+      "nominal_coverage": 0.9,
+      "coverage": 0.9142857142857144,
+      "mean_width_gco2_kwh": 292.7097324270965,
+      "mean_interval_score_gco2_kwh": 455.70682813553054
+    },
+    {
+      "method": "nbsnnls",
+      "beta": 0.0,
+      "nominal_coverage": 0.95,
+      "coverage": 0.9142857142857144,
+      "mean_width_gco2_kwh": 676.707307697081,
+      "mean_interval_score_gco2_kwh": 984.3544691935896
+    }
+  ],
+  "beta_selection_counts_by_nominal": {
+    "selection_nominal_0.9_applied_to_both_0.9_and_0.95": {
+      "0.0": 6,
+      "1.0": 1
+    }
+  },
+  "limitations": [
+    "Posthoc method proposal, but beta selection does not use outer 2023 target labels.",
+    "Only seven correlated regions and 30 provinces; region-level coverage is low-powered.",
+    "2022 calibration labels and 2023 evaluation labels are annual consumption-side factors, not hourly CIF.",
+    "Historical NBS features are retrospective revisions, not archived as-published vintages.",
+    "Regional residual quantiles do not establish a distribution-free guarantee under dependence."
+  ]
+}

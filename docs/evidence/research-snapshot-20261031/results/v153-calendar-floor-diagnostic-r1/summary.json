@@ -1,0 +1,7 @@
+{
+  "status": "POSTHOC_EVALUATION_ORACLE_CALENDAR_DIAGNOSTIC",
+  "profile_months": 36,
+  "permutations_per_cell_partition": 20,
+  "random_seed": 20261028,
+  "scope": "Calendar-conditioned empirical self-score with same-size random partition control; target-label oracle, not deployable or independent validation."
+}

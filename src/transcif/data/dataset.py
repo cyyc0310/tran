@@ -32,9 +32,6 @@ class ModelInputs:
     demand: torch.Tensor         # B,M,H, MW, issued forecast
     calendar: torch.Tensor       # B,H,6
 
-    def to(self, device):
-        return ModelInputs(**{f.name: getattr(self, f.name).to(device) for f in fields(self)})
-
 
 @dataclass(frozen=True)
 class PublicExample:

@@ -1,0 +1,26 @@
+{
+  "fine_head_fits": 315,
+  "meta_sklearn_fits": 168,
+  "mean_estimates": 42,
+  "source_MG_calls": 412,
+  "query_MG_retrained": false,
+  "new_arms": 30,
+  "original_reference_rows_exact": 4970,
+  "rows": {
+    "case_metrics": 7070,
+    "region_metrics": 1414,
+    "macro_metrics": 202,
+    "leave_one_source_out_macro": 1414,
+    "label_support": 42,
+    "gain_case_metrics": 1050,
+    "gain_region_metrics": 210,
+    "gain_macro_metrics": 30
+  },
+  "whole_prediction_budget": "B1",
+  "historical_teacher_snapshot": "2025-01-01",
+  "authentic_historical_fine_head_hindcast": false,
+  "method_innovation_claim": false,
+  "new_holdout_authorized": false,
+  "CIF_interval_coverage_evaluated": false,
+  "hourly_coverage_evaluated": false
+}

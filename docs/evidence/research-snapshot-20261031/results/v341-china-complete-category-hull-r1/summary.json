@@ -1,0 +1,238 @@
+{
+  "status": "COMPLETE_CASE_CONDITIONAL_OUTER_K_HULL_NO_HOURLY_LABEL_VALIDATION",
+  "correction_of": [
+    "V339_CROSSED_VINTAGE_ARMS_AND_DUPLICATED_ROWS",
+    "V340_TREATED_MISSING_TIANJIN_HYDRO_AS_ZERO"
+  ],
+  "n_provinces": 30,
+  "n_source_province_periods": 341,
+  "n_included_province_periods": 330,
+  "n_excluded_incomplete_province_periods": 11,
+  "n_evaluation_rows": 1980,
+  "expected_evaluation_rows": 1980,
+  "same_lagged_and_2023_hull_endpoints_n": 534,
+  "compared_hulls_n": 1980,
+  "thermal_ef_support": [
+    400.0,
+    1000.0
+  ],
+  "frontier": [
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.01,
+      "arm": "monthly_only",
+      "province_periods": 330,
+      "mean_K_width_hours": 795.4242424242424,
+      "median_K_width_hours": 743.0,
+      "positive_certificate_pct": 0.0,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 100.0
+    },
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.01,
+      "arm": "monthly_plus_lagged_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 469.8575757575758,
+      "median_K_width_hours": 413.0,
+      "positive_certificate_pct": 88.7878787878788,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 11.212121212121213
+    },
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.01,
+      "arm": "monthly_plus_2023_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 483.3636363636364,
+      "median_K_width_hours": 427.5,
+      "positive_certificate_pct": 88.7878787878788,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 11.212121212121213
+    },
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.05,
+      "arm": "monthly_only",
+      "province_periods": 330,
+      "mean_K_width_hours": 795.4242424242424,
+      "median_K_width_hours": 743.0,
+      "positive_certificate_pct": 0.0,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 100.0
+    },
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.05,
+      "arm": "monthly_plus_lagged_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 469.8575757575758,
+      "median_K_width_hours": 413.0,
+      "positive_certificate_pct": 87.27272727272727,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 12.727272727272727
+    },
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.05,
+      "arm": "monthly_plus_2023_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 483.3636363636364,
+      "median_K_width_hours": 427.5,
+      "positive_certificate_pct": 87.27272727272727,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 12.727272727272727
+    },
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.1,
+      "arm": "monthly_only",
+      "province_periods": 330,
+      "mean_K_width_hours": 795.4242424242424,
+      "median_K_width_hours": 743.0,
+      "positive_certificate_pct": 0.0,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 100.0
+    },
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.1,
+      "arm": "monthly_plus_lagged_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 469.8575757575758,
+      "median_K_width_hours": 413.0,
+      "positive_certificate_pct": 86.66666666666667,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 13.333333333333334
+    },
+    {
+      "tau_g_kwh": 100.0,
+      "tail_rate": 0.1,
+      "arm": "monthly_plus_2023_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 483.3636363636364,
+      "median_K_width_hours": 427.5,
+      "positive_certificate_pct": 86.66666666666667,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 13.333333333333334
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.01,
+      "arm": "monthly_only",
+      "province_periods": 330,
+      "mean_K_width_hours": 795.7666666666667,
+      "median_K_width_hours": 743.0,
+      "positive_certificate_pct": 0.0,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 100.0
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.01,
+      "arm": "monthly_plus_lagged_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 682.0484848484848,
+      "median_K_width_hours": 695.0,
+      "positive_certificate_pct": 45.151515151515156,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 54.848484848484844
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.01,
+      "arm": "monthly_plus_2023_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 686.2030303030303,
+      "median_K_width_hours": 700.0,
+      "positive_certificate_pct": 45.151515151515156,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 54.848484848484844
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.05,
+      "arm": "monthly_only",
+      "province_periods": 330,
+      "mean_K_width_hours": 795.7666666666667,
+      "median_K_width_hours": 743.0,
+      "positive_certificate_pct": 0.0,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 100.0
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.05,
+      "arm": "monthly_plus_lagged_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 682.0484848484848,
+      "median_K_width_hours": 695.0,
+      "positive_certificate_pct": 43.93939393939394,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 56.060606060606055
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.05,
+      "arm": "monthly_plus_2023_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 686.2030303030303,
+      "median_K_width_hours": 700.0,
+      "positive_certificate_pct": 43.93939393939394,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 56.060606060606055
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.1,
+      "arm": "monthly_only",
+      "province_periods": 330,
+      "mean_K_width_hours": 795.7666666666667,
+      "median_K_width_hours": 743.0,
+      "positive_certificate_pct": 0.0,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 100.0
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.1,
+      "arm": "monthly_plus_lagged_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 682.0484848484848,
+      "median_K_width_hours": 695.0,
+      "positive_certificate_pct": 36.06060606060606,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 63.93939393939394
+    },
+    {
+      "tau_g_kwh": 300.0,
+      "tail_rate": 0.1,
+      "arm": "monthly_plus_2023_capacity",
+      "province_periods": 330,
+      "mean_K_width_hours": 686.2030303030303,
+      "median_K_width_hours": 700.0,
+      "positive_certificate_pct": 35.75757575757576,
+      "negative_certificate_pct": 0.0,
+      "abstain_pct": 64.24242424242425
+    }
+  ],
+  "n_missing_monthly_category_periods": 11,
+  "limitations": [
+    "No Chinese hourly generation/CIF labels; these are conditional outer identified sets, not empirical coverage.",
+    "The estimand is restricted to the sum of the five reported NBS technology categories for complete province-periods; it need not equal total generation.",
+    "The target is generation-side direct CIF in that reported technology pool, not consumption-side MEE EF.",
+    "Thermal EF [400,1000] is a scenario support, not a calibrated China-wide factor; direct nonthermal operational EF is set to zero.",
+    "CEC capacities are retrospective; lagged 2022 installed capacity can miss capacity commissioned during 2023.",
+    "V338 only checks monthly-average feasibility, not hourly nameplate validity.",
+    "Nuclear uses total provincial capacity as a loose upper bound.",
+    "The output is an outer hull [min K,max K], not the complete integer K-set; endpoint sharpness is unproven.",
+    "The imported V339 helper code is included in the hash ledger."
+  ],
+  "sha256": {
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "data/china/cec_province_installed_capacity_2022_2023.csv": "d1cb23de66a206214a8ef3aec4e07f2f0b49402c56ac431e496c38e196669c27",
+    "docs/V341_CHINA_COMPLETE_CATEGORY_HULL_PROTOCOL.md": "c76642e9c7602e1b905c86b1649a4d6bedbef37e658709fcdf99dd66cf205b95",
+    "scripts/v339_china_capacity_tail_identification.py": "25dc77fe096cec4a43efa97ba0b24775f945f0cce641238b5740ec81c7446e7c",
+    "scripts/v341_china_complete_category_hull.py": "b35737190cf50eb2b3b1a0ed2f4f82c1ec1ca8700777b704488c695db1879c83"
+  }
+}

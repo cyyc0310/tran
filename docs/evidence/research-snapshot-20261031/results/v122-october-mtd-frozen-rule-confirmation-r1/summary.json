@@ -1,0 +1,427 @@
+{
+  "status": "FROZEN_RULE_OCTOBER_MTD_TEMPORAL_CONFIRMATION",
+  "regions": [
+    "AVA",
+    "AVRN",
+    "AZPS",
+    "BANC",
+    "BPAT",
+    "CHPD",
+    "CISO",
+    "CPLE",
+    "DOPD",
+    "DUK",
+    "EPE",
+    "ERCO",
+    "FMPP",
+    "FPC",
+    "FPL",
+    "GCPD",
+    "GRID",
+    "GVL",
+    "IID",
+    "IPCO",
+    "JEA",
+    "LDWP",
+    "LGEE",
+    "MISO",
+    "NYIS",
+    "PACE",
+    "PNM",
+    "PSCO",
+    "PSEI",
+    "SC",
+    "SCEG",
+    "SCL",
+    "SEC",
+    "SOCO",
+    "SPA",
+    "SRP",
+    "TAL",
+    "TEC",
+    "TEPC",
+    "TIDC",
+    "TPWR",
+    "TVA",
+    "WALC",
+    "NWMT"
+  ],
+  "candidate_count": 44,
+  "eligible_regions": 40,
+  "capacity_feasible_regions": 37,
+  "month_to_date_last_timestamp_utc": "2026-10-28 06:00:00+00:00",
+  "h1_completeness": {
+    "AVA": 0.994475138121547,
+    "AVRN": 0.9723756906077348,
+    "AZPS": 0.9834254143646409,
+    "BANC": 0.9558011049723757,
+    "BPAT": 0.988950276243094,
+    "CHPD": 0.994475138121547,
+    "CISO": 0.9558011049723757,
+    "CPLE": 0.994475138121547,
+    "DOPD": 0.994475138121547,
+    "DUK": 0.994475138121547,
+    "EPE": 0.9779005524861878,
+    "ERCO": 0.994475138121547,
+    "FMPP": 0.9834254143646409,
+    "FPC": 0.994475138121547,
+    "FPL": 0.988950276243094,
+    "GCPD": 0.988950276243094,
+    "GRID": 0.994475138121547,
+    "GVL": 0.9281767955801105,
+    "IID": 0.9613259668508287,
+    "IPCO": 0.994475138121547,
+    "JEA": 0.994475138121547,
+    "LDWP": 0.9392265193370166,
+    "LGEE": 0.9834254143646409,
+    "MISO": 0.9834254143646409,
+    "NYIS": 0.9723756906077348,
+    "PACE": 0.988950276243094,
+    "PNM": 0.994475138121547,
+    "PSCO": 0.988950276243094,
+    "PSEI": 0.994475138121547,
+    "SC": 0.9779005524861878,
+    "SCEG": 0.9060773480662984,
+    "SCL": 0.994475138121547,
+    "SEC": 0.9723756906077348,
+    "SOCO": 0.994475138121547,
+    "SPA": 0.994475138121547,
+    "SRP": 0.994475138121547,
+    "TAL": 0.994475138121547,
+    "TEC": 0.988950276243094,
+    "TEPC": 0.9834254143646409,
+    "TIDC": 0.988950276243094,
+    "TPWR": 0.994475138121547,
+    "TVA": 0.994475138121547,
+    "WALC": 0.9392265193370166,
+    "NWMT": 0.8453038674033149
+  },
+  "frontier": [
+    {
+      "tau": 600,
+      "scored_regions": 40,
+      "capacity_feasible_regions": 37,
+      "nonzero_proxy_upper_regions": 9,
+      "anchor_mean_width": 350.95,
+      "anchor_coverage": 1.0,
+      "monthly_mean_width": 373.875,
+      "monthly_coverage": 1.0,
+      "capacity_mean_width": 253.54054054054055,
+      "capacity_coverage": 1.0,
+      "intersection_mean_width": 195.8918918918919,
+      "intersection_coverage": 1.0,
+      "frozen_mean_width": 253.54054054054055,
+      "frozen_coverage": 1.0,
+      "anchor_positive_0.01": 0.05,
+      "anchor_negative_0.01": 0.0,
+      "anchor_abstain_0.01": 0.95,
+      "monthly_positive_0.01": 0.0,
+      "monthly_negative_0.01": 0.4,
+      "monthly_abstain_0.01": 0.6,
+      "capacity_positive_0.01": 0.05405405405405406,
+      "capacity_negative_0.01": 0.3783783783783784,
+      "capacity_abstain_0.01": 0.5675675675675675,
+      "intersection_positive_0.01": 0.05405405405405406,
+      "intersection_negative_0.01": 0.3783783783783784,
+      "intersection_abstain_0.01": 0.5675675675675675,
+      "frozen_positive_0.01": 0.05405405405405406,
+      "frozen_negative_0.01": 0.3783783783783784,
+      "frozen_abstain_0.01": 0.5675675675675675,
+      "anchor_positive_0.05": 0.05,
+      "anchor_negative_0.05": 0.0,
+      "anchor_abstain_0.05": 0.95,
+      "monthly_positive_0.05": 0.0,
+      "monthly_negative_0.05": 0.4,
+      "monthly_abstain_0.05": 0.6,
+      "capacity_positive_0.05": 0.05405405405405406,
+      "capacity_negative_0.05": 0.40540540540540543,
+      "capacity_abstain_0.05": 0.5405405405405406,
+      "intersection_positive_0.05": 0.05405405405405406,
+      "intersection_negative_0.05": 0.40540540540540543,
+      "intersection_abstain_0.05": 0.5405405405405406,
+      "frozen_positive_0.05": 0.05405405405405406,
+      "frozen_negative_0.05": 0.40540540540540543,
+      "frozen_abstain_0.05": 0.5405405405405406,
+      "anchor_positive_0.1": 0.05,
+      "anchor_negative_0.1": 0.0,
+      "anchor_abstain_0.1": 0.95,
+      "monthly_positive_0.1": 0.0,
+      "monthly_negative_0.1": 0.4,
+      "monthly_abstain_0.1": 0.6,
+      "capacity_positive_0.1": 0.02702702702702703,
+      "capacity_negative_0.1": 0.43243243243243246,
+      "capacity_abstain_0.1": 0.5405405405405406,
+      "intersection_positive_0.1": 0.05405405405405406,
+      "intersection_negative_0.1": 0.43243243243243246,
+      "intersection_abstain_0.1": 0.5135135135135135,
+      "frozen_positive_0.1": 0.02702702702702703,
+      "frozen_negative_0.1": 0.43243243243243246,
+      "frozen_abstain_0.1": 0.5405405405405406
+    },
+    {
+      "tau": 900,
+      "scored_regions": 40,
+      "capacity_feasible_regions": 37,
+      "nonzero_proxy_upper_regions": 3,
+      "anchor_mean_width": 79.1,
+      "anchor_coverage": 0.975,
+      "monthly_mean_width": 311.525,
+      "monthly_coverage": 1.0,
+      "capacity_mean_width": 183.24324324324326,
+      "capacity_coverage": 1.0,
+      "intersection_mean_width": 46.810810810810814,
+      "intersection_coverage": 0.972972972972973,
+      "frozen_mean_width": 89.8108108108108,
+      "frozen_coverage": 1.0,
+      "anchor_positive_0.01": 0.0,
+      "anchor_negative_0.01": 0.0,
+      "anchor_abstain_0.01": 1.0,
+      "monthly_positive_0.01": 0.0,
+      "monthly_negative_0.01": 0.5,
+      "monthly_abstain_0.01": 0.5,
+      "capacity_positive_0.01": 0.0,
+      "capacity_negative_0.01": 0.4864864864864865,
+      "capacity_abstain_0.01": 0.5135135135135135,
+      "intersection_positive_0.01": 0.0,
+      "intersection_negative_0.01": 0.4864864864864865,
+      "intersection_abstain_0.01": 0.5135135135135135,
+      "frozen_positive_0.01": 0.0,
+      "frozen_negative_0.01": 0.4864864864864865,
+      "frozen_abstain_0.01": 0.5135135135135135,
+      "anchor_positive_0.05": 0.0,
+      "anchor_negative_0.05": 0.05,
+      "anchor_abstain_0.05": 0.95,
+      "monthly_positive_0.05": 0.0,
+      "monthly_negative_0.05": 0.5,
+      "monthly_abstain_0.05": 0.5,
+      "capacity_positive_0.05": 0.0,
+      "capacity_negative_0.05": 0.4864864864864865,
+      "capacity_abstain_0.05": 0.5135135135135135,
+      "intersection_positive_0.05": 0.0,
+      "intersection_negative_0.05": 0.5405405405405406,
+      "intersection_abstain_0.05": 0.4594594594594595,
+      "frozen_positive_0.05": 0.0,
+      "frozen_negative_0.05": 0.4864864864864865,
+      "frozen_abstain_0.05": 0.5135135135135135,
+      "anchor_positive_0.1": 0.0,
+      "anchor_negative_0.1": 0.05,
+      "anchor_abstain_0.1": 0.95,
+      "monthly_positive_0.1": 0.0,
+      "monthly_negative_0.1": 0.5,
+      "monthly_abstain_0.1": 0.5,
+      "capacity_positive_0.1": 0.0,
+      "capacity_negative_0.1": 0.4864864864864865,
+      "capacity_abstain_0.1": 0.5135135135135135,
+      "intersection_positive_0.1": 0.0,
+      "intersection_negative_0.1": 0.5405405405405406,
+      "intersection_abstain_0.1": 0.4594594594594595,
+      "frozen_positive_0.1": 0.0,
+      "frozen_negative_0.1": 0.4864864864864865,
+      "frozen_abstain_0.1": 0.5135135135135135
+    }
+  ],
+  "support_tail": 0.2,
+  "calibration_alpha": 0.1,
+  "native_sha256": "48005f09be801598e28f38079056260a0d07ab9a6d1a0324e8e92ca470b3c281",
+  "capacity_sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+  "calibration_rows_sha256": "b5be7e808aa0c5338cffc9ad6020945acb7ee8d6ed61c7dc96b7f65cfe4aaa3a",
+  "support_features_sha256": "3c25f04e1c71c0c8060c6cd7d41c1564a03105236ff36e9af2d03c27e8a951bc",
+  "protocol_sha256": "c63281f28c6dffe67eac6eb795db03ffd2d23f0efc699abe3e190206e68a2851",
+  "script_sha256": "745d9f12b2d0cbb3832936d52d1e4f6fc4e8890f7dd8731ed06f2a7b9f411034",
+  "hourly_source_hashes": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jul_Dec.csv": "48005f09be801598e28f38079056260a0d07ab9a6d1a0324e8e92ca470b3c281"
+  },
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 54,
+      "dropped_months": 4
+    },
+    "BPAT": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 54,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 56,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "FMPP": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 55,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 56,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "AVRN": {
+      "eligible_months": 48,
+      "dropped_months": 10
+    },
+    "AZPS": {
+      "eligible_months": 55,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "CISO": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "CPLE": {
+      "eligible_months": 55,
+      "dropped_months": 3
+    },
+    "DOPD": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "DUK": {
+      "eligible_months": 51,
+      "dropped_months": 7
+    },
+    "EPE": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "ERCO": {
+      "eligible_months": 53,
+      "dropped_months": 5
+    },
+    "FPC": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "GCPD": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "IPCO": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "LGEE": {
+      "eligible_months": 53,
+      "dropped_months": 5
+    },
+    "PACE": {
+      "eligible_months": 50,
+      "dropped_months": 8
+    },
+    "PNM": {
+      "eligible_months": 50,
+      "dropped_months": 8
+    },
+    "PSCO": {
+      "eligible_months": 41,
+      "dropped_months": 17
+    },
+    "SCL": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "SOCO": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "SPA": {
+      "eligible_months": 53,
+      "dropped_months": 5
+    },
+    "SRP": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "TAL": {
+      "eligible_months": 53,
+      "dropped_months": 5
+    },
+    "TEPC": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "TIDC": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "TVA": {
+      "eligible_months": 46,
+      "dropped_months": 12
+    },
+    "WALC": {
+      "eligible_months": 29,
+      "dropped_months": 29
+    }
+  },
+  "limitations": [
+    "Partial October month-to-date nowcast/retrospective identification, not month-ahead forecast.",
+    "Method was developed after Q3 was opened; October target outcomes were not used in design.",
+    "Several regions overlap the historical source pool, though each is excluded from its own fold.",
+    "Fixed-factor U.S. proxy and capacity analogue do not validate China real CIF."
+  ]
+}

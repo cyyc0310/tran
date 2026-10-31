@@ -1,0 +1,40 @@
+{
+  "status": "HOURLY_DISTRIBUTION_INFORMATION_AGE_DEVELOPMENT",
+  "target_region_months": 36,
+  "scored_rows": 1728,
+  "assertion_failures": 0,
+  "crps_finite_atom_identity_checks": 5,
+  "v151_baseline_reproduced_rows": 288,
+  "expected_margin_checks": 295560,
+  "maximum_expected_margin_error": 1.1102230246251565e-15,
+  "cached_empty_cell_fallbacks": 0,
+  "input_hashes": {
+    "docs/V153_CALENDAR_LAW_PROTOCOL.md": "abdefb21811b76abed352cf47c9eaec655ef32f10a0f42178dce79235c4fa1b1",
+    "scripts/v153_calendar_law.py": "60f4f34b1c55c5777694d2012d37902d952a1113160834b5a4ae4f301d0d6925",
+    "results/v144-canonical-profile-cache-r1/summary.json": "6c9640d193ee9dad4354aa9969c45cd1485c4fbac53146e0409570619c6bbc19",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v144-canonical-profile-cache-r1/canonical_monthly_panel.csv": "47fac51f5c2217491abfd305b391b3401b084db891cead49227b5c50d2b96437",
+    "results/v144-canonical-profile-cache-r1/profiles.npz": "4e40a83eb4b917f591c8f4bda15a54283eecbad4407a7b1d9cc7e9e23055b17a",
+    "results/v145-recomposed-risk-baselines-r1/region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "scripts/calendar_cif_law.py": "9d479c9c41b1d337fc9682ff7214372c48044a772d3d003679e9334665415392",
+    "scripts/v151_hourly_law.py": "0aba80e0141b7bd1e1028d66bbddffe846b0259cf03c4d4f3df87755188dc81d",
+    "results/v153-calendar-times-r1/timestamps.npz": "0fb6504f175096893937f570cf76119d201ccbeb9e8a84ed123be225ffd4fb0c",
+    "results/v153-calendar-times-r1/summary.json": "4dba693b46cbe6af3864da800e19efac1b05af3b82adca61bd5b4d959cbd5499",
+    "results/v151-hourly-law-r1/target_month_metrics.csv": "43663d3e31131682f1b548d6fc017626fa97b061277865c3831a56ec722ea3fe"
+  },
+  "output_hashes": {
+    "calibration_radii.csv": "6876ee08c8f8b82f774d70c6a1e91e2daebf572af27f243ec39e8487a1c93a2d",
+    "calibration_regions.csv": "b4690ced42c3c42da4a2d88b7caaa988252586acd0eb802ed0c360ff44578178",
+    "donor_provenance.csv": "4494fef53931e25d2608559b53d67cb16a97688717a7a10bbf8d6025bba6d6e4",
+    "macro_metrics.csv": "3e7d7b99cf6a68d27b27dac1e17c2a6364b772196730066bbdb9319b96f7b2e3",
+    "query_inputs.csv": "846ff4c07749fa6fafc6c7cc425d7ff1592a1656449c592054006e274780d085",
+    "region_metrics.csv": "c7f9e6a34295070423302753be82cec5b29080387674fc7f8e37723012328321",
+    "region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "target_month_metrics.csv": "40a273753ce9e6b4ec1159323f931e1b60c8aa4a1696663af6279055ad74e5d7"
+  },
+  "limitations": [
+    "Known development identities, nominal production CIF proxy, retrospective quality screen, simulated release lag.",
+    "UTC calendar conditioning and expectation raking are standard controls, not original mechanisms or blind confirmation.",
+    "Interval calibration does not change the predictive law used for CRPS."
+  ]
+}

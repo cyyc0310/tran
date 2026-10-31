@@ -1,0 +1,7 @@
+{
+  "assertion_failures": 0,
+  "same_month_v153_reproduced_records": 144,
+  "verified_target_records": 576,
+  "source_summary_sha256": "29a4f2988d7986c0078bd246405166c81dd3d32af72ce193601c90d97b57447f",
+  "scope": "Controlled source-hour reduction at fixed donor months; no new-region confirmation."
+}

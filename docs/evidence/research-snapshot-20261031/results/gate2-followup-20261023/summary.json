@@ -1,0 +1,85 @@
+{
+  "status": "exploratory diagnostics, not a new confirmatory gate pass",
+  "runs": 1440,
+  "numpy_version": "1.26.4",
+  "scipy_version": "1.17.1",
+  "budget128_comparisons": {
+    "harmful": {
+      "gaussian": {
+        "relative_reduction_vs_prior": -0.615621374927757,
+        "paired_difference_ci95": [
+          0.03703305968259258,
+          0.09707065693024193
+        ]
+      },
+      "diverse": {
+        "relative_reduction_vs_prior": -0.5302167181448707,
+        "paired_difference_ci95": [
+          0.030898538502351382,
+          0.08558619662793214
+        ]
+      },
+      "scrambled_sobol_prior": {
+        "relative_reduction_vs_prior": 0.5342954013888528,
+        "paired_difference_ci95": [
+          -0.07558260394790703,
+          -0.041477294246815746
+        ]
+      }
+    },
+    "harmless": {
+      "gaussian": {
+        "relative_reduction_vs_prior": -0.7089693740857923,
+        "paired_difference_ci95": [
+          0.03706709266466476,
+          0.09486355002126425
+        ]
+      },
+      "diverse": {
+        "relative_reduction_vs_prior": -0.4582898002234901,
+        "paired_difference_ci95": [
+          0.015404565069854654,
+          0.06938189965339987
+        ]
+      },
+      "scrambled_sobol_prior": {
+        "relative_reduction_vs_prior": 0.3878379869387447,
+        "paired_difference_ci95": [
+          -0.05232463299101993,
+          -0.020656273562259558
+        ]
+      }
+    },
+    "resolved": {
+      "gaussian": {
+        "relative_reduction_vs_prior": -0.0881912317810265,
+        "paired_difference_ci95": [
+          -0.022230567885434253,
+          0.051989278925982374
+        ]
+      },
+      "diverse": {
+        "relative_reduction_vs_prior": 0.04184255066508635,
+        "paired_difference_ci95": [
+          -0.026208176432210174,
+          0.013117474311718787
+        ]
+      },
+      "scrambled_sobol_prior": {
+        "relative_reduction_vs_prior": 0.3756234906033673,
+        "paired_difference_ci95": [
+          -0.08625875749142452,
+          -0.03085482977720886
+        ]
+      }
+    }
+  },
+  "positive_mode_reference_mean": 1.584268226183897,
+  "positive_mode_reference_sd": 0.07935726745171726,
+  "diverse_proposal_sd": 0.7,
+  "proposal_to_mode_sd_ratio": 8.820868239016617,
+  "pilot_32_ess_median": 1.9344255657116851,
+  "pilot_mode_mass_below10pct_or_above90pct": 18,
+  "orthonormal_haar_pairwise_squared_distance_max_error": 2.842170943040401e-14,
+  "scope": "QMC is a standard stronger baseline, not a new TransCIF algorithm. No gate3 inference run."
+}

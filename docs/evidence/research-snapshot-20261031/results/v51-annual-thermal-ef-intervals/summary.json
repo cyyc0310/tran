@@ -1,0 +1,175 @@
+{
+  "status": "EXPLORATORY_ANNUAL_EF_FORWARD_INTERVAL_COMPARISON",
+  "point_information": "strict as-of five-group monthly target totals; EF variants donor same-month, local same-month, or local latest annual with 90-day assumed release delay; source-excluded prior-year local-clock hourly shapes",
+  "risk_methods": [
+    "source-balanced pooled q90",
+    "two-feature mix-only log-q90 Ridge with source-held-out normalized q90 calibration"
+  ],
+  "temporal_protocol": "2024H1/H2 calibration to 2025H1/H2 scoring; each heldout region excluded from point donors and risk calibration",
+  "annual_release_assumption": "annual EF release is Jan 1 of following year plus 90 days; no historical annual vintage exists",
+  "support": "Previously inspected US proxy regions; 2025H1 has 37 region-months/7 sources, 2025H2 has 30 region-months/6 sources.",
+  "input_sha256": {
+    "monthly": "e7c805960f0b6b013dfe8e5f83020c84adee64504c6b9876fa2bde8aa8c5b67d",
+    "hourly": {
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/BPAT_hourly.csv": "72cf83af8fde5f17d5ccb29a1157db26758eb3cc0721186384b5e474cfc933ac",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/CISO_hourly.csv": "34a714dcb07ef66b807c444fe1ac260755716c91edab642c64c8f2c2a94c6d2b",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/ERCO_hourly.csv": "56abb6996e7b9fdf0d59ddd28743afb5ec77629570b6358ad9ee5c3e007f466c",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/FPL_hourly.csv": "423f8166dfcda13f6d6f6e5f9d262c88a3321ee1a6401c65977f2ac0fbbad569",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/ISNE_hourly.csv": "a6ff6602dfcb34dabdb76a1d28003c63f5013c4f11a4f5d9097c278fe67ccd09",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/MISO_hourly.csv": "0b33187fefb609992a2a6550af48ea1f59ff6349f690b0277d73ec537bd2ddfc",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/NYIS_hourly.csv": "f173c238df2c019b49623959ecf7dac74045dfb03c6b160717b86f9dc0ec1e59"
+    }
+  },
+  "macro": [
+    {
+      "half": "H1",
+      "ef_method": "donor_same_month",
+      "risk_method": "conditional_mix_scale",
+      "sources": 7,
+      "coverage": 0.8856905737205276,
+      "width": 266.9568775652244,
+      "interval_score": 398.76719555683366,
+      "lower_miss": 0.0010983560090702946,
+      "upper_miss": 0.11321107027040207,
+      "point_mae": 56.51486808467989
+    },
+    {
+      "half": "H1",
+      "ef_method": "donor_same_month",
+      "risk_method": "global_equal_source_q90",
+      "sources": 7,
+      "coverage": 0.870824494672421,
+      "width": 272.8315421927584,
+      "interval_score": 431.46176730218724,
+      "lower_miss": 0.001561318972033258,
+      "upper_miss": 0.1276141863555458,
+      "point_mae": 56.51486808467989
+    },
+    {
+      "half": "H1",
+      "ef_method": "local_lag_same_month",
+      "risk_method": "conditional_mix_scale",
+      "sources": 7,
+      "coverage": 0.9305537730412462,
+      "width": 174.4317837251273,
+      "interval_score": 216.00760559263497,
+      "lower_miss": 0.02102101142026456,
+      "upper_miss": 0.04842521553848926,
+      "point_mae": 32.92833314490252
+    },
+    {
+      "half": "H1",
+      "ef_method": "local_lag_same_month",
+      "risk_method": "global_equal_source_q90",
+      "sources": 7,
+      "coverage": 0.9122417440884562,
+      "width": 170.59829834849126,
+      "interval_score": 226.1373593384645,
+      "lower_miss": 0.02961381042344017,
+      "upper_miss": 0.05814444548810372,
+      "point_mae": 32.92833314490252
+    },
+    {
+      "half": "H1",
+      "ef_method": "local_latest_annual_d90d",
+      "risk_method": "conditional_mix_scale",
+      "sources": 7,
+      "coverage": 0.9425880977750464,
+      "width": 185.13476561436912,
+      "interval_score": 216.63723818036866,
+      "lower_miss": 0.020848891898868065,
+      "upper_miss": 0.03656301032608559,
+      "point_mae": 32.60483152955613
+    },
+    {
+      "half": "H1",
+      "ef_method": "local_latest_annual_d90d",
+      "risk_method": "global_equal_source_q90",
+      "sources": 7,
+      "coverage": 0.9220530054810208,
+      "width": 181.73737303544723,
+      "interval_score": 227.75030772774045,
+      "lower_miss": 0.031020529550344424,
+      "upper_miss": 0.04692646496863484,
+      "point_mae": 32.60483152955613
+    },
+    {
+      "half": "H2",
+      "ef_method": "donor_same_month",
+      "risk_method": "conditional_mix_scale",
+      "sources": 6,
+      "coverage": 0.8496181435305346,
+      "width": 267.99091611357176,
+      "interval_score": 474.92432876296635,
+      "lower_miss": 0.002679771505376344,
+      "upper_miss": 0.14770208496408901,
+      "point_mae": 61.279747597584695
+    },
+    {
+      "half": "H2",
+      "ef_method": "donor_same_month",
+      "risk_method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.8298355563721596,
+      "width": 266.74234532525946,
+      "interval_score": 502.07441157901366,
+      "lower_miss": 0.0043790802611367126,
+      "upper_miss": 0.16578536336670377,
+      "point_mae": 61.279747597584695
+    },
+    {
+      "half": "H2",
+      "ef_method": "local_lag_same_month",
+      "risk_method": "conditional_mix_scale",
+      "sources": 6,
+      "coverage": 0.9310644551958397,
+      "width": 169.99485971027903,
+      "interval_score": 200.1312444867509,
+      "lower_miss": 0.03845244317858565,
+      "upper_miss": 0.030483101625574743,
+      "point_mae": 30.15592334484569
+    },
+    {
+      "half": "H2",
+      "ef_method": "local_lag_same_month",
+      "risk_method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.9159316297253125,
+      "width": 164.75205175365235,
+      "interval_score": 207.75718200852126,
+      "lower_miss": 0.05048171971895091,
+      "upper_miss": 0.03358665055573658,
+      "point_mae": 30.15592334484569
+    },
+    {
+      "half": "H2",
+      "ef_method": "local_latest_annual_d90d",
+      "risk_method": "conditional_mix_scale",
+      "sources": 6,
+      "coverage": 0.9253429690207243,
+      "width": 166.83559220171983,
+      "interval_score": 199.74950621945922,
+      "lower_miss": 0.04171412748193662,
+      "upper_miss": 0.03294290349733898,
+      "point_mae": 30.325145247600222
+    },
+    {
+      "half": "H2",
+      "ef_method": "local_latest_annual_d90d",
+      "risk_method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.9097346375622585,
+      "width": 161.5796242368873,
+      "interval_score": 208.04422756080342,
+      "lower_miss": 0.0538100838453661,
+      "upper_miss": 0.03645527859237537,
+      "point_mae": 30.325145247600222
+    }
+  ],
+  "outputs_sha256": {
+    "outer_source_month_intervals.csv": "9942ffbccf384e8e826ebcb6719f709b748855736de7a1cb67014406865ebc35",
+    "source_macro.csv": "552c9ae48705a6bdd7c0363ccbd463893cb577f0169e0574b6d028055952f740",
+    "macro.csv": "d6367c5a6307e0702786d1a81dc5a9f68f2983a56e4c7a6fa91c85987f6180fe"
+  },
+  "interpretation": "Exploratory only; repeated sources, synthetic annual release timing, fixed factors; no Chinese validity, arbitrary domain-shift coverage guarantee, or novelty claim."
+}

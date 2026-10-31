@@ -1,0 +1,5 @@
+# V102 protocol: compare V100 capacity outer sets with exact group-capacity feasibility
+
+Frozen 2026-10-28. The V92 exact feasibility solver previously matched V90 endpoints only on the 358-month peak-screened cohort. Re-evaluate exact versus V100's relaxed outer set on all 513 V100 monthly-energy-feasible months, including the 155 hourly peak-screen failures. Use identical 2023/2024 lagged group capacities, eight detailed monthly fuel margins, fixed EF proxy, thresholds 100/300, and 1/5/10% tail targets.
+
+For every region-month and threshold, compute exact sharp K set under shared technology-group hourly caps, positive event and complement output, and no cross-hour constraints. Compare full integer K sets and endpoints with the V100 outer set; confirm actual hourly K containment and set nesting. Do not remove rows based on hourly peaks. Report exact endpoint tightening, if any, separately from certificate/frontier changes. This remains fixed-EF retrospective EIA proxy evidence, not China or unseen-region validation.

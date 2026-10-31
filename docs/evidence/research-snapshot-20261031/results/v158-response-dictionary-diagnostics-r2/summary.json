@@ -1,0 +1,24 @@
+{
+  "assertion_failures": 0,
+  "proper_source_contexts": 12,
+  "prototype_contexts": 60,
+  "script_sha256": "64572f023f03883a93d2972ee42b4293fd244cae7972307c15c3022dfd0a2d9f",
+  "input_hashes": {
+    "scripts/v158_response_dictionary_diagnostics.py": "64572f023f03883a93d2972ee42b4293fd244cae7972307c15c3022dfd0a2d9f",
+    "scripts/hourly_fuel_data.py": "747a69525a4333a2afb58309307d1529ff7d9deda59e706bfb13db4ea789fb07",
+    "scripts/v158_joint_fuel_response.py": "dff276c4c9d6c4b096a6f60e0b67957278489746524dfbf377e103a7c5e4bbd9",
+    "scripts/v151_hourly_law.py": "0aba80e0141b7bd1e1028d66bbddffe846b0259cf03c4d4f3df87755188dc81d",
+    "scripts/v154_hourly_strong_baselines.py": "156c72402b45c2c30f68d253baf61fc09b3572c2b25577af0f3b994c5179ea23",
+    "results/v144-canonical-profile-cache-r1/profiles.npz": "4e40a83eb4b917f591c8f4bda15a54283eecbad4407a7b1d9cc7e9e23055b17a",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v153-calendar-times-r1/timestamps.npz": "0fb6504f175096893937f570cf76119d201ccbeb9e8a84ed123be225ffd4fb0c",
+    "results/v156-anchored-hourly-sampled-r1/summary.json": "356c912e8f58544271e133de570732a2fdf47c3297e8281bad8eecfc2cbc4946",
+    "results/v156-anchored-hourly-sampled-r1/source_sampling.csv": "a64fc5603fb7bf0cabd0544ee390e995ab01737e2091a417d9c8d2faa7eef31f",
+    "results/v156-anchored-hourly-sampled-r1/region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975"
+  },
+  "output_hashes": {
+    "dictionary_spectra.csv": "39fd387b0f2a2070b149236dbad779d3470aa503581a2d41643fea200d21e1a4",
+    "prototype_geometry.csv": "265cad29894f7b2770b513fce1c9fbcd5aca6fe2914fbe20836d7fe9b1592189"
+  },
+  "scope": "Proper-source embedding geometry only; no target/calibration labels or additional accuracy trial."
+}

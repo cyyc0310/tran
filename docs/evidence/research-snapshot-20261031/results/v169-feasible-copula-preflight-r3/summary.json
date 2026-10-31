@@ -1,0 +1,14 @@
+{
+  "assertion_failures": 0,
+  "toy_original_energy_anchor": 550.0,
+  "toy_shuffled_energy_anchor": 550.0,
+  "toy_original_cif_time_mean": 580.0,
+  "toy_shuffled_cif_time_mean": 563.828125,
+  "complementary_zero_changed_swaps": 0,
+  "proper_source_cases": 24,
+  "different_equality_pattern_cache_entries": 2,
+  "max_relative_fuel_mean_error": 4.324533616028184e-15,
+  "script_sha256": "7eb06939cb3834f407a39fabd99383cb62db75c8ff83817353be87b13a48df78",
+  "helper_sha256": "f5eb1f04d025ca5e72ec6d061da345c3aac936a807101b6a4c90124fedf0196f",
+  "scope": "Synthetic and proper-source admissibility checks; no held-out hourly performance scoring."
+}

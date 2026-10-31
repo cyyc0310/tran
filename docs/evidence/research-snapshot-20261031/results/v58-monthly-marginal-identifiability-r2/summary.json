@@ -1,0 +1,42 @@
+{
+  "status": "POSTHOC_IDENTIFIABILITY_ANALYSIS_NOT_PREDICTION",
+  "regions": [
+    "FMPP",
+    "GRID",
+    "IID",
+    "LDWP",
+    "PSEI",
+    "TEC"
+  ],
+  "period": "2026 H1",
+  "region_months": 36,
+  "ef_range": 1000.0,
+  "lp_successful_for_every_row": true,
+  "actual_means_inside_both_bounds": true,
+  "script_sha256": "16faa271c9dac43ed982bd22f3124169e7a40fcf7aa7e3de65e13d69238d31da",
+  "protocol_sha256": "f78160223a6baabaec318305f93909c31f2dc2841248f9e18c07d637ac64b61b",
+  "raw_input_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "overall_mean_metrics": {
+    "margin_only_width": 632.2006011722116,
+    "margin_width_over_ef_range": 0.6322006011722118,
+    "hourly_total_lp_width": 76.63193306833212,
+    "hourly_lp_width_over_ef_range": 0.0766319330683321,
+    "energy_weighted_cif_exact": 297.8890185935906,
+    "actual_equal_hour_mean": 304.5665555494052
+  },
+  "limitations": [
+    "Hourly-total LP uses target hourly total as an oracle, not a deployed feature.",
+    "Fixed-factor EIA proxy is not full-grid measured CIF.",
+    "Margin-only bounds assume no per-hour capacity or ramp constraints."
+  ]
+}

@@ -1,0 +1,22 @@
+# V91: China coarse-capacity data contract gate
+
+**Decision: do not yet describe V90 as a China-ready information set.** This is a source/schema audit, not a data ingest or empirical China validation. The workspace currently contains EIA hourly balance data and EIA-860 capacity ZIPs; no Chinese province-month generation/capacity source files were found in `data/`. Existing V44 and V51 audits likewise mark a complete, historical province-level capacity inventory as unverified.
+
+## What official public sources support
+
+- The National Energy Administration's October 26, 2026 national electricity release reports September-end cumulative national installed capacity, including solar and wind, and a cumulative utilization-hours statistic. It does not provide a province-by-technology capacity panel in the release text. [NEA, 2026 January–September electricity statistics](https://www.nea.gov.cn/20261026/7e48f52542c94c0f99c166262453627d/c.html)
+- The NEA's 2025 renewable generation and installed-capacity summary, published February 12, 2026, reports national renewable capacity by hydro, wind, solar, and biomass. This gives useful technology categories, but it is an annual national aggregate rather than a matched provincial inventory. [NEA, 2025 renewable grid operation](https://www.nea.gov.cn/20260212/742b8c6a078347b0b39de676c05c5d58/c.html)
+- The 2025 National Statistical Communiqué defines thermal generation as including coal, oil, gas, waste heat/pressure/gas, and biomass. Thus a single `thermal` class is not a single emissions-factor class, and installed capacity in that class alone cannot determine carbon intensity. [NBS, 2025 statistical communiqué](https://www.stats.gov.cn/zs/tjwh/tjkw/tjqk/zgxxb/202603/P020260302324456924457.pdf)
+- V51 already verified examples of monthly provincial power reports with total, thermal, hydro, wind, and solar output, but only one local sample was checked and its full-accounting boundary differs from NBS's above-designated-size industrial scope. That is evidence of a possible source path, not a nationwide consistent panel.
+
+## Required source contract before China modeling
+
+For each province and release, record the publisher and source URL, raw file hash, publication timestamp, reference date, unit, revision status, and exact statistical boundary. For the annual capacity fields, require technology-level capacity at a timestamp preceding the scored month; distinguish total/nameplate from dependable capacity, and separate conventional hydro from pumped storage if the source does. For monthly generation, require total generation plus every technology category used in the denominator, with categories that are mutually exclusive and exhaustive within the same boundary. Record thermal residuals, biomass, storage, self-generation, imports/exports, and plant-versus-grid reporting explicitly rather than silently assigning them to a fuel bucket.
+
+The minimum potentially usable alignment is province × month `generation_total`, `generation_thermal`, `generation_hydro`, `generation_nuclear`, `generation_wind`, `generation_solar`, alongside pre-month annual `capacity_thermal`, `capacity_hydro`, `capacity_nuclear`, `capacity_wind`, and `capacity_solar`, with consistent units and scope. Capacity must be an upper envelope for the output quantity being bounded; if mapping or boundary audit fails, the bound is unavailable for that row and the row remains in the denominator as a failure.
+
+## Research consequence
+
+V90 supports a mechanism claim on EIA proxy data: coarse annual technology capacity still narrows the monthly-margin tail set, with weaker intervals than fuel-specific capacity and more retrospectively feasible rows. The Chinese public-source audit does not yet establish that the required province-by-technology inventory is released with suitable timing or matching scope. The right next experiment is source acquisition and contract validation, followed by locked-region coverage audit; do not run a China “forecast” by treating national totals as province values or by treating thermal as coal.
+
+Even if the data contract is satisfied, this is currently a partial-identification/data-budget contribution rather than a new forecasting algorithm. A stronger method contribution would derive the exact coarse-group K set with strictly positive generation in both event and complement hours, quantify conservatism against the current outer-set intersection, and evaluate it on blind regions and a genuine hourly CIF reference.

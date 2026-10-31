@@ -1,0 +1,40 @@
+{
+  "status": "RETROSPECTIVE_COARSE_GROUP_INFORMATION_CEILING",
+  "contract": "Known hourly total generation plus exact positive-EF-group generation total per block; block widths 1,3,6,12,24h, or one whole month.",
+  "sharpness": "Sharp for the reduced per-hour constraints only: 0<=positive-group output<=hourly total and exact block sum. Omits fuel-specific monthly margins, ramping, capacity and dispatch constraints.",
+  "ef_support": [
+    0.0,
+    400.0,
+    1000.0
+  ],
+  "sources": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "ISNE",
+    "MISO",
+    "NYIS"
+  ],
+  "years": [
+    2022,
+    2023,
+    2024
+  ],
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/BPAT_hourly.csv": "8fc4377a7e37dd3ace5d84062fab8ab923760f3deb99ec634d84cfae649add9a",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/CISO_hourly.csv": "f1d69e13d35cc7c496532905a8a414e8f3e68e8c12ebd3394bdbc026db0b0caa",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/ERCO_hourly.csv": "e5d8cb8757f07e2a46f8a22d72e0bfc704c6ce3848196113559881dd7f47d925",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/FPL_hourly.csv": "5c0346cbafc08b73556c62baf4014c193fb8657bf9fcde4d194fb3818e3933e6",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/ISNE_hourly.csv": "f30cb202d839100352fd7aa81283a19ba3973cf07d754ab891d674644c4c0747",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/MISO_hourly.csv": "edc5d1b9fad671ae43bed234140eb146295e832cf4e2ac9e11f6b55a2279397d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/research/data/NYIS_hourly.csv": "2146d06400707f9973baf75cf3a98ce5b38b02ff9b5f202657d310a8186c123f"
+  },
+  "outputs_sha256": {
+    "hourly_bounds.csv": "389a389d08ed69c0685be98a1cf63a56e8dd449f57f0755629dc1a3f4a71bdc1",
+    "source_summary.csv": "3201d7f0743e5663b3a82db945759861dc365b05bcf6815bbef2f81d1ed1d163",
+    "overall_summary.csv": "48681a79be8a36be1a59d3dade7fe5119a14f6999bcda5c2902dc4d38feb57f1"
+  },
+  "rows": 541008,
+  "interpretation": "Retrospective oracle value of a possible local coarse signal; not currently available Chinese data, a forecast, or an unseen-region evaluation."
+}

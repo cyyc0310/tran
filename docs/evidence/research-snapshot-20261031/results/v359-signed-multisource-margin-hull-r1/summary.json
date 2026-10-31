@@ -1,0 +1,32 @@
+{
+  "method": "joint LP over source interval margins and fixed total; K feasibility requires event excess > 0 and complement excess <= 0",
+  "n_periods": 11,
+  "solver": "scipy.optimize.linprog(method=highs)",
+  "strict_event_tolerance": 1e-07,
+  "fixed_margin_crosscheck_cases": 12,
+  "total_source_residual_twh": 35.77414,
+  "metrics": [
+    {
+      "tau_g_kwh": 100,
+      "mean_reconciled_width_h": 506.90909090909093,
+      "mean_nbs_width_h": 478.09090909090907,
+      "mean_nea_width_h": 506.90909090909093,
+      "mean_net_residual_width_h": 492.8181818181818,
+      "periods_reconciled_narrower_than_nbs": 0,
+      "periods_reconciled_narrower_than_nea": 0,
+      "hours_weighted_reconciled_width_h": 532.1775956284152,
+      "period_hours": 8784
+    },
+    {
+      "tau_g_kwh": 300,
+      "mean_reconciled_width_h": 778.8181818181819,
+      "mean_nbs_width_h": 666.9090909090909,
+      "mean_nea_width_h": 778.8181818181819,
+      "mean_net_residual_width_h": 764.0909090909091,
+      "periods_reconciled_narrower_than_nbs": 0,
+      "periods_reconciled_narrower_than_nea": 0,
+      "hours_weighted_reconciled_width_h": 821.2322404371585,
+      "period_hours": 8784
+    }
+  ]
+}

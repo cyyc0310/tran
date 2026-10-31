@@ -1,0 +1,55 @@
+{
+  "status": "HOURLY_CONDITIONAL_STRONG_BASELINE_DEVELOPMENT",
+  "scored_rows": 1152,
+  "assertion_failures": 0,
+  "feature_columns": [
+    "share_0",
+    "share_1",
+    "share_2",
+    "share_3",
+    "share_4",
+    "share_5",
+    "share_6",
+    "share_7",
+    "log_total",
+    "age_years",
+    "energy_anchor",
+    "month_sin",
+    "month_cos",
+    "hour_sin",
+    "hour_cos",
+    "weekend",
+    "coal_hour_sin",
+    "coal_hour_cos",
+    "solar_hour_sin",
+    "solar_hour_cos"
+  ],
+  "input_hashes": {
+    "docs/V154_HOURLY_STRONG_BASELINES_PROTOCOL.md": "6b6eff61af3c70e96334d3ee80e3b9a65ea85423bb78e6960baada2494378cab",
+    "scripts/v154_hourly_strong_baselines.py": "156c72402b45c2c30f68d253baf61fc09b3572c2b25577af0f3b994c5179ea23",
+    "scripts/v151_hourly_law.py": "0aba80e0141b7bd1e1028d66bbddffe846b0259cf03c4d4f3df87755188dc81d",
+    "scripts/calendar_cif_law.py": "9d479c9c41b1d337fc9682ff7214372c48044a772d3d003679e9334665415392",
+    "results/v144-canonical-profile-cache-r1/profiles.npz": "4e40a83eb4b917f591c8f4bda15a54283eecbad4407a7b1d9cc7e9e23055b17a",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v153-calendar-times-r1/timestamps.npz": "0fb6504f175096893937f570cf76119d201ccbeb9e8a84ed123be225ffd4fb0c",
+    "results/v153-calendar-law-r1/summary.json": "4d62a8583f08a3f1351cac23ff9a10153d371d935b84939f414fd80dcf1dc483",
+    "results/v153-calendar-law-r1/query_inputs.csv": "846ff4c07749fa6fafc6c7cc425d7ff1592a1656449c592054006e274780d085",
+    "results/v153-calendar-law-r1/region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "results/v153-calendar-law-r1/target_month_metrics.csv": "40a273753ce9e6b4ec1159323f931e1b60c8aa4a1696663af6279055ad74e5d7"
+  },
+  "output_hashes": {
+    "calibration_radii.csv": "66e18aca54d329bde112c1d624bbcbd4d13d378c813a83526e5e3035b79d8873",
+    "calibration_regions.csv": "ba36a0e5d65eb4df6febb31c5731cca1b56f006bbe615d76d207e9832ec02000",
+    "inner_source_folds.csv": "493831f841421e0f470529f8b72c3095f3fffd4c78486b04591cfa1093ca0420",
+    "macro_metrics.csv": "c463a162a77b945dea16a70666b00a525f70969e0dc5026b0b36bb75fcc6d788",
+    "region_metrics.csv": "e644d0c34542d6064f5420e365bc13a532173e83f67af15984398e24a7b5654c",
+    "region_roles.csv": "df47ca40ef386fd8ac746d57fab695d351848b310e71d772a5c30fdcd058d975",
+    "source_sampling.csv": "a64fc5603fb7bf0cabd0544ee390e995ab01737e2091a417d9c8d2faa7eef31f",
+    "target_month_metrics.csv": "9046a8827e2c299c0fcf6763cd79201cc45d22276bbf6db7e082db63f3106177"
+  },
+  "limitations": [
+    "Known development targets and simulated releases; no original-method claim.",
+    "CQR has interval/point metrics only; normal law uses 1025-point discretization.",
+    "Mean/variance learner source residuals use whole-source-region five-fold holdout; all sampled data are 2024 proper sources."
+  ]
+}

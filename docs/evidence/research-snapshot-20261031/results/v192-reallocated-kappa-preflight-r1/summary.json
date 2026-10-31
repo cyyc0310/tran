@@ -1,0 +1,28 @@
+{
+  "assertion_failures": 0,
+  "query_cases": 6,
+  "allocation_cases": 12,
+  "prediction_records": 96,
+  "fresh_future_M_refits": 12,
+  "fresh_held_region_raw_refits": 12,
+  "held_truth_scored": false,
+  "input_hashes": {
+    "scripts/v192_kappa_value.py": "955f64a1d5ca1a63b67947bcca4f269b47ca9f1b0c2b5e80f8adb742c90576de",
+    "docs/V192_REALLOCATED_KAPPA_PROTOCOL.md": "a3c86671230f2b879c7bc2ba8794e0265f2529fccd630400213e8215d4eaa8af",
+    "scripts/v192_reallocated_kappa.py": "9ba5d8cbadf45a3cd3db7d858decac4bfb8d54f12640f2539b801df72716887f",
+    "scripts/monthly_history_features.py": "2f01ba4bb3dad23758c6be2225c5d83a0da339737ec85994e35977b020be3a07",
+    "scripts/extended_monthly_information.py": "0ad69eb8204a8f9ce94f38daf595f1649b08ca5d6204c883d68d6147e6f9b0c1",
+    "scripts/v151_hourly_law.py": "0aba80e0141b7bd1e1028d66bbddffe846b0259cf03c4d4f3df87755188dc81d",
+    "results/v183-coarse-history-export-r1/monthly_history.csv": "b4f3b6e051b9f9fbd7338a2cc827a6a0be46c88bbf442d2e8f4a720eaf1da350",
+    "results/v159-fuel-activity-source-pilot-r1/source_sampling.csv": "ff439d3dcc577014772db4b7a4045d40052a5f60a832d251972e9bb12c210dc0",
+    "results/v144-canonical-profile-cache-r1/profiles.npz": "4e40a83eb4b917f591c8f4bda15a54283eecbad4407a7b1d9cc7e9e23055b17a",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v153-calendar-times-r1/timestamps.npz": "0fb6504f175096893937f570cf76119d201ccbeb9e8a84ed123be225ffd4fb0c",
+    "results/v188-forward-zero-risk-r1/fold_0/training_matrices.npz": "2d2d7602419a024943421a128fbafabae0a1de60f825ba88c3fda1d28bfc442c",
+    "results/v188-forward-zero-risk-r1/fold_0/training_provenance.json": "79f23aaa10afc4df723189f1a8a1b0a7ed8d53fa020595e10d00660c58508cb5"
+  },
+  "output_hashes": {
+    "checks.csv": "6129e6cb50296ead17ae0e66edeaf343aca540867934e17482e832a19d411106",
+    "predictions_no_truth.csv": "c9a5466b71b8318a8cefaaf270b255f1b4589487bfe127f72f247bd51c5edecc"
+  }
+}

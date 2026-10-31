@@ -1,0 +1,17 @@
+{
+  "assertion_failures": 0,
+  "verified_source_regions": 29,
+  "verified_role_rows": 174,
+  "verified_queries": 1136,
+  "verified_test_scores": 9088,
+  "script_sha256": "7fa9839f7ad2364b663c9fc9d032dd60e2d36e958c8150fde7368f21fdfe7786",
+  "source_summary_sha256": "d321bc5abee5d68a85fd1559dbb07f37c3c3aa97ad8f8fbbf8ff5301fccde25d",
+  "output_hashes": {
+    "comparisons.csv": "b4d273f5f39ed69368cc180e03552f0af1733dc31419f7231899d1ca46338f60",
+    "factor_strata_metrics.csv": "4d19234f5571d1c874b01a520718acbbdedce56edde8f8c1cf4aa9dae95e05d0",
+    "fold_metrics.csv": "376f6823c2b1a8414f0cc6556b631d559fd0de7bb97d5e66727c316f71edf06d",
+    "input_factor_contexts.csv": "0ae8d6857ce96c4907255c450f11a3f26bd4834879262dd90fcc861eabc40b09",
+    "paired_month_crps.csv": "e2bfa69a646e29671b542c82fee304fbb0ae79f82be964daa0210d0eb71dbb18"
+  },
+  "scope": "Source-development description and archive/data-contract checks, not future-time validation."
+}

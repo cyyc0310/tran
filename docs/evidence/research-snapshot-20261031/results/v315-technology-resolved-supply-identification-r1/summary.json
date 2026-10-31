@@ -1,0 +1,46 @@
+{
+  "experiment": "V315 sharp direct-import carbon-risk bounds with monthly technology generation caps",
+  "n_provinces": 31,
+  "n_months": 12,
+  "n_routes": 116,
+  "n_technologies": 8,
+  "technologies": [
+    "Bioenergy",
+    "Coal",
+    "Gas",
+    "Hydro",
+    "Nuclear",
+    "Other fossil",
+    "Solar",
+    "Wind"
+  ],
+  "risk_target_is_hourly_cif": false,
+  "data": "V310 annual OD plus V294 province-month generation and emissions by eight technology categories",
+  "method": "route \u00d7 technology \u00d7 month nonnegative LP; annual route totals fixed; each origin-technology-month export capped by estimated generation; two-copy worst-case conditional diameter; compares annual OD only with province-month receipts",
+  "limitations": [
+    "V294 generation and emissions are estimates and not independent labels",
+    "technology output is an availability cap, not observed exported fuel composition",
+    "no monthly recipient load, line capacity, losses, or physical-flow validation",
+    "outcome is a monthly direct-import carbon exposure proxy, not standard CIF or hourly risk"
+  ],
+  "summary_by_information_set": [
+    {
+      "information_set": "annual_od_only",
+      "additional_independent_fields": 0,
+      "mean_remaining_width_kgco2e_kwh": 1.2858848869087622,
+      "median_remaining_width_kgco2e_kwh": 0.911972383609257,
+      "mean_guaranteed_relative_width_reduction": 0.0,
+      "median_guaranteed_relative_width_reduction": 0.0,
+      "zero_width_province_months": 0
+    },
+    {
+      "information_set": "province_monthly_receipts",
+      "additional_independent_fields": 341,
+      "mean_remaining_width_kgco2e_kwh": 0.9515726267888753,
+      "median_remaining_width_kgco2e_kwh": 0.6037431959346999,
+      "mean_guaranteed_relative_width_reduction": 0.1973424481237976,
+      "median_guaranteed_relative_width_reduction": 0.053160597681959465,
+      "zero_width_province_months": 0
+    }
+  ]
+}

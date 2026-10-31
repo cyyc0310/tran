@@ -1,0 +1,264 @@
+{
+  "status": "UNSEEN_REGION_SAME_MONTH_MARGIN_ANCHOR_EMPIRICAL_INTERVAL_BASELINE",
+  "target_regions": [
+    "CPLE",
+    "FPC",
+    "IPCO",
+    "PNM",
+    "SOCO"
+  ],
+  "calibration_regions": [
+    "AVA",
+    "BANC",
+    "BPAT",
+    "CHPD",
+    "DOPD",
+    "EPE",
+    "FMPP",
+    "FPL",
+    "GCPD",
+    "GRID",
+    "GVL",
+    "IID",
+    "JEA",
+    "LDWP",
+    "MISO",
+    "NWMT",
+    "NYIS",
+    "PSEI",
+    "SC",
+    "SCEG",
+    "SCL",
+    "SEC",
+    "TEC",
+    "TIDC",
+    "TPWR"
+  ],
+  "target_region_months": 30,
+  "calibration_region_months_by_tau": {
+    "600": 589,
+    "900": 589
+  },
+  "radius_q90_by_tau": {
+    "600": 0.06388888888888888,
+    "900": 0.0
+  },
+  "region_equal_metrics": [
+    {
+      "tau": 600,
+      "point_absolute_error_hours": 2.933333333333333,
+      "anchor_interval_width": 45.8,
+      "anchor_interval_covered": 1.0,
+      "monthly_robust_width": 722.2,
+      "capacity_robust_width": 434.0666666666666,
+      "anchor_positive_0.01": 0.0,
+      "anchor_negative_0.01": 0.0,
+      "anchor_abstain_0.01": 1.0,
+      "monthly_positive_0.01": 0.0,
+      "monthly_negative_0.01": 0.0,
+      "monthly_abstain_0.01": 1.0,
+      "capacity_positive_0.01": 0.0,
+      "capacity_negative_0.01": 0.0,
+      "capacity_abstain_0.01": 1.0,
+      "anchor_positive_0.05": 0.0,
+      "anchor_negative_0.05": 0.0,
+      "anchor_abstain_0.05": 1.0,
+      "monthly_positive_0.05": 0.0,
+      "monthly_negative_0.05": 0.0,
+      "monthly_abstain_0.05": 1.0,
+      "capacity_positive_0.05": 0.0,
+      "capacity_negative_0.05": 0.0,
+      "capacity_abstain_0.05": 1.0,
+      "anchor_positive_0.1": 0.0,
+      "anchor_negative_0.1": 1.0,
+      "anchor_abstain_0.1": 0.0,
+      "monthly_positive_0.1": 0.0,
+      "monthly_negative_0.1": 0.0,
+      "monthly_abstain_0.1": 1.0,
+      "capacity_positive_0.1": 0.0,
+      "capacity_negative_0.1": 0.0,
+      "capacity_abstain_0.1": 1.0,
+      "anchor_interval_coverage": 1.0
+    },
+    {
+      "tau": 900,
+      "point_absolute_error_hours": 0.0,
+      "anchor_interval_width": 0.0,
+      "anchor_interval_covered": 1.0,
+      "monthly_robust_width": 577.6,
+      "capacity_robust_width": 269.96666666666664,
+      "anchor_positive_0.01": 0.0,
+      "anchor_negative_0.01": 1.0,
+      "anchor_abstain_0.01": 0.0,
+      "monthly_positive_0.01": 0.0,
+      "monthly_negative_0.01": 0.2,
+      "monthly_abstain_0.01": 0.8,
+      "capacity_positive_0.01": 0.0,
+      "capacity_negative_0.01": 0.2,
+      "capacity_abstain_0.01": 0.8,
+      "anchor_positive_0.05": 0.0,
+      "anchor_negative_0.05": 1.0,
+      "anchor_abstain_0.05": 0.0,
+      "monthly_positive_0.05": 0.0,
+      "monthly_negative_0.05": 0.2,
+      "monthly_abstain_0.05": 0.8,
+      "capacity_positive_0.05": 0.0,
+      "capacity_negative_0.05": 0.2,
+      "capacity_abstain_0.05": 0.8,
+      "anchor_positive_0.1": 0.0,
+      "anchor_negative_0.1": 1.0,
+      "anchor_abstain_0.1": 0.0,
+      "monthly_positive_0.1": 0.0,
+      "monthly_negative_0.1": 0.2,
+      "monthly_abstain_0.1": 0.8,
+      "capacity_positive_0.1": 0.0,
+      "capacity_negative_0.1": 0.23333333333333334,
+      "capacity_abstain_0.1": 0.7666666666666667,
+      "anchor_interval_coverage": 1.0
+    }
+  ],
+  "proxy_label_coverage_of_identified_sets": true,
+  "hourly_source_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "v104_rows_sha256": "ac415bb5f9c13d493d07289fd659ad2eaaff73aced5006464d23c1f9824cbc6f",
+  "v105_rows_sha256": "908f754e295b585f583d53854acb8d5c7085aeca24d2e68bbc245e886e826a11",
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "DOPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "EPE": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "GCPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TIDC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "CPLE": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "FPC": {
+      "eligible_months": 48,
+      "dropped_months": 6
+    },
+    "IPCO": {
+      "eligible_months": 48,
+      "dropped_months": 6
+    },
+    "PNM": {
+      "eligible_months": 46,
+      "dropped_months": 8
+    },
+    "SOCO": {
+      "eligible_months": 48,
+      "dropped_months": 6
+    }
+  },
+  "protocol_sha256": "512caaf0c92fc58745e946058b85c3bb0c7b723cc7dbc9e8968033f6286a4ef1",
+  "script_sha256": "0c15d00b31a3fd4effcdc155a554e94d21f72d2092f0fefcc8df82041e0caeec",
+  "limitations": [
+    "Empirical region-balanced quantile is not a formal conformal guarantee under dependence or domain shift.",
+    "Target period is retrospectively observed and fixed-factor EIA proxy labeled.",
+    "Monthly anchor uses only target-month fuel margins; capacity set uses additional lagged capacity.",
+    "Results do not validate actual China CIF or marginal/consumption-based intensity."
+  ]
+}

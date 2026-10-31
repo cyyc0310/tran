@@ -1,0 +1,6 @@
+{
+  "assertion_failures": 0,
+  "unselected_source_and_target_hour_values_do_not_affect_predictor": true,
+  "selected_source_positive_control_changes_predictor": true,
+  "scope": "Synthetic source-label isolation test, not model accuracy."
+}

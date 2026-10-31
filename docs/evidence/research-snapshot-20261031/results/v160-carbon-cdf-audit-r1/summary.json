@@ -1,0 +1,25 @@
+{
+  "assertion_failures": 0,
+  "scored_rows_verified": 4544,
+  "asof_mean_records_reproduced": 482,
+  "reproduction_max_errors": {
+    "crps": 0.0,
+    "mae": 0.0,
+    "coverage": 0.0,
+    "width": 0.0,
+    "winkler": 0.0
+  },
+  "script_sha256": "e603824315a14fc8ef4fe42a8de7f075e4e58653c68451277bf2c782af4df37c",
+  "archive_summary_hashes": {
+    "results/v160-carbon-cdf-source-r1": "70010a569a04a9ed35dbaec7ee7b4f19152bf905200f5cebd5232d1aba8f9a7e",
+    "results/v159-fuel-activity-source-pilot-r1": "d321bc5abee5d68a85fd1559dbb07f37c3c3aa97ad8f8fbbf8ff5301fccde25d"
+  },
+  "output_hashes": {
+    "all_macro_metrics.csv": "2cb976efe4ada44933cdbfae15796fc0c1803a3efada9793b6973674bd0e6bc0",
+    "all_region_metrics.csv": "326a97c1b74073da93dfd429e4efd4a7d4017f87d86728d18c0cb26ad9326b24",
+    "comparisons.csv": "cf48710a24feb3fa51ec95f7da6e297e16faa55c8fc2c6bb3bb37ced60ff5ee7",
+    "fold_metrics.csv": "8374ab1d37e63618de2d80ee722c9041719ad24ac55c1dc01601a81426c6fa2b",
+    "paired_month_crps.csv": "57258a8fa79886a709ab85e74697f6b1bbafda84b26359d3c9be4564fb5a7790"
+  },
+  "scope": "Source-only development and descriptive Dirichlet month reweighting, no blind confirmation."
+}

@@ -1,0 +1,340 @@
+{
+  "status": "CONTINUOUS_EF_BOX_CONSERVATIVE_SCORE_BOUND_POSTHOC_OCTOBER",
+  "delta": 0.2,
+  "tau": 900,
+  "source_regions": [
+    "AVA",
+    "BANC",
+    "BPAT",
+    "CHPD",
+    "DOPD",
+    "EPE",
+    "FMPP",
+    "FPL",
+    "GCPD",
+    "GRID",
+    "GVL",
+    "IID",
+    "JEA",
+    "LDWP",
+    "MISO",
+    "NWMT",
+    "NYIS",
+    "PSEI",
+    "SC",
+    "SCEG",
+    "SCL",
+    "SEC",
+    "TEC",
+    "TIDC",
+    "TPWR"
+  ],
+  "target_regions": [
+    "AVA",
+    "AVRN",
+    "AZPS",
+    "BANC",
+    "BPAT",
+    "CHPD",
+    "CISO",
+    "CPLE",
+    "DOPD",
+    "DUK",
+    "EPE",
+    "ERCO",
+    "FMPP",
+    "FPC",
+    "FPL",
+    "GCPD",
+    "GRID",
+    "GVL",
+    "IID",
+    "IPCO",
+    "JEA",
+    "LDWP",
+    "LGEE",
+    "MISO",
+    "NWMT",
+    "NYIS",
+    "PACE",
+    "PNM",
+    "PSCO",
+    "PSEI",
+    "SC",
+    "SCEG",
+    "SCL",
+    "SEC",
+    "SOCO",
+    "SPA",
+    "SRP",
+    "TAL",
+    "TEC",
+    "TEPC",
+    "TIDC",
+    "TPWR",
+    "TVA",
+    "WALC"
+  ],
+  "target_candidate_count": 44,
+  "target_availability_eligible": 40,
+  "target_capacity_feasible": 37,
+  "source_score_rows": 589,
+  "region_radius_summary": {
+    "AVA": 0.0,
+    "BANC": 0.0,
+    "BPAT": 0.0,
+    "CHPD": 0.0,
+    "DOPD": 0.0,
+    "EPE": 0.0,
+    "FMPP": 0.001388888888888889,
+    "FPL": 0.0,
+    "GCPD": 0.0,
+    "GRID": 0.026881720430107527,
+    "GVL": 0.0,
+    "IID": 0.0,
+    "JEA": 0.29305555555555557,
+    "LDWP": 0.013440860215053764,
+    "MISO": 0.0,
+    "NWMT": 0.10972222222222222,
+    "NYIS": 0.0,
+    "PSEI": 0.0,
+    "SC": 1.0,
+    "SCEG": 0.0,
+    "SCL": 0.0,
+    "SEC": 0.07916666666666666,
+    "TEC": 0.0,
+    "TIDC": 0.0,
+    "TPWR": 0.0
+  },
+  "frontier": [
+    {
+      "tau": 900,
+      "method": "capacity",
+      "regions": 37,
+      "endpoint_coverage": 1.0,
+      "mean_width": 222.0,
+      "fallback_count": 0
+    },
+    {
+      "tau": 900,
+      "method": "intersection",
+      "regions": 37,
+      "endpoint_coverage": 1.0,
+      "mean_width": 120.83783783783784,
+      "fallback_count": 0
+    },
+    {
+      "tau": 900,
+      "method": "frozen",
+      "regions": 37,
+      "endpoint_coverage": 1.0,
+      "mean_width": 144.21621621621622,
+      "fallback_count": 2
+    }
+  ],
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 54,
+      "dropped_months": 4
+    },
+    "BPAT": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 54,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 56,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "FMPP": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 55,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 56,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "AVRN": {
+      "eligible_months": 48,
+      "dropped_months": 10
+    },
+    "AZPS": {
+      "eligible_months": 55,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "CISO": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "CPLE": {
+      "eligible_months": 55,
+      "dropped_months": 3
+    },
+    "DOPD": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "DUK": {
+      "eligible_months": 51,
+      "dropped_months": 7
+    },
+    "EPE": {
+      "eligible_months": 57,
+      "dropped_months": 1
+    },
+    "ERCO": {
+      "eligible_months": 53,
+      "dropped_months": 5
+    },
+    "FPC": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "GCPD": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "IPCO": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "LGEE": {
+      "eligible_months": 53,
+      "dropped_months": 5
+    },
+    "PACE": {
+      "eligible_months": 50,
+      "dropped_months": 8
+    },
+    "PNM": {
+      "eligible_months": 50,
+      "dropped_months": 8
+    },
+    "PSCO": {
+      "eligible_months": 41,
+      "dropped_months": 17
+    },
+    "SCL": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "SOCO": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "SPA": {
+      "eligible_months": 53,
+      "dropped_months": 5
+    },
+    "SRP": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "TAL": {
+      "eligible_months": 53,
+      "dropped_months": 5
+    },
+    "TEPC": {
+      "eligible_months": 52,
+      "dropped_months": 6
+    },
+    "TIDC": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 58,
+      "dropped_months": 0
+    },
+    "TVA": {
+      "eligible_months": 46,
+      "dropped_months": 12
+    },
+    "WALC": {
+      "eligible_months": 29,
+      "dropped_months": 29
+    }
+  },
+  "input_hashes": {
+    "calibration_roster": "b5be7e808aa0c5338cffc9ad6020945acb7ee8d6ed61c7dc96b7f65cfe4aaa3a",
+    "target_roster": "d8a1c3a7ccd20a19a7babece5ae95c922d920bf93869309c452e7e98112f8e08",
+    "native": "48005f09be801598e28f38079056260a0d07ab9a6d1a0324e8e92ca470b3c281",
+    "v127_target_rows": "6dd79796d74a96902080eb9638c69049c434200187e561d863684657fca24767",
+    "v127_support_gaps": "7954e2ff3084768d616626d00936c47c4cadcef00ee35bca2329443afe0ae5e3",
+    "protocol": "0574cc4220b6e58a917b24d64bab4992a351e3b869bd9a45d9aa23b90fda090a",
+    "script": "3273eb7a8f7cd217d361ebf76432d1699c639833bf64b0b6941f4a68e411b458"
+  },
+  "hourly_source_hashes": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jul_Dec.csv": "48005f09be801598e28f38079056260a0d07ab9a6d1a0324e8e92ca470b3c281"
+  },
+  "limitations": [
+    "Posthoc October target labels; no independent time/spatial confirmation.",
+    "The score is a conservative continuous-box upper bound and may overstate the true worst-case score.",
+    "Its region-level calibration still requires time/region exchangeability for a probabilistic coverage claim.",
+    "EIA fixed-factor proxy and capacity analogue; not China hourly validation."
+  ]
+}

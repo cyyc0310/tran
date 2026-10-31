@@ -1,0 +1,226 @@
+{
+  "status": "SAME_REGION_TEMPORAL_REPLICATION_NOT_UNSEEN_REGION_CONFIRMATION",
+  "periods": [
+    "2024H2",
+    "2025H1",
+    "2025H2"
+  ],
+  "regions": [
+    "BPAT",
+    "MISO",
+    "NYIS"
+  ],
+  "rows": 6444,
+  "valid_days_by_period_region": {
+    "2024H2": {
+      "BPAT": 180,
+      "MISO": 182,
+      "NYIS": 182
+    },
+    "2025H1": {
+      "BPAT": 176,
+      "MISO": 166,
+      "NYIS": 177
+    },
+    "2025H2": {
+      "BPAT": 182,
+      "MISO": 182,
+      "NYIS": 184
+    }
+  },
+  "macro_summary": [
+    {
+      "period": "2024H2",
+      "tau": 100,
+      "minG_K0": 0.003703703703703704,
+      "T8_G2_K0": 0.0,
+      "T8_G24_K0": 0.003703703703703704,
+      "S2_K_le4": 0.08333333333333333,
+      "T8_G2_Kle4": 0.03333333333333333,
+      "T8_G24_Kle4": 0.08518518518518518,
+      "L1_K_ge8": 0.358974358974359,
+      "T8_G2_Kge8": 0.34981684981684985,
+      "T8_G24_Kge8": 0.358974358974359,
+      "day_threshold_rows": 544
+    },
+    {
+      "period": "2024H2",
+      "tau": 300,
+      "minG_K0": 0.16481481481481483,
+      "T8_G2_K0": 0.1037037037037037,
+      "T8_G24_K0": 0.16481481481481483,
+      "S2_K_le4": 0.3333333333333333,
+      "T8_G2_Kle4": 0.3314814814814815,
+      "T8_G24_Kle4": 0.3333333333333333,
+      "L1_K_ge8": 0.12271062271062272,
+      "T8_G2_Kge8": 0.0989010989010989,
+      "T8_G24_Kge8": 0.12271062271062272,
+      "day_threshold_rows": 544
+    },
+    {
+      "period": "2024H2",
+      "tau": 600,
+      "minG_K0": 0.3333333333333333,
+      "T8_G2_K0": 0.3314814814814815,
+      "T8_G24_K0": 0.3333333333333333,
+      "S2_K_le4": 0.33516483516483514,
+      "T8_G2_Kle4": 0.3333333333333333,
+      "T8_G24_Kle4": 0.33516483516483514,
+      "L1_K_ge8": 0.0,
+      "T8_G2_Kge8": 0.0,
+      "T8_G24_Kge8": 0.0,
+      "day_threshold_rows": 544
+    },
+    {
+      "period": "2024H2",
+      "tau": 900,
+      "minG_K0": 0.3333333333333333,
+      "T8_G2_K0": 0.3333333333333333,
+      "T8_G24_K0": 0.3333333333333333,
+      "S2_K_le4": 0.5934065934065934,
+      "T8_G2_Kle4": 0.5586080586080586,
+      "T8_G24_Kle4": 0.5934065934065934,
+      "L1_K_ge8": 0.0,
+      "T8_G2_Kge8": 0.0,
+      "T8_G24_Kge8": 0.0,
+      "day_threshold_rows": 544
+    },
+    {
+      "period": "2025H1",
+      "tau": 100,
+      "minG_K0": 0.07007575757575758,
+      "T8_G2_K0": 0.04356060606060606,
+      "T8_G24_K0": 0.07007575757575758,
+      "S2_K_le4": 0.0890151515151515,
+      "T8_G2_Kle4": 0.09280303030303029,
+      "T8_G24_Kle4": 0.0965909090909091,
+      "L1_K_ge8": 0.3352165725047081,
+      "T8_G2_Kge8": 0.3313253012048193,
+      "T8_G24_Kge8": 0.3352165725047081,
+      "day_threshold_rows": 519
+    },
+    {
+      "period": "2025H1",
+      "tau": 300,
+      "minG_K0": 0.2556818181818182,
+      "T8_G2_K0": 0.125,
+      "T8_G24_K0": 0.2556818181818182,
+      "S2_K_le4": 0.3333333333333333,
+      "T8_G2_Kle4": 0.3314393939393939,
+      "T8_G24_Kle4": 0.3333333333333333,
+      "L1_K_ge8": 0.10040160642570282,
+      "T8_G2_Kge8": 0.07429718875502007,
+      "T8_G24_Kge8": 0.10040160642570282,
+      "day_threshold_rows": 519
+    },
+    {
+      "period": "2025H1",
+      "tau": 600,
+      "minG_K0": 0.3333333333333333,
+      "T8_G2_K0": 0.32954545454545453,
+      "T8_G24_K0": 0.3333333333333333,
+      "S2_K_le4": 0.35969868173258,
+      "T8_G2_Kle4": 0.33709981167608283,
+      "T8_G24_Kle4": 0.35969868173258,
+      "L1_K_ge8": 0.0,
+      "T8_G2_Kge8": 0.0,
+      "T8_G24_Kge8": 0.0,
+      "day_threshold_rows": 519
+    },
+    {
+      "period": "2025H1",
+      "tau": 900,
+      "minG_K0": 0.3333333333333333,
+      "T8_G2_K0": 0.3333333333333333,
+      "T8_G24_K0": 0.3333333333333333,
+      "S2_K_le4": 0.6516007532956686,
+      "T8_G2_Kle4": 0.6421845574387947,
+      "T8_G24_Kle4": 0.6516007532956686,
+      "L1_K_ge8": 0.0,
+      "T8_G2_Kge8": 0.0,
+      "T8_G24_Kge8": 0.0,
+      "day_threshold_rows": 519
+    },
+    {
+      "period": "2025H2",
+      "tau": 100,
+      "minG_K0": 0.016483516483516484,
+      "T8_G2_K0": 0.016483516483516484,
+      "T8_G24_K0": 0.016483516483516484,
+      "S2_K_le4": 0.10256410256410257,
+      "T8_G2_Kle4": 0.04578754578754579,
+      "T8_G24_Kle4": 0.1043956043956044,
+      "L1_K_ge8": 0.34963768115942034,
+      "T8_G2_Kge8": 0.3351449275362319,
+      "T8_G24_Kge8": 0.34963768115942034,
+      "day_threshold_rows": 548
+    },
+    {
+      "period": "2025H2",
+      "tau": 300,
+      "minG_K0": 0.12820512820512822,
+      "T8_G2_K0": 0.10989010989010989,
+      "T8_G24_K0": 0.12820512820512822,
+      "S2_K_le4": 0.3333333333333333,
+      "T8_G2_Kle4": 0.3315018315018315,
+      "T8_G24_Kle4": 0.3333333333333333,
+      "L1_K_ge8": 0.16483516483516483,
+      "T8_G2_Kge8": 0.10805860805860806,
+      "T8_G24_Kge8": 0.16483516483516483,
+      "day_threshold_rows": 548
+    },
+    {
+      "period": "2025H2",
+      "tau": 600,
+      "minG_K0": 0.3333333333333333,
+      "T8_G2_K0": 0.3315018315018315,
+      "T8_G24_K0": 0.3333333333333333,
+      "S2_K_le4": 0.33695652173913043,
+      "T8_G2_Kle4": 0.3333333333333333,
+      "T8_G24_Kle4": 0.33695652173913043,
+      "L1_K_ge8": 0.0,
+      "T8_G2_Kge8": 0.0,
+      "T8_G24_Kge8": 0.0,
+      "day_threshold_rows": 548
+    },
+    {
+      "period": "2025H2",
+      "tau": 900,
+      "minG_K0": 0.3333333333333333,
+      "T8_G2_K0": 0.3333333333333333,
+      "T8_G24_K0": 0.3333333333333333,
+      "S2_K_le4": 0.5887681159420289,
+      "T8_G2_Kle4": 0.5579710144927535,
+      "T8_G24_Kle4": 0.5887681159420289,
+      "L1_K_ge8": 0.0,
+      "T8_G2_Kge8": 0.0,
+      "T8_G24_Kge8": 0.0,
+      "day_threshold_rows": 548
+    }
+  ],
+  "false_certificates": 0,
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/tail-count-v20/freeze.json": "52a23104a812dea193c22350fe9d258a778193096e77a70616c6658ebd8ae807",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/tail-count-v20/completed.json": "6f1ac593e91f80959abfb2c41c11618d7abe2f69596638d04280980572049054"
+  },
+  "raw_source_hashes": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/docs/evidence/risk-information-v19-verification.json": "e2d30122f3daa245740efe902164a6e1367ec1fe906ebfdc589ff1944cc820fc",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/mean-information-v19/freeze.json": "8a1f9677f74b6c7d140fc972286f92a988d7639338a8edc7c23a6041d551b2b6",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/mean-information-v19/completed.json": "800cc6c20c2cbbbf3e425d1910cc666c22684c9202d96835e79beb092cbf3dd6",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/mean-information-v19/day_bounds.csv": "cd74f0b9fa6d16bc6bea24bf3106cd4e2b1aa6047cea38ed9bd71919506cd065",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2026h1-data/BPAT_hourly.csv": "cafecc27ff312f77121858a28b1af9e6aca810653d08eb1046c140a8d9fdd136",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2026h1-data/CISO_hourly.csv": "2cf0420adb5ca87820c1792e529f69aa04ffef93b01dd766a6c43cb46afb2063",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2026h1-data/ERCO_hourly.csv": "e632e359921be9a2fff79775d9cb9239629637aec6cd11f508ee4866f0c026f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2026h1-data/FPL_hourly.csv": "b72a04bd77649bee92cc16fe55339afa2821ab9786e640059d7d6fe9a1a72089",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2026h1-data/ISNE_hourly.csv": "392439b5780af2c0c4660b38dda168c07e810019f47a7552ef0312510f70c4e3",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2026h1-data/MISO_hourly.csv": "662f0049dd2e3ea3887256ed1b4209ea9c97845ae8b1cde48d7ba702692f6342",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2026h1-data/NYIS_hourly.csv": "6ca203eca3abbc88baaf24d0e81abd1cfa92e50d1fb4a2af7d792795fb682ee1"
+  },
+  "protocol_sha256": "4f22fed418c19b49272700a4c47ea72c06abb12012966d57bb08b8b9638a952e",
+  "script_sha256": "cc17dbd602cb214dd550820eabfb02393babe008d6864b93faa8e8ad4b9706b4",
+  "limitations": [
+    "Temporal replication only; the same seven regions were previously opened.",
+    "T8_G2 is an outer set, not sharp.",
+    "Historical oracle identification, not forecast coverage or China deployment."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PARTIAL_IDENTIFICATION_INFORMATION_FRONTIER_NOT_FORECAST",
+  "regions": 25,
+  "region_months": 449,
+  "rows": 104904,
+  "schedule_replicates": 50,
+  "random_seed": 202,
+  "aggregation": "equal region-month means within each region, then equal-region means",
+  "limitations": [
+    "EIA proxy labels, not China observations",
+    "monthly margins are oracle aggregates",
+    "fixed EFs and no unit/network constraints",
+    "partial-identification certificates are not probabilistic coverage"
+  ]
+}

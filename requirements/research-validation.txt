@@ -1,0 +1,4 @@
+# Numerical/dataframe versions used for the 2026-10-31 repository validation.
+# Apply with: pip install -c requirements/research-validation.txt -e '.[dev,research]'
+numpy==1.26.4
+pandas==2.2.3

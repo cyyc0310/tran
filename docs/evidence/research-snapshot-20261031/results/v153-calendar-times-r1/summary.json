@@ -1,0 +1,23 @@
+{
+  "assertion_failures": 0,
+  "profiles": 936,
+  "verified_hour_rows": 677928,
+  "raw_source_hashes": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "input_hashes": {
+    "docs/V153_CALENDAR_LAW_PROTOCOL.md": "abdefb21811b76abed352cf47c9eaec655ef32f10a0f42178dce79235c4fa1b1",
+    "results/v144-canonical-profile-cache-r1/profiles.npz": "4e40a83eb4b917f591c8f4bda15a54283eecbad4407a7b1d9cc7e9e23055b17a",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "scripts/v153_prepare_timestamps.py": "ef878e1461e7d58693fcd0ad89720e5333cab353dea06b6b5d818d286eb816e3"
+  },
+  "timestamp_sha256": "0fb6504f175096893937f570cf76119d201ccbeb9e8a84ed123be225ffd4fb0c"
+}

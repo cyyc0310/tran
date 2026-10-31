@@ -15,7 +15,8 @@ from transcif.physics.dispatch import capped_dispatch
 from transcif.models.dispatch import ProbabilisticDispatchNet
 from transcif.models.dispatch import DispatchForecast
 from transcif.training.losses import point_dispatch_loss, joint_dispatch_loss
-from transcif.training.fit import fit, predict
+from transcif.training.fit import fit
+from transcif.inference import predict
 from transcif.experiment import run
 
 

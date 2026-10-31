@@ -1,0 +1,233 @@
+{
+  "experiment": "V368 leave-region-out transfer with only local monthly thermal share",
+  "input_files": [
+    "results/research/data/BPAT_hourly.csv",
+    "results/research/data/CISO_hourly.csv",
+    "results/research/data/ERCO_hourly.csv",
+    "results/research/data/FPL_hourly.csv",
+    "results/research/data/ISNE_hourly.csv",
+    "results/research/data/MISO_hourly.csv",
+    "results/research/data/NYIS_hourly.csv"
+  ],
+  "target": "fixed-factor hourly eight-bucket generation CIF proxy, not measured emissions",
+  "local_input_contract": "only held-out local monthly coal+gas+oil share; no held-out hourly CIF or source-specific local factor is used by the forecast",
+  "donor_contract": "same-year-month other-region hourly CIF shape; one target region fully excluded from donor values",
+  "thermal_ef_scenarios_g_kwh": [
+    500.0,
+    700.0,
+    900.0
+  ],
+  "thresholds_g_kwh_strict": [
+    300.0,
+    500.0,
+    700.0
+  ],
+  "regions": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "ISNE",
+    "MISO",
+    "NYIS"
+  ],
+  "n_region_months": 245,
+  "valid_hours": 175560,
+  "primary_pair": "local_thermal_level_plus_donor_shape vs pooled_thermal_level_plus_donor_shape",
+  "paired_gains": {
+    "ef500_tau300": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 57.36277450807017,
+        "ci95_low": 8.568643700559306,
+        "ci95_high": 126.94176046490166,
+        "regions_won": 6
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 188.6219336219336,
+        "ci95_low": 49.489736652236644,
+        "ci95_high": 339.44336219336213,
+        "regions_won": 6
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.2560437320753728,
+        "ci95_low": 0.06091732892515268,
+        "ci95_high": 0.4662219320905247,
+        "regions_won": 6
+      }
+    },
+    "ef500_tau500": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 57.36277450807017,
+        "ci95_low": 8.568643700559306,
+        "ci95_high": 126.94176046490166,
+        "regions_won": 6
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "regions_won": 0
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "regions_won": 0
+      }
+    },
+    "ef500_tau700": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 57.36277450807017,
+        "ci95_low": 8.568643700559306,
+        "ci95_high": 126.94176046490166,
+        "regions_won": 6
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "regions_won": 0
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "regions_won": 0
+      }
+    },
+    "ef700_tau300": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 69.36386780001908,
+        "ci95_low": -0.8963590988027923,
+        "ci95_high": 173.12628495104065,
+        "regions_won": 5
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 153.73304473304475,
+        "ci95_low": 16.208152958152958,
+        "ci95_high": 356.3492063492063,
+        "regions_won": 7
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.21255521288162,
+        "ci95_low": 0.02233678603537309,
+        "ci95_high": 0.49294998850004845,
+        "regions_won": 7
+      }
+    },
+    "ef700_tau500": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 69.36386780001908,
+        "ci95_low": -0.8963590988027923,
+        "ci95_high": 173.12628495104065,
+        "regions_won": 5
+      },
+      "tail_count_error_gain_hours": {
+        "mean": -12.259604978354977,
+        "ci95_low": -41.430735930735935,
+        "ci95_high": 7.567460317460317,
+        "regions_won": 4
+      },
+      "tail_fraction_error_gain": {
+        "mean": -0.017402456096842885,
+        "ci95_low": -0.05834929872791055,
+        "ci95_high": 0.010141555901394875,
+        "regions_won": 4
+      }
+    },
+    "ef700_tau700": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 69.36386780001908,
+        "ci95_low": -0.8963590988027923,
+        "ci95_high": 173.12628495104065,
+        "regions_won": 5
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "regions_won": 0
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "regions_won": 0
+      }
+    },
+    "ef900_tau300": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 66.77427721239607,
+        "ci95_low": -38.4770753144092,
+        "ci95_high": 215.02409742972532,
+        "regions_won": 4
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 119.6111111111111,
+        "ci95_low": 0.0,
+        "ci95_high": 326.08730158730157,
+        "regions_won": 2
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.16528469579031713,
+        "ci95_low": 0.0,
+        "ci95_high": 0.4509989815046028,
+        "regions_won": 2
+      }
+    },
+    "ef900_tau500": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 66.77427721239607,
+        "ci95_low": -38.4770753144092,
+        "ci95_high": 215.02409742972532,
+        "regions_won": 4
+      },
+      "tail_count_error_gain_hours": {
+        "mean": 65.68713924963924,
+        "ci95_low": -166.79734848484847,
+        "ci95_high": 294.50856782106786,
+        "regions_won": 4
+      },
+      "tail_fraction_error_gain": {
+        "mean": 0.08611910582459055,
+        "ci95_low": -0.2321320633859274,
+        "ci95_high": 0.40386338077489453,
+        "regions_won": 4
+      }
+    },
+    "ef900_tau700": {
+      "hourly_mae_gain_g_kwh": {
+        "mean": 66.77427721239607,
+        "ci95_low": -38.4770753144092,
+        "ci95_high": 215.02409742972532,
+        "regions_won": 4
+      },
+      "tail_count_error_gain_hours": {
+        "mean": -3.5487012987012987,
+        "ci95_low": -8.984126984126984,
+        "ci95_high": 0.09018759018759018,
+        "regions_won": 1
+      },
+      "tail_fraction_error_gain": {
+        "mean": -0.004938775991102651,
+        "ci95_low": -0.012547175433020818,
+        "ci95_high": 0.0001212198792843954,
+        "regions_won": 1
+      }
+    }
+  },
+  "bootstrap": {
+    "unit": "held-out region; average region-month paired gains within region before resampling",
+    "resamples": 10000,
+    "seed": 368,
+    "region_clusters": 7,
+    "interpretation": "descriptive cluster interval based on seven regions"
+  },
+  "caveats": [
+    "EIA generation/CIF series are a source-domain proxy, not direct measured emissions.",
+    "Regions were previously opened; CV prevents target-hour leakage into its donor shape but is not a sealed unseen-region test.",
+    "Monthly inputs are reconstructed from retrospective hourly source data; publication vintages are unknown.",
+    "Thermal-factor scenarios are sensitivity values, not locally calibrated estimates.",
+    "China's NBS monthly series is above-designated-size and has an unobserved all-plant remainder; that scope issue is not addressed here."
+  ]
+}

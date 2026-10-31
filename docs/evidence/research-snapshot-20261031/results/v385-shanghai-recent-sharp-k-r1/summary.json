@@ -1,0 +1,71 @@
+{
+  "experiment": "V385 exact sharp-K information comparison on directly exported recent Shanghai monthly mix",
+  "status": "CONDITIONAL_IDENTIFICATION_NOT_FORECAST_VALIDATION",
+  "months": [
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+  ],
+  "hydro_nuclear": "set to zero per user's statement; verified against V320 for matching months",
+  "unit_conversion": "NBS export 1e8 kWh -> GWh multiply by 100; GWh -> MWh multiply by 1000",
+  "national_mix_denominator": "same-month pooled five-technology totals among provinces with complete five-category rows",
+  "thermal_factor_endpoints_g_kwh": [
+    400,
+    1000
+  ],
+  "other_direct_factors_g_kwh": 0,
+  "capacity_vintage": 2023,
+  "summary": [
+    {
+      "threshold_g_kwh": 100,
+      "month_count": 11,
+      "local_feasible_n": 11,
+      "national_mix_feasible_n": 0,
+      "paired_n": 0,
+      "local_mean_width_h_paired": null,
+      "national_mean_width_h_paired": null,
+      "mean_shrinkage_local_vs_national_h": null,
+      "local_narrower_n": 0,
+      "local_wider_n": 0,
+      "equal_n": 0
+    },
+    {
+      "threshold_g_kwh": 300,
+      "month_count": 11,
+      "local_feasible_n": 11,
+      "national_mix_feasible_n": 0,
+      "paired_n": 0,
+      "local_mean_width_h_paired": null,
+      "national_mean_width_h_paired": null,
+      "mean_shrinkage_local_vs_national_h": null,
+      "local_narrower_n": 0,
+      "local_wider_n": 0,
+      "equal_n": 0
+    }
+  ],
+  "limitations": [
+    "Single province, 11 months, no Chinese hourly target labels or empirical interval coverage.",
+    "Shanghai direct export values match V320 transcription; V320 is still not a raw official portal response snapshot.",
+    "2023 installed capacity is a retrospective proxy for 2025-2026 and may be stale.",
+    "Scope residual, imports, within-thermal fuel composition, hourly availability, and hourly dispatch are unobserved.",
+    "Any width change is a conditional information-value comparison, not a forecast skill or uncertainty coverage result."
+  ],
+  "sha256": {
+    "data/nbs_user_exports/shanghai/thermal.csv": "92e02b10dbf5d19f3a680b481e005e5b6ada8a32c97d0bc7f805076cb5b10228",
+    "data/nbs_user_exports/shanghai/solar.csv": "85941ab60c7a99bdeab88d43ca3c386cc409e5fe3a018640900a4abf3fdd8407",
+    "data/nbs_user_exports/shanghai/wind.csv": "7a6acef4e1503f7b80b7350adaaaea12a7bfe0fec639467c9532b99bdca11ad9",
+    "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+    "results/v341-china-complete-category-hull-r2/monthly_margin_capacity_audit.csv": "0fdf3711092638bf4e8e3fadf5191244e890b0899e70b26aaebd5afd809af62b",
+    "scripts/v342_china_sharp_group_hull.py": "cf8b6bfe972a3a5c9ad771706beb94751ea21c4d3f02783f46b96163a781b105",
+    "docs/V385_SHANGHAI_RECENT_SHARP_K_PROTOCOL.md": "52d3c427453fe40c93a79e1815dcdc565880427ef9908e58fde440827b281c4c",
+    "scripts/v385_shanghai_recent_sharp_k.py": "95e7f14e8777161f42904bc05584cc3806644736d89a457659db3f84d452c2f1"
+  }
+}

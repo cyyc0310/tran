@@ -1,0 +1,277 @@
+{
+  "source": "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv",
+  "source_sha256": "292e886809e211fbb7b43424307c638e363666c4d807eb0fe0c90f1985b967ae",
+  "window_years": [
+    2022,
+    2023,
+    2024
+  ],
+  "scope": "OREO NBS-derived monthly generation, above-designated-size industrial enterprises; February row is Jan-Feb cumulative; no separate January observation",
+  "method": "for group aggregate EF support [L,U], monthly thermal share s, certificate if L*s < tau < U*s. Then proportional allocation x_h,f = G_h*M_f/M yields all K=0 under low EF and all K=H under high EF for any fixed positive hourly-total profile G; this is a sufficient non-identification certificate, not a classification of all feasible cases.",
+  "results": [
+    {
+      "support": "base_400_1000",
+      "ef_low_g_kwh": 400,
+      "ef_high_g_kwh": 1000,
+      "threshold_g_kwh": 100,
+      "n_province_periods": 1023,
+      "n_full_range": 64,
+      "fraction_periods": 0.06256109481915934,
+      "n_provinces_any": 3,
+      "n_hours_full_range": 51072,
+      "fraction_hours": 0.06263244643277607,
+      "by_year": {
+        "2022": 22,
+        "2023": 20,
+        "2024": 22
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "base_400_1000",
+      "ef_low_g_kwh": 400,
+      "ef_high_g_kwh": 1000,
+      "threshold_g_kwh": 300,
+      "n_province_periods": 1023,
+      "n_full_range": 409,
+      "fraction_periods": 0.3998044965786901,
+      "n_provinces_any": 20,
+      "n_hours_full_range": 320928,
+      "fraction_hours": 0.3935719331292677,
+      "by_year": {
+        "2022": 126,
+        "2023": 133,
+        "2024": 150
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "base_400_1000",
+      "ef_low_g_kwh": 400,
+      "ef_high_g_kwh": 1000,
+      "threshold_g_kwh": 500,
+      "n_province_periods": 1023,
+      "n_full_range": 833,
+      "fraction_periods": 0.8142717497556208,
+      "n_provinces_any": 27,
+      "n_hours_full_range": 667032,
+      "fraction_hours": 0.8180186013656698,
+      "by_year": {
+        "2022": 278,
+        "2023": 284,
+        "2024": 271
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "include_zero_0_1100",
+      "ef_low_g_kwh": 0,
+      "ef_high_g_kwh": 1100,
+      "threshold_g_kwh": 100,
+      "n_province_periods": 1023,
+      "n_full_range": 976,
+      "fraction_periods": 0.9540566959921799,
+      "n_provinces_any": 30,
+      "n_hours_full_range": 778800,
+      "fraction_hours": 0.9550859430186014,
+      "by_year": {
+        "2022": 324,
+        "2023": 327,
+        "2024": 325
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "include_zero_0_1100",
+      "ef_low_g_kwh": 0,
+      "ef_high_g_kwh": 1100,
+      "threshold_g_kwh": 300,
+      "n_province_periods": 1023,
+      "n_full_range": 895,
+      "fraction_periods": 0.8748778103616813,
+      "n_provinces_any": 28,
+      "n_hours_full_range": 714552,
+      "fraction_hours": 0.8762950317871439,
+      "by_year": {
+        "2022": 298,
+        "2023": 298,
+        "2024": 299
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "include_zero_0_1100",
+      "ef_low_g_kwh": 0,
+      "ef_high_g_kwh": 1100,
+      "threshold_g_kwh": 500,
+      "n_province_periods": 1023,
+      "n_full_range": 861,
+      "fraction_periods": 0.841642228739003,
+      "n_provinces_any": 27,
+      "n_hours_full_range": 688224,
+      "fraction_hours": 0.8440075347303979,
+      "by_year": {
+        "2022": 286,
+        "2023": 291,
+        "2024": 284
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "narrow_700_900",
+      "ef_low_g_kwh": 700,
+      "ef_high_g_kwh": 900,
+      "threshold_g_kwh": 100,
+      "n_province_periods": 1023,
+      "n_full_range": 11,
+      "fraction_periods": 0.010752688172043012,
+      "n_provinces_any": 3,
+      "n_hours_full_range": 8112,
+      "fraction_hours": 0.009948198728514246,
+      "by_year": {
+        "2022": 6,
+        "2023": 2,
+        "2024": 3
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "narrow_700_900",
+      "ef_low_g_kwh": 700,
+      "ef_high_g_kwh": 900,
+      "threshold_g_kwh": 300,
+      "n_province_periods": 1023,
+      "n_full_range": 18,
+      "fraction_periods": 0.017595307917888565,
+      "n_provinces_any": 5,
+      "n_hours_full_range": 13152,
+      "fraction_hours": 0.016129032258064516,
+      "by_year": {
+        "2022": 6,
+        "2023": 4,
+        "2024": 8
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "narrow_700_900",
+      "ef_low_g_kwh": 700,
+      "ef_high_g_kwh": 900,
+      "threshold_g_kwh": 500,
+      "n_province_periods": 1023,
+      "n_full_range": 225,
+      "fraction_periods": 0.21994134897360704,
+      "n_provinces_any": 17,
+      "n_hours_full_range": 183312,
+      "fraction_hours": 0.22480574523192842,
+      "by_year": {
+        "2022": 72,
+        "2023": 73,
+        "2024": 80
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "wide_350_1100",
+      "ef_low_g_kwh": 350,
+      "ef_high_g_kwh": 1100,
+      "threshold_g_kwh": 100,
+      "n_province_periods": 1023,
+      "n_full_range": 83,
+      "fraction_periods": 0.08113391984359726,
+      "n_provinces_any": 4,
+      "n_hours_full_range": 67104,
+      "fraction_hours": 0.08229338356486932,
+      "by_year": {
+        "2022": 27,
+        "2023": 29,
+        "2024": 27
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "wide_350_1100",
+      "ef_low_g_kwh": 350,
+      "ef_high_g_kwh": 1100,
+      "threshold_g_kwh": 300,
+      "n_province_periods": 1023,
+      "n_full_range": 679,
+      "fraction_periods": 0.6637341153470185,
+      "n_provinces_any": 24,
+      "n_hours_full_range": 539184,
+      "fraction_hours": 0.6612314574994114,
+      "by_year": {
+        "2022": 217,
+        "2023": 227,
+        "2024": 235
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    },
+    {
+      "support": "wide_350_1100",
+      "ef_low_g_kwh": 350,
+      "ef_high_g_kwh": 1100,
+      "threshold_g_kwh": 500,
+      "n_province_periods": 1023,
+      "n_full_range": 861,
+      "fraction_periods": 0.841642228739003,
+      "n_provinces_any": 27,
+      "n_hours_full_range": 688224,
+      "fraction_hours": 0.8440075347303979,
+      "by_year": {
+        "2022": 286,
+        "2023": 291,
+        "2024": 284
+      },
+      "by_year_total": {
+        "2022": 341,
+        "2023": 341,
+        "2024": 341
+      }
+    }
+  ]
+}

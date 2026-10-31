@@ -1,0 +1,36 @@
+{
+  "status": "COMPLETE_TOTAL_VS_FUEL_MIX_VALUE_ABLATION_NOT_VALIDATION",
+  "tau_g_kwh": 300,
+  "factor_support_5tech": {
+    "thermal": [
+      0,
+      1100
+    ],
+    "other_technologies": 0
+  },
+  "frontier": {
+    "province_periods": 328,
+    "mean_nbs_residual_width_h": 795.8506097560976,
+    "mean_ember_5tech_broad_ef_width_h": 773.5548780487804,
+    "mean_ember_fuel_mix_pm100_width_h": 519.0731707317074,
+    "mean_gain_from_complete_estimated_total_h": 22.295731707317074,
+    "mean_increment_from_fuel_mix_beyond_5tech_h": 254.48170731707316,
+    "median_increment_from_fuel_mix_beyond_5tech_h": 267.5,
+    "cells_mix_narrower_than_5tech": 276,
+    "capacity_infeasible_cells": 2
+  },
+  "limits": [
+    "Ember complete monthly generation and fuel composition are estimated and differ from NBS above-size scope.",
+    "This ablation separates total/scope information from added fuel-share information only within the declared K model.",
+    "The technology-collapsed thermal EF support [0,1100] is the outer envelope of V348 fuel-level EF scenarios, not a measured local distribution.",
+    "No hourly China labels or empirical K coverage are used."
+  ],
+  "sha256": {
+    "results/v341-china-complete-category-hull-r2/monthly_margin_capacity_audit.csv": "0fdf3711092638bf4e8e3fadf5191244e890b0899e70b26aaebd5afd809af62b",
+    "results/v346-scope-residual-k-hulls-r2/province_period_k_hulls.csv": "12a1c7c38e55572896e0ead8e418be1815aebdf7cd0b39da21b586a403bdc3b9",
+    "results/v348-ember-share-error-frontier-r1/province_period_share_error_frontier.csv": "e6209d48f630b312f0fd10d4129e89d1d0999897ba310f2b6dff673e7e988d86",
+    "results/v294-china-ember-lineage-r1/ember_china_monthly_generation.csv": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+    "docs/V349_EMBER_TOTAL_VS_MIX_ABLATION_PROTOCOL.md": "c00cc7be7340ef6f3493060a747c582694607b0c4922366f9ccbde46b1266058",
+    "scripts/v349_ember_total_vs_mix_ablation.py": "f012c8245b4c5bc459c8c1dbe1ab61a586a830f9a47f10f0cfbb9ee01d6166fb"
+  }
+}

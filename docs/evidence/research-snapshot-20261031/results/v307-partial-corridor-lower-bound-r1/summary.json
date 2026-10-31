@@ -1,0 +1,25 @@
+{
+  "status": "POST_HOC_CONDITIONAL_PARTIAL_FLOW_BOUND_SENSITIVITY_NOT_EXTERNAL_VALIDATION",
+  "line_flow_candidate_100m_kwh": 801.02,
+  "retained_shares": [
+    0.0,
+    0.8,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "full_assumption_width_ratio_vs_base": {
+    "East": 0.3299883428809558,
+    "Central": 0.32998834288095574
+  },
+  "protocol_sha256": "d88788d914aabe4c1635129a348b364ba30eb4813509cc0fbcea8cbf1b5f5af5",
+  "margins_sha256": "038cecf07b68c8472ddce7e11bfdd7ac02cee681a5a085318aea3957331f301a",
+  "support_sha256": "b29a92ab35c9da4941b0ef930599e3b33c757fcd1a39442e6d0e365683608f0b",
+  "script_sha256": "6cff5080e635d6b2d1ddc2c0145f75d7a8d598a00e8cd697ccb934d3b5d290d9",
+  "limitations": [
+    "All lower-bound interpretations are conditional on cross-source regional/accounting compatibility.",
+    "Line totals do not establish the complete Southwest-East OD flow or forecast-time availability.",
+    "Bounds concern imported source factor, not total provincial/regional hourly CIF.",
+    "This is a post-hoc sensitivity using a previously opened 2023 target dataset, not confirmation."
+  ]
+}

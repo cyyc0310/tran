@@ -1,0 +1,31 @@
+{
+  "new_fits": 21,
+  "source_months": 35,
+  "arms": [
+    "Global0",
+    "Global0.25",
+    "Global0.5",
+    "Global0.75",
+    "Global1",
+    "Range4",
+    "CoalUpper",
+    "OilUpper",
+    "CoalOilUpper",
+    "AnchorEFUpper",
+    "PlainSoftmax36",
+    "OffsetSoftmax36",
+    "OffsetInterceptOnly"
+  ],
+  "baseline_case_rows_copied": 700,
+  "table_rows": {
+    "case_metrics": 910,
+    "region_metrics": 182,
+    "macro_metrics": 26,
+    "leave_one_source_out_macro": 182,
+    "label_support": 42
+  },
+  "method_innovation_claim": false,
+  "new_holdout_authorized": false,
+  "CIF_interval_coverage_evaluated": false,
+  "hourly_coverage_evaluated": false
+}

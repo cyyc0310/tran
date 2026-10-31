@@ -1,0 +1,195 @@
+{
+  "experiment": "V372 provincial versus pooled national monthly thermal-share certificate robustness",
+  "input": "results/v364-china-nbs-threshold-crossing-certificate-r1/province_period_certificates.csv",
+  "input_source_scope": "NBS-derived OREO transcription; above-designated-size scope; not raw portal response",
+  "n_province_periods": 1023,
+  "supports": {
+    "base_400_1000": [
+      400.0,
+      1000.0
+    ],
+    "wide_350_1100": [
+      350.0,
+      1100.0
+    ],
+    "narrow_700_900": [
+      700.0,
+      900.0
+    ],
+    "zero_floor_0_1100": [
+      0.0,
+      1100.0
+    ]
+  },
+  "thresholds_g_kwh": [
+    100.0,
+    300.0,
+    500.0
+  ],
+  "sha256": {
+    "results/v364-china-nbs-threshold-crossing-certificate-r1/province_period_certificates.csv": "f0b7601d4ba56e3522f5cfd217fec1d2f0014feac6c5bb61843885d828435c78",
+    "docs/V372_PROVINCIAL_INFORMATION_ROBUSTNESS_PROTOCOL.md": "b97b1268a38d2c8064eb4e6faf480b89971c988c83f075d7433e97629c4a8e87",
+    "scripts/v372_provincial_information_robustness.py": "504ed8f9ca99a9d701eb1db6fbc344520d8f12c781d52d948044c6bfb4132430"
+  },
+  "combinations_with_local_certificate_reduction": 8,
+  "combinations_total": 12,
+  "combination_table": [
+    {
+      "support": "base_400_1000",
+      "low_ef_g_kwh": 400.0,
+      "high_ef_g_kwh": 1000.0,
+      "threshold_g_kwh": 100.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 0,
+      "local_full_range_certificates": 64,
+      "national_certificates_exited_under_local_mix": 0,
+      "local_certificates_not_seen_under_national_mix": 64,
+      "fraction_national_certificates_exited": 0.0,
+      "provinces_with_any_local_certificate": 3
+    },
+    {
+      "support": "base_400_1000",
+      "low_ef_g_kwh": 400.0,
+      "high_ef_g_kwh": 1000.0,
+      "threshold_g_kwh": 300.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 992,
+      "local_full_range_certificates": 409,
+      "national_certificates_exited_under_local_mix": 593,
+      "local_certificates_not_seen_under_national_mix": 10,
+      "fraction_national_certificates_exited": 0.5977822580645161,
+      "provinces_with_any_local_certificate": 20
+    },
+    {
+      "support": "base_400_1000",
+      "low_ef_g_kwh": 400.0,
+      "high_ef_g_kwh": 1000.0,
+      "threshold_g_kwh": 500.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 1023,
+      "local_full_range_certificates": 833,
+      "national_certificates_exited_under_local_mix": 190,
+      "local_certificates_not_seen_under_national_mix": 0,
+      "fraction_national_certificates_exited": 0.18572825024437928,
+      "provinces_with_any_local_certificate": 27
+    },
+    {
+      "support": "wide_350_1100",
+      "low_ef_g_kwh": 350.0,
+      "high_ef_g_kwh": 1100.0,
+      "threshold_g_kwh": 100.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 0,
+      "local_full_range_certificates": 83,
+      "national_certificates_exited_under_local_mix": 0,
+      "local_certificates_not_seen_under_national_mix": 83,
+      "fraction_national_certificates_exited": 0.0,
+      "provinces_with_any_local_certificate": 4
+    },
+    {
+      "support": "wide_350_1100",
+      "low_ef_g_kwh": 350.0,
+      "high_ef_g_kwh": 1100.0,
+      "threshold_g_kwh": 300.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 1023,
+      "local_full_range_certificates": 679,
+      "national_certificates_exited_under_local_mix": 344,
+      "local_certificates_not_seen_under_national_mix": 0,
+      "fraction_national_certificates_exited": 0.3362658846529814,
+      "provinces_with_any_local_certificate": 24
+    },
+    {
+      "support": "wide_350_1100",
+      "low_ef_g_kwh": 350.0,
+      "high_ef_g_kwh": 1100.0,
+      "threshold_g_kwh": 500.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 1023,
+      "local_full_range_certificates": 861,
+      "national_certificates_exited_under_local_mix": 162,
+      "local_certificates_not_seen_under_national_mix": 0,
+      "fraction_national_certificates_exited": 0.15835777126099707,
+      "provinces_with_any_local_certificate": 27
+    },
+    {
+      "support": "narrow_700_900",
+      "low_ef_g_kwh": 700.0,
+      "high_ef_g_kwh": 900.0,
+      "threshold_g_kwh": 100.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 0,
+      "local_full_range_certificates": 11,
+      "national_certificates_exited_under_local_mix": 0,
+      "local_certificates_not_seen_under_national_mix": 11,
+      "fraction_national_certificates_exited": 0.0,
+      "provinces_with_any_local_certificate": 3
+    },
+    {
+      "support": "narrow_700_900",
+      "low_ef_g_kwh": 700.0,
+      "high_ef_g_kwh": 900.0,
+      "threshold_g_kwh": 300.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 0,
+      "local_full_range_certificates": 18,
+      "national_certificates_exited_under_local_mix": 0,
+      "local_certificates_not_seen_under_national_mix": 18,
+      "fraction_national_certificates_exited": 0.0,
+      "provinces_with_any_local_certificate": 5
+    },
+    {
+      "support": "narrow_700_900",
+      "low_ef_g_kwh": 700.0,
+      "high_ef_g_kwh": 900.0,
+      "threshold_g_kwh": 500.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 806,
+      "local_full_range_certificates": 225,
+      "national_certificates_exited_under_local_mix": 637,
+      "local_certificates_not_seen_under_national_mix": 56,
+      "fraction_national_certificates_exited": 0.7903225806451613,
+      "provinces_with_any_local_certificate": 17
+    },
+    {
+      "support": "zero_floor_0_1100",
+      "low_ef_g_kwh": 0.0,
+      "high_ef_g_kwh": 1100.0,
+      "threshold_g_kwh": 100.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 1023,
+      "local_full_range_certificates": 976,
+      "national_certificates_exited_under_local_mix": 47,
+      "local_certificates_not_seen_under_national_mix": 0,
+      "fraction_national_certificates_exited": 0.04594330400782014,
+      "provinces_with_any_local_certificate": 30
+    },
+    {
+      "support": "zero_floor_0_1100",
+      "low_ef_g_kwh": 0.0,
+      "high_ef_g_kwh": 1100.0,
+      "threshold_g_kwh": 300.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 1023,
+      "local_full_range_certificates": 895,
+      "national_certificates_exited_under_local_mix": 128,
+      "local_certificates_not_seen_under_national_mix": 0,
+      "fraction_national_certificates_exited": 0.12512218963831867,
+      "provinces_with_any_local_certificate": 28
+    },
+    {
+      "support": "zero_floor_0_1100",
+      "low_ef_g_kwh": 0.0,
+      "high_ef_g_kwh": 1100.0,
+      "threshold_g_kwh": 500.0,
+      "province_periods": 1023,
+      "national_full_range_certificates": 1023,
+      "local_full_range_certificates": 861,
+      "national_certificates_exited_under_local_mix": 162,
+      "local_certificates_not_seen_under_national_mix": 0,
+      "fraction_national_certificates_exited": 0.15835777126099707,
+      "provinces_with_any_local_certificate": 27
+    }
+  ],
+  "interpretation": "Finite-panel structural certificate sensitivity only; local removal of this witness is not proof of narrow true K bounds, predictive accuracy, or interval coverage."
+}

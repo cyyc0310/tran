@@ -1,0 +1,11 @@
+{
+  "assertion_failures": 0,
+  "synthetic_equal_q_crps": 0.25,
+  "synthetic_joint_cif_crps": 75.0,
+  "synthetic_independent_cif_crps": 93.75,
+  "conditional_mean_identity_max_error": 2.220446049250313e-16,
+  "hidden_feature_cases": 2,
+  "script_sha256": "880cfb78b45985fcb17038f1bd43589b8ad071ae3bc7d5490d343654f19f071a",
+  "helper_sha256": "d068acef5a6858f97b0116c329f47787a52a0a12d40e058da765fd2070469d43",
+  "scope": "Synthetic scores and proper-source model identities; no held-out hourly risk performance evaluated."
+}

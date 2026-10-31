@@ -1,0 +1,82 @@
+{
+  "status": "EXPLORATORY_STRICT_MONTHLY_ONLY_MIX_RISK",
+  "information_contract": "target supplies only legally published lagged five-group monthly generation totals; point thermal EF and hourly profile are donor-only; risk scale uses local monthly mix plus donor-implied target-month thermal reallocation ambiguity",
+  "point_model": "target lagged five-group monthly totals combined with source-excluded prior-year five-group hourly shapes and source-equal prior-year thermal EF",
+  "risk_model": "source-balanced Ridge(alpha=10) predicts log monthly q90 absolute residual from local thermal share, wind-plus-solar share, and donor-implied monthly-to-hourly thermal ambiguity mean/p90; source-held-out OOF scale predictions calibrate normalized q90",
+  "comparison": "same strict-monthly-only point forecasts, ambiguity-augmented pooled, max-source, and nearest-feature-source normalized-q90 calibration versus global pooled q90",
+  "group_conformal": "one calibration score per source region: maximum normalized hourly residual over its half-year; finite-sample split-conformal rank at nominal 80%; targets simultaneous coverage of every evaluated hour across the held-out region half-year under source-group exchangeability",
+  "support": "30 available heldout region-months across 6 previously inspected regions; 2024H2 calibration and 2025H2 evaluation; not unseen-region confirmation",
+  "input_sha256": {
+    "monthly": "e7c805960f0b6b013dfe8e5f83020c84adee64504c6b9876fa2bde8aa8c5b67d",
+    "hourly": {
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/BPAT_hourly.csv": "72cf83af8fde5f17d5ccb29a1157db26758eb3cc0721186384b5e474cfc933ac",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/CISO_hourly.csv": "34a714dcb07ef66b807c444fe1ac260755716c91edab642c64c8f2c2a94c6d2b",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/ERCO_hourly.csv": "56abb6996e7b9fdf0d59ddd28743afb5ec77629570b6358ad9ee5c3e007f466c",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/FPL_hourly.csv": "423f8166dfcda13f6d6f6e5f9d262c88a3321ee1a6401c65977f2ac0fbbad569",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/ISNE_hourly.csv": "a6ff6602dfcb34dabdb76a1d28003c63f5013c4f11a4f5d9097c278fe67ccd09",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/MISO_hourly.csv": "0b33187fefb609992a2a6550af48ea1f59ff6349f690b0277d73ec537bd2ddfc",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/NYIS_hourly.csv": "f173c238df2c019b49623959ecf7dac74045dfb03c6b160717b86f9dc0ec1e59"
+    }
+  },
+  "macro": [
+    {
+      "method": "conditional_identification_width",
+      "sources": 6,
+      "coverage": 0.93384099187712,
+      "width": 322.6907010498469,
+      "interval_score": 355.2625758177712,
+      "lower_miss": 0.04921283851055357,
+      "upper_miss": 0.016946169612326454,
+      "point_mae": 61.65421941068009
+    },
+    {
+      "method": "conditional_identification_width_max_source",
+      "sources": 6,
+      "coverage": 0.9765220529669455,
+      "width": 494.4638866586158,
+      "interval_score": 506.78544619242206,
+      "lower_miss": 0.023477947033054558,
+      "upper_miss": 0.0,
+      "point_mae": 61.65421941068009
+    },
+    {
+      "method": "conditional_identification_width_nearest_source",
+      "sources": 6,
+      "coverage": 0.8999809676708198,
+      "width": 313.95362698445075,
+      "interval_score": 366.85115638446956,
+      "lower_miss": 0.09634843296637652,
+      "upper_miss": 0.003670599362803664,
+      "point_mae": 61.65421941068009
+    },
+    {
+      "method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.831902066866379,
+      "width": 275.6343505618419,
+      "interval_score": 491.86487552166653,
+      "lower_miss": 0.0075994196961938895,
+      "upper_miss": 0.16049851343742705,
+      "point_mae": 61.65421941068009
+    },
+    {
+      "method": "group_conformal_80_simultaneous",
+      "sources": 6,
+      "coverage": 0.9998139880952381,
+      "width": 729.8961878639988,
+      "interval_score": 729.9062943487834,
+      "lower_miss": 0.00018601190476190475,
+      "upper_miss": 0.0,
+      "point_mae": 61.65421941068009
+    }
+  ],
+  "group_conformal_nominal_coverage": 0.8,
+  "group_conformal_rank": "ceil((K+1)*0.80); K is the number of calibration source regions; if rank>K threshold is infinite",
+  "outputs_sha256": {
+    "outer_source_month_intervals.csv": "ac60b0297690181afe0bacff6b30d3ef9c2805dd6fb415581618e6296fa3607d",
+    "source_macro.csv": "9d66912463a6ef6a37307a5fa5d280565de24d731107d2ac852b9cc673088ba1",
+    "macro.csv": "6281bfe528ca021994c0c28d0c91dd05c40dc48fcf784cfa98e5efc9199e90f8",
+    "source_simultaneous_coverage.csv": "9477d933cb07da2c694b9ec2d4a24fae58216cbcedb7fd5ad292fee8948a6a47"
+  },
+  "interpretation": "Exploratory repeated-source forward diagnostics only; no arbitrary-domain-shift coverage guarantee or novelty claim."
+}

@@ -1,0 +1,22 @@
+{
+  "source_profile_fits": 14,
+  "fuel_ridge_solves": 84,
+  "common_solves": 84,
+  "prediction_origins": 42,
+  "table_rows": {
+    "case_metrics": 1330,
+    "region_metrics": 266,
+    "macro_metrics": 38,
+    "leave_one_source_out_macro": 266,
+    "label_support": 42,
+    "coarse_errors": 210,
+    "profile_errors": 1440,
+    "operator_sensitivity": 84
+  },
+  "baseline_rows_exact": 910,
+  "method_innovation_claim": false,
+  "CIF_interval_coverage_evaluated": false,
+  "hourly_coverage_evaluated": false,
+  "new_holdout_authorized": false,
+  "source_profile_error_is_certified_target_operator_error": false
+}

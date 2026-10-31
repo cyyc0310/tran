@@ -1,0 +1,90 @@
+{
+  "official_snapshot_rows": 390,
+  "official_nonmissing_rows": 330,
+  "official_missing_current_rows": 60,
+  "thermal_and_total_complete_province_months": 55,
+  "five_technology_complete_province_months": 55,
+  "official_vs_oreo_valid_pairs": 330,
+  "official_vs_oreo_nonzero_differences": 0,
+  "official_vs_oreo_max_abs_difference_gwh": 7.275957614183426e-12,
+  "official_vs_oreo_within_half_nbs_display_step_5_gwh": 330,
+  "official_vs_oreo_valid_pairs_by_technology": {
+    "total": 55,
+    "thermal": 55,
+    "hydro": 55,
+    "nuclear": 55,
+    "wind": 55,
+    "solar": 55
+  },
+  "official_vs_oreo_nonzero_differences_by_technology": {
+    "hydro": 0,
+    "nuclear": 0,
+    "solar": 0,
+    "thermal": 0,
+    "total": 0,
+    "wind": 0
+  },
+  "shanghai_user_export_values": 33,
+  "shanghai_user_export_exact_matches": 33,
+  "shanghai_user_export_max_abs_difference_gwh": 0.0,
+  "max_abs_five_technology_closure_100m_kwh": 0.19999999999998863,
+  "max_abs_closure_as_fraction_of_total": 0.0014204545454544646,
+  "tau_g_kwh": 300,
+  "local_certificate_count": 22,
+  "national_certificate_count": 55,
+  "local_national_disagreement_count": 33,
+  "five_technology_denominator_comparison_months": 55,
+  "five_tech_vs_total_denominator_state_disagreements": 0,
+  "maximal_tau_interval_around_300_with_unchanged_local_and_national_states_g_kwh": [
+    294.69188529591213,
+    376.5347885402456
+  ],
+  "by_province": {
+    "Shanghai": {
+      "complete_months": 11,
+      "thermal_share_min": 0.941336971350614,
+      "thermal_share_max": 0.9685610640870616,
+      "thermal_share_mean": 0.9542840814753984,
+      "local_certificate_months": 0,
+      "national_certificate_months": 11,
+      "local_national_disagreements": 11
+    },
+    "Sichuan": {
+      "complete_months": 11,
+      "thermal_share_min": 0.06860343017150858,
+      "thermal_share_max": 0.2946918852959121,
+      "thermal_share_mean": 0.18023839609220907,
+      "local_certificate_months": 0,
+      "national_certificate_months": 11,
+      "local_national_disagreements": 11
+    },
+    "Jilin": {
+      "complete_months": 11,
+      "thermal_share_min": 0.511166253101737,
+      "thermal_share_max": 0.6547733847637416,
+      "thermal_share_mean": 0.5819703733899794,
+      "local_certificate_months": 11,
+      "national_certificate_months": 11,
+      "local_national_disagreements": 0
+    },
+    "Fujian": {
+      "complete_months": 11,
+      "thermal_share_min": 0.5174061433447099,
+      "thermal_share_max": 0.6725526641883519,
+      "thermal_share_mean": 0.5747057876599069,
+      "local_certificate_months": 11,
+      "national_certificate_months": 11,
+      "local_national_disagreements": 0
+    },
+    "Qinghai": {
+      "complete_months": 11,
+      "thermal_share_min": 0.05974607916355489,
+      "thermal_share_max": 0.23599523241954706,
+      "thermal_share_mean": 0.13139425306830751,
+      "local_certificate_months": 0,
+      "national_certificate_months": 11,
+      "local_national_disagreements": 11
+    }
+  },
+  "interpretation_limit": "This replicates a coarse mean-support threshold certificate on a current official NBS snapshot. Primary thermal shares use the official reported total denominator; a complete-five-technology denominator is reported as sensitivity. It is not an hourly CIF forecast, hourly K sharp set, probability coverage result, or independent source validation of the OREO transcription. Historical values are not as-published vintages."
+}

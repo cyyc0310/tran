@@ -1,0 +1,916 @@
+path,title,bytes
+docs/ANCHORED_TRANSFER_V6_PROTOCOL.md,V6第二轮：可观测粗偏差锚与细尺度剩余误差,4596
+docs/ANNUAL_CONTEXT_V26_DESIGN_REVIEW.md,V26：过去年度细分的最小条件信息价值试验,10392
+docs/ANNUAL_CONTEXT_V26_PROTOCOL.md,V26：未执行条件草稿／PAUSED：年度细分不在已确认字段内,6062
+docs/BREAKTHROUGH_SEARCH.md,持久研究目标：继续直到找到可验证的突破点,562533
+docs/CAPACITY_CONTRACT_CORRECTION.md,Capacity-Contract Correction Discovered during V139,3002
+docs/CAPACITY_ROUTING_V36_PROTOCOL.md,V36：固定混合与普通容量范围门控基线,3730
+docs/CAPACITY_ROUTING_V36_RESULTS.md,V36：简单容量门控改善宏误差，收益仍集中于已查看源,6111
+docs/CDF_CANDIDATE_DERIVATION.md,观测几何与预测CDF风险联合分配：候选的推导和边界,4349
+docs/CHINA_ANNUAL_FACTOR_AVAILABILITY_V50.md,中国公开年度因子：有低频本地碳信息，但不能直接锚定当前发电侧模型,2600
+docs/CHINA_ANNUAL_OFFICIAL_FACTOR_VALUE_V52.md,V52：中国官方年度因子锚定与小时形状迁移压力测试,5537
+docs/CHINA_B1_CAPACITY_AVAILABILITY_V44.md,中国B1装机信息可得性核查,3502
+docs/CHINA_DAILY_POWER_EMISSIONS_AUDIT_V61.md,V61：中国省级日度电力排放是否提供了本地时间形状？,6435
+docs/CHINA_HOURLY_CIF_VALIDATION_CHANNELS_V67.md,V67：中国小时电碳验证数据渠道与研究问题重定位,4717
+docs/CHINA_HOURLY_LOAD_PROXY_AUDIT_V64.md,V64：中国公开逐小时负荷曲线能否充当CIF分母信息？,4076
+docs/CHINA_LOCAL_INFORMATION_FIELDS.md,中国场景：可检验的本地字段与取得条件,4919
+docs/CHINA_MONTHLY_EMBER_AUDIT_V60.md,V60：中国省级月度电力数据审计与可验证性边界,6676
+docs/CHINA_MONTHLY_GENERATION_FIELD_AUDIT_V51.md,V51：中国公开月度发电统计字段审计与可识别边界,8286
+docs/CHINA_PROJECTED_CIF_DATA_AUDIT_V194.md,V194：中国逐小时 CIF 情景投影数据源审计,4743
+docs/COARSE_COMPARISON_V45_LITERATURE.md,V45粗比较反馈：针对性先例核查,2481
+docs/COARSE_COMPARISON_V45_PROBE_PROTOCOL.md,V45零拟合探针：粗反馈能识别哪些预测比较,2317
+docs/COARSE_COMPARISON_V45_PROBE_RESULTS.md,V45零拟合探针：粗月报只识别了部分粗错位风险,3196
+docs/COARSE_CONTEXT_V30_DESIGN.md,V30 DRAFT：先检验公开月度上下文能否区分隐藏燃料水平,4088
+docs/COARSE_CONTEXT_V30_DESIGN_REVIEW.md,V30 独立设计预审：条件粗尺度信息价值,6194
+docs/COARSE_CONTEXT_V30_LITERATURE.md,V30文献核查：上下文、地区特有因素与连续域迁移已有强近邻,2979
+docs/COARSE_CONTEXT_V30_POSTHOC_PROBES.md,V30后验诊断：规模敏感性与EF投影替代,2926
+docs/COARSE_CONTEXT_V30_PROTOCOL.md,V30：公开月度上下文的跨区粗组成条件诊断,7461
+docs/COARSE_CONTEXT_V30_RESULTS.md,V30：过去规模出现强粗尺度关联，前瞻与迁移稳定性仍未建立,8449
+docs/COARSE_CONTEXT_V30_SCIENTIFIC_REVIEW.md,V30 独立结果科学审查：规模关联幅度大，冻结资格规则未通过,7710
+docs/COARSE_DYNAMICS_V9_PROTOCOL.md,V9：合法粗组成动态预测与小时剩余风险,7584
+docs/COARSE_DYNAMICS_V9_RESULTS.md,V9：两轮粗组成动态与小时风险实验结果,10902
+docs/COARSE_FIELDS_V24_PROTOCOL.md,V24：公开月年字段的语义损失诊断,4203
+docs/COARSE_FIELDS_V24_RESULTS.md,V24：仅公开月年统计时，先识别燃料分组损失,8523
+docs/COARSE_INVERSE_V38_PROTOCOL.md,V38：月度火电总量能否约束燃料内部碳强度,6420
+docs/COARSE_INVERSE_V38_RESULTS.md,V38：粗总量拟合改善，没有带来碳强度改善,9531
+docs/COARSE_RESIDUAL_V40_DESIGN.md,V40草案：粗残差是否比能源结构多提供预测信息,3426
+docs/COARSE_RESIDUAL_V40_PROTOCOL.md,V40：粗残差与能源结构的同预算校准对照,4606
+docs/COARSE_RESIDUAL_V40_RESULTS.md,V40：低维粗残差校准没有迁移成功,7259
+docs/COARSE_RISK_IDENTIFICATION.md,粗统计对小时风险：能给范围，不能给唯一尾部,4807
+docs/COARSE_RISK_V6_CONTROLLED.md,V6 coarse-risk controlled mechanism checks,9807
+docs/COARSE_RISK_V6_JOINT_CONFIRMATION.md,两轮粗到细风险方法的联合确认规则,4051
+docs/COARSE_SUPERVISION_V28_DESIGN_REVIEW.md,V28：源区长期粗监督与固定小时库的设计审查,8178
+docs/COARSE_SUPERVISION_V28_LITERATURE.md,V28：多尺度概率预测的近期原始文献核查,2288
+docs/COARSE_SUPERVISION_V28_PROTOCOL.md,V28：固定算法与小时库，仅改变源粗统计监督时间窗,8146
+docs/COARSE_SUPERVISION_V28_RESULTS.md,V28：较长源粗监督带来明确收益，专门机制尚未成立,9690
+docs/COARSE_SUPERVISION_V28_SCIENTIFIC_REVIEW.md,V28：后验科学解释与下一步（实际审计前快照）,10035
+docs/COARSE_TO_FINE_RISK_METHOD.md,粗尺度回测误差向小时风险迁移：方法命题与边界,6103
+docs/COARSE_TO_FINE_RISK_RESULTS.md,V6：粗尺度回测误差向小时风险迁移,16671
+docs/CONDITIONAL_DIAGNOSTICS_V35_PROTOCOL.md,V35：零训练条件积分诊断,4586
+docs/CONDITIONAL_DIAGNOSTICS_V35_RESULTS.md,V35：固定Ridge水平偏差仍存，暂不投入简单输入对齐修复,4984
+docs/CONDITIONAL_LAW_V29_DESIGN.md,V29 DRAFT：先补齐组成概率与异方差强控制,6762
+docs/CONDITIONAL_LAW_V29_DESIGN_REVIEW.md,V29：联合组成概率、普通异方差与 q 配对的设计审查,8354
+docs/CONDITIONAL_LAW_V29_LITERATURE.md,V29原始文献补充：弱监督与部分识别不是无条件小时保证,2731
+docs/CONDITIONAL_LAW_V29_PROTOCOL.md,V29：固定长粗监督，比较组成条件分布与异方差普通强参考,9181
+docs/CONDITIONAL_LAW_V29_RESULTS.md,V29：普通异方差简单锚首次过开发门槛，复杂重组仍无独立增量,10573
+docs/CONDITIONAL_LAW_V29_SCIENTIFIC_REVIEW.md,V29：普通 Scale 锚首次合格，条件组成与小时风险仍有失配,11285
+docs/CONDITIONAL_TRANSFER_V6_PROTOCOL.md,V6：发布条件一致的粗回测与条件分量风险,7189
+docs/CONFIRMATION_2025_PROTOCOL.md,新年份2025验证：评分前冻结约定,3454
+docs/CONFIRMATION_2026_PROTOCOL.md,2026上半年：水平与形状互补的评分前冻结验证,3223
+docs/CONTEXT_V16_PARETO_NOTE.md,V16补充：普通加性基线有小幅效率收益，仍没有机制突破,2517
+docs/CONTEXT_V16_RESULTS.md,V16：粗统计能更新什么，仍缺什么本地信息,10464
+docs/DAILY_BRIDGE_V47_LITERATURE_NOTE.md,V47：区间效率已有研究，需检验本任务的条件差异,1525
+docs/DAILY_BRIDGE_V47_PROTOCOL.md,V47：完整开发日期上的普通水平与小时风险对照,6187
+docs/DAILY_BRIDGE_V47_RESULTS.md,V47：普通中心纠正在完整日期上仍有效，区间缩窄有限,14740
+docs/DAILY_CONTEXT_V16_PROTOCOL.md,V16A：合法滞后日组成反馈与创新条件形状的源区筛查,7199
+docs/DATA.md,数据与实验协议,13430
+docs/DISJOINT_CALIBRATION_V50_LITERATURE_NOTE.md,V50补充文献核对：分解与天气工作的信息条件,3580
+docs/DISJOINT_CALIBRATION_V50_PROTOCOL.md,V50：分离校准地区后的标准风险强基线,10624
+docs/DISJOINT_CALIBRATION_V50_RESULTS.md,V50：标准风险校准未显示稳定的简单基线增量,7799
+docs/DONOR_BUDGET_V42_ATTEMPT_R1.md,V42准备阶段失败与r1尝试说明,1454
+docs/DONOR_BUDGET_V42_DESIGN.md,V42草案：扩展供体监督与固定预算强基线,3400
+docs/DONOR_BUDGET_V42_NEXT_STEPS.md,V42 后续判断：先补已知强控制,3595
+docs/DONOR_BUDGET_V42_PROTOCOL.md,V42：扩展供体的固定权重强基线比较,5706
+docs/DONOR_BUDGET_V42_RESULTS.md,V42：扩展供体改善部分树模型，仍未超过简单强参考,8485
+docs/DONOR_COVERAGE_V41_DESIGN.md,V41草案：先检验开发供体覆盖，不增加小样本校准复杂度,4157
+docs/DONOR_INVENTORY_V41_PROTOCOL.md,V41：已查看开发供体的登记库存整理,4443
+docs/DONOR_INVENTORY_V41_RESULTS.md,V41：扩展开发供体库存完成，尚未证明预测收益,5010
+docs/DYNAMIC_V2_PROTOCOL.md,Dynamic V2: frozen exploratory protocol (2026-10-23),5182
+docs/EXTERNAL_V6_DATA_PROTOCOL.md,V6 独立地区与 2026H1 数据冻结协议,4914
+docs/FAILURE_DIAGNOSIS_V7.md,V7：V6新地区失败的事后诊断,11810
+docs/FLEET_INFORMATION_V33_DATA_PROTOCOL.md,V33：公开装机信息的获取与字段审计,4826
+docs/FLEET_INFORMATION_V33_DATA_RESULTS.md,V33：官方装机档案获取与字段检查,3191
+docs/FLEET_INFORMATION_V34_LITERATURE.md,V34：本轮比较与相关工作的边界,3743
+docs/FLEET_INFORMATION_V34_PROTOCOL.md,V34：装机信息是否改善粗月报条件下的跨区预测,6713
+docs/FLEET_INFORMATION_V34_RESULTS.md,V34：装机锚改善部分CIF误差，尚无稳定迁移增量,7223
+docs/FLEET_INVENTORY_V33_PROTOCOL.md,V33：七源公开装机库存的数值整理合同,7022
+docs/FLEET_INVENTORY_V33_RESULTS.md,V33：七源装机库存整理结果,6222
+docs/FORECAST_ALIGNMENT_V35_DESIGN.md,V35候选：先检验粗组成分布与条件模型的假设,4635
+docs/FORWARD_CONTEXT_V31_DESIGN.md,V31 DRAFT：冻结上下文模型，去掉当月组成oracle,3280
+docs/FORWARD_CONTEXT_V31_DESIGN_REVIEW.md,V31 独立设计预审：固定模型的月初前瞻预算检验,6494
+docs/FORWARD_CONTEXT_V31_PROTOCOL.md,V31：冻结源上下文模型，检验无当月oracle的月初粗预报,7387
+docs/FORWARD_CONTEXT_V31_RESULTS.md,V31：月初可得信息下的粗尺度预测结果,6141
+docs/FUEL_ATTRIBUTION_V8_PROTOCOL.md,V8：同轨迹锚定与真实组成诊断,4713
+docs/FUEL_ATTRIBUTION_V8_RESULTS.md,V8：相同轨迹的锚定归因与真实组成诊断,10296
+docs/FUEL_TRANSPORT_V7_PROTOCOL.md,V7：失效诊断后的燃料轨迹重组开发协议,4301
+docs/FUEL_TRANSPORT_V7_RESULTS.md,V7：从失效诊断到燃料轨迹重组,15950
+docs/GAIN_DIRECTION_V44_PROTOCOL.md,V44：强端点源外增益方向诊断,8003
+docs/GAIN_DIRECTION_V44_RESULTS.md,V44：合法粗历史能提供部分增益信号，区域失效与风险保证仍未解决,9913
+docs/GATE2_OPTIMIZATION_AND_WAVELETS_2026-10-23.md,第二关优化与创新机会：小波是否值得引入,16724
+docs/GATE2_V2_PROTOCOL.md,第二关 V2：实现前实验约定,4367
+docs/GATES12_STAGE_REVIEW.md,第一、二关阶段验收,2885
+docs/GENERATION_CONTEXT_V16_PROTOCOL.md,V16 B支路：历史netG形状的源区粒子试验,5789
+docs/GROUP_REGRESSION_V27_PROTOCOL.md,V27：同月合并类别预算下，普通监督模型能否解除供体比例支持限制,6479
+docs/GROUP_REGRESSION_V27_RESULTS.md,V27：普通监督残差部分修复支持缺口，但覆盖效率仍未达标,10513
+docs/GROUP_REGRESSION_V27_RESULTS_R1.md,V27：普通监督残差部分修复支持缺口，但覆盖效率仍未达标（措辞澄清版）,10915
+docs/GROUP_REGRESSION_V27_SCIENTIFIC_REVIEW.md,V27 科学解释与下一步设计（实际审计完成前快照）,6189
+docs/HISTORY_SIGNATURE_V32_DESIGN.md,V32：长月报历史的信息价值检验,5095
+docs/HISTORY_SIGNATURE_V32_PROTOCOL.md,V32：十二条合法月报的分层信息检验,7732
+docs/HISTORY_SIGNATURE_V32_RESULTS.md,V32：十二条月报历史的分层信息检验结果,6987
+docs/HOURLY_BRIDGE_V46_PROTOCOL.md,V46：六个月初的小时水平—风险桥接对照,6453
+docs/HOURLY_BRIDGE_V46_RESULTS.md,V46：普通中心调整已能改善小时覆盖，尚无方法突破,12300
+docs/IDENTIFIABILITY_V15_PROTOCOL.md,V15：小时风险可识别性与最小信息诊断,5144
+docs/IDENTIFIABILITY_V15_RESULTS.md,V15：粗统计识别什么，什么本地信息值得获取,15279
+docs/INDEX.md,研究文档入口,2489
+docs/INFORMATION_VALUE_V10_PROTOCOL.md,V10：最小附加信息价值实验,6733
+docs/INFORMATION_VALUE_V10_RESULTS.md,V10：最小附加信息价值实验结果,10622
+docs/INNOVATION_DIRECTIONS_2026-10-22.md,TransCIF 创新方向评估与最小验证实验,15873
+docs/JOINT_SEARCH_V3_PROTOCOL.md,Joint seasonal level and analog shape protocol,2640
+docs/LOCAL_HOURLY_QUERY_BUDGET_V23_PROTOCOL.md,V23: source-only information value of sparse local hourly CIF queries,6157
+docs/LOCAL_HOURLY_QUERY_BUDGET_V23_RESULTS.md,V23: four local hourly labels do not resolve most tail-count ambiguity,6840
+docs/LOCAL_HOURLY_QUERY_V23_BOUNDARY_AMENDMENT.md,V23 source-day key handling amendment,1314
+docs/LOCAL_HOURLY_QUERY_V23_QUANTIZATION_AMENDMENT.md,V23 R2 amendment: quantized response bins are half-open,1248
+docs/LOCAL_RISK_MEASUREMENTS_V20.md,粗统计约束哪些小时风险，剩余风险该测什么,19462
+docs/LOCAL_SKETCH_V17_PROTOCOL.md,V17：本地滞后信息包的完整源区pilot,7138
+docs/LOCAL_SKETCH_V17_RESULTS.md,V17：固定维数发布包的源区前推筛查,6204
+docs/MEAN_INFORMATION_V19_PROTOCOL.md,V19：分母信息能约束哪一种风险,3919
+docs/MONTHLY_ANNUAL_RESEARCH_REVIEW.md,仅公开月度／年度统计下的下一步科学合同建议,18079
+docs/MONTHLY_TRANSFER_V25_DESIGN_REVIEW.md,V25：月度M8／MG九臂普通预测的科学设计审查,15626
+docs/MONTHLY_TRANSFER_V25_PROTOCOL.md,V25：同月度预算下的组内燃料与小时形状迁移,6090
+docs/MONTHLY_TRANSFER_V25_RESULTS.md,V25：合并燃料预算的失败主要落在水平支持,9183
+docs/NATIVE_CENTER_V18_PROTOCOL.md,V18：保留native结构的最小中心增量反驳,7105
+docs/NATIVE_CENTER_V18_RESULTS.md,V18：日水平有可利用信号，小时风险尚未被识别,6050
+docs/NATIVE_HINDCAST_V20R1_PROTOCOL.md,V20R1 verification-only recovery,5492
+docs/NATIVE_HINDCAST_V20R1_RESULTS.md,原生教师数据补齐：V20失败记录与V20R1核验结果,3196
+docs/NATIVE_HINDCAST_V20_PROTOCOL.md,V20 native-feature强控制的源区数据先决阶段,5442
+docs/NATIVE_REFIT_V21_PROTOCOL.md,V21 B0: same-offset native-feature residual controls,8656
+docs/NATIVE_REFIT_V21_RESULTS.md,V21：普通native-offset残差控制没有通过实用增量门槛,5705
+docs/OPTIMIZATION_SEARCH_RESULTS.md,TransCIF 多轮优化搜索：信息条件与有效改进区域,16121
+docs/ORDINARY_CONTROLS_V43_PROTOCOL.md,V43：固定混合与扩展范围回退对照,4926
+docs/ORDINARY_CONTROLS_V43_RESULTS.md,V43：普通混合改善CIF，内部水平与可靠性问题仍在,7891
+docs/PAPER_REVIEW_ASTRA.md,TransCIF 独立代码与科学评审,27854
+docs/PROJECT_POSITIONING_2026-10-23.md,TransCIF 研究定位：有限信息下可信、可迁移的 CIF 基准框架,7439
+docs/RECOMPOSE_BRIDGE_V48_LITERATURE_NOTE.md,V48：均值与形状分开处理的先例边界,1339
+docs/RECOMPOSE_BRIDGE_V48_PROTOCOL.md,V48：重组路径内的完整水平与风险控制,5385
+docs/RECOMPOSE_BRIDGE_V48_RESULTS.md,V48：重组形状有预测价值，水平漂移需要单独控制,14163
+docs/REFACTOR.md,TransCIF v0.2 清理与重构（2026-10-22）,4693
+docs/RESEARCH.md,研究问题与证据门槛,56963
+docs/RESEARCH_GATES_PROTOCOL.md,Three-gate feasibility protocol (frozen before outcome inspection),7429
+docs/RESIDUAL_ALLOCATION_V39_DESIGN.md,V39草案：先检验区域燃料偏差能否持续，再做粗量适配,4750
+docs/RESIDUAL_PERSISTENCE_V39_PROTOCOL.md,V39：嵌套源外残差的跨时段持续性,4483
+docs/RESIDUAL_PERSISTENCE_V39_RESULTS.md,V39：区域碳偏差持续，粗总量残差仍是不完整线索,6153
+docs/RESULTS.md,已核对结果与主张边界（2026-10-22）,4040
+docs/RISK_INFORMATION_V19_RESULTS.md,V19：粗统计识别什么，剩余风险需要什么信息,9141
+docs/RISK_STATS_V22_PROTOCOL.md,V22: minimum-generation information for strict tail counts,6728
+docs/RISK_STATS_V22_RESULTS.md,V22：风险定向摘要有明确作用，但没有一般小时尾部突破,5483
+docs/RISK_TRANSFER_V5_PROTOCOL.md,V5：可见粗统计创新归一化的分量残差迁移,4337
+docs/RISK_TRANSFER_V5_RESULTS.md,第三轮：粗统计创新风险与水平—形状校准,10200
+docs/SAMPLER_SEARCH_V3_PROTOCOL.md,V3 sampler mechanism search: frozen sequential experiment,3918
+docs/SOURCE_RISK_V49_LITERATURE_NOTE.md,V49：源区风险与函数型区间的文献边界,7145
+docs/SOURCE_RISK_V49_PROTOCOL.md,V49：严格排除两地区的源小时风险数据,8424
+docs/SOURCE_RISK_V49_RESULTS.md,V49：窄区间覆盖不足，地区水平偏差仍明显,11789
+docs/STRUCTURAL_SEARCH_V3_PROTOCOL.md,Structural transfer search v3,4151
+docs/TAIL_COUNT_V20_PROTOCOL.md,V20A：粗信息能排除哪些超标小时数,4205
+docs/TAIL_COUNT_V20_RESULTS.md,V20：粗统计对超标小时数的约束，以及更有针对性的本地摘要,7140
+docs/THREE_GATES_RESULTS.md,TransCIF 三关实验证据与研究判断,11632
+docs/THRESHOLD_SIDE_NONIDENTIFICATION_THEOREM.md,阈值侧不识别：月燃料边际下小时尾数的全宽锐界条件,2479
+docs/TRANSFER_V4_METHOD.md,V4 候选方法：历史支持桥与分量残差迁移,7279
+docs/TRANSFER_V4_PROTOCOL.md,V4：统计支持、时效性与水平—形状迁移,7279
+docs/TRANSFER_V4_RESULTS.md,V4：统计时效性、水平—形状迁移与区间校准实验,10040
+docs/UTILIZATION_DECODER_V37_PROTOCOL.md,V37：同B1预算的状态相关容量解码基线,4647
+docs/UTILIZATION_DECODER_V37_RESULTS.md,V37：状态相关容量偏置没有超过简单门控,7105
+docs/V100_LOCAL_ANNUAL_LEVEL_SEASONAL_SHAPE_PROTOCOL.md,V100: lagged local annual level plus transferable seasonal shape,3513
+docs/V100_LOCAL_ANNUAL_LEVEL_SEASONAL_SHAPE_RESULTS.md,V100：目标区年度水平与源区月份形状分开迁移,6205
+docs/V100_NO_PEAK_SCREEN_CAPACITY_PROTOCOL.md,V100 protocol: lagged capacity without target-hour peak screening,1548
+docs/V100_NO_PEAK_SCREEN_CAPACITY_RESULTS.md,V100: coarse-capacity identification survives removal of hourly peak screening,4645
+docs/V101_2026H1_CAPACITY_TEMPORAL_PROBE_PROTOCOL.md,V101 protocol: frozen V100 capacity mechanism on 2026H1,1262
+docs/V101_2026H1_CAPACITY_TEMPORAL_PROBE_RESULTS.md,V101: frozen coarse-capacity mechanism on 2026H1,3393
+docs/V102_FULL_COHORT_SHARP_CAPACITY_PROTOCOL.md,V102 protocol: compare V100 capacity outer sets with exact group-capacity feasibility,1033
+docs/V102_FULL_COHORT_SHARP_CAPACITY_RESULTS.md,V102: exact capacity-constrained K sets match V100 on the un-screened cohort,3848
+docs/V103_FACTOR_UNCERTAINTY_SHARP_SET_PROTOCOL.md,V103 protocol: exact K-set envelope under ±10% fuel-factor uncertainty,1089
+docs/V103_FACTOR_UNCERTAINTY_SHARP_SET_RESULTS.md,V103: the coarse-capacity K-set remains informative under a ±10% EF stress box,3162
+docs/V104_UNSEEN_REGION_ROBUST_CONFIRMATION_PROTOCOL.md,V104 protocol: frozen factor-robust sharp-set confirmation on unseen regions,1909
+docs/V104_UNSEEN_REGION_ROBUST_CONFIRMATION_RESULTS.md,V104 results: unseen-region factor-robust confirmation,3056
+docs/V105_UNSEEN_REGION_CAPACITY_ABLATION_PROTOCOL.md,V105 protocol: paired monthly-margin versus coarse-capacity ablation,1355
+docs/V105_UNSEEN_REGION_CAPACITY_ABLATION_RESULTS.md,V105 results: paired capacity information ablation on unseen regions,2761
+docs/V106_UNSEEN_CHINA_STYLE_COARSE_INFO_PROTOCOL.md,V106 protocol: unseen-region China-style coarse monthly information budget,1670
+docs/V106_UNSEEN_CHINA_STYLE_COARSE_INFO_RESULTS.md,V106 results: coarse public-style monthly data on unseen regions,2407
+docs/V107_HOURLY_CIF_NOVELTY_BOUNDARY_LITERATURE.md,V107: novelty boundary from hourly emissions-factor literature,4326
+docs/V108_SHARP_SET_METHOD_AND_PAPER_GATE.md,V108: sharp hourly-tail set method and paper gate,5450
+docs/V109_INDEPENDENT_LP_SHARP_SET_AUDIT_PROTOCOL.md,V109 protocol: independent LP audit of the full sharp K set,1622
+docs/V109_INDEPENDENT_LP_SHARP_SET_AUDIT_RESULTS.md,V109 results: independent LP audit of complete K sets,2181
+docs/V110_UNSEEN_REGION_MONTHLY_ANCHOR_BASELINE_PROTOCOL.md,V110 protocol: same-budget monthly-mean anchor and cross-region interval baseline,1663
+docs/V110_UNSEEN_REGION_MONTHLY_ANCHOR_BASELINE_RESULTS.md,V110 results: monthly-mean anchor versus identified sets,2795
+docs/V111_FACTOR_ROBUST_MONTHLY_ANCHOR_PROTOCOL.md,V111 protocol: factor-robust monthly-mean anchor baseline,1484
+docs/V111_FACTOR_ROBUST_MONTHLY_ANCHOR_RESULTS.md,V111 results: factor-box monthly anchor calibration,1877
+docs/V112_WORST_REGION_ROBUST_ANCHOR_PROTOCOL.md,V112 protocol: worst-source-region calibrated robust anchor,868
+docs/V112_WORST_REGION_ROBUST_ANCHOR_RESULTS.md,V112 results: worst-region calibrated factor-robust anchor,2267
+docs/V113_2026Q3_FUTURE_TIME_CONFIRMATION_PROTOCOL.md,V113 protocol: 2026Q3 future-time confirmation,1895
+docs/V113_2026Q3_FUTURE_TIME_CONFIRMATION_RESULTS.md,V113 results: future-time confirmation on 2026Q3,2902
+docs/V114_ANCHOR_CAPACITY_INTERSECTION_EXPLORATORY_PROTOCOL.md,V114 protocol: exploratory intersection of calibrated and physical sets,1181
+docs/V115_UNSEEN_REGION_Q3_INTERSECTION_CONFIRMATION_PROTOCOL.md,V115 protocol: spatial confirmation of anchor-capacity intersection,1675
+docs/V115_UNSEEN_REGION_Q3_INTERSECTION_CONFIRMATION_RESULTS.md,V115 results: spatial confirmation of the anchor-capacity intersection,3151
+docs/V116_GROUP_CONFORMAL_CALIBRATION_PROTOCOL.md,V116 — Region-Grouped Split-Conformal Calibration Diagnostic,2221
+docs/V116_GROUP_CONFORMAL_CALIBRATION_RESULTS.md,V116 — Region-Grouped Split-Conformal Calibration Diagnostic Results,3382
+docs/V117_Q3_MATCHED_GROUP_CONFORMAL_PROTOCOL.md,V117 — Q3-Matched Region-Grouped Conformal Diagnostic,1287
+docs/V117_Q3_MATCHED_GROUP_CONFORMAL_RESULTS.md,V117 — Q3-Matched Group-Conformal Diagnostic Results,1160
+docs/V118_REGION_LOO_BROAD_COHORT_PROTOCOL.md,V118 — Broad-Cohort Region-LOO Robustness Diagnostic,2067
+docs/V118_REGION_LOO_BROAD_COHORT_RESULTS.md,V118 — Broad-Cohort Region-LOO Robustness Diagnostic Results,3827
+docs/V119_SUPPORT_GAP_FALLBACK_PROTOCOL.md,V119 — Calibration-Support Gap Fallback Diagnostic,1738
+docs/V119_SUPPORT_GAP_FALLBACK_RESULTS.md,V119 — Source-Support Gap Fallback Diagnostic Results,2191
+docs/V11_DESIGN_REVIEW.md,V11 科学设计审查：天气形状与剩余风险,14769
+docs/V120_SUPPORT_GAP_REGION_LOO_CV_PROTOCOL.md,V120 — Support-Gap Fallback Region-LOO Cross-Validation,2219
+docs/V120_SUPPORT_GAP_REGION_LOO_CV_RESULTS.md,V120 — Support-Gap Fallback Region-LOO Cross-Validation Results,3581
+docs/V121_NWMT_Q3_FROZEN_SUPPORT_FALLBACK_PROTOCOL.md,V121 — Frozen Support-Gap Rule on NWMT 2026Q3,1993
+docs/V121_NWMT_Q3_FROZEN_SUPPORT_FALLBACK_RESULTS.md,V121 — Frozen Support-Gap Rule on NWMT 2026Q3 Results,2583
+docs/V122_OCTOBER_MTD_FROZEN_RULE_CONFIRMATION_PROTOCOL.md,V122 — Frozen Rule on October 2026 Month-to-Date,1885
+docs/V122_OCTOBER_MTD_FROZEN_RULE_CONFIRMATION_RESULTS.md,V122 — Frozen Rule on October 2026 Month-to-Date Results,4366
+docs/V123_NOVELTY_BOUNDARY_AND_CLAIM.md,V123 — Novelty Boundary After the Frozen October Confirmation,6410
+docs/V124_LOW_HISTORY_COVERAGE_OCTOBER_SPATIAL_CONFIRMATION_PROTOCOL.md,V124 — Frozen Rule on October Data in Lower-History-Coverage Regions,1925
+docs/V124_LOW_HISTORY_OCTOBER_AVAILABILITY_RESULTS.md,V124 — Lower-History October Availability Audit,920
+docs/V125_OCTOBER_MATCHED_CALIBRATION_DIAGNOSTIC_PROTOCOL.md,V125 — October-Matched Calibration Diagnostic,1477
+docs/V125_OCTOBER_MATCHED_CALIBRATION_DIAGNOSTIC_RESULTS.md,V125 — October-Matched Calibration Diagnostic Results,2239
+docs/V126_EF20_ROBUSTNESS_PROTOCOL.md,V126 — ±20% Fuel-Factor Uncertainty Stress Test,1535
+docs/V126_EF20_ROBUSTNESS_RESULTS.md,V126 — ±20% Fuel-Factor Uncertainty Stress Results,4247
+docs/V127_INDEPENDENT_EF20_CORNER_PROTOCOL.md,V127 — Independent ±20% Fossil-Factor Corner Stress,1675
+docs/V127_INDEPENDENT_EF20_CORNER_RESULTS.md,V127 — Independent ±20% Factor Corner Results,2995
+docs/V128_CONTINUOUS_EF_BOX_SCORE_BOUND_PROTOCOL.md,V128 — Conservative Calibration Score Bound over the Continuous EF Box,1972
+docs/V128_CONTINUOUS_EF_BOX_SCORE_BOUND_RESULTS.md,V128 — Continuous ±20% EF-Box Score-Bound Results,3651
+docs/V129_FACTOR_SUPPORT_RISK_SIDE_PROTOCOL.md,V129 — Factor-Support-Aware Risk-Side Monthly Information,2926
+docs/V129_FACTOR_SUPPORT_RISK_SIDE_RESULTS.md,V129 — Factor-Support-Aware Risk-Side Monthly Information,3780
+docs/V12_DESIGN_AND_LITERATURE.md,V12 设计与原始文献审查,8410
+docs/V130_RISK_SIDE_MEASUREMENT_ERROR_PROTOCOL.md,V130 — Risk-Side MWh Measurement Error under EF Support Uncertainty,1385
+docs/V130_RISK_SIDE_MEASUREMENT_ERROR_RESULTS.md,V130 — Risk-Side MWh Error under EF-Support Uncertainty,3183
+docs/V131_DAILY_RISK_SIDE_INFORMATION_PROTOCOL.md,V131 — Daily Risk-Side Information Value,2440
+docs/V131_DAILY_RISK_SIDE_INFORMATION_RESULTS.md,V131 — Daily Risk-Side Summary Adds Temporal Information,3740
+docs/V132_MULTISCALE_RISK_SIDE_PROTOCOL.md,V132 — Multiscale Risk-Side Information Budget,2179
+docs/V132_MULTISCALE_RISK_SIDE_RESULTS.md,V132 — Three-Day Risk-Side Reporting Captures Most Daily Information Gain,5232
+docs/V133_MULTIDAY_MEASUREMENT_ERROR_PROTOCOL.md,V133 — Measurement Error for Multi-Day Risk-Side Summaries,1472
+docs/V133_MULTIDAY_MEASUREMENT_ERROR_RESULTS.md,V133 — Three-Day Risk-Side Width Is Stable to the Tested Field Error; Rare Certificates Are Not,2709
+docs/V134_FROZEN_THREE_DAY_Q3_TRANSFER_PROTOCOL.md,V134 — Frozen Three-Day Contract on the 2026Q3 Region Holdout,1580
+docs/V134_FROZEN_THREE_DAY_Q3_TRANSFER_RESULTS.md,"V134 — Three-Day Contract Transfers in Width, Not in Tail Classification",2427
+docs/V135_COHERENT_FACTOR_MULTIDAY_PROTOCOL.md,V135 — Coherent Factor-Support Bounds Across Time Blocks,1712
+docs/V135_COHERENT_FACTOR_MULTIDAY_RESULTS.md,V135 — Shared Factor Uncertainty Does Not Further Tighten the Three-Day Set,2024
+docs/V136_THREE_DAY_CAPACITY_COMBINATION_PROTOCOL.md,V136 — Three-Day Risk-Side Summaries with Coarse Technology Capacity,1644
+docs/V136_THREE_DAY_CAPACITY_COMBINATION_RESULTS.md,V136 — Coarse Capacity Makes the Three-Day Contract More Efficient at τ=600,3014
+docs/V137_FROZEN_THREE_DAY_CAPACITY_Q3_PROTOCOL.md,V137 — Frozen Three-Day Risk-Side + Capacity Rule on the 2026Q3 Cohort,1235
+docs/V137_FROZEN_THREE_DAY_CAPACITY_Q3_RESULTS.md,"V137 — Frozen Three-Day + Capacity Rule Transfers to 2026Q3, with Small Width Gains",2262
+docs/V138_THREE_DAY_CAPACITY_FIELD_ERROR_PROTOCOL.md,V138 — Measurement Error for Three-Day Risk-Side + Capacity,1345
+docs/V138_THREE_DAY_CAPACITY_FIELD_ERROR_RESULTS.md,"V138 — Three-Day + Capacity Gains Survive Field Error, Positive Certificates Do Not",1903
+docs/V139_PHYSICAL_RESERVE_CALIBRATION_PROTOCOL.md,V139 — Physical-Reserve Calibration under Complete Monthly Generation Margins,4823
+docs/V139_PHYSICAL_RESERVE_CALIBRATION_RESULTS.md,V139 — Capacity-Contract Correction and Physical-Reserve Calibration,4248
+docs/V13_DESIGN_AND_LITERATURE.md,V13 设计与原始文献审查,10414
+docs/V140_LITERATURE_AND_NOVELTY_BOUNDARY.md,V140 — Literature Boundary for the Monthly-Information Experiments,2914
+docs/V140_MONTHLY_CONDITIONAL_RISK_PROTOCOL.md,V140 — Conditional Tail-Risk Learning with Complete Monthly Fuel Margins,4767
+docs/V140_MONTHLY_CONDITIONAL_RISK_RESULTS.md,V140 — Complete Monthly Composition Does Not Yet Make the Learned Variant Beat the Anchor,4595
+docs/V141_SOURCE_DIVERSITY_ABLATION_PROTOCOL.md,V141 — Source Diversity with Frozen Monthly-Only Targets and Calibration,4916
+docs/V141_SOURCE_DIVERSITY_ABLATION_RESULTS.md,V141 — Appropriate Source Support Repairs Rare-Tail Transfer; Normalization Is Not the Increment,4818
+docs/V142_PACE_LGEE_MONTHLY_HOLDOUT_PROTOCOL.md,V142 — PACE and LGEE under Complete Monthly Inputs and Expanded Source Support,2960
+docs/V142_PACE_LGEE_MONTHLY_HOLDOUT_RESULTS.md,V142 — Expanded Sources Do Not Resolve LGEE; Strong Anchors Remain Necessary,4383
+docs/V143_FACTOR_FLOOR_DIAGNOSTIC_PROTOCOL.md,V143 — Oracle Factor-Contract Floor versus Reducible Interval Excess,2084
+docs/V143_FACTOR_FLOOR_DIAGNOSTIC_RESULTS.md,V143 — Factor Ambiguity and Dispatch-Transfer Excess Are Different Optimization Targets,4140
+docs/V144_CANONICAL_PROFILE_RESPONSE_PROTOCOL.md,V144 — Canonical Factors and Source-Profile Risk Responses,3355
+docs/V144_CANONICAL_PROFILE_RESPONSE_RESULTS.md,V144：规范 EF 与源月组成响应缓存,3632
+docs/V145_RECOMPOSED_RISK_BASELINES_PROTOCOL.md,V145 — Recomposition Risk Responses inside Strong Same-Budget Baselines,5631
+docs/V145_RECOMPOSED_RISK_BASELINES_RESULTS.md,V145：重组月度尾部风险的同预算强基线,17136
+docs/V146_CRITICAL_COMPOSITION_PROTOCOL.md,V146 — Joint Risk-Curve Calibration in Equivalent Composition Coordinates,4716
+docs/V146_CRITICAL_COMPOSITION_RESULTS.md,V146：联合双阈值的关键组成位移校准,7812
+docs/V147_CONDITIONAL_CURVE_SCALE_PROTOCOL.md,V147 — Source-learned conditional scales for nested risk curves,3749
+docs/V147_CONDITIONAL_CURVE_SCALE_RESULTS.md,V147：条件曲线尺度没有改变目标区间,8277
+docs/V148_MECHANISM_AND_NOVELTY_UPDATE.md,V148 后的机制判断与创新边界,4325
+docs/V148_QUANTILE_NUMERICAL_DIAGNOSIS.md,V148 — Quantile baseline numerical diagnosis,9270
+docs/V148_QUANTILE_STABILITY_PROTOCOL.md,V148 — Quantile-boosting numerical stability and corrected strong controls,3126
+docs/V148_QUANTILE_STABILITY_RESULTS.md,V148：分位提升强基线的数值与拟合顺序稳定性,9397
+docs/V149_HURDLE_RISK_PROTOCOL.md,V149：稀少重组失效的发生与幅度,2288
+docs/V149_HURDLE_RISK_RESULTS.md,V149：稀少失效的发生与幅度控制,11367
+docs/V14_CALIBRATION_REPAIR.md,V14 校准响应队列修复说明,4719
+docs/V150_SEVERITY_SUPPORT_PROTOCOL.md,V150：正误差幅度的维度与源区影响,1995
+docs/V150_SEVERITY_SUPPORT_RESULTS.md,V150：LGEE的幅度缩放收益依赖单个源区,13375
+docs/V151_HOURLY_LAW_PROTOCOL.md,V151：小时CIF分布与月度信息时效,2646
+docs/V151_HOURLY_LAW_RESULTS.md,V151：回到小时CIF后，完整月信息与可发布信息表现不同,8996
+docs/V152_HOURLY_MOMENT_DIAGNOSTIC_PROTOCOL.md,V152：小时分布误差的水平、尺度与剩余形状诊断,1560
+docs/V152_HOURLY_MOMENT_DIAGNOSTIC_RESULTS.md,V152：完整月统计下，月内恒定分布已经接近自身CRPS下界,9069
+docs/V153_CALENDAR_LAW_PROTOCOL.md,V153：日历条件分布与月度边际一致性,1964
+docs/V153_CALENDAR_LAW_RESULTS.md,V153：小时相位取得稳定开发增量，边际重组没有独立收益,10306
+docs/V154_BASELINE_NOVELTY_BOUNDARY.md,V154–V155：强基线的实现边界,2694
+docs/V154_HOURLY_STRONG_BASELINES_PROTOCOL.md,V154：同预算小时条件强基线,2316
+docs/V154_HOURLY_STRONG_BASELINES_RESULTS.md,V154：小时重组优于本轮直接条件模型，仍须补锚定残差控制,8532
+docs/V155_STRICT_HISTOGRAM_QUANTILE_PROTOCOL.md,V155：HGB分位数的零残差控制,1022
+docs/V155_STRICT_HISTOGRAM_QUANTILE_RESULTS.md,V155：严格零残差控制改善优化机制，未解决跨区覆盖,2290
+docs/V156_ANCHORED_HOURLY_RESIDUAL_PROTOCOL.md,V156：已知月度水平锚与条件小时残差,2021
+docs/V156_ANCHORED_HOURLY_RESIDUAL_RESULTS.md,V156：锚定残差强基线收完，重组仍有评分优势但未统一支配,9359
+docs/V157_MATCHED_SOURCE_HOURS_PROTOCOL.md,V157：小时重组的来源记录匹配,1328
+docs/V157_MATCHED_SOURCE_HOURS_RESULTS.md,V157：匹配源小时后，评分收益保留，覆盖门槛更敏感,5082
+docs/V158_JOINT_FUEL_RESPONSE_PROTOCOL.md,V158：联合燃料残差与响应感知分裂,2803
+docs/V158_JOINT_FUEL_RESPONSE_RESULTS.md,V158：联合燃料残差与响应字典没有形成稳定增量,7612
+docs/V158_METHOD_NOVELTY_BOUNDARY.md,V158：运行结果之外的方法边界,3037
+docs/V159_FUEL_ACTIVITY_SOURCE_PILOT_PROTOCOL.md,V159：燃料活动坐标的源区内部筛查,5538
+docs/V159_FUEL_ACTIVITY_SOURCE_PILOT_RESULTS.md,V159：活动坐标更合理，但尚无覆盖与效率的联合突破,4901
+docs/V159_METHOD_BOUNDARY.md,V159：活动坐标与正发电条件化的贡献边界,2447
+docs/V160_CARBON_CDF_SOURCE_PROTOCOL.md,V160：源区碳CDF分裂与一般分布学习对照,2814
+docs/V160_CARBON_CDF_SOURCE_RESULTS.md,V160：完整分布分裂仍未带来覆盖保持的效率增量,4422
+docs/V161_MONTHLY_HISTORY_VALUE_PROTOCOL.md,V161：合法月报历史的粗层价值实验,2780
+docs/V161_MONTHLY_HISTORY_VALUE_RESULTS.md,V161：月报轨迹的表观收益，大部分被简单参考解释,4258
+docs/V162_FIXED_PHASE_DIAGNOSTIC_PROTOCOL.md,V162：既定重组分布的固定时钟相位诊断,3054
+docs/V162_FIXED_PHASE_DIAGNOSTIC_RESULTS.md,V162：固定时差不是主要突破口,1238
+docs/V163_LEVEL_SPREAD_DIAGNOSTIC_PROTOCOL.md,V163：剩余误差的水平、发电协方差和离散程度诊断,3670
+docs/V163_LEVEL_SPREAD_DIAGNOSTIC_RESULTS.md,V163：需要修正概率分配，不能只匹配均值和方差,2920
+docs/V164_SCENARIO_REWEIGHTING_PROTOCOL.md,V164：粗月度预测约束供体情景概率,3930
+docs/V164_SCENARIO_REWEIGHTING_RESULTS.md,V164：月度情景更新有收益，但尚未解决最差地区,3176
+docs/V165_COARSE_DISTRIBUTION_LIFTING_PROTOCOL.md,V165：传播完整粗层分布，保留世界内小时风险,3682
+docs/V165_COARSE_DISTRIBUTION_LIFTING_RESULTS.md,V165：完整粗层分布尚未解决小时尾部风险,5177
+docs/V166_COARSE_ORACLE_ZERO_AUDIT_PROTOCOL.md,V166：理想粗信息与零燃料迁移约定诊断,4157
+docs/V166_COARSE_ORACLE_ZERO_AUDIT_RESULTS.md,V166：理想粗信息有较大均值价值，但没有修复最差小时覆盖,3776
+docs/V167_MASKED_GROWTH_PROTOCOL.md,V167：未观测燃料增长与观测到的正转零输出分开处理,3476
+docs/V167_MASKED_GROWTH_RESULTS.md,V167：中性增长不优于普通筛选和Gaussian参考,4055
+docs/V168_MASKED_SHAPE_VALUE_PROTOCOL.md,V168：源内掩蔽燃料形状的信息价值,5957
+docs/V168_MASKED_SHAPE_VALUE_RESULTS.md,V168：条件信息有用，联合补全没有独立增量,5133
+docs/V169_FEASIBLE_COPULA_PROTOCOL.md,V169：固定燃料边际，检验源耦合的迁移价值,3763
+docs/V169_FEASIBLE_COPULA_RESULTS.md,V169：固定燃料边际后，重排耦合没有实质收益,5373
+docs/V170_FUEL_MARGINAL_DIAGNOSIS_PROTOCOL.md,V170：先区分燃料水平误差与小时边际误差,3000
+docs/V170_FUEL_MARGINAL_DIAGNOSIS_RESULTS.md,V170：月度水平与小时零发电风险必须分开核查,6952
+docs/V171_TWO_SCALE_ZERO_PROTOCOL.md,V171：两类零发电风险的同预算强控制,3760
+docs/V171_TWO_SCALE_ZERO_RESULTS.md,V171：直接零分类有收益，两级hurdle没有普遍增量,4909
+docs/V172_ZERO_ODDS_CIF_PROTOCOL.md,V172：零事件预测是否能改善完整CIF风险,3540
+docs/V172_ZERO_ODDS_CIF_RESULTS.md,V172：区间风险分配出现候选，仍没有完整强基线增量,6578
+docs/V173_MOMENT_PROTECTED_RISK_DESIGN.md,V173设计：在同一风险修正下保护粗层矩,2237
+docs/V173_MOMENT_PROTECTED_RISK_PROTOCOL.md,V173：固定预测矩的风险修正控制,4005
+docs/V173_MOMENT_PROTECTED_RISK_RESULTS.md,V173：保护预测矩避免了严重退化，尚无独立小时风险增量,4737
+docs/V174_CIF_RECALIBRATION_PROTOCOL.md,V174：源地区嵌套OOF的CIF再校准强对照,4545
+docs/V174_CIF_RECALIBRATION_RESULTS.md,V174：直接修正CIF分布有平均收益，覆盖与效率仍未同时改善,6267
+docs/V175_DIRECT_CRPS_MAP_DESIGN.md,V175准备：先排除再校准目标错配，再决定是否保留这条路线,3814
+docs/V175_DIRECT_CRPS_MAP_PROTOCOL.md,V175：直接CRPS映射与普通地区稳健控制,4559
+docs/V175_DIRECT_CRPS_MAP_RESULTS.md,V175：直接CRPS与地区minimax未过门槛，停止当前再校准支线,7023
+docs/V176_AGGREGATION_INVENTORY_PROTOCOL.md,V176准备：只核查同预算虚拟聚合的元数据可行性,2933
+docs/V176_AGGREGATION_INVENTORY_RESULTS.md,V176准备结果：同预算同步聚合可构造，但还没有性能或创新证据,3460
+docs/V177_PORTFOLIO_VALUE_PROTOCOL.md,V177：同预算二源组合的小时风险价值,5803
+docs/V177_PORTFOLIO_VALUE_RESULTS.md,V177：同步相关的增量过小，覆盖提高仍依赖更宽law,6484
+docs/V178_JOINT_COARSE_WORLD_DESIGN.md,V178准备：联合粗燃料转移是否比单一EF锚更有用,4363
+docs/V178_JOINT_COARSE_WORLD_PROTOCOL.md,V178：联合粗组成世界概率的同预算强对照,5716
+docs/V178_JOINT_COARSE_WORLD_RESULTS.md,V178：联合粗响应指导世界概率，未胜强参考,3203
+docs/V179_INCREMENT_SUPPORT_DIAGNOSTIC_PROTOCOL.md,V179：固定概率下的粗支持语义诊断,3478
+docs/V179_INCREMENT_SUPPORT_DIAGNOSTIC_RESULTS.md,V179：修正粗支持改善预测，但联合森林没有独立优势,3073
+docs/V180_REBASED_COARSE_LIFT_PROTOCOL.md,V180：预测组成与小时形状分开传入的普通重组对照,3828
+docs/V180_REBASED_COARSE_LIFT_RESULTS.md,V180：分开传入组成与形状有收益，仍未解决最差地区覆盖,4597
+docs/V181_COARSE_SHAPE_COUPLING_DESIGN.md,V181准备：保持粗与形状边际，先检验配对的价值,3505
+docs/V181_COARSE_SHAPE_COUPLING_PROTOCOL.md,V181：粗组成与完整小时形状的精确独立配对,3394
+docs/V181_COARSE_SHAPE_COUPLING_RESULTS.md,V181：精确独立配对有小幅收益，仍不构成突破,3880
+docs/V182_COARSE_HISTORY_INVENTORY_PROTOCOL.md,V182准备：历史粗监督的元数据可用性,1572
+docs/V182_COARSE_HISTORY_INVENTORY_RESULTS.md,V182：更长历史存在时间覆盖，尚未核验燃料月量,2071
+docs/V182_COARSE_HISTORY_INVENTORY_V2_PROTOCOL.md,V182元数据盘点修正：显式时间单位,983
+docs/V183_COARSE_HISTORY_EXPORT_PROTOCOL.md,V183准备：隔离导出更长粗历史，先复现canonical重叠,2365
+docs/V183_COARSE_HISTORY_EXPORT_RESULTS.md,V183：661个月度历史已隔离导出，原2024月量精确复现,2245
+docs/V184_COARSE_HISTORY_VALUE_DESIGN.md,V184准备：区分更长历史输入与更多粗监督,6267
+docs/V184_COARSE_HISTORY_VALUE_PROTOCOL.md,V184：更长月度历史与更多粗监督的同预算价值实验,3845
+docs/V184_COARSE_HISTORY_VALUE_RESULTS.md,V184：更多粗监督有局部收益，长历史输入没有普遍改善,3800
+docs/V184_MONTHLY_CONTEXT_PREFLIGHT_RESULTS.md,V184输入准备：粗监督池扩大，尚未拟合预测模型,1696
+docs/V184_MONTHLY_MODEL_SMOKE_RESULTS.md,V184模型准备：九基线有限smoke通过，尚无性能评分,1560
+docs/V184_PREFLIGHT_SERIALIZER_ADDENDUM.md,V184正式评分前补充：训练前缀归档往返,748
+docs/V185_COARSE_REPRESENTATION_PROTOCOL.md,V185：未来组成响应与预测支持的交叉控制,3153
+docs/V185_COARSE_REPRESENTATION_RESULTS.md,V185：绝对组成响应与绝对支持均未带来增量,3832
+docs/V186_MONTHLY_HISTORY_HOURLY_RISK_DESIGN.md,V186准备：月度历史能否识别额外的小时零出力风险,3102
+docs/V186_MONTHLY_HISTORY_ZERO_RISK_PROTOCOL.md,V186：相同源小时预算下的月度历史与小时零事件,3795
+docs/V186_MONTHLY_HISTORY_ZERO_RISK_RESULTS.md,V186：长历史波动特征改善部分零事件指标，未胜普遍强控制,8405
+docs/V186_MONTHLY_RISK_FEATURE_PREFLIGHT_RESULTS.md,V186输入预检：同一小时预算下的长历史风险特征已准备,1726
+docs/V187_EXTENDED_TWO_SCALE_ZERO_PROTOCOL.md,V187：同长历史预算的月状态与正月内零风险强控制,5501
+docs/V187_EXTENDED_TWO_SCALE_ZERO_RESULTS.md,V187：同长历史hurdle补齐后，尚无普遍正月内风险增量,10287
+docs/V188_FORWARD_RISK_PROTOCOL.md,V188：源外地区与2024年内前向零风险稳定性检验,5340
+docs/V188_FORWARD_ZERO_RISK_RESULTS.md,V188：受约束时间切分下月状态与正月内风险的稳定性,12485
+docs/V188_TEMPORAL_AUDIT_ADDENDUM.md,V188季度优势变化的审计补充,1559
+docs/V189_EMPTY_CONDITIONAL_ADDENDUM.md,V189空条件评分表修复与r1退役,1218
+docs/V189_SOURCE_BLOCK_OIL_PROTOCOL.md,V189：油电条件风险收益的源块删留稳定性,5735
+docs/V189_SOURCE_BLOCK_OIL_RESULTS.md,V189：油电源事件支持与source-block删留稳定性,11484
+docs/V189_SUPPORT_EXPOSED_ADDENDUM.md,V189油电正月支持暴露补充,1038
+docs/V190_SOURCE_EVENT_CIF_LITERATURE.md,V190文献与已有实现边界,3111
+docs/V190_SOURCE_EVENT_CIF_PROTOCOL.md,V190：源事件层的CIF风险影响与概率law稳定化,7151
+docs/V190_SOURCE_EVENT_CIF_RESULTS.md,V190：源事件层影响确实改变CIF law，但未提供强基线之外的效率增量,11493
+docs/V190_THRESHOLD_FINGERPRINT_ADDENDUM.md,V190阈值±0指纹修复，r1退役,1856
+docs/V191_DELAYED_STATE_OBSERVABILITY.md,V191草稿：迟发布月量不能自动识别地区小时偏置,4783
+docs/V191_DELAYED_STATE_RESULTS.md,V191：延迟月观测隐状态候选停线,5763
+docs/V192_REALLOCATED_KAPPA_PROTOCOL.md,V192 固定源小时预算的跨月 κ 可预测性：有限开发协议,6260
+docs/V192_REALLOCATED_KAPPA_RESULTS.md,V192 跨月重分配源小时预算：未触发小时概率扩展,8647
+docs/V193_BENCHMARK_ASSESSMENT_PROTOCOL.md,V193 统一CIF评估合同补全（冻结前审阅稿）,7505
+docs/V193_BENCHMARK_ASSESSMENT_RESULTS.md,V193：CIF benchmark评估合同补全与验证,9958
+docs/V194_CHINA_SCENARIO_SHAPE_TRANSFER_PROTOCOL.md,V194 冻结协议：中国模型投影中的月均锚定小时形状迁移,6645
+docs/V194_DATA_COMPLETENESS_AMENDMENT.md,V194 数据完整性修订,2670
+docs/V194_V195_CHINA_MODEL_WORLD_RESULTS.md,V194–V195：中国 CIF 模型投影中的小时形状迁移结果,6484
+docs/V195_SOURCE_CV_ADAPTIVE_DONORS_PROTOCOL.md,V195 冻结协议：供体留一风险驱动的 CIF 小时形状邻域选择,2684
+docs/V196_CHINA_DATA_AVAILABILITY_AND_BREAKTHROUGH_AUDIT.md,V196：中国低频统计与小时 CIF 公开数据可得性及创新空间审计,11626
+docs/V196_SOURCE_LOO_TIME_OF_DAY_CALIBRATION_PROTOCOL.md,V196 冻结协议：供体留一残差的小时位置分层区间校准,2841
+docs/V196_SOURCE_LOO_TIME_OF_DAY_CALIBRATION_RESULTS.md,V196 结果：来源 LOO 风险校准能否处理 CIF 小时形状欠覆盖？,3885
+docs/V197_DONOR_DISPERSION_CALIBRATION_RESULTS.md,V197 结果：供体分歧是否能定位未见省小时形状风险？,5605
+docs/V197_DONOR_DISPERSION_STANDARDIZED_CALIBRATION_PROTOCOL.md,V197 冻结协议：供体离散度标准化的小时 CIF 区间,2400
+docs/V198_FROZEN_DISPERSION_METHOD_TIME_HOLDOUT_PROTOCOL.md,V198 冻结协议：V197供体分歧区间的2055/2060时间外推,2967
+docs/V198_FROZEN_DISPERSION_TIME_HOLDOUT_RESULTS.md,V198 结果：冻结的供体分歧尺度能否外推到2055/2060？,5739
+docs/V199_CHINA_MONTHLY_MIX_SHAPE_PROBE_PROTOCOL.md,V199：中国八类月度发电结构能否选到更好的小时 CIF 供体？,3673
+docs/V199_CHINA_MONTHLY_MIX_SHAPE_RESULTS.md,V199：中国月度燃料组成的小时形状供体信号探针,5124
+docs/V199_R1_UNIT_CORRECTION.md,V199 r1 退役说明,674
+docs/V200_MIX_CONDITIONED_INTERVAL_PROBE_PROTOCOL.md,V200：月度组成近邻能否帮助小时风险区间？,2839
+docs/V200_MIX_CONDITIONED_INTERVAL_PROBE_RESULTS.md,V200：月度燃料组成近邻没有改善可信区间,5057
+docs/V201_SPARSE_DAILY_FUEL_MARGIN_IDENTIFICATION_PROTOCOL.md,V201：月度燃料边际之外，少量逐日燃料统计能否约束小时尾风险？,2866
+docs/V201_SPARSE_DAILY_FUEL_MARGIN_IDENTIFICATION_RESULTS.md,V201 稀疏逐日燃料边际：小时尾部风险部分识别结果,4731
+docs/V202_INTRADAY_FUEL_MARGIN_INFORMATION_FRONTIER_PROTOCOL.md,V202 分时燃料边际的信息预算前沿协议,1617
+docs/V202_INTRADAY_FUEL_MARGIN_INFORMATION_FRONTIER_RESULTS.md,V202 分时燃料边际：信息分辨率比增加报送天数更重要,6459
+docs/V204_MONTHLY_FUEL_TABLE_IDENTIFIABILITY_DECISION.md,V204：完整月度电源分类后的可识别对象与研究决策,6678
+docs/V205_MONTHLY_MARGIN_FACTOR_ROBUST_HULL_PROTOCOL.md,V205：月度燃料边际在因子不确定下的小时尾计数稳健端点,3105
+docs/V205_MONTHLY_MARGIN_FACTOR_ROBUST_HULL_RESULTS.md,V205：放宽类别因子几乎不改变月报尾风险锐端点,4125
+docs/V206_CROSS_SIMULATOR_TRANSFER_PROTOCOL.md,V206：跨独立中国电力系统模型的小时形状与区间迁移,6898
+docs/V206_CROSS_SIMULATOR_TRANSFER_RESULTS.md,V206 跨独立中国模型的CIF小时形状与区间迁移,8817
+docs/V208_JIANGSU_OPERATIONAL_CURVE_PILOT.md,V208 江苏运行派生小时曲线：留一地市形状迁移试探,7519
+docs/V209_MONTHLY_MIX_LEVEL_AND_SHAPE_CV_RESULTS.md,V209 月度类别统计能否代替目标月均CIF锚？,6933
+docs/V210_V212_MONTHLY_INFORMATION_RISK_LIMITS.md,V210–V212 月度发电统计的信息边界与风险预测,10283
+docs/V215_EIA_SPARSE_LOCAL_ANCHOR_PROTOCOL.md,V215 EIA 2026H1 小时锚信息价值协议,3564
+docs/V215_EIA_SPARSE_LOCAL_ANCHOR_RESULTS.md,V215 EIA 2026H1 小时锚信息价值结果,5213
+docs/V216_EIA_SPLIT_CONFORMAL_ANCHOR_PROTOCOL.md,V216 EIA小时锚的独立中心拟合与有限样本校准协议,2348
+docs/V216_EIA_SPLIT_CONFORMAL_ANCHOR_RESULTS.md,V216 EIA小时锚split-conformal结果,4136
+docs/V217_EIA_ANCHOR_BUDGET_PROTOCOL.md,V217 EIA本地小时锚总预算前沿协议,1111
+docs/V217_EIA_ANCHOR_BUDGET_RESULTS.md,V217 EIA split-conformal锚点总预算结果,2032
+docs/V218_EIA_MINIMUM_CALIBRATION_PROTOCOL.md,V218 EIA最小本地风险校准预算协议,1204
+docs/V218_EIA_MINIMUM_CALIBRATION_RESULTS.md,V218 EIA最小本地风险校准预算结果,2832
+docs/V219_MONTHLY_MARGIN_SHAPE_TRANSFER_PROTOCOL.md,V219：月度燃料边际约束下的小时形状迁移,2980
+docs/V219_MONTHLY_MARGIN_SHAPE_TRANSFER_RESULTS.md,V219：分燃料月边际能改善小时点值，未修复小时风险覆盖,3353
+docs/V220_MARGIN_SHAPE_DONOR_BUDGET_RESULTS.md,V220：增加供体数没有修复区间失覆盖,2267
+docs/V221_FUEL_CATEGORY_RESOLUTION_RESULTS.md,V221：火电是否可拆出煤电，影响大于继续增加细分字段,2933
+docs/V222_CARBON_MONITOR_COUNTRY_COLDSTART_PROTOCOL.md,V222 Carbon Monitor country-held-out daily reconstruction protocol,3598
+docs/V222_CARBON_MONITOR_COUNTRY_COLDSTART_RESULTS.md,V222 Country-held-out daily CIF reconstruction: shape migration did not beat the month anchor,4019
+docs/V223_SPARSE_DAILY_RISK_SNAPSHOT_PROTOCOL.md,V223 Sparse daily fuel snapshot risk calibration protocol,3074
+docs/V223_SPARSE_DAILY_RISK_SNAPSHOT_RESULTS.md,V223 Sparse local daily fuel snapshots reduce interval inefficiency,4983
+docs/V224_EIA_SPARSE_DAILY_MAXRISK_PROTOCOL.md,V224 EIA sparse-day calibration for hourly CIF risk,2562
+docs/V224_EIA_SPARSE_DAILY_MAXRISK_RESULTS.md,V224 Sparse local day profiles improve hourly risk intervals on EIA proxy data,3863
+docs/V225_PARTIAL_SNAPSHOT_SHARP_RISK_PROTOCOL.md,V225 Partial local fields with sharp monthly-margin risk bounds,3001
+docs/V225_PARTIAL_SNAPSHOT_SHARP_RISK_RESULTS.md,V225 Monthly margins identify a four-field risk frontier,3892
+docs/V226_FOUR_FIELD_PARTIAL_RISK_CONFIRMATION_RESULTS.md,V226 Frozen four-field confirmation passes on unseen BAs and future months,4140
+docs/V226_FOUR_FIELD_PARTIAL_RISK_FROZEN_PROTOCOL.md,V226 Frozen confirmation protocol: four-field partial daily snapshots,3992
+docs/V227_NESO_GB_EXTERNAL_TEMPORAL_PROTOCOL.md,V227 Frozen protocol: external temporal check of partial-information CIF risk bounds,4918
+docs/V227_NESO_GB_PARTIAL_RISK_EXTERNAL_RESULTS.md,V227 GB 外部时间复核未通过效率门槛,4433
+docs/V228_FACTOR_AWARE_MINIMUM_CHANNEL_PROTOCOL.md,V228 Frozen protocol: factor-aware minimum hourly aggregate channels,3814
+docs/V228_FACTOR_AWARE_MINIMUM_CHANNEL_RESULTS.md,V228 因子感知字段规则：以更少小时字段精确恢复代理 CIF,4544
+docs/V229_FACTOR_AND_MEASUREMENT_UNCERTAINTY_PROTOCOL.md,V229 Frozen protocol: uncertainty stress for factor-span channels,4175
+docs/V230_SHARP_FACTOR_UNCERTAINTY_LP_PROTOCOL.md,V230 Frozen protocol: LP-sharp hourly CIF sets under EF uncertainty,2629
+docs/V230_SHARP_FACTOR_UNCERTAINTY_LP_RESULTS.md,V230 结果：LP 锐界收紧了因子不确定性代价,4156
+docs/V231_MONTHLY_ONLY_HOURLY_IDENTIFIABILITY_PROTOCOL.md,V231 Frozen protocol: what monthly fuel margins identify without local hourly mix,2355
+docs/V231_MONTHLY_ONLY_HOURLY_IDENTIFIABILITY_RESULTS.md,V231 结果：月度全燃料边际仍不能识别小时 CIF,3808
+docs/V232_JOINT_MONTH_MARGIN_LP_PROTOCOL.md,V232 Analytical follow-up: joint-month margins do not tighten the one-hour set,1801
+docs/V232_TRANSPORT_POLYTOPE_MARGIN_IDENTITY.md,V232 解析结论：月度守恒不会额外收紧单小时边际,1888
+docs/V233_CARBONMONITOR_CHINA_DAILY_SHAPE_AUDIT_PROTOCOL.md,V233 Frozen protocol: provincial shape inheritance in Carbon Monitor China,2243
+docs/V233_CARBONMONITOR_CHINA_DAILY_SHAPE_AUDIT_RESULTS.md,V233 结果：Carbon Monitor China Power 日曲线在省内月尺度几乎是同一形状,5160
+docs/V234_MONTHLY_ONLY_HOURLY_CIF_EXACT_IDENTIFIED_SET.md,V234 解析结果：仅有月度分类电量时，单小时 CIF 的精确识别集,4292
+docs/V235_CHINA_HOURLY_LOAD_PROXY_INFORMATION_PROTOCOL.md,V235 冻结协议：中国逐小时负荷代理对月度燃料 CIF 识别集的信息价值,3585
+docs/V235_CHINA_HOURLY_LOAD_PROXY_INFORMATION_RESULTS.md,V235 结果：中国省级小时负荷曲线未收窄月度燃料边际下的单小时 CIF 集,3010
+docs/V236_JOINT_TAIL_COUNT_LOAD_PROXY_PROTOCOL.md,V236 冻结协议：省级负荷代理能否收窄全月 CIF 超阈小时数锐界,2709
+docs/V236_JOINT_TAIL_COUNT_LOAD_PROXY_RESULTS.md,V236 结果：小时负荷代理大幅收窄全月超阈小时数锐界,3568
+docs/V237_NESTED_DAILY_HOURLY_RISK_INFORMATION_PROTOCOL.md,V237 冻结协议：真正嵌套的月度—日度—小时风险信息前沿,2551
+docs/V237_NESTED_DAILY_HOURLY_RISK_INFORMATION_RESULTS.md,V237 结果：真正的日度-only信息很弱，逐小时总量明显收窄尾数集合,3162
+docs/V238_EIA_NESTED_RISK_INFORMATION_CONFIRMATION_PROTOCOL.md,V238 冻结协议：在实际逐小时发电构成上确认日/小时风险信息增量,2511
+docs/V238_EIA_NESTED_RISK_INFORMATION_CONFIRMATION_RESULTS.md,V238 结果：真实逐小时发电总量对联合尾数识别的复制,5205
+docs/V239_EIA_SEASONAL_NESTED_RISK_PROTOCOL.md,V239 冻结协议：跨季节复制小时总量风险信息增益,1814
+docs/V239_EIA_SEASONAL_NESTED_RISK_RESULTS.md,V239 结果：2025跨季节复制小时总量尾风险信息增量,3198
+docs/V240_EF_UNCERTAINTY_TEMPORAL_RISK_PROTOCOL.md,V240 冻结协议：排放因子不确定性下的小时风险信息增量,1945
+docs/V240_EF_UNCERTAINTY_TEMPORAL_RISK_RESULTS.md,V240 结果：EF阈值侧不确定性会消除小时总量的信息价值,4052
+docs/V241_CIF_INFORMATION_FRONTIER_SYNTHESIS.md,V241 综合判断：CIF多尺度信息前沿的论文候选,6871
+docs/V242_THRESHOLD_FRONTIER_PROTOCOL.md,V242 冻结协议：CIF尾数信息价值的阈值敏感性,1252
+docs/V242_THRESHOLD_FRONTIER_RESULTS.md,V242 结果：400与600阈值的小时风险信息前沿,2450
+docs/V243_SCALED_MILP_THRESHOLD600_PROTOCOL.md,V243 冻结协议：能量归一化能否改善600阈值端点证明率,1055
+docs/V243_SCALED_MILP_THRESHOLD600_RESULTS.md,V243 结果：能量归一化只增加一个最优端点,1067
+docs/V244_THRESHOLD_SIDE_SCREENED_SOLVER_PROTOCOL.md,V244 冻结协议：阈值侧解析筛查能否精确保留界限并跳过MILP,1052
+docs/V244_THRESHOLD_SIDE_SCREENED_SOLVER_RESULTS.md,V244 结果：阈值侧解析筛查精确保留锐界,1733
+docs/V245_CEMS_EMPIRICAL_EF_UNCERTAINTY_RESULTS.md,V245：CEMS 直接测量下的燃料因子误差拆分,5657
+docs/V246_CEMS_HEAT_INPUT_TRANSFER_RESULTS.md,V246：目标区月度热输入改善跨区排放强度迁移,4921
+docs/V247_TEMPORAL_CEMS_TRANSFER_PROTOCOL.md,V247 协议：2024供体到2025未见BA的热输入迁移,1636
+docs/V247_TEMPORAL_CEMS_TRANSFER_RESULTS.md,V247：2024供体到2025新时间窗，热输入增益继续存在,3986
+docs/V248_SPARSE_LOCAL_FACTOR_CALIBRATION_PROTOCOL.md,V248 协议：稀疏本地实测日校准燃料CO₂/热输入率,1836
+docs/V248_SPARSE_LOCAL_FACTOR_CALIBRATION_RESULTS.md,V248：少量本地实测日修复跨区燃料因子失配,3282
+docs/V249_CEMS_HOURLY_INTERVAL_TRANSFER_RESULTS.md,V249 CEMS 实测小时区间：全供体复算,2718
+docs/V249_V251_DONOR_POOL_CORRECTION.md,V249–V251 供体池口径更正,3087
+docs/V250_FROZEN_GEOGRAPHIC_CONFIRMATION_PROTOCOL.md,V250 冻结地区外测协议：月热输入与一日本地因子校准,3060
+docs/V250_FROZEN_GEOGRAPHIC_CONFIRMATION_RESULTS.md,V250 冻结地区外测结果：热输入锚增益保留，本地单日因子较小,3063
+docs/V251_FLORIDA_EASTERN_BA_CONFIRMATION_PROTOCOL.md,V251 佛州东部时区 BA 外测协议,2256
+docs/V251_FLORIDA_EASTERN_BA_CONFIRMATION_RESULTS.md,V251 佛州东部 BA 外测结果：热输入增益保留，本地单日因子无稳定增量,3432
+docs/V252_ANNUAL_LOCAL_HEAT_RATE_TRANSFER_PROTOCOL.md,V252 上年度本地热耗率信息预算分析,2386
+docs/V252_ANNUAL_LOCAL_HEAT_RATE_TRANSFER_RESULTS.md,V252 上年度本地热耗率：年度信息显著改善月排放迁移,3947
+docs/V253_ANNUAL_HEATRATE_HOURLY_INTERVAL_PROTOCOL.md,V253 上年度热耗率锚的小时区间验证协议,2489
+docs/V253_ANNUAL_HEATRATE_HOURLY_INTERVAL_RESULTS.md,V253 上年度热耗率锚：小时区间较发电量锚窄16%,3382
+docs/V254_ZERO_LOCAL_HOURLY_CALIBRATION_PROTOCOL.md,V254 零目标小时校准：年度热耗率迁移风险区间,2631
+docs/V254_ZERO_LOCAL_HOURLY_CALIBRATION_RESULTS.md,V254 零本地小时校准：来源q90欠覆盖，全球扩宽仍有盲区,3126
+docs/V255_SIMILARITY_CONDITIONED_SOURCE_RISK_PROTOCOL.md,V255 相似地区条件化的零本地风险校准,2361
+docs/V255_SIMILARITY_CONDITIONED_SOURCE_RISK_RESULTS.md,V255 相似供体风险池没有通过来源区留一覆盖门槛,1817
+docs/V256_LOCAL_CALIBRATION_DAY_BUDGET_PROTOCOL.md,V256 年度热耗率锚的本地小时校准日预算,2581
+docs/V256_LOCAL_CALIBRATION_DAY_BUDGET_RESULTS.md,V256 本地小时风险校准日预算：随机同月有效，顺序外推欠覆盖,4332
+docs/V257_ROLLING_RISK_CALIBRATION_PROTOCOL.md,V257 目标区滚动小时风险校准,1989
+docs/V257_ROLLING_RISK_CALIBRATION_RESULTS.md,V257 滚动风险更新改善平均覆盖，但地区尾部仍欠覆盖,3303
+docs/V258_CENTER_VS_RISK_ABLATION_PROTOCOL.md,V258 中心信息与滚动小时风险分解,1654
+docs/V258_CENTER_VS_RISK_ABLATION_RESULTS.md,V258 强中心对照：GVL欠覆盖主要不由中心偏差解释,1976
+docs/V259_ASYMMETRIC_HOURLY_INTERVAL_PROTOCOL.md,V259 最近24日滚动的非对称小时区间,1561
+docs/V259_ASYMMETRIC_HOURLY_INTERVAL_RESULTS.md,V259 非对称区间略改善月末区间分数，但覆盖仍不足,1678
+docs/V25_LITERATURE_UPDATE.md,V25：聚合约束与概率解聚的近期对照,2473
+docs/V260_CAPACITY_FACTOR_TAIL_RISK_PROTOCOL.md,V260 月度容量利用率能否预警小时尾风险,3307
+docs/V260_CAPACITY_FACTOR_TAIL_RISK_RESULTS.md,V260 容量利用率改善来源风险分位数预测，但未直接改善目标区间,3723
+docs/V261_SOURCE_NESTED_RISK_CALIBRATION_PROTOCOL.md,V261 来源域嵌套选择风险残差校准幅度,2352
+docs/V261_SOURCE_NESTED_RISK_CALIBRATION_RESULTS.md,V261 来源域选出的80分位校准可保目标覆盖，仍未改善区间效率,2314
+docs/V262_HOURLY_TOTAL_MEASUREMENT_ERROR_PROTOCOL.md,V262 冻结协议：小时总量误差对尾风险识别的敏感性,2657
+docs/V262_HOURLY_TOTAL_MEASUREMENT_ERROR_RESULTS.md,V262 结果：小时总量存在5%–10%相对误差时仍保留尾风险识别增益,3765
+docs/V263_ONE_HOUR_PHASE_AMBIGUITY_PROTOCOL.md,V263 冻结协议：一小时相位错位的本地邻点不确定包络,1854
+docs/V263_ONE_HOUR_PHASE_AMBIGUITY_RESULTS.md,V263 结果：一小时相位错位包络几乎保留小时总量的信息收益,2661
+docs/V264_FULL_COHORT_PHASE_AMBIGUITY_PROTOCOL.md,V264 冻结协议：完整V239样本的一小时相位包络复制,1537
+docs/V264_FULL_COHORT_PHASE_AMBIGUITY_RESULTS.md,V264 结果：全跨季节cohort复制一小时相位误差下的尾风险增益,3328
+docs/V265_EF_PRECISION_FRONTIER_PROTOCOL.md,V265 冻结协议：阈值侧因子校准精度前沿,2046
+docs/V265_EF_PRECISION_FRONTIER_RESULTS.md,V265 结果：小时曲线发挥作用前，因子误差必须先低于阈值侧临界值,3240
+docs/V266_JOINT_PHASE_AND_MEASUREMENT_ERROR_PROTOCOL.md,V266 protocol: joint hourly-total phase and measurement uncertainty,1726
+docs/V266_JOINT_PHASE_MEASUREMENT_ERROR_RESULTS.md,V266 results: joint phase and measurement error leaves most temporal information value,2704
+docs/V267_CEMS_CALIBRATED_THRESHOLD_GATE_PROTOCOL.md,V267 protocol: calibrate the threshold-side gate with measured CEMS heterogeneity,2091
+docs/V267_CEMS_CALIBRATED_THRESHOLD_GATE_RESULTS.md,V267 results: measured CEMS factor dispersion is fuel-specific,2242
+docs/V268_CEMS_LEVEL_AND_SPREAD_GATE_PROTOCOL.md,V268 protocol: separate EF level shift from cross-state dispersion,1402
+docs/V268_CEMS_LEVEL_AND_SPREAD_GATE_RESULTS.md,V268 results: factor level shift changes which target months fail the gate,2920
+docs/V269_ASYMMETRIC_EMPIRICAL_EF_SUPPORT_PROTOCOL.md,V269 protocol: asymmetric fuel-factor support from measured CEMS,1156
+docs/V269_ASYMMETRIC_EMPIRICAL_EF_SUPPORT_RESULTS.md,V269 results: asymmetric empirical EF support changes threshold-gate decisions,2829
+docs/V270_LITERATURE_AND_NOVELTY_CHECK.md,V270: literature check and novelty boundary for the factor-gated information-budget candidate,3940
+docs/V271_ASYMMETRIC_EF_TEMPORAL_VALUE_PROTOCOL.md,V271 protocol: temporal information value under asymmetric fuel-factor support,1688
+docs/V271_ASYMMETRIC_EF_TEMPORAL_VALUE_RESULTS.md,V271 results: the EF gate predicts when hourly information has no robust value,3781
+docs/V272_HOURLY_TARGET_EVIDENCE_HIERARCHY.md,V272：小时 CIF 目标的证据层级与当前验证路线,6468
+docs/V273_EIA_GENERATED_CIF_SHAPE_TRANSFER_PROTOCOL.md,V273：EIA 官方 BA 小时标签上的跨区形状迁移协议,4032
+docs/V273_EIA_GENERATED_CIF_SHAPE_TRANSFER_RESULTS.md,V273：生成侧官方小时 CIF 标签上的形状迁移结果,3025
+docs/V274_EIA_CONSUMED_CIF_SHAPE_TRANSFER_PROTOCOL.md,V274：EIA 负荷侧 CIF 的跨区小时形状迁移协议,2413
+docs/V274_EIA_CONSUMED_CIF_SHAPE_TRANSFER_RESULTS.md,V274：消费侧官方小时 CIF 标签上的形状迁移结果,2296
+docs/V275_COARSE_MIX_CONDITIONAL_RISK_PROTOCOL.md,V275：月度燃料构成能否预测目标区小时风险尺度？,3143
+docs/V276_LOCAL_FACTOR_LEVEL_RISK_ABLATION_PROTOCOL.md,V276：目标燃料因子水平能否解释剩余小时风险？,2045
+docs/V277_SELECTIVE_RISK_ABSTENTION_PROTOCOL.md,V277：用粗信息风险尺度决定何时预测、何时弃答,1614
+docs/V278_SELECTIVE_2026_CONFIRMATION_PROTOCOL.md,V278：冻结燃料构成风险门控的2026时间外验证,1902
+docs/V278_SELECTIVE_2026_CONFIRMATION_RESULTS.md,V278结果：月燃料构成风险门控未通过时间外确认,3782
+docs/V279_ASYMMETRIC_EF_SENSOR_FRONTIER_PROTOCOL.md,V279：燃料特异EF支持下的本地观测通道前沿,3240
+docs/V279_ASYMMETRIC_EF_SENSOR_FRONTIER_RESULTS.md,V279结果：燃料特异EF支持下，最少小时字段随活跃燃料变化,4900
+docs/V280_EIA_OFFICIAL_LABEL_PACE_LGEE_PROTOCOL.md,V280：EIA官方BA小时CO₂标签上的PACE/LGEE冻结外部标签检验,3137
+docs/V280_EIA_OFFICIAL_LABEL_PACE_LGEE_RESULTS.md,V280 结果：PACE/LGEE 官方 EIA 小时 CO₂ 标签外部压力检验,4773
+docs/V281_TARGET_EF_SUPPORT_AUDIT_RESULTS.md,V281：目标 BA 排放因子与迁移支持范围审计（事后探索）,3239
+docs/V282_PRIOR_YEAR_LOCAL_EF_SUPPORT_PROTOCOL.md,V282：上一年本地 EF 支持能否修复跨 BA 小时风险尺度（事后候选检验）,2080
+docs/V282_PRIOR_YEAR_LOCAL_EF_SUPPORT_RESULTS.md,V282 结果：上一年本地因子支持改善效率，但仍是开发集候选,4237
+docs/V283_SIKE_LABEL_PREFLIGHT_PROTOCOL.md,V283：SIKE未开标签外区确认——上一年本地EF支持,2873
+docs/V283_SIKE_PREFLIGHT_RESULTS.md,V283 预检结果：SIKE 2025 数据不足，标签保持封存,1317
+docs/V284_LOCAL_DAY_BUDGET_PRIOR_EF_PROTOCOL.md,V284：上一年本地EF先验下的小时校准日数前沿（探索性）,1233
+docs/V284_LOCAL_DAY_BUDGET_PRIOR_EF_RESULTS.md,V284 结果：9个校准日是当前开发队列的最小有效预算候选,3275
+docs/V285_UNSEEN_MULTIFUEL_BA_INVENTORY.md,V285：严格未查看BA外测候选盘点,2225
+docs/V286_PRIOR_YEAR_EF_TEMPORAL_HOLDOUT_PROTOCOL.md,V286：上一年本地EF支持 + 9日校准的时间外年度检验,2191
+docs/V286_PRIOR_YEAR_EF_TEMPORAL_HOLDOUT_RESULTS.md,V286结果：跨年份大幅收窄，但未通过PACE 2023覆盖门槛,2956
+docs/V287_TEMPORAL_EF_SUPPORT_DRIFT_RESULTS.md,V287：目标EF对上一年支持的时间漂移审计,1932
+docs/V288_CURRENT_YEAR_EF_ORACLE_SENSITIVITY.md,V288：目标年本地EF支持的oracle敏感性（事后诊断）,934
+docs/V288_CURRENT_YEAR_EF_ORACLE_SENSITIVITY_RESULTS.md,V288结果：目标年EF oracle修复PACE 2023覆盖，但不降低区间,1128
+docs/V289_LAGGED_CURRENT_EF_UPDATE_PROTOCOL.md,V289：用上一年 + 目标年已过月份EF更新支持范围,1304
+docs/V289_LAGGED_CURRENT_EF_UPDATE_RESULTS.md,V289结果：滞后本年EF更新恢复PACE年度覆盖，但仍有3个低覆盖月份,2540
+docs/V290_NESTED_LOCAL_RISK_BUDGET_PROTOCOL.md,V290：滞后EF支持下的嵌套本地风险标签预算,2654
+docs/V290_NESTED_LOCAL_RISK_BUDGET_RESULTS.md,V290结果：12日本地小时校准消除了本队列月均欠覆盖，但没有形成算法突破,4543
+docs/V290_NOVELTY_GAP_AND_ROUTE.md,V290后的创新缺口：月度信息约束下的可信小时CIF,6856
+docs/V291_GB_REGIONAL_LABEL_PREFLIGHT.md,V291：GB区域碳强度端点不构成独立历史标签,3246
+docs/V292_WEAK_COVERAGE_COUNTEREXAMPLE_PROTOCOL.md,V292 冻结协议：月度弱标签覆盖是否约束真实小时 CIF,1819
+docs/V292_WEAK_COVERAGE_COUNTEREXAMPLE_RESULTS.md,V292 结果：月度弱覆盖不等于小时 CIF 覆盖,2484
+docs/V293_MONTHLY_ONLY_TAIL_COUNT_PROTOCOL.md,V293 冻结协议：月度燃料边际对小时超阈值计数的锐界,1955
+docs/V293_MONTHLY_ONLY_TAIL_COUNT_RESULTS.md,V293 结果：只给月度燃料量，超阈值小时数通常接近完全未识别,3884
+docs/V294_CHINA_MONTHLY_SOURCE_LINEAGE_PROTOCOL.md,V294 冻结协议：中国省级月度燃料分项数据的观测/估算血缘审计,1918
+docs/V294_CHINA_MONTHLY_SOURCE_LINEAGE_RESULTS.md,V294结果：中国有按燃料月度分项公开表，但分项含模型估算,3788
+docs/V296_CHINA_MONTHLY_INFORMATION_BOUNDARY.md,V296：中国月度发电分类能识别什么、不能识别什么,7092
+docs/V297_MONTHLY_CIF_ANCHOR_PROTOCOL.md,V297 protocol: does one local monthly-CIF anchor substitute for fuel detail?,1954
+docs/V297_MONTHLY_CIF_ANCHOR_VALUE_RESULTS.md,V297：一个精确月均 CIF 锚可替代多少燃料明细？,5195
+docs/V298_MONTHLY_CIF_ANCHOR_PRECISION_PROTOCOL.md,V298 protocol: precision required for a one-number monthly CIF anchor,1030
+docs/V299_MONTHLY_CIF_ANCHOR_LP_AUDIT_PROTOCOL.md,V299 protocol: independent LP audit of the monthly-CIF anchor set,1805
+docs/V2_EXPERIMENT_RESULTS.md,TransCIF V2：自己的算法候选、多尺度与动态预测尝试,14903
+docs/V300_OFFICIAL_PROVINCIAL_EF_MIX_TRANSFER_PROTOCOL.md,V300 protocol: Can lagged monthly generation mix recover the official province-year CO₂ level?,4640
+docs/V300_OFFICIAL_PROVINCIAL_EF_MIX_TRANSFER_RESULTS.md,V300/V301：年度发电结构可迁移省级平均 CO₂ 水平，但不能当作小时 CIF 验证,4689
+docs/V301_MIX_TRANSFER_2022_TEMPORAL_REPLICATION_PROTOCOL.md,V301 protocol: one-year training replication of annual mix-to-factor transfer,1153
+docs/V302_OFFICIAL_FLOW_RESIDUAL_DIAGNOSTIC_PROTOCOL.md,V302：省级年度电量交换统计能否解释官方EF迁移残差？,3009
+docs/V302_OFFICIAL_FLOW_RESIDUAL_DIAGNOSTIC_RESULTS.md,V302结果：省级年度流量代理没有解释V301的大残差,4361
+docs/V303_DIRECT_RECEIPT_RESIDUAL_DIAGNOSTIC_PROTOCOL.md,V303：2023省级受入电量能否解释官方EF迁移残差？,2558
+docs/V303_DIRECT_RECEIPT_RESIDUAL_DIAGNOSTIC_RESULTS.md,V303结果：同年受入电量也不足以校正年度因子迁移误差,5147
+docs/V304_SHARP_REGIONAL_IMPORT_FACTOR_BOUNDS_PROTOCOL.md,V304：区域送受电边际总量能否给进口电平均因子有用的严格界限？,2917
+docs/V304_V305_REGIONAL_FLOW_IDENTIFICATION_RESULTS.md,V304–V305：区域进口电力碳强度的锐界与最小流量信息,5800
+docs/V305_MINIMUM_FLOW_OBSERVATION_DESIGN_PROTOCOL.md,V305：识别区域进口碳因子需要最少几条线路电量？,2519
+docs/V306_HVDC_MARGIN_COMPATIBILITY_AUDIT.md,V306：公开特高压年度电量能否补成 V305 的区域OD观测？,5517
+docs/V307_PARTIAL_CORRIDOR_BOUND_PROTOCOL.md,V307：部分已知直流通道量能否收窄区域进口因子锐界？,2601
+docs/V307_PARTIAL_CORRIDOR_BOUND_RESULTS.md,V307 结果：部分已知线路量可显著收窄条件性区域因子集合,5184
+docs/V308_PROVINCIAL_MARGIN_CAPACITY_AUDIT_RESULTS.md,V308 结果：省级送受总量不能替代跨区域OD信息,2928
+docs/V308_PROVINCIAL_MARGIN_INFORMATION_AUDIT_PROTOCOL.md,V308：省级送受总量能否约束区域OD可行集？,1361
+docs/V309_MONTHLY_SEASONAL_MIX_TRANSFER_PROTOCOL.md,V309：滞后月度组成季节性是否补充年度因子跨省迁移？,2400
+docs/V309_MONTHLY_SEASONAL_MIX_TRANSFER_RESULTS.md,V309 结果：滞后月度组成季节性没有改善年度跨省因子迁移,3116
+docs/V310_ZENODO_ANNUAL_OD_AUDIT_PROTOCOL.md,V310：公开年度省际 OD 矩阵审计协议,3107
+docs/V310_ZENODO_ANNUAL_OD_AUDIT_RESULTS.md,V310：省际 OD 矩阵能闭合年度空间结构，但不构成小时 CIF 突破,4683
+docs/V311_ANNUAL_OD_MONTHLY_RECEIPT_BOUNDS_PROTOCOL.md,V311：年度 OD + 月度发电约束下的受电量锐界,2199
+docs/V311_ANNUAL_OD_MONTHLY_RECEIPT_BOUNDS_RESULTS.md,V311：年度路线总量无法锁定月度受电,2390
+docs/V312_SAME_BUDGET_IMPORT_INFORMATION_PROTOCOL.md,V312：同预算月度信息对碳来源风险的稳健价值,3462
+docs/V312_SAME_BUDGET_IMPORT_INFORMATION_RESULTS.md,V312：同字段预算下，分省月受电量比少数路线观测更稳健地约束进口碳暴露,3923
+docs/V313_CHINA_MONTHLY_FLOW_FIELD_AVAILABILITY_AUDIT.md,V313：中国公开月度跨省流量字段可获得性审计,5309
+docs/V314_MONTHLY_SOURCE_INTENSITY_INFORMATION_PROTOCOL.md,V314：时变省级运营排放强度下的信息价值敏感性,3692
+docs/V314_MONTHLY_SOURCE_INTENSITY_INFORMATION_RESULTS.md,V314：月度源强变化没有推翻受电边际的信息价值排序,2910
+docs/V315_TECHNOLOGY_RESOLVED_SUPPLY_PROTOCOL.md,V315：逐技术月发电上限对进口碳风险的识别价值,1876
+docs/V315_TECHNOLOGY_RESOLVED_SUPPLY_RESULTS.md,V315：逐类月发电约束有帮助，但不能识别外送电源结构,3909
+docs/V316_GENERATION_COMPOSITION_ABLATION_PROTOCOL.md,V316：逐技术月发电上限的信息价值消融,2253
+docs/V316_GENERATION_COMPOSITION_ABLATION_RESULTS.md,V316：逐类月发电统计比月受电边际更直接地约束来源碳风险,3931
+docs/V317_STANDARD_CIF_DENOMINATOR_AND_DATA_AUDIT.md,V317：标准月度 CIF 需要受端用电量，现有发电表还不够,4082
+docs/V318_ANNUAL_DEMAND_OD_BALANCE_PROTOCOL.md,V318：省级需求代理与年度 OD 的能量平衡核对,1418
+docs/V318_ANNUAL_DEMAND_OD_BALANCE_RESULTS.md,V318：全国平衡接近，但省级需求、发电和 OD 不能直接闭合,2546
+docs/V319_CHINA_MONTHLY_CATEGORY_INFORMATION_PROTOCOL.md,V319 protocol: origin-corrected value of Chinese monthly generation categories,3069
+docs/V319_CHINA_MONTHLY_CATEGORY_INFORMATION_RESULTS.md,V319 results: coarse monthly category fields retain identifiable information after correcting source assignment,4735
+docs/V320_NBS_MONTHLY_GENERATION_SCOPE_AUDIT_PROTOCOL.md,V320 protocol: audit the usable scope of NBS-derived monthly generation fields,2791
+docs/V320_NBS_MONTHLY_GENERATION_SCOPE_AUDIT_RESULTS.md,"V320 results: public monthly generation exists, but its scope is not an all-plant export cap",5751
+docs/V321_UNOBSERVED_GENERATION_REMAINDER_PROTOCOL.md,V321 protocol: explicit unobserved-generation remainder in the Chinese monthly-flow bounds,3336
+docs/V321_UNOBSERVED_GENERATION_REMAINDER_RESULTS.md,V321 results: incomplete monthly-generation coverage erodes category-field value,3963
+docs/V322_RESIDUAL_FACTOR_SUPPORT_SENSITIVITY_PROTOCOL.md,V322 protocol: sensitivity to the unobserved-generation factor support,1289
+docs/V322_RESIDUAL_FACTOR_SUPPORT_SENSITIVITY_RESULTS.md,"V322 results: category information is positive across support scenarios, but highly heterogeneous",3638
+docs/V323_MONTHLY_RESIDUAL_FIELD_VALUE_PROTOCOL.md,V323 protocol: minimax value of monthly residual-generation measurements,2860
+docs/V323_MONTHLY_RESIDUAL_FIELD_VALUE_RESULTS.md,V323 results: minimax value of monthly residual-generation fields,5596
+docs/V324_SPARSE_MONTHLY_OD_VALUE_PROTOCOL.md,V324 protocol: sparse route-month versus receiver-month field value,2842
+docs/V324_SPARSE_MONTHLY_OD_VALUE_RESULTS.md,V324 results: sparse paired OD flows versus receiver totals,4698
+docs/V325_CONTRAST_RANKED_ROUTE_DESIGN_PROTOCOL.md,V325 protocol: lagged intensity-contrast route selection,2460
+docs/V325_CONTRAST_RANKED_ROUTE_DESIGN_RESULTS.md,V325 results: lagged intensity-contrast route selection,3935
+docs/V326_RECEIVER_BALANCED_ROUTE_DESIGN_PROTOCOL.md,V326 protocol: receiver-balanced sparse route selection,2005
+docs/V326_RECEIVER_BALANCED_ROUTE_DESIGN_RESULTS.md,V326 results: destination-balanced sparse OD monitoring,4746
+docs/V327_NBS_REPORTED_MIX_TRANSFER_PROTOCOL.md,V327 protocol: official monthly generation mix for cold-start annual EF transfer,3254
+docs/V327_NBS_REPORTED_MIX_TRANSFER_RESULTS.md,V327 results: actual NBS monthly mix for provincial annual-factor transfer,4933
+docs/V328_SCOPE_AWARE_NBS_TRANSFER_PROTOCOL.md,V328 protocol: scope-aware NBS mix transfer with an explicit unobserved share,2266
+docs/V328_SCOPE_AWARE_NBS_TRANSFER_RESULTS.md,V328 results: explicit reporting-scope remainder did not improve annual EF transfer,3570
+docs/V329_CHINA_REGION_BLOCK_COLDSTART_PROTOCOL.md,V329 protocol: whole-region cold-start transfer of provincial annual EF,2528
+docs/V329_CHINA_REGION_BLOCK_COLDSTART_RESULTS.md,V329 results: whole-region cold-start transfer of annual MEE factors,3319
+docs/V330_SPATIAL_NESTED_RIDGE_PROTOCOL.md,V330 protocol: nested spatial regularization for cold-start annual factor transfer,2347
+docs/V330_SPATIAL_NESTED_RIDGE_RESULTS.md,"V330 results: train-only spatial regularization improves pooled cold-start error, but not consistently by region",2356
+docs/V331_COLDSTART_SUPPORT_DIAGNOSTIC_PROTOCOL.md,V331 protocol: training-only support diagnostics for regional transfer error,1876
+docs/V331_COLDSTART_SUPPORT_DIAGNOSTIC_RESULTS.md,V331 results: simple feature support does not explain when regularization helps,2131
+docs/V332_FUEL_GRANULARITY_REGION_COLDSTART_PROTOCOL.md,V332 protocol: fuel granularity under whole-region cold start,1948
+docs/V332_FUEL_GRANULARITY_REGION_COLDSTART_RESULTS.md,V332 results: detailed fuel groups worsen whole-region transfer on average,2164
+docs/V333_NESTED_REGULARIZED_FUEL_GRANULARITY_PROTOCOL.md,V333 protocol: nested regularization of detailed vs coarse fuel mixes,1753
+docs/V333_NESTED_REGULARIZED_FUEL_GRANULARITY_RESULTS.md,"V333 results: regularization stabilizes detailed groups, but the coarse schema remains better",2296
+docs/V334_LOCAL_THERMAL_HEATRATE_TRANSFER_PROTOCOL.md,V334 protocol: provincial heat-rate information for cold-start annual factor transfer,3088
+docs/V334_LOCAL_THERMAL_HEATRATE_TRANSFER_RESULTS.md,V334 results: local thermal coal-consumption rates improve coarse annual transfer,3661
+docs/V335_NESTED_HEATRATE_FEATURE_TRANSFER_PROTOCOL.md,V335 protocol: heat-rate feature under nested regularization,2195
+docs/V335_NESTED_HEATRATE_FEATURE_TRANSFER_RESULTS.md,V335 results: local heat-rate information survives nested regularization in selected cold-start comparisons,3341
+docs/V336_NESTED_HEATRATE_SHRINKAGE_PROTOCOL.md,V336 protocol: inner-CV shrinkage of local heat-rate transfer,1995
+docs/V336_NESTED_HEATRATE_SHRINKAGE_RESULTS.md,V336 results: training-selected heat-rate shrinkage does not beat fixed full transfer,2194
+docs/V337_MONTHLY_SHAPE_LEVEL_TRANSFER_PROTOCOL.md,V337 protocol: within-year technology shape beyond annual mix level,1868
+docs/V337_MONTHLY_SHAPE_LEVEL_TRANSFER_RESULTS.md,V337 results: monthly seasonal shape does not transfer beyond annual mix reliably,1659
+docs/V338_CHINA_LAGGED_CAPACITY_FEASIBILITY_PROTOCOL.md,V338 protocol: does lagged Chinese provincial capacity safely bound monthly generation?,2824
+docs/V339_CHINA_CAPACITY_TAIL_IDENTIFICATION_PROTOCOL.md,V339 protocol: monthly mix plus lagged capacity for Chinese tail-risk identification,2754
+docs/V340_CHINA_CAPACITY_TAIL_IDENTIFICATION_CORRECTION.md,V340 corrected China capacity tail identification,1741
+docs/V340_CHINA_CAPACITY_TAIL_IDENTIFICATION_RESULTS.md,V340 corrected China capacity tail identification results,3525
+docs/V341_CHINA_COMPLETE_CATEGORY_HULL_PROTOCOL.md,V341 complete-category China generation-risk hull,3071
+docs/V341_CHINA_COMPLETE_CATEGORY_HULL_RESULTS.md,V341 complete-category China generation-risk hull,4285
+docs/V342_CHINA_SHARP_GROUP_HULL_PROTOCOL.md,V342 exact fixed-factor K set and hull tightness audit,2009
+docs/V342_CHINA_SHARP_GROUP_HULL_RESULTS.md,V342 sharp group-capacity hull audit,3572
+docs/V343_THERMAL_EF_SUPPORT_VALUE_PROTOCOL.md,V343 value of narrowing the local thermal-factor support,1587
+docs/V343_THERMAL_EF_SUPPORT_VALUE_RESULTS.md,V343 value of thermal-factor information at τ=300,3071
+docs/V344_RESEARCH_POSITIONING_LITERATURE_AUDIT.md,V344 research positioning after current China information-budget experiments,7095
+docs/V345_CHINA_RESIDUAL_MONTHLY_SCOPE_PROTOCOL.md,V345: monthly allocation ambiguity of omitted above-size scope output,2895
+docs/V345_CHINA_RESIDUAL_MONTHLY_SCOPE_RESULTS.md,V345：中国年度未覆盖电量几乎可落入任一月度区间,3109
+docs/V346_SCOPE_RESIDUAL_K_HULLS_PROTOCOL.md,V346: propagate the monthly scope remainder into hourly tail-count bounds,2824
+docs/V346_SCOPE_RESIDUAL_K_HULLS_RESULTS.md,V346：未覆盖电量大幅削弱月度类别与装机的小时风险约束,3055
+docs/V347_EMBER_COMPLETE_MIX_VALUE_PROTOCOL.md,V347: value of an estimated complete monthly provincial fuel mix,2308
+docs/V347_EMBER_COMPLETE_MIX_VALUE_RESULTS.md,V347：估算的省级月度燃料结构可收窄小时K集合，但不等于验证,2959
+docs/V348_EMBER_SHARE_ERROR_FRONTIER_PROTOCOL.md,V348: sensitivity frontier for monthly Ember fuel-share error,1174
+docs/V349_EMBER_TOTAL_VS_MIX_ABLATION_PROTOCOL.md,V349: separate complete monthly-total value from estimated fuel-mix value,1935
+docs/V349_EMBER_TOTAL_VS_MIX_ABLATION_RESULTS.md,V349 r2：匹配因子支持后的月度总量与燃料mix消融,2800
+docs/V350_FUEL_MIX_CAPACITY_FACTORIAL_PROTOCOL.md,V350 protocol: factorial information-value test for fuel mix × capacity,1506
+docs/V350_FUEL_MIX_CAPACITY_FACTORIAL_RESULTS.md,V350：燃料组成与装机约束的2×2信息互补实验,2205
+docs/V351_MIX_CAPACITY_COMPLEMENTARITY_FRONTIER_PROTOCOL.md,V351 protocol: share-error sensitivity of mix-capacity complementarity,795
+docs/V351_MIX_CAPACITY_COMPLEMENTARITY_FRONTIER_RESULTS.md,V351：燃料份额误差前沿下的容量互补稳健性,1615
+docs/V352_THRESHOLD_FACTORIAL_SWEEP_PROTOCOL.md,V352 protocol: threshold robustness of mix × capacity complementarity,838
+docs/V352_THRESHOLD_FACTORIAL_SWEEP_RESULTS.md,V352：阈值变化下的燃料mix × 装机互补,1954
+docs/V353_PROVINCE_CLUSTER_INTERACTION_BOOTSTRAP_PROTOCOL.md,V353 protocol: province-cluster bootstrap for V352 interaction,701
+docs/V353_PROVINCE_CLUSTER_INTERACTION_BOOTSTRAP_RESULTS.md,V353：按省聚类重抽样的阈值交互稳健性,1962
+docs/V354_THRESHOLD_SIDE_SUPPORT_DIAGNOSIS_PROTOCOL.md,V354 protocol: locate EF support relative to the CIF threshold,824
+docs/V354_THRESHOLD_SIDE_SUPPORT_DIAGNOSIS_RESULTS.md,V354：阈值侧 EF 支持解释交互效应与西藏负例,2503
+docs/V355_HENAN_REGULATOR_MONTHLY_SOURCE_AUDIT_PROTOCOL.md,V355：河南能源监管办月度发电统计来源审计,2307
+docs/V355_HENAN_REGULATOR_MONTHLY_SOURCE_AUDIT_RESULTS.md,V355：河南监管办月度电量来源审计结果,6893
+docs/V356_CROSS_PROVINCE_PUBLIC_SCOPE_SOURCE_AUDIT_RESULTS.md,V356：跨省公开电量来源与统计范围线索,8390
+docs/V357_YUNNAN_CUMULATIVE_SCOPE_TO_K_PROTOCOL.md,V357：稀疏官方全量累计节点约束月度未解释电量的K识别,4984
+docs/V357_YUNNAN_CUMULATIVE_SCOPE_TO_K_RESULTS.md,V357：云南稀疏累计总量仅有限收窄小时K集合,4497
+docs/V358_HENAN_MONTHLY_TOTAL_ANCHOR_PROTOCOL.md,V358：河南逐月独立总量锚对小时K识别集的增量,3317
+docs/V358_HENAN_MONTHLY_TOTAL_ANCHOR_RESULTS.md,V358：河南逐月独立总量锚缩窄部分识别集，但还不是预测突破,6325
+docs/V359_SIGNED_MULTISOURCE_RECONCILIATION_DESIGN.md,V359设计：把来源间有符号技术差传播进CIF小时风险集合,4384
+docs/V359_SIGNED_MULTISOURCE_RECONCILIATION_RESULTS.md,V359：联合来源LP不缩窄河南高阈值风险区间,5709
+docs/V360_NBS_PORTAL_AND_CROSS_SCOPE_CHECK.md,V360：国家统计局分省月度入口与跨来源范围核对,6550
+docs/V361_JIANGSU_MONTHLY_SOURCE_SCOPE_REPLICATION.md,V361：江苏全年监管办与NBS月发电统计范围复核,3989
+docs/V362_SHANGHAI_OFFICIAL_TARGETS_AND_IDENTIFICATION.md,V362：上海官方因子显示标签口径必须分轨（2026-10-30）,5258
+docs/V363_OFFICIAL_LIFECYCLE_FACTOR_ROUTE_ASSESSMENT.md,V363：官方技术碳足迹因子是邻近任务，不是小时CIF替代标签（2026-10-30）,2965
+docs/V364_CHINA_NBS_THRESHOLD_SUPPORT_CERTIFICATE.md,V364：NBS粗类占比下的阈值跨越不可识别证书（2026-10-30）,6068
+docs/V365_THRESHOLD_CONDITIONED_MEASUREMENT_FRONTIER.md,V365：阈值条件化的最小因子信息目标（2026-10-30）,4337
+docs/V366_PROVINCIAL_INFORMATION_GAIN.md,V366：国家统计局分省月度表的信息增量（2026-10-30）,3626
+docs/V367_LEAVE_REGION_OUT_COARSE_MIX_PROTOCOL.md,V367 protocol: leave-region-out value of local monthly mix,3017
+docs/V367_LEAVE_REGION_OUT_COARSE_MIX_RESULTS.md,V367 results: leave-region-out value of local monthly mix,1788
+docs/V368_THERMAL_SHARE_ONLY_TRANSFER_PROTOCOL.md,V368 protocol: thermal-share-only transfer under the China information budget,2878
+docs/V368_THERMAL_SHARE_ONLY_TRANSFER_RESULTS.md,V368 results: local thermal share under the coarse China information budget,3387
+docs/V369_CROSSFIT_INTERVAL_RESULTS.md,V369 results: cross-fitted hourly and tail-count intervals,2195
+docs/V369_INTERVAL_TRANSFER_PROTOCOL.md,V369 protocol: local thermal share with calibrated hourly risk intervals,3180
+docs/V370_THRESHOLD_GATE_SELECTIVE_PROTOCOL.md,V370 protocol: threshold-side gate for selective tail-count intervals,2427
+docs/V370_THRESHOLD_GATE_SELECTIVE_RESULTS.md,V370 results: threshold-gated selective tail-count intervals,2259
+docs/V371_COMPOSITION_WEIGHTED_SHAPE_PROTOCOL.md,V371 protocol: composition-weighted donor shape transfer,2472
+docs/V371_COMPOSITION_WEIGHTED_SHAPE_RESULTS.md,V371 results: composition-weighted donor shapes add negligible value,1496
+docs/V372_PROVINCIAL_INFORMATION_ROBUSTNESS_PROTOCOL.md,V372：省级月报相对全国汇总的信息增量稳健性协议,2267
+docs/V372_PROVINCIAL_INFORMATION_ROBUSTNESS_RESULTS.md,V372：省级月报的信息增量随阈值与因子支持改变,3253
+docs/V373_NATIONAL_VS_LOCAL_MIX_SHARP_K_PROTOCOL.md,V373：省级组成相对全国组成对锐K集合的影响,1860
+docs/V373_NATIONAL_VS_LOCAL_MIX_SHARP_K_RESULTS.md,V373：本地省级组成收窄了中阈值sharp K集合，但低阈值收益不稳,3532
+docs/V374_LOCAL_MIX_WITH_SCOPE_RESIDUAL_PROTOCOL.md,V374：纳入规上范围残差后省级组成收益是否保留,1623
+docs/V374_LOCAL_MIX_WITH_SCOPE_RESIDUAL_RESULTS.md,V374：一旦纳入规上范围残差，省级组成在τ=300不再缩窄K集合,2674
+docs/V375_SCOPE_RESIDUAL_INFORMATION_FRONTIER_PROTOCOL.md,V375：省级组成收益随未覆盖电量月度上界收紧的前沿,1225
+docs/V375_SCOPE_RESIDUAL_INFORMATION_FRONTIER_RESULTS.md,V375：τ=300省级组成增量要求很窄的月度范围残差上界,3130
+docs/V376_SHARED_SYSTEM_CAPACITY_PROTOCOL.md,V376：共享系统装机约束下的省级组成信息价值,2384
+docs/V376_SHARED_SYSTEM_CAPACITY_RESULTS.md,V376：共享系统装机约束仍未恢复τ=300省级组成增量,2364
+docs/V377_SHARED_CAPACITY_NO_SCOPE_RESIDUAL_PROTOCOL.md,V377：无范围残差时共享总装机能否解释V373增量,1111
+docs/V377_SHARED_CAPACITY_NO_SCOPE_RESIDUAL_RESULTS.md,V377：零范围残差下共享装机不再收窄，省级组成收益回到V373水平,1385
+docs/V378_SHANGHAI_NBS_EXPORT_AUDIT_RESULTS.md,V378：上海 NBS 分省月表原始导出核对（2026-10-31）,5218
+docs/V379_RECENT_PROVINCIAL_MIX_REGIME_RESULTS.md,V379：近期省级发电结构与本地组成的阈值信息（2026-10-31）,3847
+docs/V380_MIX_SIMILARITY_CALIBRATION_RESULTS.md,V380：按本地组成相似度加权区间校准（2026-10-31）,4002
+docs/V381_SHANGHAI_EXPORT_RECONFIRMATION_AND_LOAD_SOURCE_AUDIT.md,V381：上海月表复核与中国逐小时负荷候选源审查（2026-10-31）,4335
+docs/V382_CHINA_ANNUAL_FUEL_BRIDGE_AUDIT.md,V382：省级年度煤气油结构来源与NBS月度火电口径闭合审计（2026-10-31）,4122
+docs/V383_ANNUAL_TO_MONTHLY_FUEL_IDENTIFICATION_RESULTS.md,V383：年度燃料边际不能识别上海月度火电内部结构（2026-10-31）,3865
+docs/V384_ANNUAL_CONTEXT_VS_CONDITIONAL_RISK_PROTOCOL.md,V384：滞后年度燃料结构与同预算条件风险强基线,4892
+docs/V384_ANNUAL_CONTEXT_VS_CONDITIONAL_RISK_RESULTS.md,V384：滞后年度结构与条件风险模型对照结果,5222
+docs/V385_SHANGHAI_RECENT_SHARP_K_PROTOCOL.md,V385: Shanghai recent primary monthly mix and exact sharp K sets,3224
+docs/V385_SHANGHAI_RECENT_SHARP_K_RESULTS.md,V385：上海近期原始月表的精确小时风险识别回测,4001
+docs/V386_SHANGHAI_CONSUMPTION_BOUNDARY_PROTOCOL.md,V386：上海年度电力平衡对 CIF 目标边界的约束,1898
+docs/V386_SHANGHAI_CONSUMPTION_BOUNDARY_RESULTS.md,V386：上海电力输入占比揭示本地月表与消费侧 CIF 的边界差,3656
+docs/V387_CROSS_SOURCE_FUEL_SHARE_AUDIT_RESULTS.md,V387：独立方法派生的煤气拆分对照否定了窄相对误差带,5836
+docs/V388_MINIMUM_LOCAL_FUEL_INFORMATION_AUDIT.md,V388：公开月度技术边际与最小本地燃料信息审计,4609
+docs/V389_SHANGHAI_ESTIMAND_BOUNDARY_SCALE_AUDIT.md,V389：上海官方目标口径差异大于近期年度漂移,3663
+docs/V390_ORACLE_ACTIVE_DAY_UPPER_BOUND_PROTOCOL.md,V390：三日主动补报的乐观上限,1988
+docs/V390_ORACLE_ACTIVE_DAY_UPPER_BOUND_RESULTS.md,V390：三日主动补报的乐观上限结果,4018
+docs/V392_NBS_OFFICIAL_LONG_PANEL_AUDIT.md,V392：国家统计局五省月度发电量官方接口长面板审计,5698
+docs/V393_RELEASE_LAG_IDENTIFIABILITY_RESULTS.md,V393: release-lag composition-state identifiability,5850
+docs/V394_ALL_PROVINCE_RELEASE_LAG_STATE_RESULTS.md,V394: all-province release-lag composition-state audit,5959
+docs/V395_V399_TRANSFER_BREAKTHROUGH_STATUS.md,"V395–V400: lagged mix transfer, external failure, and monthly-signal ablations",8647
+docs/V398_EXTERNAL_LAGGED_MIX_CONFIRMATION_PROTOCOL.md,V398: frozen lagged-mix model on external EIA regions,3379
+docs/V401_SHANGHAI_ESTIMAND_BOUNDARY.md,V401: Shanghai local-generation data do not identify delivered-electricity CIF,8383
+docs/V402_HOURLY_LABEL_PROVENANCE_AND_BENCHMARK_GATE.md,V402: China hourly-label provenance and benchmark feasibility gate,7110
+docs/V403_LOCAL_MIX_OFFICIAL_ANNUAL_FACTOR_RESULTS.md,V403：滞后本地热电份额与官方年度因子（探索性）,3538
+docs/V404_NESTED_REGION_CONFORMAL_MIX_INTERVALS.md,V404：本地组成锚定的嵌套留统计区年度区间（探索性）,5562
+docs/V405_NESTED_REGION_SCALE_SELECTION_RESULTS.md,V405：在外层留区内嵌套选择热电份额尺度,3719
+docs/V406_NESTED_PHYSICAL_ANCHOR_SHRINKAGE_RESULTS.md,V406：嵌套留区选择物理锚与组分模型的收缩权重,5990
+docs/V407_TEMPORAL_FORWARD_SHRINKAGE_DIAGNOSTIC.md,V407：物理锚收缩的前向年度诊断,3294
+docs/V408_THRESHOLD_SIDE_REGION_HOLDOUT_PROTOCOL.md,V408: frozen threshold-side energy rule on regions outside the development roster,3458
+docs/V408_THRESHOLD_SIDE_REGION_HOLDOUT_RESULTS.md,V408: threshold-side monthly energy rule on held-out system regions,4507
+docs/V409_SHANGHAI_UPLOAD_RECONCILIATION.md,V409: reconciliation of the Shanghai monthly NBS files supplied on 2026-10-31,2669
+docs/V410_CHINA_SIMULATED_CIF_SCENARIO_STRESS_PROTOCOL.md,V410 protocol: release-lagged coarse mix under China hourly scenario stress,4869
+docs/V410_CHINA_SIMULATED_CIF_SCENARIO_STRESS_RESULTS.md,V410: release-lagged coarse mix under China hourly scenario stress,6871
+docs/V410_V411_PROVENANCE_CORRECTION.md,V410–V411 情景数据来源与确认资格更正,1113
+docs/V50_CALIBRATION_SOURCE_DIAGNOSTIC_PROTOCOL.md,V50校准源影响诊断预注册,2076
+docs/V50_CALIBRATION_SOURCE_DIAGNOSTIC_RESULTS.md,V50 calibration-source influence diagnostic,4623
+docs/V50_COARSE_MIX_CONDITIONAL_INTERVAL_PROTOCOL.md,V50 coarse-mix conditional interval source-held-out test,2759
+docs/V50_COARSE_MIX_CONDITIONAL_INTERVAL_RESULTS.md,V50 coarse-mix conditional interval source-held-out test,3993
+docs/V50_COARSE_MIX_RISK_PREDICTABILITY_PROTOCOL.md,V50 low-frequency mix → hourly-risk predictability probe,3468
+docs/V50_COARSE_MIX_RISK_PREDICTABILITY_RESULTS.md,V50 low-frequency mix → hourly-risk predictability probe,3351
+docs/V50_CONDITIONAL_RISK_LITERATURE_NOTE.md,Conditional risk calibration: novelty boundary for a coarse-mix method,3372
+docs/V50_CROSSFIT_ASYMMETRIC_RISK_PROTOCOL.md,Cross-fitted asymmetric tail calibration after monthly location correction,1918
+docs/V50_CROSSFIT_ASYMMETRIC_RISK_RESULTS.md,V50 cross-fitted asymmetric risk: development result,5778
+docs/V50_DAILY_ASOF_MIX_LEVEL_PROTOCOL.md,V50 daily as-of monthly mix for level correction,2434
+docs/V50_DAILY_ASOF_MIX_LEVEL_RESULTS.md,V50 daily as-of monthly mix level correction: source-held-out result,5118
+docs/V50_DAILY_ASOF_SEASONAL_CONTROL_PROTOCOL.md,V50 daily-as-of monthly-mix correction: seasonal control,2073
+docs/V50_DAILY_ASOF_SEASONAL_CONTROL_RESULTS.md,V50 daily as-of mix level correction: seasonal-control result,2583
+docs/V50_FOSSIL_ROLE_SHRINKAGE_PROTOCOL.md,V50 fossil-role increment shrinkage path,1944
+docs/V50_FOSSIL_ROLE_SHRINKAGE_RESULTS.md,V50 fossil-role coefficient shrinkage path,1636
+docs/V50_MIX_OFFSET_SHRINKAGE_PROTOCOL.md,V50 monthly-mix offset shrinkage path,1685
+docs/V50_MIX_OFFSET_SHRINKAGE_RESULTS.md,V50 monthly-mix correction: fixed shrinkage path,2139
+docs/V50_MIX_SUPPORT_GUARD_PROTOCOL.md,V50 monthly-mix correction with a source-support guard,1707
+docs/V50_MIX_SUPPORT_GUARD_RESULTS.md,V50 monthly-mix source-support guard result,2182
+docs/V50_MONTHLY_ACTIVITY_SCALE_PROTOCOL.md,V50 monthly activity-scale feature: source-held-out diagnostic,1982
+docs/V50_MONTHLY_ACTIVITY_SCALE_RESULTS.md,V50 monthly activity scale adds no reliable transfer signal,2441
+docs/V50_MONTHLY_COMPOSITION_ROLE_PROTOCOL.md,V50 monthly fuel composition: carbon intensity vs dispatch-role features,2241
+docs/V50_MONTHLY_COMPOSITION_ROLE_RESULTS.md,V50 monthly composition roles: low-dimensional source-held-out ablation,2309
+docs/V50_MONTHLY_FULL_MIX_RISK_PROTOCOL.md,V50 full monthly fuel mix → hourly-risk probe,2326
+docs/V50_MONTHLY_FULL_MIX_RISK_RESULTS.md,V50 full monthly fuel mix → hourly-risk probe,3375
+docs/V50_MONTHLY_LOCATION_RISK_CROSSFIT_PROTOCOL.md,Cross-fitted monthly location correction with sealed risk baselines,2663
+docs/V50_MONTHLY_MIX_LEVEL_CORRECTION_PROTOCOL.md,V50 full monthly mix as a cross-source level correction,2567
+docs/V50_MONTHLY_MIX_VOLATILITY_PROTOCOL.md,V50: test whether month-to-month mix volatility predicts held-source hourly risk,3587
+docs/V50_MONTHLY_MIX_VOLATILITY_RESULTS.md,V50 monthly mix volatility does not add a reliable source-risk signal,3115
+docs/V50_NESTED_FOSSIL_ROLE_PROTOCOL.md,V50 nested source-held-out selection for fossil-role correction,2075
+docs/V50_NESTED_FOSSIL_ROLE_RESULTS.md,V50 nested source validation for fossil-role strength,2435
+docs/V50_NESTED_FOSSIL_STRONG_BASELINES_PROTOCOL.md,Nested fossil-role correction across sealed V50 point baselines,1965
+docs/V50_NESTED_FOSSIL_STRONG_BASELINES_RESULTS.md,Nested fossil-role correction across sealed V50 point baselines,2991
+docs/V50_NESTED_MIX_Q_SHRINKAGE_PROTOCOL.md,V50: nested source-only shrinkage of monthly conditional interval thresholds,3495
+docs/V50_NESTED_MIX_Q_SHRINKAGE_RESULTS.md,V50 nested monthly-q shrinkage falls back to the global threshold,3284
+docs/V50_TAIL_DIRECTION_INFORMATION_PROTOCOL.md,Development-only test: can monthly mix predict held-source tail direction?,2127
+docs/V50_TAIL_DIRECTION_INFORMATION_RESULTS.md,Monthly mix does not predict held-source tail direction,2398
+docs/V50_TVA_ASYMMETRIC_CONFIRMATION_PROTOCOL.md,Frozen single-region confirmation: TVA 2026H1,6405
+docs/V50_TVA_ASYMMETRIC_CONFIRMATION_RESULTS.md,TVA 2026H1 frozen confirmation: asymmetric candidate failed,5276
+docs/V50_TVA_CONFIRMATION_BOUNDARY_AMENDMENT.md,TVA label-boundary amendment (before corrected scoring),1713
+docs/V50_WITHIN_POS_MIX_RISK_PROTOCOL.md,V50 within-POS monthly mix → hourly-risk probe,2446
+docs/V51_12M_NESTED_Q_PROTOCOL.md,V51：12月燃料结构代理能否转成可靠的局部小时阈值,1941
+docs/V51_12M_NESTED_Q_RESULTS.md,V51：12月窗口改善源风险排序误差，但嵌套小时阈值全部拒绝本地适配,2367
+docs/V51_ANNUAL_THERMAL_EF_PROTOCOL.md,V51 年度燃料统计能否替代滞后同月 thermal EF：协议,2105
+docs/V51_ANNUAL_THERMAL_EF_RESULTS.md,V51 年度热组 EF 对目标区水平的价值,6621
+docs/V51_COARSE5_THERMAL_EF_VALUE_PROTOCOL.md,V51 五类月报下火电内部有效 EF 信息价值实验协议,2934
+docs/V51_COARSE5_THERMAL_EF_VALUE_RESULTS.md,V51 五类粗月报下火电内部有效 EF 的条件价值,5501
+docs/V51_COARSE_POSITIVE_GROUP_INFO_RESULTS.md,正排放组总量需要多细的本地时间分辨率？,3006
+docs/V51_CONDITIONAL_THERMAL_RISK_RESULTS.md,V51 条件小时风险的跨半年前推检查,4322
+docs/V51_DAILY_AGGREGATION_BOUNDS_RESULTS.md,月度燃料库存能否支持可信日均 CIF？,2257
+docs/V51_DAYTYPE_SHAPE_RESULTS.md,V51 日类型×小时形状基线结果,2605
+docs/V51_DONOR_DISAGREEMENT_RISK_RESULTS.md,donor 形状分歧未能稳定修复月度-only尾部风险,1418
+docs/V51_GROUP_CONFORMAL_RISK_RESULTS.md,V51 地区级半年度同时覆盖基线,3139
+docs/V51_IDENTIFICATION_WIDTH_RISK_PROTOCOL.md,V51 月度预测诱导歧义宽度风险特征实验协议,2589
+docs/V51_IDENTIFICATION_WIDTH_RISK_RESULTS.md,V51：预测诱导月内热组重排宽度改善宏区间分数，但未修复最差地区,3710
+docs/V51_INFORMATION_TIER_PROTOCOL.md,V51 小时燃料组信息价值阶梯,2269
+docs/V51_INFORMATION_TIER_RESULTS.md,V51 小时燃料组信息价值阶梯结果,2671
+docs/V51_JOINT_MONTH_BLOCK_BOUNDS_RESULTS.md,月度逐燃料库存能否补救六小时热组汇总？,2572
+docs/V51_JOINT_RESOLUTION_BOUNDS_RESULTS.md,小时热组总量是否足够？联合月库存锐界的配对分辨率实验,3406
+docs/V51_LEVEL_SHAPE_INTERVAL_PROTOCOL.md,V51 日水平与日内形状区间诊断,2501
+docs/V51_LEVEL_SHAPE_INTERVAL_RESULTS.md,V51 日水平与日内形状区间结果,3233
+docs/V51_MIX_LOOKBACK_RISK_PROTOCOL.md,V51：已发布燃料结构回看窗与小时风险的整源诊断,2313
+docs/V51_MIX_LOOKBACK_RISK_RESULTS.md,V51：较长燃料结构回看窗稍好地预测跨源小时风险，但不是小时校准增量,3033
+docs/V51_MONTHLY_ASOF_BASELINES_RESULTS.md,V51 合法月度类别预测基线与天气失败拆分,2691
+docs/V51_MONTHLY_ONLY_RISK_PROTOCOL.md,V51 严格月度类别预算下的小时风险诊断协议,2215
+docs/V51_MONTHLY_ONLY_RISK_RESULTS.md,V51 严格月度类别预算下的小时风险结果,6552
+docs/V51_NEAREST_RISK_SOURCE_RESULTS.md,最近风险来源路由不能稳定解决低频-only区间失覆盖,1282
+docs/V51_PARTIAL_IDENTIFICATION_PROTOCOL.md,V51 月度组成与小时 CIF 的部分识别边界,4511
+docs/V51_PARTIAL_IDENTIFICATION_RESULTS.md,V51 月度信息与小时 CIF sharp bounds 结果,3625
+docs/V51_RELATED_WORK_ZERO_TARGET_HISTORY_GAP.md,相关工作边界：零目标训练数据不等于零目标小时历史,3710
+docs/V51_SEASONAL_INTERACTION_LEVEL_PROTOCOL.md,V51：月度组成×季节交互是否改善源外日水平误差,2414
+docs/V51_SEASONAL_INTERACTION_LEVEL_RESULTS.md,V51：组成×季节交互没有改善源外小时预测,2092
+docs/V51_THERMAL_EF_INTERVAL_RESULTS.md,V51 滞后火电因子模型的留源风险校准,3420
+docs/V51_THERMAL_EF_SHRINKAGE_RESULTS.md,V51 合法滞后火电组内 EF 锚与跨源收缩,5061
+docs/V51_TIMEZONE_PROFILE_RESULTS.md,V51 跨区小时轮廓的时区对齐诊断,2470
+docs/V51_UNSEEN_REGION_COVERAGE_LIMIT.md,V51 新地区覆盖的校准分辨率限制,4753
+docs/V51_WEATHER_SHRINKAGE_PROTOCOL.md,V51 本地天气太阳能形状跨源收缩实验协议,1994
+docs/V51_WEATHER_SHRINKAGE_RESULTS.md,V51 天气太阳能形状收缩结果与路线判断,3144
+docs/V52_EIA_REGION_POOL_QUALITY_CENSUS.md,V52：扩大地区校准池的 EIA-930 质量审计,4492
+docs/V52_FULL_MIX_CENTER_DEV_AMENDMENT.md,V52-R2：完整五类月组成驱动的中心预测开发追加,1109
+docs/V52_FULL_MIX_CENTER_DEV_RESULTS.md,V52-R2：加入五类月度组成与季节项仍未预测地区偏差中心,1268
+docs/V52_REGION_POOL_RISK_DEV_PROTOCOL.md,V52 地区校准池扩展开发实验协议,3467
+docs/V52_REGION_POOL_RISK_DEV_RESULTS.md,V52 地区级风险校准扩池开发结果,3602
+docs/V52_RESIDUAL_CENTER_DEV_AMENDMENT.md,V52-R1：仅开发区的残差中心迁移追加协议,1881
+docs/V52_RESIDUAL_CENTER_DEV_RESULTS.md,V52-R1：月度组成驱动的残差中心修正未达开发门槛,1894
+docs/V53_LOCAL_THERMAL_EF_ANCHOR_DEV_PROTOCOL.md,V53 本地滞后组内 thermal EF 锚开发协议,2782
+docs/V53_LOCAL_THERMAL_EF_ANCHOR_DEV_RESULTS.md,V53 本地月度 thermal EF 锚开发结果,4663
+docs/V54_UNSEEN_LOCAL_EF_CONFIRMATION_PROTOCOL.md,V54 未见 EIA 区域本地 EF 锚独立确认协议,2650
+docs/V54_UNSEEN_LOCAL_EF_CONFIRMATION_RESULTS.md,V54 未见区本地 EF 锚确认结果,4026
+docs/V55_LOCAL_EF_RECENCY_PROBE_PROTOCOL.md,V55 本地热电 EF 时效窗口开发探针,1615
+docs/V55_LOCAL_EF_RECENCY_PROBE_RESULTS.md,V55 本地热电 EF 时效窗口探针结果,2932
+docs/V56_LOCAL_SEASONAL_EF_PROBE_PROTOCOL.md,V56 本地去年同月 EF 季节性探针,1118
+docs/V56_LOCAL_SEASONAL_EF_PROBE_RESULTS.md,V56 本地季节匹配 EF 探针结果,1670
+docs/V57_FUEL_RESOLVED_SHAPE_PROBE_PROTOCOL.md,V57 本地燃料细分约束的小时形状探针,1832
+docs/V57_FUEL_RESOLVED_SHAPE_PROBE_RESULTS.md,V57 本地燃料细分约束小时形状结果,2306
+docs/V58_MONTHLY_MARGINAL_IDENTIFIABILITY_PROTOCOL.md,V58 月度燃料边际的小时 CIF 可识别性分析,1989
+docs/V58_MONTHLY_MARGINAL_IDENTIFIABILITY_RESULTS.md,V58 月度燃料边际不能识别等小时 CIF：可行界分析,5231
+docs/V59_TEMPORAL_INFORMATION_BOUNDARY_PROTOCOL.md,V59 小时 CIF 的时间粒度信息价值边界,1539
+docs/V59_TEMPORAL_INFORMATION_BOUNDARY_RESULTS.md,V59 时间粒度对小时 CIF 均值识别界的影响,6728
+docs/V62_RECENT_FULL_MIX_SHAPE_TRANSFER_PROTOCOL.md,V62 最近可得全燃料构成 × 来源小时形状迁移,3714
+docs/V62_RECENT_FULL_MIX_SHAPE_TRANSFER_RESULTS.md,V62 最新本地全燃料构成驱动逐燃料小时形状：有点增量，未解覆盖,3440
+docs/V63_COMPOSITION_WEIGHTED_SHAPE_POOL_PROTOCOL.md,V63 按低频组成相似度加权逐燃料小时形状池,2572
+docs/V63_COMPOSITION_WEIGHTED_SHAPE_POOL_RESULTS.md,V63 按月度组成相似度加权来源形状：未带来增量,1918
+docs/V65_LOAD_SHAPE_INFORMATION_VALUE_PROTOCOL.md,V65 模型负荷日内形状对月燃料CIF均值识别界的敏感性,2529
+docs/V65_LOAD_SHAPE_INFORMATION_VALUE_RESULTS.md,V65：省级模型负荷曲线的信息价值敏感性结果,3197
+docs/V66_MONTHLY_MARGIN_TAIL_IDENTIFIABILITY_PROTOCOL.md,V66：月度燃料边际对小时超阈计数的锐识别界,1721
+docs/V66_MONTHLY_MARGIN_TAIL_IDENTIFIABILITY_RESULTS.md,V66：仅月度燃料边际能识别哪些小时尾风险,2893
+docs/V68_COARSE_MIX_TAIL_FREQUENCY_FORECAST_PROTOCOL.md,V68：合法月度构成能否跨区预测下一月小时超阈频率,2359
+docs/V68_COARSE_MIX_TAIL_FREQUENCY_FORECAST_RESULTS.md,V68：月度燃料构成的下一月小时尾频率跨区预测（2026-10-27）,2827
+docs/V69_COMPOSITION_TREE_ABLATION_PROTOCOL.md,V69：固定非线性模型下的全构成增量消融协议,2876
+docs/V69_COMPOSITION_TREE_ABLATION_RESULTS.md,V69：同容量树模型下全构成没有稳定尾频率增量（2026-10-27）,2047
+docs/V6_NOVELTY_REVIEW.md,V6 方法新颖性独立审查,34655
+docs/V70_MONTHLY_SCALE_INFORMATION_PROTOCOL.md,V70：月总发电规模的跨区尾频率信息价值,1340
+docs/V70_MONTHLY_SCALE_INFORMATION_RESULTS.md,V70：总发电规模只改善高阈值风险，形成窄候选（2026-10-27）,2398
+docs/V71_GVL_UNSEEN_REGION_CONFIRMATION_PROTOCOL.md,V71：冻结的 τ=600 月规模特征单个未见区确认,2790
+docs/V71_GVL_UNSEEN_REGION_CONFIRMATION_RESULTS.md,V71：GVL未见区未确认月规模的τ=600增量（2026-10-27）,2228
+docs/V72_MONTHLY_ONLY_SELECTIVE_RISK_PROTOCOL.md,V72：月度边际下的小时风险选择性决策前沿,2152
+docs/V72_MONTHLY_ONLY_SELECTIVE_RISK_RESULTS.md,V72：月报能认证“出现过”，几乎不能认证“占比够高”（2026-10-28）,2639
+docs/V73_RISK_TARGETED_MIN_G_PROTOCOL.md,V73：同预算比较块内最小G与二阶矩对超阈计数识别的价值,2605
+docs/V73_RISK_TARGETED_MIN_G_RESULTS.md,V73：块内最小G主要改善一类零事件证书（2026-10-28）,2340
+docs/V74_ORDER_STATISTIC_RISK_MEASUREMENT_PROTOCOL.md,V74：同四标量预算下按风险目标选择G次序统计量,1918
+docs/V74_ORDER_STATISTIC_RISK_MEASUREMENT_RESULTS.md,V74：按风险目标选次序统计量，可用四摘要逼近完整G认证（2026-10-28）,3140
+docs/V75_ORDER_STATISTIC_MEASUREMENT_ROBUSTNESS_PROTOCOL.md,V75：风险定向G摘要在相对测量误差下的稳健认证,1665
+docs/V75_ORDER_STATISTIC_MEASUREMENT_ROBUSTNESS_RESULTS.md,V75：S₂目标摘要在1%误差盒下保持大部分认证，5%后明显退化（2026-10-28）,1805
+docs/V76_ORDER_STATISTIC_TIME_REPLICATION_PROTOCOL.md,V76：风险定向次序统计量在匹配来源区的时间复现,2494
+docs/V76_ORDER_STATISTIC_TIME_REPLICATION_RESULTS.md,V76：三源三时段中，风险定向摘要逐日匹配完整G证书（2026-10-28）,3146
+docs/V77_UNSEEN_EPE_TIDC_RISK_SKETCH_CONFIRMATION_PROTOCOL.md,V77：EPE/TIDC未评分区风险定向G摘要外域确认,2299
+docs/V77_UNSEEN_EPE_TIDC_RISK_SKETCH_RESULTS.md,V77：L₁ 风险证书在 EPE/TIDC 的未评分区确认（2026-10-28）,2785
+docs/V78_UNSEEN_ORDER_STATISTIC_ROBUSTNESS_PROTOCOL.md,V78：未评分区 L₁ 尾风险证书测量误差压力测试,1086
+docs/V78_UNSEEN_ORDER_STATISTIC_ROBUSTNESS_RESULTS.md,V78：EPE/TIDC 的 L₁ 证书在小误差下保留增量，较大误差时不再优于 G²（2026-10-28）,2575
+docs/V79_MONTHLY_SUPPORT_ENVELOPE_PROTOCOL.md,V79：使用月度燃料支持上界的 L₁ 风险证书开发消融,1689
+docs/V79_MONTHLY_SUPPORT_ENVELOPE_RESULTS.md,V79：月报燃料支持上界恢复尾部识别，但 L₁ 未胜过 G²（2026-10-28）,2661
+docs/V7_LITERATURE_AND_HYPOTHESES.md,V7：文献边界与可检验机制,29242
+docs/V80_SUPPORT_ADAPTIVE_UNSEEN_CONFIRMATION_PROTOCOL.md,V80：月报燃料支持自适应风险识别的未评分区确认,1525
+docs/V80_SUPPORT_ADAPTIVE_UNSEEN_CONFIRMATION_RESULTS.md,V80：质量合格但全无化石支持的未评分区不构成尾风险测试（2026-10-28）,1545
+docs/V81_GAS_SUPPORT_UNSEEN_CONFIRMATION_PROTOCOL.md,V81：天然气支持未评分地区中的月报支持上界确认,1553
+docs/V81_GAS_SUPPORT_UNSEEN_CONFIRMATION_RESULTS.md,V81：月报燃料支持边界在两个未评分含气电区恢复 τ=300 尾风险识别（2026-10-28）,2716
+docs/V82_NOVELTY_AND_PAPER_POSITIONING.md,V82：阶段性创新性与论文定位评估（2026-10-28）,4240
+docs/V83_TEMPORAL_INFORMATION_BUDGET_PROTOCOL.md,V83：尾风险判断所需的最小本地时间摘要粒度,1604
+docs/V83_TEMPORAL_INFORMATION_BUDGET_RESULTS.md,V83：日汇总能收紧部分尾风险，但更细粒度仍显著增益（2026-10-28）,3031
+docs/V84_CENSUS_SCALE_TEMPORAL_BUDGET_PROTOCOL.md,V84：质量普查全队列上的时间信息预算扩展,1494
+docs/V84_CENSUS_SCALE_TEMPORAL_BUDGET_RESULTS.md,V84：25区普查队列确认时间粒度可显著改变正尾风险认证率（2026-10-28）,2478
+docs/V85_CENSUS_SELECTIVE_FRONTIER_PROTOCOL.md,V85：V84同队列的正向／负向／弃权识别前沿,1838
+docs/V85_CENSUS_SELECTIVE_FRONTIER_RESULTS.md,V85：负向证书改变了时间信息预算的价值判断（2026-10-28）,3869
+docs/V86_MONTHLY_TO_DAILY_INFO_BRIDGE_PROTOCOL.md,V86：月度边际到最小日内摘要的同样本信息桥,2020
+docs/V86_MONTHLY_TO_DAILY_INFO_BRIDGE_RESULTS.md,V86：低频月度边际到日级摘要的风险频率桥（2026-10-28）,4637
+docs/V87_FUEL_MARGIN_SUFFICIENCY_PROTOCOL.md,V87：月度分燃料边际的尾计数最小充分摘要,1087
+docs/V87_FUEL_MARGIN_SUFFICIENCY_RESULTS.md,V87：逐燃料月边际对尾计数的最小充分压缩（2026-10-28）,2082
+docs/V88_CAPACITY_CONSTRAINED_IDENTIFICATION_PROTOCOL.md,V88：年度机组容量是否能安全收紧月度小时尾界,2321
+docs/V88_CAPACITY_CONSTRAINED_IDENTIFICATION_RESULTS.md,V88：装机容量让月度尾风险界明显变窄，但容量口径仍是主要风险（2026-10-28）,3374
+docs/V89_LAGGED_CAPACITY_IDENTIFICATION_PROTOCOL.md,V89：滞后一年容量是否仍能收紧月度小时尾界,2488
+docs/V89_LAGGED_CAPACITY_IDENTIFICATION_RESULTS.md,V89：滞后一年容量仍保留尾风险识别增量（2026-10-28）,1909
+docs/V90_COARSE_CAPACITY_IDENTIFICATION_PROTOCOL.md,V90 protocol: coarse technology-group capacity and hourly tail identification,4270
+docs/V90_COARSE_CAPACITY_IDENTIFICATION_RESULTS.md,V90: annual coarse technology capacity retains useful but weaker tail identification,5631
+docs/V91_CHINA_CAPACITY_RELEASE_CONTRACT.md,V91: China coarse-capacity data contract gate,4521
+docs/V92_SHARP_COARSE_CAPACITY_PROTOCOL.md,V92 protocol: sharp K set under shared coarse technology capacity,2983
+docs/V92_SHARP_COARSE_CAPACITY_RESULTS.md,V92: exact positive-block grouped-capacity set matches V90 on the retained sample,3236
+docs/V93_CHINA_BUDGET_COARSENING_PROTOCOL.md,V93 protocol: coarsen month fuel margins to a China-style generation table,3383
+docs/V93_CHINA_BUDGET_COARSENING_RESULTS.md,"V93: coarse Chinese-style monthly fields still gain from annual capacity, but lose fuel-detail value at high thresholds",3881
+docs/V94_HIGH_THRESHOLD_COARSENING_PROTOCOL.md,V94 protocol: high-threshold stress test for coarse thermal information,1960
+docs/V94_HIGH_THRESHOLD_COARSENING_RESULTS.md,V94: high-threshold CIF tails need local thermal composition information,4368
+docs/V95_SINGLE_MONTHLY_COAL_FIELD_PROTOCOL.md,V95 protocol: one monthly coal-generation field as a minimum local statistic,1825
+docs/V95_SINGLE_MONTHLY_COAL_FIELD_RESULTS.md,V95: one monthly coal field is sufficient at τ=900 but not τ=600,3359
+docs/V96_THRESHOLD_SIDE_ENERGY_PROTOCOL.md,V96 protocol: threshold-side monthly energy as a target-aware statistic,1907
+docs/V96_THRESHOLD_SIDE_ENERGY_RESULTS.md,V96: a threshold-side monthly MWh summary nearly reproduces detailed fuel margins,3795
+docs/V97_SIDE_VS_DETAIL_SAME_CAPACITY_PROTOCOL.md,V97 protocol: pair threshold-side and detailed monthly margins under the same capacities,1231
+docs/V97_SIDE_VS_DETAIL_SAME_CAPACITY_RESULTS.md,V97: threshold-side monthly energy matches detailed margins under the same coarse capacities,3088
+docs/V98_SIDE_ENERGY_MEASUREMENT_ERROR_PROTOCOL.md,V98 protocol: measurement uncertainty in threshold-side monthly energy,1859
+docs/V98_SIDE_ENERGY_MEASUREMENT_ERROR_RESULTS.md,V98: measurement-error sensitivity of the threshold-side monthly statistic,3160
+docs/V99_CHINA_FACTOR_THRESHOLD_STABILITY_PROTOCOL.md,V99 protocol: China monthly fuel support under factor uncertainty,1532
+docs/V99_CHINA_FACTOR_THRESHOLD_STABILITY_RESULTS.md,V99: Chinese monthly fuel groups can cross the risk threshold under factor uncertainty,4802
+docs/V9_LITERATURE_AND_NOVELTY.md,V9文献边界与创新审查,7062
+docs/WEATHER_COARSE_V13_PROTOCOL.md,V13 冻结协议：天气门控与粗误差到小时风险,10896
+docs/WEATHER_COARSE_V14_PROTOCOL.md,V14 冻结协议：天气门控与粗误差到小时风险,12137
+docs/WEATHER_COARSE_V14_RESULTS.md,V13/V14 结果：源区天气门控与粗误差到小时风险迁移,17953
+docs/WEATHER_INCREMENT_V12_PROTOCOL.md,V12：以原始强重组为精确基点的天气增量,10200
+docs/WEATHER_INCREMENT_V12_RESULTS.md,V12 实验结果：精确 native 基点上的天气增量,16609
+docs/WEATHER_RECOMPOSITION_V11_PROTOCOL.md,V11：强燃料重组中的天气形状与剩余风险,8983
+docs/WEATHER_RECOMPOSITION_V11_RESULTS.md,V11结果：天气形状修正与剩余风险,12250

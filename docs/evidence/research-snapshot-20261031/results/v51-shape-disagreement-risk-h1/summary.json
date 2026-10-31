@@ -1,0 +1,58 @@
+{
+  "status": "EXPLORATORY_STRICT_MONTHLY_ONLY_MIX_RISK",
+  "information_contract": "target supplies only legally published lagged five-group monthly generation totals; point thermal EF and hourly profile are donor-only; risk scale uses local monthly mix, donor-implied thermal reallocation ambiguity, and cross-donor hourly CIF profile spread",
+  "point_model": "target lagged five-group monthly totals combined with source-excluded prior-year five-group hourly shapes and source-equal prior-year thermal EF",
+  "risk_model": "source-balanced Ridge(alpha=10) predicts log monthly q90 absolute residual from local thermal share, wind-plus-solar share, donor-implied thermal ambiguity mean/p90, and cross-donor hourly CIF profile spread mean/p90; source-held-out OOF scale predictions calibrate normalized q90",
+  "comparison": "same strict-monthly-only point forecasts, ambiguity-augmented pooled normalized-q90 calibration and max-source normalized-q90 calibration versus global pooled q90",
+  "support": "37 available heldout region-months across 7 previously inspected regions; 2024H1 calibration and 2025H1 evaluation; not unseen-region confirmation",
+  "input_sha256": {
+    "monthly": "e7c805960f0b6b013dfe8e5f83020c84adee64504c6b9876fa2bde8aa8c5b67d",
+    "hourly": {
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/BPAT_hourly.csv": "72cf83af8fde5f17d5ccb29a1157db26758eb3cc0721186384b5e474cfc933ac",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/CISO_hourly.csv": "34a714dcb07ef66b807c444fe1ac260755716c91edab642c64c8f2c2a94c6d2b",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/ERCO_hourly.csv": "56abb6996e7b9fdf0d59ddd28743afb5ec77629570b6358ad9ee5c3e007f466c",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/FPL_hourly.csv": "423f8166dfcda13f6d6f6e5f9d262c88a3321ee1a6401c65977f2ac0fbbad569",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/ISNE_hourly.csv": "a6ff6602dfcb34dabdb76a1d28003c63f5013c4f11a4f5d9097c278fe67ccd09",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/MISO_hourly.csv": "0b33187fefb609992a2a6550af48ea1f59ff6349f690b0277d73ec537bd2ddfc",
+      "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/heldout-2025-data/NYIS_hourly.csv": "f173c238df2c019b49623959ecf7dac74045dfb03c6b160717b86f9dc0ec1e59"
+    }
+  },
+  "macro": [
+    {
+      "method": "conditional_identification_width",
+      "sources": 7,
+      "coverage": 0.892331665022949,
+      "width": 285.0858967805414,
+      "interval_score": 402.5676411400846,
+      "lower_miss": 0.005288398884457998,
+      "upper_miss": 0.102379936092593,
+      "point_mae": 57.90949726353142
+    },
+    {
+      "method": "conditional_identification_width_max_source",
+      "sources": 7,
+      "coverage": 0.9316564260112647,
+      "width": 430.40378012043556,
+      "interval_score": 488.6625436568597,
+      "lower_miss": 9.92063492063492e-05,
+      "upper_miss": 0.06824436763952893,
+      "point_mae": 57.90949726353142
+    },
+    {
+      "method": "global_equal_source_q90",
+      "sources": 7,
+      "coverage": 0.8696838197644648,
+      "width": 278.0388816755216,
+      "interval_score": 430.09808327205866,
+      "lower_miss": 0.005779950869236584,
+      "upper_miss": 0.12453622936629849,
+      "point_mae": 57.90949726353142
+    }
+  ],
+  "outputs_sha256": {
+    "outer_source_month_intervals.csv": "fa2a4b331a87f3b5a8846de3e2081351b95f6288198768adb8f575d2d40fc54d",
+    "source_macro.csv": "0eb040e63c36b51856f364d4fdd31e6b4253812ee5903c87d0034292f1c3e697",
+    "macro.csv": "70fa85d44c4ee245a4060f61e2283e8cd166c3e14d8f7c56142899e3c2ec474f"
+  },
+  "interpretation": "Exploratory repeated-source forward diagnostics only; no arbitrary-domain-shift coverage guarantee or novelty claim."
+}

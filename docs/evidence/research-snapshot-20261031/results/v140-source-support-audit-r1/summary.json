@@ -1,0 +1,13 @@
+{
+  "status": "POSTHOC_SOURCE_SUPPORT_DIAGNOSIS_NOT_CAUSAL",
+  "support_rows": 1178,
+  "SC_months_above_all_other_source_coal_support_per_seed": 20,
+  "SC_months_per_seed": 24,
+  "input_hashes": {
+    "results/v140-monthly-conditional-risk-r1/monthly_feature_panel.csv": "db23fb734967953e0405011fc0ff0c5b2ccc87dcc0db6d089b0b33be78f95585",
+    "results/v140-monthly-conditional-risk-r1/region_roles.csv": "755e382bb11a6bbc4b91d1ba9412d85e7761ac8f115bd22e18f9e47ae452b611",
+    "results/v140-monthly-conditional-risk-r1/outer_fold_rows.csv": "0ca59818ecc14daebc2f31d7079a902708a60989594fd754c78c6677627d3638"
+  },
+  "script_sha256": "cbcdf9b15ab0589886dcf8ed20d060fd14ed57ab613013db52043cba0196f813",
+  "limitation": "One observed coordinate can certify extrapolation but cannot prove its causal role or diagnose all hidden dispatch shifts."
+}

@@ -1,0 +1,24 @@
+{
+  "assertion_failures": 0,
+  "input_output_hash_checks_by_archive": {
+    "v192-reallocated-kappa-preflight-r1": 15,
+    "v192-reallocated-kappa-r1": 474,
+    "v192-reallocated-kappa-audit-r2": 476,
+    "v192-kappa-anchor-posthoc-r1": 7,
+    "v192-budget-union-inventory-r1": 121
+  },
+  "input_output_hash_checks_total": 1093,
+  "preflight_summary_transitive_binding_verified": true,
+  "failed_audit_source_sha_verified": true,
+  "scripts_AST_parsed": [
+    "scripts/v192_reallocated_kappa.py",
+    "scripts/v192_kappa_value.py",
+    "scripts/v192_audit_kappa_value.py",
+    "scripts/v192_kappa_anchor_posthoc.py",
+    "scripts/v192_budget_union_inventory.py"
+  ],
+  "all_processes_terminal": true,
+  "probability_extension_triggers_passed": 0,
+  "new_hourly_CIF_distribution_scores": false,
+  "original_goal_complete": false
+}

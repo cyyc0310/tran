@@ -1,0 +1,217 @@
+{
+  "experiment": "V322 unobserved generation factor-support sensitivity",
+  "protocol_sha256": "2a88ae0a2a8d04d89fb409bf44cd9228e613b9846fca09eeaf38460b43e62ad2",
+  "sensitivity_script_sha256": "60a2d760f0000a936004ccd760cd335c57678e585588f69f77f0610c54b2583e",
+  "base_v321_script_sha256": "65a673bb69f7959148309938ffad96efae418c58317c023299ca46ad80dd4de3",
+  "scenarios": [
+    {
+      "unobserved_ef_support": [
+        0.0,
+        0.5
+      ],
+      "summary_by_information_set": [
+        {
+          "supply_information": "total_only",
+          "monthly_receipts_observed": false,
+          "additional_independent_receipt_fields": 0,
+          "mean_diameter": 2.7174988770865913,
+          "median_diameter": 1.661185475950765,
+          "mean_paired_receipt_shrink": 0.0,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "total_only",
+          "monthly_receipts_observed": true,
+          "additional_independent_receipt_fields": 310,
+          "mean_diameter": 2.7174455285911487,
+          "median_diameter": 1.661185475950765,
+          "mean_paired_receipt_shrink": 9.938259295367176e-06,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "five_categories",
+          "monthly_receipts_observed": false,
+          "additional_independent_receipt_fields": 0,
+          "mean_diameter": 2.385756333911193,
+          "median_diameter": 1.3984333909894013,
+          "mean_paired_receipt_shrink": 0.0,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "five_categories",
+          "monthly_receipts_observed": true,
+          "additional_independent_receipt_fields": 310,
+          "mean_diameter": 2.1676059873798676,
+          "median_diameter": 1.2221396351013576,
+          "mean_paired_receipt_shrink": 0.05901456162320296,
+          "median_paired_receipt_shrink": 0.004613158453658506,
+          "zero_width_cells": 0
+        }
+      ],
+      "category_gain_without_receipts": {
+        "mean_paired_shrink": 0.10746702216855386,
+        "median_paired_shrink": 0.10327172194244272,
+        "positive_cells": 243,
+        "positive_provinces": 23,
+        "province_cluster_bootstrap_95pct": [
+          0.0756599269461979,
+          0.1418745398748912
+        ]
+      },
+      "category_gain_with_receipts": {
+        "mean_paired_shrink": 0.15989388059988768,
+        "median_paired_shrink": 0.1728288384361092,
+        "positive_cells": 246,
+        "positive_provinces": 23,
+        "province_cluster_bootstrap_95pct": [
+          0.1157843719217195,
+          0.20473418942008637
+        ]
+      }
+    },
+    {
+      "unobserved_ef_support": [
+        0.0,
+        1.0
+      ],
+      "summary_by_information_set": [
+        {
+          "supply_information": "total_only",
+          "monthly_receipts_observed": false,
+          "additional_independent_receipt_fields": 0,
+          "mean_diameter": 3.1887109916883607,
+          "median_diameter": 1.9477401716546208,
+          "mean_paired_receipt_shrink": 0.0,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "total_only",
+          "monthly_receipts_observed": true,
+          "additional_independent_receipt_fields": 310,
+          "mean_diameter": 3.1886576431929186,
+          "median_diameter": 1.9477401716546208,
+          "mean_paired_receipt_shrink": 8.318882590916601e-06,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "five_categories",
+          "monthly_receipts_observed": false,
+          "additional_independent_receipt_fields": 0,
+          "mean_diameter": 3.038400910546291,
+          "median_diameter": 1.735307032304453,
+          "mean_paired_receipt_shrink": 0.0,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "five_categories",
+          "monthly_receipts_observed": true,
+          "additional_independent_receipt_fields": 310,
+          "mean_diameter": 2.6583966061529276,
+          "median_diameter": 1.5045781015185757,
+          "mean_paired_receipt_shrink": 0.0803203193937524,
+          "median_paired_receipt_shrink": 0.002994703048959546,
+          "zero_width_cells": 0
+        }
+      ],
+      "category_gain_without_receipts": {
+        "mean_paired_shrink": 0.03621531567870462,
+        "median_paired_shrink": 0.0,
+        "positive_cells": 131,
+        "positive_provinces": 13,
+        "province_cluster_bootstrap_95pct": [
+          0.018147921644668035,
+          0.057856035068299644
+        ]
+      },
+      "category_gain_with_receipts": {
+        "mean_paired_shrink": 0.1120101365888818,
+        "median_paired_shrink": 0.002994703048959546,
+        "positive_cells": 187,
+        "positive_provinces": 17,
+        "province_cluster_bootstrap_95pct": [
+          0.06436517118775785,
+          0.16368542534282463
+        ]
+      }
+    },
+    {
+      "unobserved_ef_support": [
+        0.0,
+        1.5
+      ],
+      "summary_by_information_set": [
+        {
+          "supply_information": "total_only",
+          "monthly_receipts_observed": false,
+          "additional_independent_receipt_fields": 0,
+          "mean_diameter": 4.3325139474868,
+          "median_diameter": 2.575907521105142,
+          "mean_paired_receipt_shrink": 0.0,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "total_only",
+          "monthly_receipts_observed": true,
+          "additional_independent_receipt_fields": 310,
+          "mean_diameter": 4.332460598991358,
+          "median_diameter": 2.575907521105142,
+          "mean_paired_receipt_shrink": 6.827458213130257e-06,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "five_categories",
+          "monthly_receipts_observed": false,
+          "additional_independent_receipt_fields": 0,
+          "mean_diameter": 4.1822038663447305,
+          "median_diameter": 2.3718445142114515,
+          "mean_paired_receipt_shrink": 0.0,
+          "median_paired_receipt_shrink": 0.0,
+          "zero_width_cells": 0
+        },
+        {
+          "supply_information": "five_categories",
+          "monthly_receipts_observed": true,
+          "additional_independent_receipt_fields": 310,
+          "mean_diameter": 3.8021995619513684,
+          "median_diameter": 2.1718134985179733,
+          "mean_paired_receipt_shrink": 0.06271028430654037,
+          "median_paired_receipt_shrink": 0.002115962699233531,
+          "zero_width_cells": 0
+        }
+      ],
+      "category_gain_without_receipts": {
+        "mean_paired_shrink": 0.027854842525913793,
+        "median_paired_shrink": 0.0,
+        "positive_cells": 131,
+        "positive_provinces": 13,
+        "province_cluster_bootstrap_95pct": [
+          0.014062068457762407,
+          0.04443496008248362
+        ]
+      },
+      "category_gain_with_receipts": {
+        "mean_paired_shrink": 0.087750346929978,
+        "median_paired_shrink": 0.002115962699233531,
+        "positive_cells": 187,
+        "positive_provinces": 17,
+        "province_cluster_bootstrap_95pct": [
+          0.049993518670870436,
+          0.13015394106761968
+        ]
+      }
+    }
+  ],
+  "mean_diameter_monotonicity_with_wider_support": {
+    "pass": true,
+    "violations": []
+  },
+  "interpretation": "Scenario sensitivity only; none of the factor endpoints is asserted to be a validated engineering bound."
+}

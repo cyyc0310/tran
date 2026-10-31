@@ -1,0 +1,60 @@
+{
+  "experiment": "V378 direct NBS Shanghai export audit and consistency check",
+  "province_assignment": "Shanghai, based on the user's statement; the CSV files themselves do not contain a province-name field",
+  "source": "User-provided exports from NBS fsMonthData provincial monthly data portal",
+  "unit_conversion": "1 unit of 100 million kWh = 100 GWh",
+  "hydro_nuclear": "Set to zero based on the user's explicit statement; no separate hydro or nuclear export files were supplied",
+  "single_month_observations": 33,
+  "single_month_periods": 11,
+  "single_month_period_labels": [
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+  ],
+  "2026_february_semantics": "Current-value fields are blank. The available February cumulative value is January-February combined and is retained as a cumulative anchor, not a February monthly observation.",
+  "mean_thermal_share_of_five_tech_sum": 0.9547240463512103,
+  "min_thermal_share": 0.941336971350614,
+  "max_thermal_share": 0.9685610640870618,
+  "national_thermal_share_min_max": [
+    0.6017013666517635,
+    0.6768884954927674
+  ],
+  "same_period_national_full_range_certificates": 11,
+  "same_period_shanghai_full_range_certificates": 0,
+  "same_period_shanghai_mean_support_entirely_above_300": 11,
+  "same_periods_compared": 11,
+  "threshold_frontier_across_all_11_periods": {
+    "national_all_periods_certificate_tau_interval_g_kwh": [
+      270.75539819710696,
+      601.7013666517636
+    ],
+    "shanghai_all_periods_no_certificate_below_tau_g_kwh": [
+      0.0,
+      376.5347885402456
+    ],
+    "common_tau_interval_national_certificate_shanghai_no_certificate_g_kwh": [
+      270.75539819710696,
+      376.5347885402456
+    ]
+  },
+  "v320_overlap_rows": 33,
+  "v320_overlap_exact_matches_within_0_01_gwh": 33,
+  "v320_overlap_max_abs_difference_gwh": 9.094947017729282e-13,
+  "v320_total_vs_five_tech_max_abs_gap_gwh": 10.0,
+  "cumulative_increment_rows_checked": 30,
+  "cumulative_increment_max_abs_difference_100m_kwh": 1.9000000000000057,
+  "source_sha256": {
+    "thermal.csv": "92e02b10dbf5d19f3a680b481e005e5b6ada8a32c97d0bc7f805076cb5b10228",
+    "solar.csv": "85941ab60c7a99bdeab88d43ca3c386cc409e5fe3a018640900a4abf3fdd8407",
+    "wind.csv": "7a6acef4e1503f7b80b7350adaaaea12a7bfe0fec639467c9532b99bdca11ad9"
+  },
+  "interpretation": "These files add source-verifiable recent Shanghai coarse generation composition, but no hourly CIF labels, thermal fuel split, imports, or operational dispatch. They support an input audit and information-budget analysis, not direct hourly forecast validation."
+}

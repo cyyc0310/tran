@@ -1,0 +1,169 @@
+{
+  "status": "COMPLETE_EXPLORATORY_CONDITIONAL_THERMAL_RISK_H2_FORWARD",
+  "features": [
+    "local lagged thermal EF",
+    "absolute donor-local EF gap",
+    "thermal share",
+    "wind+solar share",
+    "recent local thermal-EF volatility"
+  ],
+  "risk_target": "monthly q90 absolute hourly CIF residual under source-excluded point forecasts",
+  "model": "StandardScaler + Ridge(alpha=10) on log monthly q90; source-balanced weights",
+  "nested_procedure": "for each outer target source, six other sources provide 2024H1 calibration; each calibration source risk-scale prediction is fit on the other five sources; normalized absolute hourly residuals are then calibrated with source-balanced q90; final risk-scale model is refit on all six sources for target 2025H1",
+  "comparison": "same point prediction, source-balanced pooled absolute-residual q90",
+  "support": "37 available target region-months across previously inspected seven regions; 2024H1 source calibration, 2025H1 evaluation; not unseen-region confirmation",
+  "input_sha256": {
+    "monthly": "e7c805960f0b6b013dfe8e5f83020c84adee64504c6b9876fa2bde8aa8c5b67d",
+    "hourly": {
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/BPAT_hourly.csv": "72cf83af8fde5f17d5ccb29a1157db26758eb3cc0721186384b5e474cfc933ac",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/CISO_hourly.csv": "34a714dcb07ef66b807c444fe1ac260755716c91edab642c64c8f2c2a94c6d2b",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/ERCO_hourly.csv": "56abb6996e7b9fdf0d59ddd28743afb5ec77629570b6358ad9ee5c3e007f466c",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/FPL_hourly.csv": "423f8166dfcda13f6d6f6e5f9d262c88a3321ee1a6401c65977f2ac0fbbad569",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/ISNE_hourly.csv": "a6ff6602dfcb34dabdb76a1d28003c63f5013c4f11a4f5d9097c278fe67ccd09",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/MISO_hourly.csv": "0b33187fefb609992a2a6550af48ea1f59ff6349f690b0277d73ec537bd2ddfc",
+      "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/heldout-2025-data/NYIS_hourly.csv": "f173c238df2c019b49623959ecf7dac74045dfb03c6b160717b86f9dc0ec1e59"
+    }
+  },
+  "macro": [
+    {
+      "feature_set": "all5",
+      "method": "conditional_all5",
+      "sources": 6,
+      "coverage": 0.930781801954517,
+      "width": 190.029244716499,
+      "interval_score": 221.05120507377947,
+      "lower_miss": 0.043459954770438645,
+      "upper_miss": 0.025758243275044352,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "all5",
+      "method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.9226095294341262,
+      "width": 176.83154197410022,
+      "interval_score": 215.0692334461786,
+      "lower_miss": 0.048456665671047394,
+      "upper_miss": 0.0289338048948264,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "ef_only",
+      "method": "conditional_ef_only",
+      "sources": 6,
+      "coverage": 0.922793964672325,
+      "width": 177.41493437083048,
+      "interval_score": 220.7232807070142,
+      "lower_miss": 0.05248102989702452,
+      "upper_miss": 0.024725005430650593,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "ef_only",
+      "method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.9226095294341262,
+      "width": 176.83154197410022,
+      "interval_score": 215.0692334461786,
+      "lower_miss": 0.048456665671047394,
+      "upper_miss": 0.0289338048948264,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "gap_volatility",
+      "method": "conditional_gap_volatility",
+      "sources": 6,
+      "coverage": 0.9325532122944757,
+      "width": 232.88059571279416,
+      "interval_score": 268.58779685786453,
+      "lower_miss": 0.048713464328383686,
+      "upper_miss": 0.018733323377140582,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "gap_volatility",
+      "method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.9226095294341262,
+      "width": 176.83154197410022,
+      "interval_score": 215.0692334461786,
+      "lower_miss": 0.048456665671047394,
+      "upper_miss": 0.0289338048948264,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "level_mix",
+      "method": "conditional_level_mix",
+      "sources": 6,
+      "coverage": 0.9150224402240531,
+      "width": 161.20799129382914,
+      "interval_score": 201.03662476962322,
+      "lower_miss": 0.05028551160607612,
+      "upper_miss": 0.03469204816987075,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "level_mix",
+      "method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.9226095294341262,
+      "width": 176.83154197410022,
+      "interval_score": 215.0692334461786,
+      "lower_miss": 0.048456665671047394,
+      "upper_miss": 0.0289338048948264,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "mix_only",
+      "method": "conditional_mix_only",
+      "sources": 6,
+      "coverage": 0.937414031669744,
+      "width": 174.6960162769262,
+      "interval_score": 200.35360658163472,
+      "lower_miss": 0.03674052917164476,
+      "upper_miss": 0.025845439158611202,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "mix_only",
+      "method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.9226095294341262,
+      "width": 176.83154197410022,
+      "interval_score": 215.0692334461786,
+      "lower_miss": 0.048456665671047394,
+      "upper_miss": 0.0289338048948264,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "no_volatility",
+      "method": "conditional_no_volatility",
+      "sources": 6,
+      "coverage": 0.9193991672032666,
+      "width": 187.38918395940445,
+      "interval_score": 225.29308690867776,
+      "lower_miss": 0.047623501237412526,
+      "upper_miss": 0.03297733155932081,
+      "point_mae": 31.51914779873896
+    },
+    {
+      "feature_set": "no_volatility",
+      "method": "global_equal_source_q90",
+      "sources": 6,
+      "coverage": 0.9226095294341262,
+      "width": 176.83154197410022,
+      "interval_score": 215.0692334461786,
+      "lower_miss": 0.048456665671047394,
+      "upper_miss": 0.0289338048948264,
+      "point_mae": 31.51914779873896
+    }
+  ],
+  "outputs_sha256": {
+    "outer_source_month_intervals.csv": "75e9eb8710b5d01234884713e07640f86ee358ef120b759a84d592abf40c558c",
+    "calibration_source_month_risks.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "calibration_scale_oof.csv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "source_macro.csv": "f3c40ea9e153406572c550cc3a1c3026062247ac14f2161618bf0505df0354b7",
+    "macro.csv": "ad4b76bde3acc57ed4f0079b224c0c7d6af5254a755e55d0bb400b0e35b335db"
+  },
+  "interpretation": "Post-hoc exploratory heteroscedastic split-calibration; no arbitrary-domain-shift guarantee; effect may be dominated by source-level dependence and small sample. No claim of novelty."
+}

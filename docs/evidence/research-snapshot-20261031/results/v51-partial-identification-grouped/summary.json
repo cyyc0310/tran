@@ -1,0 +1,132 @@
+{
+  "status": "COMPLETE_SHARP_BOUND_INFORMATION_TIER_AUDIT",
+  "regions": 7,
+  "complete_region_months": 203,
+  "hours": 148104,
+  "information_tiers": [
+    "monthly fuel totals only",
+    "monthly fuel totals plus hourly total generation G_h",
+    "monthly fuel totals plus hourly total G_h and hourly total positive-EF group generation P_h"
+  ],
+  "positive_group": [
+    "coal",
+    "gas",
+    "oil",
+    "other"
+  ],
+  "fixed_EF": [
+    1000.0,
+    400.0,
+    800.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    400.0
+  ],
+  "assumptions": [
+    "exact matching full-calendar-month fuel totals and hourly totals from already-viewed source data",
+    "nonnegative generation and no fuel-specific per-hour capacities/ramping",
+    "for each individual hour, bounds optimize group fuel allocation subject to monthly fuel totals and the observed hourly group total; bounds are sharp for that hour under these assumptions"
+  ],
+  "group_bound_contains": 1.0,
+  "monthly_only_mean_width": 838.423645320197,
+  "hourly_G_mean_width": 764.6781352391662,
+  "hourly_G_and_positive_group_mean_width": 220.10966892862663,
+  "hourly_G_and_positive_group_p90_width": 265.1283245086169,
+  "group_width_le100_hour_fraction": 0.26358504834440666,
+  "true_hourly_CIF_sd": 37.28073221884603,
+  "source_summary": [
+    {
+      "region": "BPAT",
+      "months": 26,
+      "monthly_width": 400.0,
+      "hourly_G_width": 400.0,
+      "hourly_G_positive_group_width": 0.0,
+      "hourly_G_positive_group_width_p90": 0.0,
+      "group_coverage": 1.0,
+      "group_width_le100_fraction": 1.0,
+      "true_hourly_cif_sd": 10.111030727012825
+    },
+    {
+      "region": "CISO",
+      "months": 30,
+      "monthly_width": 920.0,
+      "hourly_G_width": 823.4347613060771,
+      "hourly_G_positive_group_width": 217.1039658910454,
+      "hourly_G_positive_group_width_p90": 290.8167199033384,
+      "group_coverage": 1.0,
+      "group_width_le100_fraction": 0.05209224240926132,
+      "true_hourly_cif_sd": 56.12396310873752
+    },
+    {
+      "region": "ERCO",
+      "months": 31,
+      "monthly_width": 1000.0,
+      "hourly_G_width": 1000.0,
+      "hourly_G_positive_group_width": 340.6075912385648,
+      "hourly_G_positive_group_width_p90": 446.2178493395452,
+      "group_coverage": 1.0,
+      "group_width_le100_fraction": 0.0003136200716845878,
+      "true_hourly_cif_sd": 63.413707001091346
+    },
+    {
+      "region": "FPL",
+      "months": 21,
+      "monthly_width": 609.5238095238095,
+      "hourly_G_width": 400.51887845364934,
+      "hourly_G_positive_group_width": 0.5188784536493847,
+      "hourly_G_positive_group_width_p90": 0.6846846564770981,
+      "group_coverage": 1.0,
+      "group_width_le100_fraction": 1.0,
+      "true_hourly_cif_sd": 27.90668480572182
+    },
+    {
+      "region": "ISNE",
+      "months": 29,
+      "monthly_width": 1000.0,
+      "hourly_G_width": 782.6849293261398,
+      "hourly_G_positive_group_width": 266.0925729659844,
+      "hourly_G_positive_group_width_p90": 300.71616378988875,
+      "group_coverage": 1.0,
+      "group_width_le100_fraction": 0.078605858361142,
+      "true_hourly_cif_sd": 26.557356838170826
+    },
+    {
+      "region": "MISO",
+      "months": 33,
+      "monthly_width": 1000.0,
+      "hourly_G_width": 1000.0,
+      "hourly_G_positive_group_width": 397.7675299016455,
+      "hourly_G_positive_group_width_p90": 452.8595049314704,
+      "group_coverage": 1.0,
+      "group_width_le100_fraction": 0.0,
+      "true_hourly_cif_sd": 46.23383543469446
+    },
+    {
+      "region": "NYIS",
+      "months": 33,
+      "monthly_width": 800.0,
+      "hourly_G_width": 757.2739872904959,
+      "hourly_G_positive_group_width": 203.32221079000502,
+      "hourly_G_positive_group_width_p90": 228.84871366361423,
+      "group_coverage": 1.0,
+      "group_width_le100_fraction": 0.08177609427609428,
+      "true_hourly_cif_sd": 23.72068014363087
+    }
+  ],
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/BPAT_hourly.csv": "8fc4377a7e37dd3ace5d84062fab8ab923760f3deb99ec634d84cfae649add9a",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/CISO_hourly.csv": "f1d69e13d35cc7c496532905a8a414e8f3e68e8c12ebd3394bdbc026db0b0caa",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/ERCO_hourly.csv": "e5d8cb8757f07e2a46f8a22d72e0bfc704c6ce3848196113559881dd7f47d925",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/FPL_hourly.csv": "5c0346cbafc08b73556c62baf4014c193fb8657bf9fcde4d194fb3818e3933e6",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/ISNE_hourly.csv": "f30cb202d839100352fd7aa81283a19ba3973cf07d754ab891d674644c4c0747",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/MISO_hourly.csv": "edc5d1b9fad671ae43bed234140eb146295e832cf4e2ac9e11f6b55a2279397d",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/NYIS_hourly.csv": "2146d06400707f9973baf75cf3a98ce5b38b02ff9b5f202657d310a8186c123f"
+  },
+  "outputs_sha256": {
+    "complete_month_bounds.csv": "ac4dc51c32d47a46f9bd2b48fbb143d319a5b7ba8d636a97d11e8c249af9042d",
+    "source_summary.csv": "9aa3dbd497c85559c574585efd918a411d772e6e817e1b21fc96f30cda924252"
+  },
+  "interpretation": "Already-viewed U.S. source data; retrospective physical-bound information-value audit, not forecasting performance or China evidence. P_h is an oracle hourly observable not confirmed public in China; official thermal generation is not equivalent to this positive-EF group."
+}

@@ -1,0 +1,37 @@
+{
+  "assertion_failures": 0,
+  "source_regions": 29,
+  "historical_months_exported": 661,
+  "canonical_overlap_profiles": 327,
+  "canonical_exact_fuel_margin_checks": 2616,
+  "duplicate_native_rows_earliest_precedence": 0,
+  "year_source_audits": 87,
+  "hourly_arrays_exported": false,
+  "cif_computed": false,
+  "models_fitted": false,
+  "input_hashes": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "docs/V183_COARSE_HISTORY_EXPORT_PROTOCOL.md": "878fcb15a42a9001aad902bf4123833b44670a1f1a468ebcb206eedfe82d1afe",
+    "scripts/v183_export_coarse_history.py": "43a0df54d9ad79b439d26159244ed8c74f3bf3ff2cbf6029c9f9d7ec5e5bc3fe",
+    "scripts/coarse_history_export.py": "890e9de3835cc8fb4a59228029c6756adcbb9087ff85c48e8d317060453024ee",
+    "src/transcif/data/eia930.py": "a0edd1fb8238375afbed51a0f70f2bcb701d8fca8e4069b9a41a4629eeac4145",
+    "src/transcif/research/eia_proxy.py": "2d191d6755aec030207043c95a1e354b7b89acd95d925aff93592bbf0711fbcf",
+    "results/v144-canonical-profile-cache-r1/summary.json": "6c9640d193ee9dad4354aa9969c45cd1485c4fbac53146e0409570619c6bbc19",
+    "results/v144-canonical-profile-cache-r1/profiles.npz": "4e40a83eb4b917f591c8f4bda15a54283eecbad4407a7b1d9cc7e9e23055b17a",
+    "results/v144-canonical-profile-cache-r1/profile_index.csv": "91708a1378d2cdbf35e6e507fb51a44f43eecaad9c0a18c8692fe634c7fd4785",
+    "results/v159-fuel-activity-source-pilot-r1/summary.json": "d321bc5abee5d68a85fd1559dbb07f37c3c3aa97ad8f8fbbf8ff5301fccde25d",
+    "results/v159-fuel-activity-source-pilot-r1/source_sampling.csv": "ff439d3dcc577014772db4b7a4045d40052a5f60a832d251972e9bb12c210dc0"
+  },
+  "output_hashes": {
+    "monthly_history.csv": "b4f3b6e051b9f9fbd7338a2cc827a6a0be46c88bbf442d2e8f4a720eaf1da350",
+    "canonical_overlap.csv": "8f06292aa6276af0f12f9ea7a5d4d4d3a0e811b23b20a631596b0c90b172ee23",
+    "overlap_year_monthly_qa_only.csv": "4d821bd2ef086d94597620efd870d8ab3d3b05d63ec499022d84be7d888db85c",
+    "source_quality_audits.json": "159831b4dacd24bf9a651b1f5eba1737fbecefaa72a71866c70333923217a5e2"
+  },
+  "scope": "Isolated retrospective canonical coarse-only history, 29 existing sources. Year-window quality matches V144 2024 exactly. Synthetic release/vintage and production-proxy limitations remain; not a performance or originality claim."
+}

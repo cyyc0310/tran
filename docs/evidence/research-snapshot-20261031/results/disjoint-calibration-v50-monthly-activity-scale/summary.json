@@ -1,0 +1,96 @@
+{
+  "status": "COMPLETE_MONTHLY_ACTIVITY_SCALE_SOURCE_HELDOUT",
+  "protocol": "docs/V50_MONTHLY_ACTIVITY_SCALE_PROTOCOL.md",
+  "protocol_sha256": "7bbb2a89e7f43ae0d0addde7c9f2aab23903e8764a311298f5fb01a5910d24ad",
+  "script_sha256": "f0fcd6b39dd413a8c12cd5c65d8d47480b73b015fdfdee7f75a1bd9d0b74116a",
+  "source_units": 10,
+  "prediction_packages_opened": 70,
+  "external_label_packages_opened": 10,
+  "target_prediction_packages_opened": 0,
+  "target_or_unseen_scores_opened": 0,
+  "point_or_risk_refits": 0,
+  "source_heldout_wls_fits": 70,
+  "source_heldout_rows": 350,
+  "lag_days": 90,
+  "full_mix_EF_definition": "mean fixed-EF intensity of three latest legally released monthly eight-fuel records at each query date",
+  "activity_scale_definition": "mean log1p(total_mwh / expected_hours) over those same three legally released monthly records",
+  "daily_source_bias_mae": {
+    "no_correction": 138.40831274489403,
+    "global_correction": 136.56183643526512,
+    "daily_asof_mix_correction": 88.92677864832932,
+    "mix_beats_global_source_count": 7
+  },
+  "source_macro_metrics": [
+    {
+      "method": "no_correction_factor2_anchor",
+      "hourly_crps": 125.13579218441456,
+      "daily_mean_crps": 123.49853821898088,
+      "daily_level_mae": 144.61201736417388,
+      "coverage90": 0.8849718932386053,
+      "width90": 527.9794726782422,
+      "interval_score90": 712.1641612105279,
+      "lower_miss": 7.38388720292733e-05,
+      "upper_miss": 0.11495426788936554,
+      "fraction_clipped_after_shift": 0.05659207922311699
+    },
+    {
+      "method": "global_source_bias_shift",
+      "hourly_crps": 112.8013306380969,
+      "daily_mean_crps": 111.46598169938632,
+      "daily_level_mae": 141.69231152829354,
+      "coverage90": 0.8482791479458417,
+      "width90": 518.3583570404032,
+      "interval_score90": 784.4616311830555,
+      "lower_miss": 0.12375524559333531,
+      "upper_miss": 0.027965606460822988,
+      "fraction_clipped_after_shift": 0.0010971750064344545
+    },
+    {
+      "method": "daily_asof_monthly_mix_shift",
+      "hourly_crps": 71.42928724075017,
+      "daily_mean_crps": 68.01667230986527,
+      "daily_level_mae": 93.46876574788641,
+      "coverage90": 0.9526737177867339,
+      "width90": 478.64098302819065,
+      "interval_score90": 510.4179803661592,
+      "lower_miss": 0.03171438841312622,
+      "upper_miss": 0.015611893800139779,
+      "fraction_clipped_after_shift": 0.10051477283907873
+    },
+    {
+      "method": "monthly_activity_scale_shift",
+      "hourly_crps": 155.7886924345559,
+      "daily_mean_crps": 155.50718515952977,
+      "daily_level_mae": 185.42181832114784,
+      "coverage90": 0.7524526862464853,
+      "width90": 483.46214819521646,
+      "interval_score90": 1407.5572851609163,
+      "lower_miss": 0.21862517062369272,
+      "upper_miss": 0.028922143129821908,
+      "fraction_clipped_after_shift": 0.04246883662256512
+    },
+    {
+      "method": "monthly_mix_plus_activity_shift",
+      "hourly_crps": 92.94918268108951,
+      "daily_mean_crps": 90.98908200477025,
+      "daily_level_mae": 120.18270710660049,
+      "coverage90": 0.8863588216035192,
+      "width90": 466.94707059159157,
+      "interval_score90": 647.5617891935154,
+      "lower_miss": 0.09717750571220782,
+      "upper_miss": 0.016463672684272984,
+      "fraction_clipped_after_shift": 0.09841124459624989
+    }
+  ],
+  "frozen_input_hashes": {
+    "freeze": "6fd51f0c32cab38dfb59db135521411b44a830dfdcbdcfc3ec43a1fbc09687f3",
+    "prediction_seal": "07580823d07b7e47906d7630a384da235fc25e2f0720b82dfd7794dfbb17ce75",
+    "calibration_seal": "7d883be2afb9032637a14bb9f312520ed11b70440ef5ec1d222fa623eec6d60d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v4-data/monthly.csv": "f079ca2f5899e4ef4f2a4cd21c5601315da62ffb4aced609a17de6932a24e8a9",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v5-data/monthly.csv": "dfff10a6091f208432557f54dc84b6216e7a05888f3f7074186a92d2d61605ad"
+  },
+  "held_source_fold_metrics_sha256": "2c096f7855afc5d9140a644697128a0bc7d901006ef961fb5e601b13def16f75",
+  "held_source_bias_sha256": "215d16590b9de28ffde904d60962393cb2141e332abc28cf37bec20eae9f3e19",
+  "source_macro_metrics_sha256": "62bb328b6993874f5d4c4d755de88f90d741ced68100328673149d361649ef41",
+  "interpretation_limit": "Ten previously used sources only; source-held-out descriptive evidence, not China transfer, novel method proof, or a coverage guarantee."
+}

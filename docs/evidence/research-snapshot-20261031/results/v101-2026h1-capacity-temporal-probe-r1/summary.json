@@ -1,0 +1,464 @@
+{
+  "status": "TEMPORAL_TRANSPORT_PROBE_NOT_BLIND_2026H1_REUSED_IN_OTHER_EXPERIMENTS",
+  "coverage_qualified_region_months": 148,
+  "capacity_feasible_region_months": 124,
+  "observed_peak_feasible_region_months": 77,
+  "scored_region_months": 124,
+  "cohort_counts": [
+    {
+      "monthly_group_energy_feasible": false,
+      "observed_hourly_peak_pass": false,
+      "region_months": 24
+    },
+    {
+      "monthly_group_energy_feasible": true,
+      "observed_hourly_peak_pass": false,
+      "region_months": 47
+    },
+    {
+      "monthly_group_energy_feasible": true,
+      "observed_hourly_peak_pass": true,
+      "region_months": 77
+    }
+  ],
+  "frontier_region_equal": [
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 100,
+      "rate": 0.01,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 445.5888888888889,
+      "positive": 0.7777777777777777,
+      "negative": 0.14285714285714285,
+      "abstain": 0.07936507936507936,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 100,
+      "rate": 0.05,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 445.5888888888889,
+      "positive": 0.7222222222222222,
+      "negative": 0.14285714285714285,
+      "abstain": 0.1349206349206349,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 100,
+      "rate": 0.1,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 445.5888888888889,
+      "positive": 0.6666666666666666,
+      "negative": 0.14285714285714285,
+      "abstain": 0.19047619047619047,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 300,
+      "rate": 0.01,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 440.4793650793651,
+      "positive": 0.41904761904761906,
+      "negative": 0.14285714285714285,
+      "abstain": 0.43809523809523804,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 300,
+      "rate": 0.05,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 440.4793650793651,
+      "positive": 0.3174603174603175,
+      "negative": 0.14285714285714285,
+      "abstain": 0.5396825396825398,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 300,
+      "rate": 0.1,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 440.4793650793651,
+      "positive": 0.24761904761904763,
+      "negative": 0.15873015873015872,
+      "abstain": 0.5936507936507937,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 100,
+      "rate": 0.01,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 563.7015873015873,
+      "positive": 0.06349206349206349,
+      "negative": 0.14285714285714285,
+      "abstain": 0.7936507936507937,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 100,
+      "rate": 0.05,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 563.7015873015873,
+      "positive": 0.06349206349206349,
+      "negative": 0.14285714285714285,
+      "abstain": 0.7936507936507937,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 100,
+      "rate": 0.1,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 563.7015873015873,
+      "positive": 0.06349206349206349,
+      "negative": 0.14285714285714285,
+      "abstain": 0.7936507936507937,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 300,
+      "rate": 0.01,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 563.7015873015873,
+      "positive": 0.06349206349206349,
+      "negative": 0.14285714285714285,
+      "abstain": 0.7936507936507937,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 300,
+      "rate": 0.05,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 563.7015873015873,
+      "positive": 0.06349206349206349,
+      "negative": 0.14285714285714285,
+      "abstain": 0.7936507936507937,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 300,
+      "rate": 0.1,
+      "regions": 21,
+      "mean_region_months": 5.904761904761905,
+      "set_coverage": 1.0,
+      "mean_width": 563.7015873015873,
+      "positive": 0.06349206349206349,
+      "negative": 0.14285714285714285,
+      "abstain": 0.7936507936507937,
+      "certificate_error": 0.0
+    }
+  ],
+  "frontier_pooled": [
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 100,
+      "rate": 0.01,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 443.68548387096774,
+      "positive": 0.7741935483870968,
+      "negative": 0.14516129032258066,
+      "abstain": 0.08064516129032258,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 100,
+      "rate": 0.05,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 443.68548387096774,
+      "positive": 0.717741935483871,
+      "negative": 0.14516129032258066,
+      "abstain": 0.13709677419354838,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 100,
+      "rate": 0.1,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 443.68548387096774,
+      "positive": 0.6612903225806451,
+      "negative": 0.14516129032258066,
+      "abstain": 0.1935483870967742,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 300,
+      "rate": 0.01,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 436.7903225806452,
+      "positive": 0.4112903225806452,
+      "negative": 0.14516129032258066,
+      "abstain": 0.4435483870967742,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 300,
+      "rate": 0.05,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 436.7903225806452,
+      "positive": 0.31451612903225806,
+      "negative": 0.14516129032258066,
+      "abstain": 0.5403225806451613,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "lagged_coarse_capacity",
+      "tau": 300,
+      "rate": 0.1,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 436.7903225806452,
+      "positive": 0.25,
+      "negative": 0.16129032258064516,
+      "abstain": 0.5887096774193549,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 100,
+      "rate": 0.01,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 561.4677419354839,
+      "positive": 0.06451612903225806,
+      "negative": 0.14516129032258066,
+      "abstain": 0.7903225806451613,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 100,
+      "rate": 0.05,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 561.4677419354839,
+      "positive": 0.06451612903225806,
+      "negative": 0.14516129032258066,
+      "abstain": 0.7903225806451613,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 100,
+      "rate": 0.1,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 561.4677419354839,
+      "positive": 0.06451612903225806,
+      "negative": 0.14516129032258066,
+      "abstain": 0.7903225806451613,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 300,
+      "rate": 0.01,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 561.4677419354839,
+      "positive": 0.06451612903225806,
+      "negative": 0.14516129032258066,
+      "abstain": 0.7903225806451613,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 300,
+      "rate": 0.05,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 561.4677419354839,
+      "positive": 0.06451612903225806,
+      "negative": 0.14516129032258066,
+      "abstain": 0.7903225806451613,
+      "certificate_error": 0.0
+    },
+    {
+      "method": "monthly_margin",
+      "tau": 300,
+      "rate": 0.1,
+      "region_months": 6,
+      "rows": 124,
+      "set_coverage": 1.0,
+      "mean_width": 561.4677419354839,
+      "positive": 0.06451612903225806,
+      "negative": 0.14516129032258066,
+      "abstain": 0.7903225806451613,
+      "certificate_error": 0.0
+    }
+  ],
+  "capacity_source_sha256": {
+    "2025": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba"
+  },
+  "hourly_source_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "DOPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "EPE": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "GCPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TIDC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    }
+  },
+  "protocol_sha256": "5b6fbae3f3055142793062432a3966b80637069c2bb4c4ace08d28493571ec4c",
+  "script_sha256": "d459f9ece3c28ac8072382c465e92a41c8cfd32eb13e1f239a509a251fa36d76",
+  "limitations": [
+    "2026H1 outcomes were already used in unrelated predictor experiments; this is not a sealed blind confirmation.",
+    "Previously opened regions and fixed-EF hourly generation proxy; not real CIF or China validation.",
+    "Monthly target generation is an after-period input, so this evaluates retrospective within-month identification/nowcasting, not a month-ahead forecast.",
+    "Capacity-infeasible months are unavailable and count as abstentions when rates are interpreted over the full cohort."
+  ]
+}

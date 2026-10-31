@@ -1,0 +1,90 @@
+{
+  "input": "results/v392-nbs-official-provincial-long-panel-r1/provincial_mix_and_closure.csv",
+  "threshold_g_kwh": 300,
+  "thermal_support_lower_bound_g_kwh": 400,
+  "crossing_thermal_share_interval": "(0.30, 0.75]",
+  "interpretation": "Agreement for the V392 binary mean-support cross-threshold certificate; not hourly CIF forecast accuracy or interval coverage.",
+  "release_lag_assumption": "At month-start, use month t-2 as the latest monthly composition; t-1 is shown as a mid-month sensitivity only.",
+  "metrics": [
+    {
+      "prediction": "local_state_tau300_lag1",
+      "n": 390,
+      "agreement": 0.9615384615384616,
+      "positive_prevalence": 0.3384615384615385,
+      "sensitivity": 0.946969696969697,
+      "specificity": 0.9689922480620154,
+      "state_changes": 15
+    },
+    {
+      "prediction": "national_state_tau300_lag1",
+      "n": 390,
+      "agreement": 0.34102564102564104,
+      "positive_prevalence": 0.3384615384615385,
+      "sensitivity": 0.9848484848484849,
+      "specificity": 0.011627906976744186,
+      "state_changes": 257
+    },
+    {
+      "prediction": "local_state_tau300_lag2",
+      "n": 345,
+      "agreement": 0.9536231884057971,
+      "positive_prevalence": 0.3333333333333333,
+      "sensitivity": 0.9478260869565217,
+      "specificity": 0.9565217391304348,
+      "state_changes": 16
+    },
+    {
+      "prediction": "national_state_tau300_lag2",
+      "n": 345,
+      "agreement": 0.336231884057971,
+      "positive_prevalence": 0.3333333333333333,
+      "sensitivity": 0.9826086956521739,
+      "specificity": 0.013043478260869565,
+      "state_changes": 229
+    }
+  ],
+  "forward_holdout": {
+    "training_cutoff_year": 2022,
+    "test_start_year": 2023,
+    "test_end": "2026-09",
+    "static_baselines_fit_only_on_training_target_states": true,
+    "metrics": [
+      {
+        "prediction": "local_state_tau300_lag2",
+        "n": 145,
+        "agreement": 0.993103448275862,
+        "positive_prevalence": 0.4,
+        "sensitivity": 1.0,
+        "specificity": 0.9885057471264368,
+        "state_changes": 1
+      },
+      {
+        "prediction": "national_state_tau300_lag2",
+        "n": 145,
+        "agreement": 0.4,
+        "positive_prevalence": 0.4,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "state_changes": 87
+      },
+      {
+        "prediction": "province_static_state_train_through_2022",
+        "n": 145,
+        "agreement": 0.8,
+        "positive_prevalence": 0.4,
+        "sensitivity": 0.5,
+        "specificity": 1.0,
+        "state_changes": 29
+      },
+      {
+        "prediction": "pooled_static_state_train_through_2022",
+        "n": 145,
+        "agreement": 0.6,
+        "positive_prevalence": 0.4,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "state_changes": 58
+      }
+    ]
+  }
+}

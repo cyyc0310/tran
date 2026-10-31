@@ -1,0 +1,22 @@
+{
+  "experiment": "V382 annual fuel-split source-to-monthly-NBS compatibility audit",
+  "source_url": "https://study.1mi1.org/articleAttachments/upload_9e0a7bd8b24583aa4daa4eefd5defe11.pdf",
+  "source_year": 2020,
+  "province": "Shanghai",
+  "nbs_panel": "results/v320-oreo-official-monthly-generation-audit-r1/cn_prov_monthly_generation_by_tech.csv",
+  "nbs_reporting_bins": 11,
+  "nbs_jan_feb_semantics": "single cumulative reporting bin; counted once, not split into January and February",
+  "nbs_thermal_generation_gwh": 80350.0,
+  "published_table_total_supply_gwh": 82162.0,
+  "published_table_coal_gas_oil_subtotal_gwh": 76276.0,
+  "published_table_unallocated_residual_gwh": 5886.0,
+  "table_fossil_subtype_shares_of_listed_subtotal": {
+    "coal": 0.8014709738318737,
+    "gas": 0.1965362630447323,
+    "oil": 0.00199276312339399
+  },
+  "table_total_supply_minus_nbs_thermal_gwh": 1812.0,
+  "table_total_supply_relative_gap_vs_nbs_thermal": 0.02255133789670193,
+  "table_coal_gas_oil_subtotal_minus_nbs_thermal_gwh": -4074.0,
+  "interpretation": "The published annual fuel split is a derived supply estimate with explicit allocation assumptions. Its total, listed fossil subtotal, and NBS gross thermal generation do not close. Treat only as a sensitivity prior until the scope difference and residual are resolved; do not hard-anchor monthly fuel generation to it."
+}

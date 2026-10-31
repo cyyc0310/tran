@@ -1,0 +1,269 @@
+{
+  "status": "RETROSPECTIVE_CAPACITY_CONSTRAINED_OUTER_SET_NOT_FORECAST",
+  "regions": [
+    "AVA",
+    "BANC",
+    "BPAT",
+    "CHPD",
+    "DOPD",
+    "EPE",
+    "FMPP",
+    "FPL",
+    "GCPD",
+    "GRID",
+    "GVL",
+    "IID",
+    "JEA",
+    "LDWP",
+    "MISO",
+    "NWMT",
+    "NYIS",
+    "PSEI",
+    "SC",
+    "SCEG",
+    "SCL",
+    "SEC",
+    "TEC",
+    "TIDC",
+    "TPWR"
+  ],
+  "capacity_feasible_region_months": 368,
+  "scored_rows": 2208,
+  "capacity_feasibility_audit": [
+    {
+      "year": 2024,
+      "peak_all_fuels_within_capacity": false,
+      "monthly_energy_within_capacity": false,
+      "region_months": 38
+    },
+    {
+      "year": 2024,
+      "peak_all_fuels_within_capacity": false,
+      "monthly_energy_within_capacity": true,
+      "region_months": 62
+    },
+    {
+      "year": 2024,
+      "peak_all_fuels_within_capacity": true,
+      "monthly_energy_within_capacity": true,
+      "region_months": 200
+    },
+    {
+      "year": 2025,
+      "peak_all_fuels_within_capacity": false,
+      "monthly_energy_within_capacity": false,
+      "region_months": 50
+    },
+    {
+      "year": 2025,
+      "peak_all_fuels_within_capacity": false,
+      "monthly_energy_within_capacity": true,
+      "region_months": 75
+    },
+    {
+      "year": 2025,
+      "peak_all_fuels_within_capacity": true,
+      "monthly_energy_within_capacity": true,
+      "region_months": 174
+    }
+  ],
+  "frontier": [
+    {
+      "tau": 100,
+      "rate": 0.01,
+      "baseline_positive": 0.05442176870748299,
+      "baseline_negative": 0.19047619047619047,
+      "baseline_abstain": 0.7551020408163266,
+      "capacity_positive": 0.7579365079365079,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.051587301587301584,
+      "baseline_width": 543.451944742628,
+      "capacity_width": 367.95294750970214
+    },
+    {
+      "tau": 100,
+      "rate": 0.05,
+      "baseline_positive": 0.05442176870748299,
+      "baseline_negative": 0.19047619047619047,
+      "baseline_abstain": 0.7551020408163266,
+      "capacity_positive": 0.7559523809523809,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.05357142857142857,
+      "baseline_width": 543.451944742628,
+      "capacity_width": 367.95294750970214
+    },
+    {
+      "tau": 100,
+      "rate": 0.1,
+      "baseline_positive": 0.05442176870748299,
+      "baseline_negative": 0.19047619047619047,
+      "baseline_abstain": 0.7551020408163266,
+      "capacity_positive": 0.7456709956709957,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.06385281385281386,
+      "baseline_width": 543.451944742628,
+      "capacity_width": 367.95294750970214
+    },
+    {
+      "tau": 300,
+      "rate": 0.01,
+      "baseline_positive": 0.05442176870748299,
+      "baseline_negative": 0.19047619047619047,
+      "baseline_abstain": 0.7551020408163266,
+      "capacity_positive": 0.48850752422180993,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.3210162853019996,
+      "baseline_width": 543.451944742628,
+      "capacity_width": 406.4907500970389
+    },
+    {
+      "tau": 300,
+      "rate": 0.05,
+      "baseline_positive": 0.05442176870748299,
+      "baseline_negative": 0.19047619047619047,
+      "baseline_abstain": 0.7551020408163266,
+      "capacity_positive": 0.45178829107400537,
+      "capacity_negative": 0.19047619047619047,
+      "capacity_abstain": 0.35773551844980417,
+      "baseline_width": 543.451944742628,
+      "capacity_width": 406.4907500970389
+    },
+    {
+      "tau": 300,
+      "rate": 0.1,
+      "baseline_positive": 0.05442176870748299,
+      "baseline_negative": 0.19047619047619047,
+      "baseline_abstain": 0.7551020408163266,
+      "capacity_positive": 0.40596795371640093,
+      "capacity_negative": 0.19246031746031747,
+      "capacity_abstain": 0.40157172882328157,
+      "baseline_width": 543.451944742628,
+      "capacity_width": 406.4907500970389
+    }
+  ],
+  "capacity_source_sha256": {
+    "2024": "0aaae04812cd4ab87a3e346bdf93848a3cc15053fd4dc2a4cf82d2aeac95f12b",
+    "2025": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba"
+  },
+  "hourly_source_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "protocol_sha256": "b7ab0c97acc590e6bd549af212b09e474eef4057d560e194917a1f7fcb8bc796",
+  "script_sha256": "b8bb78f8c814b5cb8083945bd2437702757fe185f077221278644743288034b0",
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "DOPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "EPE": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "GCPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TIDC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    }
+  },
+  "limitations": [
+    "Capacity uses year-end generator inventory and broad fuel-code mapping; all hourly generation peaks must be within reported capacity for scored region-months.",
+    "Feasibility scoring excludes failures using contemporaneous hourly observations and is retrospective mechanism analysis, not deployable screening.",
+    "The capacity set is a conservative necessary outer set with relaxed group allocations, not established sharp.",
+    "All 25 regions were previously opened; labels are fixed-EF proxy and not actual CIF."
+  ]
+}

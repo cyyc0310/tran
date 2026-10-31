@@ -1,0 +1,292 @@
+{
+  "created_utc": "2026-10-23T09:15:25.320343+00:00",
+  "scope": "Two-round V7 development retest; six target regions were viewed in V6. Not independent confirmation.",
+  "model_family": "Sol only",
+  "status": "Executed and audited; coverage-efficiency and method-novelty goals not achieved",
+  "counts": {
+    "source_archives": 714,
+    "target_archives": 612,
+    "source_method_day_rows": 822900,
+    "target_method_day_rows": 421200,
+    "unique_target_region_days": 1080,
+    "source_H1_region_days": 1145,
+    "source_H2_region_days": 965
+  },
+  "verification": {
+    "runner_closure_and_input_hashes": true,
+    "source_choices_recomputed": true,
+    "completed_and_all_prediction_score_seals": true,
+    "analysis_output_hashes_checked": 41,
+    "source_daily_aggregation_review": "results/fuel-transport-v7-verification/independent_source_review.json",
+    "target_daily_aggregation_review": "results/fuel-transport-v7-verification/independent_target_review.json",
+    "bootstrap_review": "results/fuel-transport-v7-verification/independent_bootstrap_review.json"
+  },
+  "tests": {
+    "full_suite_passed": 502,
+    "warnings": 3,
+    "seconds": 102.77,
+    "log": "results/fuel-transport-v7-verification/full_pytest.log",
+    "post_suite_change": "Two plot title/layout lines only; 9 path tests rerun and passed by implementation agent."
+  },
+  "fixed_target_metrics": [
+    {
+      "scope": "1",
+      "role": "primary",
+      "name": "latest-recompose_joint-b1.0",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 62.7006712056,
+      "empirical_coverage90": 0.9274753394,
+      "empirical_width90": 501.106016064,
+      "empirical_interval_score90": 549.6292813487
+    },
+    {
+      "scope": "1",
+      "role": "baseline",
+      "name": "fresh_anchor",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 68.2532251776,
+      "empirical_coverage90": 0.7781842253,
+      "empirical_width90": 281.7025216831,
+      "empirical_interval_score90": 589.741662982
+    },
+    {
+      "scope": "1",
+      "role": "simple_anchor",
+      "name": "fresh_anchor",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 68.2532251776,
+      "empirical_coverage90": 0.7781842253,
+      "empirical_width90": 281.7025216831,
+      "empirical_interval_score90": 589.741662982
+    },
+    {
+      "scope": "1",
+      "role": "unconstrained_baseline",
+      "name": "fresh_anchor",
+      "factor": 1.25,
+      "source_status": "unconstrained",
+      "crps": 69.7406950138,
+      "empirical_coverage90": 0.701185625,
+      "empirical_width90": 236.3501339053,
+      "empirical_interval_score90": 661.3780226398
+    },
+    {
+      "scope": "1",
+      "role": "cqr",
+      "name": "cqr",
+      "factor": 1.0,
+      "source_status": "failed",
+      "crps": null,
+      "empirical_coverage90": 0.5986200277,
+      "empirical_width90": 247.6787026302,
+      "empirical_interval_score90": 2023.0769037108
+    },
+    {
+      "scope": "1",
+      "role": "exact_direct",
+      "name": "latest-direct_analog-b1.0",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 160.4601556662,
+      "empirical_coverage90": 0.7410248121,
+      "empirical_width90": 534.9580516125,
+      "empirical_interval_score90": 1733.9485760417
+    },
+    {
+      "scope": "1",
+      "role": "exact_independent",
+      "name": "latest-recompose_independent-b1.0",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 63.1464577222,
+      "empirical_coverage90": 0.928067728,
+      "empirical_width90": 512.9990000459,
+      "empirical_interval_score90": 558.1201963269
+    },
+    {
+      "scope": "1",
+      "role": "exact_pooled",
+      "name": "latest-pooled_recompose-b1.0",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 62.8833415965,
+      "empirical_coverage90": 0.9278590314,
+      "empirical_width90": 512.3172485638,
+      "empirical_interval_score90": 558.3150013648
+    },
+    {
+      "scope": "2",
+      "role": "primary",
+      "name": "adaptive_mixture-t0.03-recompose_joint-b0.3",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 57.0041408223,
+      "empirical_coverage90": 0.8870046453,
+      "empirical_width90": 342.148015946,
+      "empirical_interval_score90": 418.4929644358
+    },
+    {
+      "scope": "2",
+      "role": "baseline",
+      "name": "fresh_anchor",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 68.2532251776,
+      "empirical_coverage90": 0.7781842253,
+      "empirical_width90": 281.7025216831,
+      "empirical_interval_score90": 589.741662982
+    },
+    {
+      "scope": "2",
+      "role": "simple_anchor",
+      "name": "fresh_anchor",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 68.2532251776,
+      "empirical_coverage90": 0.7781842253,
+      "empirical_width90": 281.7025216831,
+      "empirical_interval_score90": 589.741662982
+    },
+    {
+      "scope": "2",
+      "role": "unconstrained_baseline",
+      "name": "fresh_anchor",
+      "factor": 1.25,
+      "source_status": "unconstrained",
+      "crps": 69.7406950138,
+      "empirical_coverage90": 0.701185625,
+      "empirical_width90": 236.3501339053,
+      "empirical_interval_score90": 661.3780226398
+    },
+    {
+      "scope": "2",
+      "role": "cqr",
+      "name": "cqr",
+      "factor": 1.0,
+      "source_status": "failed",
+      "crps": null,
+      "empirical_coverage90": 0.5986200277,
+      "empirical_width90": 247.6787026302,
+      "empirical_interval_score90": 2023.0769037108
+    },
+    {
+      "scope": "2",
+      "role": "exact_direct",
+      "name": "adaptive_mixture-t0.03-direct_analog-b0.3",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 127.3357339328,
+      "empirical_coverage90": 0.7341823294,
+      "empirical_width90": 464.7249808655,
+      "empirical_interval_score90": 1465.2802225305
+    },
+    {
+      "scope": "2",
+      "role": "exact_independent",
+      "name": "adaptive_mixture-t0.03-recompose_independent-b0.3",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 57.1946682843,
+      "empirical_coverage90": 0.8856410157,
+      "empirical_width90": 338.7136247247,
+      "empirical_interval_score90": 423.9227966338
+    },
+    {
+      "scope": "2",
+      "role": "exact_pooled",
+      "name": "adaptive_mixture-t0.03-pooled_recompose-b0.3",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 58.1279810664,
+      "empirical_coverage90": 0.9742714578,
+      "empirical_width90": 546.4822739707,
+      "empirical_interval_score90": 557.4852636212
+    },
+    {
+      "scope": "joint",
+      "role": "primary",
+      "name": "adaptive_mixture-t0.03-recompose_joint-b0.3",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 57.0041408223,
+      "empirical_coverage90": 0.8870046453,
+      "empirical_width90": 342.148015946,
+      "empirical_interval_score90": 418.4929644358
+    },
+    {
+      "scope": "joint",
+      "role": "baseline",
+      "name": "fresh_anchor",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 68.2532251776,
+      "empirical_coverage90": 0.7781842253,
+      "empirical_width90": 281.7025216831,
+      "empirical_interval_score90": 589.741662982
+    },
+    {
+      "scope": "joint",
+      "role": "simple_anchor",
+      "name": "fresh_anchor",
+      "factor": 1.5,
+      "source_status": "failed",
+      "crps": 68.2532251776,
+      "empirical_coverage90": 0.7781842253,
+      "empirical_width90": 281.7025216831,
+      "empirical_interval_score90": 589.741662982
+    },
+    {
+      "scope": "joint",
+      "role": "unconstrained_baseline",
+      "name": "fresh_anchor",
+      "factor": 1.25,
+      "source_status": "unconstrained",
+      "crps": 69.7406950138,
+      "empirical_coverage90": 0.701185625,
+      "empirical_width90": 236.3501339053,
+      "empirical_interval_score90": 661.3780226398
+    },
+    {
+      "scope": "joint",
+      "role": "cqr",
+      "name": "cqr",
+      "factor": 1.0,
+      "source_status": "failed",
+      "crps": null,
+      "empirical_coverage90": 0.5986200277,
+      "empirical_width90": 247.6787026302,
+      "empirical_interval_score90": 2023.0769037108
+    }
+  ],
+  "remaining_research": {
+    "same_donor_additive_anchor": "Designed, NOT run; necessary attribution control.",
+    "actual_target_mix_oracle": "Proposed diagnostic only, NOT run for V7.",
+    "future_independent_holdout": "Not yet evaluated.",
+    "China_and_real_release_vintages": "Not validated."
+  },
+  "artifacts_sha256": {
+    "docs/FAILURE_DIAGNOSIS_V7.md": "386c63671a879e4a2f4012d99af772ff50ba295b187cbbb8420a4bf316c332de",
+    "docs/FUEL_TRANSPORT_V7_RESULTS.md": "c2302a59dc609c8617d174a3d1f97a0ba03244163b619aaa9820146179d38079",
+    "docs/V7_LITERATURE_AND_HYPOTHESES.md": "cccc9f29cf757746c4e6d3b79b74903d7a11a6c9c4365e5265c0eb5f09e564f4",
+    "results/fuel-transport-v7/completed.json": "f110c374758305fae15513e09ab9d216ff6ae435dbafd59adafcbca98d9f8f56",
+    "results/fuel-transport-v7/prefit_freeze.json": "b71d95b7ce7c050c01918e2ff8453abba9cbc21614b65f34daab50cef7f1877c",
+    "results/fuel-transport-v7/source_choices.json": "ac74bf82b55c26febb17275e00d99ccb1679a197541a3ea1cdff512d8e2a363c",
+    "results/fuel-transport-v7/source_prediction_seal.json": "95115da2f9ddc345d073f88460af60a94edbd512752c6d429f594858a2dac584",
+    "results/fuel-transport-v7/source_scores/score_seal.json": "253eff87727febb1cc29675a4780b491883c8656d1f002640af78f836b9a8166",
+    "results/fuel-transport-v7/target_prediction_seal.json": "463e9ff840bc0e9133e0025869e908876793ed09d6a15dac2469c12a4074ea16",
+    "results/fuel-transport-v7/target_scores/score_seal.json": "eee59e19e55b323913f71fa6273179f94432559fa9c3e325447c93fb5d90c8b4",
+    "results/fuel-transport-v7-analysis/analysis_metadata.json": "91f63860ad6fbd3d366ae048bb1b9c372d4f821734278355e02c26c68c68b2ad",
+    "results/fuel-transport-v7-analysis/extratrees_transparency_metadata.json": "514061460259565e2da8e214f6a9bdca0c18f7792da26504431fd704d911dad1",
+    "results/fuel-transport-v7-path-diagnostics/diagnostics_metadata.json": "aa689198127e1e0ffcbd64c77a52e28557b33e95df4f29d0d8803bc03c3e420b",
+    "results/fuel-transport-v7-source-analysis/analysis_metadata.json": "fbdd34bc6697a7b1cd23c47552b072661f67f8d1f4fb1b7561b0102d8ae33f32",
+    "results/fuel-transport-v7-verification/full_pytest.log": "1422c28afdeb142c77b13fb0c28cd55a50fb9c3b70bd3a5624f6260d61db51e2",
+    "results/fuel-transport-v7-verification/independent_bootstrap_review.json": "3e6f8479363001cfbfd62193d195e6bf86a4b5f81b696100f62cc5a03a4fdb5c",
+    "results/fuel-transport-v7-verification/independent_source_review.json": "7ab581d88117f9ddb9b0d4db770c9a5bd27c5cbc10bf504011c1ee5d7310a88d",
+    "results/fuel-transport-v7-verification/independent_target_review.json": "fa3b9c6d6f64c318a5fcf11c1f7f02bfaf67340ac07ca1051a641107fab4dd79",
+    "results/fuel-transport-v7-verification/source_run.log": "0c8cfb1c96542666f826c0d3646ceeee8c8a7f199b9c3fdf335f7c9fd53a4b58",
+    "results/fuel-transport-v7-verification/target_run.log": "5b519583289069f9e5b2ca3b72e46534020a40c6b88a5522b8b099857092be2e"
+  }
+}

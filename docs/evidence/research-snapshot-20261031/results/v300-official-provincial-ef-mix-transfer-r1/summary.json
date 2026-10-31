@@ -1,0 +1,62 @@
+{
+  "status": "OFFICIAL_ANNUAL_CO2_FACTOR_COLD_START_TRANSFER_RETROSPECTIVE_MIX_VINTAGE_UNVERIFIED",
+  "n_provinces": 30,
+  "training_rows_per_fold": 58,
+  "training_targets": [
+    2021,
+    2022
+  ],
+  "test_target_year": 2023,
+  "feature_mix_years": {
+    "target_2021": 2020,
+    "target_2022": 2021,
+    "target_2023": 2022
+  },
+  "models": [
+    {
+      "method": "global_mean",
+      "mae": 0.11214862068965517,
+      "rmse": 0.15102411698604626,
+      "mean_signed_error": 0.023089999999999958,
+      "p90_absolute_error": 0.18951568965517263,
+      "mae_reduction_vs_global_pct": 0.0
+    },
+    {
+      "method": "full8_mix",
+      "mae": 0.05024061213307204,
+      "rmse": 0.08678446609309355,
+      "mean_signed_error": 0.01287234904224031,
+      "p90_absolute_error": 0.11605102051307475,
+      "mae_reduction_vs_global_pct": 55.20175654045619
+    },
+    {
+      "method": "coarse5_mix",
+      "mae": 0.04927352663292728,
+      "rmse": 0.07701988541660491,
+      "mean_signed_error": 0.03397888353387156,
+      "p90_absolute_error": 0.12173578983254328,
+      "mae_reduction_vs_global_pct": 56.064081457336755
+    },
+    {
+      "method": "local_2022_delayed_reference",
+      "mae": 0.027626666666666667,
+      "rmse": 0.03361390585258825,
+      "mean_signed_error": 0.011466666666666672,
+      "p90_absolute_error": 0.05518000000000001,
+      "mae_reduction_vs_global_pct": 75.36602189418188
+    }
+  ],
+  "median_abs_2023_factor_drift_kgco2_kwh": 0.022900000000000018,
+  "max_abs_2023_factor_drift_kgco2_kwh": 0.07479999999999998,
+  "protocol_sha256": "764beb3405d6442bc809aaa3dee7e11b3b6353004cd0dc246c4fb7968b94c5aa",
+  "factor_table_sha256": "d29b51e591bd81722443508b4afd9bac5d2740da56f4052029c6bb30efc15b19",
+  "ember_input_sha256": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+  "script_sha256": "e7c2f90cfbc7a4b45a21ab3a085128028fb26c8d9dd8582e281ba71b009b8149",
+  "limitations": [
+    "Official target is a province-average electricity CO2 factor for consumption accounting, not hourly generation CIF.",
+    "Only three official annual target vintages; the 2023 year is the sole forward target after 2021-2022 training.",
+    "Ember monthly historical source mix is retrospective and has no verified as-of vintage in this repository.",
+    "No prediction of hourly shape, hourly coverage, or threshold exceedance is evaluated.",
+    "LOPO over 30 provinces is a spatial cold-start check, not an independent external-country validation."
+  ]
+}

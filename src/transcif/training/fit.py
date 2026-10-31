@@ -7,39 +7,10 @@ import numpy as np
 import torch
 
 from transcif.data.dataset import stack_inputs
-from transcif.evaluation.metrics import ensemble_crps
+from transcif.evaluation.metrics import source_validation_metrics
+from transcif.inference import predict
 from transcif.models.dispatch import ProbabilisticDispatchNet
 from transcif.training.losses import dispatch_loss, point_dispatch_loss, joint_dispatch_loss
-
-
-def predict(model, examples, num_scenarios=64, seed=0, batch_size=32,
-            latent_scale=1., deterministic=False):
-    if not examples:
-        raise ValueError("no public examples to predict")
-    model.eval()
-    device = next(model.parameters()).device
-    generator = torch.Generator(device=device).manual_seed(seed)
-    outputs = {key: [] for key in ("cif", "generation", "demand", "unserved", "curtailment")}
-    explicit_point = model.point_forecast or model.point_estimator != "mean"
-    if explicit_point:
-        outputs["point_cif"] = []
-    with torch.no_grad():
-        for start in range(0, len(examples), batch_size):
-            forecast = model(stack_inputs(examples[start:start + batch_size], device),
-                             num_scenarios, generator, latent_scale, deterministic)
-            for key in outputs:
-                if key != "point_cif":
-                    outputs[key].append(getattr(forecast, key).cpu().numpy())
-            if explicit_point:
-                if model.point_estimator == "physical":
-                    point = forecast if deterministic else model(
-                        stack_inputs(examples[start:start + batch_size], device), 2, deterministic=True)
-                    point_value = point.cif[:, 0]
-                else:
-                    point_value = (forecast.cif.quantile(.5, dim=1) if model.point_estimator == "median"
-                                   else forecast.cif.mean(1))
-                outputs["point_cif"].append(point_value.cpu().numpy())
-    return {key: np.concatenate(values) for key, values in outputs.items()}
 
 
 def fit(train_examples, train_labels, validation_examples, validation_labels,
@@ -86,7 +57,6 @@ def fit(train_examples, train_labels, validation_examples, validation_labels,
     truth_val = np.stack([y["cif"] for y in validation_labels])
     region_indices = {name: np.array([i for i, e in enumerate(train_examples) if e.region == name])
                       for name in sorted({e.region for e in train_examples})}
-    val_regions = sorted({e.region for e in validation_examples})
     best, best_step, best_state = float("inf"), 0, None
     history = []
     interval = max(1, min(25, steps // 5))
@@ -122,18 +92,10 @@ def fit(train_examples, train_labels, validation_examples, validation_labels,
         optimizer.step()
         if step % interval == 0 or step == steps:
             validation = predict(model, validation_examples, num_scenarios=32, seed=seed + 10000)
-            point_val = validation.get("point_cif", validation["cif"].mean(1))
-            val_metrics = {"crps": ensemble_crps(truth_val, validation["cif"]),
-                "mae": float(np.abs(truth_val - point_val).mean()),
-                "rmse": float(np.square(truth_val - point_val).mean()**.5)}
-            # MAE/RMSE checkpoint selection weights source regions equally.
-            scores = []
-            for name in val_regions:
-                mask = np.array([e.region == name for e in validation_examples])
-                error = truth_val[mask] - point_val[mask]
-                scores.append(float(np.abs(error).mean()) if selection_metric == "mae"
-                              else float(np.square(error).mean()**.5))
-            score = val_metrics["crps"] if selection_metric == "crps" else float(np.mean(scores))
+            val_metrics, macro = source_validation_metrics(
+                truth_val, validation, [e.region for e in validation_examples])
+            # Keep the established protocol: pooled CRPS, region-macro point errors.
+            score = val_metrics["crps"] if selection_metric == "crps" else macro[selection_metric]
             history.append({"step": step, **{"source_validation_" + k: v for k, v in val_metrics.items()},
                 "selection_score": score, "gradient_norm": float(grad_norm),
                 "lr": optimizer.param_groups[0]["lr"], **diagnostic})

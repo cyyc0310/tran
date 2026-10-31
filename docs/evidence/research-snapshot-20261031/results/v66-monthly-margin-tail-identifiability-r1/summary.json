@@ -1,0 +1,197 @@
+{
+  "status": "EXACT_POSTHOC_SHARP_BOUNDS_FROM_MONTHLY_MARGINS_ONLY_NOT_FORECAST",
+  "province_month_threshold_rows": 15996,
+  "province_months": 3999,
+  "provinces": [
+    "Anhui",
+    "Beijing",
+    "Chongqing",
+    "Fujian",
+    "Gansu",
+    "Guangdong",
+    "Guangxi",
+    "Guizhou",
+    "Hainan",
+    "Hebei",
+    "Heilongjiang",
+    "Henan",
+    "Hubei",
+    "Hunan",
+    "Inner Mongolia",
+    "Jiangsu",
+    "Jiangxi",
+    "Jilin",
+    "Liaoning",
+    "Ningxia",
+    "Qinghai",
+    "Shaanxi",
+    "Shandong",
+    "Shanghai",
+    "Shanxi",
+    "Sichuan",
+    "Tianjin",
+    "Tibet (Xizang)",
+    "Xinjiang",
+    "Yunnan",
+    "Zhejiang"
+  ],
+  "period": [
+    "2016-01",
+    "2026-09"
+  ],
+  "threshold_summary": [
+    {
+      "tau_g_kwh": 100,
+      "province_months": 3999,
+      "provinces": 31,
+      "mean_weighted_cif": 605.5220534431041,
+      "mean_k_width": 729.4186046511628,
+      "median_k_width": 743.0,
+      "certified_zero_months": 0,
+      "certified_positive_months": 3748,
+      "positive_excess_mean_months": 3748,
+      "negative_or_zero_excess_months": 251,
+      "mean_fraction_width": 0.9986298931738955
+    },
+    {
+      "tau_g_kwh": 300,
+      "province_months": 3999,
+      "provinces": 31,
+      "mean_weighted_cif": 605.5220534431041,
+      "mean_k_width": 729.4186046511628,
+      "median_k_width": 743.0,
+      "certified_zero_months": 0,
+      "certified_positive_months": 3475,
+      "positive_excess_mean_months": 3475,
+      "negative_or_zero_excess_months": 524,
+      "mean_fraction_width": 0.9986298931738955
+    },
+    {
+      "tau_g_kwh": 600,
+      "province_months": 3999,
+      "provinces": 31,
+      "mean_weighted_cif": 605.5220534431041,
+      "mean_k_width": 686.5546386596649,
+      "median_k_width": 743.0,
+      "certified_zero_months": 235,
+      "certified_positive_months": 2412,
+      "positive_excess_mean_months": 2412,
+      "negative_or_zero_excess_months": 1587,
+      "mean_fraction_width": 0.9399457167435122
+    },
+    {
+      "tau_g_kwh": 900,
+      "province_months": 3999,
+      "provinces": 31,
+      "mean_weighted_cif": 605.5220534431041,
+      "mean_k_width": 686.5546386596649,
+      "median_k_width": 743.0,
+      "certified_zero_months": 235,
+      "certified_positive_months": 154,
+      "positive_excess_mean_months": 154,
+      "negative_or_zero_excess_months": 3845,
+      "mean_fraction_width": 0.9399457167435122
+    }
+  ],
+  "case_summary": [
+    {
+      "tau_g_kwh": 100,
+      "case": "mixed_support_nonpositive_month_excess",
+      "months": 251,
+      "mean_k_width": 730.6653386454183,
+      "certified_zero_months": 0,
+      "certified_positive_months": 0
+    },
+    {
+      "tau_g_kwh": 100,
+      "case": "mixed_support_positive_month_excess",
+      "months": 3748,
+      "mean_k_width": 729.3351120597652,
+      "certified_zero_months": 0,
+      "certified_positive_months": 3748
+    },
+    {
+      "tau_g_kwh": 300,
+      "case": "mixed_support_nonpositive_month_excess",
+      "months": 524,
+      "mean_k_width": 729.6717557251908,
+      "certified_zero_months": 0,
+      "certified_positive_months": 0
+    },
+    {
+      "tau_g_kwh": 300,
+      "case": "mixed_support_positive_month_excess",
+      "months": 3475,
+      "mean_k_width": 729.3804316546763,
+      "certified_zero_months": 0,
+      "certified_positive_months": 3475
+    },
+    {
+      "tau_g_kwh": 600,
+      "case": "mixed_support_nonpositive_month_excess",
+      "months": 1352,
+      "mean_k_width": 728.8343195266273,
+      "certified_zero_months": 0,
+      "certified_positive_months": 0
+    },
+    {
+      "tau_g_kwh": 600,
+      "case": "mixed_support_positive_month_excess",
+      "months": 2412,
+      "mean_k_width": 729.7462686567164,
+      "certified_zero_months": 0,
+      "certified_positive_months": 2412
+    },
+    {
+      "tau_g_kwh": 600,
+      "case": "no_positive_excess_fuel",
+      "months": 235,
+      "mean_k_width": 0.0,
+      "certified_zero_months": 235,
+      "certified_positive_months": 0
+    },
+    {
+      "tau_g_kwh": 900,
+      "case": "mixed_support_nonpositive_month_excess",
+      "months": 3610,
+      "mean_k_width": 729.3113573407202,
+      "certified_zero_months": 0,
+      "certified_positive_months": 0
+    },
+    {
+      "tau_g_kwh": 900,
+      "case": "mixed_support_positive_month_excess",
+      "months": 154,
+      "mean_k_width": 731.9350649350649,
+      "certified_zero_months": 0,
+      "certified_positive_months": 154
+    },
+    {
+      "tau_g_kwh": 900,
+      "case": "no_positive_excess_fuel",
+      "months": 235,
+      "mean_k_width": 0.0,
+      "certified_zero_months": 235,
+      "certified_positive_months": 0
+    }
+  ],
+  "ef_gco2e_kwh": {
+    "Coal": 1000,
+    "Gas": 400,
+    "Other fossil": 400,
+    "Nuclear": 0,
+    "Hydro": 0,
+    "Wind": 0,
+    "Solar": 0,
+    "Bioenergy": 0
+  },
+  "input_sha256": "4a146804b398a65802480f09c1497a3d3ab7fb75c96882b41ae3de65c0c2d9e3",
+  "script_sha256": "0e96ee637404114d84cb6648afdbe25777f76c708b0c228dd62ac51c9274de17",
+  "protocol_sha256": "3be0ce4585ed41803346919bb2c4c11fda8eaa7b4a8e0d286150dc586491ff8f",
+  "limitations": [
+    "Monthly Ember margins are retrospective estimates; no release-vintage forecast claim.",
+    "Assumes only nonnegative hourly fuel allocations and positive hourly total generation; no capacity, ramp, daily margin, or minimum-output constraints.",
+    "The exact set is conditional on fixed illustrative fuel emission factors.",
+    "This is an identifiability result, not empirical hourly tail coverage or forecast skill."
+  ]
+}

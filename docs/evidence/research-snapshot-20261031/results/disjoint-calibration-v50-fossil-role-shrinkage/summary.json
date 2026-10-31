@@ -1,0 +1,142 @@
+{
+  "status": "COMPLETE_FOSSIL_ROLE_INCREMENT_SHRINKAGE",
+  "protocol": "docs/V50_FOSSIL_ROLE_SHRINKAGE_PROTOCOL.md",
+  "protocol_sha256": "a6905d0033fdbc00bd2e1be6a38e5875de679e6362251c2033aef3d42071293f",
+  "script_sha256": "9331a742ced4cae0802f63fdef670f971ee6d29edc46b70fddb3212897205b29",
+  "source_units": 10,
+  "prediction_packages_opened": 70,
+  "external_label_packages_opened": 10,
+  "target_prediction_packages_opened": 0,
+  "target_or_unseen_scores_opened": 0,
+  "point_or_risk_refits": 0,
+  "source_heldout_wls_fits": 70,
+  "source_heldout_rows": 490,
+  "lag_days": 90,
+  "full_mix_EF_definition": "mean fixed-EF intensity of three latest legally released monthly eight-fuel records at each query date",
+  "composition_groups": {
+    "fossil": [
+      "coal",
+      "gas",
+      "oil",
+      "other"
+    ],
+    "variable_renewable": [
+      "wind",
+      "solar"
+    ],
+    "nuclear": [
+      "nuclear"
+    ],
+    "reference": "hydro"
+  },
+  "fossil_increment_shrinkage": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "daily_source_bias_mae": {
+    "no_correction": 138.40831274489403,
+    "global_correction": 136.56183643526512,
+    "daily_asof_mix_correction": 88.92677864832932,
+    "mix_beats_global_source_count": 7
+  },
+  "source_macro_metrics": [
+    {
+      "method": "no_correction_factor2_anchor",
+      "hourly_crps": 125.13579218441456,
+      "daily_mean_crps": 123.49853821898088,
+      "daily_level_mae": 144.61201736417388,
+      "coverage90": 0.8849718932386053,
+      "width90": 527.9794726782422,
+      "interval_score90": 712.1641612105279,
+      "lower_miss": 7.38388720292733e-05,
+      "upper_miss": 0.11495426788936554,
+      "fraction_clipped_after_shift": 0.05659207922311699
+    },
+    {
+      "method": "global_source_bias_shift",
+      "hourly_crps": 112.8013306380969,
+      "daily_mean_crps": 111.46598169938632,
+      "daily_level_mae": 141.69231152829354,
+      "coverage90": 0.8482791479458417,
+      "width90": 518.3583570404032,
+      "interval_score90": 784.4616311830555,
+      "lower_miss": 0.12375524559333531,
+      "upper_miss": 0.027965606460822988,
+      "fraction_clipped_after_shift": 0.0010971750064344545
+    },
+    {
+      "method": "ef_plus_fossil_increment_0.00",
+      "hourly_crps": 71.42928724075017,
+      "daily_mean_crps": 68.01667230986527,
+      "daily_level_mae": 93.46876574788641,
+      "coverage90": 0.9526737177867339,
+      "width90": 478.64098302819065,
+      "interval_score90": 510.4179803661592,
+      "lower_miss": 0.03171438841312622,
+      "upper_miss": 0.015611893800139779,
+      "fraction_clipped_after_shift": 0.10051477283907873
+    },
+    {
+      "method": "ef_plus_fossil_increment_0.25",
+      "hourly_crps": 63.34925051976312,
+      "daily_mean_crps": 59.380723063247956,
+      "daily_level_mae": 83.3724562551211,
+      "coverage90": 0.9613596789540779,
+      "width90": 482.641567566865,
+      "interval_score90": 500.1510634190985,
+      "lower_miss": 0.027394248094358576,
+      "upper_miss": 0.011246072951563565,
+      "fraction_clipped_after_shift": 0.060234935355011655
+    },
+    {
+      "method": "ef_plus_fossil_increment_0.50",
+      "hourly_crps": 59.74379144903215,
+      "daily_mean_crps": 55.24934279370384,
+      "daily_level_mae": 76.58247763274416,
+      "coverage90": 0.9491898041418081,
+      "width90": 485.3118179169801,
+      "interval_score90": 511.46292498538014,
+      "lower_miss": 0.042121999181066426,
+      "upper_miss": 0.008688196677125528,
+      "fraction_clipped_after_shift": 0.025066872364937744
+    },
+    {
+      "method": "ef_plus_fossil_increment_0.75",
+      "hourly_crps": 60.44506736267931,
+      "daily_mean_crps": 56.184345333367006,
+      "daily_level_mae": 72.42129076948854,
+      "coverage90": 0.8984290238243877,
+      "width90": 485.3867661771663,
+      "interval_score90": 556.2372157932319,
+      "lower_miss": 0.09413285875308994,
+      "upper_miss": 0.007438117422522278,
+      "fraction_clipped_after_shift": 0.017987336853803583
+    },
+    {
+      "method": "ef_plus_fossil_increment_1.00",
+      "hourly_crps": 64.52938159568824,
+      "daily_mean_crps": 60.829068763447445,
+      "daily_level_mae": 72.37548529984454,
+      "coverage90": 0.8634333802653151,
+      "width90": 483.74039885930426,
+      "interval_score90": 628.5510547803731,
+      "lower_miss": 0.12952020875366124,
+      "upper_miss": 0.007046410981023774,
+      "fraction_clipped_after_shift": 0.02056074406613606
+    }
+  ],
+  "frozen_input_hashes": {
+    "freeze": "6fd51f0c32cab38dfb59db135521411b44a830dfdcbdcfc3ec43a1fbc09687f3",
+    "prediction_seal": "07580823d07b7e47906d7630a384da235fc25e2f0720b82dfd7794dfbb17ce75",
+    "calibration_seal": "7d883be2afb9032637a14bb9f312520ed11b70440ef5ec1d222fa623eec6d60d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v4-data/monthly.csv": "f079ca2f5899e4ef4f2a4cd21c5601315da62ffb4aced609a17de6932a24e8a9",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/results/external-v5-data/monthly.csv": "dfff10a6091f208432557f54dc84b6216e7a05888f3f7074186a92d2d61605ad"
+  },
+  "held_source_fold_metrics_sha256": "13e6bd6c171a6a0fd75949d69faf76877664f1ed13a9f08d827432c9948b733a",
+  "held_source_bias_sha256": "89b77e3363970f66f104526742f1ed35f280d7289e2d66f947276daca4bb8727",
+  "source_macro_metrics_sha256": "f4d46210b360ec6e05c5049e4735251d672995efeee0d4f40863ef1a04a4e435",
+  "interpretation_limit": "Ten previously used sources only; source-held-out descriptive evidence, not China transfer, novel method proof, or a coverage guarantee."
+}

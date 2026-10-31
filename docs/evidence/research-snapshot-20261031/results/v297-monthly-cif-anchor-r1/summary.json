@@ -1,0 +1,319 @@
+{
+  "status": "ORACLE_MONTHLY_CIF_ANCHOR_INFORMATION_VALUE_NOT_FORECAST",
+  "region_months": 358,
+  "scored_rows": 2148,
+  "mean_width_by_tau": [
+    {
+      "tau": 600,
+      "coarse_width": 541.2374301675977,
+      "mean_anchor_0_width": 223.8687150837989,
+      "mean_anchor_5_width": 365.35474860335194,
+      "mean_anchor_10_width": 372.56424581005587,
+      "threshold_side_width": 227.41340782122904,
+      "detailed_width": 223.8296089385475
+    },
+    {
+      "tau": 900,
+      "coarse_width": 426.4581005586592,
+      "mean_anchor_0_width": 187.84078212290504,
+      "mean_anchor_5_width": 322.68435754189943,
+      "mean_anchor_10_width": 325.4413407821229,
+      "threshold_side_width": 146.20670391061452,
+      "detailed_width": 140.00279329608938
+    }
+  ],
+  "frontier": [
+    {
+      "tau": 600,
+      "rate": 0.01,
+      "coarse_width": 554.8375461109483,
+      "coarse_positive": 0.0,
+      "coarse_negative": 0.19047619047619047,
+      "coarse_abstain": 0.8095238095238095,
+      "mean_anchor_0_width": 211.21066966659072,
+      "mean_anchor_0_positive": 0.06926406926406926,
+      "mean_anchor_0_negative": 0.560064935064935,
+      "mean_anchor_0_abstain": 0.37067099567099565,
+      "mean_anchor_5_width": 368.6340179000893,
+      "mean_anchor_5_positive": 0.0670995670995671,
+      "mean_anchor_5_negative": 0.19047619047619047,
+      "mean_anchor_5_abstain": 0.7424242424242424,
+      "mean_anchor_10_width": 376.0042651723103,
+      "mean_anchor_10_positive": 0.0670995670995671,
+      "mean_anchor_10_negative": 0.19047619047619047,
+      "mean_anchor_10_abstain": 0.7424242424242424,
+      "threshold_side_width": 214.19416533758638,
+      "threshold_side_positive": 0.04285714285714286,
+      "threshold_side_negative": 0.560064935064935,
+      "threshold_side_abstain": 0.39707792207792203,
+      "detailed_width": 211.1709871269082,
+      "detailed_positive": 0.06926406926406926,
+      "detailed_negative": 0.560064935064935,
+      "detailed_abstain": 0.37067099567099565
+    },
+    {
+      "tau": 600,
+      "rate": 0.05,
+      "coarse_width": 554.8375461109483,
+      "coarse_positive": 0.0,
+      "coarse_negative": 0.19047619047619047,
+      "coarse_abstain": 0.8095238095238095,
+      "mean_anchor_0_width": 211.21066966659072,
+      "mean_anchor_0_positive": 0.047619047619047616,
+      "mean_anchor_0_negative": 0.5703463203463203,
+      "mean_anchor_0_abstain": 0.38203463203463206,
+      "mean_anchor_5_width": 368.6340179000893,
+      "mean_anchor_5_positive": 0.04523809523809524,
+      "mean_anchor_5_negative": 0.19047619047619047,
+      "mean_anchor_5_abstain": 0.7642857142857143,
+      "mean_anchor_10_width": 376.0042651723103,
+      "mean_anchor_10_positive": 0.04523809523809524,
+      "mean_anchor_10_negative": 0.19047619047619047,
+      "mean_anchor_10_abstain": 0.7642857142857143,
+      "threshold_side_width": 214.19416533758638,
+      "threshold_side_positive": 0.02619047619047619,
+      "threshold_side_negative": 0.5703463203463203,
+      "threshold_side_abstain": 0.40346320346320347,
+      "detailed_width": 211.1709871269082,
+      "detailed_positive": 0.047619047619047616,
+      "detailed_negative": 0.5733225108225108,
+      "detailed_abstain": 0.3790584415584416
+    },
+    {
+      "tau": 600,
+      "rate": 0.1,
+      "coarse_width": 554.8375461109483,
+      "coarse_positive": 0.0,
+      "coarse_negative": 0.19047619047619047,
+      "coarse_abstain": 0.8095238095238095,
+      "mean_anchor_0_width": 211.21066966659072,
+      "mean_anchor_0_positive": 0.03571428571428571,
+      "mean_anchor_0_negative": 0.6087662337662338,
+      "mean_anchor_0_abstain": 0.3555194805194805,
+      "mean_anchor_5_width": 368.6340179000893,
+      "mean_anchor_5_positive": 0.03571428571428571,
+      "mean_anchor_5_negative": 0.2668264275407133,
+      "mean_anchor_5_abstain": 0.697459286745001,
+      "mean_anchor_10_width": 376.0042651723103,
+      "mean_anchor_10_positive": 0.03333333333333333,
+      "mean_anchor_10_negative": 0.22402597402597405,
+      "mean_anchor_10_abstain": 0.7426406926406927,
+      "threshold_side_width": 214.19416533758638,
+      "threshold_side_positive": 0.016666666666666666,
+      "threshold_side_negative": 0.6087662337662338,
+      "threshold_side_abstain": 0.3745670995670996,
+      "detailed_width": 211.1709871269082,
+      "detailed_positive": 0.03571428571428571,
+      "detailed_negative": 0.6087662337662338,
+      "detailed_abstain": 0.3555194805194805
+    },
+    {
+      "tau": 900,
+      "rate": 0.01,
+      "coarse_width": 439.0716188469008,
+      "coarse_positive": 0.0,
+      "coarse_negative": 0.19047619047619047,
+      "coarse_abstain": 0.8095238095238095,
+      "mean_anchor_0_width": 179.7834576972735,
+      "mean_anchor_0_positive": 0.0,
+      "mean_anchor_0_negative": 0.560064935064935,
+      "mean_anchor_0_abstain": 0.4399350649350649,
+      "mean_anchor_5_width": 330.83192355889724,
+      "mean_anchor_5_positive": 0.0,
+      "mean_anchor_5_negative": 0.19047619047619047,
+      "mean_anchor_5_abstain": 0.8095238095238095,
+      "mean_anchor_10_width": 333.4693865345181,
+      "mean_anchor_10_positive": 0.0,
+      "mean_anchor_10_negative": 0.19047619047619047,
+      "mean_anchor_10_abstain": 0.8095238095238095,
+      "threshold_side_width": 142.1741323004481,
+      "threshold_side_positive": 0.0,
+      "threshold_side_negative": 0.7034632034632035,
+      "threshold_side_abstain": 0.29653679653679654,
+      "detailed_width": 137.25450748082326,
+      "detailed_positive": 0.0,
+      "detailed_negative": 0.7034632034632035,
+      "detailed_abstain": 0.29653679653679654
+    },
+    {
+      "tau": 900,
+      "rate": 0.05,
+      "coarse_width": 439.0716188469008,
+      "coarse_positive": 0.0,
+      "coarse_negative": 0.19047619047619047,
+      "coarse_abstain": 0.8095238095238095,
+      "mean_anchor_0_width": 179.7834576972735,
+      "mean_anchor_0_positive": 0.0,
+      "mean_anchor_0_negative": 0.5792748917748918,
+      "mean_anchor_0_abstain": 0.4207251082251083,
+      "mean_anchor_5_width": 330.83192355889724,
+      "mean_anchor_5_positive": 0.0,
+      "mean_anchor_5_negative": 0.22281488352916923,
+      "mean_anchor_5_abstain": 0.7771851164708308,
+      "mean_anchor_10_width": 333.4693865345181,
+      "mean_anchor_10_positive": 0.0,
+      "mean_anchor_10_negative": 0.20508658008658007,
+      "mean_anchor_10_abstain": 0.7949134199134198,
+      "threshold_side_width": 142.1741323004481,
+      "threshold_side_positive": 0.0,
+      "threshold_side_negative": 0.7034632034632035,
+      "threshold_side_abstain": 0.29653679653679654,
+      "detailed_width": 137.25450748082326,
+      "detailed_positive": 0.0,
+      "detailed_negative": 0.7034632034632035,
+      "detailed_abstain": 0.29653679653679654
+    },
+    {
+      "tau": 900,
+      "rate": 0.1,
+      "coarse_width": 439.0716188469008,
+      "coarse_positive": 0.0,
+      "coarse_negative": 0.22448979591836735,
+      "coarse_abstain": 0.7755102040816326,
+      "mean_anchor_0_width": 179.7834576972735,
+      "mean_anchor_0_positive": 0.0,
+      "mean_anchor_0_negative": 0.6305916305916306,
+      "mean_anchor_0_abstain": 0.3694083694083694,
+      "mean_anchor_5_width": 330.83192355889724,
+      "mean_anchor_5_positive": 0.0,
+      "mean_anchor_5_negative": 0.31289940218511647,
+      "mean_anchor_5_abstain": 0.6871005978148835,
+      "mean_anchor_10_width": 333.4693865345181,
+      "mean_anchor_10_positive": 0.0,
+      "mean_anchor_10_negative": 0.3085703978561122,
+      "mean_anchor_10_abstain": 0.6914296021438878,
+      "threshold_side_width": 142.1741323004481,
+      "threshold_side_positive": 0.0,
+      "threshold_side_negative": 0.7252886002886003,
+      "threshold_side_abstain": 0.2747113997113997,
+      "detailed_width": 137.25450748082326,
+      "detailed_positive": 0.0,
+      "detailed_negative": 0.7252886002886003,
+      "detailed_abstain": 0.2747113997113997
+    }
+  ],
+  "hourly_source_sha256": {
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2022.csv": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2022.csv": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2023.csv": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2023.csv": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jan_jun_2024.csv": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/tran-stable/data_2023/raw_eia930/gen_jul_dec_2024.csv": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1",
+    "/Users/cyyc0310/Documents/我为我导扛大旗/项目/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f"
+  },
+  "capacity_source_sha256": {
+    "2023": "1447e23e608bea1523961542a90eb93ea86715067a37f211282541461049b46f",
+    "2024": "0aaae04812cd4ab87a3e346bdf93848a3cc15053fd4dc2a4cf82d2aeac95f12b"
+  },
+  "source_audits": {
+    "AVA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "BANC": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "BPAT": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FPL": {
+      "eligible_months": 50,
+      "dropped_months": 4
+    },
+    "JEA": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "MISO": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "NWMT": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "NYIS": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCEG": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "SEC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "FMPP": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GRID": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "IID": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "LDWP": {
+      "eligible_months": 52,
+      "dropped_months": 2
+    },
+    "PSEI": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "TEC": {
+      "eligible_months": 51,
+      "dropped_months": 3
+    },
+    "CHPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "DOPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "EPE": {
+      "eligible_months": 53,
+      "dropped_months": 1
+    },
+    "GCPD": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "GVL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "SCL": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TIDC": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    },
+    "TPWR": {
+      "eligible_months": 54,
+      "dropped_months": 0
+    }
+  },
+  "protocol_sha256": "02584888c16086bbd8fd16f579e52aaae73ffee47dec06cbc3444d70d6e2c25b",
+  "script_sha256": "2b911e6d757a0804bf567c5668e71cbb600d4ad91e2d51c9827a6edfb0d4034d",
+  "limitations": [
+    "The monthly CIF anchor is oracle-computed from the same EIA hourly fuel proxy; not an independent or presently verified China field.",
+    "Fixed EIA emission-factor proxy and retrospectively screened V97 cohort; no actual CIF or untouched region.",
+    "The set is sharp only under the declared two-block allocation, shared group-capacity, exact margin and strict threshold contract."
+  ]
+}

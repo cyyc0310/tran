@@ -1,0 +1,142 @@
+{
+  "status": "COMPLETE_PHYSICAL_PARTIAL_IDENTIFICATION_AUDIT",
+  "regions": 7,
+  "complete_region_months": 203,
+  "complete_hours": 148104,
+  "months_per_region": [
+    {
+      "region": "BPAT",
+      "months": 26
+    },
+    {
+      "region": "CISO",
+      "months": 30
+    },
+    {
+      "region": "ERCO",
+      "months": 31
+    },
+    {
+      "region": "FPL",
+      "months": 21
+    },
+    {
+      "region": "ISNE",
+      "months": 29
+    },
+    {
+      "region": "MISO",
+      "months": 33
+    },
+    {
+      "region": "NYIS",
+      "months": 33
+    }
+  ],
+  "assumptions": [
+    "fixed project EF vector [1000,400,800,0,0,0,0,400]",
+    "nonnegative generation",
+    "same exact complete month supports monthly fuel totals and hourly total generation",
+    "no fuel-specific hourly capacities, ramping, or inter-hour dispatch constraints"
+  ],
+  "sharpness": "For a target hour with known total G_h, the min/max emissions numerator is a continuous-knapsack allocation of G_h across fuels bounded only by each monthly fuel total. Remaining monthly quantities can be allocated over other hours because no per-hour caps are imposed; therefore each one-hour endpoint is sharp under the stated information set. The collection of hourly intervals need not be jointly sharp as a vector.",
+  "coverage_intervals": 1.0,
+  "overall_hour_weighted_mean_bound_width": 764.6781352391662,
+  "overall_hour_weighted_p90_width": 770.2117947147075,
+  "hour_share_width_le500": 0.2558134824177605,
+  "mean_monthly_mix_only_width": 838.423645320197,
+  "mean_actual_hourly_cif_sd": 37.3257800616263,
+  "source_summary": [
+    {
+      "region": "BPAT",
+      "months": 26,
+      "mean_monthly_mix_width": 400.0,
+      "mean_hourly_total_bound_width": 400.0,
+      "median_hourly_total_bound_width": 400.0,
+      "mean_bound_p90": 400.0,
+      "bound_hit": 1.0,
+      "share_hours_width_le500": 1.0,
+      "mean_hourly_cif_sd": 10.111030727012825
+    },
+    {
+      "region": "CISO",
+      "months": 30,
+      "mean_monthly_mix_width": 920.0,
+      "mean_hourly_total_bound_width": 823.4347613060771,
+      "median_hourly_total_bound_width": 815.2977803183073,
+      "mean_bound_p90": 831.0700572653634,
+      "bound_hit": 1.0,
+      "share_hours_width_le500": 0.0,
+      "mean_hourly_cif_sd": 56.12396310873752
+    },
+    {
+      "region": "ERCO",
+      "months": 31,
+      "mean_monthly_mix_width": 1000.0,
+      "mean_hourly_total_bound_width": 1000.0,
+      "median_hourly_total_bound_width": 1000.0,
+      "mean_bound_p90": 1000.0,
+      "bound_hit": 1.0,
+      "share_hours_width_le500": 0.0,
+      "mean_hourly_cif_sd": 63.413707001091346
+    },
+    {
+      "region": "FPL",
+      "months": 21,
+      "mean_monthly_mix_width": 609.5238095238095,
+      "mean_hourly_total_bound_width": 400.51887845364934,
+      "median_hourly_total_bound_width": 400.08129225252327,
+      "mean_bound_p90": 400.6846846564771,
+      "bound_hit": 1.0,
+      "share_hours_width_le500": 1.0,
+      "mean_hourly_cif_sd": 27.90668480572182
+    },
+    {
+      "region": "ISNE",
+      "months": 29,
+      "mean_monthly_mix_width": 1000.0,
+      "mean_hourly_total_bound_width": 782.6849293261398,
+      "median_hourly_total_bound_width": 801.9726731124929,
+      "mean_bound_p90": 805.8060630460948,
+      "bound_hit": 1.0,
+      "share_hours_width_le500": 0.078605858361142,
+      "mean_hourly_cif_sd": 26.557356838170826
+    },
+    {
+      "region": "MISO",
+      "months": 33,
+      "mean_monthly_mix_width": 1000.0,
+      "mean_hourly_total_bound_width": 1000.0,
+      "median_hourly_total_bound_width": 1000.0,
+      "mean_bound_p90": 1000.0,
+      "bound_hit": 1.0,
+      "share_hours_width_le500": 0.0,
+      "mean_hourly_cif_sd": 46.23383543469446
+    },
+    {
+      "region": "NYIS",
+      "months": 33,
+      "mean_monthly_mix_width": 800.0,
+      "mean_hourly_total_bound_width": 757.2739872904959,
+      "median_hourly_total_bound_width": 800.0,
+      "mean_bound_p90": 763.8882423130226,
+      "bound_hit": 1.0,
+      "share_hours_width_le500": 0.08177609427609428,
+      "mean_hourly_cif_sd": 23.72068014363087
+    }
+  ],
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/BPAT_hourly.csv": "8fc4377a7e37dd3ace5d84062fab8ab923760f3deb99ec634d84cfae649add9a",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/CISO_hourly.csv": "f1d69e13d35cc7c496532905a8a414e8f3e68e8c12ebd3394bdbc026db0b0caa",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/ERCO_hourly.csv": "e5d8cb8757f07e2a46f8a22d72e0bfc704c6ce3848196113559881dd7f47d925",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/FPL_hourly.csv": "5c0346cbafc08b73556c62baf4014c193fb8657bf9fcde4d194fb3818e3933e6",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/ISNE_hourly.csv": "f30cb202d839100352fd7aa81283a19ba3973cf07d754ab891d674644c4c0747",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/MISO_hourly.csv": "edc5d1b9fad671ae43bed234140eb146295e832cf4e2ac9e11f6b55a2279397d",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/NYIS_hourly.csv": "2146d06400707f9973baf75cf3a98ce5b38b02ff9b5f202657d310a8186c123f"
+  },
+  "outputs_sha256": {
+    "complete_month_bounds.csv": "796897f23728acc43a009a1dd81c95cb53793b0b5f57bded35bfaa1bc1fe5131",
+    "source_summary.csv": "91019af8b57ffc9ee92571fe64fcbe1bf99d0ecddfd3cf04bbb5787d7dc9e4f2"
+  },
+  "interpretation": "Retrospective, already-viewed U.S. source data; complete months only. The added hourly total is an oracle information tier not confirmed available in the user Chinese setting. Not prediction performance or China evidence."
+}

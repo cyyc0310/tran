@@ -1,0 +1,20 @@
+{
+  "assertion_failures": 0,
+  "fold": 0,
+  "models_budget_groups_fitted": 3,
+  "query_profiles": [
+    143,
+    837
+  ],
+  "methods_per_budget": 9,
+  "base_negative_control_laws": 8,
+  "future_monthly_guard_laws": 54,
+  "coarse_or_hourly_outcomes_scored": false,
+  "input_hashes": {
+    "scripts/monthly_history_value_models.py": "5631572724b3a92c5a07983a26f8d34f5f72fc7261a3c0a588de7473ced3b422",
+    "scripts/extended_monthly_information.py": "0ad69eb8204a8f9ce94f38daf595f1649b08ca5d6204c883d68d6147e6f9b0c1",
+    "results/v184-monthly-context-preflight-r1/summary.json": "eadea04e45d7ecff73b0ced29a5270a394b828d3ca98500d6c4ccf74c29c4764"
+  },
+  "output_hashes": {},
+  "scope": "Limited fold0 smoke only. No performance values, no full model preflight or independent model reconstruction; not V184 experiment completion."
+}

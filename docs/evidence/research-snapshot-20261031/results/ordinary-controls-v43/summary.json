@@ -1,0 +1,22 @@
+{
+  "new_fits": 0,
+  "new_arms": 35,
+  "source_months": 35,
+  "query_origins": 42,
+  "baseline_rows_exact": 2520,
+  "rows": {
+    "case_metrics": 4970,
+    "region_metrics": 994,
+    "macro_metrics": 142,
+    "leave_one_source_out_macro": 994,
+    "label_support": 42,
+    "route_table": 1470,
+    "training_limits": 7
+  },
+  "ordinary_controls_only": true,
+  "method_innovation_claim": false,
+  "new_holdout_authorized": false,
+  "MG_retrained": false,
+  "CIF_interval_coverage_evaluated": false,
+  "hourly_coverage_evaluated": false
+}

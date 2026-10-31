@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from transcif.physics.astro import wind_capacity_factor
+from transcif.physics.wind import wind_capacity_factor
 
 
 def public_features(examples):

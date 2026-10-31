@@ -1,0 +1,17 @@
+{
+  "nested_profiles": 42,
+  "inner_training_sizes": [
+    128,
+    130
+  ],
+  "monthly_residuals": 1080,
+  "source_pairs": 42,
+  "outer_summaries": 7,
+  "independent_regions_per_outer": 6,
+  "split": "2023-07-01",
+  "fine_carry_is_deployable": false,
+  "future_forecast_tested": false,
+  "method_innovation_claim": false,
+  "new_holdout_authorized": false,
+  "CIF_interval_coverage_evaluated": false
+}
