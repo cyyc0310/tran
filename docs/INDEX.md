@@ -10,9 +10,8 @@
 
 ## 历史与细节
 
-- [四日工作报告（2026-10-28 至 10-31）](reports/2026-10-28_31.md)
-- [完整实验过程日志](BREAKTHROUGH_SEARCH.md)：仅作历史记录；数字和结论须以对应协议、结果、更正文件为准
 - [旧模型技术背景](RESEARCH.md) 与 [重构记录](REFACTOR.md)
+- [四日工作报告与完整实验过程日志](https://github.com/cyyc0310/tran/tree/pending)：完整副本仅留在归档分支；论文数字以对应协议、结果和更正文件为准
 - [完整近期实验档案](https://github.com/cyyc0310/tran/tree/pending)：包含已停止的方法分支、负结果、协议、runner 与小型机器收据
 
 ## 复现提示
