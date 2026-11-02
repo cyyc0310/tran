@@ -1,56 +1,22 @@
 # TransCIF
 
-研究在目标地区没有历史小时 CIF、只有公开月度或年度电力统计时，碳强度的哪些部分可以识别，哪些依赖跨地区迁移，以及小时风险预测何时应当弃权。
+TransCIF 研究一个实际的冷启动问题：能否用其他国家的小时级电力运行数据训练模型，在中国目标省没有小时 CIF 历史时，仅使用预测时公开可得的信息预测未来小时碳强度？目标是建立可复现、可迁移、能诚实报告失败边界的基准框架。
 
-当前中国主输入是国家统计局省级火电、水电、核电、风电、太阳能月度发电量。火电合计不能视作煤/气/油细分；规上工业发电不等于全口径供电；本地发电侧强度与含跨省受电的消费侧因子分别评价。
+当前只使用公众数据。中国发电侧主预算是已发布的省级火、水、核、风、光月发电量；公开年度装机另列为 M+C。消费侧单独评价，需有可追溯的省际流量与送端强度。市场成员可见曲线不进入当前模型预算。
 
-**截至 2026-10-31：尚未证实具有稳定覆盖与区间效率优势的小时 CIF 迁移算法。** 已形成公开字段审计、小时风险部分识别求解器、信息预算比较、源外/时间外实验和大量负结果。中国情景小时数据是模型投影，EIA 固定因子标签是代理，都不等于实测中国小时 CIF。
+**截至 2026-11-02，尚无方法被验证为能在跨域迁移中稳定胜过强基线并同时维持区间覆盖。中国无标签推理不是精度验证。** 现阶段论文主线应聚焦严格信息合同、双轨估计对象、整域跨域基准及迁移失效边界；算法创新只有通过冻结的整域确认后才提出。
 
-- [近四日成果与研究判断（10月28–31日）](docs/reports/2026-10-28_31.md)
-- [文档入口与结果优先级](docs/INDEX.md)
-- [实验脚本分类与运行约束](scripts/README.md)
-- [可随 Git 获取的结果快照](docs/evidence/research-snapshot-20261031/README.md)
-- [完整研究过程记录](docs/BREAKTHROUGH_SEARCH.md)
+## 从这里开始
 
-## 仓库结构
+- [当前研究状态与执行顺序](docs/RESEARCH_STATUS.md)
+- [文档入口](docs/INDEX.md)
+- [核心方法与数据定义](docs/RESEARCH.md)
+- [数据合同](docs/DATA.md)
+- [实验脚本说明](scripts/README.md)
+- [近期完整实验档案与负结果](https://github.com/cyyc0310/tran/tree/pending)
 
-| 路径 | 用途 |
-|---|---|
-| `src/transcif/` | 调度模型、公共数据合同、训练、推理与评分 |
-| `src/transcif/research/` | 有限信息下的组成预测、重组、风险迁移实验模块 |
-| `scripts/` | 数据采集、实验 runner、审计与维护；原路径保留以兼容历史哈希 |
-| `tests/` | 核心和研究模块的既有回归测试 |
-| `docs/` | 协议、结果、更正、文献与审查记录 |
-| `docs/catalog/` | 文档/脚本目录、本地大产物库存 |
-| `docs/evidence/research-snapshot-20261031/` | 原样复制的紧凑结果摘要、CSV 和 SHA-256 清单 |
-| `data/`, `results/`, `external/` | 本地数据、大实验结果和外部资料；不进入 Git |
+## 仓库说明
 
-## 安装与基础运行
+`src/transcif/` 包含原型模型、数据适配和评估代码；`scripts/` 与 `docs/` 保留大量历史实验入口和记录。历史 runner 不保证仅凭 Git clone 即可复现，运行前需检查对应协议、数据 vintage 和本地依赖。
 
-Python 3.10+，建议使用独立虚拟环境：
-
-```bash
-python -m pip install -e '.[dev,research]'
-python -m pytest -q
-python scripts/run_experiment.py --demo --output results/demo-new
-```
-
-人工 demo 用于软件流程验证。真实数据需要符合 [DATA](docs/DATA.md) 的字段、估计对象和发布时间约束。天气 GRIB 工具另需 `.[weather]` 和可用的 ecCodes 动态库。
-
-```bash
-python scripts/run_experiment.py --manifest data/public/manifest.json \
-  --target TARGET --leave-jurisdiction-out --output results/public-run
-python scripts/predict.py --checkpoint results/public-run/model.pt \
-  --manifest data/public/manifest.json --target TARGET \
-  --origin '2023-03-20T00:00:00Z' --output results/prediction.json
-```
-
-没有目标标签时，将 manifest 的 `labels` 设为 `null` 或使用 `--no-target-scoring`。运行研究脚本前阅读同版本协议；很多脚本读取本地归档、父实验文件或固定路径，并不支持仅 clone 后直接运行。入口齐全不代表历史数据和发布版本已经认证。
-
-## 证据与复现
-
-紧凑快照保留原始文件内容和哈希，包含有利、失败、无效和已替代运行；纳入快照不代表结果获得批准。结果优先级以各版本的更正稿和四日成果报告为准。尤其 V404 的早期未脚本化数字已撤回，V410–V411 的情景标签已在 V194–V200 打开，不能称独立未知情景确认。
-
-本地约 88 GB 的结果与原始数据保留，不上传模型、小时预测大表、第三方原始数据或临时缓存。要复现历史实验，需要按快照清单恢复同一输入及脚本版本；当前快照不能代替缺失的原始数据许可和历史发布档案。
-
-原 v0.2 调度模型与三关研究的技术背景见 [RESEARCH](docs/RESEARCH.md)、[三关结果](docs/THREE_GATES_RESULTS.md)、[清理与重构记录](docs/REFACTOR.md)。整理前 README 保存于 [历史入口](docs/archive/README_BEFORE_20261031.md)。
+原始数据、小时级大表、模型和临时缓存不进入 Git。远程 `pending` 分支保存完整近期探索的代码、文档和小型收据，不含这些大体积文件。
