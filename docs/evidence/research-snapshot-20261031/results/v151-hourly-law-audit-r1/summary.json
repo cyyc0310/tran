@@ -1,8 +1,0 @@
-{
-  "assertion_failures": 0,
-  "verified_input_hashes": 7,
-  "verified_output_hashes": 8,
-  "matched_rows_per_comparison": 36,
-  "scope": "Descriptive synchronized-month bootstrap on opened targets; no selection or independent confirmation.",
-  "source_summary_sha256": "9757c38c8efb7b2c72f1fbabc95388f9f30f8775077638ea0873019bea959911"
-}

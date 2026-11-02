@@ -1,9 +1,0 @@
-# V297 protocol: does one local monthly-CIF anchor substitute for fuel detail?
-
-Frozen 2026-10-30, before scoring. Use the V97 frozen 358 BA-month cohort, 25 BA regions, 2024–2025 target months, lagged coarse technology-group capacities, thresholds τ=600/900 gCO₂/kWh, and V90 fixed proxy factors. Use only the same-cohort rows that passed the V97 baseline capacity screen.
-
-For each BA-month compare complete feasible integer K sets for: (A) thermal/hydro/nuclear/wind/solar monthly margins + coarse capacities; (B) the same contract plus one scalar target-month average generation CIF (equivalently monthly excess-carbon budget `Sτ = E_month − τ G_month`); (C) the same contract plus the V97 exact threshold-side thermal MWh; and (D) detailed monthly fuel margins with the same coarse capacities. No source region or factor is changed.
-
-The CIF anchor is computed from the opened EIA hourly fuel proxy only to measure the **value of a hypothetical one-number local monthly observation**. It is not an admissible feature for claiming a real Chinese result unless an independent, same-boundary monthly emissions/EF source exists. Test exact anchor and symmetric measurement error of ±5 and ±10 gCO₂/kWh around the monthly mean. The LP allows hidden thermal fuel margins to vary subject to the observed thermal total and anchor interval, while retaining exact clean-source monthly totals; it enforces per-hour block capacity and asks whether `K=k` is feasible under event/complement average allocations. Compare same-budget widths and selective decisions; verify every observed proxy K is contained and each more informative set nests in the less informative set.
-
-This is an information-value/mechanism experiment, not an hourly forecast, calibrated coverage test, Chinese validation, or blind region evaluation. It stops if the LP does not reproduce the coarsened monthly set endpoints at zero added anchor or if nesting/containment fails.

@@ -1,7 +1,0 @@
-{
-  "assertion_failures": 0,
-  "identical_source_sampling_rows": 360,
-  "interval_only_target_records": 288,
-  "source_summary_sha256": "1ce62d6db99a33806d83f3477acd48580913bd07f8e761c1115f0fe06444c2b5",
-  "scope": "Exact source sample equivalence and complete interval metrics, no fabricated CRPS."
-}

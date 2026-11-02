@@ -1,8 +1,0 @@
-{
-  "assertion_failures": 0,
-  "feature_contexts_exactly_matching_frozen_v156": 101,
-  "zero_innovation_identity_cases": 100,
-  "linear_feasible_response_identity_checked": true,
-  "asof_new_fuel_not_hard_masked_control": true,
-  "scope": "Feature/response invariants only, not model accuracy or independent target confirmation."
-}

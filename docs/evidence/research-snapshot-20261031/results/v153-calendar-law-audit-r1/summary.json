@@ -1,8 +1,0 @@
-{
-  "assertion_failures": 0,
-  "matched_target_records": 288,
-  "verified_input_hashes": 12,
-  "verified_output_hashes": 8,
-  "scope": "Descriptive development-month bootstrap versus monthly baseline; not a novel-method or independent-region confirmation.",
-  "source_summary_sha256": "4d62a8583f08a3f1351cac23ff9a10153d371d935b84939f414fd80dcf1dc483"
-}

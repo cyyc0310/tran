@@ -10,8 +10,9 @@ TransCIF 研究一个实际的冷启动问题：能否用其他国家的小时�
 
 - [当前研究状态与执行顺序](docs/RESEARCH_STATUS.md)
 - [文档入口](docs/INDEX.md)
-- [核心方法与数据定义](docs/RESEARCH.md)
 - [数据合同](docs/DATA.md)
+- [中国公开月报字段边界](docs/CHINA_MONTHLY_GENERATION_FIELD_AUDIT_V51.md)
+- [发电/消费估计对象边界](docs/V401_SHANGHAI_ESTIMAND_BOUNDARY.md)
 - [实验脚本说明](scripts/README.md)
 - [近期完整实验档案与负结果](https://github.com/cyyc0310/tran/tree/pending)
 

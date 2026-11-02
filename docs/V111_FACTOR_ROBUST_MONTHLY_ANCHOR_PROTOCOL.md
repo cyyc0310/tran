@@ -1,7 +1,0 @@
-# V111 protocol: factor-robust monthly-mean anchor baseline
-
-Frozen 2026-10-28. Reuse V110's 25 source regions and 2024–2025 calibration months, five V104 target regions and 30 target months, thresholds 600/900, rates 1/5/10%, and exactly the V103 coordinated ±10% thermal EF box. No target outcomes enter calibration.
-
-For each region-month, compute the month-mean anchor under low, nominal, and high factor vectors and take the minimum/maximum implied event fractions (each endpoint is 0 or 1). Compute proxy K under all three vectors; by factor monotonicity, the endpoint K values bound every factor vector in the box. The calibration nonconformity is the maximum distance across the three factor vectors from their K/T to that month’s factor-robust anchor interval. Calculate a region-balanced weighted empirical 90th percentile of these worst-case residuals, one equal total weight per source region and equal weight per month within region.
-
-Expand each target's robust anchor interval by that radius, clip to [0,1], and convert to conservative integer K endpoints. Evaluate whether this interval contains the full low-to-high proxy K endpoint range, its width, and selective decisions. Compare against V105's factor-box robust monthly-margin-only and monthly-margin-plus-capacity identified sets on exactly the same target rows. This is an empirical robustness stress test, not a formal conformal guarantee under domain shift, and still uses retrospective EIA proxy data.

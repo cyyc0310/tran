@@ -1,7 +1,0 @@
-# V99 protocol: China monthly fuel support under factor uncertainty
-
-Frozen 2026-10-28, before computation. Use the frozen Ember China province-month file from V60 (exclude national aggregate); do not join to hourly labels or treat the source's estimated fuel emissions as independent validation. The question is whether a threshold-side fuel-energy summary has a stable category definition when fuel factors are uncertain.
-
-For a transparent sensitivity envelope around the project's operational proxy factors, use Coal [900, 1100], Gas [360, 440], Other fossil [200, 600] gCO2/kWh; assign Bioenergy, Hydro, Nuclear, Wind, Solar zero in this operational-CIF proxy. These are deliberately stated scenario bounds, not official Chinese factor estimates. Sweep thresholds 300, 400, 500, 600, 800, 900, and 1000. A category is definitely above if its lower factor endpoint is strictly greater than tau; definitely at/below if its upper endpoint is at/below tau; otherwise ambiguous. Summarize province-month and year-weighted generation shares in these three classes, and retain the exact monthly fuel values. The threshold is strict `CIF > tau`.
-
-Assertions: every province-month has the eight atomic fuel categories and total-generation row; atomic category MWh sum agrees with total within V60's 0.003 TWh tolerance; shares sum to one within that tolerance. Do not report an hourly exceedance or coverage metric. This is a China monthly data-contract/stability diagnostic, not a test of hourly CIF identifiability or forecast skill.

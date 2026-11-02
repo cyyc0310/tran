@@ -1,9 +1,0 @@
-# V96 protocol: threshold-side monthly energy as a target-aware statistic
-
-Frozen 2026-10-28. Test one monthly statistic derived by grouping fuel generation above versus below the target EF threshold. For τ=600, high-side generation is coal+oil and low-side thermal generation is gas+other; high-side EF lies in [800,1000], low-side EF is 400. For τ=900, high-side generation is coal and low-side thermal generation is gas+oil+other; high-side EF is 1000, low-side EF lies in [400,800]. Clean generation retains separate monthly nuclear/hydro/wind/solar totals with proxy EF zero.
-
-Use the fixed 358-month V90 cohort, 25 previously opened EIA regions, 2024–2025 windows, lagged annual coarse technology capacity, and ≥1/5/10% tail targets. Compare coarse monthly categories, threshold-side monthly energy, coarse annual capacity, threshold-side plus capacity, detailed monthly fuel margins, and detailed monthly + fine capacity (on the 326-month audited intersection).
-
-For each candidate K, reduce feasibility to thermal event output `x` and high-side event output `z`; event clean output is set to its feasible lower endpoint because doing so maximizes event excess and makes the complement cleaner. The complement non-event condition yields a linear lower bound on `z`; comparing it with `min(M_high,x)` gives an exact interval in `x`. The event excess is piecewise linear with one breakpoint. Enumerate endpoints and this breakpoint with rational arithmetic. Require positive event excess and a positive-output complement. Stop if actual K is excluded or if added information fails to nest within the less-informative set.
-
-This is an oracle coarsening using EIA hours to synthesize the monthly field and evaluate fixed-EF proxy K. It is not China-source validation or future-region forecast coverage. All claims are conditional on the assumed emission-factor ranges and retrospective V90 cohort.

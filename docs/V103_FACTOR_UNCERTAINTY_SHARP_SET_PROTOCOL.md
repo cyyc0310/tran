@@ -1,5 +1,0 @@
-# V103 protocol: exact K-set envelope under ±10% fuel-factor uncertainty
-
-Frozen 2026-10-28. On the same 513 V100 monthly-energy-feasible region-months, compute exact sharp K sets for τ=600/900 using (a) nominal EFs (coal 1000, gas 400, oil 800, other 400; nonthermal 0), (b) all thermal EFs shifted down by 10%, and (c) all thermal EFs shifted up by 10%. Keep the same lagged shared technology-group caps, detailed monthly fuel margins, and no target-hour peak filter.
-
-Because each hourly intensity is coordinatewise nondecreasing in each fuel EF for a fixed dispatch, the hull `[min K_lowEF, max K_highEF]` contains the K value for every EF vector in the box. Report this as a sharp-endpoint robust hull, not as a claim that every interior integer is feasible jointly over one globally fixed factor vector. Check nominal exact-set containment in the hull and observed nominal-proxy K containment. Compare robust hull efficiency/frontier to the nominal exact set and monthly-margin baseline. Factor ranges are a stress scenario, not a measured Chinese factor uncertainty distribution.

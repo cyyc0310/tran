@@ -1,5 +1,0 @@
-scenario,method,region_equal_point_mae,region_equal_point_rmse,region_equal_interval_width,region_equal_simultaneous_month_coverage,worst_province_month_coverage,n_provinces,n_province_months
-S2,local_thermal_anchor_plus_source_shape_anomaly,133.53573180815962,147.55727209890617,941.4940457213144,0.9153225806451613,0.0,31,248
-S3,local_thermal_anchor_plus_source_shape_anomaly,134.5313069760788,148.55436599950414,941.4940457213144,0.9112903225806451,0.125,31,248
-S4,local_thermal_anchor_plus_source_shape_anomaly,134.19151057570994,148.32205241939047,941.4940457213144,0.907258064516129,0.0,31,248
-S5,local_thermal_anchor_plus_source_shape_anomaly,133.5806154426967,147.6038078063105,941.4940457213144,0.907258064516129,0.0,31,248
