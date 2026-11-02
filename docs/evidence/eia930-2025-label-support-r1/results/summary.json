@@ -1,0 +1,23 @@
+{
+  "purpose": "post hoc 2025 target-label support audit only; no labels imputed and no future information used as a predictor",
+  "hourly_source": "EIA-930 native Balance files; (Adjusted) fuel generation columns",
+  "monthly_support_source": "EIA-923 2025 Final, used only to distinguish structurally zero annual categories from missing nonzero support",
+  "eia923_sha256": "1bff7092a86f6678c069c986829da5a23104048fc1aafb65b0776e3c904284de",
+  "eia930_sha256": {
+    "data/native-eia-2025/EIA930_BALANCE_2025_Jan_Jun.csv": "fac4bb991dfa1dab3b4b35300ccab54ac99be13a40ce91954db8ddafb2816242",
+    "data/native-eia-2025/EIA930_BALANCE_2025_Jul_Dec.csv": "1146158b972439db7c7f4cc7d0491e07644ddbf244d03b8ecb44cb2c833d10f1"
+  },
+  "eia930_target_rows": 61320,
+  "balancing_authorities": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "ISNE",
+    "MISO",
+    "NYIS"
+  ],
+  "complete_ba_count": 0,
+  "ba_count": 7,
+  "result": "NO_COMMON_COMPLETE_2025_HOURLY_FUEL_LABEL_COHORT"
+}

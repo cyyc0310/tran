@@ -1,0 +1,87 @@
+[
+  {
+    "source": "results/three-country-transfer-r1/country_metrics.csv",
+    "file": "country_metrics.csv",
+    "sha256": "330d8a9f4c6a4e4133414acffbbe922470d2b7bb050bd01534140113394f16aa"
+  },
+  {
+    "source": "results/three-country-transfer-r1/region_metrics.csv",
+    "file": "region_metrics.csv",
+    "sha256": "8e2dd64558866f11a7a0f14047b9abb629f75c482923678a9b24ee255bcd4964"
+  },
+  {
+    "source": "results/three-country-transfer-r1/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "27e49e218a79cd4506fd1b808917e15b28d2f14a305258c032daeb0f50f2143e"
+  },
+  {
+    "source": "results/three-country-transfer-r1/cohorts.csv",
+    "file": "cohorts.csv",
+    "sha256": "21c02042cfb927febfd0ceef8206f80f81b0aa78db92b650ffad34049322109b"
+  },
+  {
+    "source": "results/three-country-transfer-r1/input_audit.json",
+    "file": "input_audit.json",
+    "sha256": "3d3c185d2eb2626a74a8245a23832e25f07fa2d2073821bf81dc9c1f5c297ea5"
+  },
+  {
+    "source": "results/three-country-transfer-r1/startup_code_hashes.json",
+    "file": "startup_code_hashes.json",
+    "sha256": "e292bf3575849b20450b9c234fbcda486802e3acf506980832dce57db3f532e1"
+  },
+  {
+    "source": "results/three-country-transfer-r1/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "3159037ca9499e2cf54caff99bd60cfb3ba106d127dbe421b4682684c1963cea"
+  },
+  {
+    "source": "results/three-country-transfer-r1/provenance.json",
+    "file": "provenance.json",
+    "sha256": "11b06135c38b7b74e30e1f47cb0b41b60a8b7d29f604461b5683ff6a7a2182c3"
+  },
+  {
+    "source": "results/three-country-transfer-r1/DE_to_US_metadata.json",
+    "file": "DE_to_US_metadata.json",
+    "sha256": "fb948f557f091e1d05b9cafc1e51f48d5ed053565d39b3581dc5d2fbae09ff89"
+  },
+  {
+    "source": "results/three-country-transfer-r1/DE+US_to_GB_metadata.json",
+    "file": "DE+US_to_GB_metadata.json",
+    "sha256": "031427ca5ee91ec1e493848d20c9822c15cfff765f6493b1e5a384772de2acfe"
+  },
+  {
+    "source": "results/three-country-transfer-r1/DE+GB_to_US_metadata.json",
+    "file": "DE+GB_to_US_metadata.json",
+    "sha256": "b82fc299511fb26b395ea8786ffad86686892b94eb8b686d886f920fa5dc814c"
+  },
+  {
+    "source": "results/three-country-transfer-r1/GB+US_to_DE_metadata.json",
+    "file": "GB+US_to_DE_metadata.json",
+    "sha256": "b38fbe60d724c6420c3ff261535ef2a61bb67ad709cd893c41e754b9fef2babf"
+  },
+  {
+    "source": "results/three-country-transfer-r1/GB_to_DE_metadata.json",
+    "file": "GB_to_DE_metadata.json",
+    "sha256": "5ae7d7eade1de9e62dcde9a249b55583c4a5c63ef3113cf82023949139e356bc"
+  },
+  {
+    "source": "results/three-country-transfer-r1/US_to_DE_metadata.json",
+    "file": "US_to_DE_metadata.json",
+    "sha256": "8e7343fef328d426733adee3aca66eb69ad95e1b1d2e5fe28dab09e9f6e76a95"
+  },
+  {
+    "source": "results/three-country-transfer-r1/GB_to_US_metadata.json",
+    "file": "GB_to_US_metadata.json",
+    "sha256": "e15c8b618d5e45263a1aeca805921d5ee890eacd7ea660b4bc35fbe16d4469d9"
+  },
+  {
+    "source": "results/three-country-transfer-r1/DE_to_GB_metadata.json",
+    "file": "DE_to_GB_metadata.json",
+    "sha256": "ec1347010407bf7c8a5908b5cd542e5edcc086dff28b526424fe60ce5083bd43"
+  },
+  {
+    "source": "results/three-country-transfer-r1/US_to_GB_metadata.json",
+    "file": "US_to_GB_metadata.json",
+    "sha256": "f08d46b2f040a6e4efd456ab19bd8691f1dc7db1a5a84d8f4f5bcc93ad534f79"
+  }
+]

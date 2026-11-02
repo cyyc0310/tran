@@ -1,0 +1,12 @@
+[
+  {
+    "path": "NESO_reconstructed_predictions.csv",
+    "sha256": "7ead7c08a20e0e73856539dbe3e4c8ed08e7f9723070a96a571fa00d6c084f59",
+    "rows": 8784
+  },
+  {
+    "path": "DESNZ_ET54_MPP_predictions.csv",
+    "sha256": "842c5017b08f1082b4c5f6d3217fa27e99c82ae2909cab6f613c14264d1e3006",
+    "rows": 8784
+  }
+]

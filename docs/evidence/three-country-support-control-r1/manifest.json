@@ -1,0 +1,92 @@
+[
+  {
+    "source": "results/three-country-support-control-r1/startup_code_hashes.json",
+    "file": "startup_code_hashes.json",
+    "sha256": "f4f43bf4a6540f44c32ae157d6fed53012b38612a507332db36e595993448ace"
+  },
+  {
+    "source": "results/three-country-support-control-r1/DE_to_US_metadata.json",
+    "file": "DE_to_US_metadata.json",
+    "sha256": "fb948f557f091e1d05b9cafc1e51f48d5ed053565d39b3581dc5d2fbae09ff89"
+  },
+  {
+    "source": "results/three-country-support-control-r1/provenance.json",
+    "file": "provenance.json",
+    "sha256": "9d4c33525a0d92e8e4f77039c0bae4b6c4e60171535f12d2458b5e4eb8ef81cf"
+  },
+  {
+    "source": "results/three-country-support-control-r1/DE+US_to_GB_metadata.json",
+    "file": "DE+US_to_GB_metadata.json",
+    "sha256": "52fdf6c8c628a3c578bddfcf2f0485cb5c2674e1fea3464a8d11727084168cae"
+  },
+  {
+    "source": "results/three-country-support-control-r1/DE+GB_to_US_metadata.json",
+    "file": "DE+GB_to_US_metadata.json",
+    "sha256": "b82fc299511fb26b395ea8786ffad86686892b94eb8b686d886f920fa5dc814c"
+  },
+  {
+    "source": "results/three-country-support-control-r1/GB+US_to_DE_metadata.json",
+    "file": "GB+US_to_DE_metadata.json",
+    "sha256": "4bc0544194fb98efc2c8fd1b2afb2ca60e307eecf5da47a8d7b7cd5f576c3f95"
+  },
+  {
+    "source": "results/three-country-support-control-r1/GB_to_DE_metadata.json",
+    "file": "GB_to_DE_metadata.json",
+    "sha256": "5ae7d7eade1de9e62dcde9a249b55583c4a5c63ef3113cf82023949139e356bc"
+  },
+  {
+    "source": "results/three-country-support-control-r1/US_to_DE_metadata.json",
+    "file": "US_to_DE_metadata.json",
+    "sha256": "a6db2b5cf28b07f88bb6034c7db6b4546fd016efd23639de15f066524a10a0e0"
+  },
+  {
+    "source": "results/three-country-support-control-r1/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "4234cd6948a0e9ce6991fddb3f7b7d102d53ad345ff48cdb943db9a56c8ab348"
+  },
+  {
+    "source": "results/three-country-support-control-r1/pool_layout.json",
+    "file": "pool_layout.json",
+    "sha256": "f5623ac6fc9e07faa8f5dcd618baa54fbde419f7d76e96f60b63c29fb21e8502"
+  },
+  {
+    "source": "results/three-country-support-control-r1/GB_to_US_metadata.json",
+    "file": "GB_to_US_metadata.json",
+    "sha256": "e15c8b618d5e45263a1aeca805921d5ee890eacd7ea660b4bc35fbe16d4469d9"
+  },
+  {
+    "source": "results/three-country-support-control-r1/DE_to_GB_metadata.json",
+    "file": "DE_to_GB_metadata.json",
+    "sha256": "ec1347010407bf7c8a5908b5cd542e5edcc086dff28b526424fe60ce5083bd43"
+  },
+  {
+    "source": "results/three-country-support-control-r1/input_audit.json",
+    "file": "input_audit.json",
+    "sha256": "736afac646f63c7d7d6c72e5c5bc9ce55b89446620bf4626ab096ea920471b6b"
+  },
+  {
+    "source": "results/three-country-support-control-r1/US_to_GB_metadata.json",
+    "file": "US_to_GB_metadata.json",
+    "sha256": "57342d1d9fde71d4de451fdb3b2f298e310d8eb9033fa48d5dd631d82664c4c3"
+  },
+  {
+    "source": "results/three-country-support-control-r1/country_metrics.csv",
+    "file": "country_metrics.csv",
+    "sha256": "158c5e365c7d308b35712618e824f5f30af1b9b4776aff66663e2d21691776a1"
+  },
+  {
+    "source": "results/three-country-support-control-r1/region_metrics.csv",
+    "file": "region_metrics.csv",
+    "sha256": "f62e5b58cec70cff1365129dfb040772448d435cef5794ad492fc4fae9fdb41c"
+  },
+  {
+    "source": "results/three-country-support-control-r1/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "f006f9f103662f48213c64c2570872ca68d69b1d227ddf55cb7d749687462ae9"
+  },
+  {
+    "source": "results/three-country-support-control-r1/cohorts.csv",
+    "file": "cohorts.csv",
+    "sha256": "cdab1c39636025ab95eac5333be62aaaa79319db74d421f49d5a5b458271f0ce"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "prediction_sha256": "fbdc0deefdb4d330489e5bd3547e3d0c729f1bfff046d3cca23d324fa86e5c8a",
+  "prediction_rows": 65664,
+  "source_calibration_sha256": "5419f622ba702653942c497232191227f3f7be7fe7f850a46c8fefd258395e34",
+  "target_response_computed_before_seal": false,
+  "target_response_files_opened": false,
+  "input_contract": "Japanese nine-area generation mix at exact t-2, five CN-compatible groups plus calendar",
+  "target_period": "2024-06 through 2025-03 JST",
+  "source_years": {
+    "fit": 2022,
+    "calibration": 2023
+  },
+  "source_inputs_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/japan-hourly-ci-zenodo-2026-r1/README.md": "c883a4c9c77e2528a1f58debff44330365b981739fbfc9bbc0e3d7ea257000ec",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/japan-hourly-ci-zenodo-2026-r1/auxiliarly.zip": "5ef957245f412e8c00aa1fc849bc8c42bd791076603a23129cfcfb95d7cdb712",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/BPAT_hourly.csv": "8fc4377a7e37dd3ace5d84062fab8ab923760f3deb99ec634d84cfae649add9a",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/CISO_hourly.csv": "f1d69e13d35cc7c496532905a8a414e8f3e68e8c12ebd3394bdbc026db0b0caa",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/ERCO_hourly.csv": "e5d8cb8757f07e2a46f8a22d72e0bfc704c6ce3848196113559881dd7f47d925",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/FPL_hourly.csv": "5c0346cbafc08b73556c62baf4014c193fb8657bf9fcde4d194fb3818e3933e6",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/neso-gb/df_fuel_ckan.csv": "103bc41ec970c1d58dab912cd1fae9df27afa0b869ebdd8ddb4d5db7840a704f",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/ISNE_hourly.csv": "f30cb202d839100352fd7aa81283a19ba3973cf07d754ab891d674644c4c0747",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/MISO_hourly.csv": "edc5d1b9fad671ae43bed234140eb146295e832cf4e2ac9e11f6b55a2279397d",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/results/research/data/NYIS_hourly.csv": "2146d06400707f9973baf75cf3a98ce5b38b02ff9b5f202657d310a8186c123f"
+  },
+  "code_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/scripts/run_japan_cn5_external_transfer.py": "ca842485702e85c2bcc88eb23143f42ed8428aaffefde2dee106fc1a7d6944c3",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/docs/JAPAN_CN5_EXTERNAL_TRANSFER_PROTOCOL_20261102.md": "b204b900b38bb36a56e75db62c338a71315e9fff09198758556fe7236008b7db",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/src/transcif/research/cross_country.py": "92e4d0109459ac759514401569a7b5e269785e141106ab3afc4339db47991c63"
+  },
+  "methods": [
+    "anchor700",
+    "source_thermal_ef",
+    "calendar_ridge",
+    "coarse_ridge",
+    "coarse_boosting",
+    "coarse_recomposition"
+  ]
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "target": "nl",
+    "file": "nl_predictions.csv.gz",
+    "sha256": "2fc715b226620711e4c754ba482e96772cb9c776685e6f9d37e6c8281f801184",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "nl",
+    "file": "nl_source_radii.json",
+    "sha256": "b61a7c47fe89125e0f248dde3fb458525e884e55323207a39711d73857e36805",
+    "kind": "radius_file"
+  },
+  {
+    "target": "es",
+    "file": "es_predictions.csv.gz",
+    "sha256": "e86a9baa4410f0f2128a5ac266bb18f58dff4ee2f9c0f5bc40c9487ce6c1aaf3",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "es",
+    "file": "es_source_radii.json",
+    "sha256": "72972f7916578292040e907017a1007fd4f6b1010ec0f905f4737a87af20d367",
+    "kind": "radius_file"
+  },
+  {
+    "target": "be",
+    "file": "be_predictions.csv.gz",
+    "sha256": "c096393b501639a78117348b2f02474edbbf4c18f282a6bf119bc491b0ed5c71",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "be",
+    "file": "be_source_radii.json",
+    "sha256": "4b4104bd12113f819f4517d00ce06efba8353811d4255a4ea62d055c6d6a0978",
+    "kind": "radius_file"
+  },
+  {
+    "target": "at",
+    "file": "at_predictions.csv.gz",
+    "sha256": "955889d42089c84d9026273d05a603ed40c6378fffc97235f153556212940fe0",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "at",
+    "file": "at_source_radii.json",
+    "sha256": "00a5aea58685ad4935f9c73bca2b6eef53adff33b5cf29d51b61af286904f3bc",
+    "kind": "radius_file"
+  },
+  {
+    "target": "se",
+    "file": "se_predictions.csv.gz",
+    "sha256": "6f34e636e64bc5e6c3df3b73f7691a559eaabd40de904d42b01c8d60e4bcef52",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "se",
+    "file": "se_source_radii.json",
+    "sha256": "b193380f3416776f87a13cdd687385ccf69415d61b2eaca29499018c2f84ad06",
+    "kind": "radius_file"
+  },
+  {
+    "target": "cz",
+    "file": "cz_predictions.csv.gz",
+    "sha256": "558c3efab40a9c7449e625d84b8a947721ac5a07a10b55b3d4485edb312c3a93",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "cz",
+    "file": "cz_source_radii.json",
+    "sha256": "77e510758b8e4709aec2d1db67980548ed4d7bdb3962b5049ea5e3a819c29387",
+    "kind": "radius_file"
+  },
+  {
+    "target": "sk",
+    "file": "sk_predictions.csv.gz",
+    "sha256": "567fe9d11cf985d4a340214d888f4166c8004b520d9574c055b0b2ebc8d3a748",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "sk",
+    "file": "sk_source_radii.json",
+    "sha256": "e40f4fc70f9e044e5e97a701823e976ae91ae8b163cc24e293802360aa65ec0e",
+    "kind": "radius_file"
+  },
+  {
+    "target": "hu",
+    "file": "hu_predictions.csv.gz",
+    "sha256": "23333bea91c437a6d125ad57cfac7e3bbb9e7435dc5a0faa90e1d72ac344d8ba",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "hu",
+    "file": "hu_source_radii.json",
+    "sha256": "72af0a821fb066ea05749164c67a735fbb08ee7abc2427fea17b9c890dbf7975",
+    "kind": "radius_file"
+  },
+  {
+    "target": "si",
+    "file": "si_predictions.csv.gz",
+    "sha256": "2c9e8a76c026403c20cdf8ded356472cc2ac74f70de8a0905be192b166f09f50",
+    "kind": "prediction_file"
+  },
+  {
+    "target": "si",
+    "file": "si_source_radii.json",
+    "sha256": "90d7b63c6f8439d3f5ffc13ac2e005a0b806bcad0e0c826d0e69dc97264e23a5",
+    "kind": "radius_file"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/common_country_metrics.csv",
+    "file": "common_country_metrics.csv",
+    "sha256": "d80b8bdd16e0b91187dfbbad05bb9612fea40975f115225e1943ca52f0709081"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/common_region_metrics.csv",
+    "file": "common_region_metrics.csv",
+    "sha256": "e72793bcd629333838e855a4d4ab32ca6d2acc768ffe884d69096691b03405a7"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "d6b3c64a606c8b764fd4dd0c2ced4a1acec1e8d0a9dee990bc5dc6131ad15b5e"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/coarse_forecasts.csv",
+    "file": "coarse_forecasts.csv",
+    "sha256": "d03649598f70d637c05841a978c664376629a7ae944e93cdb1aa90e55552c79f"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/provenance.json",
+    "file": "provenance.json",
+    "sha256": "e79c788edcc82f7f09c7f648825d2142ba6c02fc543e54b84be2ba0269e441ae"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/startup_code_hashes.json",
+    "file": "startup_code_hashes.json",
+    "sha256": "1b1efb3619161a7b5ae9e472e0ef72c19e55e1b34a397f3a269c2ed283e92f3b"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "ab6e0c7b889203734cb7cb33c4711fbf6f10117f556de4b5d37fe8aafe5080f1"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/environment.json",
+    "file": "environment.json",
+    "sha256": "e6b77de81246c279e4afbf44ab51ed604c3135b5ed4a6a1a8f4fa3a6b34f3e3b"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/GB_local_bias_risk.json",
+    "file": "GB_local_bias_risk.json",
+    "sha256": "c87e929544d9b542b16c6bcfe1953273764bf417e2d32a1faa5bfb15dd434359"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/US_persistence_risk.json",
+    "file": "US_persistence_risk.json",
+    "sha256": "cb55cff2f5dc97651e958ef0ee3e4b97f793c305b36b4a1096ca07fcd4c06b62"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/US_shrunk_bias_risk.json",
+    "file": "US_shrunk_bias_risk.json",
+    "sha256": "3e0f42c1250912aea2aa4847ad0f6dc47d2771a1ff04835cdb65cf693f3ed2b9"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/US_local_ridge_risk.json",
+    "file": "US_local_ridge_risk.json",
+    "sha256": "eebb37880979f0071dc872bbbfc660e297f43afb69b24f8a41bd1bcb2aa860f8"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/GB_source_ridge_risk.json",
+    "file": "GB_source_ridge_risk.json",
+    "sha256": "511fbb5633208b763b6e83b1feb027c12d1d8d7c36ee0419c366b156620c08be"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/US_damped_trend_risk.json",
+    "file": "US_damped_trend_risk.json",
+    "sha256": "5c8f3a8a197774a4ea46fadeee5a7bd8487d268321ef006ab7d9097d2eecfec6"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/GB_local_ridge_risk.json",
+    "file": "GB_local_ridge_risk.json",
+    "sha256": "342f3b375f1bdd714b67c85ec7849ec37513d6273438ad46ae0da2a5335ac323"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/GB_seasonal_risk.json",
+    "file": "GB_seasonal_risk.json",
+    "sha256": "ed59c3dc1f2f1f70fa9ad4c85ff3a8b989bfe54d762d9c546f1512a514f45fc2"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/US_local_bias_risk.json",
+    "file": "US_local_bias_risk.json",
+    "sha256": "521a333d43e2f835fe407aae564326847d5d62a380c25404ddf879f778ad33ce"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/GB_persistence_risk.json",
+    "file": "GB_persistence_risk.json",
+    "sha256": "6833bfbfaa7389d57c78a6672a206822edbae463e706aa94d9c8c76541508f8c"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/US_seasonal_risk.json",
+    "file": "US_seasonal_risk.json",
+    "sha256": "e8a99efb0f519306988938139cfa86419371ea8ddee1066529fe8ad5628c5223"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/US_source_ridge_risk.json",
+    "file": "US_source_ridge_risk.json",
+    "sha256": "9d63bdd11a70c10e20a0c3256abadf9f09714713d24f84ed7375740dbbbea9f7"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/GB_shrunk_bias_risk.json",
+    "file": "GB_shrunk_bias_risk.json",
+    "sha256": "2aeaf31408ec2fe948687aa1fc4d2a517afaae9d609dbc3cff7d11f0b2d1650d"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/GB_damped_trend_risk.json",
+    "file": "GB_damped_trend_risk.json",
+    "sha256": "020193443fe07f6e532e5887a3ed86c0403cd330b0b7fe4393e0f91291b2bc49"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/US_model.json",
+    "file": "US_model.json",
+    "sha256": "e06711017cdbc16c3275e943b29d0ec67f1758089f4a90558521b524d1b73ec3"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r2/GB_model.json",
+    "file": "GB_model.json",
+    "sha256": "feac266a9249677e2b8b6cf733ce35e1a034298c49b64894a2b159f305bdc085"
+  }
+]

@@ -1,0 +1,898 @@
+[
+  {
+    "arm": "hourly_reconstructed",
+    "source": "US",
+    "target": "GB",
+    "path": "hourly_reconstructed_US_persistence_to_GB.csv",
+    "sha256": "d8bbddb893af1ce8172a0f12ceae441d5530833f6e18f15263cd8b5503aaf764",
+    "rows": 8784
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "US",
+    "target": "GB",
+    "path": "hourly_reconstructed_US_seasonal_to_GB.csv",
+    "sha256": "0d5e44e8697ad8e255ccdb9fb3099a8aa1c11c9bb6f9d5b6306395881a129f9a",
+    "rows": 8784
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "US",
+    "target": "GB",
+    "path": "hourly_reconstructed_US_damped_trend_to_GB.csv",
+    "sha256": "ef8e9363fbdc4481e88952f6b3e9aaa1f23557abc33fbf9cfc9529e0ef6231f8",
+    "rows": 8784
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "US",
+    "target": "GB",
+    "path": "hourly_reconstructed_US_local_ridge_to_GB.csv",
+    "sha256": "8f1789fe4c3e4df28f3b5a17c1fa41159a822ff96f02c8a48f4e23a2b1797a2b",
+    "rows": 8784
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "US",
+    "target": "GB",
+    "path": "hourly_reconstructed_US_source_ridge_to_GB.csv",
+    "sha256": "295ec814fee773d711bd70d680fd759079bd9ca8172f6227420b7d055bde82ff",
+    "rows": 8784
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "US",
+    "target": "GB",
+    "path": "hourly_reconstructed_US_local_bias_to_GB.csv",
+    "sha256": "6e6c76be720487dc5bc2bcd4d819388026ed9f4a2cb7a0aee1e0752c33ff994a",
+    "rows": 8784
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "US",
+    "target": "GB",
+    "path": "hourly_reconstructed_US_shrunk_bias_to_GB.csv",
+    "sha256": "2628529c673eb9beeba9be2d48597c046ce6bd4291f41383db1ea7e6bde227d7",
+    "rows": 8784
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "hourly_reconstructed_GB_persistence_to_BPAT.csv",
+    "sha256": "cbcca1da4e6d7a410d7b4651db87aa53ee0fe5f3719bc001351f25dfb2d28c5f",
+    "rows": 5737
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "CISO",
+    "path": "hourly_reconstructed_GB_persistence_to_CISO.csv",
+    "sha256": "5a7d9efd0114e5350743f8f82df55b744130844e1f9b0568b84fc30e7d13152b",
+    "rows": 7960
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "hourly_reconstructed_GB_persistence_to_ERCO.csv",
+    "sha256": "a77ead7196663f05bc9270007fc41318fb5a8567107fbccf2f53a5b88118e559",
+    "rows": 4362
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "FPL",
+    "path": "hourly_reconstructed_GB_persistence_to_FPL.csv",
+    "sha256": "f8c51280b146f194f8e73dcd5e877e0e6546a1d803d643e861d2e352d8f530f2",
+    "rows": 4896
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "hourly_reconstructed_GB_persistence_to_ISNE.csv",
+    "sha256": "6df23f2121a4b5edad09221edcf3f6aa8e735f8d9bb4cd9f828f699a04198bf9",
+    "rows": 4363
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "MISO",
+    "path": "hourly_reconstructed_GB_persistence_to_MISO.csv",
+    "sha256": "f45091277343c3efffa2a3b5583ed4cc5ea165655080105b55f094d67b998cf3",
+    "rows": 8010
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "hourly_reconstructed_GB_persistence_to_NYIS.csv",
+    "sha256": "eea4f83f4565ccfd8ff7c5f6725dfbf7fefb3a51f4b339d64a8666597dfc5d86",
+    "rows": 7201
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "hourly_reconstructed_GB_seasonal_to_BPAT.csv",
+    "sha256": "e6130b1db3f60ed73fdf0493a4510e61c870edaa3d3f852a91137ae231ff2435",
+    "rows": 5737
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "CISO",
+    "path": "hourly_reconstructed_GB_seasonal_to_CISO.csv",
+    "sha256": "850935cb2fd2de40d6486f4533679d3d1b7f13effb9a24efac4fc48840f3e19a",
+    "rows": 7960
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "hourly_reconstructed_GB_seasonal_to_ERCO.csv",
+    "sha256": "6964617832e7413b2057bd4c4c261187d425a4440cf3964c6c83acc061287426",
+    "rows": 4362
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "FPL",
+    "path": "hourly_reconstructed_GB_seasonal_to_FPL.csv",
+    "sha256": "9083b94f592571471c7511575d700460d25b4c33304a3fce98ed173be042810f",
+    "rows": 4896
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "hourly_reconstructed_GB_seasonal_to_ISNE.csv",
+    "sha256": "7a31189947153e832e28b19db35f33f448d06f032742392cc965ec6d4d4d37ed",
+    "rows": 4363
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "MISO",
+    "path": "hourly_reconstructed_GB_seasonal_to_MISO.csv",
+    "sha256": "2c9217a9df19f420450660fc596da4781fe08c64f21413031ad0e0c73561a287",
+    "rows": 8010
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "hourly_reconstructed_GB_seasonal_to_NYIS.csv",
+    "sha256": "02c491813f6c440c0ab928aff7f95b43ee837d0fcf43de0d3566e215fe11be87",
+    "rows": 7201
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "hourly_reconstructed_GB_damped_trend_to_BPAT.csv",
+    "sha256": "2040d19bb26aa3f34e380fbe253f9fd307bf93bd3abdd67c2c9b0b9dac9efbc8",
+    "rows": 5737
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "CISO",
+    "path": "hourly_reconstructed_GB_damped_trend_to_CISO.csv",
+    "sha256": "57047c7092faef04d2eb79a391ebd7880aa1e74e523c343dea92b1e73bb28f06",
+    "rows": 7960
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "hourly_reconstructed_GB_damped_trend_to_ERCO.csv",
+    "sha256": "2d8f98fe8aadf1552d93c9213c0ae064a6c763f8c7d5c2483cab944d46195791",
+    "rows": 4362
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "FPL",
+    "path": "hourly_reconstructed_GB_damped_trend_to_FPL.csv",
+    "sha256": "76e3fd5633eae296efa56eb0ee5a9846e38d88c6413a209adccc71096109f4ff",
+    "rows": 4896
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "hourly_reconstructed_GB_damped_trend_to_ISNE.csv",
+    "sha256": "b376128357b97cc9f1deafa739a984fecd6c8039d2418ce0ef990426ac6cf91a",
+    "rows": 4363
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "MISO",
+    "path": "hourly_reconstructed_GB_damped_trend_to_MISO.csv",
+    "sha256": "9366723389ea0a4ac2f9862de5c517196af425c75e77d922026201047d9a9538",
+    "rows": 8010
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "hourly_reconstructed_GB_damped_trend_to_NYIS.csv",
+    "sha256": "0c7d50ccac9cec0f747bf464ce0c8e17e3cd77f9c7c5825634ec287dc004ad6d",
+    "rows": 7201
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "hourly_reconstructed_GB_local_ridge_to_BPAT.csv",
+    "sha256": "dc51ad9349971e1ca752e19b66a799235ef793b727e97df7ac36bde43245e763",
+    "rows": 5737
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "CISO",
+    "path": "hourly_reconstructed_GB_local_ridge_to_CISO.csv",
+    "sha256": "a5eb5b88a4ce524f0fc65a5d1039f3f881a5c51703506ade8d683038901f3b67",
+    "rows": 7960
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "hourly_reconstructed_GB_local_ridge_to_ERCO.csv",
+    "sha256": "06d601a51f69f0dfa22b7e68e943ec5afaec864ce0b587f31b6fd477183a47b9",
+    "rows": 4362
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "FPL",
+    "path": "hourly_reconstructed_GB_local_ridge_to_FPL.csv",
+    "sha256": "2706f5c2e9bef8df18c30cfe71228787d1d66e32d582c2575c5744e3e2df145d",
+    "rows": 4896
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "hourly_reconstructed_GB_local_ridge_to_ISNE.csv",
+    "sha256": "03f6c6bc50b3d11943fb26cceae4a58a537ed18355634784047061bac08de2e8",
+    "rows": 4363
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "MISO",
+    "path": "hourly_reconstructed_GB_local_ridge_to_MISO.csv",
+    "sha256": "6854ffe89d8623890fabb9b6b5701cc1fda5506a46e3c700a87991b45e898e73",
+    "rows": 8010
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "hourly_reconstructed_GB_local_ridge_to_NYIS.csv",
+    "sha256": "e0b5735921456a3ae17ad7dc278fb73c3c1fc9823afe2686b7441b6cf1145dca",
+    "rows": 7201
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "hourly_reconstructed_GB_source_ridge_to_BPAT.csv",
+    "sha256": "0d7149cff6a0be6c4da4ecf3546f8c9ffc39f0bd2ce5ec947a8e55cac45ebc3e",
+    "rows": 5737
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "CISO",
+    "path": "hourly_reconstructed_GB_source_ridge_to_CISO.csv",
+    "sha256": "63489ee4692c0a190441483a8d23945aa4cbbe6eaad144443978dd2a5aed1e0a",
+    "rows": 7960
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "hourly_reconstructed_GB_source_ridge_to_ERCO.csv",
+    "sha256": "49e88dd648d31837d41feef9293a0f0fac70af85480620dc8087c2344145e8ea",
+    "rows": 4362
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "FPL",
+    "path": "hourly_reconstructed_GB_source_ridge_to_FPL.csv",
+    "sha256": "874480613404ff3679441b84f1c91a79fe67e211b4c8362c6e65faf2aa449864",
+    "rows": 4896
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "hourly_reconstructed_GB_source_ridge_to_ISNE.csv",
+    "sha256": "97df4ea73eb0753e8b5b987856b13bcc8f59a75ae06734f0f1cb7e00123b4c8b",
+    "rows": 4363
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "MISO",
+    "path": "hourly_reconstructed_GB_source_ridge_to_MISO.csv",
+    "sha256": "fb8833774d71240665d85c0f02fcf8df714011e78414271cad1559882042c625",
+    "rows": 8010
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "hourly_reconstructed_GB_source_ridge_to_NYIS.csv",
+    "sha256": "26d0ab474c8a2373e846a8602603228336d5c78b22432655c6571855a9e67f82",
+    "rows": 7201
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "hourly_reconstructed_GB_local_bias_to_BPAT.csv",
+    "sha256": "013f1a332862d6512241b8fd58df98487933036905c1a5b4adb9b09b7f1a64c0",
+    "rows": 5737
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "CISO",
+    "path": "hourly_reconstructed_GB_local_bias_to_CISO.csv",
+    "sha256": "d44ecb72a354e9b1b075f22e8ca17ac707c955fbcd0a87416d75761305613642",
+    "rows": 7960
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "hourly_reconstructed_GB_local_bias_to_ERCO.csv",
+    "sha256": "d8439a93a204102913d40e07d890ae16650ec531f9a40c00b89fa96f8342f5a8",
+    "rows": 4362
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "FPL",
+    "path": "hourly_reconstructed_GB_local_bias_to_FPL.csv",
+    "sha256": "b9cfd49b58e7aa3813ef5a314fd8f4735cd6c56178c4e2271be3a211749d395d",
+    "rows": 4896
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "hourly_reconstructed_GB_local_bias_to_ISNE.csv",
+    "sha256": "e3c66fcdf71bdf51a4c9e1fd12d92ed8aaa25c29b8c7b606568ddd11193086f3",
+    "rows": 4363
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "MISO",
+    "path": "hourly_reconstructed_GB_local_bias_to_MISO.csv",
+    "sha256": "08233bc627f2e4c3c86c49447d12788a368d593fc654b7e5c51b0bd20ad7e595",
+    "rows": 8010
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "hourly_reconstructed_GB_local_bias_to_NYIS.csv",
+    "sha256": "7c78b3b983a482d47877c82f4261e2ab855523b2416fe67901bbb82d6203cf3b",
+    "rows": 7201
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "hourly_reconstructed_GB_shrunk_bias_to_BPAT.csv",
+    "sha256": "cb0e9c1992baa6235b4f5466b03b7afc218700c319be0b4434dadc6df01c0929",
+    "rows": 5737
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "CISO",
+    "path": "hourly_reconstructed_GB_shrunk_bias_to_CISO.csv",
+    "sha256": "eeea003f1596b35c40646859052ebf8d9bbd0a5fa13c59aa9811bbb85a840179",
+    "rows": 7960
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "hourly_reconstructed_GB_shrunk_bias_to_ERCO.csv",
+    "sha256": "e5db48ce4463335423c9a2e6b48c2bfa6ff2bbae0becfe095a87efd35de5ebce",
+    "rows": 4362
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "FPL",
+    "path": "hourly_reconstructed_GB_shrunk_bias_to_FPL.csv",
+    "sha256": "ccfa896e6d6e108aa7059ea050863591dec5155b8ccabe8bf1bd90a46fe2a316",
+    "rows": 4896
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "hourly_reconstructed_GB_shrunk_bias_to_ISNE.csv",
+    "sha256": "7b5e19d1ac4b8c3a3984fed874038d72e4897bcf9a2bb8e1f0052854f097d26f",
+    "rows": 4363
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "MISO",
+    "path": "hourly_reconstructed_GB_shrunk_bias_to_MISO.csv",
+    "sha256": "49efb8c7fdd3b0d7383f8e2b4cf007219ecde52f7fed4d33a496fb722bf2fc5e",
+    "rows": 8010
+  },
+  {
+    "arm": "hourly_reconstructed",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "hourly_reconstructed_GB_shrunk_bias_to_NYIS.csv",
+    "sha256": "69a7c963c1552ad3d4f34a8a3b3373d6736c433e65dcbe5e8ae9fb09cba88900",
+    "rows": 7201
+  },
+  {
+    "arm": "eia923_us",
+    "source": "US",
+    "target": "GB",
+    "path": "eia923_us_US_persistence_to_GB.csv",
+    "sha256": "7541aa5a0919c54b00eb8e607e2b2635b2e8ff3f2018a444347881c7041af97e",
+    "rows": 8784
+  },
+  {
+    "arm": "eia923_us",
+    "source": "US",
+    "target": "GB",
+    "path": "eia923_us_US_seasonal_to_GB.csv",
+    "sha256": "355672df580382737e0e477fd78b34cdb93ad5599ffb77f3c957bc4b2b45a5b5",
+    "rows": 8784
+  },
+  {
+    "arm": "eia923_us",
+    "source": "US",
+    "target": "GB",
+    "path": "eia923_us_US_damped_trend_to_GB.csv",
+    "sha256": "2d3a2002ff6b61cfb93752e0bf7d5e864d9d7d453ca59fbeae422ebb0407abcf",
+    "rows": 8784
+  },
+  {
+    "arm": "eia923_us",
+    "source": "US",
+    "target": "GB",
+    "path": "eia923_us_US_local_ridge_to_GB.csv",
+    "sha256": "df932bc2bded8c8c133dfec5087f02dd3541b42bd5af12631108a6287dfdf9c6",
+    "rows": 8784
+  },
+  {
+    "arm": "eia923_us",
+    "source": "US",
+    "target": "GB",
+    "path": "eia923_us_US_source_ridge_to_GB.csv",
+    "sha256": "be389b2de7c48c485c3cb68e5eba3837508cfbae7766a2c9fd5de82e16b37dd2",
+    "rows": 8784
+  },
+  {
+    "arm": "eia923_us",
+    "source": "US",
+    "target": "GB",
+    "path": "eia923_us_US_local_bias_to_GB.csv",
+    "sha256": "9b5bf7f61203400e019a08f1e1883a51e943a6d96b667811c92b47657e65aa67",
+    "rows": 8784
+  },
+  {
+    "arm": "eia923_us",
+    "source": "US",
+    "target": "GB",
+    "path": "eia923_us_US_shrunk_bias_to_GB.csv",
+    "sha256": "35ca5bb629a4971330a3cea93f1f8e14dbc260555edf7a8121a4d13d5157610c",
+    "rows": 8784
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "eia923_us_GB_persistence_to_BPAT.csv",
+    "sha256": "f237cb713a4b27de2a92f05e9f97d72cf438fa25b84a53e65aebb767335c6822",
+    "rows": 5737
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "CISO",
+    "path": "eia923_us_GB_persistence_to_CISO.csv",
+    "sha256": "2d1cdded7b950e3aaea0ad19b51d231f2a559d6f925ff84fd73fa789357616c4",
+    "rows": 7960
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "eia923_us_GB_persistence_to_ERCO.csv",
+    "sha256": "9033919548308b16cc43e599eebcbb1705b7c66f40dab97b86d53ca18d94c1aa",
+    "rows": 4362
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "FPL",
+    "path": "eia923_us_GB_persistence_to_FPL.csv",
+    "sha256": "136b81a833320c125df93dc87e1a085bb3c0df9a97658d10c25199a6bcbdb67d",
+    "rows": 4896
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "eia923_us_GB_persistence_to_ISNE.csv",
+    "sha256": "1bd5401aae1be704f05cfe793cb0df656d7994ad73396750d0e26da749f2d6ac",
+    "rows": 4363
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "MISO",
+    "path": "eia923_us_GB_persistence_to_MISO.csv",
+    "sha256": "76827f3296d1a5de6d0ae72bae09fb18be47b83e67ffd8437ab31da9a75baa16",
+    "rows": 8010
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "eia923_us_GB_persistence_to_NYIS.csv",
+    "sha256": "d52ac3a0ed5bf343ebe30122718ff985f3a1570091c61675cd128fadacd646a6",
+    "rows": 7201
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "eia923_us_GB_seasonal_to_BPAT.csv",
+    "sha256": "7c8432ae2baa4d180b0fde0a8f34cf62cf88c5dd236a33247699602e381c651d",
+    "rows": 5737
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "CISO",
+    "path": "eia923_us_GB_seasonal_to_CISO.csv",
+    "sha256": "6a4c444dc10b3c0d3ab9ee5c6a1ab4453f8d5043aec55db072b4db8050d1850b",
+    "rows": 7960
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "eia923_us_GB_seasonal_to_ERCO.csv",
+    "sha256": "5e7a87eabd79b4b112253836360a74ac058067b06a961e5e1cbba8bed929ea95",
+    "rows": 4362
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "FPL",
+    "path": "eia923_us_GB_seasonal_to_FPL.csv",
+    "sha256": "615120359127e6ce7338f78838424a41e165b0fb5185f21cdd8c81404a16754e",
+    "rows": 4896
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "eia923_us_GB_seasonal_to_ISNE.csv",
+    "sha256": "9508687164b68e6c53a95d93db59db1f2ae216c8b99290d9b007490bd99a48aa",
+    "rows": 4363
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "MISO",
+    "path": "eia923_us_GB_seasonal_to_MISO.csv",
+    "sha256": "2de12ea81f2711d5664eed06a56c7759a022a2385ed831718d2b7fc32fd028e2",
+    "rows": 8010
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "eia923_us_GB_seasonal_to_NYIS.csv",
+    "sha256": "a977b97eb706eac0dfcbf9e874b19b8f0bf820535741f5ea09a2dea3feb19dd8",
+    "rows": 7201
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "eia923_us_GB_damped_trend_to_BPAT.csv",
+    "sha256": "566ca4f29d8cdbe98bf589866c6b9b750ff6784a697c4b9d30a64a1591055b1d",
+    "rows": 5737
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "CISO",
+    "path": "eia923_us_GB_damped_trend_to_CISO.csv",
+    "sha256": "8f5e79bde08d3adb6c9041936f6b439b4bc8cefd9da0ae91fc23c102055df2ba",
+    "rows": 7960
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "eia923_us_GB_damped_trend_to_ERCO.csv",
+    "sha256": "e0831d85bb4e89215da2a337fc3674c10fc31dc1c4797cdcff8919378e082571",
+    "rows": 4362
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "FPL",
+    "path": "eia923_us_GB_damped_trend_to_FPL.csv",
+    "sha256": "dc983ef6e716b5957db2d11b321c77a1b12e3272f62c7c82ea0bb122a7a6536a",
+    "rows": 4896
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "eia923_us_GB_damped_trend_to_ISNE.csv",
+    "sha256": "637864be52406f83143a6402ddd7a6a92e79361cc342199d2ea06244d7a003ff",
+    "rows": 4363
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "MISO",
+    "path": "eia923_us_GB_damped_trend_to_MISO.csv",
+    "sha256": "21efb3f08657ab7f70c5846ad50c5e46f276a7a4e36127f087eede2fbaba2841",
+    "rows": 8010
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "eia923_us_GB_damped_trend_to_NYIS.csv",
+    "sha256": "734af64dab2d508f9cb5a066851ea633034abc8d3238c34b24276c2b4ab4f830",
+    "rows": 7201
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "eia923_us_GB_local_ridge_to_BPAT.csv",
+    "sha256": "543188bcd7733c768cae8b13b6f397fb68b629c9344fda2d7c9e4b4bfec36c80",
+    "rows": 5737
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "CISO",
+    "path": "eia923_us_GB_local_ridge_to_CISO.csv",
+    "sha256": "724036f94773449ae27589b19e8a26c2b4d9386c3f5564504f4b760995421c13",
+    "rows": 7960
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "eia923_us_GB_local_ridge_to_ERCO.csv",
+    "sha256": "ae3fb5a44ce3530f28b62bbdced7c71811c0f082869d6022e97b41059bebfc9e",
+    "rows": 4362
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "FPL",
+    "path": "eia923_us_GB_local_ridge_to_FPL.csv",
+    "sha256": "2c0c67e4c47adf2a44b796c7dd39d6428c58285457fda7dcf7eb3627abf03cad",
+    "rows": 4896
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "eia923_us_GB_local_ridge_to_ISNE.csv",
+    "sha256": "27ca7e9a3f86d7e7e440d3c28441384876890c07a1207968e4e128dd4e94616c",
+    "rows": 4363
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "MISO",
+    "path": "eia923_us_GB_local_ridge_to_MISO.csv",
+    "sha256": "0b04ba88a29a5f640af3d519e320b3a3b0c7e4b2cd6eab5a8a9a6db6c12a1f84",
+    "rows": 8010
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "eia923_us_GB_local_ridge_to_NYIS.csv",
+    "sha256": "58c278528ae2800a9c7136aa2b209a2697c271ef0a2f0806689dce6f5124686c",
+    "rows": 7201
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "eia923_us_GB_source_ridge_to_BPAT.csv",
+    "sha256": "04e9d4109d19c96d0eb755db5e8528a4315cd91395a4ae49db94409df3beff7f",
+    "rows": 5737
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "CISO",
+    "path": "eia923_us_GB_source_ridge_to_CISO.csv",
+    "sha256": "970cb70d80212ba1d4bd5f7417d4fe6de18125deb548a32a8a043b23862452d5",
+    "rows": 7960
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "eia923_us_GB_source_ridge_to_ERCO.csv",
+    "sha256": "6343979addc2e8b85bdaa6641a7f523fabba2fe91f8b493aacc8eb66d9b0e47a",
+    "rows": 4362
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "FPL",
+    "path": "eia923_us_GB_source_ridge_to_FPL.csv",
+    "sha256": "65184d2374054cb53f9d994aa4e39369e16e9f6bdeb2eb2dda5a716945ec814b",
+    "rows": 4896
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "eia923_us_GB_source_ridge_to_ISNE.csv",
+    "sha256": "9abf16c95805eebe97c9824ac854e247ac7e3fe6aa680d8163014a2d498f9da2",
+    "rows": 4363
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "MISO",
+    "path": "eia923_us_GB_source_ridge_to_MISO.csv",
+    "sha256": "d1af3928eea6a4158d93a7df4a6e686b3188581a5e9e1b8acc31f4b9a7e03fbf",
+    "rows": 8010
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "eia923_us_GB_source_ridge_to_NYIS.csv",
+    "sha256": "c3fb8651bd32638d8bf4da1e9e639c1899fd694ac7f06f7392322910f9691d60",
+    "rows": 7201
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "eia923_us_GB_local_bias_to_BPAT.csv",
+    "sha256": "8fed59c9cf010ae6e5986d90cf2883e1ad25e38920d1e8e02a4b54676749fcf4",
+    "rows": 5737
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "CISO",
+    "path": "eia923_us_GB_local_bias_to_CISO.csv",
+    "sha256": "9e2551fbf9793274d0e2c2b039d6f7c4bae962dcdee1e02a9cedf2e4a05fc48c",
+    "rows": 7960
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "eia923_us_GB_local_bias_to_ERCO.csv",
+    "sha256": "5eb70deee8d3ebd60a788e8d18600f73cdd6af036c2f19de0fe556328dd5889c",
+    "rows": 4362
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "FPL",
+    "path": "eia923_us_GB_local_bias_to_FPL.csv",
+    "sha256": "85466c7b95e8d8ccb35a60a55c5f6ebef7de8f0b8bbc30b5121e9ef8af85efda",
+    "rows": 4896
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "eia923_us_GB_local_bias_to_ISNE.csv",
+    "sha256": "cfda0c40475c4cf3b2e90c4553bb24f6268db910cd8fb18054aee0797deea9c0",
+    "rows": 4363
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "MISO",
+    "path": "eia923_us_GB_local_bias_to_MISO.csv",
+    "sha256": "ef3fb6e7bc38c2f7284058c52afe9b96292633659dbb9bb9092eb00dfaf5022e",
+    "rows": 8010
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "eia923_us_GB_local_bias_to_NYIS.csv",
+    "sha256": "e68cfd8bc68dbce4a157e9015028abecdddbeeeb0e49cf157c4f93084d97525e",
+    "rows": 7201
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "BPAT",
+    "path": "eia923_us_GB_shrunk_bias_to_BPAT.csv",
+    "sha256": "ee5a3c7d13ccc85239a767da10c88b03e106c0b38d146dcf0b4eec888d6235a6",
+    "rows": 5737
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "CISO",
+    "path": "eia923_us_GB_shrunk_bias_to_CISO.csv",
+    "sha256": "85435df31a82890329247c536ebbe597b441b348c7b9ab5762b0a2dc61649fe0",
+    "rows": 7960
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ERCO",
+    "path": "eia923_us_GB_shrunk_bias_to_ERCO.csv",
+    "sha256": "6ce451f7dab516678f59af849a4bb03d268c2a306e17c3b02999f5158a378100",
+    "rows": 4362
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "FPL",
+    "path": "eia923_us_GB_shrunk_bias_to_FPL.csv",
+    "sha256": "171718309bbbeab76660eb3acac25dbcef60757aceb1916bdfe5599d0be71e32",
+    "rows": 4896
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "ISNE",
+    "path": "eia923_us_GB_shrunk_bias_to_ISNE.csv",
+    "sha256": "f0f6872663c170d4b08630d47fb0949c09596060ba861c40ead6211d72216b49",
+    "rows": 4363
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "MISO",
+    "path": "eia923_us_GB_shrunk_bias_to_MISO.csv",
+    "sha256": "ecb487b25c868da762c279f24aa40d75abf8f26a86d2a5a20eb1b2d8d6098064",
+    "rows": 8010
+  },
+  {
+    "arm": "eia923_us",
+    "source": "GB",
+    "target": "NYIS",
+    "path": "eia923_us_GB_shrunk_bias_to_NYIS.csv",
+    "sha256": "e1dfd1864b34e9d5a1fc40f75fe13768c081653efdaad38c78247c0174b217d6",
+    "rows": 7201
+  }
+]

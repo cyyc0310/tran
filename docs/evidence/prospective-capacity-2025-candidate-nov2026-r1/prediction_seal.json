@@ -1,0 +1,51 @@
+[
+  {
+    "region": "BPAT",
+    "hours": 721,
+    "path": "GB_to_BPAT_2026-11_2025_capacity_candidate.csv.gz",
+    "sha256": "a3765e36d005311730aaff3284f728f8524a00f9ca02def51b462a8c3d51c5d4",
+    "target_response_read": false
+  },
+  {
+    "region": "CISO",
+    "hours": 721,
+    "path": "GB_to_CISO_2026-11_2025_capacity_candidate.csv.gz",
+    "sha256": "6fc1c9320696dc6c18d6499d1bb787e9d6800dcf57ccb92fa2b6ede7e2c02897",
+    "target_response_read": false
+  },
+  {
+    "region": "ERCO",
+    "hours": 721,
+    "path": "GB_to_ERCO_2026-11_2025_capacity_candidate.csv.gz",
+    "sha256": "bbfbbd13637b0384e05b85b76cd09e38cb8981c86bff972ab517256f582f3fa2",
+    "target_response_read": false
+  },
+  {
+    "region": "FPL",
+    "hours": 721,
+    "path": "GB_to_FPL_2026-11_2025_capacity_candidate.csv.gz",
+    "sha256": "494123035518855ae6773c32cd913d499a5ae614d1245591814a70cdaef6f56e",
+    "target_response_read": false
+  },
+  {
+    "region": "ISNE",
+    "hours": 721,
+    "path": "GB_to_ISNE_2026-11_2025_capacity_candidate.csv.gz",
+    "sha256": "049e06514c9cdbb334b63b7431949ed72fbba2f99d14fd4d941d9506995b457d",
+    "target_response_read": false
+  },
+  {
+    "region": "MISO",
+    "hours": 720,
+    "path": "GB_to_MISO_2026-11_2025_capacity_candidate.csv.gz",
+    "sha256": "aa51cac0a2bd1f336ab5e60bd2ad95fcb64aa5e6106864af7a4d8e39b892b9f0",
+    "target_response_read": false
+  },
+  {
+    "region": "NYIS",
+    "hours": 721,
+    "path": "GB_to_NYIS_2026-11_2025_capacity_candidate.csv.gz",
+    "sha256": "b3acc6b78b78bb33f592a5b601868de8fa6a1edb2736ba29534701f367fdca2b",
+    "target_response_read": false
+  }
+]

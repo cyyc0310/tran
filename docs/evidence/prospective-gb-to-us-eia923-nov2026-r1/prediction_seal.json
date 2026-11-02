@@ -1,0 +1,65 @@
+[
+  {
+    "source": "GB",
+    "region": "BPAT",
+    "forecast_month": "2026-11",
+    "hours": 721,
+    "path": "GB_to_BPAT_2026-11_predictions.csv.gz",
+    "sha256": "37fa0d2d30c84770d0029691d25e0bbd5f1c1cfb69114800365172925720bad8",
+    "target_response_read": false
+  },
+  {
+    "source": "GB",
+    "region": "CISO",
+    "forecast_month": "2026-11",
+    "hours": 721,
+    "path": "GB_to_CISO_2026-11_predictions.csv.gz",
+    "sha256": "1631549a0e9c120cd5a520c2b0504a1e812bedf491480a0e92f98cdf3f43952f",
+    "target_response_read": false
+  },
+  {
+    "source": "GB",
+    "region": "ERCO",
+    "forecast_month": "2026-11",
+    "hours": 721,
+    "path": "GB_to_ERCO_2026-11_predictions.csv.gz",
+    "sha256": "0b667147867d81a51ce6cba9eea04a313451105823e5b380e23e0bdd08041b76",
+    "target_response_read": false
+  },
+  {
+    "source": "GB",
+    "region": "FPL",
+    "forecast_month": "2026-11",
+    "hours": 721,
+    "path": "GB_to_FPL_2026-11_predictions.csv.gz",
+    "sha256": "314ff187fd696223b829de37b0984c249d5e1d3690e4158e8ccbb83ef151175d",
+    "target_response_read": false
+  },
+  {
+    "source": "GB",
+    "region": "ISNE",
+    "forecast_month": "2026-11",
+    "hours": 721,
+    "path": "GB_to_ISNE_2026-11_predictions.csv.gz",
+    "sha256": "1327625d1bfdceaec18690528cd2a8b5ed1f84d8d9be6a74568e7b51295e4a78",
+    "target_response_read": false
+  },
+  {
+    "source": "GB",
+    "region": "MISO",
+    "forecast_month": "2026-11",
+    "hours": 720,
+    "path": "GB_to_MISO_2026-11_predictions.csv.gz",
+    "sha256": "d167c0588f16cfbed8fe01ac20ca22171afc470c3732333896cb8c8e8fb94bf2",
+    "target_response_read": false
+  },
+  {
+    "source": "GB",
+    "region": "NYIS",
+    "forecast_month": "2026-11",
+    "hours": 721,
+    "path": "GB_to_NYIS_2026-11_predictions.csv.gz",
+    "sha256": "9852baafe31b0af6c85dd67712b424d6b7fb4c0efbc1d0cdce57371594dc7845",
+    "target_response_read": false
+  }
+]

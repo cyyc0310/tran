@@ -1,0 +1,28 @@
+{
+  "sha256": "6176d3b9a3be8bdd64c64f81e74ddad439ee25220563d0b1afe470fc04c60446",
+  "rows": 8760,
+  "input_and_code_hashes": {
+    "runner": "d830eb9a4756b45dc5f5c34d0ba279a88c4ac12409597dc7c8e20e04d9ce4b92",
+    "protocol": "8e6a6ad0f65f0292aae291566c95f84f1f2a23c797dbe8bd1625b36a90f83a86",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/BPAT_generation_2022_2024.csv.gz": "1a1c5cacfa168a0663469c699a568672b371b3e0e929ac246ceebe7080f53e58",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/BPAT_official_intensity_2022_2024.csv.gz": "66b59e45dcf9223604100a8504b68b44cf312bf2df406cfba62bffc2c5b0fe48",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/CISO_generation_2022_2024.csv.gz": "1e53f514fbe8e4ba78011454a7576058baa831de1c854e50eaba8e79903cd0c5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/CISO_official_intensity_2022_2024.csv.gz": "e79358e47c07d2644406f21323ab7671f1fbb29e8311326e18849e85b0fc24ea",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/ERCO_generation_2022_2024.csv.gz": "92cba63a91742ac431ab21a1a138dc9e481000a358e56c1de05b534c3e2811b2",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/ERCO_official_intensity_2022_2024.csv.gz": "de6d0181c32f9167979fc44a15a6ebedde171a6206ea580a8db6c8beeca1ef15",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/FPL_generation_2022_2024.csv.gz": "cc22e71a411404da3e595e6ee879c511123d619b9f6d5c398056a842333bb8f7",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/FPL_official_intensity_2022_2024.csv.gz": "e5c1eb39458349eda625fab8bfe1bb1f5b82e99a7107604832e429555c476955",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/ISNE_generation_2022_2024.csv.gz": "3c6e63991c62af15b538f7e7b7f0f7da0a2526b41172f9eb9dfd82812915b5eb",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/ISNE_official_intensity_2022_2024.csv.gz": "6ba7c5ed7780210f8890098a58c4490e29baeec3c8c23b5879d5f1c0c16c0f1b",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/MISO_generation_2022_2024.csv.gz": "a34a0d688ca25a62efc8f117a017f9a97619452c5d0af9753566622a331927e5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/MISO_official_intensity_2022_2024.csv.gz": "3d189f49fd905462f93b4416f388de28b0589120451696c91b9644263d1d7ecc",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/NYIS_generation_2022_2024.csv.gz": "2744dec0707b640c33409505d3414188ecf2ee7244b5510bfa4fa751cd5baee4",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/NYIS_official_intensity_2022_2024.csv.gz": "f9cdb9cbb84e8b475edbc5b4deb2cdc4d2a440f58f60fbd71180a6059d5ebb02",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/neso-gb/df_fuel_ckan.csv": "103bc41ec970c1d58dab912cd1fae9df27afa0b869ebdd8ddb4d5db7840a704f"
+  },
+  "selected_alpha": 0.25,
+  "selected_tau": 0.25,
+  "target_labels_read_before_seal": false,
+  "target_labels_previously_viewed_in_project": true,
+  "target_inputs": "exact t-2 CN5 shares and local calendar; revised NESO archive"
+}

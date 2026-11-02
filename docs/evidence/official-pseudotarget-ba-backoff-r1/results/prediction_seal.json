@@ -1,0 +1,11 @@
+[
+  {
+    "source": "US",
+    "target": "GB",
+    "path": "US_to_GB_pseudotarget_predictions.csv.gz",
+    "sha256": "a203bb59f63660ed061aa114081c0795f568d30568f19913d22a9ca15b812e72",
+    "hours_predicted": 8784,
+    "selected_alpha": 0.25,
+    "selected_tau": 0.25
+  }
+]

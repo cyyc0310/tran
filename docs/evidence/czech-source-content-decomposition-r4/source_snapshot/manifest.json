@@ -1,0 +1,7 @@
+{
+  "purpose": "Exact source files used by authoritative r4 run, reconstructed and checked against its recorded code_sha256.",
+  "sha256": {
+    "run_czech_source_content_decomposition.py": "db9a5a7993b8459c3d0f9be794e2117fcc80d89a0e109c12f6406eb89cbe5ce6",
+    "CZECH_SOURCE_CONTENT_DECOMPOSITION_PROTOCOL_20261101.md": "986c8157cea4f6fd0ec87e39e32f8af82d22e9b72be039ad1dcec0d18a0df9e9"
+  }
+}

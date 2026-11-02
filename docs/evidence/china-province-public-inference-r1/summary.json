@@ -1,0 +1,4527 @@
+{
+  "experiment": "all-province Chinese public-month label-free inference",
+  "origin": "2026-11-01T00:00:00+08:00",
+  "horizon_hours": 24,
+  "forecast_target": "generation-side fixed-factor proxy; not consumption CIF",
+  "target_hourly_labels_read": false,
+  "target_model_fitting": false,
+  "source_model_metadata": {
+    "source_countries": [
+      "DE",
+      "GB",
+      "US"
+    ],
+    "train_year": 2022,
+    "calibration_period": "2023H1",
+    "training_hours": 53286,
+    "calibration_hours": 36809,
+    "research_baselines_only": true,
+    "innovation_gate_passed": false,
+    "current_production_accuracy_certified": false
+  },
+  "input_snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+  "province_count_in_panel": 31,
+  "forecasted_provinces": 31,
+  "rejected_provinces": 0,
+  "provinces": [
+    {
+      "province": "Anhui",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.8798938287989383,
+            0.8798938287989383
+          ]
+        },
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 6,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8798938287989383,
+            0.8798938287989383
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 6,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8798938287989383,
+            0.8798938287989383
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.8604317394341522,
+            0.8604317394341522
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Anhui",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Beijing",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.8735177865612648,
+            0.8735177865612648
+          ]
+        },
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 6,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8735177865612648,
+            0.8735177865612648
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 6,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8735177865612648,
+            0.8735177865612648
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.8870024771630108,
+            0.8870024771630108
+          ]
+        },
+        "total_cv": {
+          "hours_outside": 24,
+          "source_range": [
+            0.0,
+            0.25062077472685645
+          ],
+          "target_range": [
+            0.3041674324133913,
+            0.3041674324133913
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Beijing",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Chongqing",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Chongqing",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Fujian",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 87,
+      "excluded_months": 18,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {},
+      "input_audit": {
+        "province": "Fujian",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 87,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Gansu",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Gansu",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Guangdong",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 87,
+      "excluded_months": 18,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {},
+      "input_audit": {
+        "province": "Guangdong",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 87,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Guangxi",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 87,
+      "excluded_months": 18,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {},
+      "input_audit": {
+        "province": "Guangxi",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 87,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Guizhou",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Guizhou",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Hainan",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 87,
+      "excluded_months": 18,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal_change": {
+          "hours_outside": 24,
+          "source_range": [
+            -0.16360440799484138,
+            0.25652147589919144
+          ],
+          "target_range": [
+            -0.21404803392605964,
+            -0.21404803392605964
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Hainan",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 87,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Hebei",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Hebei",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Heilongjiang",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Heilongjiang",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Henan",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.8294515401953418,
+            0.8294515401953418
+          ]
+        },
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 6,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8294515401953418,
+            0.8294515401953418
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 6,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8294515401953418,
+            0.8294515401953418
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.7922755721784522,
+            0.7922755721784522
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Henan",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Hubei",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Hubei",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Hunan",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Hunan",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "InnerMongolia",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "InnerMongolia",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Jiangsu",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 87,
+      "excluded_months": 18,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.796386630532972,
+            0.796386630532972
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 2,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.796386630532972,
+            0.796386630532972
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 2,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.796386630532972,
+            0.796386630532972
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.7940113426920369,
+            0.7940113426920369
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Jiangsu",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 87,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Jiangxi",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.788325165182032,
+            0.788325165182032
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Jiangxi",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Jilin",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Jilin",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Liaoning",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 87,
+      "excluded_months": 18,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {},
+      "input_audit": {
+        "province": "Liaoning",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 87,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Ningxia",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Ningxia",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Qinghai",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "solar": {
+          "hours_outside": 24,
+          "source_range": [
+            0.0,
+            0.26147182399234026
+          ],
+          "target_range": [
+            0.32382892057026474,
+            0.32382892057026474
+          ]
+        },
+        "solar_hsin": {
+          "hours_outside": 10,
+          "source_range": [
+            -0.26147182399234026,
+            0.26147182399234026
+          ],
+          "target_range": [
+            -0.32382892057026474,
+            0.32382892057026474
+          ]
+        },
+        "solar_hcos": {
+          "hours_outside": 10,
+          "source_range": [
+            -0.26147182399234026,
+            0.26147182399234026
+          ],
+          "target_range": [
+            -0.32382892057026474,
+            0.32382892057026474
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Qinghai",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Shaanxi",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.8187523071244002,
+            0.8187523071244002
+          ]
+        },
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 2,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8187523071244002,
+            0.8187523071244002
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 2,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8187523071244002,
+            0.8187523071244002
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.7897753002805826,
+            0.7897753002805826
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Shaanxi",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Shandong",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 86,
+      "excluded_months": 19,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.8021327014218009,
+            0.8021327014218009
+          ]
+        },
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.05292259083728278,
+            0.05292259083728278
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 2,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8021327014218009,
+            0.8021327014218009
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 2,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8021327014218009,
+            0.8021327014218009
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.7832900621874987,
+            0.7832900621874987
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Shandong",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 86,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-05",
+            "reason": "unresolved_scope_or_remainder"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Shanghai",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.9561510353227771,
+            0.9561510353227771
+          ]
+        },
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 10,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.9561510353227771,
+            0.9561510353227771
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 10,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.9561510353227771,
+            0.9561510353227771
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.9522695714842296,
+            0.9522695714842296
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Shanghai",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Shanxi",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.8067807768268598,
+            0.8067807768268598
+          ]
+        },
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 2,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8067807768268598,
+            0.8067807768268598
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 2,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8067807768268598,
+            0.8067807768268598
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.8009468714497853,
+            0.8009468714497853
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Shanxi",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Sichuan",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_change": {
+          "hours_outside": 24,
+          "source_range": [
+            -0.16360440799484138,
+            0.25652147589919144
+          ],
+          "target_range": [
+            -0.20644928961956363,
+            -0.20644928961956363
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Sichuan",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Tianjin",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 20,
+      "excluded_months": 85,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "thermal": {
+          "hours_outside": 24,
+          "source_range": [
+            0.012281065643523088,
+            0.795664662302757
+          ],
+          "target_range": [
+            0.8685524126455907,
+            0.8685524126455907
+          ]
+        },
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_hsin": {
+          "hours_outside": 6,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8685524126455907,
+            0.8685524126455907
+          ]
+        },
+        "thermal_hcos": {
+          "hours_outside": 6,
+          "source_range": [
+            -0.795664662302757,
+            0.795664662302757
+          ],
+          "target_range": [
+            -0.8685524126455907,
+            0.8685524126455907
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.841773784856027,
+            0.841773784856027
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Tianjin",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 20,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-05",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-10",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-11",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-12",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-05",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-10",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-11",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-12",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-05",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-10",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-11",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-12",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-05",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-10",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-11",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-12",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-05",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-10",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-11",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-12",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-05",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-10",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-11",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-12",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-05",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Tibet",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        },
+        "thermal_mean": {
+          "hours_outside": 24,
+          "source_range": [
+            0.050731518625173944,
+            0.7442714533814713
+          ],
+          "target_range": [
+            0.03012146124886475,
+            0.03012146124886475
+          ]
+        },
+        "total_cv": {
+          "hours_outside": 24,
+          "source_range": [
+            0.0,
+            0.25062077472685645
+          ],
+          "target_range": [
+            0.2982062604180059,
+            0.2982062604180059
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Tibet",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Xinjiang",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Xinjiang",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Yunnan",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 81,
+      "excluded_months": 24,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {
+        "nuclear": {
+          "hours_outside": 24,
+          "source_range": [
+            0.05830808231275506,
+            0.3391532425227874
+          ],
+          "target_range": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "input_audit": {
+        "province": "Yunnan",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 81,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-03",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-04",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-06",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-07",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-08",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-09",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    },
+    {
+      "province": "Zhejiang",
+      "status": "forecasted",
+      "latest_allowed_month": "2026-09",
+      "eligible_months": 87,
+      "excluded_months": 18,
+      "prediction_rows": 192,
+      "outside_source_coordinate_support": {},
+      "input_audit": {
+        "province": "Zhejiang",
+        "snapshot_available_at": "2026-10-31T07:35:21.614367+00:00",
+        "latest_allowed_month": "2026-09",
+        "eligible_months": 87,
+        "excluded_months": [
+          {
+            "month": "2018-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2018-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2019-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2020-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2021-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2022-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2023-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2024-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2025-02",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-01",
+            "reason": "missing_current_value"
+          },
+          {
+            "month": "2026-02",
+            "reason": "missing_current_value"
+          }
+        ],
+        "input_unit": "100 million kWh converted to MWh",
+        "closure_policy": "five-share renormalization when abs(total-five)<=0.3 source units",
+        "other_renewable": "zero model placeholder within rounding ambiguity; not an observed zero",
+        "scope": "NBS above-designated-size industrial generation",
+        "official_release_vintage_certified": false
+      }
+    }
+  ]
+}

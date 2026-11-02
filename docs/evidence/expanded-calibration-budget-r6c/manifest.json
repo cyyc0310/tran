@@ -1,0 +1,174 @@
+{
+  "schema": "EXPANDED_CALIBRATION_BUDGET_R6C_EVIDENCE_V1",
+  "posthoc_development": true,
+  "target_dataset_already_viewed": true,
+  "new_country_opened": false,
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "d97ebd8b059372cc8ea2a77a243d8d04cbb4e9fee17634138720b8faa51efb31"
+    },
+    {
+      "file": "execution.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original": "results/expanded-calibration-budget-r6c.execution.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "independent_review/calibration_checks.json",
+      "sha256": "bd1d5c8e2cf04b95609e67e50644b0ad01b9cb511a8b5acab5bfb3666dce063f",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/calibration_checks.json",
+      "original_sha256": "bd1d5c8e2cf04b95609e67e50644b0ad01b9cb511a8b5acab5bfb3666dce063f"
+    },
+    {
+      "file": "independent_review/calibration_review.json",
+      "sha256": "309ef9c4b9f028d636bbf52727d0a02066b7a31f6a97f10fcb5d34adec8b5549",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/calibration_review.json",
+      "original_sha256": "309ef9c4b9f028d636bbf52727d0a02066b7a31f6a97f10fcb5d34adec8b5549"
+    },
+    {
+      "file": "independent_review/independent_review.json",
+      "sha256": "2116d684a8b9ddd70e689b051734c10ef2952d438ea8e14eeb1d111101ec79d9",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/independent_review.json",
+      "original_sha256": "2116d684a8b9ddd70e689b051734c10ef2952d438ea8e14eeb1d111101ec79d9"
+    },
+    {
+      "file": "independent_review/legacy_selection.json",
+      "sha256": "914398f817db4f2519664733433567afa98315c88f755752e4d37abbe8591162",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/legacy_selection.json",
+      "original_sha256": "914398f817db4f2519664733433567afa98315c88f755752e4d37abbe8591162"
+    },
+    {
+      "file": "independent_review/manifest.json",
+      "sha256": "c249e496426d0405f8e74ba205222629eb5aeb29f36b7c269f5475e330627014",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/manifest.json",
+      "original_sha256": "c249e496426d0405f8e74ba205222629eb5aeb29f36b7c269f5475e330627014"
+    },
+    {
+      "file": "independent_review/metric_review.json",
+      "sha256": "86b690f593473e342550ef5839bd9dbfc73e93544fbbf0479ebe60e207ba184d",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/metric_review.json",
+      "original_sha256": "86b690f593473e342550ef5839bd9dbfc73e93544fbbf0479ebe60e207ba184d"
+    },
+    {
+      "file": "independent_review/prediction_rebuild_checks.json",
+      "sha256": "0caa8a001b8a793e65195ab38b62d9de14487f503fcc14c1a76fac11a16d06ed",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/prediction_rebuild_checks.json",
+      "original_sha256": "0caa8a001b8a793e65195ab38b62d9de14487f503fcc14c1a76fac11a16d06ed"
+    },
+    {
+      "file": "independent_review/primary_capacity_calibration_effects.csv",
+      "sha256": "de3b8f047b24cddbff80e6cb764d63a42a00319e62e778034539ba4576646d12",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/primary_capacity_calibration_effects.csv",
+      "original_sha256": "de3b8f047b24cddbff80e6cb764d63a42a00319e62e778034539ba4576646d12"
+    },
+    {
+      "file": "independent_review/recomputed_configuration_metrics.csv",
+      "sha256": "8a9323077b7433d0ab63730c31d8f2fa7ea13d123dd2d9bfceed11e1fbd05e97",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/recomputed_configuration_metrics.csv",
+      "original_sha256": "8a9323077b7433d0ab63730c31d8f2fa7ea13d123dd2d9bfceed11e1fbd05e97"
+    },
+    {
+      "file": "independent_review/recomputed_paired_comparison.csv",
+      "sha256": "8c0a0e8cade9a1fd6bf5a4365a5ac9ddf869b5fab4d1e4c18f4d56e25ddeeeb8",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/recomputed_paired_comparison.csv",
+      "original_sha256": "8c0a0e8cade9a1fd6bf5a4365a5ac9ddf869b5fab4d1e4c18f4d56e25ddeeeb8"
+    },
+    {
+      "file": "independent_review/recomputed_region_metrics.csv",
+      "sha256": "acbf24d67309f19d1435a1d44387a512bff98f6c5a6ee9d1b9dd18cc9f481891",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/recomputed_region_metrics.csv",
+      "original_sha256": "acbf24d67309f19d1435a1d44387a512bff98f6c5a6ee9d1b9dd18cc9f481891"
+    },
+    {
+      "file": "independent_review/recomputed_summary.csv",
+      "sha256": "aade42af4ddacd1b684437d044ca482f4cb9f411fa523d65869a4a4f6068e387",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/recomputed_summary.csv",
+      "original_sha256": "aade42af4ddacd1b684437d044ca482f4cb9f411fa523d65869a4a4f6068e387"
+    },
+    {
+      "file": "independent_review/region_paired_differences.csv",
+      "sha256": "7287c377e6f2926944f097171d18dd6d88586ca5fcb251583fe9044679039f46",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/region_paired_differences.csv",
+      "original_sha256": "7287c377e6f2926944f097171d18dd6d88586ca5fcb251583fe9044679039f46"
+    },
+    {
+      "file": "independent_review/scientific_review.json",
+      "sha256": "17fb01cc0e65b5eac33b254631faa134029743780280644ceb7129a1df66b1c4",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/scientific_review.json",
+      "original_sha256": "17fb01cc0e65b5eac33b254631faa134029743780280644ceb7129a1df66b1c4"
+    },
+    {
+      "file": "independent_review/seal_review.json",
+      "sha256": "de5376c26a9a8e40f62018d07dab926565e074fc033d771429a7f3ac2d6bd4a9",
+      "original": "results/expanded-calibration-budget-r6c-independent-review/seal_review.json",
+      "original_sha256": "de5376c26a9a8e40f62018d07dab926565e074fc033d771429a7f3ac2d6bd4a9"
+    },
+    {
+      "file": "predictions.csv.gz",
+      "sha256": "043866204f7b08b49db7abfc3c33f02677b852c4ae70d5092e67a6fa9d1f0b19",
+      "original": "results/expanded-calibration-budget-r6c/predictions.csv.gz",
+      "original_sha256": "043866204f7b08b49db7abfc3c33f02677b852c4ae70d5092e67a6fa9d1f0b19"
+    },
+    {
+      "file": "results/calibration.json",
+      "sha256": "d653bd63c97974af8c9eb8dda47ed1f060ea2b1cd48cb30ba0737ce303b1bc33",
+      "original": "results/expanded-calibration-budget-r6c/calibration.json",
+      "original_sha256": "d653bd63c97974af8c9eb8dda47ed1f060ea2b1cd48cb30ba0737ce303b1bc33"
+    },
+    {
+      "file": "results/completion.json",
+      "sha256": "819dae8047ab634c59e8b49e80590f2a24af3c66f8e38e916336ecce857d4b42",
+      "original": "results/expanded-calibration-budget-r6c/completion.json",
+      "original_sha256": "819dae8047ab634c59e8b49e80590f2a24af3c66f8e38e916336ecce857d4b42"
+    },
+    {
+      "file": "results/configuration_metrics.csv",
+      "sha256": "ff8d070eef9db304ccc46a80d03d63035bc08144d739449e82d193a4947b8c5a",
+      "original": "results/expanded-calibration-budget-r6c/configuration_metrics.csv",
+      "original_sha256": "ff8d070eef9db304ccc46a80d03d63035bc08144d739449e82d193a4947b8c5a"
+    },
+    {
+      "file": "results/execution_plan.json",
+      "sha256": "295de999a4d724579e9f0d095a01da0f4a749a6968128b12b5b320d6203c7430",
+      "original": "results/expanded-calibration-budget-r6c/execution_plan.json",
+      "original_sha256": "295de999a4d724579e9f0d095a01da0f4a749a6968128b12b5b320d6203c7430"
+    },
+    {
+      "file": "results/input_code_seal.json",
+      "sha256": "9342e4cd4663ab1a497d8dff54fb6ba70249ac34580e593db01a404528a3647b",
+      "original": "results/expanded-calibration-budget-r6c/input_code_seal.json",
+      "original_sha256": "9342e4cd4663ab1a497d8dff54fb6ba70249ac34580e593db01a404528a3647b"
+    },
+    {
+      "file": "results/invariance_check.json",
+      "sha256": "afab258b5fa25ee49c15a700728ee505f72bb0fa546ff7a8cf87b21078586911",
+      "original": "results/expanded-calibration-budget-r6c/invariance_check.json",
+      "original_sha256": "afab258b5fa25ee49c15a700728ee505f72bb0fa546ff7a8cf87b21078586911"
+    },
+    {
+      "file": "results/paired_comparison.csv",
+      "sha256": "2a2ecea7971d1b9a388827e4eddce45a42a7d5499eeb11ec68599d427d588b7e",
+      "original": "results/expanded-calibration-budget-r6c/paired_comparison.csv",
+      "original_sha256": "2a2ecea7971d1b9a388827e4eddce45a42a7d5499eeb11ec68599d427d588b7e"
+    },
+    {
+      "file": "results/prediction_seal.json",
+      "sha256": "4dbf906212dacf9bda9a649023823051f4dfa6f7ca06433e3c56e8f793ea3700",
+      "original": "results/expanded-calibration-budget-r6c/prediction_seal.json",
+      "original_sha256": "4dbf906212dacf9bda9a649023823051f4dfa6f7ca06433e3c56e8f793ea3700"
+    },
+    {
+      "file": "results/region_metrics.csv",
+      "sha256": "a0bccfb0a073d7d0ae293991b18a84efd3ea6aa7f1953fe5f0ea31d9611fd5ec",
+      "original": "results/expanded-calibration-budget-r6c/region_metrics.csv",
+      "original_sha256": "a0bccfb0a073d7d0ae293991b18a84efd3ea6aa7f1953fe5f0ea31d9611fd5ec"
+    },
+    {
+      "file": "results/summary.csv",
+      "sha256": "be6edf2ce120026d11188dee01d0b709ad5e99155cae4fbaaaf4999580ad6df8",
+      "original": "results/expanded-calibration-budget-r6c/summary.csv",
+      "original_sha256": "be6edf2ce120026d11188dee01d0b709ad5e99155cae4fbaaaf4999580ad6df8"
+    }
+  ]
+}

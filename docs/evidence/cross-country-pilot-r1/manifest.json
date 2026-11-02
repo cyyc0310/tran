@@ -1,0 +1,47 @@
+[
+  {
+    "source": "results/cross-country-pilot-r1/region_metrics.csv",
+    "file": "region_metrics.csv",
+    "sha256": "a0f7bd21a7dadc92d5fc9d012c17365974362b7f5f5b388d0b0aeaf7d5d49c79"
+  },
+  {
+    "source": "results/cross-country-pilot-r1/country_metrics.csv",
+    "file": "country_metrics.csv",
+    "sha256": "5c765df4ca1799d80764254e9157f0852b105224782dc134d28a8e376826a5dd"
+  },
+  {
+    "source": "results/cross-country-pilot-r1/provenance.json",
+    "file": "provenance.json",
+    "sha256": "160670351a148da135c77bf5088f076ec59251748514835f8c69e9642f3866ca"
+  },
+  {
+    "source": "results/cross-country-pilot-r1/status.json",
+    "file": "status.json",
+    "sha256": "0eb790a18643899e126b05e21da48bd8cd45d8cad4c69575ad1736762b158f50"
+  },
+  {
+    "source": "results/cross-country-pilot-r1/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "6636b9bc77ce4cb3b94c316c9dd745df7452888fa33b32c064ca2d22f4f0112d"
+  },
+  {
+    "source": "results/cross-country-pilot-r1/US_calibration.json",
+    "file": "US_calibration.json",
+    "sha256": "d0a8b66460cea7d24b74af5d0cb410382c1f3ae47b98f8843eb32a51700956a3"
+  },
+  {
+    "source": "results/cross-country-pilot-r1/GB_calibration.json",
+    "file": "GB_calibration.json",
+    "sha256": "a5e5194c16cd4018c8f98068d7715b6207780ea1ca6867b2af79c29606d9a968"
+  },
+  {
+    "source": "results/cross-country-pilot-r1/posthoc_support_diagnostic.json",
+    "file": "posthoc_support_diagnostic.json",
+    "sha256": "4cbe82425caa64abefb6bce3fa3a45a1dff08aab0e1a5b6750806ea4c8425270"
+  },
+  {
+    "source": "results/cross-country-pilot-r1/posthoc_support_and_cohort.json",
+    "file": "posthoc_support_and_cohort.json",
+    "sha256": "25ea3046011158f98bd670a56d7ec63afd19e7f61f632b18a665a45cf1c96d9d"
+  }
+]

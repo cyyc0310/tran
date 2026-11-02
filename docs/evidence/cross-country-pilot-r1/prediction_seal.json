@@ -1,0 +1,34 @@
+[
+  {
+    "path": "US_to_GB_predictions.csv",
+    "sha256": "738d7c9f3873eb32d7197c3ad2bed95b5389d7d278fe64bd873ccd235e979e0e"
+  },
+  {
+    "path": "GB_to_BPAT_predictions.csv",
+    "sha256": "d561d465d16857655f2e9793953db99356e1e0bfd52be9bea674fb4836f49b1f"
+  },
+  {
+    "path": "GB_to_CISO_predictions.csv",
+    "sha256": "029368873d9c56c8a57fe8739de4a9f8ba4e02565f1222379c445451354a44db"
+  },
+  {
+    "path": "GB_to_ERCO_predictions.csv",
+    "sha256": "b49d3734e6ed890b53ccca05eed34d2ca34e2e3a878a1e30d5801e2f49bfc55c"
+  },
+  {
+    "path": "GB_to_FPL_predictions.csv",
+    "sha256": "d580fd4950470d6b77cec107f3d8c276b70e5c4a10c44a8c1df6dbd068fccf19"
+  },
+  {
+    "path": "GB_to_ISNE_predictions.csv",
+    "sha256": "1661a6b7a1d5821c2d6924c8672061ffc9fa45f9ed08cfbf40ab560cc18b0c85"
+  },
+  {
+    "path": "GB_to_MISO_predictions.csv",
+    "sha256": "ab49695dd07defbe08bb56d293a8e9f0a88b53bf94519ae0b59db96ca8494304"
+  },
+  {
+    "path": "GB_to_NYIS_predictions.csv",
+    "sha256": "390d9c2c1526f4fb6e906af0b3346e99abff418d545ac995abc22249bd76d0ce"
+  }
+]

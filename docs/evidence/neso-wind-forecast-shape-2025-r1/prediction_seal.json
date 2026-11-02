@@ -1,0 +1,22 @@
+{
+  "status": "SEALED_PREDICTIONS_AWAIT_SCORE",
+  "protocol": "docs/NESO_WIND_FORECAST_SHAPE_2025_TEMPORAL_PROTOCOL_20261102.md",
+  "protocol_sha256": "b9c85652cd009ff0d2af39fd13bab064a94ba602a082d0d185bdac9366106425",
+  "source_model_sha256": "92e4d0109459ac759514401569a7b5e269785e141106ab3afc4339db47991c63",
+  "forecast_feature_sha256": "17b29aa845fa68a1887f9e08e86b8a37bb621d80cde4e9ea2ddcb0cb018323df",
+  "forecast_preflight_sha256": "afd2a395ad2d43f176c28cf345603f34daa29e617057d8a4386355c985140fb7",
+  "predictions_file": "predictions_2025.csv",
+  "predictions_sha256": "0f1a2089100a539f46d35ba611082e05658a0994a073621d68cf7cc50e4a1513",
+  "source": "US seven BA, 2022 training, equal-region source weights; 2023 source calibration stored separately",
+  "target_features": "GB 2025 timestamps and 2023 (t-2) monthly M only; target 2025 generation columns not read before prediction seal",
+  "common_support_hours": 8616,
+  "common_support_days": 359,
+  "target_label_accessed_before_prediction": false,
+  "models": [
+    "anchor700",
+    "source_thermal_ef",
+    "coarse_boosting",
+    "coarse_recomposition",
+    "forecast_wind_shape_recomposition"
+  ]
+}

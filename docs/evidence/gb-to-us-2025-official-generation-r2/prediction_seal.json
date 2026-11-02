@@ -1,0 +1,6 @@
+{
+  "prediction_sha256": "3633a3c49f073f41d88f98680c35ced84237b7c22120a8bc2484218ede6a00f2",
+  "rows": 61320,
+  "created_before_target_score": true,
+  "target_response_file_sha256": "110adf45ebcf6ce518871ec98dd342f2e1a738840a2b5dc8752396b35583f02f"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "DEVELOPMENT_PSEUDOTARGET_REPORTED_MIX_CORRECTION",
+  "selected_alpha": "identity",
+  "outer_pseudotarget_ba_count": 7,
+  "outer_2024_ba_month_pairs": 61,
+  "outer_mean_raw_l1": 0.07241754745378354,
+  "outer_mean_corrected_l1": 0.07242426190062794,
+  "gb_target_hours": 8784,
+  "gb_result_is_development": true,
+  "eia923_vintage": "2022-2024 current annual final archives; lag simulation, not as-issued",
+  "et54_vintage": "2026-10-29 current revised workbook; MPP-only monthly coverage",
+  "gb_prediction_seals": [
+    {
+      "path": "GB_2024_ET54_raw_predictions.csv",
+      "sha256": "d6511a0f77f3b2776659632ccde607a2410dabd807e92c3cf901cbbb257ea6a4",
+      "rows": 8784
+    },
+    {
+      "path": "GB_2024_ET54_corrected_predictions.csv",
+      "sha256": "8b50f37452e121944aee09ccaefdbbfbd591fdcb80ddb9636e948bde87506801",
+      "rows": 8784
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "provider": "NESO official Carbon Intensity API",
+  "metric": "national intensity.actual (estimated from metered generation per NESO metadata; not a direct meter of emissions)",
+  "period_start": "2022-01-01 00:00:00+00:00",
+  "period_end": "2025-01-01 00:00:00+00:00",
+  "retrieved_at_utc": "2026-11-01T18:58:53.841143+00:00",
+  "requests": [
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-01-01T00:00Z/2022-01-31T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "56198ede08154c9ea5bb61c15c55c92e51c8dbac7946be389d670bd8963c8519"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-01-31T00:00Z/2022-03-02T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "8013f86aa44028c8d6a46d7a831eb2f5fbd8731c4e56c9e4d9616fb409597e41"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-03-02T00:00Z/2022-04-01T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "dedb07e4599c8872e4d2279bb4753f933cadefaa3646e00cd27dedfe3d22af23"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-04-01T00:00Z/2022-05-01T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "913313b9d86986e01a58f462bc4ce1c37310fa448a6fdf28deb2e625beaee0d1"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-05-01T00:00Z/2022-05-31T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "f82fefba023a22ea51c2a98f4b3dc81bb8fb4c4b8bca4556ae031f1359c143d8"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-05-31T00:00Z/2022-06-30T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "8e623b9dfdcf653067ac2d14705aa9ea7187e0a668e43417a4f9321f8f316f58"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-06-30T00:00Z/2022-07-30T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "f3ead379c00e97936a79d929fd47a7273b23cb6dcdba0c1953bb6c71f79017de"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-07-30T00:00Z/2022-08-29T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "3272cd2049a3e5e92768b40774b3fbb2f014f59b6da4eb59405503082fa259bc"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-08-29T00:00Z/2022-09-28T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "75a82d75c9056339be6655f6011f25ad13c8e6b488652127f6ab79d4350d10c0"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-09-28T00:00Z/2022-10-28T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "5a50f6d4b0380d539da69d9a46b9b96ad63b6e6eb172c9fa50a102d47a4f5d3d"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-10-28T00:00Z/2022-11-27T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "53e7e1a4b3f314ae4f6b66086d4faa6410d5b8eb1957a709307973e04107a699"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-11-27T00:00Z/2022-12-27T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "08aff81f0e9bb95f0765198bf028fae1cf0d6a1950d80b33467e9d5af13ccdeb"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2022-12-27T00:00Z/2023-01-26T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "23c1663afb515662f96e289c8ca54da3db3392e13c1d2d6d82c0dd14be766cee"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-01-26T00:00Z/2023-02-25T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "f408acedba6f4fe3e491d2a0b307988dee5531cb1cb33e6b4a9bad8b42e6a80c"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-02-25T00:00Z/2023-03-27T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "69d5dae650b2773ad1781c8a09525d5f1c24d0410d402282f2310348577808b5"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-03-27T00:00Z/2023-04-26T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "9ad3c3b96c99d095f3991db412151e65e08101337b5b516b26e41461f4b43e4f"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-04-26T00:00Z/2023-05-26T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "2f9e23f91a3797f7a6b8bcc7011e121cc04992b4ea21c30b2c24e1c85a385588"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-05-26T00:00Z/2023-06-25T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "595e370faef3ced5eaa6cb0e566dd1014863ff664a62e3fba04afa2a4785b61d"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-06-25T00:00Z/2023-07-25T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "3062161fb3174666b33ff2092cc05ba69557c703d86c69ccd110583e4489f15f"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-07-25T00:00Z/2023-08-24T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "9b6b24e05dfb7c899db07a640709fda3298a590481a236970eeeb0f673334d8c"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-08-24T00:00Z/2023-09-23T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "4caae67a5caf316dbbefc36465c612d73c59d476e61cc6f51ee55305ff84ac54"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-09-23T00:00Z/2023-10-23T00:00Z",
+      "status": 200,
+      "records": 1350,
+      "sha256": "5d7f0321edcedc0494ebe0f24f3ddf94da57757084eb8482c2993a854a6f052d"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-10-23T00:00Z/2023-11-22T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "6f1aff255d57410beeab1b90d5557df60a373e18ff745808e3d987899e63b0bc"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-11-22T00:00Z/2023-12-22T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "ede6c141cf432ad64194f1d6476b933059a129f93deb92c0a9a130bf31cb97f1"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2023-12-22T00:00Z/2024-01-21T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "30c3aa446914327a8718557b7b978093d394bb6201965ad36b5dfea468e51945"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-01-21T00:00Z/2024-02-20T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "ff7e4146ea62ac863af18df4c8ba59b65aee05e37ff1bd9a34cec1cfd0547e9d"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-02-20T00:00Z/2024-03-21T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "63b4b1f8ad109885d0c0579e629b1a629ef2cb088b395ade6ffec4234d476dcb"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-03-21T00:00Z/2024-04-20T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "19ef4b4ff22256e5e22ce3c892fcd2bf929022368adbfe149c10b2f97b12f671"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-04-20T00:00Z/2024-05-20T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "24a68bdb4b5963565869faa8f05ee765b758f3fc3b2eab7344782d2c5a0cbeaa"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-05-20T00:00Z/2024-06-19T00:00Z",
+      "status": 200,
+      "records": 1410,
+      "sha256": "b97aef44692d3dd16248b262d35ea7ad73a641966391048eb6835f7ba20b5489"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-06-19T00:00Z/2024-07-19T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "3583484f368baacd49c82fa55263fe09eaed0ca545dc979c6aa884c3c799c384"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-07-19T00:00Z/2024-08-18T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "41ee2a05b66db661e1ddc949e1d4c9632b428b0f29f067be739463b79326c749"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-08-18T00:00Z/2024-09-17T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "b4b8b33751032d2cf1b618895e195da5c0677b314939bcbc23da0fd4470ce787"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-09-17T00:00Z/2024-10-17T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "852cf5fbb68495b2fb3645480d2175cd1f06115b351ef3a1ace6128646337df6"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-10-17T00:00Z/2024-11-16T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "55a80229373b446e85e03c2243ebf04250c59732da7569b5f1136c15f9b74b09"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-11-16T00:00Z/2024-12-16T00:00Z",
+      "status": 200,
+      "records": 1441,
+      "sha256": "d129b5df65ed4fdcffb603ba3600cd298116ae0b5f6819879013f669f37e0c7a"
+    },
+    {
+      "url": "https://api.carbonintensity.org.uk/intensity/2024-12-16T00:00Z/2025-01-01T00:00Z",
+      "status": 200,
+      "records": 769,
+      "sha256": "5034dfd8e5c73916d3a917ab7336328f2056537c0936e44bcee572dea512c7fe"
+    }
+  ],
+  "rows": 52486,
+  "missing_actual": 56,
+  "sha256": "9cc1cb2a00b1be5407adc25dcb2c9bd9f098e9926da6258542be483cb0ff63b8",
+  "expected_half_hour_intervals": 52608,
+  "missing_interval_timestamps": 122,
+  "missing_interval_blocks": [
+    {
+      "start": "2023-10-20T22:00:00+00:00",
+      "end": "2023-10-22T19:30:00+00:00",
+      "missing_intervals": 91
+    },
+    {
+      "start": "2024-06-11T23:00:00+00:00",
+      "end": "2024-06-12T14:30:00+00:00",
+      "missing_intervals": 31
+    }
+  ]
+}

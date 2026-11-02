@@ -1,0 +1,17 @@
+[
+  {
+    "source": "results/legal-weather-archive-audit-r1/audit.json",
+    "file": "audit.json",
+    "sha256": "3cef6436610d3d51b7fdbd11e10bc6336f80a5517a57cc6c6f1d06ac137566c1"
+  },
+  {
+    "source": "results/legal-weather-archive-audit-r1/20220101-f024.idx",
+    "file": "20220101-f024.idx",
+    "sha256": "05d83488963a9fba5bc74f3fa19c594a724edbdf7286b630f0e9ab699b1862d7"
+  },
+  {
+    "source": "results/legal-weather-archive-audit-r1/20230701-f024.idx",
+    "file": "20230701-f024.idx",
+    "sha256": "a069657e42d65b7c94fddb00d75748de8b7d6168e74d76124f40b799dd502d31"
+  }
+]

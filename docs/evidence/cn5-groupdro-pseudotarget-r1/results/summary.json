@@ -1,0 +1,69 @@
+{
+  "status": "DEVELOPMENT_STRICT_CN5_GROUPDRO_NESTED_PSEUDOTARGET",
+  "countries": [
+    "NL",
+    "ES",
+    "BE",
+    "AT",
+    "SE",
+    "CZ",
+    "SK",
+    "HU",
+    "SI"
+  ],
+  "selected_policy_by_outer_country": {
+    "nl": "erm",
+    "es": "erm",
+    "be": "erm",
+    "at": "erm",
+    "se": "erm",
+    "cz": "erm",
+    "sk": "groupdro",
+    "hu": "erm",
+    "si": "groupdro"
+  },
+  "selected_policy_macro": {
+    "mae": 63.26391204249248,
+    "shape_mae": 17.834638864719413,
+    "coverage90": 0.8129962493513568,
+    "width90": 262.9744826045093,
+    "interval_score90": 474.40644361596605
+  },
+  "method_macro": {
+    "anchor700": {
+      "mae": 73.2342343884893,
+      "shape_mae": 21.400213517526144,
+      "coverage90": 0.9197911575324196,
+      "width90": 380.775144980073,
+      "interval_score90": 486.2451862525893
+    },
+    "factor_history_erm": {
+      "mae": 63.19161972252448,
+      "shape_mae": 17.824142556801213,
+      "coverage90": 0.814256824246302,
+      "width90": 262.5163193417272,
+      "interval_score90": 470.874240425821
+    },
+    "factor_history_groupdro": {
+      "mae": 78.07121655430649,
+      "shape_mae": 17.6825323586101,
+      "coverage90": 0.7530388489852995,
+      "width90": 259.75998039498666,
+      "interval_score90": 637.9367068962297
+    },
+    "ratio_recomposition": {
+      "mae": 62.16389149027926,
+      "shape_mae": 17.849776895445622,
+      "coverage90": 0.8926714619525309,
+      "width90": 361.58775727755324,
+      "interval_score90": 512.7230744500888
+    }
+  },
+  "limitations": [
+    "All nine countries were previously viewed; development only.",
+    "Monthly features are reconstructed from revised hourly series and emulate t-2, not as-issued official monthly releases.",
+    "Labels are fixed-factor generation-side proxies, not measured CIF.",
+    "GroupDRO is a standard baseline, not a novel method.",
+    "Prediction interval coverage is empirical on the held-out countries, not a target-domain guarantee."
+  ]
+}

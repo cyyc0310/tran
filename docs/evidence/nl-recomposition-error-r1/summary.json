@@ -1,0 +1,15 @@
+{
+  "lagged_month_share_mae": 0.12887852853780332,
+  "thermal_share_mae": 0.12631782213754092,
+  "ratio_recomposition_mae": 75.67310220615474,
+  "lagged_month_share_only_mae": 76.51395012202012,
+  "true_hourly_thermal_share_only_mae": 43.28891130684508,
+  "true_hourly_factor_only_mae": 59.386348182426104,
+  "source_thermal_ef": 437.10757922706836,
+  "actual_hour_weighted_thermal_ef": 478.38105887850367,
+  "n_target_hours": 8784,
+  "mae_ratio_recomposition": 75.69172152813245,
+  "mae_lagged_month_share_only": 76.53205151699699,
+  "mae_true_hourly_thermal_share_only": 43.294820311545415,
+  "mae_true_hourly_factor_only": 59.40150554452624
+}

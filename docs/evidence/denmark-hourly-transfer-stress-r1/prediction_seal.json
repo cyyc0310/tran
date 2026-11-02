@@ -1,0 +1,25 @@
+{
+  "status": "SEALED_PREDICTIONS_AWAIT_SCORE",
+  "protocol_sha256": "ffa8edd55998324c553ac5b7b37235921707d80ac21d96350aa9b8dadf9f0893",
+  "runner_sha256": "7d2dd2a38c301e8d12d6c65d0b74f6210ca46e6ce839b787db77311d5bf0c1fe",
+  "model_sha256": "92e4d0109459ac759514401569a7b5e269785e141106ab3afc4339db47991c63",
+  "target_input_sha256": "1edf9d721de59e98468bcee0022097159a35912f7a5e022b1ae366a9dc612c12",
+  "source_input_sha256": {
+    "results/research/data/BPAT_hourly.csv": "8fc4377a7e37dd3ace5d84062fab8ab923760f3deb99ec634d84cfae649add9a",
+    "results/research/data/CISO_hourly.csv": "f1d69e13d35cc7c496532905a8a414e8f3e68e8c12ebd3394bdbc026db0b0caa",
+    "results/research/data/ERCO_hourly.csv": "e5d8cb8757f07e2a46f8a22d72e0bfc704c6ce3848196113559881dd7f47d925",
+    "results/research/data/FPL_hourly.csv": "5c0346cbafc08b73556c62baf4014c193fb8657bf9fcde4d194fb3818e3933e6",
+    "results/research/data/ISNE_hourly.csv": "f30cb202d839100352fd7aa81283a19ba3973cf07d754ab891d674644c4c0747",
+    "results/research/data/MISO_hourly.csv": "edc5d1b9fad671ae43bed234140eb146295e832cf4e2ac9e11f6b55a2279397d",
+    "results/research/data/NYIS_hourly.csv": "2146d06400707f9973baf75cf3a98ce5b38b02ff9b5f202657d310a8186c123f",
+    "data/neso-gb/df_fuel_ckan.csv": "103bc41ec970c1d58dab912cd1fae9df27afa0b869ebdd8ddb4d5db7840a704f"
+  },
+  "predictions_file": "predictions_2024.csv",
+  "predictions_sha256": "2bd0a8d2e223b1764f3c21793915b27015c8daf9b9f0046902c8ca4a95841ff8",
+  "prediction_hours": 8779,
+  "prediction_days_local": 366,
+  "source": "US seven EIA balancing areas; 2022 training, 2023 calibration",
+  "target_features": "Denmark t-2 five-group generation shares and local calendar only",
+  "target_2024_label_scored_after_seal": true,
+  "prior_target_data_exposure": "2024 Denmark hourly series had been inspected in a prior flow/balance audit; not a blind country confirmation"
+}

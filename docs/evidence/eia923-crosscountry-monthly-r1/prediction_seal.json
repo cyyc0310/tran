@@ -1,0 +1,450 @@
+[
+  {
+    "path": "hourly_reconstructed_US_to_GB_persistence.csv",
+    "sha256": "d8bbddb893af1ce8172a0f12ceae441d5530833f6e18f15263cd8b5503aaf764"
+  },
+  {
+    "path": "hourly_reconstructed_US_to_GB_seasonal.csv",
+    "sha256": "0d5e44e8697ad8e255ccdb9fb3099a8aa1c11c9bb6f9d5b6306395881a129f9a"
+  },
+  {
+    "path": "hourly_reconstructed_US_to_GB_damped_trend.csv",
+    "sha256": "ef8e9363fbdc4481e88952f6b3e9aaa1f23557abc33fbf9cfc9529e0ef6231f8"
+  },
+  {
+    "path": "hourly_reconstructed_US_to_GB_local_ridge.csv",
+    "sha256": "8f1789fe4c3e4df28f3b5a17c1fa41159a822ff96f02c8a48f4e23a2b1797a2b"
+  },
+  {
+    "path": "hourly_reconstructed_US_to_GB_source_ridge.csv",
+    "sha256": "295ec814fee773d711bd70d680fd759079bd9ca8172f6227420b7d055bde82ff"
+  },
+  {
+    "path": "hourly_reconstructed_US_to_GB_local_bias.csv",
+    "sha256": "6e6c76be720487dc5bc2bcd4d819388026ed9f4a2cb7a0aee1e0752c33ff994a"
+  },
+  {
+    "path": "hourly_reconstructed_US_to_GB_shrunk_bias.csv",
+    "sha256": "2628529c673eb9beeba9be2d48597c046ce6bd4291f41383db1ea7e6bde227d7"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_BPAT_persistence.csv",
+    "sha256": "cbcca1da4e6d7a410d7b4651db87aa53ee0fe5f3719bc001351f25dfb2d28c5f"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_CISO_persistence.csv",
+    "sha256": "5a7d9efd0114e5350743f8f82df55b744130844e1f9b0568b84fc30e7d13152b"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ERCO_persistence.csv",
+    "sha256": "a77ead7196663f05bc9270007fc41318fb5a8567107fbccf2f53a5b88118e559"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_FPL_persistence.csv",
+    "sha256": "f8c51280b146f194f8e73dcd5e877e0e6546a1d803d643e861d2e352d8f530f2"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ISNE_persistence.csv",
+    "sha256": "6df23f2121a4b5edad09221edcf3f6aa8e735f8d9bb4cd9f828f699a04198bf9"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_MISO_persistence.csv",
+    "sha256": "f45091277343c3efffa2a3b5583ed4cc5ea165655080105b55f094d67b998cf3"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_NYIS_persistence.csv",
+    "sha256": "eea4f83f4565ccfd8ff7c5f6725dfbf7fefb3a51f4b339d64a8666597dfc5d86"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_BPAT_seasonal.csv",
+    "sha256": "e6130b1db3f60ed73fdf0493a4510e61c870edaa3d3f852a91137ae231ff2435"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_CISO_seasonal.csv",
+    "sha256": "850935cb2fd2de40d6486f4533679d3d1b7f13effb9a24efac4fc48840f3e19a"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ERCO_seasonal.csv",
+    "sha256": "6964617832e7413b2057bd4c4c261187d425a4440cf3964c6c83acc061287426"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_FPL_seasonal.csv",
+    "sha256": "9083b94f592571471c7511575d700460d25b4c33304a3fce98ed173be042810f"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ISNE_seasonal.csv",
+    "sha256": "7a31189947153e832e28b19db35f33f448d06f032742392cc965ec6d4d4d37ed"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_MISO_seasonal.csv",
+    "sha256": "2c9217a9df19f420450660fc596da4781fe08c64f21413031ad0e0c73561a287"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_NYIS_seasonal.csv",
+    "sha256": "02c491813f6c440c0ab928aff7f95b43ee837d0fcf43de0d3566e215fe11be87"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_BPAT_damped_trend.csv",
+    "sha256": "2040d19bb26aa3f34e380fbe253f9fd307bf93bd3abdd67c2c9b0b9dac9efbc8"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_CISO_damped_trend.csv",
+    "sha256": "57047c7092faef04d2eb79a391ebd7880aa1e74e523c343dea92b1e73bb28f06"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ERCO_damped_trend.csv",
+    "sha256": "2d8f98fe8aadf1552d93c9213c0ae064a6c763f8c7d5c2483cab944d46195791"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_FPL_damped_trend.csv",
+    "sha256": "76e3fd5633eae296efa56eb0ee5a9846e38d88c6413a209adccc71096109f4ff"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ISNE_damped_trend.csv",
+    "sha256": "b376128357b97cc9f1deafa739a984fecd6c8039d2418ce0ef990426ac6cf91a"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_MISO_damped_trend.csv",
+    "sha256": "9366723389ea0a4ac2f9862de5c517196af425c75e77d922026201047d9a9538"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_NYIS_damped_trend.csv",
+    "sha256": "0c7d50ccac9cec0f747bf464ce0c8e17e3cd77f9c7c5825634ec287dc004ad6d"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_BPAT_local_ridge.csv",
+    "sha256": "dc51ad9349971e1ca752e19b66a799235ef793b727e97df7ac36bde43245e763"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_CISO_local_ridge.csv",
+    "sha256": "a5eb5b88a4ce524f0fc65a5d1039f3f881a5c51703506ade8d683038901f3b67"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ERCO_local_ridge.csv",
+    "sha256": "06d601a51f69f0dfa22b7e68e943ec5afaec864ce0b587f31b6fd477183a47b9"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_FPL_local_ridge.csv",
+    "sha256": "2706f5c2e9bef8df18c30cfe71228787d1d66e32d582c2575c5744e3e2df145d"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ISNE_local_ridge.csv",
+    "sha256": "03f6c6bc50b3d11943fb26cceae4a58a537ed18355634784047061bac08de2e8"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_MISO_local_ridge.csv",
+    "sha256": "6854ffe89d8623890fabb9b6b5701cc1fda5506a46e3c700a87991b45e898e73"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_NYIS_local_ridge.csv",
+    "sha256": "e0b5735921456a3ae17ad7dc278fb73c3c1fc9823afe2686b7441b6cf1145dca"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_BPAT_source_ridge.csv",
+    "sha256": "0d7149cff6a0be6c4da4ecf3546f8c9ffc39f0bd2ce5ec947a8e55cac45ebc3e"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_CISO_source_ridge.csv",
+    "sha256": "63489ee4692c0a190441483a8d23945aa4cbbe6eaad144443978dd2a5aed1e0a"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ERCO_source_ridge.csv",
+    "sha256": "49e88dd648d31837d41feef9293a0f0fac70af85480620dc8087c2344145e8ea"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_FPL_source_ridge.csv",
+    "sha256": "874480613404ff3679441b84f1c91a79fe67e211b4c8362c6e65faf2aa449864"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ISNE_source_ridge.csv",
+    "sha256": "97df4ea73eb0753e8b5b987856b13bcc8f59a75ae06734f0f1cb7e00123b4c8b"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_MISO_source_ridge.csv",
+    "sha256": "fb8833774d71240665d85c0f02fcf8df714011e78414271cad1559882042c625"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_NYIS_source_ridge.csv",
+    "sha256": "26d0ab474c8a2373e846a8602603228336d5c78b22432655c6571855a9e67f82"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_BPAT_local_bias.csv",
+    "sha256": "013f1a332862d6512241b8fd58df98487933036905c1a5b4adb9b09b7f1a64c0"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_CISO_local_bias.csv",
+    "sha256": "d44ecb72a354e9b1b075f22e8ca17ac707c955fbcd0a87416d75761305613642"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ERCO_local_bias.csv",
+    "sha256": "d8439a93a204102913d40e07d890ae16650ec531f9a40c00b89fa96f8342f5a8"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_FPL_local_bias.csv",
+    "sha256": "b9cfd49b58e7aa3813ef5a314fd8f4735cd6c56178c4e2271be3a211749d395d"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ISNE_local_bias.csv",
+    "sha256": "e3c66fcdf71bdf51a4c9e1fd12d92ed8aaa25c29b8c7b606568ddd11193086f3"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_MISO_local_bias.csv",
+    "sha256": "08233bc627f2e4c3c86c49447d12788a368d593fc654b7e5c51b0bd20ad7e595"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_NYIS_local_bias.csv",
+    "sha256": "7c78b3b983a482d47877c82f4261e2ab855523b2416fe67901bbb82d6203cf3b"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_BPAT_shrunk_bias.csv",
+    "sha256": "cb0e9c1992baa6235b4f5466b03b7afc218700c319be0b4434dadc6df01c0929"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_CISO_shrunk_bias.csv",
+    "sha256": "eeea003f1596b35c40646859052ebf8d9bbd0a5fa13c59aa9811bbb85a840179"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ERCO_shrunk_bias.csv",
+    "sha256": "e5db48ce4463335423c9a2e6b48c2bfa6ff2bbae0becfe095a87efd35de5ebce"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_FPL_shrunk_bias.csv",
+    "sha256": "ccfa896e6d6e108aa7059ea050863591dec5155b8ccabe8bf1bd90a46fe2a316"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_ISNE_shrunk_bias.csv",
+    "sha256": "7b5e19d1ac4b8c3a3984fed874038d72e4897bcf9a2bb8e1f0052854f097d26f"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_MISO_shrunk_bias.csv",
+    "sha256": "49efb8c7fdd3b0d7383f8e2b4cf007219ecde52f7fed4d33a496fb722bf2fc5e"
+  },
+  {
+    "path": "hourly_reconstructed_GB_to_NYIS_shrunk_bias.csv",
+    "sha256": "69a7c963c1552ad3d4f34a8a3b3373d6736c433e65dcbe5e8ae9fb09cba88900"
+  },
+  {
+    "path": "eia923_us_US_to_GB_persistence.csv",
+    "sha256": "6e1775076690c75ac87077f68606cc5bfc9152bc637b5347c4d15f08fa98c59a"
+  },
+  {
+    "path": "eia923_us_US_to_GB_seasonal.csv",
+    "sha256": "3076d6e8a0e16caf354ab62d3a9fd4c35ed7cf7c0f61fdbc6c2716756cb779f5"
+  },
+  {
+    "path": "eia923_us_US_to_GB_damped_trend.csv",
+    "sha256": "1293d902a041fff844541f5ac48f93388e63cdc37b4246c07865b996042153b5"
+  },
+  {
+    "path": "eia923_us_US_to_GB_local_ridge.csv",
+    "sha256": "8ef7eff7fe3ce892a0878bf667cf7a6904bf036b1655640a84f4bd6e67d8de11"
+  },
+  {
+    "path": "eia923_us_US_to_GB_source_ridge.csv",
+    "sha256": "6071c5e396f9d409209b5b621609b22074b7a07f2cee8d0d14053c378a916406"
+  },
+  {
+    "path": "eia923_us_US_to_GB_local_bias.csv",
+    "sha256": "80af68c4a09e9035525e8f76a7bbf1e7f67ce2822bc23a7d19b4cfd3f71fd8d6"
+  },
+  {
+    "path": "eia923_us_US_to_GB_shrunk_bias.csv",
+    "sha256": "f716066a9f0ec6845f75a5b3efc1c5874ad8670301fed1275a5f38a8da1d2801"
+  },
+  {
+    "path": "eia923_us_GB_to_BPAT_persistence.csv",
+    "sha256": "ae15cce14cd3299fa32a0fab30225a571944e6da6a1bdd569f72ed5438f5e6c0"
+  },
+  {
+    "path": "eia923_us_GB_to_CISO_persistence.csv",
+    "sha256": "0044e5e80054404bbe1fed7fb06949294eaaaa480c931a90aa75c839af2bd043"
+  },
+  {
+    "path": "eia923_us_GB_to_ERCO_persistence.csv",
+    "sha256": "9033919548308b16cc43e599eebcbb1705b7c66f40dab97b86d53ca18d94c1aa"
+  },
+  {
+    "path": "eia923_us_GB_to_FPL_persistence.csv",
+    "sha256": "58ec4a3a2e55965f92f9ab731beb3c1aea5480e2ff42f61d52d4ac6a45b0fe5f"
+  },
+  {
+    "path": "eia923_us_GB_to_ISNE_persistence.csv",
+    "sha256": "639ea78c9b8507efef9d437dd4d0c8faec47c055d67fd298cf04e5c5d43368d0"
+  },
+  {
+    "path": "eia923_us_GB_to_MISO_persistence.csv",
+    "sha256": "6d82ae58993a7e73f7ebd6d4480f37e00badd0ed9df0ab8f95a5524fa5015992"
+  },
+  {
+    "path": "eia923_us_GB_to_NYIS_persistence.csv",
+    "sha256": "d52ac3a0ed5bf343ebe30122718ff985f3a1570091c61675cd128fadacd646a6"
+  },
+  {
+    "path": "eia923_us_GB_to_BPAT_seasonal.csv",
+    "sha256": "d79a998cfc77bb0e150be2bb501193c0c57e53b00c575eb14c8d7fd720c6a4be"
+  },
+  {
+    "path": "eia923_us_GB_to_CISO_seasonal.csv",
+    "sha256": "c0e5e29f3fa661282a938f57f69452422e01f43497d1b7cc1b9d59e30ef665b4"
+  },
+  {
+    "path": "eia923_us_GB_to_ERCO_seasonal.csv",
+    "sha256": "db82a1f19bd6f0c8c96d49f953225de824163e458bd73d53814c91ab05cedacd"
+  },
+  {
+    "path": "eia923_us_GB_to_FPL_seasonal.csv",
+    "sha256": "615120359127e6ce7338f78838424a41e165b0fb5185f21cdd8c81404a16754e"
+  },
+  {
+    "path": "eia923_us_GB_to_ISNE_seasonal.csv",
+    "sha256": "1227e2eb5745d38b89dd1e5500c43ddddbb1576b41b70b2b0437ab3111e85a0b"
+  },
+  {
+    "path": "eia923_us_GB_to_MISO_seasonal.csv",
+    "sha256": "f249dbe065860bfdf671b7265d3efba1f7f26e58f051e471c382178f30f05b81"
+  },
+  {
+    "path": "eia923_us_GB_to_NYIS_seasonal.csv",
+    "sha256": "4542288327b705f2bda0b433fc182a39a06b46136697f060aaf381b25393fe63"
+  },
+  {
+    "path": "eia923_us_GB_to_BPAT_damped_trend.csv",
+    "sha256": "f4abe22a9f5413b444edf3608fabe03f3c1bdb551ae640872771bdfd54f6ac7c"
+  },
+  {
+    "path": "eia923_us_GB_to_CISO_damped_trend.csv",
+    "sha256": "af0137fe7f764320e57b689f43747c92b806cca17a762688bed61b19436cce00"
+  },
+  {
+    "path": "eia923_us_GB_to_ERCO_damped_trend.csv",
+    "sha256": "93b38b8b2ef3b670324c710619bdb29099574bb05b049c9ee3354bca63e11a6a"
+  },
+  {
+    "path": "eia923_us_GB_to_FPL_damped_trend.csv",
+    "sha256": "8d231cadf062db0bbd763c31783116cffe65569c5f365ea804cc0889b5fa7527"
+  },
+  {
+    "path": "eia923_us_GB_to_ISNE_damped_trend.csv",
+    "sha256": "7ac4450215e276d86c77966856beb389e2c3a2968a1c5289e8bd159d267bd239"
+  },
+  {
+    "path": "eia923_us_GB_to_MISO_damped_trend.csv",
+    "sha256": "60ca70ef952050eb49bca9df26452c26465e6edf77a74116027f33d775835068"
+  },
+  {
+    "path": "eia923_us_GB_to_NYIS_damped_trend.csv",
+    "sha256": "734af64dab2d508f9cb5a066851ea633034abc8d3238c34b24276c2b4ab4f830"
+  },
+  {
+    "path": "eia923_us_GB_to_BPAT_local_ridge.csv",
+    "sha256": "755e6f4d6bf03681383422cc29cdf4b0fcce597ff49f715b6163627185095758"
+  },
+  {
+    "path": "eia923_us_GB_to_CISO_local_ridge.csv",
+    "sha256": "99d179d610eb19c7f6f32f490bae275cec08e44a4610830b481caa7a7858231e"
+  },
+  {
+    "path": "eia923_us_GB_to_ERCO_local_ridge.csv",
+    "sha256": "2f526a2949a3fa91a42826ea3d015c97f5b38ad3e4bbf664614c9be2b565ab74"
+  },
+  {
+    "path": "eia923_us_GB_to_FPL_local_ridge.csv",
+    "sha256": "e0713e6100bb601a37f9dcf38669a83803173ad7111dd5148f1a36bec74e5ddc"
+  },
+  {
+    "path": "eia923_us_GB_to_ISNE_local_ridge.csv",
+    "sha256": "161ded3b7ad81b07bb917cc253502263c166ac36714cf892c6b34862d570c64e"
+  },
+  {
+    "path": "eia923_us_GB_to_MISO_local_ridge.csv",
+    "sha256": "9fb6174fb624a7b76efedc198e6564801cfd50575b0f1c2866625b01f9da6696"
+  },
+  {
+    "path": "eia923_us_GB_to_NYIS_local_ridge.csv",
+    "sha256": "c1d1a169feb13329bf4e3fa14804645e01bec4738cc295a8db149129b6823e78"
+  },
+  {
+    "path": "eia923_us_GB_to_BPAT_source_ridge.csv",
+    "sha256": "87ca16413262aeaed0504dd37551f334049911e732b9abf8669c156e39c84d59"
+  },
+  {
+    "path": "eia923_us_GB_to_CISO_source_ridge.csv",
+    "sha256": "0f62e48218e50580221cd373321f2b51b6c167874fb22141c6e8c434dc92c732"
+  },
+  {
+    "path": "eia923_us_GB_to_ERCO_source_ridge.csv",
+    "sha256": "6343979addc2e8b85bdaa6641a7f523fabba2fe91f8b493aacc8eb66d9b0e47a"
+  },
+  {
+    "path": "eia923_us_GB_to_FPL_source_ridge.csv",
+    "sha256": "ca33be737bd650fdabddc342415b15696e526934fd4072432542a6a615c2a0cf"
+  },
+  {
+    "path": "eia923_us_GB_to_ISNE_source_ridge.csv",
+    "sha256": "889458403dcd33ef912f08b149a3331813ee88647a9e2927a49c164f91cb7c66"
+  },
+  {
+    "path": "eia923_us_GB_to_MISO_source_ridge.csv",
+    "sha256": "d1af3928eea6a4158d93a7df4a6e686b3188581a5e9e1b8acc31f4b9a7e03fbf"
+  },
+  {
+    "path": "eia923_us_GB_to_NYIS_source_ridge.csv",
+    "sha256": "c3fb8651bd32638d8bf4da1e9e639c1899fd694ac7f06f7392322910f9691d60"
+  },
+  {
+    "path": "eia923_us_GB_to_BPAT_local_bias.csv",
+    "sha256": "2280b555271518edf8aa109391a20ed3bf35850e615a9a91dc6fa41ab855a7aa"
+  },
+  {
+    "path": "eia923_us_GB_to_CISO_local_bias.csv",
+    "sha256": "19d9130b6c05f77b8b95f5ff7dfdc0eb20ee642433350a0916feb059c7dc42b6"
+  },
+  {
+    "path": "eia923_us_GB_to_ERCO_local_bias.csv",
+    "sha256": "42ad5497a91dd252579098bf35d15014dc9b5d5babd3715ade38f848e078a17a"
+  },
+  {
+    "path": "eia923_us_GB_to_FPL_local_bias.csv",
+    "sha256": "2c07b4d1ee1d3c47bc18ce50920c487b1ecc1def8f6fce0d0543ca83eb9bb70d"
+  },
+  {
+    "path": "eia923_us_GB_to_ISNE_local_bias.csv",
+    "sha256": "ed4491052a8c971b6b6eacc313b40f964917e3bce7917ba64810b44042cc744e"
+  },
+  {
+    "path": "eia923_us_GB_to_MISO_local_bias.csv",
+    "sha256": "41b277071f21c55b19c3f2db795a1b64a3169b67d6e16dfed95a6d23470a9450"
+  },
+  {
+    "path": "eia923_us_GB_to_NYIS_local_bias.csv",
+    "sha256": "7c91e81f77fb7d119331e990a50bd83cd26e97525226a15c9ff245b5b57bc444"
+  },
+  {
+    "path": "eia923_us_GB_to_BPAT_shrunk_bias.csv",
+    "sha256": "56a6467e010e7349388a700392394895df58d0a01321826d1812aaf45fadac31"
+  },
+  {
+    "path": "eia923_us_GB_to_CISO_shrunk_bias.csv",
+    "sha256": "25ea784a43227ab53e3eaa6e8464883da786bb773b8ebab0a44b317f03f2e7ab"
+  },
+  {
+    "path": "eia923_us_GB_to_ERCO_shrunk_bias.csv",
+    "sha256": "6ce451f7dab516678f59af849a4bb03d268c2a306e17c3b02999f5158a378100"
+  },
+  {
+    "path": "eia923_us_GB_to_FPL_shrunk_bias.csv",
+    "sha256": "03235855fa4cb642a1e447ff802170ba2d0563ae22632f84dfb70495c0593fa5"
+  },
+  {
+    "path": "eia923_us_GB_to_ISNE_shrunk_bias.csv",
+    "sha256": "26c59fa6889a0ae60fc9c1f8af218f1885d2ffe81824ab543c2b45981e9b6544"
+  },
+  {
+    "path": "eia923_us_GB_to_MISO_shrunk_bias.csv",
+    "sha256": "d4f051239549d964ac69e29910af652c041a0509347aeadb788d80ec4cab41ea"
+  },
+  {
+    "path": "eia923_us_GB_to_NYIS_shrunk_bias.csv",
+    "sha256": "a34494a68f94800853be3a3005551c80471ee560629bb05d43f3c4caf409e405"
+  }
+]

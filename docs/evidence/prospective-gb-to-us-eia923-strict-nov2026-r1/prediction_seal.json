@@ -1,0 +1,21 @@
+{
+  "path": "GB_to_US_EIA923_Nov2026_predictions.csv",
+  "sha256": "c1415541ece90eead505f909d4b97e400d1518ea6026e353d5b129caace30bf4",
+  "target_month": "2026-11",
+  "regions": [
+    "ERCO",
+    "FPL"
+  ],
+  "hours_per_region": 721,
+  "methods": [
+    "anchor700",
+    "source_thermal_ef",
+    "calendar_ridge",
+    "coarse_ridge",
+    "coarse_boosting",
+    "coarse_recomposition"
+  ],
+  "target_response_read_before_seal": false,
+  "target_response_source": "EIA-930 2026 November native hourly balance files",
+  "input_month_contract": "EIA-923 2026 August report released 2026-10-23; target t-3"
+}

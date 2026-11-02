@@ -1,0 +1,82 @@
+[
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_BPAT_consumption_Dec2026.csv.gz",
+    "sha256": "15eeeb812c3a7d25a44fb9ae32388a2ef3d56340db7803396c1949e1051d961b",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_BPAT_consumption_Dec2026.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_CISO_consumption_Dec2026.csv.gz",
+    "sha256": "4a0e375f02aeeb3e7accbe8eee0ea05824ff0f3fe0317d5c075e07a7c24d5261",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_CISO_consumption_Dec2026.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_ERCO_consumption_Dec2026.csv.gz",
+    "sha256": "1bfc94e538ecf576584edd3f1577c03358182467a58a46dc9f81b7aacc29bc20",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_ERCO_consumption_Dec2026.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_FPL_consumption_Dec2026.csv.gz",
+    "sha256": "ec07607f9457630d175c8b5a2aa2a1bebda9fece58cafcbe3895643c160be0d4",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_FPL_consumption_Dec2026.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_ISNE_consumption_Dec2026.csv.gz",
+    "sha256": "9ca8f937ce964f1bad670985ccbfa94353895e05b2af4396c52d08be66324601",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_ISNE_consumption_Dec2026.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_ISNE_consumption_Dec2026_negative_clipped.csv.gz",
+    "sha256": "fe016c9be23aa05079f1cf6be968424f20936cacec2cae8ebc615ebe605cbf87",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_ISNE_consumption_Dec2026_negative_clipped.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_MISO_consumption_Dec2026.csv.gz",
+    "sha256": "7183329da44de9866f22a17854926ef5469efc8f31be840244edfab2d7390b92",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_MISO_consumption_Dec2026.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_MISO_consumption_Dec2026_negative_clipped.csv.gz",
+    "sha256": "93ab637471c1af6159c6c512840e2174b2dd1dde971d9d940d7f0cfca015d7bf",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_MISO_consumption_Dec2026_negative_clipped.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/GB_to_US_NYIS_consumption_Dec2026.csv.gz",
+    "sha256": "62a2a688fd9e129415816e116f27ffca9faf80d8ed9d23a49dd303cd9fd9d482",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/GB_to_US_NYIS_consumption_Dec2026.csv.gz"
+  },
+  {
+    "path": "prospective-consumption-us-gb-dec2026-nonnegative-support-r1/US_to_GB_NESO_consumption_Dec2026.csv.gz",
+    "sha256": "54a13287d21f172439aff624ec5de290a63c094ffa4bc0b14c7e1de89663d9c2",
+    "rows": 744,
+    "track": "consumption",
+    "target_response_loaded": false,
+    "derived_from": "prospective-consumption-us-gb-dec2026-r1/US_to_GB_NESO_consumption_Dec2026.csv.gz"
+  }
+]

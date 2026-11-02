@@ -1,0 +1,34 @@
+[
+  {
+    "path": "US_to_GB.csv",
+    "sha256": "5057e0224ba826e0eb1bc394c7f93a72f4c1879539bc55a7df873bb72982bc45"
+  },
+  {
+    "path": "GB_to_BPAT.csv",
+    "sha256": "d2cf6aa2fd42c5e6f87f287083fbf0454045b9808575956d41316b04becdd121"
+  },
+  {
+    "path": "GB_to_CISO.csv",
+    "sha256": "88021ec7d8651e3b70ef95bba0ddf782d7a66e8eec50420bc40aa9ea1650ee97"
+  },
+  {
+    "path": "GB_to_ERCO.csv",
+    "sha256": "d4e8925f7abed315ed92bf2c05009a5f067c26ce3e8c902243b9ab8b8b892493"
+  },
+  {
+    "path": "GB_to_FPL.csv",
+    "sha256": "336ca0b1408e445b543a7acf48754d993303161779ea01cfc717fb307fcc5fe8"
+  },
+  {
+    "path": "GB_to_ISNE.csv",
+    "sha256": "e08051382239a4103d9a41a18ae1d01f7f031aa673093313c08b7aa4623db5a6"
+  },
+  {
+    "path": "GB_to_MISO.csv",
+    "sha256": "185a72b0af4083ba1b1a3b45d072a4789ec0880dcfc9b95d517b89d0eedaa5f9"
+  },
+  {
+    "path": "GB_to_NYIS.csv",
+    "sha256": "1b3b064362d54583d6fc740ab6f3e7e301084c2d45f3f1f977115c1c1c6fc71a"
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "target": "NL",
+    "sources": [
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ],
+    "prediction_file": "NL_predictions.csv.gz",
+    "prediction_sha256": "a1c0bfe4e83165b98ee9170854ba46cca44d575d17305517ea170905dc9a03a7",
+    "rows": 8784,
+    "radii_file": "NL_source_radii.json",
+    "radii_sha256": "149e748c34237607a966c3b439719fa5794a4806fdaf2427a8ae1154d23f77eb",
+    "monthly_audit_file": "NL_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "6a21bc84c9346a8848a1639708a6a966fa1f79f8d7a6fd15eb98a6e43f20b4f7",
+    "target_labels_opened_before_seal": false
+  },
+  {
+    "target": "ES",
+    "sources": [
+      "NL",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ],
+    "prediction_file": "ES_predictions.csv.gz",
+    "prediction_sha256": "502152e1462aeb4776f40d624c28a3c85138cc8c586ec720db652e8e6d63757d",
+    "rows": 8783,
+    "radii_file": "ES_source_radii.json",
+    "radii_sha256": "aa4d7ad031e9bfada0f85d5c3d6c8d0ab029736692707023408c3e92376cc74f",
+    "monthly_audit_file": "ES_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "660ff9fd5419a966c7e42f2dfc9ddc297a96c83fdccf2f44073130c9d15dc558",
+    "target_labels_opened_before_seal": false
+  },
+  {
+    "target": "BE",
+    "sources": [
+      "NL",
+      "ES",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ],
+    "prediction_file": "BE_predictions.csv.gz",
+    "prediction_sha256": "4b83dcc5895c941a405d829adca7c5396d6bf73279c70e48ac3b3eb258f41228",
+    "rows": 8784,
+    "radii_file": "BE_source_radii.json",
+    "radii_sha256": "70a6045be03bb7b815a02ea5b61ea09fa3318422ccefbf22cd79c6f7bd85a8d5",
+    "monthly_audit_file": "BE_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "3851dcd3a6108d3c2f0f36752837835ff0d3b73b8873b8237d411ed44e02df73",
+    "target_labels_opened_before_seal": false
+  },
+  {
+    "target": "AT",
+    "sources": [
+      "NL",
+      "ES",
+      "BE",
+      "SE",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ],
+    "prediction_file": "AT_predictions.csv.gz",
+    "prediction_sha256": "503eddaa5575e5743a884bc81972f5c76953c5513686a28ae6f6b638fcb1de86",
+    "rows": 8784,
+    "radii_file": "AT_source_radii.json",
+    "radii_sha256": "22ab19b49024ae435d6fc9e4f4cce5ca84f13558e2ba3a4eda7493256a0d44e0",
+    "monthly_audit_file": "AT_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "02cce447b43769841a95b681bd13bd7901330e2a9c0bdf7dab1f63a121e67d07",
+    "target_labels_opened_before_seal": false
+  },
+  {
+    "target": "SE",
+    "sources": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ],
+    "prediction_file": "SE_predictions.csv.gz",
+    "prediction_sha256": "1e80056403cc5974e06b495d5c6f1f329c4d03520d0f5b4deee7d04d725ae515",
+    "rows": 8783,
+    "radii_file": "SE_source_radii.json",
+    "radii_sha256": "adc3c12590889392aa213aa906e19559665710c805592be702c0c33dae209a72",
+    "monthly_audit_file": "SE_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "b70867197a685cf30edab231e600085238a39ecd4bb3c44664a4853bc85949f1",
+    "target_labels_opened_before_seal": false
+  },
+  {
+    "target": "CZ",
+    "sources": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "SK",
+      "HU",
+      "SI"
+    ],
+    "prediction_file": "CZ_predictions.csv.gz",
+    "prediction_sha256": "73c4e0f844379fd11a7e7cb7bacc1669d6bb7e24bcbfbc9f3fcfc229bc572ba9",
+    "rows": 8784,
+    "radii_file": "CZ_source_radii.json",
+    "radii_sha256": "74d94b0e29bf131cc77191ede5f2bf702999d7f722b763ee7f2f6f496cda9ccb",
+    "monthly_audit_file": "CZ_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "75d21460a905224c26c61e1a715477ec53f2b20f33847203cf7c6b467e644105",
+    "target_labels_opened_before_seal": false
+  },
+  {
+    "target": "SK",
+    "sources": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "HU",
+      "SI"
+    ],
+    "prediction_file": "SK_predictions.csv.gz",
+    "prediction_sha256": "2ad27bb4f06c45f3fc7b5a42b36b5b2371b15cd86ccb00f581fb399b1324b824",
+    "rows": 8784,
+    "radii_file": "SK_source_radii.json",
+    "radii_sha256": "cacaf3dddec9b17f574be5dc8df5855a3d5a83d54e22d1f5a40375e8b331810f",
+    "monthly_audit_file": "SK_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "9a00113fef00bdfd63007157f38e11ae32a18867c7f4d7997c1f4b3f583ff2bb",
+    "target_labels_opened_before_seal": false
+  },
+  {
+    "target": "HU",
+    "sources": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "SI"
+    ],
+    "prediction_file": "HU_predictions.csv.gz",
+    "prediction_sha256": "83d250b04c82f544e0217f15a130b7793c84e355410bca1e533b5d15b855f2c8",
+    "rows": 8784,
+    "radii_file": "HU_source_radii.json",
+    "radii_sha256": "b3f8a42c4006f9d8b9a885102d156daba8ae5ca788fa3e2f1ff96bfbba5417dc",
+    "monthly_audit_file": "HU_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "4f93c0a3afdfabb9e77dbb2a466d1ecaafb193d745562d970db9a00683a2054f",
+    "target_labels_opened_before_seal": false
+  },
+  {
+    "target": "SI",
+    "sources": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "HU"
+    ],
+    "prediction_file": "SI_predictions.csv.gz",
+    "prediction_sha256": "33a6ee71b9c523800bda5c91694f454ecc0da9e480145accec10ddcd01e29678",
+    "rows": 8782,
+    "radii_file": "SI_source_radii.json",
+    "radii_sha256": "6df9d63e5002b1813c0a80d77dfe2e4010d58ea266d0aec04971a083e46722cb",
+    "monthly_audit_file": "SI_monthly_anchor_audit.json",
+    "monthly_audit_sha256": "b37280b8285621325b2257ce3d8442098962bbecd6b12e2dc6ce86d5e06100bc",
+    "target_labels_opened_before_seal": false
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "source": "results/three-country-capacity-r2/DE+GB_to_US_metadata.json",
+    "file": "DE+GB_to_US_metadata.json",
+    "sha256": "008ff4cd24890bc5653e2e414d48d436534635331185d50e24613343428218ee"
+  },
+  {
+    "source": "results/three-country-capacity-r2/DE+US_to_GB_metadata.json",
+    "file": "DE+US_to_GB_metadata.json",
+    "sha256": "94e6b0ba0227d7cff8488b5ad4bc424f932b9a2df298871d28786b4e2e37eb93"
+  },
+  {
+    "source": "results/three-country-capacity-r2/DE_to_GB_metadata.json",
+    "file": "DE_to_GB_metadata.json",
+    "sha256": "bf8d851f1085635c7a6eed3aead1cdfe43c6ee189472938afdcb1d187eef9988"
+  },
+  {
+    "source": "results/three-country-capacity-r2/DE_to_US_metadata.json",
+    "file": "DE_to_US_metadata.json",
+    "sha256": "39590d3589b872062a5dcb82e4e49c2c427153d4a2af0e8b2ed224433709e23c"
+  },
+  {
+    "source": "results/three-country-capacity-r2/GB+US_to_DE_metadata.json",
+    "file": "GB+US_to_DE_metadata.json",
+    "sha256": "7a57eaaf76f118604502d18f2f771bc1075e854f9bb8db5a5f1556d7cb2f54fb"
+  },
+  {
+    "source": "results/three-country-capacity-r2/GB_to_DE_metadata.json",
+    "file": "GB_to_DE_metadata.json",
+    "sha256": "981d4dce2ad482becbce4e3a58afe9a04340e93a3ac4120983825de79309a004"
+  },
+  {
+    "source": "results/three-country-capacity-r2/GB_to_US_metadata.json",
+    "file": "GB_to_US_metadata.json",
+    "sha256": "c05a0ed757ec24275bf8bc8a124176d9a3c845a9dc553dd7e1370d8d19326af6"
+  },
+  {
+    "source": "results/three-country-capacity-r2/US_to_DE_metadata.json",
+    "file": "US_to_DE_metadata.json",
+    "sha256": "22cbb80feb8850007c4134d2933f4765b5f7f44b83ea78a74e34dc296643f48d"
+  },
+  {
+    "source": "results/three-country-capacity-r2/US_to_GB_metadata.json",
+    "file": "US_to_GB_metadata.json",
+    "sha256": "6d91bf2215dd6bf5c028cacdcbca13cb3843f91b8ccf89908ec1745d58db3c9c"
+  },
+  {
+    "source": "results/three-country-capacity-r2/input_audit.json",
+    "file": "input_audit.json",
+    "sha256": "3d3c185d2eb2626a74a8245a23832e25f07fa2d2073821bf81dc9c1f5c297ea5"
+  },
+  {
+    "source": "results/three-country-capacity-r2/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "2e4093eb48b94d2f1ae7ff8eca5d318e12d11b611e11d6384a3992e55fa0a71c"
+  },
+  {
+    "source": "results/three-country-capacity-r2/provenance.json",
+    "file": "provenance.json",
+    "sha256": "19bb7565d85165116054e1b6eb4198127ee21aff7432e52a1bd8bc277e46d57a"
+  },
+  {
+    "source": "results/three-country-capacity-r2/startup_code_hashes.json",
+    "file": "startup_code_hashes.json",
+    "sha256": "6563287b03409b715ac9635f377a7497246da2de66f221abbfaed3e9f43bb650"
+  },
+  {
+    "source": "results/three-country-capacity-r2/country_metrics.csv",
+    "file": "country_metrics.csv",
+    "sha256": "b84aceb8ce5b415c749be0c50644f7969d90d7126dffddb599f675efad15c34b"
+  },
+  {
+    "source": "results/three-country-capacity-r2/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "ccf886adc8a252f10276b56de10c5f10e1b9abbefcac187eb60640ed962a5e8c"
+  },
+  {
+    "source": "results/three-country-capacity-r2/region_metrics.csv",
+    "file": "region_metrics.csv",
+    "sha256": "00d5c6e56207a5231abfdb0bbbef05f4f5650b88fc784ca35d12769277beb3ca"
+  },
+  {
+    "source": "results/three-country-capacity-r2/cohorts.csv",
+    "file": "cohorts.csv",
+    "sha256": "21c02042cfb927febfd0ceef8206f80f81b0aa78db92b650ffad34049322109b"
+  },
+  {
+    "source": "scripts/run_three_country.py",
+    "file": "code/run_three_country.py",
+    "sha256": "594c4c2ab8210ef430121920ddd0cc243bca489a79c415d069923e74c786d9d0"
+  },
+  {
+    "source": "scripts/run_cross_country.py",
+    "file": "code/run_cross_country.py",
+    "sha256": "1e82837990d17451480c65b4884d8f4d42a13133fa1fdd90de60c0d72b80c9c3"
+  },
+  {
+    "source": "scripts/prepare_capacity_budget.py",
+    "file": "code/prepare_capacity_budget.py",
+    "sha256": "d9a929966f6ab79f811778c83e561e070a1975f312bb6e40dad711192d3c082a"
+  },
+  {
+    "source": "src/transcif/research/capacity_transfer.py",
+    "file": "code/capacity_transfer.py",
+    "sha256": "1bb6d0f48419e483c1337b86d71a34a5ecde20b0cb5907d8036a598d315f7dc3"
+  },
+  {
+    "source": "src/transcif/research/multicountry.py",
+    "file": "code/multicountry.py",
+    "sha256": "f531a2aba84c463954c20e14f38a369b7f3fb0f7e76fa1ba87a9d9d1ea2f5996"
+  },
+  {
+    "source": "src/transcif/research/cross_country.py",
+    "file": "code/cross_country.py",
+    "sha256": "1cb8c4091d63536452344cf49ec3e1412d741994e474dfc0c8bfce64671cc304"
+  },
+  {
+    "source": "src/transcif/data/smard.py",
+    "file": "code/smard.py",
+    "sha256": "b3b60a0defefaf073c75035ab118288f26ae5454b79d3288ae44354611657d3c"
+  },
+  {
+    "source": "src/transcif/research/monthly_adaptation.py",
+    "file": "code/monthly_adaptation.py",
+    "sha256": "135cca29e4d19328f804c5fe9c27090f07c74f35311924a2aecc68ebe9e87d75"
+  },
+  {
+    "source": "docs/PUBLIC_CAPACITY_TRANSFER_PROTOCOL.md",
+    "file": "code/PUBLIC_CAPACITY_TRANSFER_PROTOCOL.md",
+    "sha256": "05513aa674df41f6a71e539f7abfbd3c3032729eda644ee5ed28b95c8a02337c"
+  },
+  {
+    "source": "results/public-capacity-input-r1/capacity.json",
+    "file": "code/capacity.json",
+    "sha256": "3c0ead14fbe2796b810d62e20982f6e4148c97eb16bbd4c589c197705b8db77c"
+  },
+  {
+    "source": "data/capacity-public/wri-v1-3/acquisition.json",
+    "file": "code/acquisition.json",
+    "sha256": "01f69c030d86e914b307cda20a8b516fee9ad8d46d2f7cc73875dc9126352ad1"
+  }
+]

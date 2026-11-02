@@ -1,0 +1,49 @@
+{
+  "source_name": "NESO Embedded Solar and Wind Forecast Archive 2024",
+  "source_url": "https://api.neso.energy/dataset/91c0c70e-0ef5-4116-b6fa-7ad084b5e0e8/resource/06abd00a-ef6b-488b-9b6d-5e08fdc0c890/download/embedded_archive_2024.csv",
+  "outturn_source": "NESO Demand Data Update 2024 archive, actual embedded wind/solar generation columns; exact settlement date and period matching",
+  "retrieved_utc": "2026-11-02",
+  "raw_archive_bytes": 512049380,
+  "raw_archive_sha256": "f9a3fba4223924d913413732fcc82fe7482de055b3d257ba1257b8478ba2e6a6",
+  "selection_rule": "For each UTC delivery date, retain the forecast issued at 09:12 UTC on the preceding UTC date; keep 2024 target bins only. Match forecast to outturn by settlement date and period; independently confirm UTC target timestamps join one-to-one to project NESO generation panel.",
+  "selected_forecast_rows": 17376,
+  "selected_delivery_days": 362,
+  "paired_outturn_rows": 17376,
+  "paired_delivery_days": 362,
+  "target_rows_2024": 17568,
+  "uncovered_actual_days": [
+    "2024-01-01",
+    "2024-02-02",
+    "2024-07-25",
+    "2024-09-27"
+  ],
+  "lead_hours_quantiles": {
+    "0": 14.8,
+    "0.5": 26.55,
+    "1": 38.3
+  },
+  "target_alignment": "One-to-one by settlement date and period; exact selected forecasts also have unique UTC timestamps matching the 2024 half-hour generation panel.",
+  "forecast_to_outturn_diagnostics": {
+    "EMBEDDED_WIND_FORECAST": {
+      "n_half_hours": 17376,
+      "actual_mean_mw": 1922.462361878453,
+      "forecast_mean_mw": 1943.650264732965,
+      "mae_mw": 177.54598296500922,
+      "rmse_mw": 248.73174981868263,
+      "bias_mw": 21.18790285451197,
+      "pearson_r": 0.9806140187231103,
+      "actual_zero_fraction": 0.0
+    },
+    "EMBEDDED_SOLAR_FORECAST": {
+      "n_half_hours": 17376,
+      "actual_mean_mw": 1594.314629373849,
+      "forecast_mean_mw": 1520.461556169429,
+      "mae_mw": 244.40475368324124,
+      "rmse_mw": 482.8727630133314,
+      "bias_mw": -73.85307320441989,
+      "pearson_r": 0.9834997928864115,
+      "actual_zero_fraction": 0.4919429097605893
+    }
+  },
+  "feature_file_sha256": "15893c1837395d51317bf8970f868624e8083646a545c6d562f95617a3eced06"
+}

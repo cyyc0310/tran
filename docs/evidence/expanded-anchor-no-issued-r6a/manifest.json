@@ -1,0 +1,199 @@
+{
+  "schema": "EXPANDED_ANCHOR_NO_ISSUED_R6A_EVIDENCE_V1",
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "b70ea264b05c3c6442b64990dde3b92f21e176959139a4b49e2aaa7c3bc1b284"
+    },
+    {
+      "file": "archive_inventory.json",
+      "sha256": "bac56b4ace82feec12b861d2b0ca43e30b91882920e1911792ed20f682047df9"
+    },
+    {
+      "file": "cohort_with_labels.csv.gz",
+      "sha256": "6dc25f60092dd0bc3b3fe861d937a367d28c78f514dd7d92482d12e8c462912f",
+      "original": "results/expanded-anchor-no-issued-r6a/cohort_with_labels.csv.gz",
+      "original_sha256": "6dc25f60092dd0bc3b3fe861d937a367d28c78f514dd7d92482d12e8c462912f"
+    },
+    {
+      "file": "components.tar.gz",
+      "sha256": "b821bc13d3ec6cbdc7bdc2f44041e58c2d5f7eee6e8795732f116646378ef791"
+    },
+    {
+      "file": "day_metrics.csv.gz",
+      "sha256": "f414756c6d86fdbc41d2203de72f6d7a486a5ba57c96c7cdd1779e47650524f3",
+      "original": "results/expanded-anchor-no-issued-r6a/day_metrics.csv",
+      "original_sha256": "12d170c06f899e8cae33c7e0b718e6894386f626d1270b535d5d31780c39e05e"
+    },
+    {
+      "file": "execution.log",
+      "sha256": "e226729d564a892802b004b317d336b78c86f9ecb2a0d2aaf2d57936d51f1b7f",
+      "original": "results/expanded-anchor-no-issued-r6a.execution.log",
+      "original_sha256": "e226729d564a892802b004b317d336b78c86f9ecb2a0d2aaf2d57936d51f1b7f"
+    },
+    {
+      "file": "independent_review/calibration_units_review.json",
+      "sha256": "bbbd6e0b811fb276e6d220a77c3df6e01cc4f8f959774ea6972523de0fa09346",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/calibration_units_review.json",
+      "original_sha256": "bbbd6e0b811fb276e6d220a77c3df6e01cc4f8f959774ea6972523de0fa09346"
+    },
+    {
+      "file": "independent_review/capacity_region_failures.csv",
+      "sha256": "f5e8eb4b834e0138c4da338b1c4a5cfb7dd596e9ee597529541aad631981d7ac",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/capacity_region_failures.csv",
+      "original_sha256": "f5e8eb4b834e0138c4da338b1c4a5cfb7dd596e9ee597529541aad631981d7ac"
+    },
+    {
+      "file": "independent_review/configuration_contrasts_to_fixed_anchor.csv",
+      "sha256": "4fbf3d1aef9211e9be997dd600eb8b0fd27e3afad53f6a1dc7bc05105dfcccbd",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/configuration_contrasts_to_fixed_anchor.csv",
+      "original_sha256": "4fbf3d1aef9211e9be997dd600eb8b0fd27e3afad53f6a1dc7bc05105dfcccbd"
+    },
+    {
+      "file": "independent_review/independent_review.json",
+      "sha256": "c461c8b4bf37c747607b7c15bd029615c0f5a29276480a8dc834e936cfa7c5ee",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/independent_review.json",
+      "original_sha256": "c461c8b4bf37c747607b7c15bd029615c0f5a29276480a8dc834e936cfa7c5ee"
+    },
+    {
+      "file": "independent_review/manifest.json",
+      "sha256": "2a9e809bfa20e6b15f77a68628e558bda124727f790b480b832cd34f19d4310d",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/manifest.json",
+      "original_sha256": "2a9e809bfa20e6b15f77a68628e558bda124727f790b480b832cd34f19d4310d"
+    },
+    {
+      "file": "independent_review/metric_review.json",
+      "sha256": "21729d4b49cd10b6696afe470316c5d68ae79152126918d226de04426732dcfc",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/metric_review.json",
+      "original_sha256": "21729d4b49cd10b6696afe470316c5d68ae79152126918d226de04426732dcfc"
+    },
+    {
+      "file": "independent_review/model_audits.json",
+      "sha256": "850a76344840f2f01fbd0343170653fd0697323b59c1df67f2127150a0409ca0",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/model_audits.json",
+      "original_sha256": "850a76344840f2f01fbd0343170653fd0697323b59c1df67f2127150a0409ca0"
+    },
+    {
+      "file": "independent_review/prediction_rebuild_checks.json",
+      "sha256": "0e38429c8409504c4cc63e4ea9f5d5aa9f41cf324a13265c75e800c000880c07",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/prediction_rebuild_checks.json",
+      "original_sha256": "0e38429c8409504c4cc63e4ea9f5d5aa9f41cf324a13265c75e800c000880c07"
+    },
+    {
+      "file": "independent_review/primary_capacity_summary_and_failures.csv",
+      "sha256": "3ed951e449ac60eac998df80cb6767127d273bf7f552bacf15a09cf4f77636db",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/primary_capacity_summary_and_failures.csv",
+      "original_sha256": "3ed951e449ac60eac998df80cb6767127d273bf7f552bacf15a09cf4f77636db"
+    },
+    {
+      "file": "independent_review/recomputed_configuration_metrics.csv",
+      "sha256": "4e22b577e6dc6e53de1de5b93814c27be46c4f5478b4380c92719e578795897e",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/recomputed_configuration_metrics.csv",
+      "original_sha256": "4e22b577e6dc6e53de1de5b93814c27be46c4f5478b4380c92719e578795897e"
+    },
+    {
+      "file": "independent_review/recomputed_day_metrics.csv",
+      "sha256": "c0e5ae1b732c4034a314e1d057122d995a4eb5c71d352160811a26dda3679a95",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/recomputed_day_metrics.csv",
+      "original_sha256": "c0e5ae1b732c4034a314e1d057122d995a4eb5c71d352160811a26dda3679a95"
+    },
+    {
+      "file": "independent_review/recomputed_region_metrics.csv",
+      "sha256": "95ff974775bea8aea0b6426e9331c051efb5b377ccf875b9c3d06253377c3ad5",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/recomputed_region_metrics.csv",
+      "original_sha256": "95ff974775bea8aea0b6426e9331c051efb5b377ccf875b9c3d06253377c3ad5"
+    },
+    {
+      "file": "independent_review/recomputed_summary.csv",
+      "sha256": "34dd6bc915a88f11c42bbcc18eec9fb989b8ca452f508e45be3c2c9941025893",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/recomputed_summary.csv",
+      "original_sha256": "34dd6bc915a88f11c42bbcc18eec9fb989b8ca452f508e45be3c2c9941025893"
+    },
+    {
+      "file": "independent_review/scientific_review.json",
+      "sha256": "c6186031eefff87c862a5ad2c3b0eae42a81832a9ae603793c131fceb56a4b90",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/scientific_review.json",
+      "original_sha256": "c6186031eefff87c862a5ad2c3b0eae42a81832a9ae603793c131fceb56a4b90"
+    },
+    {
+      "file": "independent_review/seal_review.json",
+      "sha256": "a587a70f41c330489323dc777f53ad6b6a82af36dbb3ba3685d3db2b6ba45356",
+      "original": "results/expanded-anchor-no-issued-r6a-independent-review/seal_review.json",
+      "original_sha256": "a587a70f41c330489323dc777f53ad6b6a82af36dbb3ba3685d3db2b6ba45356"
+    },
+    {
+      "file": "members.tar.gz",
+      "sha256": "37edae318bc8b28670583c935960fac33054be346ce9af62ca9790fa1caa3898"
+    },
+    {
+      "file": "predictions.csv.gz",
+      "sha256": "f63604046ed2306b9e03f9efe294841d3581a360912d1a75a94af814542e4d47",
+      "original": "results/expanded-anchor-no-issued-r6a/predictions.csv",
+      "original_sha256": "ed412ec1e2a9fd849bea4455ff80465c509991f771532c941ca4a7040908d500"
+    },
+    {
+      "file": "results/calibration.json",
+      "sha256": "dc9108bd98ef05bd2e147c35140c8a8f92ba97a9c50bef72f0b140b9b2ff6ca7",
+      "original": "results/expanded-anchor-no-issued-r6a/calibration.json",
+      "original_sha256": "dc9108bd98ef05bd2e147c35140c8a8f92ba97a9c50bef72f0b140b9b2ff6ca7"
+    },
+    {
+      "file": "results/completion.json",
+      "sha256": "5b8fae807fc98cb1684eb37173af50dd313f1a34d937f2154846363f45371236",
+      "original": "results/expanded-anchor-no-issued-r6a/completion.json",
+      "original_sha256": "5b8fae807fc98cb1684eb37173af50dd313f1a34d937f2154846363f45371236"
+    },
+    {
+      "file": "results/configuration_metrics.csv",
+      "sha256": "815cf1d8e860103357cb4ca63e27745a92735186957b6badbc4c169becf93a30",
+      "original": "results/expanded-anchor-no-issued-r6a/configuration_metrics.csv",
+      "original_sha256": "815cf1d8e860103357cb4ca63e27745a92735186957b6badbc4c169becf93a30"
+    },
+    {
+      "file": "results/execution_plan.json",
+      "sha256": "2d2614b96b5048479ee4be3e70771aa05aef51e4a2e11264427422c0364352ce",
+      "original": "results/expanded-anchor-no-issued-r6a/execution_plan.json",
+      "original_sha256": "2d2614b96b5048479ee4be3e70771aa05aef51e4a2e11264427422c0364352ce"
+    },
+    {
+      "file": "results/input_code_seal.json",
+      "sha256": "4332db9883a2de4682b1865200fccc0399cec3041a4415f854c2a4e28612825c",
+      "original": "results/expanded-anchor-no-issued-r6a/input_code_seal.json",
+      "original_sha256": "4332db9883a2de4682b1865200fccc0399cec3041a4415f854c2a4e28612825c"
+    },
+    {
+      "file": "results/overlap_reference_check.json",
+      "sha256": "5957db414d993bbadd4d27c2544628b3e3d4edbfb58391e41fca21bad8ff0384",
+      "original": "results/expanded-anchor-no-issued-r6a/overlap_reference_check.json",
+      "original_sha256": "5957db414d993bbadd4d27c2544628b3e3d4edbfb58391e41fca21bad8ff0384"
+    },
+    {
+      "file": "results/prediction_seal.json",
+      "sha256": "53ebd861c9e027059cb7ed7f825bde631348a4d6566874ad43621304cf8e01a8",
+      "original": "results/expanded-anchor-no-issued-r6a/prediction_seal.json",
+      "original_sha256": "53ebd861c9e027059cb7ed7f825bde631348a4d6566874ad43621304cf8e01a8"
+    },
+    {
+      "file": "results/region_metrics.csv",
+      "sha256": "395529f7823da6b065762ab82bd29a541a63d20836d894883008bf177f69f722",
+      "original": "results/expanded-anchor-no-issued-r6a/region_metrics.csv",
+      "original_sha256": "395529f7823da6b065762ab82bd29a541a63d20836d894883008bf177f69f722"
+    },
+    {
+      "file": "results/runtime.json",
+      "sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+      "original": "results/expanded-anchor-no-issued-r6a/runtime.json",
+      "original_sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5"
+    },
+    {
+      "file": "results/summary.csv",
+      "sha256": "2619b30d96a4a54df3c57feab2bf2afc038f2c99bbd8efcf8bb78e4c098bf4d6",
+      "original": "results/expanded-anchor-no-issued-r6a/summary.csv",
+      "original_sha256": "2619b30d96a4a54df3c57feab2bf2afc038f2c99bbd8efcf8bb78e4c098bf4d6"
+    }
+  ],
+  "full_model_parameters_included": false,
+  "full_raw_retraining_package": false,
+  "new_country_opened": false,
+  "adaptive_development": true
+}

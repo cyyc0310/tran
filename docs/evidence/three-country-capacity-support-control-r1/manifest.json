@@ -1,0 +1,132 @@
+[
+  {
+    "source": "results/three-country-capacity-support-control-r1/DE+GB_to_US_metadata.json",
+    "file": "DE+GB_to_US_metadata.json",
+    "sha256": "76d6d4fe8e5a0a04fb8bb39f3a7fbc8503fed33a3994fda3ac90501926587d5c"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/DE+US_to_GB_metadata.json",
+    "file": "DE+US_to_GB_metadata.json",
+    "sha256": "0e4ae3d9ebf42d461f2a500a199aaacfd66799f37c70bef02b124ad58e27ac41"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/DE_to_GB_metadata.json",
+    "file": "DE_to_GB_metadata.json",
+    "sha256": "ad868c0cec6e1a323d6efb378dfedfeaeda3db45642ef8a7b54648cb6244a813"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/DE_to_US_metadata.json",
+    "file": "DE_to_US_metadata.json",
+    "sha256": "b5e8aa354f37ebdcf99d5c225bda79dc1a880e6e500c6e27c89c5b44c81a7e9e"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/GB+US_to_DE_metadata.json",
+    "file": "GB+US_to_DE_metadata.json",
+    "sha256": "911ba986f6a6060829c5dac908262b5e7802100fde8f583cbe00f6b893644d33"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/GB_to_DE_metadata.json",
+    "file": "GB_to_DE_metadata.json",
+    "sha256": "d30b895931a6c1d2d7250b49b446dc395f8a9d8e84caca983d8083e6b134b1c6"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/GB_to_US_metadata.json",
+    "file": "GB_to_US_metadata.json",
+    "sha256": "a7190236153ef3a3d563a3251f0f9d24f7e44838b4e629a7eb900609d8d08a40"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/US_to_DE_metadata.json",
+    "file": "US_to_DE_metadata.json",
+    "sha256": "27079b90ac35c6d9a1a4e7f8cbfafc962c7b45ad4349c7bc7973c0e662c615ce"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/US_to_GB_metadata.json",
+    "file": "US_to_GB_metadata.json",
+    "sha256": "2890037a219464cad774c754bc54ba191503a9bf655fb14d65cc49e58f33ce4d"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/input_audit.json",
+    "file": "input_audit.json",
+    "sha256": "5da27a0bf00b12acdbdfa6e9f1bc5682ff6c20d430dcb443e808dac1dc29077e"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/pool_layout.json",
+    "file": "pool_layout.json",
+    "sha256": "12d90fa881f70233513b75d89f56986c27f99ebe0921d49726978c1e29249b92"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "487e8be5020934509e296cd1025953a162c7e66259671f844a1af8544ab4a2c8"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/provenance.json",
+    "file": "provenance.json",
+    "sha256": "609d4274b69dac29b5fd270347a5c9188ad9f01d5f2292ca5d0837f61ff66d4c"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/startup_code_hashes.json",
+    "file": "startup_code_hashes.json",
+    "sha256": "bdaf498ee725ed1c36f36274c298dbf734900c60c79657ed00cb7769bb8331af"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/country_metrics.csv",
+    "file": "country_metrics.csv",
+    "sha256": "4eea57ad6f517d7b638428b9bbfe0cc48370791dcc752d3660245d2fffc09a9c"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "25ec04050429e2be8a4286baf6b05aa7eb437a5dda98d9eb8fc7dd114614d474"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/region_metrics.csv",
+    "file": "region_metrics.csv",
+    "sha256": "f2f98af4281754eb59f5c0e97d01072df440b0f9b50671d55b56819645b5bd1a"
+  },
+  {
+    "source": "results/three-country-capacity-support-control-r1/cohorts.csv",
+    "file": "cohorts.csv",
+    "sha256": "4277e25d8d970954a911a7d002c4babd0e5a2b8f6df290135fa36b51edbd1b04"
+  },
+  {
+    "source": "scripts/run_three_country.py",
+    "file": "code/run_three_country.py",
+    "sha256": "5ebe46b62bf26483b23e9b900b00d2139c1d7a0e7dc2d2be376ed4430981abb6"
+  },
+  {
+    "source": "scripts/prepare_support_capacity.py",
+    "file": "code/prepare_support_capacity.py",
+    "sha256": "53d299abeb61b92795706045941ed3a9706d72ce1130e11526293caca76a5162"
+  },
+  {
+    "source": "scripts/fleet_inventory_v33.py",
+    "file": "code/fleet_inventory_v33.py",
+    "sha256": "f08847c40904a501a817974b000790ab44b27efe3f4dce6b0775506d6d7897e9"
+  },
+  {
+    "source": "src/transcif/research/capacity_transfer.py",
+    "file": "code/capacity_transfer.py",
+    "sha256": "1bb6d0f48419e483c1337b86d71a34a5ecde20b0cb5907d8036a598d315f7dc3"
+  },
+  {
+    "source": "src/transcif/research/source_support.py",
+    "file": "code/source_support.py",
+    "sha256": "2f3f0813cb945e0e26306ff95ff0169618d220d804fd7925482c69dae3bb8b44"
+  },
+  {
+    "source": "docs/CAPACITY_SOURCE_SUPPORT_PROTOCOL.md",
+    "file": "code/CAPACITY_SOURCE_SUPPORT_PROTOCOL.md",
+    "sha256": "4e085f2bb6ab303b23898ed3034a2d2686e1d12f04360b419bb56c24518bf545"
+  },
+  {
+    "source": "results/public-support-capacity-input-r1/capacity.json",
+    "file": "code/capacity.json",
+    "sha256": "ef2b29caee2a501bb3f1ce9a3bf96cda1117d8ba0766c9fcb0f620d8c636310e"
+  },
+  {
+    "source": "results/public-support-capacity-input-r1/audit.json",
+    "file": "code/audit.json",
+    "sha256": "4c99008647937770f01b846ddd0e995d40c010d3362da3b287fedc8de3175603"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "source": "US",
+    "target_country": "GB",
+    "target": "GB",
+    "hours": 8784,
+    "path": "US_to_GB_predictions_2024.csv.gz",
+    "sha256": "5fedd39dd269aa2baccbca1fa3c014bbb29f6c3f0023f105ff087eaced18e021"
+  },
+  {
+    "source": "GB",
+    "target_country": "US",
+    "target": "BPAT",
+    "hours": 5737,
+    "path": "GB_to_BPAT_predictions_2024.csv.gz",
+    "sha256": "d8d99473feeb8685ac32e20579f90f8b0f638a5ede0789d137a3c3e63a114862"
+  },
+  {
+    "source": "GB",
+    "target_country": "US",
+    "target": "CISO",
+    "hours": 7960,
+    "path": "GB_to_CISO_predictions_2024.csv.gz",
+    "sha256": "abd61288d4b8d889b51162d017409efcf7b67a0d7646a85156d3d5efda2f7a22"
+  },
+  {
+    "source": "GB",
+    "target_country": "US",
+    "target": "ERCO",
+    "hours": 4362,
+    "path": "GB_to_ERCO_predictions_2024.csv.gz",
+    "sha256": "916a5e3c537737b51fa46c79f94a8c4e95920588fbd400f14a9a1269ee1ee3d5"
+  },
+  {
+    "source": "GB",
+    "target_country": "US",
+    "target": "FPL",
+    "hours": 4896,
+    "path": "GB_to_FPL_predictions_2024.csv.gz",
+    "sha256": "f78c97bb3909eea7093dd8c3ac5c3fb278c696cbe667e90f723bc958629960a4"
+  },
+  {
+    "source": "GB",
+    "target_country": "US",
+    "target": "ISNE",
+    "hours": 4363,
+    "path": "GB_to_ISNE_predictions_2024.csv.gz",
+    "sha256": "c9b8d32f152432383cbf87e33b3d3741d3474a337751b0ec74c6789596edb93b"
+  },
+  {
+    "source": "GB",
+    "target_country": "US",
+    "target": "MISO",
+    "hours": 8011,
+    "path": "GB_to_MISO_predictions_2024.csv.gz",
+    "sha256": "916b4a52bdb1bdbb5e55fa8026c1a7fcf78da5c69e07edcb0b3621e914dae214"
+  },
+  {
+    "source": "GB",
+    "target_country": "US",
+    "target": "NYIS",
+    "hours": 7201,
+    "path": "GB_to_NYIS_predictions_2024.csv.gz",
+    "sha256": "1cb9043c43b04c9fcf81daf33d420ac9bcfd7beb99c00486e711151563ca8c5e"
+  }
+]

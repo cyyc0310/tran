@@ -1,0 +1,66 @@
+[
+  {
+    "source": "US",
+    "target": "GB",
+    "region": "GB",
+    "path": "US_to_GB_official_predictions.csv.gz",
+    "sha256": "3729942d255c0c1136341d90a134a11e2c03e6bd7a3ea729e12bbc99b9b65d48",
+    "hours_predicted": 8784
+  },
+  {
+    "source": "GB",
+    "target": "US",
+    "region": "BPAT",
+    "path": "GB_to_BPAT_official_predictions.csv.gz",
+    "sha256": "c691b279296915805cd8d4c72cda2eeecf918edf884b574091dc2fe244f9acc4",
+    "hours_predicted": 5737
+  },
+  {
+    "source": "GB",
+    "target": "US",
+    "region": "CISO",
+    "path": "GB_to_CISO_official_predictions.csv.gz",
+    "sha256": "b887e8ac1f39513f9b51f8543f9998e2f38801c7f703dfed72bba62ee206875b",
+    "hours_predicted": 7960
+  },
+  {
+    "source": "GB",
+    "target": "US",
+    "region": "ERCO",
+    "path": "GB_to_ERCO_official_predictions.csv.gz",
+    "sha256": "f8c28c91c7ebc3bee416c43b9c46d39900ff7ff35cd62a004741e199f68658bf",
+    "hours_predicted": 4362
+  },
+  {
+    "source": "GB",
+    "target": "US",
+    "region": "FPL",
+    "path": "GB_to_FPL_official_predictions.csv.gz",
+    "sha256": "af055bfba978bd47fda0fc8ef0c2f3a102badbacc25bc418c08a909181b7770a",
+    "hours_predicted": 4896
+  },
+  {
+    "source": "GB",
+    "target": "US",
+    "region": "ISNE",
+    "path": "GB_to_ISNE_official_predictions.csv.gz",
+    "sha256": "9f8d24248f7fd8b708fb972238900dafcfcc92660371585942e1668e2ca08eb6",
+    "hours_predicted": 4363
+  },
+  {
+    "source": "GB",
+    "target": "US",
+    "region": "MISO",
+    "path": "GB_to_MISO_official_predictions.csv.gz",
+    "sha256": "00cf46d2f3b07520831a19702cc3a47cf9d7ec30b3398158e582a01b680e457d",
+    "hours_predicted": 8011
+  },
+  {
+    "source": "GB",
+    "target": "US",
+    "region": "NYIS",
+    "path": "GB_to_NYIS_official_predictions.csv.gz",
+    "sha256": "58e89e4566719e0cdb4d3a79a525aeb7f812d8ce8ab261ef61de9a52a6b9be79",
+    "hours_predicted": 7201
+  }
+]

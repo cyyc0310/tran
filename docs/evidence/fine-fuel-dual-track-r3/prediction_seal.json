@@ -1,0 +1,130 @@
+[
+  {
+    "source": "US",
+    "target": "GB",
+    "track": "generation_proxy",
+    "path": "US_to_GB_generation_proxy_predictions.csv.gz",
+    "sha256": "809167b68e2b1805b5b713742b1750ba278f422b7db5673a2629a4cb35ac432f",
+    "rows": 2136
+  },
+  {
+    "source": "US",
+    "target": "GB",
+    "track": "consumption_official",
+    "path": "US_to_GB_consumption_official_predictions.csv.gz",
+    "sha256": "4b13a417d8c6420d360652513fc1eddc4d27d48311f0f68938adc53406262beb",
+    "rows": 2136
+  },
+  {
+    "source": "GB",
+    "target": "BPAT",
+    "track": "generation_proxy",
+    "path": "GB_to_BPAT_generation_proxy_predictions.csv.gz",
+    "sha256": "c77a0c9a22b6dfe945a05b49200ad2a1c3e8dbe74c5c641dfc4d927e94e37774",
+    "rows": 2136
+  },
+  {
+    "source": "GB",
+    "target": "BPAT",
+    "track": "consumption_official",
+    "path": "GB_to_BPAT_consumption_official_predictions.csv.gz",
+    "sha256": "930584557cff3a0062bb332a73fdaee49366fe78c83df22c7eff2caa93263b2a",
+    "rows": 2136
+  },
+  {
+    "source": "GB",
+    "target": "CISO",
+    "track": "generation_proxy",
+    "path": "GB_to_CISO_generation_proxy_predictions.csv.gz",
+    "sha256": "57cb38733549c6604658580c2f7cc3dd35bdb25e3d1399486fe5cc4a76bf42d7",
+    "rows": 2136
+  },
+  {
+    "source": "GB",
+    "target": "CISO",
+    "track": "consumption_official",
+    "path": "GB_to_CISO_consumption_official_predictions.csv.gz",
+    "sha256": "799742791d66da338586f7bc3687d335e6a2c4c47f831432193cc5346ce556e7",
+    "rows": 2136
+  },
+  {
+    "source": "GB",
+    "target": "ERCO",
+    "track": "generation_proxy",
+    "path": "GB_to_ERCO_generation_proxy_predictions.csv.gz",
+    "sha256": "c86d609a665f049572346070ff9f2d555bd87586dd5729937007214ae6872374",
+    "rows": 2131
+  },
+  {
+    "source": "GB",
+    "target": "ERCO",
+    "track": "consumption_official",
+    "path": "GB_to_ERCO_consumption_official_predictions.csv.gz",
+    "sha256": "bdcc6ea35faae4633486ae8c5168f814c92afd7818b86fdda54f58620c720586",
+    "rows": 2131
+  },
+  {
+    "source": "GB",
+    "target": "FPL",
+    "track": "generation_proxy",
+    "path": "GB_to_FPL_generation_proxy_predictions.csv.gz",
+    "sha256": "acbb57e920bb8ed804729e8354cc54c6839f0ccbfdca1b502f6fda87d78f7055",
+    "rows": 2088
+  },
+  {
+    "source": "GB",
+    "target": "FPL",
+    "track": "consumption_official",
+    "path": "GB_to_FPL_consumption_official_predictions.csv.gz",
+    "sha256": "0463fd3f3d634ec76ed6de2f56d46f8d35d456a5eeb6c7cecf46049cff2d583e",
+    "rows": 2088
+  },
+  {
+    "source": "GB",
+    "target": "ISNE",
+    "track": "generation_proxy",
+    "path": "GB_to_ISNE_generation_proxy_predictions.csv.gz",
+    "sha256": "5d51b1d13fc0afee18c034d90000da7ef6b6a9b637b17a166bc227ca4b17d250",
+    "rows": 2132
+  },
+  {
+    "source": "GB",
+    "target": "ISNE",
+    "track": "consumption_official",
+    "path": "GB_to_ISNE_consumption_official_predictions.csv.gz",
+    "sha256": "d40f395202324a20252a24a844f67b97c073b81d09899c7aea19c5a53877008a",
+    "rows": 2132
+  },
+  {
+    "source": "GB",
+    "target": "MISO",
+    "track": "generation_proxy",
+    "path": "GB_to_MISO_generation_proxy_predictions.csv.gz",
+    "sha256": "b272bd08f83cf8470f57dfc949e63ef199f7742a181acce145be4612efd97d39",
+    "rows": 2131
+  },
+  {
+    "source": "GB",
+    "target": "MISO",
+    "track": "consumption_official",
+    "path": "GB_to_MISO_consumption_official_predictions.csv.gz",
+    "sha256": "fbc09a524cb62d1d59d4b00fe5370a44613f724219a7628f5cfbbe964835ee23",
+    "rows": 2131
+  },
+  {
+    "source": "GB",
+    "target": "NYIS",
+    "track": "generation_proxy",
+    "path": "GB_to_NYIS_generation_proxy_predictions.csv.gz",
+    "sha256": "39014f7f4217d8011f728bd6cc4ed22f2556bbe2f355ff61178612cedc42dd2c",
+    "rows": 2136
+  },
+  {
+    "source": "GB",
+    "target": "NYIS",
+    "track": "consumption_official",
+    "path": "GB_to_NYIS_consumption_official_predictions.csv.gz",
+    "sha256": "33d5ea9df1632d8583b312fe5b07727f2bedafbe797d0f95d99a116d005bff02",
+    "rows": 2136
+  }
+]

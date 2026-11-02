@@ -1,0 +1,94 @@
+{
+  "country_year": {
+    "blend": {
+      "n_units": 9,
+      "macro_mae": 60.470574065550345,
+      "macro_oracle_centered_mae": 46.81673181231619,
+      "macro_coverage90": 0.8994483876395597,
+      "macro_oracle_centered_coverage90": 0.9493628926318026,
+      "macro_winkler90": 444.2766748566134,
+      "macro_oracle_centered_winkler90": 378.71733419009104,
+      "mean_bias_mse_fraction": 0.2630318254960216,
+      "median_absolute_oracle_correction": 21.67434860500824
+    },
+    "factor_history": {
+      "n_units": 9,
+      "macro_mae": 63.13442606986361,
+      "macro_oracle_centered_mae": 46.26585433793684,
+      "macro_coverage90": 0.893125907457025,
+      "macro_oracle_centered_coverage90": 0.9640634342909737,
+      "macro_winkler90": 497.11011655573213,
+      "macro_oracle_centered_winkler90": 397.68792446361164,
+      "mean_bias_mse_fraction": 0.2852944667211907,
+      "median_absolute_oracle_correction": 22.886721897627712
+    },
+    "fuelshare_history": {
+      "n_units": 9,
+      "macro_mae": 54.801975835398395,
+      "macro_oracle_centered_mae": 45.70271818626272,
+      "macro_coverage90": 0.942974495714848,
+      "macro_oracle_centered_coverage90": 0.9530691261877631,
+      "macro_winkler90": 417.14981370816054,
+      "macro_oracle_centered_winkler90": 391.13923578603084,
+      "mean_bias_mse_fraction": 0.20687791358987973,
+      "median_absolute_oracle_correction": 15.288470646441588
+    },
+    "ratio_recomposition": {
+      "n_units": 9,
+      "macro_mae": 62.1408089849302,
+      "macro_oracle_centered_mae": 44.16425188634833,
+      "macro_coverage90": 0.9031143501055566,
+      "macro_oracle_centered_coverage90": 0.9634915182943752,
+      "macro_winkler90": 534.5854957765739,
+      "macro_oracle_centered_winkler90": 416.3257418570081,
+      "mean_bias_mse_fraction": 0.2948310329305804,
+      "median_absolute_oracle_correction": 20.834954906655916
+    }
+  },
+  "country_month": {
+    "blend": {
+      "n_units": 108,
+      "macro_mae": 60.53406195124212,
+      "macro_oracle_centered_mae": 33.389121264518835,
+      "macro_coverage90": 0.8991231205538519,
+      "macro_oracle_centered_coverage90": 0.9787709938340269,
+      "macro_winkler90": 444.90168791966966,
+      "macro_oracle_centered_winkler90": 354.9452662762095,
+      "mean_bias_mse_fraction": 0.47163573362266176,
+      "median_absolute_oracle_correction": 30.571375811983444
+    },
+    "factor_history": {
+      "n_units": 108,
+      "macro_mae": 63.19112177573525,
+      "macro_oracle_centered_mae": 33.502542028974496,
+      "macro_coverage90": 0.892865000320429,
+      "macro_oracle_centered_coverage90": 0.9826897570231212,
+      "macro_winkler90": 497.74474008693164,
+      "macro_oracle_centered_winkler90": 384.09224538082077,
+      "mean_bias_mse_fraction": 0.4855536638429001,
+      "median_absolute_oracle_correction": 28.305125236114513
+    },
+    "fuelshare_history": {
+      "n_units": 108,
+      "macro_mae": 54.84430328455607,
+      "macro_oracle_centered_mae": 33.361596185632486,
+      "macro_coverage90": 0.9428965805482675,
+      "macro_oracle_centered_coverage90": 0.9795650860352381,
+      "macro_winkler90": 417.36508235391346,
+      "macro_oracle_centered_winkler90": 364.4485312664178,
+      "mean_bias_mse_fraction": 0.43628722673565146,
+      "median_absolute_oracle_correction": 22.647256920168328
+    },
+    "ratio_recomposition": {
+      "n_units": 108,
+      "macro_mae": 62.16443355846921,
+      "macro_oracle_centered_mae": 33.41829417137826,
+      "macro_coverage90": 0.9030749275021243,
+      "macro_oracle_centered_coverage90": 0.9846127756263249,
+      "macro_winkler90": 534.7778805651997,
+      "macro_oracle_centered_winkler90": 398.88920237178377,
+      "mean_bias_mse_fraction": 0.5005469641463561,
+      "median_absolute_oracle_correction": 31.993286930662347
+    }
+  }
+}

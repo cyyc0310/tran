@@ -1,0 +1,65 @@
+{
+  "release_vintage": "EIA-923 2026 August monthly release, announced 2026-10-23",
+  "observation_months": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "balancing_authorities": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "ISNE",
+    "MISO",
+    "NYIS"
+  ],
+  "fuel_fields": [
+    "coal",
+    "gas",
+    "oil",
+    "nuclear",
+    "hydro",
+    "wind",
+    "solar",
+    "other"
+  ],
+  "mapping_audit": {
+    "page1_rows": 7835,
+    "page1_unique_plants": 3615,
+    "monthly_plant_frame_rows": 28318,
+    "unmapped_page1_plant_ids": [
+      99999
+    ]
+  },
+  "candidate_ba_months": 56,
+  "eia923_complete_ba_months": 24,
+  "eia930_complete_ba_months": 33,
+  "paired_complete_ba_months": 18,
+  "median_total_ratio": 0.9404179787067909,
+  "median_mix_share_l1": 0.06655134952527852,
+  "mean_mix_share_l1": 0.10285635515488077,
+  "p90_mix_share_l1": 0.20489168914014494,
+  "max_mix_share_l1": 0.35514022060749234,
+  "limitations": [
+    "EIA-930 is a current revised snapshot, not matched to each EIA-923 release vintage",
+    "EIA generation proxy is not measured CIF",
+    "no prediction model was evaluated"
+  ],
+  "input_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/docs/evidence/eia923-live-monthly-2026-08-r1/f923_2026.zip": "50ec141c118547dc0219356171476319e45b5ea382446bda617752a5635e4e91",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jan_Jun.csv": "1b3eaf7b0af08393f4d1593125b0c0f502f93e036d961b7dd6d50fc8e618582f",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/native-eia-2026/EIA930_BALANCE_2026_Jul_Dec.csv": "48005f09be801598e28f38079056260a0d07ab9a6d1a0324e8e92ca470b3c281"
+  },
+  "code_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/scripts/audit_live_eia923_ba_vintage.py": "c77cda9f2ceebe1edaa7dc2d67982f86a46eb7596f2e84d2574e9194c5c3f9db",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/src/transcif/data/eia930.py": "a0edd1fb8238375afbed51a0f70f2bcb701d8fca8e4069b9a41a4629eeac4145",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/src/transcif/research/eia_proxy.py": "2d191d6755aec030207043c95a1e354b7b89acd95d925aff93592bbf0711fbcf",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/docs/LIVE_EIA923_BA_VINTAGE_AUDIT_PROTOCOL_20261101.md": "90bbbd10a567e36835468efe3e2f55e8ab54d00d8ddcbfb66d38b6e708b89224"
+  }
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "target": "NL",
+    "train_arm": "old4",
+    "file": "NL/old4_prediction.csv.gz",
+    "sha256": "87d7b765f836fda333575b2ca8a289b93e78fc90095e67cc35c18d60a6e99519",
+    "hours": 8784
+  },
+  {
+    "target": "NL",
+    "train_arm": "cz",
+    "file": "NL/cz_prediction.csv.gz",
+    "sha256": "3053f5e24049fcf5fe05be7575e591e94265bac813825adcf643254c6770dd66",
+    "hours": 8784
+  },
+  {
+    "target": "NL",
+    "train_arm": "px",
+    "file": "NL/px_prediction.csv.gz",
+    "sha256": "de0cb4f9af7c36c3a5e76971acc3ac2a8bf5af76c55d9749e43a5bbdadaca818",
+    "hours": 8784
+  },
+  {
+    "target": "ES",
+    "train_arm": "old4",
+    "file": "ES/old4_prediction.csv.gz",
+    "sha256": "1f2ee4435a879b656c05145956edbbba42a9c751f1ff2cab3ade6c3c0b832abd",
+    "hours": 8783
+  },
+  {
+    "target": "ES",
+    "train_arm": "cz",
+    "file": "ES/cz_prediction.csv.gz",
+    "sha256": "e446c39820768bea879a5f52b25329ac9954d93da3991edd8a4414fb97217611",
+    "hours": 8783
+  },
+  {
+    "target": "ES",
+    "train_arm": "px",
+    "file": "ES/px_prediction.csv.gz",
+    "sha256": "38e3e21532a596a912544af0d74fe63d092709aac5283ecfe42fc236a00a172f",
+    "hours": 8783
+  },
+  {
+    "target": "BE",
+    "train_arm": "old4",
+    "file": "BE/old4_prediction.csv.gz",
+    "sha256": "3220810ec24ed46847ab36bcd128cc32764725adca4a677cf2e8fffdd635db79",
+    "hours": 8784
+  },
+  {
+    "target": "BE",
+    "train_arm": "cz",
+    "file": "BE/cz_prediction.csv.gz",
+    "sha256": "e4a8229e98a58c3e16d60ac57e419b68adac56a4e52eddf6ff0081ead06c9de2",
+    "hours": 8784
+  },
+  {
+    "target": "BE",
+    "train_arm": "px",
+    "file": "BE/px_prediction.csv.gz",
+    "sha256": "e6577bbd8e856ab6102c9aefe86be0a1742c3fe00d57b206750337e02eeadfee",
+    "hours": 8784
+  },
+  {
+    "target": "AT",
+    "train_arm": "old4",
+    "file": "AT/old4_prediction.csv.gz",
+    "sha256": "31ec0259bcef906a25fec04d847bbe24ca7d81b154dd3fc681804d90478ff388",
+    "hours": 8784
+  },
+  {
+    "target": "AT",
+    "train_arm": "cz",
+    "file": "AT/cz_prediction.csv.gz",
+    "sha256": "9c7a4bf2efd680a018df8ae568f08f8128aa4545e7c8f719a79a759663aff814",
+    "hours": 8784
+  },
+  {
+    "target": "AT",
+    "train_arm": "px",
+    "file": "AT/px_prediction.csv.gz",
+    "sha256": "56443387faf678a531db036402f92c516d99d268163dfe3ca92ad3c4c9ff398d",
+    "hours": 8784
+  },
+  {
+    "target": "SE",
+    "train_arm": "old4",
+    "file": "SE/old4_prediction.csv.gz",
+    "sha256": "0de3cc615f44739d50b9120c5cb60c80d8e1eb889c887869fd38443660d7ba92",
+    "hours": 8783
+  },
+  {
+    "target": "SE",
+    "train_arm": "cz",
+    "file": "SE/cz_prediction.csv.gz",
+    "sha256": "dc75461090914599a5a27d0277d601ab6a4f84139729b146c8b2ca8dd4bdc8e9",
+    "hours": 8783
+  },
+  {
+    "target": "SE",
+    "train_arm": "px",
+    "file": "SE/px_prediction.csv.gz",
+    "sha256": "8873afde758fffc56512e18492c3424189fcccbe634cdf1d1fb3aa91ee4ca01d",
+    "hours": 8783
+  }
+]

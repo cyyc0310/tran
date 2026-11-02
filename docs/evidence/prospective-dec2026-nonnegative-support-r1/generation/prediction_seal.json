@@ -1,0 +1,26 @@
+[
+  {
+    "path": "prospective-generation-us-gb-dec2026-nonnegative-support-r1/GB_to_US_ERCO_predictions.csv.gz",
+    "sha256": "3f15c0fef5a07311aa44aa699756b4dd599f792b1921704b9e270c08e48adf23",
+    "rows": 744,
+    "track": "generation",
+    "target_response_loaded": false,
+    "derived_from": "prospective-generation-us-gb-dec2026-r1/GB_to_US_ERCO_predictions.csv.gz"
+  },
+  {
+    "path": "prospective-generation-us-gb-dec2026-nonnegative-support-r1/GB_to_US_FPL_predictions.csv.gz",
+    "sha256": "72a4b4df034ef9921db0be9ac32bf8c785a251d3ea694bfb8c8c7de3ca08f9fa",
+    "rows": 744,
+    "track": "generation",
+    "target_response_loaded": false,
+    "derived_from": "prospective-generation-us-gb-dec2026-r1/GB_to_US_FPL_predictions.csv.gz"
+  },
+  {
+    "path": "prospective-generation-us-gb-dec2026-nonnegative-support-r1/US_to_GB_GB_predictions.csv.gz",
+    "sha256": "9c18403e316e374fb696224f24ed9c1be2c27ec5cf0259073ec20581f07cac23",
+    "rows": 744,
+    "track": "generation",
+    "target_response_loaded": false,
+    "derived_from": "prospective-generation-us-gb-dec2026-r1/US_to_GB_GB_predictions.csv.gz"
+  }
+]

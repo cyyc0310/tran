@@ -1,0 +1,105 @@
+{
+  "schema": "SOURCE_ANCHOR_MODELS_R1_EVIDENCE_V1",
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "a078686685939412cea90dac0f4145b9a2cc3b6d492f29ad213acec109bb8fb9"
+    },
+    {
+      "file": "archive_inventory.json",
+      "sha256": "0a97fc1587c0fd8069606e32328834cdd37a3ff6de65156736367179d072b904"
+    },
+    {
+      "file": "execution.log",
+      "sha256": "96bada96c8e8ea71d7680dfca93cd236e75da0583d64b84665395c285d61a30c",
+      "original": "results/source-anchor-models-r1.execution.log",
+      "original_sha256": "96bada96c8e8ea71d7680dfca93cd236e75da0583d64b84665395c285d61a30c"
+    },
+    {
+      "file": "independent_review/evaluation_runner_review.json",
+      "sha256": "301e7a7afc5f62d739438ac3e294bdca1543e8fb63aee2b94d525546f3fc122e",
+      "original": "results/source-anchor-models-r1-independent-review/evaluation_runner_review.json",
+      "original_sha256": "301e7a7afc5f62d739438ac3e294bdca1543e8fb63aee2b94d525546f3fc122e"
+    },
+    {
+      "file": "independent_review/independent_formula_checks.json",
+      "sha256": "22b68458c5f23679d58774c3b0cfa65df81934b91fdf846e70e4c05f10168cdc",
+      "original": "results/source-anchor-models-r1-independent-review/independent_formula_checks.json",
+      "original_sha256": "22b68458c5f23679d58774c3b0cfa65df81934b91fdf846e70e4c05f10168cdc"
+    },
+    {
+      "file": "independent_review/independent_review.json",
+      "sha256": "9cd84bbda2465efb01e805aa426dcdc46a2531b06086c98015192453dd40c12e",
+      "original": "results/source-anchor-models-r1-independent-review/independent_review.json",
+      "original_sha256": "9cd84bbda2465efb01e805aa426dcdc46a2531b06086c98015192453dd40c12e"
+    },
+    {
+      "file": "independent_review/manifest.json",
+      "sha256": "2b76cc7c055c47dbb61733ed4ba8e39907c79e8209bf4bc3a6431a1997398ea4",
+      "original": "results/source-anchor-models-r1-independent-review/manifest.json",
+      "original_sha256": "2b76cc7c055c47dbb61733ed4ba8e39907c79e8209bf4bc3a6431a1997398ea4"
+    },
+    {
+      "file": "independent_review/model_audits.json",
+      "sha256": "12ca0ed14c7d1bea82d3b942e42164e60ed63f2b08ee9ffaf3aca159122b3de9",
+      "original": "results/source-anchor-models-r1-independent-review/model_audits.json",
+      "original_sha256": "12ca0ed14c7d1bea82d3b942e42164e60ed63f2b08ee9ffaf3aca159122b3de9"
+    },
+    {
+      "file": "independent_review/model_checks.json",
+      "sha256": "b1e0635e528edc52ef6c2f72f07d9020197c27a8ef8be077d9c234a6d2616435",
+      "original": "results/source-anchor-models-r1-independent-review/model_checks.json",
+      "original_sha256": "b1e0635e528edc52ef6c2f72f07d9020197c27a8ef8be077d9c234a6d2616435"
+    },
+    {
+      "file": "results/completion.json",
+      "sha256": "cf6cf5b1828dbfe39e5601e24af4e969a614611d0b7e6c0e5dcd9532b795c55e",
+      "original": "results/source-anchor-models-r1/completion.json",
+      "original_sha256": "cf6cf5b1828dbfe39e5601e24af4e969a614611d0b7e6c0e5dcd9532b795c55e"
+    },
+    {
+      "file": "results/execution_plan.json",
+      "sha256": "d65ca01293ad411eeb63c32bcafe790c7b496b830b1c5c268660238f21e2f41a",
+      "original": "results/source-anchor-models-r1/execution_plan.json",
+      "original_sha256": "d65ca01293ad411eeb63c32bcafe790c7b496b830b1c5c268660238f21e2f41a"
+    },
+    {
+      "file": "results/input_code_seal.json",
+      "sha256": "6ae35b70e9d2617e46f8d32df974b6a9753c7c3ae0ed7b2aedf9bbf7df9267f1",
+      "original": "results/source-anchor-models-r1/input_code_seal.json",
+      "original_sha256": "6ae35b70e9d2617e46f8d32df974b6a9753c7c3ae0ed7b2aedf9bbf7df9267f1"
+    },
+    {
+      "file": "results/model_seal.json",
+      "sha256": "af3089663b7b43cb4e4b563e0e64a2c202ab0ff8cca4b24e02f032eac1658f7b",
+      "original": "results/source-anchor-models-r1/model_seal.json",
+      "original_sha256": "af3089663b7b43cb4e4b563e0e64a2c202ab0ff8cca4b24e02f032eac1658f7b"
+    },
+    {
+      "file": "results/runtime.json",
+      "sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+      "original": "results/source-anchor-models-r1/runtime.json",
+      "original_sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5"
+    },
+    {
+      "file": "source_oof.tar.gz",
+      "sha256": "4adfd08f6d2ad860a6c65e22303e78dc18464ed0b8c1a6464d1905469a46d186"
+    },
+    {
+      "file": "source_oof_analysis/source_calendar_oof_comparison.csv",
+      "sha256": "0e99b5fb756076180cb4616c1a45b3fcb10f9a118f0b17ef89569d74e1ec76d8",
+      "original": "results/source-anchor-models-r1-analysis/source_calendar_oof_comparison.csv",
+      "original_sha256": "0e99b5fb756076180cb4616c1a45b3fcb10f9a118f0b17ef89569d74e1ec76d8"
+    },
+    {
+      "file": "source_oof_analysis/summary.csv",
+      "sha256": "af55a9fb1eb3d60dd9a4795c661c6c4a710883c8f8258609f4b1b8b1dc1aaeb2",
+      "original": "results/source-anchor-models-r1-analysis/summary.csv",
+      "original_sha256": "af55a9fb1eb3d60dd9a4795c661c6c4a710883c8f8258609f4b1b8b1dc1aaeb2"
+    }
+  ],
+  "full_model_parameters_included": false,
+  "full_raw_retraining_package": false,
+  "new_country_opened": false,
+  "adaptive_development": true
+}

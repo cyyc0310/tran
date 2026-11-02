@@ -1,0 +1,31 @@
+{
+  "prediction_sha256": "8a58c644d154c91b50f748db0df4c3d56c39bc954748c2bac866a33bafc6a3ad",
+  "calibration_sha256": "b602ff8757764ee07af1a6908c5f9f89a325be2a3bb2b9ab899a1793f312ced6",
+  "prediction_rows": 8760,
+  "target_labels_read_before_seal": false,
+  "target_budget": "t-2 CN5 shares plus one scale-free two-month log-volume change feature",
+  "trend_formula": "log total generation month p-2 minus log total generation month p-3; source monthly features computed from complete generation-only files before joining hourly labels",
+  "source_input_hashes": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/BPAT_generation_2022_2024.csv.gz": "1a1c5cacfa168a0663469c699a568672b371b3e0e929ac246ceebe7080f53e58",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/BPAT_official_intensity_2022_2024.csv.gz": "66b59e45dcf9223604100a8504b68b44cf312bf2df406cfba62bffc2c5b0fe48",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/CISO_generation_2022_2024.csv.gz": "1e53f514fbe8e4ba78011454a7576058baa831de1c854e50eaba8e79903cd0c5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/CISO_official_intensity_2022_2024.csv.gz": "e79358e47c07d2644406f21323ab7671f1fbb29e8311326e18849e85b0fc24ea",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/ERCO_generation_2022_2024.csv.gz": "92cba63a91742ac431ab21a1a138dc9e481000a358e56c1de05b534c3e2811b2",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/ERCO_official_intensity_2022_2024.csv.gz": "de6d0181c32f9167979fc44a15a6ebedde171a6206ea580a8db6c8beeca1ef15",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/FPL_generation_2022_2024.csv.gz": "cc22e71a411404da3e595e6ee879c511123d619b9f6d5c398056a842333bb8f7",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/FPL_official_intensity_2022_2024.csv.gz": "e5c1eb39458349eda625fab8bfe1bb1f5b82e99a7107604832e429555c476955",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/ISNE_generation_2022_2024.csv.gz": "3c6e63991c62af15b538f7e7b7f0f7da0a2526b41172f9eb9dfd82812915b5eb",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/ISNE_official_intensity_2022_2024.csv.gz": "6ba7c5ed7780210f8890098a58c4490e29baeec3c8c23b5879d5f1c0c16c0f1b",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/MISO_generation_2022_2024.csv.gz": "a34a0d688ca25a62efc8f117a017f9a97619452c5d0af9753566622a331927e5",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/MISO_official_intensity_2022_2024.csv.gz": "3d189f49fd905462f93b4416f388de28b0589120451696c91b9644263d1d7ecc",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/feature_inputs/NYIS_generation_2022_2024.csv.gz": "2744dec0707b640c33409505d3414188ecf2ee7244b5510bfa4fa751cd5baee4",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/data/eia930-hourly-co2-r1/NYIS_official_intensity_2022_2024.csv.gz": "f9cdb9cbb84e8b475edbc5b4deb2cdc4d2a440f58f60fbd71180a6059d5ebb02"
+  },
+  "target_fuel_sha256": "103bc41ec970c1d58dab912cd1fae9df27afa0b869ebdd8ddb4d5db7840a704f",
+  "experiment_runner_sha256": "2bde2ea0a8df1ee8885d7dcdfa4ef8a32cd3a9f56a16e8d1c578606b91ee6184",
+  "protocol_runner_sha256": {
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/scripts/run_us_to_gb_2025_official_generation.py": "3a5ed5c72ff18ae0129f0e9f7ff1c5fd9bac49749bf23422537618b6f7554398",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/docs/CROSS_COUNTRY_2025_US_TO_GB_OFFICIAL_GENERATION_PROTOCOL_20261102.md": "9a701e93d607f3b7144fe78ecf48097f8bbaabc00023b47fc750f6515bf96f36",
+    "/Users/cyyc0310/Documents/\u6211\u4e3a\u6211\u5bfc\u625b\u5927\u65d7/\u9879\u76ee/AI for Science/transcif-research/docs/CROSS_COUNTRY_US_TO_GB_VOLUME_TREND_PROTOCOL_20261102.md": "420ff349a0a8313a7eda1131faf76deb37a17b124a5a3f989e653c24037d91c3"
+  }
+}

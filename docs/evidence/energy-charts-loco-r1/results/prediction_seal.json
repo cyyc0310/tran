@@ -1,0 +1,32 @@
+[
+  {
+    "target": "NL",
+    "path": "NL_heldout_predictions.csv.gz",
+    "sha256": "43fa8790cce5dd2f5651d09cbae643fe916043938c4a0c51c6feb4cbdebac14b",
+    "hours": 8784
+  },
+  {
+    "target": "ES",
+    "path": "ES_heldout_predictions.csv.gz",
+    "sha256": "7977767f912d050931d48cb5e0851f873b32189f624abd42fcdfed1153ff14b6",
+    "hours": 8783
+  },
+  {
+    "target": "BE",
+    "path": "BE_heldout_predictions.csv.gz",
+    "sha256": "61b4f20408fc09ce7f0ba8baaa0a3071d5b808636c9cf38ea6d6788093ad9943",
+    "hours": 8784
+  },
+  {
+    "target": "AT",
+    "path": "AT_heldout_predictions.csv.gz",
+    "sha256": "3d024287da908c05ec40f9a54d6de5f9c630aa4a6ae0feec688fc08023a8ecdc",
+    "hours": 8784
+  },
+  {
+    "target": "SE",
+    "path": "SE_heldout_predictions.csv.gz",
+    "sha256": "4dd197dd437c6a20f9a7f7b3a80404791fdf8102de418e7faa8f7165407a0a9c",
+    "hours": 8783
+  }
+]

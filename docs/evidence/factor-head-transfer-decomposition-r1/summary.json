@@ -1,0 +1,22 @@
+{
+  "ratio_recomposition_mae_equal_month": 38.476795318553286,
+  "ratio_recomposition_shape_mae_equal_month": 14.91653671407398,
+  "ratio_recomposition_coverage_equal_month": 0.8854848343396661,
+  "factor_history_mae_equal_month": 39.36586376388547,
+  "factor_history_shape_mae_equal_month": 15.04280108470223,
+  "factor_history_coverage_equal_month": 0.8564378352296351,
+  "macro_recomposition_mae_equal_month": 38.53048960301015,
+  "macro_recomposition_shape_mae_equal_month": 14.968670974135852,
+  "macro_recomposition_coverage_equal_month": 0.8642263930114698,
+  "direct_history_mae_equal_month": 91.8312207162033,
+  "direct_history_shape_mae_equal_month": 17.396379548487282,
+  "direct_history_coverage_equal_month": 0.8069888490206866,
+  "oracle_q_true_source_ef_mae_equal_month": 17.848817872701087,
+  "oracle_q_hat_ef_true_mae_equal_month": 34.003453994718214,
+  "oracle_q_true_ef_true_mae_equal_month": 7.267441372886845e-15,
+  "outer_countries": 5,
+  "hourly_rows": 43918,
+  "source_inputs_hash_files": 12,
+  "startup_code_files": 6,
+  "recomputed_base_predictions_match_sealed": true
+}

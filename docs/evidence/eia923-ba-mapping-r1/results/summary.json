@@ -1,0 +1,99 @@
+{
+  "available_eia923_ba_months": 84,
+  "paired_complete_eia930_ba_months": 61,
+  "paired_ba_count": 7,
+  "paired_month_count": 12,
+  "median_eia923_to_eia930_total_ratio": 1.0442154792005096,
+  "median_mix_share_l1": 0.0819908341742653,
+  "mean_mix_share_l1": 0.10001981073056727,
+  "p90_mix_share_l1": 0.18956105756963176,
+  "max_mix_share_l1": 0.4619211213923027,
+  "mix_fields": [
+    "coal",
+    "gas",
+    "oil",
+    "other",
+    "nuclear",
+    "hydro",
+    "wind",
+    "solar"
+  ],
+  "fuel_code_map": {
+    "COL": "coal",
+    "NG": "gas",
+    "DFO": "oil",
+    "RFO": "oil",
+    "PC": "oil",
+    "NUC": "nuclear",
+    "HYC": "hydro",
+    "HPS": "hydro",
+    "WND": "wind",
+    "SUN": "solar"
+  },
+  "by_ba": [
+    {
+      "ba": "BPAT",
+      "paired_complete_months": 8,
+      "median_total_ratio": 1.1701571871725156,
+      "median_mix_share_l1": 0.18084930698450233
+    },
+    {
+      "ba": "CISO",
+      "paired_complete_months": 11,
+      "median_total_ratio": 0.9320896951579156,
+      "median_mix_share_l1": 0.15152905355547275
+    },
+    {
+      "ba": "ERCO",
+      "paired_complete_months": 8,
+      "median_total_ratio": 1.074682231586868,
+      "median_mix_share_l1": 0.10711523623980077
+    },
+    {
+      "ba": "FPL",
+      "paired_complete_months": 7,
+      "median_total_ratio": 1.0123810598124754,
+      "median_mix_share_l1": 0.020920658672806423
+    },
+    {
+      "ba": "ISNE",
+      "paired_complete_months": 6,
+      "median_total_ratio": 1.0507571621605876,
+      "median_mix_share_l1": 0.07747693060212109
+    },
+    {
+      "ba": "MISO",
+      "paired_complete_months": 11,
+      "median_total_ratio": 1.0474005107604831,
+      "median_mix_share_l1": 0.053031444767967915
+    },
+    {
+      "ba": "NYIS",
+      "paired_complete_months": 10,
+      "median_total_ratio": 1.0335931769419922,
+      "median_mix_share_l1": 0.054778492917437895
+    }
+  ],
+  "scope_note": "2024 final EIA-923 monthly plant reports aggregated by their reported BA code; comparison only, not a vintage-certified forecast input.",
+  "year": 2024,
+  "balancing_authorities": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "ISNE",
+    "MISO",
+    "NYIS"
+  ],
+  "eia923_archive_sha256": "272055f2d748f6486fc3076abd5a40ec736dbff45458bdb4c895761278c50f2b",
+  "eia930_input_sha256": {
+    "BPAT": "1a1c5cacfa168a0663469c699a568672b371b3e0e929ac246ceebe7080f53e58",
+    "CISO": "1e53f514fbe8e4ba78011454a7576058baa831de1c854e50eaba8e79903cd0c5",
+    "ERCO": "92cba63a91742ac431ab21a1a138dc9e481000a358e56c1de05b534c3e2811b2",
+    "FPL": "cc22e71a411404da3e595e6ee879c511123d619b9f6d5c398056a842333bb8f7",
+    "ISNE": "3c6e63991c62af15b538f7e7b7f0f7da0a2526b41172f9eb9dfd82812915b5eb",
+    "MISO": "a34a0d688ca25a62efc8f117a017f9a97619452c5d0af9753566622a331927e5",
+    "NYIS": "2744dec0707b640c33409505d3414188ecf2ee7244b5510bfa4fa751cd5baee4"
+  },
+  "complete_comparison_csv_sha256": "432c12ad59f3e5dd695cbbbffb78da975a6e327420d46a22701f6f3bc455d7cf"
+}

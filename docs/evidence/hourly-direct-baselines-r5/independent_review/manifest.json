@@ -1,0 +1,61 @@
+{
+  "schema": "R5_READ_ONLY_AUDIT_ARTIFACTS_V1",
+  "files": [
+    {
+      "file": "calibration_units_prediction_review.json",
+      "sha256": "3113f24b6e345acc0b0f7c03c3182b1c9b4d5cac96c488ae4156a58d5b0b2655",
+      "bytes": 2227
+    },
+    {
+      "file": "configuration_metrics_recomputed.csv",
+      "sha256": "c8978adb0081789f27352bb5abedae430aaff2d0b1a2fe5f08aea6a53b9606bf",
+      "bytes": 113935
+    },
+    {
+      "file": "independent_review.json",
+      "sha256": "09e714d0d85ca03223004cd992007e7928b4a00db74a4f028c4f9392fa33038a",
+      "bytes": 4230
+    },
+    {
+      "file": "label_budget_and_posthoc_review.json",
+      "sha256": "e980b8b662c1d6e3f040b6f3233768a9df9d21531de77dc9287cf2476442fffe",
+      "bytes": 2340
+    },
+    {
+      "file": "metric_review.json",
+      "sha256": "4e2bb1013b64e32f1b0a177ecd390ce00093e4ec799614ce4810b1977597e99a",
+      "bytes": 27117
+    },
+    {
+      "file": "model_audits.json",
+      "sha256": "d744587c92dbff0a5fc14b367b09bf39b50ce2c618d1622555cbb5551c62991b",
+      "bytes": 145231
+    },
+    {
+      "file": "model_provenance_review.json",
+      "sha256": "864281f5ae02e278fe72a8071e214eecdedc738080434ae45035e47da60ca401",
+      "bytes": 16729
+    },
+    {
+      "file": "opposite_failure_regions.csv",
+      "sha256": "11e8e18de63816bf45a3c226a80779ad63cec3f452db481a7d39adf241793498",
+      "bytes": 5337
+    },
+    {
+      "file": "region_metrics_recomputed.csv",
+      "sha256": "1957f3a2968a3aa7764d061d236e6fcbeded81b9069a0d7214dbe562b5327020",
+      "bytes": 329422
+    },
+    {
+      "file": "seal_review.json",
+      "sha256": "b3d717e5bb80b419fdc912d83174aa01ecb4fd0e1603fc94e74bd8d59e04809f",
+      "bytes": 858
+    },
+    {
+      "file": "summary_recomputed.csv",
+      "sha256": "6ba77701e03801062c2b8199b78491261c33fbe4fed65787c676cb5310c64657",
+      "bytes": 12528
+    }
+  ],
+  "production_unchanged": true
+}

@@ -1,0 +1,5 @@
+# NESO national actual carbon intensity, 2022–2024
+
+Retrieved 2026-11-01 from the official NESO Carbon Intensity API. Data are 30-minute national `intensity.actual` estimates in gCO2/kWh, with forecast values retained as a separate field but not treated as observations. Current API history is not an as-issued vintage. The API limits requests to 31 days; `manifest.json` records every request and response hash. Normalized values are in `neso_national_intensity_history.csv`.
+
+The API returns 52,486 de-duplicated half-hour records from 2022-01-01 through 2024-12-31, with 56 missing actual values and 122 absent expected intervals (two outages: 91 intervals in 2023-10 and 31 in 2024-06). NESO describes the national historical `Actual Carbon Intensity` as estimated from metered generation; it is an official estimate, not direct stack measurement. See https://www.neso.energy/data-portal/national-carbon-intensity-forecast/national_carbon_intensity_forecast and https://api.carbonintensity.org.uk/.

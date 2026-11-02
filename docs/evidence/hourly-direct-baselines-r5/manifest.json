@@ -1,0 +1,192 @@
+{
+  "schema": "HOURLY_DIRECT_BASELINES_R5_EVIDENCE_V1",
+  "created_at_local": "2026-11-01",
+  "scope": {
+    "adaptive_development": true,
+    "strict_paired_source_label_budget": true,
+    "new_country_opened": false,
+    "eligible_for_issued_public": false,
+    "full_raw_retraining_package": false,
+    "full_model_parameters_included": false
+  },
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "5d656cb748257ad2fc834ebc5568a5177ca01a01bf6ef05c464e836df86d27dc"
+    },
+    {
+      "file": "archive_inventory.json",
+      "sha256": "f41ed164a1729c584868e65913acbec1beb09650a1185d1cb306cab73bf58312"
+    },
+    {
+      "file": "diagnostics/development_region_day_diagnostics.csv",
+      "sha256": "fcef9190baa1800f270f2acd99ddae8ac88a20f9f39f85e525d60577f1a2f1df",
+      "original": "results/hourly-direct-baselines-r5-analysis/development_region_day_diagnostics.csv",
+      "original_sha256": "fcef9190baa1800f270f2acd99ddae8ac88a20f9f39f85e525d60577f1a2f1df"
+    },
+    {
+      "file": "diagnostics/source_public_thermal_support.csv",
+      "sha256": "57397c0f1c8f946eb5dea1486ba0e54522f3cbd53cd00bde44b78c9cf6bbd951",
+      "original": "results/hourly-direct-baselines-r5-analysis/source_public_thermal_support.csv",
+      "original_sha256": "57397c0f1c8f946eb5dea1486ba0e54522f3cbd53cd00bde44b78c9cf6bbd951"
+    },
+    {
+      "file": "execution.log",
+      "sha256": "a67b2a5392ed49a6ed84d601b7445d19c5c18b8ec2e09125ed063792655e7c6b",
+      "original": "results/hourly-direct-baselines-r5.execution.log",
+      "original_sha256": "a67b2a5392ed49a6ed84d601b7445d19c5c18b8ec2e09125ed063792655e7c6b"
+    },
+    {
+      "file": "independent_review/calibration_units_prediction_review.json",
+      "sha256": "3113f24b6e345acc0b0f7c03c3182b1c9b4d5cac96c488ae4156a58d5b0b2655",
+      "original": "results/hourly-direct-baselines-r5-independent-review/calibration_units_prediction_review.json",
+      "original_sha256": "3113f24b6e345acc0b0f7c03c3182b1c9b4d5cac96c488ae4156a58d5b0b2655"
+    },
+    {
+      "file": "independent_review/configuration_metrics_recomputed.csv",
+      "sha256": "c8978adb0081789f27352bb5abedae430aaff2d0b1a2fe5f08aea6a53b9606bf",
+      "original": "results/hourly-direct-baselines-r5-independent-review/configuration_metrics_recomputed.csv",
+      "original_sha256": "c8978adb0081789f27352bb5abedae430aaff2d0b1a2fe5f08aea6a53b9606bf"
+    },
+    {
+      "file": "independent_review/independent_review.json",
+      "sha256": "09e714d0d85ca03223004cd992007e7928b4a00db74a4f028c4f9392fa33038a",
+      "original": "results/hourly-direct-baselines-r5-independent-review/independent_review.json",
+      "original_sha256": "09e714d0d85ca03223004cd992007e7928b4a00db74a4f028c4f9392fa33038a"
+    },
+    {
+      "file": "independent_review/label_budget_and_posthoc_review.json",
+      "sha256": "e980b8b662c1d6e3f040b6f3233768a9df9d21531de77dc9287cf2476442fffe",
+      "original": "results/hourly-direct-baselines-r5-independent-review/label_budget_and_posthoc_review.json",
+      "original_sha256": "e980b8b662c1d6e3f040b6f3233768a9df9d21531de77dc9287cf2476442fffe"
+    },
+    {
+      "file": "independent_review/manifest.json",
+      "sha256": "59c2a198ac49bb5b9c31d2d2f5c2874c832341a804ab98860e122eb0995ce3bc",
+      "original": "results/hourly-direct-baselines-r5-independent-review/manifest.json",
+      "original_sha256": "59c2a198ac49bb5b9c31d2d2f5c2874c832341a804ab98860e122eb0995ce3bc"
+    },
+    {
+      "file": "independent_review/metric_review.json",
+      "sha256": "4e2bb1013b64e32f1b0a177ecd390ce00093e4ec799614ce4810b1977597e99a",
+      "original": "results/hourly-direct-baselines-r5-independent-review/metric_review.json",
+      "original_sha256": "4e2bb1013b64e32f1b0a177ecd390ce00093e4ec799614ce4810b1977597e99a"
+    },
+    {
+      "file": "independent_review/model_audits.json",
+      "sha256": "d744587c92dbff0a5fc14b367b09bf39b50ce2c618d1622555cbb5551c62991b",
+      "original": "results/hourly-direct-baselines-r5-independent-review/model_audits.json",
+      "original_sha256": "d744587c92dbff0a5fc14b367b09bf39b50ce2c618d1622555cbb5551c62991b"
+    },
+    {
+      "file": "independent_review/model_provenance_review.json",
+      "sha256": "864281f5ae02e278fe72a8071e214eecdedc738080434ae45035e47da60ca401",
+      "original": "results/hourly-direct-baselines-r5-independent-review/model_provenance_review.json",
+      "original_sha256": "864281f5ae02e278fe72a8071e214eecdedc738080434ae45035e47da60ca401"
+    },
+    {
+      "file": "independent_review/opposite_failure_regions.csv",
+      "sha256": "11e8e18de63816bf45a3c226a80779ad63cec3f452db481a7d39adf241793498",
+      "original": "results/hourly-direct-baselines-r5-independent-review/opposite_failure_regions.csv",
+      "original_sha256": "11e8e18de63816bf45a3c226a80779ad63cec3f452db481a7d39adf241793498"
+    },
+    {
+      "file": "independent_review/region_metrics_recomputed.csv",
+      "sha256": "1957f3a2968a3aa7764d061d236e6fcbeded81b9069a0d7214dbe562b5327020",
+      "original": "results/hourly-direct-baselines-r5-independent-review/region_metrics_recomputed.csv",
+      "original_sha256": "1957f3a2968a3aa7764d061d236e6fcbeded81b9069a0d7214dbe562b5327020"
+    },
+    {
+      "file": "independent_review/seal_review.json",
+      "sha256": "b3d717e5bb80b419fdc912d83174aa01ecb4fd0e1603fc94e74bd8d59e04809f",
+      "original": "results/hourly-direct-baselines-r5-independent-review/seal_review.json",
+      "original_sha256": "b3d717e5bb80b419fdc912d83174aa01ecb4fd0e1603fc94e74bd8d59e04809f"
+    },
+    {
+      "file": "independent_review/summary_recomputed.csv",
+      "sha256": "6ba77701e03801062c2b8199b78491261c33fbe4fed65787c676cb5310c64657",
+      "original": "results/hourly-direct-baselines-r5-independent-review/summary_recomputed.csv",
+      "original_sha256": "6ba77701e03801062c2b8199b78491261c33fbe4fed65787c676cb5310c64657"
+    },
+    {
+      "file": "paired_members.tar.gz",
+      "sha256": "af5397a9e2bf9e2ff9e0565086cb9a2ebcaa8af67f5200a033df4599b9fc5dbe"
+    },
+    {
+      "file": "predictions.csv.gz",
+      "sha256": "209e3189b93655cb48bfb3786aa08fe46b1043003e4e79cbfd413ca75d06dd44",
+      "original": "results/hourly-direct-baselines-r5/predictions.csv",
+      "original_sha256": "b9367efcb76166b053df6b1f1153c19cefa7d96e5fe34749bc7e16188a06ab11"
+    },
+    {
+      "file": "results/calibration.json",
+      "sha256": "1e889357d94cbcaebc1f7af599147eac664fabbba38330545964a58aa092d03c",
+      "original": "results/hourly-direct-baselines-r5/calibration.json",
+      "original_sha256": "1e889357d94cbcaebc1f7af599147eac664fabbba38330545964a58aa092d03c"
+    },
+    {
+      "file": "results/completion.json",
+      "sha256": "bfb3e5e23416ac4cb887bf4ec091557d03f3d55d6261837e864a354448f3eca7",
+      "original": "results/hourly-direct-baselines-r5/completion.json",
+      "original_sha256": "bfb3e5e23416ac4cb887bf4ec091557d03f3d55d6261837e864a354448f3eca7"
+    },
+    {
+      "file": "results/configuration_metrics.csv",
+      "sha256": "4c3f41e33a5cc59c3486a6549ef7229a9f2da50e7f39f338f658c8faf4620297",
+      "original": "results/hourly-direct-baselines-r5/configuration_metrics.csv",
+      "original_sha256": "4c3f41e33a5cc59c3486a6549ef7229a9f2da50e7f39f338f658c8faf4620297"
+    },
+    {
+      "file": "results/execution_plan.json",
+      "sha256": "6b2ca2cac8d1e3b67f8cf8d4c1e536a2a8fc97013fb5dadc73e03dadd15bfdf6",
+      "original": "results/hourly-direct-baselines-r5/execution_plan.json",
+      "original_sha256": "6b2ca2cac8d1e3b67f8cf8d4c1e536a2a8fc97013fb5dadc73e03dadd15bfdf6"
+    },
+    {
+      "file": "results/input_code_seal.json",
+      "sha256": "71ecb21bb3d562f6196f7daac4140a8ad65e27fc6cc7bfd31f6c640ffd68c7ce",
+      "original": "results/hourly-direct-baselines-r5/input_code_seal.json",
+      "original_sha256": "71ecb21bb3d562f6196f7daac4140a8ad65e27fc6cc7bfd31f6c640ffd68c7ce"
+    },
+    {
+      "file": "results/model_seal.json",
+      "sha256": "f65f7a00ec0078630a40f13ea00b3cc574132d85d66da700592a89c1dd78577b",
+      "original": "results/hourly-direct-baselines-r5/model_seal.json",
+      "original_sha256": "f65f7a00ec0078630a40f13ea00b3cc574132d85d66da700592a89c1dd78577b"
+    },
+    {
+      "file": "results/prediction_seal.json",
+      "sha256": "58e92af4a944c614f5efe3a0751810252e150175dd68812a4f0f97b56a67331e",
+      "original": "results/hourly-direct-baselines-r5/prediction_seal.json",
+      "original_sha256": "58e92af4a944c614f5efe3a0751810252e150175dd68812a4f0f97b56a67331e"
+    },
+    {
+      "file": "results/region_metrics.csv",
+      "sha256": "f063a840c4947ab3fe8206322b0238a5f72770e041a5d8dcd7e19a1fafb985db",
+      "original": "results/hourly-direct-baselines-r5/region_metrics.csv",
+      "original_sha256": "f063a840c4947ab3fe8206322b0238a5f72770e041a5d8dcd7e19a1fafb985db"
+    },
+    {
+      "file": "results/runtime.json",
+      "sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+      "original": "results/hourly-direct-baselines-r5/runtime.json",
+      "original_sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5"
+    },
+    {
+      "file": "results/summary.csv",
+      "sha256": "1a1707aba170f8a8c5bbd7e12480a144706c91de09886def202d31bdb42cb1c9",
+      "original": "results/hourly-direct-baselines-r5/summary.csv",
+      "original_sha256": "1a1707aba170f8a8c5bbd7e12480a144706c91de09886def202d31bdb42cb1c9"
+    },
+    {
+      "file": "source_oof.tar.gz",
+      "sha256": "69131f600831fd43a59272e1f19ccb4a8c3173886bdf402c7e7f8a33899b0435"
+    },
+    {
+      "file": "source_training_cohort.csv.gz",
+      "sha256": "9f01d429a50d7be93ac9bd9482ebbff96eacf27509aaa3fce9d5205e071113f0",
+      "original": "results/source-observed-weather-2022-r1/cohort.csv",
+      "original_sha256": "649bea42e090f22c8cf55d9c3af1a4efddc8fbe3840ecc9f2b020140a475b53a"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "target": "NL",
+    "path": "NL_heldout_predictions.csv.gz",
+    "sha256": "006491a0f716a535d2cae4133602726ecab2f7cda1c020da6221f7147295c6fb",
+    "radius_path": "NL_source_radii.json",
+    "radius_sha256": "d1aa2573854fca491c53ef0e8b2d47799359b520738be8323352f35ae7aea272",
+    "hours": 8784,
+    "source_countries": [
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ]
+  },
+  {
+    "target": "ES",
+    "path": "ES_heldout_predictions.csv.gz",
+    "sha256": "d1c770765859fdb93315a00eb5cce4e1b8a38f500d6eda559c80802e9c230b11",
+    "radius_path": "ES_source_radii.json",
+    "radius_sha256": "f9b1ef1d4405dab765d802646ec65a06c26d6e6674dbed64e01066d2f0245f9a",
+    "hours": 8783,
+    "source_countries": [
+      "NL",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ]
+  },
+  {
+    "target": "BE",
+    "path": "BE_heldout_predictions.csv.gz",
+    "sha256": "1f74e13991469e3f3f7745700aa6fb964ac682321970d1aae9b3ac347c5bf12e",
+    "radius_path": "BE_source_radii.json",
+    "radius_sha256": "583c5c1aaa3f2fdce784fa690453495d31d20c946cf20eb265e8cfe2d0bd537d",
+    "hours": 8784,
+    "source_countries": [
+      "NL",
+      "ES",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ]
+  },
+  {
+    "target": "AT",
+    "path": "AT_heldout_predictions.csv.gz",
+    "sha256": "3960f985bca091c6e8261153a33349cceda9920f6fc256e25e8f7cfdae76d20a",
+    "radius_path": "AT_source_radii.json",
+    "radius_sha256": "09136fa7952d7f5d32c8ae7aa38c4dc366a378417f3aaff1db61972b8522c390",
+    "hours": 8784,
+    "source_countries": [
+      "NL",
+      "ES",
+      "BE",
+      "SE",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ]
+  },
+  {
+    "target": "SE",
+    "path": "SE_heldout_predictions.csv.gz",
+    "sha256": "feb9d625eb0d2e934f512bbf6999e9e94c4d2f645a1df5e6731f6445fc16ee44",
+    "radius_path": "SE_source_radii.json",
+    "radius_sha256": "6338fb7075288b969405e70200875cefa033d8fe60a429bdb67603cf80af475c",
+    "hours": 8783,
+    "source_countries": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "CZ",
+      "SK",
+      "HU",
+      "SI"
+    ]
+  },
+  {
+    "target": "CZ",
+    "path": "CZ_heldout_predictions.csv.gz",
+    "sha256": "44df5a42c3a55fed566e7c5b6677a65a1a5dcfa19f6008a13c4632cbcda38309",
+    "radius_path": "CZ_source_radii.json",
+    "radius_sha256": "b993c0a520b3a1a8fda227a460f8afa88700716f60a726e2dae1b25e76289314",
+    "hours": 8784,
+    "source_countries": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "SK",
+      "HU",
+      "SI"
+    ]
+  },
+  {
+    "target": "SK",
+    "path": "SK_heldout_predictions.csv.gz",
+    "sha256": "0e9a0a5cc08d639d2f5e4d8c9796cab520634cb46b1e468531f5ea49e2bde5b1",
+    "radius_path": "SK_source_radii.json",
+    "radius_sha256": "6dae1030d2b7168728940ecb68abf4dc0ad28333e01ae96a2c75cacd002a2f96",
+    "hours": 8784,
+    "source_countries": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "HU",
+      "SI"
+    ]
+  },
+  {
+    "target": "HU",
+    "path": "HU_heldout_predictions.csv.gz",
+    "sha256": "d9fb63d105d49e54fdc22c06b0626471bcabbdb1cf369360a86cf32a00af4ad8",
+    "radius_path": "HU_source_radii.json",
+    "radius_sha256": "febe1a4e0c90cb69dde29763a9719a5a0afb56c2ff53ac8bc8d7a4b0ba50ede7",
+    "hours": 8784,
+    "source_countries": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "SI"
+    ]
+  },
+  {
+    "target": "SI",
+    "path": "SI_heldout_predictions.csv.gz",
+    "sha256": "7805c194679da421956368f70e38db0281981d2cced78166941317f53f585eba",
+    "radius_path": "SI_source_radii.json",
+    "radius_sha256": "8ef0ffed167d9f47420182c13f19381eb4f0f4ef1eecf553a3ba8a79bce42927",
+    "hours": 8782,
+    "source_countries": [
+      "NL",
+      "ES",
+      "BE",
+      "AT",
+      "SE",
+      "CZ",
+      "SK",
+      "HU"
+    ]
+  }
+]

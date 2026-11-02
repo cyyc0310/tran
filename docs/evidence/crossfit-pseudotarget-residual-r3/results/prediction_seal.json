@@ -1,0 +1,67 @@
+[
+  {
+    "target": "NL",
+    "path": "NL_heldout_predictions.csv.gz",
+    "sha256": "aab26d61283e10173da082c4d3b09ae31e430e8ad258007a29fc42ca974724e2",
+    "hours": 8784,
+    "outer_target_label_used_before_seal": false,
+    "source_pseudo_tasks": [
+      "ES",
+      "BE",
+      "AT",
+      "SE"
+    ]
+  },
+  {
+    "target": "ES",
+    "path": "ES_heldout_predictions.csv.gz",
+    "sha256": "ae2b7b6ba5db86ef5caa839c81cc866295fb43da16503615932ecb2ea8b31ce6",
+    "hours": 8783,
+    "outer_target_label_used_before_seal": false,
+    "source_pseudo_tasks": [
+      "NL",
+      "BE",
+      "AT",
+      "SE"
+    ]
+  },
+  {
+    "target": "BE",
+    "path": "BE_heldout_predictions.csv.gz",
+    "sha256": "efffb04878f052faa4151b257c09105950b315e60f7c8ee2aecb769eba38c2d8",
+    "hours": 8784,
+    "outer_target_label_used_before_seal": false,
+    "source_pseudo_tasks": [
+      "NL",
+      "ES",
+      "AT",
+      "SE"
+    ]
+  },
+  {
+    "target": "AT",
+    "path": "AT_heldout_predictions.csv.gz",
+    "sha256": "7e2d81be4d1d132b838271ebadb344a1f7ce94a5af9ac1f0c52c9e58fb71ed10",
+    "hours": 8784,
+    "outer_target_label_used_before_seal": false,
+    "source_pseudo_tasks": [
+      "NL",
+      "ES",
+      "BE",
+      "SE"
+    ]
+  },
+  {
+    "target": "SE",
+    "path": "SE_heldout_predictions.csv.gz",
+    "sha256": "1b71384d9c5012f1ee52762fd39b0bc63e74524d0448abbc430716cfa1de1bed",
+    "hours": 8783,
+    "outer_target_label_used_before_seal": false,
+    "source_pseudo_tasks": [
+      "NL",
+      "ES",
+      "BE",
+      "AT"
+    ]
+  }
+]

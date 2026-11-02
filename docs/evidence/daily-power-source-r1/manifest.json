@@ -1,0 +1,31 @@
+{
+  "files": {
+    "README.md": "18fca6b53f5c7fc9ff459f5c66ef8853b97c47970ee86fa36529ea1462a45145",
+    "code/DAILY_POWER_SOURCE_PROTOCOL.md": "4d64fb0d15d14deac322afd5ddcc9942065c970ecf183942f04386bc23f7c045",
+    "code/daily_power_baselines.py": "8703db1e47745c9e3b3c0e53b7edfd017a814c55e09c3fa8810adfa5071001ec",
+    "code/prepare_daily_power_models.py": "d775582a09106176b8589d858a8da6fb407f456a058582fba5a481f543d3f4a8",
+    "code/test_daily_power_baselines.py": "92fd0dbeeffdbdb93b543fb5ed8b526f70be535f63864b25927dc9b0fca9c141",
+    "completion.json": "f69c3a473988ac6551162ba6e22a61c065d4cde1971bddd430c1205eda0150e9",
+    "execution.log": "3e33bd9b20efca6aa0c7baa7cfd0dd415b89553f2ea3bbcd7e1e60ec83dca5f5",
+    "execution_plan.json": "40e15d4949689151e9ee6dafba7115fc6ccd51ae9c8154fd9e8bbd7e67e99bf1",
+    "independent_review/OOF_scaler_review.json": "e2d4eaf01376c98d4c52ec593f6e3c5053740d62bbcc68d97d01a99cdda8d9a1",
+    "independent_review/fold_checks.json": "71178d61bc450e27f3d75b901562fbddafc7b5b043cf7d2aae1f47ebb3000558",
+    "independent_review/independent_review.json": "e4139324b18b363fdcd1fb6f04c2352d480b8c9b186c970753c8fb16745e3743",
+    "independent_review/manifest.json": "55dd49e1d0d7b2e9721abd3e7b0c9ac1819c2caed5107d2e103872a5ae5edcbe",
+    "independent_review/model_audits.json": "2af0396a6f577d19d31a06a471b4f9dd96a49a0339da5779d8ad628739a41d3f",
+    "independent_review/model_checks.json": "ee111951ed32b6538f62a085fccab22c5d07267bec65e3d7b4ee6bce60c67981",
+    "independent_review/negative_variance_scalers.csv": "ccb79ba2fefae8cd7fc96d17dc12ce4862bb3bb00d803aeaa9054c1a203a9cf7",
+    "independent_review/recomputed_region_oof_metrics.csv": "0c54237468cadf70284c6147741221f8f845a2d1ae54ff678268b43d408b392d",
+    "independent_review/recomputed_summary.csv": "516f44ca64517ac479ffc7a7cd93f386ef02d04f2c1c845900cfce2f2a5fa6d6",
+    "independent_review/refit_warnings.json": "2fd0e4b00bc30e75b71ebd314c992c736d9b62b38ddb298a54484b7c3547c3ef",
+    "independent_review/seal_review.json": "93dee60f05ccf0b6fe8577f3a88e44a0ae6dbaee6cd1d3a376c7fff1e4048261",
+    "independent_review/source_label_power_review.json": "cdd4a8a85c234cb40db248e97f0a0dfbb96f7c7168cbecec8725e502fa1bd452",
+    "independent_review/source_persistence_comparison.csv": "7862f373525d81566b9e116a85ac9adaec07215f0e562777c4b61df761e92a89",
+    "input_code_seal.json": "a91c06cd53d996baf95de2b89cab36f8bd9495deef38cac3370c3ab6097e7aaf",
+    "model_seal.json": "5be7480cd11fab9759920bdf200ddf403dec93a9d05bcf1dadcf6c424a78ff5d",
+    "region_oof_metrics.csv": "d0b890526cd74edf11d80e54f372a2ff23cd2a174dfe8f5f72206bdab4c70352",
+    "runtime.json": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+    "source_models_and_oof.tar.gz": "33a5b3096402e8ea2a621079244aff5221a820b39ef9733dda6f1feaf1e30cac",
+    "summary.csv": "516f44ca64517ac479ffc7a7cd93f386ef02d04f2c1c845900cfce2f2a5fa6d6"
+  }
+}

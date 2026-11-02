@@ -1,0 +1,8 @@
+{
+  "path": "sealed_predictions.csv.gz",
+  "sha256": "e033c83ed945045cfae6821b45dec043ef72132aff7f7928b8592edf9cadf476",
+  "rows": 406448,
+  "unique_target_hour_region_pairs": 29032,
+  "target_labels_used_before_seal": false,
+  "target_label_dataset_previously_opened_in_project": true
+}

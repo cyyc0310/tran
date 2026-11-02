@@ -1,0 +1,37 @@
+[
+  {
+    "target": "NL",
+    "path": "NL_heldout_predictions.csv.gz",
+    "sha256": "86463177bf6e25476de276e59b4b874037012f229370e98163f46fbc2472d44f",
+    "hours": 8784,
+    "selected_method": "factor_history"
+  },
+  {
+    "target": "ES",
+    "path": "ES_heldout_predictions.csv.gz",
+    "sha256": "faceaf425f8b91f81241e68c52e7b7904ef74e5bd6e6d9f25815c88823f3cd6a",
+    "hours": 8783,
+    "selected_method": "factor_history"
+  },
+  {
+    "target": "BE",
+    "path": "BE_heldout_predictions.csv.gz",
+    "sha256": "7a880b508b959ec11e37ffb9b5118cf012efa2f11b250040a8c1fdf8bee9494e",
+    "hours": 8784,
+    "selected_method": "factor_history"
+  },
+  {
+    "target": "AT",
+    "path": "AT_heldout_predictions.csv.gz",
+    "sha256": "6910ad7f18a74aaaa47d3d36ea1133545af0cb7bf90a809df5d5417e01609401",
+    "hours": 8784,
+    "selected_method": "factor_latest"
+  },
+  {
+    "target": "SE",
+    "path": "SE_heldout_predictions.csv.gz",
+    "sha256": "c3092339b927f6d2b9f8d5812eb973d2766850eab830aba61ac6cd203ac13d14",
+    "hours": 8783,
+    "selected_method": "macro_recomposition"
+  }
+]

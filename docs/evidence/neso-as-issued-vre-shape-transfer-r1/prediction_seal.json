@@ -1,0 +1,24 @@
+{
+  "status": "SEALED_PREDICTIONS_AWAIT_SCORE",
+  "experiment_protocol": "docs/NESO_AS_ISSUED_VRE_SHAPE_TRANSFER_PROTOCOL_20261102.md",
+  "protocol_sha256": "d643defa643a6832ff2ea376f7cbd2eb231afd2077813f70267733cdcdbdd133",
+  "source_model_sha256": "92e4d0109459ac759514401569a7b5e269785e141106ab3afc4339db47991c63",
+  "input_month_contract_sha256": "a325d1806eb129ed43608af2f5dc4fa0f5335601ee766488e786d534c563ce3d",
+  "neso_forecast_features_sha256": "15893c1837395d51317bf8970f868624e8083646a545c6d562f95617a3eced06",
+  "predictions_file": "predictions_common_support.csv",
+  "predictions_sha256": "1d2443626fcd7c0bfc84a2f66e706939279ab79a6d64c1c2aea34d3c9a37bd54",
+  "target": "GB 2024 fixed-EF generation proxy; prior target labels already viewed in project development",
+  "source": "US 2022, equal-region weighting; source labels only",
+  "calibration": "US 2023 source residual calibration; M+F scores will report fixed common baseline radius only",
+  "common_support_rows": 8688,
+  "common_support_days": 362,
+  "heldout_predictions_written_before_target_scoring": true,
+  "methods": [
+    "anchor700",
+    "source_thermal_ef",
+    "coarse_boosting",
+    "coarse_recomposition",
+    "forecast_shape_recomposition"
+  ],
+  "forecast_profile_definition": "Mean half-hourly as-issued embedded wind/solar forecast within each hour, normalized within that target UTC day; no cross-day or target-month future forecast aggregation."
+}

@@ -1,5 +1,7 @@
 # 研究问题与证据门槛
 
+> 2026-10-31路线更新：按用户要求，主任务恢复为国外有标签数据训练、中国无小时CIF标签迁移。后续具体优先级见[跨域迁移研究计划](CROSS_DOMAIN_TRANSFER_RESEARCH_PLAN_20261031.md)。本文中的历史结果继续有效；建议将部分识别升级为主线的旧路线判断由新计划覆盖。
+
 拟题：**Probabilistic Dispatch Transfer for Carbon Intensity Forecasting in Grids without Local Telemetry**。
 
 研究问题是：在没有目标逐时 CIF、发电和实测负荷历史时，能否用源域监督学到的调度状态分布，结合目标已公开配置及预报，产生约束一致且对时段选择有用的 CIF 联合情景？“公开预报可获得”是输入前提；缺失时当前实现报错。

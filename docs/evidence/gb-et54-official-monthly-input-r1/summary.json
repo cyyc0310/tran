@@ -1,0 +1,33 @@
+{
+  "status": "DEVELOPMENT_INPUT_SOURCE_ABLATION",
+  "target_hours": 8784,
+  "target_months": [
+    "2023-11",
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10"
+  ],
+  "target_label": "NESO GB local-generation fixed-EF proxy; target labels previously viewed",
+  "source_training": "US six BA, 2022 fit, 2023 source-only calibration",
+  "ET54_vintage": "current revised 2026-10-29 workbook; not historical as-issued",
+  "prediction_hashes": [
+    {
+      "path": "NESO_reconstructed_predictions.csv",
+      "sha256": "7ead7c08a20e0e73856539dbe3e4c8ed08e7f9723070a96a571fa00d6c084f59",
+      "rows": 8784
+    },
+    {
+      "path": "DESNZ_ET54_MPP_predictions.csv",
+      "sha256": "842c5017b08f1082b4c5f6d3217fa27e99c82ae2909cab6f613c14264d1e3006",
+      "rows": 8784
+    }
+  ]
+}

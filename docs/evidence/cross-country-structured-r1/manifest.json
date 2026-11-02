@@ -1,0 +1,52 @@
+[
+  {
+    "source": "results/cross-country-structured-r1/common_country_metrics.csv",
+    "file": "common_country_metrics.csv",
+    "sha256": "ff21f4dbd9878b69ec30484eecb3f5509e121516a025c379d8e16cd4b5b48594"
+  },
+  {
+    "source": "results/cross-country-structured-r1/common_region_metrics.csv",
+    "file": "common_region_metrics.csv",
+    "sha256": "a8f6dfac108a4535259277b012cdd547d958a28aafdfcacafe3134d40a70e58a"
+  },
+  {
+    "source": "results/cross-country-structured-r1/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "2da10fcf95eeceeedc75162ddc4e57b71d2a8bd38031b02616aa3d36ca4d4ce1"
+  },
+  {
+    "source": "results/cross-country-structured-r1/source_calibration.json",
+    "file": "source_calibration.json",
+    "sha256": "c81303f964e052372d72c386727062eda120d99bdda7ceb20b487381396815ae"
+  },
+  {
+    "source": "results/cross-country-structured-r1/training_inventory.json",
+    "file": "training_inventory.json",
+    "sha256": "e3836a734251e972f07781ba2f9798dc6fa6607a93781f150391f60f8b1016e7"
+  },
+  {
+    "source": "results/cross-country-structured-r1/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "36e5b26d51e25e7ac6389e0c371b451f8facd70857efadc585ee3d377d2e008b"
+  },
+  {
+    "source": "results/cross-country-structured-r1/provenance.json",
+    "file": "provenance.json",
+    "sha256": "ec78f7642839c851ceffdbe41292f0ed6214c25f2a912f18ccff46a662d0c557"
+  },
+  {
+    "source": "results/cross-country-structured-r1/startup_code_hashes.json",
+    "file": "startup_code_hashes.json",
+    "sha256": "783ca8e41fc622f0847b51bc95c12eb6fb2591f9b83954fa2b55bf768a3efc09"
+  },
+  {
+    "source": "results/cross-country-structured-r1/US_cohort.json",
+    "file": "US_cohort.json",
+    "sha256": "b0763823d809166a31a430a73e24161037f7ecb512d8d13a169ead3675959a5d"
+  },
+  {
+    "source": "results/cross-country-structured-r1/GB_cohort.json",
+    "file": "GB_cohort.json",
+    "sha256": "e6b9f78bad64118bd331d80cbafb5e76f549566e91b982424a1472502ee3de23"
+  }
+]

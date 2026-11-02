@@ -1,0 +1,14 @@
+{
+  "target": "DE",
+  "period": "2023H2",
+  "path": "DE_2023H2_predictions.csv.gz",
+  "sha256": "1352dedd139d294c48367d0b3e9c78f63cd9c4e544f1a4082c6bd0fd7be9cf6d",
+  "hours": 4417,
+  "source_countries": [
+    "nl",
+    "es",
+    "be",
+    "at",
+    "se"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "status": "DEVELOPMENT_STRICT_CN5_NESTED_LOCO_MONTHLY_ANCHORED_SHAPE",
+  "outer_targets": [
+    "NL",
+    "ES",
+    "BE",
+    "AT",
+    "SE",
+    "CZ",
+    "SK",
+    "HU",
+    "SI"
+  ],
+  "target_year": 2024,
+  "training_year": 2022,
+  "source_calibration": "2023H1",
+  "target_budget": "strict CN5 t-2 through t-7 monthly shares plus calendar",
+  "target_label": "common fixed-factor generation proxy, not measured CIF",
+  "target_labels_opened_after_all_fold_predictions_sealed": true,
+  "new_candidate_formula": "anchor700 * ratio_recomposition_hour / full_expected_24h_mean(ratio_recomposition for same target-month shares)",
+  "monthly_mean_invariant": "full expected 24-hour mean equals anchor700; realized target rows can differ when target-hour support is incomplete",
+  "country_level_confirmation": false,
+  "methods": [
+    "anchor700",
+    "ratio_recomposition",
+    "daily_anchor_shape",
+    "monthly_anchor_relshape",
+    "factor_history",
+    "direct_history",
+    "fuelshare_history"
+  ]
+}

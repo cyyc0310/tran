@@ -1,0 +1,37 @@
+[
+  {
+    "target": "NL",
+    "file": "NL_predictions.csv.gz",
+    "sha256": "1bf157364b0a49469bdd14a3d12e1ca3b33d315a811a17466b473d53dd4c4b2f",
+    "predicted_hours": 8784,
+    "target_labels_scored": false
+  },
+  {
+    "target": "ES",
+    "file": "ES_predictions.csv.gz",
+    "sha256": "e0a99c1ebd7ece327ebab73bdd632343e931dff6c672a67f03029180bee0cbad",
+    "predicted_hours": 8783,
+    "target_labels_scored": false
+  },
+  {
+    "target": "BE",
+    "file": "BE_predictions.csv.gz",
+    "sha256": "c8bc4ad0aecfbca108fa5e2d8fb2f5379a52a4f343dbf3e3e703cfca25625517",
+    "predicted_hours": 8784,
+    "target_labels_scored": false
+  },
+  {
+    "target": "AT",
+    "file": "AT_predictions.csv.gz",
+    "sha256": "8a56f3a4a77b2152c4218486f55043f4cd00c3214f0c0515092003cf9ce6813b",
+    "predicted_hours": 8784,
+    "target_labels_scored": false
+  },
+  {
+    "target": "SE",
+    "file": "SE_predictions.csv.gz",
+    "sha256": "196010cda4a09fec51b1be7e464d6ce0002b1a93422a27474b622a2758540cfd",
+    "predicted_hours": 8783,
+    "target_labels_scored": false
+  }
+]

@@ -1,0 +1,1882 @@
+{
+  "schema": "RESOURCE_RESPONSE_DEVELOPMENT_R2_R3_EVIDENCE_V1",
+  "files": [
+    {
+      "file": "controls_r2/calibration.json",
+      "original": "results/resource-controls-r2/calibration.json",
+      "original_sha256": "453ad5793b83010b53415109488214323e773757c50c988f0a8a4ce0e7fa3a91",
+      "sha256": "453ad5793b83010b53415109488214323e773757c50c988f0a8a4ce0e7fa3a91"
+    },
+    {
+      "file": "controls_r2/completion.json",
+      "original": "results/resource-controls-r2/completion.json",
+      "original_sha256": "d552a6237bd01f5bda4078caec77a8cf9938d365e8cc5dce4c1ed9b00850a71d",
+      "sha256": "d552a6237bd01f5bda4078caec77a8cf9938d365e8cc5dce4c1ed9b00850a71d"
+    },
+    {
+      "file": "controls_r2/execution_plan.json",
+      "original": "results/resource-controls-r2/execution_plan.json",
+      "original_sha256": "b6146683f2f5d24122498d20fe99454a9e0421e4ebb92ed045615395f75402cd",
+      "sha256": "b6146683f2f5d24122498d20fe99454a9e0421e4ebb92ed045615395f75402cd"
+    },
+    {
+      "file": "controls_r2/input_code_seal.json",
+      "original": "results/resource-controls-r2/input_code_seal.json",
+      "original_sha256": "a7f9b991ef3eaa28895d79b1d6d306afe3e994757014c4278d0f1b9a6d3f43e4",
+      "sha256": "a7f9b991ef3eaa28895d79b1d6d306afe3e994757014c4278d0f1b9a6d3f43e4"
+    },
+    {
+      "file": "controls_r2/model_seal.json",
+      "original": "results/resource-controls-r2/model_seal.json",
+      "original_sha256": "21a468e09d028d16080c34f2172517afb036e5cf04db34d094978a381d7e9444",
+      "sha256": "21a468e09d028d16080c34f2172517afb036e5cf04db34d094978a381d7e9444"
+    },
+    {
+      "file": "controls_r2/prediction_seal.json",
+      "original": "results/resource-controls-r2/prediction_seal.json",
+      "original_sha256": "3a017173b02b7a5700d61f236dac8fee19a50642b40b8bfe4285d8f8ff1ea1f2",
+      "sha256": "3a017173b02b7a5700d61f236dac8fee19a50642b40b8bfe4285d8f8ff1ea1f2"
+    },
+    {
+      "file": "controls_r2/runtime.json",
+      "original": "results/resource-controls-r2/runtime.json",
+      "original_sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+      "sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5"
+    },
+    {
+      "file": "controls_r2/amplitude_diagnostics.csv",
+      "original": "results/resource-controls-r2/amplitude_diagnostics.csv",
+      "original_sha256": "cca6889529ebd32e8bcbec356c2c2babee2614145fa81f0fb897664744bd5b89",
+      "sha256": "cca6889529ebd32e8bcbec356c2c2babee2614145fa81f0fb897664744bd5b89"
+    },
+    {
+      "file": "controls_r2/configuration_metrics.csv",
+      "original": "results/resource-controls-r2/configuration_metrics.csv",
+      "original_sha256": "93b0cde6ec577c3746215cff9e535fc2114457aef25a708385c3a58a79885525",
+      "sha256": "93b0cde6ec577c3746215cff9e535fc2114457aef25a708385c3a58a79885525"
+    },
+    {
+      "file": "controls_r2/predictions.csv.gz",
+      "original": "results/resource-controls-r2/predictions.csv",
+      "decompressed_sha256": "77c1753d25293db9c5c870823b25822816610c6755cb90cd9c76be5193cafbcf",
+      "sha256": "fdd8edd7234e819b7ed8f5c682394d34ab839b459a83829f6dcf84c1d689f8d4"
+    },
+    {
+      "file": "controls_r2/region_metrics.csv",
+      "original": "results/resource-controls-r2/region_metrics.csv",
+      "original_sha256": "cff19636666c2831f0f4fecd83846ea2172f2bbd022ba05326e19a5910b22fb7",
+      "sha256": "cff19636666c2831f0f4fecd83846ea2172f2bbd022ba05326e19a5910b22fb7"
+    },
+    {
+      "file": "controls_r2/summary.csv",
+      "original": "results/resource-controls-r2/summary.csv",
+      "original_sha256": "db907d2436668e3e9d85262347f48c1a402dcacfbcf79acd416ea4d0973b5987",
+      "sha256": "db907d2436668e3e9d85262347f48c1a402dcacfbcf79acd416ea4d0973b5987"
+    },
+    {
+      "file": "issued_A/calibration.json",
+      "original": "results/resource-source-issued_matched-r3/calibration.json",
+      "original_sha256": "51667678c993181ddbbf4488a8cc68ed688d811d86d8313378a0d9389feefabf",
+      "sha256": "51667678c993181ddbbf4488a8cc68ed688d811d86d8313378a0d9389feefabf"
+    },
+    {
+      "file": "issued_A/completion.json",
+      "original": "results/resource-source-issued_matched-r3/completion.json",
+      "original_sha256": "d552a6237bd01f5bda4078caec77a8cf9938d365e8cc5dce4c1ed9b00850a71d",
+      "sha256": "d552a6237bd01f5bda4078caec77a8cf9938d365e8cc5dce4c1ed9b00850a71d"
+    },
+    {
+      "file": "issued_A/execution_plan.json",
+      "original": "results/resource-source-issued_matched-r3/execution_plan.json",
+      "original_sha256": "7d50dc462258c3f2173fe126a78be93ab0fd459a0cd3f973cd38078fcca9789c",
+      "sha256": "7d50dc462258c3f2173fe126a78be93ab0fd459a0cd3f973cd38078fcca9789c"
+    },
+    {
+      "file": "issued_A/input_code_seal.json",
+      "original": "results/resource-source-issued_matched-r3/input_code_seal.json",
+      "original_sha256": "209222fa118e60ddb1f09198a1de6797fc4e57d3ba50cb602503fa6711796b2c",
+      "sha256": "209222fa118e60ddb1f09198a1de6797fc4e57d3ba50cb602503fa6711796b2c"
+    },
+    {
+      "file": "issued_A/model_seal.json",
+      "original": "results/resource-source-issued_matched-r3/model_seal.json",
+      "original_sha256": "75ea96e618d1e1e94dff2ef469db779fd8c8ce01e46a29d247780cc9cbe3c31e",
+      "sha256": "75ea96e618d1e1e94dff2ef469db779fd8c8ce01e46a29d247780cc9cbe3c31e"
+    },
+    {
+      "file": "issued_A/prediction_seal.json",
+      "original": "results/resource-source-issued_matched-r3/prediction_seal.json",
+      "original_sha256": "0c3d8f7782af5d140b94446bab449d388126e5f7b6422b41d5f0aa90ff7468ed",
+      "sha256": "0c3d8f7782af5d140b94446bab449d388126e5f7b6422b41d5f0aa90ff7468ed"
+    },
+    {
+      "file": "issued_A/runtime.json",
+      "original": "results/resource-source-issued_matched-r3/runtime.json",
+      "original_sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+      "sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5"
+    },
+    {
+      "file": "issued_A/amplitude_diagnostics.csv",
+      "original": "results/resource-source-issued_matched-r3/amplitude_diagnostics.csv",
+      "original_sha256": "d444035deb60165b25718a428aa23f2ffc1ad39929472f5dd5be0c88305925c4",
+      "sha256": "d444035deb60165b25718a428aa23f2ffc1ad39929472f5dd5be0c88305925c4"
+    },
+    {
+      "file": "issued_A/configuration_metrics.csv",
+      "original": "results/resource-source-issued_matched-r3/configuration_metrics.csv",
+      "original_sha256": "59d250ca937818ded96fc0daf069762891627076df8c6758bffeb0d5f1d6501d",
+      "sha256": "59d250ca937818ded96fc0daf069762891627076df8c6758bffeb0d5f1d6501d"
+    },
+    {
+      "file": "issued_A/predictions.csv.gz",
+      "original": "results/resource-source-issued_matched-r3/predictions.csv",
+      "decompressed_sha256": "4d6dadb18ce75d0db845358c42cc30442a0b3168649607393ca34efa6a317907",
+      "sha256": "5fd910f3d28ae4b486f6c0b16155e7509338959564dfe5d3680479a4a49fe313"
+    },
+    {
+      "file": "issued_A/region_metrics.csv",
+      "original": "results/resource-source-issued_matched-r3/region_metrics.csv",
+      "original_sha256": "bca96ac39557af3baad848b64418658470cf9c002f94185b1511492d71d099ba",
+      "sha256": "bca96ac39557af3baad848b64418658470cf9c002f94185b1511492d71d099ba"
+    },
+    {
+      "file": "issued_A/summary.csv",
+      "original": "results/resource-source-issued_matched-r3/summary.csv",
+      "original_sha256": "a497c514ab03a87ee405ad3c0696f69fa405ba72ddf9bd29c7a16b81510c37d2",
+      "sha256": "a497c514ab03a87ee405ad3c0696f69fa405ba72ddf9bd29c7a16b81510c37d2"
+    },
+    {
+      "file": "observed_B/calibration.json",
+      "original": "results/resource-source-observed_matched-r3/calibration.json",
+      "original_sha256": "3f202327d516b55808d7302397b2cb253996c312e35f271a0056db3a0324e83b",
+      "sha256": "3f202327d516b55808d7302397b2cb253996c312e35f271a0056db3a0324e83b"
+    },
+    {
+      "file": "observed_B/completion.json",
+      "original": "results/resource-source-observed_matched-r3/completion.json",
+      "original_sha256": "e4273c30bc2607d9a2ca406b82a4c1f36f1b3a4bc9b9609a1362b112dcb9cebd",
+      "sha256": "e4273c30bc2607d9a2ca406b82a4c1f36f1b3a4bc9b9609a1362b112dcb9cebd"
+    },
+    {
+      "file": "observed_B/execution_plan.json",
+      "original": "results/resource-source-observed_matched-r3/execution_plan.json",
+      "original_sha256": "2c9d81761ebb25c5ab2a40c50b475adaaee6e26662663a83aaf05b1363c6a610",
+      "sha256": "2c9d81761ebb25c5ab2a40c50b475adaaee6e26662663a83aaf05b1363c6a610"
+    },
+    {
+      "file": "observed_B/input_code_seal.json",
+      "original": "results/resource-source-observed_matched-r3/input_code_seal.json",
+      "original_sha256": "5cc979aacb6e1ab7cac0b31d949fe9d0453f86924db0b470c5b7355ef5c7a30a",
+      "sha256": "5cc979aacb6e1ab7cac0b31d949fe9d0453f86924db0b470c5b7355ef5c7a30a"
+    },
+    {
+      "file": "observed_B/model_seal.json",
+      "original": "results/resource-source-observed_matched-r3/model_seal.json",
+      "original_sha256": "0feae480dff43d7e04735f401f0569b7f21e25df00cc40bd032a6df5e6b01610",
+      "sha256": "0feae480dff43d7e04735f401f0569b7f21e25df00cc40bd032a6df5e6b01610"
+    },
+    {
+      "file": "observed_B/prediction_seal.json",
+      "original": "results/resource-source-observed_matched-r3/prediction_seal.json",
+      "original_sha256": "d61d584220099f5d2327595bdd33afa4f136d73f5c4f594956cf5d9c1b758c69",
+      "sha256": "d61d584220099f5d2327595bdd33afa4f136d73f5c4f594956cf5d9c1b758c69"
+    },
+    {
+      "file": "observed_B/runtime.json",
+      "original": "results/resource-source-observed_matched-r3/runtime.json",
+      "original_sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+      "sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5"
+    },
+    {
+      "file": "observed_B/amplitude_diagnostics.csv",
+      "original": "results/resource-source-observed_matched-r3/amplitude_diagnostics.csv",
+      "original_sha256": "2e4d94e87532fe0101b2f62f8e54a57b957ef235f8120fbd8d0e994d6a0a1cd1",
+      "sha256": "2e4d94e87532fe0101b2f62f8e54a57b957ef235f8120fbd8d0e994d6a0a1cd1"
+    },
+    {
+      "file": "observed_B/configuration_metrics.csv",
+      "original": "results/resource-source-observed_matched-r3/configuration_metrics.csv",
+      "original_sha256": "f83b039f0ea7a0c8081a9b53531f8a7deee4ea5f02427699815c02028a8db6d2",
+      "sha256": "f83b039f0ea7a0c8081a9b53531f8a7deee4ea5f02427699815c02028a8db6d2"
+    },
+    {
+      "file": "observed_B/predictions.csv.gz",
+      "original": "results/resource-source-observed_matched-r3/predictions.csv",
+      "decompressed_sha256": "0e6beae02e26c2a4ef8a233a70463947fdaff4d1065ae64c2f3df0844a02a8bc",
+      "sha256": "ae92ea769900898cae3b767806cf3312ffc7756ee2f1b4333a5bc22f6d2263ed"
+    },
+    {
+      "file": "observed_B/region_metrics.csv",
+      "original": "results/resource-source-observed_matched-r3/region_metrics.csv",
+      "original_sha256": "c0475e2a30655004d3634575c50785362bc3689294e8a88319bebdc418619fe1",
+      "sha256": "c0475e2a30655004d3634575c50785362bc3689294e8a88319bebdc418619fe1"
+    },
+    {
+      "file": "observed_B/summary.csv",
+      "original": "results/resource-source-observed_matched-r3/summary.csv",
+      "original_sha256": "91db4fbf8e7080663e3e30ad08f908052b38141849b3212d294778738ea46799",
+      "sha256": "91db4fbf8e7080663e3e30ad08f908052b38141849b3212d294778738ea46799"
+    },
+    {
+      "file": "expanded_C/calibration.json",
+      "original": "results/resource-source-observed_expanded-r3/calibration.json",
+      "original_sha256": "6a8990b4356090b057132bb7bfc65fccc08afcb4d97f99b3e5840729d63359ed",
+      "sha256": "6a8990b4356090b057132bb7bfc65fccc08afcb4d97f99b3e5840729d63359ed"
+    },
+    {
+      "file": "expanded_C/completion.json",
+      "original": "results/resource-source-observed_expanded-r3/completion.json",
+      "original_sha256": "a5cc73b3785660c0308ed55452f93b9cfe917f60d7c146540223010bb4ccd0bf",
+      "sha256": "a5cc73b3785660c0308ed55452f93b9cfe917f60d7c146540223010bb4ccd0bf"
+    },
+    {
+      "file": "expanded_C/execution_plan.json",
+      "original": "results/resource-source-observed_expanded-r3/execution_plan.json",
+      "original_sha256": "2c9d81761ebb25c5ab2a40c50b475adaaee6e26662663a83aaf05b1363c6a610",
+      "sha256": "2c9d81761ebb25c5ab2a40c50b475adaaee6e26662663a83aaf05b1363c6a610"
+    },
+    {
+      "file": "expanded_C/input_code_seal.json",
+      "original": "results/resource-source-observed_expanded-r3/input_code_seal.json",
+      "original_sha256": "cdab6d03eb4b6e16b89b5d59eae91dfae0636bbe2cb48633d5e65019e3e05789",
+      "sha256": "cdab6d03eb4b6e16b89b5d59eae91dfae0636bbe2cb48633d5e65019e3e05789"
+    },
+    {
+      "file": "expanded_C/model_seal.json",
+      "original": "results/resource-source-observed_expanded-r3/model_seal.json",
+      "original_sha256": "252920bf9fdb6b742e2fd7edb6d99a260f05e337a9a1b083358dad2f5bcc582b",
+      "sha256": "252920bf9fdb6b742e2fd7edb6d99a260f05e337a9a1b083358dad2f5bcc582b"
+    },
+    {
+      "file": "expanded_C/prediction_seal.json",
+      "original": "results/resource-source-observed_expanded-r3/prediction_seal.json",
+      "original_sha256": "0922dbcb7d0a92cf455a2bbf18faa35226205a4d859a320bab0f0f7bb3ffd51a",
+      "sha256": "0922dbcb7d0a92cf455a2bbf18faa35226205a4d859a320bab0f0f7bb3ffd51a"
+    },
+    {
+      "file": "expanded_C/runtime.json",
+      "original": "results/resource-source-observed_expanded-r3/runtime.json",
+      "original_sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+      "sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5"
+    },
+    {
+      "file": "expanded_C/amplitude_diagnostics.csv",
+      "original": "results/resource-source-observed_expanded-r3/amplitude_diagnostics.csv",
+      "original_sha256": "c9490815a5db37135bf928e4090b1bc5d1dcd02bdd24723ae6b51fd132903b8c",
+      "sha256": "c9490815a5db37135bf928e4090b1bc5d1dcd02bdd24723ae6b51fd132903b8c"
+    },
+    {
+      "file": "expanded_C/configuration_metrics.csv",
+      "original": "results/resource-source-observed_expanded-r3/configuration_metrics.csv",
+      "original_sha256": "2bdef32c32341a55ce83397ad6a973ce219e86e2263afe900c623ecab855e88f",
+      "sha256": "2bdef32c32341a55ce83397ad6a973ce219e86e2263afe900c623ecab855e88f"
+    },
+    {
+      "file": "expanded_C/predictions.csv.gz",
+      "original": "results/resource-source-observed_expanded-r3/predictions.csv",
+      "decompressed_sha256": "b01fa71a1aa9e904803c08a56d3111ede5d54093eaaf7b2a323b903db55432aa",
+      "sha256": "dfa97698f6b4d7932d75ac48c2460730b0e13165b3c4b4e8de452c88f12115de"
+    },
+    {
+      "file": "expanded_C/region_metrics.csv",
+      "original": "results/resource-source-observed_expanded-r3/region_metrics.csv",
+      "original_sha256": "d96eade0e22ca1b9a7140f934f01d190e7dfe0ceba7e919f33094658a48c2cf0",
+      "sha256": "d96eade0e22ca1b9a7140f934f01d190e7dfe0ceba7e919f33094658a48c2cf0"
+    },
+    {
+      "file": "expanded_C/summary.csv",
+      "original": "results/resource-source-observed_expanded-r3/summary.csv",
+      "original_sha256": "c0622ca3375e8342455f633bb671aa0978dd0aec59f0c8525ccccd215b84b3f8",
+      "sha256": "c0622ca3375e8342455f633bb671aa0978dd0aec59f0c8525ccccd215b84b3f8"
+    },
+    {
+      "file": "comparison/comparison_audit.json",
+      "original": "results/resource-source-comparison-r3/comparison_audit.json",
+      "original_sha256": "51293e267d3ab4f0e29648b5b1c5519c7f68117e846c1724dfb63dbf14000a68",
+      "sha256": "51293e267d3ab4f0e29648b5b1c5519c7f68117e846c1724dfb63dbf14000a68"
+    },
+    {
+      "file": "comparison/fit_counts.csv",
+      "original": "results/resource-source-comparison-r3/fit_counts.csv",
+      "original_sha256": "4f3289ba009bb7bfd8db0e2e241b21780f47cbbc6e9657d7290afd95fb91ecdd",
+      "sha256": "4f3289ba009bb7bfd8db0e2e241b21780f47cbbc6e9657d7290afd95fb91ecdd"
+    },
+    {
+      "file": "comparison/independent_review.json",
+      "original": "results/resource-source-comparison-r3/independent_review.json",
+      "original_sha256": "05b5165e8d32b6cf0fd3f47495b0726460e36e3df64586cb46e2cb526f0d8ae2",
+      "sha256": "05b5165e8d32b6cf0fd3f47495b0726460e36e3df64586cb46e2cb526f0d8ae2"
+    },
+    {
+      "file": "comparison/macro_contrasts.csv",
+      "original": "results/resource-source-comparison-r3/macro_contrasts.csv",
+      "original_sha256": "dbdccfcfca835d6e077098187b0fd86653f6eb13eb19bb97bffe2a7637206094",
+      "sha256": "dbdccfcfca835d6e077098187b0fd86653f6eb13eb19bb97bffe2a7637206094"
+    },
+    {
+      "file": "comparison/posthoc_ciso_audit.json",
+      "original": "results/resource-source-comparison-r3/posthoc_ciso_audit.json",
+      "original_sha256": "26a18f8064e4c7ae196d5182b1645ede7959db7da436dc3d1a8423114fce8e48",
+      "sha256": "26a18f8064e4c7ae196d5182b1645ede7959db7da436dc3d1a8423114fce8e48"
+    },
+    {
+      "file": "comparison/posthoc_ciso_coarse_composition.csv",
+      "original": "results/resource-source-comparison-r3/posthoc_ciso_coarse_composition.csv",
+      "original_sha256": "7290dddb778dd106ae282e8595357a8ef7b633b2f87ba087f43573d2ccbce9b7",
+      "sha256": "7290dddb778dd106ae282e8595357a8ef7b633b2f87ba087f43573d2ccbce9b7"
+    },
+    {
+      "file": "comparison/posthoc_ciso_factor_check.json",
+      "original": "results/resource-source-comparison-r3/posthoc_ciso_factor_check.json",
+      "original_sha256": "87e58201b84a4eb2b77f6f3ff15577b2e8aef4832ff88867fe165773c39c6f65",
+      "sha256": "87e58201b84a4eb2b77f6f3ff15577b2e8aef4832ff88867fe165773c39c6f65"
+    },
+    {
+      "file": "comparison/posthoc_ciso_hour_profile.csv",
+      "original": "results/resource-source-comparison-r3/posthoc_ciso_hour_profile.csv",
+      "original_sha256": "995f0c8e25d0f1b2f1f57976d904820518048cccaae146eedd5eaaa117d8c5ce",
+      "sha256": "995f0c8e25d0f1b2f1f57976d904820518048cccaae146eedd5eaaa117d8c5ce"
+    },
+    {
+      "file": "comparison/posthoc_ciso_period_profile.csv",
+      "original": "results/resource-source-comparison-r3/posthoc_ciso_period_profile.csv",
+      "original_sha256": "fd268ebfee4f984c982b5a7e39b85baf3453505ca342beafa6d0c90925010505",
+      "sha256": "fd268ebfee4f984c982b5a7e39b85baf3453505ca342beafa6d0c90925010505"
+    },
+    {
+      "file": "comparison/summary.csv",
+      "original": "results/resource-source-comparison-r3/summary.csv",
+      "original_sha256": "f5f1b20087757d85bc397fd2b83fca0c5f0dd65f0a86a1903f4e2ef6ec212955",
+      "sha256": "f5f1b20087757d85bc397fd2b83fca0c5f0dd65f0a86a1903f4e2ef6ec212955"
+    },
+    {
+      "file": "cohort_with_labels.csv.gz",
+      "original": "docs/evidence/weather-transfer-seasonal-r1/cohort_with_labels.csv.gz",
+      "original_sha256": "f945f79ee5942e3636f3697ccfbb68af0e46ffad0fe2ab0bcd4f79c5da958e62",
+      "sha256": "f945f79ee5942e3636f3697ccfbb68af0e46ffad0fe2ab0bcd4f79c5da958e62"
+    },
+    {
+      "file": "snapshots/src/transcif/research/resource_controls.py",
+      "original": "src/transcif/research/resource_controls.py",
+      "original_sha256": "ca55cfaf95201f69f88863b521a1fb816dd030002b430d0c3080d34dc0dc4af1",
+      "sha256": "ca55cfaf95201f69f88863b521a1fb816dd030002b430d0c3080d34dc0dc4af1"
+    },
+    {
+      "file": "snapshots/src/transcif/research/resource_controls_same_season.py",
+      "original": "src/transcif/research/resource_controls_same_season.py",
+      "original_sha256": "c999944515b25c834e1b207b23108f0bbd0d02399f8809298782454f3284d7cd",
+      "sha256": "c999944515b25c834e1b207b23108f0bbd0d02399f8809298782454f3284d7cd"
+    },
+    {
+      "file": "snapshots/scripts/run_resource_experiment.py",
+      "original": "scripts/run_resource_experiment.py",
+      "original_sha256": "f51fca3e4011bf808caa95368ad509e10ed10dd1731d564a63843d02de1c70d3",
+      "sha256": "f51fca3e4011bf808caa95368ad509e10ed10dd1731d564a63843d02de1c70d3"
+    },
+    {
+      "file": "snapshots/scripts/prepare_saturated_reference.py",
+      "original": "scripts/prepare_saturated_reference.py",
+      "original_sha256": "987cfbc9c8493d5702c8b1e61f3d18c2700e9c4388faaa737400564fa0427bc9",
+      "sha256": "987cfbc9c8493d5702c8b1e61f3d18c2700e9c4388faaa737400564fa0427bc9"
+    },
+    {
+      "file": "snapshots/scripts/prepare_source_weather_history.py",
+      "original": "scripts/prepare_source_weather_history.py",
+      "original_sha256": "ed7780f6dfda9e7a2c250229a8068c7cebc5c0b8bb7fac5145091d511d56123e",
+      "sha256": "ed7780f6dfda9e7a2c250229a8068c7cebc5c0b8bb7fac5145091d511d56123e"
+    },
+    {
+      "file": "snapshots/scripts/prepare_matched_source_weather.py",
+      "original": "scripts/prepare_matched_source_weather.py",
+      "original_sha256": "a057935b48ca2fab476bb0b065e7d4f82d976fa45fa064d8872e37d9f0d97987",
+      "sha256": "a057935b48ca2fab476bb0b065e7d4f82d976fa45fa064d8872e37d9f0d97987"
+    },
+    {
+      "file": "snapshots/tests/test_resource_controls.py",
+      "original": "tests/test_resource_controls.py",
+      "original_sha256": "3fdaf43c032e28594bd6e0c3ff0b3ca1998f50aab58833d69b220397cd2ed3a6",
+      "sha256": "3fdaf43c032e28594bd6e0c3ff0b3ca1998f50aab58833d69b220397cd2ed3a6"
+    },
+    {
+      "file": "snapshots/tests/test_resource_experiment.py",
+      "original": "tests/test_resource_experiment.py",
+      "original_sha256": "1a15dcffe6e85c2da1143f368a57ac7bcbde89486a91fe06d044dcf770422c5d",
+      "sha256": "1a15dcffe6e85c2da1143f368a57ac7bcbde89486a91fe06d044dcf770422c5d"
+    },
+    {
+      "file": "snapshots/tests/test_source_weather_history.py",
+      "original": "tests/test_source_weather_history.py",
+      "original_sha256": "a29817cfdee4ddfebab927fe17caa383cae179e029e38451ff5553e8e4e581dc",
+      "sha256": "a29817cfdee4ddfebab927fe17caa383cae179e029e38451ff5553e8e4e581dc"
+    },
+    {
+      "file": "snapshots/tests/test_resource_same_season.py",
+      "original": "tests/test_resource_same_season.py",
+      "original_sha256": "ef9c043d164b47805d04c4182743ef57b98f43ce073eda45994aad8d8593dbd9",
+      "sha256": "ef9c043d164b47805d04c4182743ef57b98f43ce073eda45994aad8d8593dbd9"
+    },
+    {
+      "file": "snapshots/docs/RESOURCE_CONTROLS_PROTOCOL.md",
+      "original": "docs/RESOURCE_CONTROLS_PROTOCOL.md",
+      "original_sha256": "2c2d3768cb9abe175200f2056f549292f65b35b7c65a9d5048069f3dcfd06901",
+      "sha256": "2c2d3768cb9abe175200f2056f549292f65b35b7c65a9d5048069f3dcfd06901"
+    },
+    {
+      "file": "snapshots/docs/RESOURCE_CONTROLS_RESULTS.md",
+      "sha256": "41399001a24ea66707bd5651251614b8bdc596dc36457486027dd8e74ef5b551",
+      "original": "docs/RESOURCE_CONTROLS_RESULTS.md",
+      "original_sha256": "41399001a24ea66707bd5651251614b8bdc596dc36457486027dd8e74ef5b551"
+    },
+    {
+      "file": "snapshots/docs/SOURCE_RESOURCE_EXPANSION_PROTOCOL.md",
+      "original": "docs/SOURCE_RESOURCE_EXPANSION_PROTOCOL.md",
+      "original_sha256": "1d27bc69b8e28e858ebb1e57b1291ace868e9fa4162ac61ba13e9662462a1bc2",
+      "sha256": "1d27bc69b8e28e858ebb1e57b1291ace868e9fa4162ac61ba13e9662462a1bc2"
+    },
+    {
+      "file": "snapshots/docs/SOURCE_RESOURCE_EXPANSION_RESULTS.md",
+      "sha256": "11d418945f8c315a875e5bb99c0955e3397b19886fffc90a76f054533bb2328f",
+      "original": "docs/SOURCE_RESOURCE_EXPANSION_RESULTS.md",
+      "original_sha256": "11d418945f8c315a875e5bb99c0955e3397b19886fffc90a76f054533bb2328f"
+    },
+    {
+      "file": "selected_members.tar.gz",
+      "sha256": "0b44c6ec3307996fc9937c65aebd8ec9ef07d180359a78c921702a8a7d156279",
+      "members": [
+        {
+          "member": "controls_r2/DE+GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE+GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "95ad7b2219593b5450f16699463ecc55b01bcb45492ba12fd0b6d8abe0efd06b"
+        },
+        {
+          "member": "controls_r2/DE+GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE+GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "f1d58ce61aa2b97bff079868ae0107b3316da7989fbc234a669e0ab3132ecc68"
+        },
+        {
+          "member": "controls_r2/DE+GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE+GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "3902ffb2c58edcdd42882de7abac9d527ea3d5786e88f52379db8684f580a3fa"
+        },
+        {
+          "member": "controls_r2/DE+GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE+GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "368f71081e39a9dc4d022991a83d94edd8f790a3ff38d264f35044eda5e4a2b3"
+        },
+        {
+          "member": "controls_r2/DE+US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE+US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "6f9411a7298ec362b8f19fb1a1ecc8f0d7f96769cd00a31b905ed1e83008abb2"
+        },
+        {
+          "member": "controls_r2/DE+US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE+US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "1b97c0b7545c8319231395563833b1f6d34e2ed805d5a06ee6f6d6cebaf5e109"
+        },
+        {
+          "member": "controls_r2/DE+US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE+US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "0d547c81d9911eabd14039195e4103f40e793c796682f82f0f73debe65fda52d"
+        },
+        {
+          "member": "controls_r2/DE+US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE+US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "adfe914f13b6fb52095789f789099827bff73251cb82cf69c46b5686dd11f205"
+        },
+        {
+          "member": "controls_r2/DE_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "5486912bf319e0d31462be222dafaedb9dde1ccc3612d2638373616ab7ce4e72"
+        },
+        {
+          "member": "controls_r2/DE_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "a1d10a8203eebb3d282e9ef529e825541b4b52a00178033ad03a99fe0b1da25c"
+        },
+        {
+          "member": "controls_r2/DE_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "4cc55d9daefef1a0e15cdcc04f547cb3c9ee78d605eb8431468fe15168c3ecab"
+        },
+        {
+          "member": "controls_r2/DE_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "e059a117aad85070b341bc99bf59e8811024e80d39065b1ef1fc3767fabbffff"
+        },
+        {
+          "member": "controls_r2/DE_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "37cedf53124d867987a4028cc75cc4f56fc879f8f67a55f12c4b88d6a52fb6a8"
+        },
+        {
+          "member": "controls_r2/DE_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "a54311da3e9e9811c716c21a470bf03f672a2985dbe07e69de22e872d591a8bb"
+        },
+        {
+          "member": "controls_r2/DE_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "af7b21fa2c29d80373f9ddb58ee3b4c6aca40b6b95f14d5261e88fcdccc37863"
+        },
+        {
+          "member": "controls_r2/DE_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/DE_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "34284700cd4996c702e6f25b093ea8db62805a299c2ae4d686acb8cbe2e918c5"
+        },
+        {
+          "member": "controls_r2/GB+US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB+US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "ccb1407b9343840a420633630a9b574d5a037eeddee0a857c5a5d3b4665ae533"
+        },
+        {
+          "member": "controls_r2/GB+US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB+US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "1bea34098bb901ca13ad64d9e79527907840c0355c7a4412026d53d1ba6c695e"
+        },
+        {
+          "member": "controls_r2/GB+US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB+US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "25ad80afc41fdb4b4c98d48f1f9ece9731d97a55868bdc687d8c7e655caea026"
+        },
+        {
+          "member": "controls_r2/GB+US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB+US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "0f1aea65d7b4dc66605fc6e49a4549b7c57ccadd554294d54b1775dd0bc6da2f"
+        },
+        {
+          "member": "controls_r2/GB_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "f60bbbd33cfb5e7169af596af8eeb8c6f756a2c3044f491ce72b97b2dcbafea2"
+        },
+        {
+          "member": "controls_r2/GB_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "248624b480f231fe4c544782bd490fa1d043fe5fd07c6b10abb7617cb8660198"
+        },
+        {
+          "member": "controls_r2/GB_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "df75c756e6fe6a36b0606aad9812f3826c31348642ee25f48625e7c6a1240442"
+        },
+        {
+          "member": "controls_r2/GB_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "1bbc85082cc27b7831a8cb2bb85bdd80f0b822e668f8ba66180edc4c94af4c4d"
+        },
+        {
+          "member": "controls_r2/GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "d373ed58ad04dae437029c3c73804fc1512761330d8fa35d54c6425741cf00e0"
+        },
+        {
+          "member": "controls_r2/GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "f7b66984c34fe79efaf6598b657814d33111122f41d61632871838764053c739"
+        },
+        {
+          "member": "controls_r2/GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "836b3f95e76cdeff7c7c4802c743935e4ac52748af3fa88a9be1a7e11abb2bc2"
+        },
+        {
+          "member": "controls_r2/GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "967542304b3e82ec309c6f835ebb460a3cd57cb49a65983a3dfb9e8654e75beb"
+        },
+        {
+          "member": "controls_r2/US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "0a92dd7ea9fb93a8306765d65eb7a04c866d95baa669fc45e88f7ff276b5fc18"
+        },
+        {
+          "member": "controls_r2/US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "d5734b25d998acdde91e8ca963486494ccebb5fdc2542bcc5fe163feecffdfdb"
+        },
+        {
+          "member": "controls_r2/US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "0e22d9dba1614ef4937f95ffbaa1487f488eb61c35563c87b6c75b5995eb0be2"
+        },
+        {
+          "member": "controls_r2/US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "ded57a890fb0b3b9faa40ce69c1d7ed0e64dc7d79cfa75236338f26a2426fd7b"
+        },
+        {
+          "member": "controls_r2/US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "edd2d07692e50fa371f301b474a532f80de3f52333304bb5135d64ca11fcd1d9"
+        },
+        {
+          "member": "controls_r2/US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "8083364f442371f18163ef08dd6a8b479391de5d1b167bbf2e45976b9d10ccfb"
+        },
+        {
+          "member": "controls_r2/US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "cb05d02adee0b94cf4bcd0a4509af37d052077258166daf5a09a28b4a06205ac"
+        },
+        {
+          "member": "controls_r2/US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-controls-r2/US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "9a82af9869d5ad4dfb3e4a35684b948e6049349f561d07146af7ed7956d051fc"
+        },
+        {
+          "member": "issued_A/DE+GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE+GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "8ff14a2281bbc6b9b778c46f338ab465a42b6c8e3800ac80cd2fea9fa1293e67"
+        },
+        {
+          "member": "issued_A/DE+GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE+GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "e58139d06bdaa5a6dca22e14511bff580a5da82aa29c9db6702e4212611f120b"
+        },
+        {
+          "member": "issued_A/DE+GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE+GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "40e6a9e4db31bee3190094526a757b2a5ed823ce4428ad1e885ef467ce4b320e"
+        },
+        {
+          "member": "issued_A/DE+GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE+GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "588ecd32aec56dbe35b341f0f6e66943a25f359d9b6f6f50cfe008d12a2f7eb2"
+        },
+        {
+          "member": "issued_A/DE+US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE+US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "b20a84ee13c7d7db2fca4ff699e738329e0e32092d7af576992a89c2786b6212"
+        },
+        {
+          "member": "issued_A/DE+US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE+US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "897ebc38d825ecac0ee53c7cce79a9800bbb6cdb98eaef5f75f733a9f7edce5e"
+        },
+        {
+          "member": "issued_A/DE+US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE+US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "40dde98b640170d7b6e79832f00c95808fc88e72cdadee23c912fea67c0c9238"
+        },
+        {
+          "member": "issued_A/DE+US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE+US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "ed35a964e6bf2165cdcaf6d40371edf998066e83fe13d8739d98c9ebe17a1740"
+        },
+        {
+          "member": "issued_A/DE_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "961a2e0b110b06ab0b9eb3404681276898a573cceceefa7b7b5edf0924414dc4"
+        },
+        {
+          "member": "issued_A/DE_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "e3cf7d3b51a3feabf1f085adb32a37345ebb37dcaf4f7efcf3be593367dc3194"
+        },
+        {
+          "member": "issued_A/DE_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "32a66442ad9590ea00125fb01cd71a1cd09155026a579df77cc1cdb4e46d8fac"
+        },
+        {
+          "member": "issued_A/DE_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "d8306155c4e8104e9df8f6df94e46e37f5dc62a0f0a6467ebdaf40a2e23567ab"
+        },
+        {
+          "member": "issued_A/DE_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "3a2443cde733fec0f29ac0647ed734e1e3eb1a02cb60fc5833fa2f95c80c8797"
+        },
+        {
+          "member": "issued_A/DE_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "989cb2801e0c19371ce8cd16b9c862404d7a6c819bf3c447f14cb0faf2abf4cc"
+        },
+        {
+          "member": "issued_A/DE_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "b0fc22606b18a2752bed46525d882d5d5761907867bd9736b14bdee0d3a75c17"
+        },
+        {
+          "member": "issued_A/DE_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/DE_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "d02d84329cc0c6abc7e597de1a9107db9a269b67d44c58994847fc1e0f6120b7"
+        },
+        {
+          "member": "issued_A/GB+US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB+US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "742f2e240fb8c67fffe4c69aff960b8441e82795c0151cbd5d240e9c4de7673d"
+        },
+        {
+          "member": "issued_A/GB+US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB+US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "5b665dea7f99013aec1c6716ae47b44e55dd729129948aff3f531153231e331e"
+        },
+        {
+          "member": "issued_A/GB+US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB+US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "82a28962f9d76ff996cc9af6cb556713e7462d5569b17a6946ecbd8cc76b329c"
+        },
+        {
+          "member": "issued_A/GB+US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB+US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "1b5d439134e7c55b91e3be2618c021da98c25b3255c78cc91a35e070f1f4214c"
+        },
+        {
+          "member": "issued_A/GB_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "373a302160a6be0277a3f55b084d2eea916b570fcffa8268e62e280dfdf9d7af"
+        },
+        {
+          "member": "issued_A/GB_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "1abd745b8d9256bb14b771ecc2792d67bb2d5e43bcd142a5050e362274a775d7"
+        },
+        {
+          "member": "issued_A/GB_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "4c997bed5ac353656781b0844ca1f6cbf6146d5c7dc8c1f55bb0c8a9170a53dd"
+        },
+        {
+          "member": "issued_A/GB_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "4c28e7e49f4411ddeddc6e78c46173f4130cbfa929517f7b3d7df0011a34ce37"
+        },
+        {
+          "member": "issued_A/GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "b3d02195608fb23ddea27535786ee4141cc2b270b5038729668ec483b86a0172"
+        },
+        {
+          "member": "issued_A/GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "499605cb735185a68c70b0184d554ee75fc88b29781c79526a14d3a71b9f9c53"
+        },
+        {
+          "member": "issued_A/GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "9ebb171464b0bf2e54e878ae7e61297aab89c2cf7c77963deafeb211c0118fa3"
+        },
+        {
+          "member": "issued_A/GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "e7c75c13f78e1902a14d807530181f960a82d66e565ca5373915071a2ca41d5f"
+        },
+        {
+          "member": "issued_A/US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "3aa314c3296cc6661af29a59ace890e7e6de1bed56bb02fe86617f1e3789915b"
+        },
+        {
+          "member": "issued_A/US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "95d7c1fe9f8fd6dff1898b6b3ac5e1d3396cb2e2199e44127a3c7c0f9308dfc1"
+        },
+        {
+          "member": "issued_A/US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "482c0ebc435be5b2edf73e6bfe2d0ace617bea9f29730e278a2ab4ae5ee7b12d"
+        },
+        {
+          "member": "issued_A/US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "751522f1f406fff39471a279068e1ac72e59d6f79ab4b922c4d0eaf213cd6a41"
+        },
+        {
+          "member": "issued_A/US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "1dd85cb8baa5099225c82781ed97b217b7e0ba05127d07b8bcd433671a026b69"
+        },
+        {
+          "member": "issued_A/US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "a22cad2ee653338269a9b4b614a46c5bade64da3d259e5f7338037a8460f9e34"
+        },
+        {
+          "member": "issued_A/US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "33d516231a415741e615b5f0eed72f48ffc4845eb4307d61a208e6f4f7c68006"
+        },
+        {
+          "member": "issued_A/US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-issued_matched-r3/US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "9469db1a70c955b424b19254b1d6ff795a38072b89a3e6d82a78fb1f83d2c03a"
+        },
+        {
+          "member": "observed_B/DE+GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE+GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "8ff14a2281bbc6b9b778c46f338ab465a42b6c8e3800ac80cd2fea9fa1293e67"
+        },
+        {
+          "member": "observed_B/DE+GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE+GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "e58139d06bdaa5a6dca22e14511bff580a5da82aa29c9db6702e4212611f120b"
+        },
+        {
+          "member": "observed_B/DE+GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE+GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "40e6a9e4db31bee3190094526a757b2a5ed823ce4428ad1e885ef467ce4b320e"
+        },
+        {
+          "member": "observed_B/DE+GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE+GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "588ecd32aec56dbe35b341f0f6e66943a25f359d9b6f6f50cfe008d12a2f7eb2"
+        },
+        {
+          "member": "observed_B/DE+US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE+US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "97fc72cd882b0b4c976cfe66052c1a9b18bfcc31320546c4cfa825c8d56dc89a"
+        },
+        {
+          "member": "observed_B/DE+US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE+US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "b8e2b77ea662744fa58830fbbcaf49fdfb010b7e4a35cf37138ad340f0653f79"
+        },
+        {
+          "member": "observed_B/DE+US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE+US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "f5276a9671dad6525eb99304a63ef65f567a424269188770a466e88c0d200c02"
+        },
+        {
+          "member": "observed_B/DE+US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE+US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "c21a548c30c89808787893c482434256d9dacc8e8b946653ff61b1e447395a1a"
+        },
+        {
+          "member": "observed_B/DE_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "961a2e0b110b06ab0b9eb3404681276898a573cceceefa7b7b5edf0924414dc4"
+        },
+        {
+          "member": "observed_B/DE_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "e3cf7d3b51a3feabf1f085adb32a37345ebb37dcaf4f7efcf3be593367dc3194"
+        },
+        {
+          "member": "observed_B/DE_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "32a66442ad9590ea00125fb01cd71a1cd09155026a579df77cc1cdb4e46d8fac"
+        },
+        {
+          "member": "observed_B/DE_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "d8306155c4e8104e9df8f6df94e46e37f5dc62a0f0a6467ebdaf40a2e23567ab"
+        },
+        {
+          "member": "observed_B/DE_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "3a2443cde733fec0f29ac0647ed734e1e3eb1a02cb60fc5833fa2f95c80c8797"
+        },
+        {
+          "member": "observed_B/DE_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "989cb2801e0c19371ce8cd16b9c862404d7a6c819bf3c447f14cb0faf2abf4cc"
+        },
+        {
+          "member": "observed_B/DE_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "b0fc22606b18a2752bed46525d882d5d5761907867bd9736b14bdee0d3a75c17"
+        },
+        {
+          "member": "observed_B/DE_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/DE_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "d02d84329cc0c6abc7e597de1a9107db9a269b67d44c58994847fc1e0f6120b7"
+        },
+        {
+          "member": "observed_B/GB+US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB+US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "1c2930692fc91dea09ce88d361a1b0c12c68cb30504b438bc0a94d4d9e12ff88"
+        },
+        {
+          "member": "observed_B/GB+US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB+US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "55a90a02f1822098588cd763e0a5c6367635d7fa85b243fae56f4d8e2ccdddd4"
+        },
+        {
+          "member": "observed_B/GB+US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB+US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "e8832e9119a6cee5fb26f2cff47929c8b1ad059dfbd8ae4654531b746e2f562d"
+        },
+        {
+          "member": "observed_B/GB+US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB+US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "9768105018fd2105f5a4e37527d0c4f4f7c07f3a4f7ea8f91ea625e9b782d4fd"
+        },
+        {
+          "member": "observed_B/GB_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "373a302160a6be0277a3f55b084d2eea916b570fcffa8268e62e280dfdf9d7af"
+        },
+        {
+          "member": "observed_B/GB_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "1abd745b8d9256bb14b771ecc2792d67bb2d5e43bcd142a5050e362274a775d7"
+        },
+        {
+          "member": "observed_B/GB_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "4c997bed5ac353656781b0844ca1f6cbf6146d5c7dc8c1f55bb0c8a9170a53dd"
+        },
+        {
+          "member": "observed_B/GB_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "4c28e7e49f4411ddeddc6e78c46173f4130cbfa929517f7b3d7df0011a34ce37"
+        },
+        {
+          "member": "observed_B/GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "b3d02195608fb23ddea27535786ee4141cc2b270b5038729668ec483b86a0172"
+        },
+        {
+          "member": "observed_B/GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "499605cb735185a68c70b0184d554ee75fc88b29781c79526a14d3a71b9f9c53"
+        },
+        {
+          "member": "observed_B/GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "9ebb171464b0bf2e54e878ae7e61297aab89c2cf7c77963deafeb211c0118fa3"
+        },
+        {
+          "member": "observed_B/GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "e7c75c13f78e1902a14d807530181f960a82d66e565ca5373915071a2ca41d5f"
+        },
+        {
+          "member": "observed_B/US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "4d77c07e6c8a403396d482de8ff869073494a8c3b5f06de8a41a39ecb5db8522"
+        },
+        {
+          "member": "observed_B/US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "8345faa67dcbd70b34e19e6d36bb3caa0ef31e41ee77ba706ae0705e305ae254"
+        },
+        {
+          "member": "observed_B/US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "99fbf10f7248295e2b55fcc8dcc616e696cf20eea8f59b1f58c05b18de5be7dd"
+        },
+        {
+          "member": "observed_B/US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "40edf4362d21141c2bc227c92e85b4cb0a380a4f7918175078f1f369d447dd25"
+        },
+        {
+          "member": "observed_B/US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "43b4f1c0451c27815d3f80795c1cc041e197116308b246a345e7af5828695fb7"
+        },
+        {
+          "member": "observed_B/US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "b5b0c9a4e56ffa9d115c32798b02df8268461374b6746f029dda67d2c153f31d"
+        },
+        {
+          "member": "observed_B/US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "a0270d99f7158456af4670d8eb13ecf243dfbc9b908a1cfe26190898a38aec1b"
+        },
+        {
+          "member": "observed_B/US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_matched-r3/US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "b436ea486345dafe077e285654247503496059a57545ce84746e6232b9bedbfe"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "5ba78c661506e8989a4a21c689b1083b899f28c794907d5e788839b6dd061929"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "b013784bd0cf981111b9d541e773f7ebe52e4fdc9a3bdd9957400b252c5d5cb7"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "85ce04fba4f598a9db811d4a60999b38d2d4d658162337fdb1721503e3a0bea2"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "765a288926fa97768aa434ab67a717e493b901ca6af758bc8d37183fa1ae5650"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "bf5edef14ea4c1e584989e3cbcba9e5572993815468df4582968dad834715427"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "e7d0e5695223296efcf457fe8c95e6f6efd98b28d75037179a8c47db9933f739"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "f5bc545c1302ca9dbdf7d1a683a8348d2432626b27f8bdf414c8de81ba0cbe22"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "b040f71453d16086a81f156c1fbff1f1c85dadf1ffb5bbc954d5acb9ba5b19c4"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "a22e5d05141a6dae1f1a30174d3a5766ac9bbe4a493f4317ed46dfc7f4cad48d"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "5436421011cf25a0ab6ee78b3cf3d2cae77f2083dea11b205e419f3dd19c31c2"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "3c7454ff281c036a00a9163dbfe6909353e157800cddbec7e127e34644496e5a"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "df3a59107bc21e2d76f79c7e27178a09d8ac8bbb912680c2d2cca9f64e269a12"
+        },
+        {
+          "member": "expanded_C/DE_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "7f543f2a6d25d4d772d43a221b8f30fb99753ca7fc7d5eca90a4a2850d702e18"
+        },
+        {
+          "member": "expanded_C/DE_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "42bb6e2dff68fa749908454fffffc09c818e095e8d6bb9e998b06327b0ea2fa1"
+        },
+        {
+          "member": "expanded_C/DE_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "440457f44e9377e97dba7b65edabccfff2e8f9e51cce272a4435679e43dc4526"
+        },
+        {
+          "member": "expanded_C/DE_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "184ef5aa5d61764b65eb1ce35ed242005869cfa5f7aca336a20bf05c78cf0d1e"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "1aa5d0f8877b33231d6ad17170ebb80ed1d055c130420c5080f54e5ebfa2ef9b"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "1df946bbf196cf610cada978e1e35ee8e4d0e07c93a68365dd4ee4658ccc2809"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "24fa3e29960d9f33b5e15ec3e01b0360cf41701adc3b524d4c117787a7b18e17"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "948724cab98b4284eb0de3a2091aa760d8474df9bfc8cd26bbafc51be266edbe"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "3237cf0f511669e49294c5c69bad2732d665c4cbe096bbf54e9411080892fdd6"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "d81ed06874e426358059412e3c117383898d4054c837b594e5aa9c4a90e51e61"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "1b3fc6c4a87a5a790a453f17b0219b528b5394c1e2027d6986f767ad011c6a4a"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "14f9cfe9757618ea7c500323e19e569521c4759941820754f51431eaa7eac6b5"
+        },
+        {
+          "member": "expanded_C/GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "402788e74223f93d2dd22b5c07bedf1449d4e3b4164e18fe140576b51ab1bdab"
+        },
+        {
+          "member": "expanded_C/GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "ad364318f69f9e480e25156e1e671560dee3d5d605a48562517d82c870e4bc22"
+        },
+        {
+          "member": "expanded_C/GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_matched_capacity_hgb_weather_members.npz",
+          "sha256": "4d124b827a01ae722d3bed153f70bfbe44260134f93d2b05ed5f4489cb01cf64"
+        },
+        {
+          "member": "expanded_C/GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_matched_monthly_hgb_weather_members.npz",
+          "sha256": "7973d3204eb21519f667985f6b87d4bffe5a2a357a6c1e951fb1114ff29deda9"
+        },
+        {
+          "member": "expanded_C/US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "897caac9ec6cca9dfbd664a33e6b282a9e44e804b131348bba34b70103fcb829"
+        },
+        {
+          "member": "expanded_C/US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "e7f1c06f9713ef1980f54cd5ffefeb5438b4288944fbd5a95d6d0161995b582c"
+        },
+        {
+          "member": "expanded_C/US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_matched_capacity_hgb_weather_members.npz",
+          "sha256": "de6cce8cd1f1f4cfbc0f21a93155b5d26c32c4491b0852fe47cfa066925ba169"
+        },
+        {
+          "member": "expanded_C/US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_matched_monthly_hgb_weather_members.npz",
+          "sha256": "3559f2fe106cfeba6c5bd0efc8ce8673769e0b3bf3ac91e0fbb663ac1e9d4799"
+        },
+        {
+          "member": "expanded_C/US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_full_source_extra_labels_capacity_hgb_weather_members.npz",
+          "sha256": "8fbcfc052f87bbd528857e9f6420f0cb9714239f9338cc799ce25f04165d523c"
+        },
+        {
+          "member": "expanded_C/US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_full_source_extra_labels_monthly_hgb_weather_members.npz",
+          "sha256": "90ee6d5398cf8a53c32971aff02d06e666292de6e4b506c4ac39fc5d73624a62"
+        },
+        {
+          "member": "expanded_C/US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_matched_capacity_hgb_weather_members.npz",
+          "sha256": "7ca777d1d2fd04779f40f701a2559acace8b8320df5125453aeba1cff4aab090"
+        },
+        {
+          "member": "expanded_C/US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_matched_monthly_hgb_weather_members.npz",
+          "sha256": "9c3cdf35a7403ade9810d34c0c9c832839b158f61d5122db5d4a734c6bc115e1"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "f6bd66ba319bde88dab73d12b5dc892ca6ba127d74b91e2eb67fe08a71ed952d"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "b70fedbefa51200abf1604176bc4079a5e1f08a39dc9746d79f91cc0df959d42"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "25725d98d0c7a007668e7bbece0ab127d6ffc7fe030e235b322c6ad32ca381fd"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "aad1e46b30119d8c9a595531c44f73a5b76c2b13583421dd5b567f9300ead775"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "98f31941898fd0d1d62497bddd52e5053044bf2f3b3838eb882d7ac4e8a45651"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "b2514075ee0ff544a01b76e17a1bee6ff7cfd78e18c3d180cdd3a01bd2f4e9d3"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "7f494477c651b7cd4eb55dc432086bd8ffb78512f1cee774572e9cec428c2621"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "08af903fc744e975b4bb1c7011b042400d5c8f6398d498394f0d47f9d95fbe61"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "6a6e9366358cf7d2a6d0b220c6207767ba40e82632422d651695eaa3312c99e6"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "f433c3fdaf5a8e8b8f0688c3e413dab28ab15ab48627914ed8cf54cdd4ece95b"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "66d740bb387a55273b1358ea476fc5929b770753c9a16b7044fe1e3361267b0b"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "9cef9d39235620b53856e1cf9ab9364a8624fb1c72e9d8393b6a97d89fba9aeb"
+        },
+        {
+          "member": "expanded_C/DE_to_US_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "10c8e02b29321fae1f108d484a83786c7edc119e740c67ccabf7511ef618c802"
+        },
+        {
+          "member": "expanded_C/DE_to_US_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "42aeebfdcaf61e3b8a7bf744ab76d10fb69daa405a9c81ce476dcc26ef7713be"
+        },
+        {
+          "member": "expanded_C/DE_to_US_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "74522aab2759c59994d75ba8df6fbb601f08eb4eb7883066bd59703a7c970ff7"
+        },
+        {
+          "member": "expanded_C/DE_to_US_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "0cdc8801f2af76c82c741fd67e205d04e6ea515478d55e26eb85935574d4cb43"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "ceb4ac3f9765793565391f146e30bc3a17f8b75aa28069142070a17c04618d27"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "ad81eda0b257bc6b58385ffe61d93c46548bcb843c792cb97fab63a6ca485988"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "2a93101d7184ab32e8436a5c42bbf485e81d20969bd3d74972bd6a99ab58f043"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "6add1cbc993b3a0b914111699bea9f496628159a699cd97aa57269f1646624ea"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "6b057cec1f93feda79fcbd8e43d31648e1e40c806abfb1b4c64a095c7bf2f307"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "b4a552c54e0c9fdd733990f2e907ff94034b516c448d80d693108ac32e58f87b"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "56ebb759a96c836ec330af7aa4844d7c5c491485355a2957886b00b66d7fcb00"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "0257db8dbab6685cd7b4873640098a1c2ff8a700298ad5479cf4b02cfc310ced"
+        },
+        {
+          "member": "expanded_C/GB_to_US_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "e7e67c308da870534d0ad714a0b53d0c6d220d93f0f854bcbc967f793dac7b65"
+        },
+        {
+          "member": "expanded_C/GB_to_US_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "30778394c7932a020b7f7adebb0e94c1e38fdeff2dffd302a2b34bf1e91e5729"
+        },
+        {
+          "member": "expanded_C/GB_to_US_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "0549dd796adaea6d7c01f9ba15ab99c880d4ec5e72f91faac736dd5005a4aa03"
+        },
+        {
+          "member": "expanded_C/GB_to_US_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "745059aa71dc8e3a493ff98ea589ad9847ec2be1dd69a541512e8f1fb5e1295f"
+        },
+        {
+          "member": "expanded_C/US_to_DE_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "9d2bc1f4bab652d36f0255970b2785b8d1c106f1d6c818f082c6c3d0be187ce8"
+        },
+        {
+          "member": "expanded_C/US_to_DE_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "3c8cad389e0b43ab39baebe65ecc9959eef56c4945b9e8523be5ebdfd4253dbe"
+        },
+        {
+          "member": "expanded_C/US_to_DE_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "828024156ead3e442ed76bb3868162f8cb465f98b55fd9ea78a85a22b8499fc2"
+        },
+        {
+          "member": "expanded_C/US_to_DE_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "17ef545fa35fc82b886675fb7e20b07c50dcf55797c88a568f2f76d1e83dae4e"
+        },
+        {
+          "member": "expanded_C/US_to_GB_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_full_source_extra_labels_capacity_hgb_no_weather_members.npz",
+          "sha256": "651e399e5fabec133b0954fdd6a465185ff2e4fdfd6da7b33455982423df7c3e"
+        },
+        {
+          "member": "expanded_C/US_to_GB_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_full_source_extra_labels_monthly_hgb_no_weather_members.npz",
+          "sha256": "14c43a713ad5066e53568cc183d89fdb7e3e2d587c7b0d2cbdfe84c7839d286a"
+        },
+        {
+          "member": "expanded_C/US_to_GB_matched_capacity_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_matched_capacity_hgb_no_weather_members.npz",
+          "sha256": "e4b194f22cd2114b12518922bbdaf60369bef815958130b4a2f1fdc065d62f48"
+        },
+        {
+          "member": "expanded_C/US_to_GB_matched_monthly_hgb_no_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_matched_monthly_hgb_no_weather_members.npz",
+          "sha256": "792af16d59fa954c30cf0a9b1cd2682754c61e62547036c5f9644587fb5fb5b7"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "abc5acc0d66667e87c99f5afa4faa5f0f8acde6328fff8b3adf8d64e38d8996e"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "b0b88d8ed48e02193e7f18722b7a14a90094a37af30803459fdc0e992a7e24c6"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_matched_capacity_rf_weather_members.npz",
+          "sha256": "f76efe7c8e9ee912b697904972d95ef2b02e888fa951254097d483fdf335c68a"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_matched_monthly_rf_weather_members.npz",
+          "sha256": "599e10bc592b201c04b1c9e29b80ac37383d2f266c73bee4ca9b51777ca42f1a"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "b288e02f4b209ce120165d801851e10cafb790a01e8e23deacb0751dad751902"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "aaf775623c1a181689c535d2a00aca24d5d6c187d201803387c06a2e96153290"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_matched_capacity_rf_weather_members.npz",
+          "sha256": "c546ce8531593cb9166735853bf51a08901d5bad7a1682e3344cf02f2b76fd15"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_matched_monthly_rf_weather_members.npz",
+          "sha256": "1906e8afaec8d0b21201c9e1da20162d7e33872821a8e6657f90202cb8bff772"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "0747c68915f97ac2afd852d15fb1507d152bcd9c737eacfc09459e570c827c6f"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "4d0d75f690f32a918fb81aa9b5a8ac838c2e48ab84f51c4e23564b8fc6e47fc6"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_matched_capacity_rf_weather_members.npz",
+          "sha256": "fc50fc744970b0af1013d493842e662aa3ae5cd46102296eb98bab859fc71874"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_matched_monthly_rf_weather_members.npz",
+          "sha256": "aeab76f9c8ddef83873d94bc0a1727a2dc755a81c0911deffa176290d51b8991"
+        },
+        {
+          "member": "expanded_C/DE_to_US_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "d4433c2c06d2105f13bbddae5b396f9b3fc84808299d172b8afa4cba1a3dfd9a"
+        },
+        {
+          "member": "expanded_C/DE_to_US_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "860d5d65c1ec0d226f92e3a2da767f5e18d9ed85f9756106054ea65b654eb848"
+        },
+        {
+          "member": "expanded_C/DE_to_US_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_matched_capacity_rf_weather_members.npz",
+          "sha256": "a22697687174274d174c448962a163320f4ca1e9274a367deb90d127438831ab"
+        },
+        {
+          "member": "expanded_C/DE_to_US_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_matched_monthly_rf_weather_members.npz",
+          "sha256": "2383dfefcee83edaac6973851863f665a0e050556aab62887bf4bb608087b8d7"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "846b0c31ad7c23782d5a46dae1051e3edab153d1f303dfcc895ac31060f63d42"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "4768b20429289797855d8283dfbf22ba92622a91ebda357d996511eff3e815db"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_matched_capacity_rf_weather_members.npz",
+          "sha256": "e134722f60e31ac6ab89bc32ea0da43f8c27ad4f219fea1ce7cc5f2026a5781b"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_matched_monthly_rf_weather_members.npz",
+          "sha256": "beb22fca107f633d4e05c6c56a7525cda032675588e572f26aad36cbbd1f7ab3"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "1465c8d606cebf89d2faad7e0741521fd4b2add8f09e6c0a5a60efbba12a6bbc"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "27a417a2f56b24d51344cecfb163ef591c760854648e441733e9f6f5a2e11146"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_matched_capacity_rf_weather_members.npz",
+          "sha256": "a3aecb788e9dff04fcae66577d7f37f8c5f883b4853baee08c044ff502838741"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_matched_monthly_rf_weather_members.npz",
+          "sha256": "16f0bfd02204946f322608adc56e3651dbfdf86b937d92bfb064626f2d9d77e6"
+        },
+        {
+          "member": "expanded_C/GB_to_US_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "4fdd23d53690618865c5599dd68e62c8e8abcccf821922def4dafb334cc5cece"
+        },
+        {
+          "member": "expanded_C/GB_to_US_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "1e76ee7e9c61352aa90bb0fade033ab360607509554964cd1256b1b204859ab0"
+        },
+        {
+          "member": "expanded_C/GB_to_US_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_matched_capacity_rf_weather_members.npz",
+          "sha256": "8e14d1e328dd6492639d11ae766db51158a535392c2ce669d2f6abeeef3aad1b"
+        },
+        {
+          "member": "expanded_C/GB_to_US_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_matched_monthly_rf_weather_members.npz",
+          "sha256": "7ce51bece8465e713d90e17b77a2a33b952f526387e4ddf3c3f696e53db39405"
+        },
+        {
+          "member": "expanded_C/US_to_DE_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "7109b0fa01d940f2c2598c2ae9a5fb526f119e913a8bb9a3389904b24856ceeb"
+        },
+        {
+          "member": "expanded_C/US_to_DE_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "df7e740ec5b39c30900d67bc1ebde1cd176bac2b70c41c5d69a7115c4609a3c7"
+        },
+        {
+          "member": "expanded_C/US_to_DE_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_matched_capacity_rf_weather_members.npz",
+          "sha256": "4727ec79e4f172e296d3a5a13497b3fbc6ac9a02c6428f2aea35ce058e3d414b"
+        },
+        {
+          "member": "expanded_C/US_to_DE_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_matched_monthly_rf_weather_members.npz",
+          "sha256": "19b03e4ee7105309bdb2b78aabc277e27fbdd54feafd487a289ee46e6f7db0f4"
+        },
+        {
+          "member": "expanded_C/US_to_GB_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_full_source_extra_labels_capacity_rf_weather_members.npz",
+          "sha256": "ce8587001b09f424e45ad466acac9c8d3aa38d348d6cf6b76cb688518b69effd"
+        },
+        {
+          "member": "expanded_C/US_to_GB_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_full_source_extra_labels_monthly_rf_weather_members.npz",
+          "sha256": "decb47369cdcef5bbbd0865b2b6e85d8ec6ad4bf3f99bc2742ca504ab89c749b"
+        },
+        {
+          "member": "expanded_C/US_to_GB_matched_capacity_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_matched_capacity_rf_weather_members.npz",
+          "sha256": "42796501d75bf124375dfe8223fc57f62f5f80ccb926504c75ac4d4701f6b62f"
+        },
+        {
+          "member": "expanded_C/US_to_GB_matched_monthly_rf_weather_members.npz",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_matched_monthly_rf_weather_members.npz",
+          "sha256": "3de89e979a335bf4a785687f6b50c6baa94625f35c0c65557553387ff3266953"
+        }
+      ]
+    },
+    {
+      "file": "training_audits.tar.gz",
+      "sha256": "0040020045b3a2f238c8146f8232fe4da33bb7fffae32e0324c6053b5a8b066d",
+      "members": [
+        {
+          "member": "controls_r2/DE+GB_to_US_training_audit.json",
+          "original": "results/resource-controls-r2/DE+GB_to_US_training_audit.json",
+          "sha256": "349cc51cc677419ec13252ff04f47c853033322e7e308525c65cd6e29c2ca412"
+        },
+        {
+          "member": "controls_r2/DE+US_to_GB_training_audit.json",
+          "original": "results/resource-controls-r2/DE+US_to_GB_training_audit.json",
+          "sha256": "a2f137bbe59151473848cef9b3893ba3cb9a84fb983d03fb0822b71e100f7929"
+        },
+        {
+          "member": "controls_r2/DE_to_GB_training_audit.json",
+          "original": "results/resource-controls-r2/DE_to_GB_training_audit.json",
+          "sha256": "f8b6c6fff60c089a6d58f1ce566cc72ba512324ffdf1a1b6eed8e26f83b87d38"
+        },
+        {
+          "member": "controls_r2/DE_to_US_training_audit.json",
+          "original": "results/resource-controls-r2/DE_to_US_training_audit.json",
+          "sha256": "f8b6c6fff60c089a6d58f1ce566cc72ba512324ffdf1a1b6eed8e26f83b87d38"
+        },
+        {
+          "member": "controls_r2/GB+US_to_DE_training_audit.json",
+          "original": "results/resource-controls-r2/GB+US_to_DE_training_audit.json",
+          "sha256": "e8b216c07409033833c9744f97a387ac7d4df0c7dcef8199d7e3e2da8cda11b9"
+        },
+        {
+          "member": "controls_r2/GB_to_DE_training_audit.json",
+          "original": "results/resource-controls-r2/GB_to_DE_training_audit.json",
+          "sha256": "20f220afe90d79c255ebff4e308a6ce7cce7dc71bf9f04444dc95846cda4128e"
+        },
+        {
+          "member": "controls_r2/GB_to_US_training_audit.json",
+          "original": "results/resource-controls-r2/GB_to_US_training_audit.json",
+          "sha256": "20f220afe90d79c255ebff4e308a6ce7cce7dc71bf9f04444dc95846cda4128e"
+        },
+        {
+          "member": "controls_r2/US_to_DE_training_audit.json",
+          "original": "results/resource-controls-r2/US_to_DE_training_audit.json",
+          "sha256": "326f09023f934b4dcf7edb6e09df0f86d51ea97f526d1f85f7fb050363071a62"
+        },
+        {
+          "member": "controls_r2/US_to_GB_training_audit.json",
+          "original": "results/resource-controls-r2/US_to_GB_training_audit.json",
+          "sha256": "326f09023f934b4dcf7edb6e09df0f86d51ea97f526d1f85f7fb050363071a62"
+        },
+        {
+          "member": "issued_A/DE+GB_to_US_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/DE+GB_to_US_training_audit.json",
+          "sha256": "97927e32483473672f1f8b00783413ffbe78296bd5dfc22a60bf681617812a17"
+        },
+        {
+          "member": "issued_A/DE+US_to_GB_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/DE+US_to_GB_training_audit.json",
+          "sha256": "ee3f56f5361bb6a7d8dc977d64d9f150d65d31cbec69d96756c32b5ce363bae0"
+        },
+        {
+          "member": "issued_A/DE_to_GB_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/DE_to_GB_training_audit.json",
+          "sha256": "3b3c4a88de421eed7b2bd19f71d2f4c0fe835051b041f2d05a2f093332d6dd5d"
+        },
+        {
+          "member": "issued_A/DE_to_US_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/DE_to_US_training_audit.json",
+          "sha256": "3b3c4a88de421eed7b2bd19f71d2f4c0fe835051b041f2d05a2f093332d6dd5d"
+        },
+        {
+          "member": "issued_A/GB+US_to_DE_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/GB+US_to_DE_training_audit.json",
+          "sha256": "850f11814fa5c43ba1b32b96e491d60972c49acf3f73553a31404e1437a8d280"
+        },
+        {
+          "member": "issued_A/GB_to_DE_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/GB_to_DE_training_audit.json",
+          "sha256": "51a4aab2cc621ece052d52a7c9de09b0fc291d6f865d897d1defbcddb7183829"
+        },
+        {
+          "member": "issued_A/GB_to_US_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/GB_to_US_training_audit.json",
+          "sha256": "51a4aab2cc621ece052d52a7c9de09b0fc291d6f865d897d1defbcddb7183829"
+        },
+        {
+          "member": "issued_A/US_to_DE_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/US_to_DE_training_audit.json",
+          "sha256": "2f7bd56156cb91528fb07484c5541657ec71291d35d8b0f277faad89d0d2b300"
+        },
+        {
+          "member": "issued_A/US_to_GB_training_audit.json",
+          "original": "results/resource-source-issued_matched-r3/US_to_GB_training_audit.json",
+          "sha256": "2f7bd56156cb91528fb07484c5541657ec71291d35d8b0f277faad89d0d2b300"
+        },
+        {
+          "member": "observed_B/DE+GB_to_US_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/DE+GB_to_US_training_audit.json",
+          "sha256": "a87692783cb2c858e0d8f6fddc0c22feca59fb3faf732b757088b6cce8023eae"
+        },
+        {
+          "member": "observed_B/DE+US_to_GB_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/DE+US_to_GB_training_audit.json",
+          "sha256": "5771e804b1a73377545c5bd316cf827c27d71e7b181e9c10a08257036e95716e"
+        },
+        {
+          "member": "observed_B/DE_to_GB_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/DE_to_GB_training_audit.json",
+          "sha256": "c29a67a60c27e5ce7a275f00b6f90445312f2fec7f7d5f514385fe82add397e1"
+        },
+        {
+          "member": "observed_B/DE_to_US_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/DE_to_US_training_audit.json",
+          "sha256": "c29a67a60c27e5ce7a275f00b6f90445312f2fec7f7d5f514385fe82add397e1"
+        },
+        {
+          "member": "observed_B/GB+US_to_DE_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/GB+US_to_DE_training_audit.json",
+          "sha256": "5a449b0684b5b11541533e19141ecfc3d382e82bd4f19de5726710108975c9b5"
+        },
+        {
+          "member": "observed_B/GB_to_DE_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/GB_to_DE_training_audit.json",
+          "sha256": "00d398ea3089211033e61d0b0e002693a4d335dd49a7b77ffe4dbfef4f298ddd"
+        },
+        {
+          "member": "observed_B/GB_to_US_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/GB_to_US_training_audit.json",
+          "sha256": "00d398ea3089211033e61d0b0e002693a4d335dd49a7b77ffe4dbfef4f298ddd"
+        },
+        {
+          "member": "observed_B/US_to_DE_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/US_to_DE_training_audit.json",
+          "sha256": "ba1bf1e9507f789e669ba20df1dedcb01cd57f61ec8835f2b6c72ca59b5fb1c6"
+        },
+        {
+          "member": "observed_B/US_to_GB_training_audit.json",
+          "original": "results/resource-source-observed_matched-r3/US_to_GB_training_audit.json",
+          "sha256": "ba1bf1e9507f789e669ba20df1dedcb01cd57f61ec8835f2b6c72ca59b5fb1c6"
+        },
+        {
+          "member": "expanded_C/DE+GB_to_US_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/DE+GB_to_US_training_audit.json",
+          "sha256": "55359dcdede98cad9a2d3391beb711d94f44a3d3d53bcfea55284818081ed055"
+        },
+        {
+          "member": "expanded_C/DE+US_to_GB_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/DE+US_to_GB_training_audit.json",
+          "sha256": "6d8ad5752cce650ac5e95b4181e6384bfa17386f7091781a225597a968123c56"
+        },
+        {
+          "member": "expanded_C/DE_to_GB_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_GB_training_audit.json",
+          "sha256": "d419623acda9efcdb4e12bde0dca21ea9d4067c549d46fe372a6cd75b674346d"
+        },
+        {
+          "member": "expanded_C/DE_to_US_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/DE_to_US_training_audit.json",
+          "sha256": "d419623acda9efcdb4e12bde0dca21ea9d4067c549d46fe372a6cd75b674346d"
+        },
+        {
+          "member": "expanded_C/GB+US_to_DE_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/GB+US_to_DE_training_audit.json",
+          "sha256": "8fe2ebfa3710fb44f315227dfbb83afa9b18bb193c26352d8987896e034f1aae"
+        },
+        {
+          "member": "expanded_C/GB_to_DE_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_DE_training_audit.json",
+          "sha256": "8ca318080b4eded8804a343c415a1caa9a263707a74178a5132fb8a79c874d42"
+        },
+        {
+          "member": "expanded_C/GB_to_US_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/GB_to_US_training_audit.json",
+          "sha256": "8ca318080b4eded8804a343c415a1caa9a263707a74178a5132fb8a79c874d42"
+        },
+        {
+          "member": "expanded_C/US_to_DE_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/US_to_DE_training_audit.json",
+          "sha256": "f3ef18a5e3b6eeec10c962a777ca947e7e1ab77f614abefd01fa884c7a062a63"
+        },
+        {
+          "member": "expanded_C/US_to_GB_training_audit.json",
+          "original": "results/resource-source-observed_expanded-r3/US_to_GB_training_audit.json",
+          "sha256": "f3ef18a5e3b6eeec10c962a777ca947e7e1ab77f614abefd01fa884c7a062a63"
+        }
+      ]
+    },
+    {
+      "file": "source_weather_assets.tar.gz",
+      "sha256": "fe13c44271b16ab0e26a869ff1a85d355255edde7974aacd602779b5e6662c64",
+      "members": [
+        {
+          "member": "expanded_observed/cohort.csv",
+          "original": "results/source-observed-weather-2022-r1/cohort.csv",
+          "sha256": "649bea42e090f22c8cf55d9c3af1a4efddc8fbe3840ecc9f2b020140a475b53a"
+        },
+        {
+          "member": "expanded_observed/cohort_audit.json",
+          "original": "results/source-observed-weather-2022-r1/cohort_audit.json",
+          "sha256": "2644c0c16fb59447b54bd82786327e33dafc1cde099500905451f0e13de2cbeb"
+        },
+        {
+          "member": "expanded_observed/manifest.json",
+          "original": "results/source-observed-weather-2022-r1/manifest.json",
+          "sha256": "dfe2a4c536bbed7eaa5bfef1b341cdb86e5c5aa2fc77be80431a915929068554"
+        },
+        {
+          "member": "expanded_observed/plan.json",
+          "original": "results/source-observed-weather-2022-r1/plan.json",
+          "sha256": "86f428465f02efa5d3f3505144ba8b9cccf22b1cb2fe286bd2b18780f84c12ab"
+        },
+        {
+          "member": "expanded_observed/weather/BPAT/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/BPAT/receipt.json",
+          "sha256": "1cb90fac1da41e04c4883b964cf9515561ed2da43be25050c6805bc284a6bbd4"
+        },
+        {
+          "member": "expanded_observed/weather/BPAT/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/BPAT/response.json",
+          "sha256": "aa0add0867191650e58b74fef46a5ec7850f468f25eeb7d7af413de4b8d6a6d5"
+        },
+        {
+          "member": "expanded_observed/weather/CISO/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/CISO/receipt.json",
+          "sha256": "afd30b53e5d628f554f6694ef74fa4b88d005886d4ebaf2c17457a5920b6bb11"
+        },
+        {
+          "member": "expanded_observed/weather/CISO/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/CISO/response.json",
+          "sha256": "f4f0ca7614dc78f1b5ecf8a70cb373dae83bfec60267cbb2fbc03e757eb5cb2a"
+        },
+        {
+          "member": "expanded_observed/weather/DE/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/DE/receipt.json",
+          "sha256": "4a7503eb977c51b8a4e3132a42d6b7bdce352a1a9c0fe13eb80be316c42919b0"
+        },
+        {
+          "member": "expanded_observed/weather/DE/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/DE/response.json",
+          "sha256": "c67707453e77b93e4422f911a6654692580e9cb1b600520d96b045b5de8952c7"
+        },
+        {
+          "member": "expanded_observed/weather/ERCO/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/ERCO/receipt.json",
+          "sha256": "18d424bc1d6090293ae6451756bb2786ac05053921b1068f47d6a102e2adedec"
+        },
+        {
+          "member": "expanded_observed/weather/ERCO/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/ERCO/response.json",
+          "sha256": "0b1cad39272d9761fa10dcc3925831903a5fdf3f1eb34d55705f9951c0860c30"
+        },
+        {
+          "member": "expanded_observed/weather/FPL/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/FPL/receipt.json",
+          "sha256": "b9e18452bec5dfb78717c419b53b89c8890580c0639f813e33fe497fa405403d"
+        },
+        {
+          "member": "expanded_observed/weather/FPL/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/FPL/response.json",
+          "sha256": "6b5b2437a1b8e386e5dc8f40754bd82de16676e0e5e58fdd141c3d1ca720b6f5"
+        },
+        {
+          "member": "expanded_observed/weather/GB/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/GB/receipt.json",
+          "sha256": "72a4570ec1151cb6c02b3c51abd3d7051d8e8b16e151a0e0ff70983025f88b47"
+        },
+        {
+          "member": "expanded_observed/weather/GB/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/GB/response.json",
+          "sha256": "51ac820df68ca77a4d8011fa8de1e315bfabf5df64132878c53343e4b3e8370c"
+        },
+        {
+          "member": "expanded_observed/weather/ISNE/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/ISNE/receipt.json",
+          "sha256": "cfae4664f4629f5fb267ae862a63c9da2c2cc6fd823a6333e68a987f9710df1b"
+        },
+        {
+          "member": "expanded_observed/weather/ISNE/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/ISNE/response.json",
+          "sha256": "5a862ef81a95142fc20f18aa3d86052890c382173fc8f630111641e6147a3c47"
+        },
+        {
+          "member": "expanded_observed/weather/MISO/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/MISO/receipt.json",
+          "sha256": "2bd1a3e1c2785df60f97a6a34e29f28bfb72328e5d7b905a0df80851a25f5c43"
+        },
+        {
+          "member": "expanded_observed/weather/MISO/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/MISO/response.json",
+          "sha256": "10b915255be44be32e13c6eac12ce489521253c71237d6b7c44d285906bd71e3"
+        },
+        {
+          "member": "expanded_observed/weather/NYIS/receipt.json",
+          "original": "results/source-observed-weather-2022-r1/weather/NYIS/receipt.json",
+          "sha256": "66bab455c37be8d984040c120fc29b50da3315a0f38a9ae834be2f104af442d5"
+        },
+        {
+          "member": "expanded_observed/weather/NYIS/response.json",
+          "original": "results/source-observed-weather-2022-r1/weather/NYIS/response.json",
+          "sha256": "fd12f30b9521293846675c498bbf6bc8c62ce600a480d30f128f16564df9eca3"
+        },
+        {
+          "member": "matched_observed/cohort.csv",
+          "original": "results/source-observed-weather-matched-r1/cohort.csv",
+          "sha256": "b490ccda019a8d9e149b778322d27aa913f119a766d4b8cb8bf46c44dbb17a54"
+        },
+        {
+          "member": "matched_observed/manifest.json",
+          "original": "results/source-observed-weather-matched-r1/manifest.json",
+          "sha256": "e60e8852be8cadd768618cedceb9dfa6ed6583048b8c39c04f618a44e74a4132"
+        },
+        {
+          "member": "saturated_reference/annual_curve.csv",
+          "original": "results/resource-saturated-reference-r1/annual_curve.csv",
+          "sha256": "3825f2eacb9662e345191b3c38322b18fcbf4d7434c00cc1534d528d3eb46180"
+        },
+        {
+          "member": "saturated_reference/climatology.csv",
+          "original": "results/resource-saturated-reference-r1/climatology.csv",
+          "sha256": "a59456d2e0daa5cfe4acf88553dcdfc2af0b81482f6bc81b18eab82bcee5fd01"
+        },
+        {
+          "member": "saturated_reference/manifest.json",
+          "original": "results/resource-saturated-reference-r1/manifest.json",
+          "sha256": "025a05eddcc786882e214835930e60d81fbf1f0c4f33c7579922d2ee40af8fcb"
+        }
+      ]
+    },
+    {
+      "file": "comparison/portable_review.json",
+      "sha256": "d056eb8a48bf259756b2df6dc33cf57e4059f9058211bdebc320d4fd67804ba3",
+      "original": "results/resource-source-comparison-r3/portable_review.json",
+      "original_sha256": "d056eb8a48bf259756b2df6dc33cf57e4059f9058211bdebc320d4fd67804ba3"
+    },
+    {
+      "file": "README.md",
+      "sha256": "d434070f67da2175e25387abb18fa9e0b4c2e273e88cbddebbec89b6164ee2fb",
+      "original": "docs/evidence/resource-response-development-r2-r3/README.md",
+      "original_sha256": "d434070f67da2175e25387abb18fa9e0b4c2e273e88cbddebbec89b6164ee2fb"
+    }
+  ],
+  "scope": "All four-run point/interval forecasts and evaluation labels are portable; 216 selected member arrays support raw CRPS recomputation for each run HGB-weather and C HGB-no-weather/RF-weather. Other methods full raw CRPS was independently recomputed from locally sealed full members and is not all included here. No full fitted models or original country energy/GFS caches included. This is a compact interim research evidence package, not a full clean-machine training release.",
+  "frozen_models_available_locally": "See each original results/* model_seal.json and *_heads.joblib. Models remain unmodified.",
+  "inherited_baseline_members": {
+    "path": "docs/evidence/resource-amplitudes-r1/members.tar.gz",
+    "sha256": "974bc3bd2de13b48af1915f8de2db9824c51a5313e9bdf2f273bbaf0a074ee85",
+    "note": "R3 joint_original and cube_weather_wind_solar match original joint_original and weather_wind_solar respectively; three-branch identities verified independently."
+  },
+  "selected_member_arrays": 216,
+  "unique_target_hours": 624,
+  "source_candidate_hours_C": 35448,
+  "source_region_days_C": 1477,
+  "original_public_weather_availability_certified": false,
+  "new_country_opened": false,
+  "adaptive_development": true
+}

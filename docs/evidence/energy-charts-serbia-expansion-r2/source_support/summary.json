@@ -1,0 +1,50 @@
+{
+  "experiment": "coordinate-wise Chinese public feature range diagnostic",
+  "source_year": 2022,
+  "china_inputs": "31-province NBS public inference feature snapshot, t−2=2026-09",
+  "coordinates": [
+    "thermal",
+    "nuclear",
+    "hydro",
+    "wind",
+    "solar",
+    "thermal_mean",
+    "thermal_std",
+    "thermal_change",
+    "total_cv"
+  ],
+  "metric": "province is outside if any forecast-hour coordinate is outside source min/max",
+  "scope_limit": "univariate min/max only; not joint support, accuracy, or coverage",
+  "cohorts": {
+    "five_country_source": {
+      "training_rows": 36719,
+      "provinces_outside_any_of_nine_coordinates": 19,
+      "out_by_feature": {
+        "thermal": 3,
+        "nuclear": 0,
+        "hydro": 3,
+        "wind": 13,
+        "solar": 2,
+        "thermal_mean": 4,
+        "thermal_std": 0,
+        "thermal_change": 2,
+        "total_cv": 11
+      }
+    },
+    "six_country_source": {
+      "training_rows": 41084,
+      "provinces_outside_any_of_nine_coordinates": 13,
+      "out_by_feature": {
+        "thermal": 3,
+        "nuclear": 0,
+        "hydro": 3,
+        "wind": 1,
+        "solar": 2,
+        "thermal_mean": 4,
+        "thermal_std": 0,
+        "thermal_change": 0,
+        "total_cv": 11
+      }
+    }
+  }
+}

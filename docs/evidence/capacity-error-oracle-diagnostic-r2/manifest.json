@@ -1,0 +1,27 @@
+[
+  {
+    "source": "results/capacity-error-oracle-diagnostic-r2/country_oracle_diagnostics.csv",
+    "file": "country_oracle_diagnostics.csv",
+    "sha256": "749200a2d49994b65d67aac87aec7068fa4129ab3389d19bab6313a9fcaa672f"
+  },
+  {
+    "source": "results/capacity-error-oracle-diagnostic-r2/audit.json",
+    "file": "audit.json",
+    "sha256": "6f04b0f1196e13aa70505f8a296d83b4eee768e1171efe5d7223da2730ef4264"
+  },
+  {
+    "source": "results/capacity-error-oracle-diagnostic-r2/cohorts.csv",
+    "file": "cohorts.csv",
+    "sha256": "1904df375bf8d536f10fba0ff24f9ff6910fa6d818bbfc884ed97bd2670cc308"
+  },
+  {
+    "source": "results/capacity-error-oracle-diagnostic-r2/monthly_oracle_diagnostics.csv",
+    "file": "monthly_oracle_diagnostics.csv",
+    "sha256": "81064555fcc8ad1f5557f84250eea9353da9a87c25af4733ea541cace6470432"
+  },
+  {
+    "source": "scripts/diagnose_capacity_errors.py",
+    "file": "diagnose_capacity_errors.py",
+    "sha256": "1e694fe1aa224a31a97c5464fc26512ecda38f10301543eb30c9322fd6120405"
+  }
+]

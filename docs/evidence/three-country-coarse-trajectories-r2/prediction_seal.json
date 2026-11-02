@@ -1,0 +1,218 @@
+[
+  {
+    "path": "GB_to_DE_DE_monthly.npz",
+    "sha256": "1806f6de598ab10fe7c04d4a5f4f223870418f9d78290d854b39f8e8de53fa12"
+  },
+  {
+    "path": "GB_to_DE_DE_capacity.npz",
+    "sha256": "738b2139dcd443ebe9f2d6693a025ad36152fef712238423b85f78e63969f542"
+  },
+  {
+    "path": "US_to_DE_DE_monthly.npz",
+    "sha256": "fef63c64f6a696b157e68dbc7cb86635c12ffa4b095499624db1b70ac50402f4"
+  },
+  {
+    "path": "US_to_DE_DE_capacity.npz",
+    "sha256": "e2f15187e13513d7b4eb2c74984d76b663585c116d17d85f7f3df2ca72490fe5"
+  },
+  {
+    "path": "GB+US_to_DE_DE_monthly.npz",
+    "sha256": "021790990d13b81af274df4d13bcef9308ca310568868d3d320eb1fe908b745b"
+  },
+  {
+    "path": "GB+US_to_DE_DE_capacity.npz",
+    "sha256": "6ae05375377a04f4cc7c445492e4dad1d1d1db5f53758cceebca623bf240a56c"
+  },
+  {
+    "path": "DE_to_GB_GB_monthly.npz",
+    "sha256": "7851b9dfb54bd6cb4c5dc276a7daa0de9ac2a4515b21da50fa007467189b76f9"
+  },
+  {
+    "path": "DE_to_GB_GB_capacity.npz",
+    "sha256": "fa61669f198375cdd10aafd5de0d6698b5336e60a775a884d93ec0fc9d8b23da"
+  },
+  {
+    "path": "US_to_GB_GB_monthly.npz",
+    "sha256": "5a761f090b0b6296826cba545e3a473fef5a3988deb04ca41633ba17338f6da3"
+  },
+  {
+    "path": "US_to_GB_GB_capacity.npz",
+    "sha256": "1c0accb508d5af75af7b7ab840b81681f28cc0a11c177af7195062e1f0ab8eed"
+  },
+  {
+    "path": "DE+US_to_GB_GB_monthly.npz",
+    "sha256": "de782ea200714c4c64d88602fdb878883d16ca0b0d252a99fbefe1862c6771cb"
+  },
+  {
+    "path": "DE+US_to_GB_GB_capacity.npz",
+    "sha256": "98f5b77c8c63bada106f33ecd85aaa6107c68cbb41a011f6690bb238029ea912"
+  },
+  {
+    "path": "DE_to_US_BPAT_monthly.npz",
+    "sha256": "6f7c5d285b688d541b62ec493af556ff741780f7b17df4bbb976af52d831993c"
+  },
+  {
+    "path": "DE_to_US_BPAT_capacity.npz",
+    "sha256": "77517064addf0b92e55ddfddc938923522f8c24c4d65c454c7a1f4c79117410c"
+  },
+  {
+    "path": "DE_to_US_CISO_monthly.npz",
+    "sha256": "3ee8db4a3d9930c289141907b5f26b9a1be20b9f3810f6dab707c665129e3dd4"
+  },
+  {
+    "path": "DE_to_US_CISO_capacity.npz",
+    "sha256": "b27f84bc68febcf38922356fd9086c3632c9d0314914626cfe3e61827d50d1bf"
+  },
+  {
+    "path": "DE_to_US_ERCO_monthly.npz",
+    "sha256": "f64b5d1b0e6aff3918b1b751a3e134d92810fe80caed596f266d58c7d151d6c8"
+  },
+  {
+    "path": "DE_to_US_ERCO_capacity.npz",
+    "sha256": "1df20ba4eeb01bf96f1b1590ef01221b0bac6c124cd4f464f307843090acdcff"
+  },
+  {
+    "path": "DE_to_US_FPL_monthly.npz",
+    "sha256": "70449e56a82814e45e797758cf11fd3b563bb71c79105044fde755835b98869e"
+  },
+  {
+    "path": "DE_to_US_FPL_capacity.npz",
+    "sha256": "34895190fd35f90ea6ae4f76fc376e587b05d8ca00c73f9cf4a84033e77a9dc0"
+  },
+  {
+    "path": "DE_to_US_ISNE_monthly.npz",
+    "sha256": "91958ebad8e2bc1da36e9e95616528767ed68e9ffa7e794aca0dc769fd2fa163"
+  },
+  {
+    "path": "DE_to_US_ISNE_capacity.npz",
+    "sha256": "bb63e7986808e343f8a68513cd0ba88119b33dd7901a9b2ea82964593a064d03"
+  },
+  {
+    "path": "DE_to_US_MISO_monthly.npz",
+    "sha256": "cd8ad6309a2d8bce80ec6e9b811d1c113fcde278dbd644b324b3bfaab0447792"
+  },
+  {
+    "path": "DE_to_US_MISO_capacity.npz",
+    "sha256": "4bbc675a2cde5f4a0158acc661c37c1564d2e16d1ff6240c2b428ac37a895ed2"
+  },
+  {
+    "path": "DE_to_US_NYIS_monthly.npz",
+    "sha256": "7eadafecae7d8ae0cb9352b40d687b26408a2277bd98a5b9606ebaedcfaa9ba9"
+  },
+  {
+    "path": "DE_to_US_NYIS_capacity.npz",
+    "sha256": "15a931c7f0eb96bfe0a1a2a1ecf8cff916c3cb2b1878da694e1a35887e6b9966"
+  },
+  {
+    "path": "GB_to_US_BPAT_monthly.npz",
+    "sha256": "5818f94908373277f7ce0328e2b9e1ed813a9dd80737120749062a2ccd4c8fdf"
+  },
+  {
+    "path": "GB_to_US_BPAT_capacity.npz",
+    "sha256": "b9387f09ed5f2352801208d5e401c9903df81cdd09bc05ace6dc684ad3f073a5"
+  },
+  {
+    "path": "GB_to_US_CISO_monthly.npz",
+    "sha256": "d763474f6662f6ebbf1fe28d7ff1c2e4c517c3b2f92a64f2977da798e02e44dc"
+  },
+  {
+    "path": "GB_to_US_CISO_capacity.npz",
+    "sha256": "94ac2d8361c74bb80a0cf793c13413d651a48c5429ce1f6197a324e357c1572a"
+  },
+  {
+    "path": "GB_to_US_ERCO_monthly.npz",
+    "sha256": "cf58e4b315f4eb4984f7895c170e77b68d3659d1285c5ec5c4e2b3c1804fa870"
+  },
+  {
+    "path": "GB_to_US_ERCO_capacity.npz",
+    "sha256": "e8a24a4e83f0a133f955a0312fadff15ff0a864090c6b3e39bf2e13391c027af"
+  },
+  {
+    "path": "GB_to_US_FPL_monthly.npz",
+    "sha256": "926f35071c2e28749db16ef8b456f1639e13303341ccce1d0941a74b0f0484c9"
+  },
+  {
+    "path": "GB_to_US_FPL_capacity.npz",
+    "sha256": "b159cb5c73305fd630c5f144c4f8ce053ee2f751d216d7b0af7432618b83ce26"
+  },
+  {
+    "path": "GB_to_US_ISNE_monthly.npz",
+    "sha256": "98dceaf03b9bdb7937a5ad1b67b5a653aafe3d0dd6d51931ad3de6d1734a134d"
+  },
+  {
+    "path": "GB_to_US_ISNE_capacity.npz",
+    "sha256": "d2456d09f7dce39cdf2f87d742dae24b5ba053f10bd5acdd7e5ec816f7bd7eda"
+  },
+  {
+    "path": "GB_to_US_MISO_monthly.npz",
+    "sha256": "c417d33a57c42e10f607e19e984f84c0ef6f88592cde10685483d6dd825bd672"
+  },
+  {
+    "path": "GB_to_US_MISO_capacity.npz",
+    "sha256": "828c294a7da85dffef33110de0aa77978e26212be60fff8fd435031f1fb4b5e3"
+  },
+  {
+    "path": "GB_to_US_NYIS_monthly.npz",
+    "sha256": "3d6abd5767bb271dde3d00613f3236785a975cd69bc67bf0e10fedf5ee34157f"
+  },
+  {
+    "path": "GB_to_US_NYIS_capacity.npz",
+    "sha256": "9819ccbf93caec545b5664b9507f286ed227600edb513993a933c4a032345676"
+  },
+  {
+    "path": "DE+GB_to_US_BPAT_monthly.npz",
+    "sha256": "50ab613ce7eb9f67a56bc22a92415f261a58fa6807a2208c167a7d5038be7418"
+  },
+  {
+    "path": "DE+GB_to_US_BPAT_capacity.npz",
+    "sha256": "38e72bed50a7a6935ef5fec05a6f6895efffb217dbb965514db2e5b48ffd43fa"
+  },
+  {
+    "path": "DE+GB_to_US_CISO_monthly.npz",
+    "sha256": "370e68df839153d5ddeca66ead50796d4deeba7d9519d4a52abfef6765db7b3d"
+  },
+  {
+    "path": "DE+GB_to_US_CISO_capacity.npz",
+    "sha256": "d9bfce6c6fed3beee16a873c8848a0a132a8bdaddb583642972f7fc06db36ae2"
+  },
+  {
+    "path": "DE+GB_to_US_ERCO_monthly.npz",
+    "sha256": "c6d522423d88fd55c51c4373fd0724d635616593c97c6e8ca3b515827b86b296"
+  },
+  {
+    "path": "DE+GB_to_US_ERCO_capacity.npz",
+    "sha256": "63614d82ccc1ceda3037c32fa627bfa394618bc668ea4265c2fbde401e1a0251"
+  },
+  {
+    "path": "DE+GB_to_US_FPL_monthly.npz",
+    "sha256": "37bb4873004597a9dceb0e640b6531d2598ef4949e8af6a187566832aaadf595"
+  },
+  {
+    "path": "DE+GB_to_US_FPL_capacity.npz",
+    "sha256": "9b6f49a7406f3791ca1e91fe898616b4305a9e310ac6f7116aee5b19717f47b4"
+  },
+  {
+    "path": "DE+GB_to_US_ISNE_monthly.npz",
+    "sha256": "cbc06feebebe101661de6ded6c94a4701e5ecf548c292c390eeea945e4ff32f4"
+  },
+  {
+    "path": "DE+GB_to_US_ISNE_capacity.npz",
+    "sha256": "8b3c6245353dc28a221987374b97f4c9a7e4531c878bf127d49e5f543195716d"
+  },
+  {
+    "path": "DE+GB_to_US_MISO_monthly.npz",
+    "sha256": "cfcb8f200fcfbcfde2d853b774428a5cfbd47ff46d62742de99b8d8fc56e6930"
+  },
+  {
+    "path": "DE+GB_to_US_MISO_capacity.npz",
+    "sha256": "da8897930448d9ce599f42333ef36016c520d3a2e94d52ae75931224eadebd19"
+  },
+  {
+    "path": "DE+GB_to_US_NYIS_monthly.npz",
+    "sha256": "c7f541a4b2788316173cf384d424e7f5bb530ad28a4c1c43ffd767e8f8a805b6"
+  },
+  {
+    "path": "DE+GB_to_US_NYIS_capacity.npz",
+    "sha256": "7ab77a6a530c0fd7de65fc0b335c3cc77ab906601ff40fbf492feee0966871a5"
+  }
+]

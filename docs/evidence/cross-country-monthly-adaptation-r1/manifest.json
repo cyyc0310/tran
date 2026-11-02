@@ -1,0 +1,37 @@
+[
+  {
+    "source": "results/cross-country-monthly-adaptation-r1/common_country_metrics.csv",
+    "file": "common_country_metrics.csv",
+    "sha256": "d80b8bdd16e0b91187dfbbad05bb9612fea40975f115225e1943ca52f0709081"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r1/common_region_metrics.csv",
+    "file": "common_region_metrics.csv",
+    "sha256": "e72793bcd629333838e855a4d4ab32ca6d2acc768ffe884d69096691b03405a7"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r1/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "d6b3c64a606c8b764fd4dd0c2ced4a1acec1e8d0a9dee990bc5dc6131ad15b5e"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r1/coarse_forecasts.csv",
+    "file": "coarse_forecasts.csv",
+    "sha256": "d03649598f70d637c05841a978c664376629a7ae944e93cdb1aa90e55552c79f"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r1/provenance.json",
+    "file": "provenance.json",
+    "sha256": "29b8549abf310c32d124bc105b749e0cc81fef9e756b2e7e343f3b57e8afd958"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r1/startup_code_hashes.json",
+    "file": "startup_code_hashes.json",
+    "sha256": "f379e650e7c7f39991444f607d1762556febb974e3ef6f5ab6e896d4f520c48d"
+  },
+  {
+    "source": "results/cross-country-monthly-adaptation-r1/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "ab6e0c7b889203734cb7cb33c4711fbf6f10117f556de4b5d37fe8aafe5080f1"
+  }
+]

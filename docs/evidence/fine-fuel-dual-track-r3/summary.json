@@ -1,0 +1,224 @@
+{
+  "status": "DEVELOPMENT_FINE_FUEL_DUAL_TRACK",
+  "source_train_year": 2022,
+  "source_calibration_year": 2023,
+  "target_year": 2024,
+  "months": [
+    "2024-02",
+    "2024-04",
+    "2024-06"
+  ],
+  "tracks": [
+    "generation_proxy",
+    "consumption_official"
+  ],
+  "prediction_seals": [
+    {
+      "source": "US",
+      "target": "GB",
+      "track": "generation_proxy",
+      "path": "US_to_GB_generation_proxy_predictions.csv.gz",
+      "sha256": "809167b68e2b1805b5b713742b1750ba278f422b7db5673a2629a4cb35ac432f",
+      "rows": 2136
+    },
+    {
+      "source": "US",
+      "target": "GB",
+      "track": "consumption_official",
+      "path": "US_to_GB_consumption_official_predictions.csv.gz",
+      "sha256": "4b13a417d8c6420d360652513fc1eddc4d27d48311f0f68938adc53406262beb",
+      "rows": 2136
+    },
+    {
+      "source": "GB",
+      "target": "BPAT",
+      "track": "generation_proxy",
+      "path": "GB_to_BPAT_generation_proxy_predictions.csv.gz",
+      "sha256": "c77a0c9a22b6dfe945a05b49200ad2a1c3e8dbe74c5c641dfc4d927e94e37774",
+      "rows": 2136
+    },
+    {
+      "source": "GB",
+      "target": "BPAT",
+      "track": "consumption_official",
+      "path": "GB_to_BPAT_consumption_official_predictions.csv.gz",
+      "sha256": "930584557cff3a0062bb332a73fdaee49366fe78c83df22c7eff2caa93263b2a",
+      "rows": 2136
+    },
+    {
+      "source": "GB",
+      "target": "CISO",
+      "track": "generation_proxy",
+      "path": "GB_to_CISO_generation_proxy_predictions.csv.gz",
+      "sha256": "57cb38733549c6604658580c2f7cc3dd35bdb25e3d1399486fe5cc4a76bf42d7",
+      "rows": 2136
+    },
+    {
+      "source": "GB",
+      "target": "CISO",
+      "track": "consumption_official",
+      "path": "GB_to_CISO_consumption_official_predictions.csv.gz",
+      "sha256": "799742791d66da338586f7bc3687d335e6a2c4c47f831432193cc5346ce556e7",
+      "rows": 2136
+    },
+    {
+      "source": "GB",
+      "target": "ERCO",
+      "track": "generation_proxy",
+      "path": "GB_to_ERCO_generation_proxy_predictions.csv.gz",
+      "sha256": "c86d609a665f049572346070ff9f2d555bd87586dd5729937007214ae6872374",
+      "rows": 2131
+    },
+    {
+      "source": "GB",
+      "target": "ERCO",
+      "track": "consumption_official",
+      "path": "GB_to_ERCO_consumption_official_predictions.csv.gz",
+      "sha256": "bdcc6ea35faae4633486ae8c5168f814c92afd7818b86fdda54f58620c720586",
+      "rows": 2131
+    },
+    {
+      "source": "GB",
+      "target": "FPL",
+      "track": "generation_proxy",
+      "path": "GB_to_FPL_generation_proxy_predictions.csv.gz",
+      "sha256": "acbb57e920bb8ed804729e8354cc54c6839f0ccbfdca1b502f6fda87d78f7055",
+      "rows": 2088
+    },
+    {
+      "source": "GB",
+      "target": "FPL",
+      "track": "consumption_official",
+      "path": "GB_to_FPL_consumption_official_predictions.csv.gz",
+      "sha256": "0463fd3f3d634ec76ed6de2f56d46f8d35d456a5eeb6c7cecf46049cff2d583e",
+      "rows": 2088
+    },
+    {
+      "source": "GB",
+      "target": "ISNE",
+      "track": "generation_proxy",
+      "path": "GB_to_ISNE_generation_proxy_predictions.csv.gz",
+      "sha256": "5d51b1d13fc0afee18c034d90000da7ef6b6a9b637b17a166bc227ca4b17d250",
+      "rows": 2132
+    },
+    {
+      "source": "GB",
+      "target": "ISNE",
+      "track": "consumption_official",
+      "path": "GB_to_ISNE_consumption_official_predictions.csv.gz",
+      "sha256": "d40f395202324a20252a24a844f67b97c073b81d09899c7aea19c5a53877008a",
+      "rows": 2132
+    },
+    {
+      "source": "GB",
+      "target": "MISO",
+      "track": "generation_proxy",
+      "path": "GB_to_MISO_generation_proxy_predictions.csv.gz",
+      "sha256": "b272bd08f83cf8470f57dfc949e63ef199f7742a181acce145be4612efd97d39",
+      "rows": 2131
+    },
+    {
+      "source": "GB",
+      "target": "MISO",
+      "track": "consumption_official",
+      "path": "GB_to_MISO_consumption_official_predictions.csv.gz",
+      "sha256": "fbc09a524cb62d1d59d4b00fe5370a44613f724219a7628f5cfbbe964835ee23",
+      "rows": 2131
+    },
+    {
+      "source": "GB",
+      "target": "NYIS",
+      "track": "generation_proxy",
+      "path": "GB_to_NYIS_generation_proxy_predictions.csv.gz",
+      "sha256": "39014f7f4217d8011f728bd6cc4ed22f2556bbe2f355ff61178612cedc42dd2c",
+      "rows": 2136
+    },
+    {
+      "source": "GB",
+      "target": "NYIS",
+      "track": "consumption_official",
+      "path": "GB_to_NYIS_consumption_official_predictions.csv.gz",
+      "sha256": "33d5ea9df1632d8583b312fe5b07727f2bedafbe797d0f95d99a116d005bff02",
+      "rows": 2136
+    }
+  ],
+  "input_audit": {
+    "BPAT": {
+      "path": "results/research/data/BPAT_hourly.csv",
+      "raw_rows": 26296,
+      "valid_rows": 26016,
+      "calendar": "America/Los_Angeles",
+      "official_eia_timezone": "Pacific"
+    },
+    "CISO": {
+      "path": "results/research/data/CISO_hourly.csv",
+      "raw_rows": 26296,
+      "valid_rows": 26040,
+      "calendar": "America/Los_Angeles",
+      "official_eia_timezone": "Pacific"
+    },
+    "ERCO": {
+      "path": "results/research/data/ERCO_hourly.csv",
+      "raw_rows": 26298,
+      "valid_rows": 23520,
+      "calendar": "America/Chicago",
+      "official_eia_timezone": "Central"
+    },
+    "FPL": {
+      "path": "results/research/data/FPL_hourly.csv",
+      "raw_rows": 26299,
+      "valid_rows": 25128,
+      "calendar": "America/New_York",
+      "official_eia_timezone": "Eastern"
+    },
+    "ISNE": {
+      "path": "results/research/data/ISNE_hourly.csv",
+      "raw_rows": 26299,
+      "valid_rows": 22488,
+      "calendar": "America/New_York",
+      "official_eia_timezone": "Eastern"
+    },
+    "MISO": {
+      "path": "results/research/data/MISO_hourly.csv",
+      "raw_rows": 26299,
+      "valid_rows": 26184,
+      "calendar": "Etc/GMT+5",
+      "official_eia_timezone": "Eastern Standard"
+    },
+    "NYIS": {
+      "path": "results/research/data/NYIS_hourly.csv",
+      "raw_rows": 26299,
+      "valid_rows": 26184,
+      "calendar": "America/New_York",
+      "official_eia_timezone": "Eastern"
+    },
+    "GB": {
+      "path": "data/neso-gb/df_fuel_ckan.csv",
+      "valid_rows": 26304,
+      "calendar": "source naive clock; timezone not inferred",
+      "hourly_energy": "sum of two half-hour MW averages / 2",
+      "official_label_timezone": "UTC labels; local calendar Europe/London"
+    },
+    "US_official_consumption_labels": "EIA BA workbook fields; lb/kWh converted to g/kWh"
+  },
+  "target_label_hashes": {
+    "generation_proxy:GB": "103bc41ec970c1d58dab912cd1fae9df27afa0b869ebdd8ddb4d5db7840a704f",
+    "consumption_official:GB": "537ef7742a216ade61cdad0a76f368231c05fe30e4909a468a389372c39c45cb",
+    "generation_proxy:BPAT": "8fc4377a7e37dd3ace5d84062fab8ab923760f3deb99ec634d84cfae649add9a",
+    "consumption_official:BPAT": "cdda28a8ff317fe89c01f05b9dfa7692b086f2a988a2c2c6d95bc4e2213d9589",
+    "generation_proxy:CISO": "f1d69e13d35cc7c496532905a8a414e8f3e68e8c12ebd3394bdbc026db0b0caa",
+    "consumption_official:CISO": "332aed6075689d8c28902e9dbaf6ea7f3c1003908b3bee1d781d6edda736ceed",
+    "generation_proxy:ERCO": "e5d8cb8757f07e2a46f8a22d72e0bfc704c6ce3848196113559881dd7f47d925",
+    "consumption_official:ERCO": "d48bff4c63288e9f482d82e47f6ae1cc5d8ce8071ec5ec3730cd5ce8f7034dd1",
+    "generation_proxy:FPL": "5c0346cbafc08b73556c62baf4014c193fb8657bf9fcde4d194fb3818e3933e6",
+    "consumption_official:FPL": "ac4284cff916b095f93cdc3c0ce0a3b57c30becfab84a190a476ce35e382196c",
+    "generation_proxy:ISNE": "f30cb202d839100352fd7aa81283a19ba3973cf07d754ab891d674644c4c0747",
+    "consumption_official:ISNE": "331c60d0b53c81acbe74716e18b189bcfd398d0464647748e216ed9c035d8210",
+    "generation_proxy:MISO": "edc5d1b9fad671ae43bed234140eb146295e832cf4e2ac9e11f6b55a2279397d",
+    "consumption_official:MISO": "184387fde3f67146ade247a2f73d9c6b63e99299380a5ccb48f229b3eea926e0",
+    "generation_proxy:NYIS": "2146d06400707f9973baf75cf3a98ce5b38b02ff9b5f202657d310a8186c123f",
+    "consumption_official:NYIS": "190766a55915609095963492371f746df106a92fc87889b9bf2809f2a265c014"
+  },
+  "target_is_unseen": false,
+  "MplusF_is_china_budget": false
+}

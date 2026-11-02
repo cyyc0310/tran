@@ -1,0 +1,117 @@
+[
+  {
+    "source": "results/three-country-support-free-repaired-r1/DE+GB_to_US_metadata.json",
+    "file": "DE+GB_to_US_metadata.json",
+    "sha256": "b82fc299511fb26b395ea8786ffad86686892b94eb8b686d886f920fa5dc814c"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/DE+US_to_GB_metadata.json",
+    "file": "DE+US_to_GB_metadata.json",
+    "sha256": "aa5606f9d3b671508c44db0f22026bcde07ea57a3ded01e570c113f61784288a"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/DE_to_GB_metadata.json",
+    "file": "DE_to_GB_metadata.json",
+    "sha256": "ec1347010407bf7c8a5908b5cd542e5edcc086dff28b526424fe60ce5083bd43"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/DE_to_US_metadata.json",
+    "file": "DE_to_US_metadata.json",
+    "sha256": "fb948f557f091e1d05b9cafc1e51f48d5ed053565d39b3581dc5d2fbae09ff89"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/GB+US_to_DE_metadata.json",
+    "file": "GB+US_to_DE_metadata.json",
+    "sha256": "9e8b4bd5d3a9aea9f9a6df3476bab4b032d86e8dcbc435f227ebc8133a87eb9a"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/GB_to_DE_metadata.json",
+    "file": "GB_to_DE_metadata.json",
+    "sha256": "5ae7d7eade1de9e62dcde9a249b55583c4a5c63ef3113cf82023949139e356bc"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/GB_to_US_metadata.json",
+    "file": "GB_to_US_metadata.json",
+    "sha256": "e15c8b618d5e45263a1aeca805921d5ee890eacd7ea660b4bc35fbe16d4469d9"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/US_to_DE_metadata.json",
+    "file": "US_to_DE_metadata.json",
+    "sha256": "c21a97952c7bb4e2113f705fa350b6689a201f8e5a5700c34993d9121550f3c6"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/US_to_GB_metadata.json",
+    "file": "US_to_GB_metadata.json",
+    "sha256": "2a1c10f63bec37debd345f2bd2920ef0dfbeedcc15c6cf1c61ed5b282afa3a7a"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/input_audit.json",
+    "file": "input_audit.json",
+    "sha256": "5da27a0bf00b12acdbdfa6e9f1bc5682ff6c20d430dcb443e808dac1dc29077e"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/pool_layout.json",
+    "file": "pool_layout.json",
+    "sha256": "48a1caf20e9476b918e01d05813f291063e58f2312092d76d50d071d83d496c4"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "7c714c0eeb361808d46a3de0f8643c7fed13af687cb7f38bec3a91a0b7ec0144"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/provenance.json",
+    "file": "provenance.json",
+    "sha256": "51b8bbc1f0c772339ca27f1a13df40cd0dd07d3e641f4ab562e22c4941de5bc2"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/startup_code_hashes.json",
+    "file": "startup_code_hashes.json",
+    "sha256": "d19a5548525fde37f9bccaeada7d8f1822f7df552956b2c3b5f6899f38493bd1"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/country_metrics.csv",
+    "file": "country_metrics.csv",
+    "sha256": "6765cd0a1bc0dd1156e608a034b12ffab68085703285dc2215dbd67656414712"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "562607d84f6757663d44b2589cb9b8e53f0cf15c271335f8adfaf51b4e89f2a7"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/region_metrics.csv",
+    "file": "region_metrics.csv",
+    "sha256": "efe128d96be0bdd4d1d450e52b3297dcb27686ab778f59676af916ba048d8615"
+  },
+  {
+    "source": "results/three-country-support-free-repaired-r1/cohorts.csv",
+    "file": "cohorts.csv",
+    "sha256": "4277e25d8d970954a911a7d002c4babd0e5a2b8f6df290135fa36b51edbd1b04"
+  },
+  {
+    "source": "scripts/run_three_country.py",
+    "file": "code/run_three_country.py",
+    "sha256": "c7136416380b3871adeef6d0389e43ecdaeb69f73f6002816d5d882bc35d99d3"
+  },
+  {
+    "source": "scripts/recover_source_months.py",
+    "file": "code/recover_source_months.py",
+    "sha256": "57188712fe011ad1db56a4b08d04aefbccb6f7b8158f602220a8d12b8da5657c"
+  },
+  {
+    "source": "src/transcif/research/source_support.py",
+    "file": "code/source_support.py",
+    "sha256": "2f3f0813cb945e0e26306ff95ff0169618d220d804fd7925482c69dae3bb8b44"
+  },
+  {
+    "source": "src/transcif/research/proxy_recovery.py",
+    "file": "code/proxy_recovery.py",
+    "sha256": "d2ff3fa0a76a5023dd88976858a7145b3d6f024e15aac01ae9d0947efb288909"
+  },
+  {
+    "source": "docs/SOURCE_CALIBRATION_RECOVERY_PROTOCOL.md",
+    "file": "code/SOURCE_CALIBRATION_RECOVERY_PROTOCOL.md",
+    "sha256": "9dade82a09a221f4082c1fbcc0da91fdb912ac326cb02a1c4472934e45edd0d2"
+  }
+]

@@ -1,0 +1,1063 @@
+{
+  "schema": "COARSE_WEATHER_SHAPE_EVIDENCE_V1",
+  "adaptive_development": true,
+  "new_country_opened": false,
+  "unique_target_hours": 624,
+  "source_training_hours": 1200,
+  "source_calibration_hours": 576,
+  "original_public_weather_availability_certified": false,
+  "portable_scope": "Original predictions, source calibration radii, raw particles, labels and scores can be independently rescored. Source heads and matched banks included. Full input/code seals retain original absolute paths; not a clean-machine full-native retraining package. Full-source extra-label reference banks and all native GFS caches are outside this package; see prior evidence and local sealed paths. Post-hoc oracles use future truth and are not predictions. Climate probe is separate, not a fitted CIF experiment.",
+  "files": [
+    {
+      "file": "results/DE+GB_to_US_crossfit_audit.json",
+      "sha256": "6c7d446e41e91de33d1b7569f4491829965875ff378b14332b77d7e01120f44f",
+      "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_crossfit_audit.json",
+      "original_sha256": "6c7d446e41e91de33d1b7569f4491829965875ff378b14332b77d7e01120f44f"
+    },
+    {
+      "file": "results/DE+US_to_GB_crossfit_audit.json",
+      "sha256": "d7e898f12f4bf6b8d59954d61c6024225371c090396ba6b953fae65a33a38be7",
+      "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_crossfit_audit.json",
+      "original_sha256": "d7e898f12f4bf6b8d59954d61c6024225371c090396ba6b953fae65a33a38be7"
+    },
+    {
+      "file": "results/DE_to_GB_crossfit_audit.json",
+      "sha256": "f4a4d53434b450925b764270516ed6996b3ca01fa40b441252385230e248d77c",
+      "original": "results/coarse-weather-shapes-r1/DE_to_GB_crossfit_audit.json",
+      "original_sha256": "f4a4d53434b450925b764270516ed6996b3ca01fa40b441252385230e248d77c"
+    },
+    {
+      "file": "results/DE_to_US_crossfit_audit.json",
+      "sha256": "f4a4d53434b450925b764270516ed6996b3ca01fa40b441252385230e248d77c",
+      "original": "results/coarse-weather-shapes-r1/DE_to_US_crossfit_audit.json",
+      "original_sha256": "f4a4d53434b450925b764270516ed6996b3ca01fa40b441252385230e248d77c"
+    },
+    {
+      "file": "results/GB+US_to_DE_crossfit_audit.json",
+      "sha256": "d7e898f12f4bf6b8d59954d61c6024225371c090396ba6b953fae65a33a38be7",
+      "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_crossfit_audit.json",
+      "original_sha256": "d7e898f12f4bf6b8d59954d61c6024225371c090396ba6b953fae65a33a38be7"
+    },
+    {
+      "file": "results/GB_to_DE_crossfit_audit.json",
+      "sha256": "f4a4d53434b450925b764270516ed6996b3ca01fa40b441252385230e248d77c",
+      "original": "results/coarse-weather-shapes-r1/GB_to_DE_crossfit_audit.json",
+      "original_sha256": "f4a4d53434b450925b764270516ed6996b3ca01fa40b441252385230e248d77c"
+    },
+    {
+      "file": "results/GB_to_US_crossfit_audit.json",
+      "sha256": "f4a4d53434b450925b764270516ed6996b3ca01fa40b441252385230e248d77c",
+      "original": "results/coarse-weather-shapes-r1/GB_to_US_crossfit_audit.json",
+      "original_sha256": "f4a4d53434b450925b764270516ed6996b3ca01fa40b441252385230e248d77c"
+    },
+    {
+      "file": "results/US_to_DE_crossfit_audit.json",
+      "sha256": "d26ae9091fbd4469d3248d06e9b461ea83cbea356b8485d409bed7f8aacd5591",
+      "original": "results/coarse-weather-shapes-r1/US_to_DE_crossfit_audit.json",
+      "original_sha256": "d26ae9091fbd4469d3248d06e9b461ea83cbea356b8485d409bed7f8aacd5591"
+    },
+    {
+      "file": "results/US_to_GB_crossfit_audit.json",
+      "sha256": "d26ae9091fbd4469d3248d06e9b461ea83cbea356b8485d409bed7f8aacd5591",
+      "original": "results/coarse-weather-shapes-r1/US_to_GB_crossfit_audit.json",
+      "original_sha256": "d26ae9091fbd4469d3248d06e9b461ea83cbea356b8485d409bed7f8aacd5591"
+    },
+    {
+      "file": "results/calibration.json",
+      "sha256": "fa6413fd6d5ffb09f7176af437a0587ac153adaf7a7b496e06e118f3cab1d364",
+      "original": "results/coarse-weather-shapes-r1/calibration.json",
+      "original_sha256": "fa6413fd6d5ffb09f7176af437a0587ac153adaf7a7b496e06e118f3cab1d364"
+    },
+    {
+      "file": "results/completion.json",
+      "sha256": "5ff788f36fd3248d9b58533fbbaec69008fbc86d5efcd1227d223407ca66c5be",
+      "original": "results/coarse-weather-shapes-r1/completion.json",
+      "original_sha256": "5ff788f36fd3248d9b58533fbbaec69008fbc86d5efcd1227d223407ca66c5be"
+    },
+    {
+      "file": "results/extra_label_reference_crps.json",
+      "sha256": "e243c8d4b7230d8d147ec30928680003ddee7f6103b41251c53edcadbe960d9a",
+      "original": "results/coarse-weather-shapes-r1/extra_label_reference_crps.json",
+      "original_sha256": "e243c8d4b7230d8d147ec30928680003ddee7f6103b41251c53edcadbe960d9a"
+    },
+    {
+      "file": "results/independent_review.json",
+      "sha256": "00c9dfd8943365a173791e5473c964f567ab0c3a0bbe3eacaaf6ba4ce61e7d96",
+      "original": "results/coarse-weather-shapes-r1/independent_review.json",
+      "original_sha256": "00c9dfd8943365a173791e5473c964f567ab0c3a0bbe3eacaaf6ba4ce61e7d96"
+    },
+    {
+      "file": "results/input_code_seal.json",
+      "sha256": "d8b186a72bb5f123c0127e45cb3453b6b41870f50b96aba43d17d843e3a8eaed",
+      "original": "results/coarse-weather-shapes-r1/input_code_seal.json",
+      "original_sha256": "d8b186a72bb5f123c0127e45cb3453b6b41870f50b96aba43d17d843e3a8eaed"
+    },
+    {
+      "file": "results/model_seal.json",
+      "sha256": "9869f53a60cc6f28a3f3c86f2ca3bd78ccdbff3a9883143e920407923f0378c6",
+      "original": "results/coarse-weather-shapes-r1/model_seal.json",
+      "original_sha256": "9869f53a60cc6f28a3f3c86f2ca3bd78ccdbff3a9883143e920407923f0378c6"
+    },
+    {
+      "file": "results/posthoc_oracle_audit.json",
+      "sha256": "982b9be7a8d85e6b1ed8b3e2fb404f4a5156df42a8718ad88584f94161c81691",
+      "original": "results/coarse-weather-shapes-r1/posthoc_oracle_audit.json",
+      "original_sha256": "982b9be7a8d85e6b1ed8b3e2fb404f4a5156df42a8718ad88584f94161c81691"
+    },
+    {
+      "file": "results/prediction_seal.json",
+      "sha256": "43e7f4e992c9208ab0a4d2e45839b786bc57f0faa979bd3ae9839a7e8ee64351",
+      "original": "results/coarse-weather-shapes-r1/prediction_seal.json",
+      "original_sha256": "43e7f4e992c9208ab0a4d2e45839b786bc57f0faa979bd3ae9839a7e8ee64351"
+    },
+    {
+      "file": "results/configuration_metrics.csv",
+      "sha256": "15c9ae528fa38f9914678d1a318036da20569e7d2ca21eba03dc024532e4e0aa",
+      "original": "results/coarse-weather-shapes-r1/configuration_metrics.csv",
+      "original_sha256": "15c9ae528fa38f9914678d1a318036da20569e7d2ca21eba03dc024532e4e0aa"
+    },
+    {
+      "file": "results/extra_label_reference_crps.csv",
+      "sha256": "b44a7989b2f4a244009db0af2083a1df425ee87d5546a878a7656221e6efbd81",
+      "original": "results/coarse-weather-shapes-r1/extra_label_reference_crps.csv",
+      "original_sha256": "b44a7989b2f4a244009db0af2083a1df425ee87d5546a878a7656221e6efbd81"
+    },
+    {
+      "file": "results/posthoc_oracle_configurations.csv",
+      "sha256": "86d151f5175be9ef9f3adf2bf3d988aa5f38a81d20ccba09eee207eb3830a205",
+      "original": "results/coarse-weather-shapes-r1/posthoc_oracle_configurations.csv",
+      "original_sha256": "86d151f5175be9ef9f3adf2bf3d988aa5f38a81d20ccba09eee207eb3830a205"
+    },
+    {
+      "file": "results/posthoc_oracle_days.csv",
+      "sha256": "24329bb94bfd41196648cdaec311d71a599b46242727552704d3444bede8a07f",
+      "original": "results/coarse-weather-shapes-r1/posthoc_oracle_days.csv",
+      "original_sha256": "24329bb94bfd41196648cdaec311d71a599b46242727552704d3444bede8a07f"
+    },
+    {
+      "file": "results/posthoc_oracle_macro.csv",
+      "sha256": "d23d199bb50f0ad6c17c88ae11ba7aa12c68c6a4063e1be5895928abe7e32898",
+      "original": "results/coarse-weather-shapes-r1/posthoc_oracle_macro.csv",
+      "original_sha256": "d23d199bb50f0ad6c17c88ae11ba7aa12c68c6a4063e1be5895928abe7e32898"
+    },
+    {
+      "file": "results/predictions.csv.gz",
+      "sha256": "e0f5eb59944eadcfee52f37c120a541ee5e829a58cc931b51f3b72710c8ad346",
+      "original": "results/coarse-weather-shapes-r1/predictions.csv",
+      "decompressed_sha256": "68e824a001b6d26eb4cabecd24af2efd733ff4698ff693447cb17555ffdb3b4a"
+    },
+    {
+      "file": "results/prior_frozen_references.csv",
+      "sha256": "07111be1ce9d7a0899ee31c9f68285558571662c8caf69fe244d0d9d19854186",
+      "original": "results/coarse-weather-shapes-r1/prior_frozen_references.csv",
+      "original_sha256": "07111be1ce9d7a0899ee31c9f68285558571662c8caf69fe244d0d9d19854186"
+    },
+    {
+      "file": "results/region_metrics.csv",
+      "sha256": "f73bea9ccb96ef561541a3ddfc9b6a9a92cf9c950df4bc1d4baf11a0a1998f3f",
+      "original": "results/coarse-weather-shapes-r1/region_metrics.csv",
+      "original_sha256": "f73bea9ccb96ef561541a3ddfc9b6a9a92cf9c950df4bc1d4baf11a0a1998f3f"
+    },
+    {
+      "file": "results/summary.csv",
+      "sha256": "bb3bd7a20955a5bd5a2d4d17092b062907bc04b48e87fa05cd2ad7554da03486",
+      "original": "results/coarse-weather-shapes-r1/summary.csv",
+      "original_sha256": "bb3bd7a20955a5bd5a2d4d17092b062907bc04b48e87fa05cd2ad7554da03486"
+    },
+    {
+      "file": "snapshots/src/transcif/research/coarse_weather_shapes.py",
+      "sha256": "1fcff1f3e822f4ff13ec8415a64dbc39d153649640e12205b07d103c41ad7a5e",
+      "original": "src/transcif/research/coarse_weather_shapes.py",
+      "original_sha256": "1fcff1f3e822f4ff13ec8415a64dbc39d153649640e12205b07d103c41ad7a5e"
+    },
+    {
+      "file": "snapshots/scripts/run_coarse_weather_shapes.py",
+      "sha256": "d3ff9f4cd59e05ac431af941b90723e95f7daa2363cd7421c875b501c00d17f8",
+      "original": "scripts/run_coarse_weather_shapes.py",
+      "original_sha256": "d3ff9f4cd59e05ac431af941b90723e95f7daa2363cd7421c875b501c00d17f8"
+    },
+    {
+      "file": "snapshots/tests/test_coarse_weather_shapes.py",
+      "sha256": "cc8e17de21d2f9b1590e63f94da3162c8c988c47e5bc2fbb96131716be543555",
+      "original": "tests/test_coarse_weather_shapes.py",
+      "original_sha256": "cc8e17de21d2f9b1590e63f94da3162c8c988c47e5bc2fbb96131716be543555"
+    },
+    {
+      "file": "snapshots/docs/COARSE_WEATHER_SHAPE_PROTOCOL.md",
+      "sha256": "e498396059e98605591972483cd70c0fc032bfb8144922b987adb0fc50e24939",
+      "original": "docs/COARSE_WEATHER_SHAPE_PROTOCOL.md",
+      "original_sha256": "e498396059e98605591972483cd70c0fc032bfb8144922b987adb0fc50e24939"
+    },
+    {
+      "file": "snapshots/docs/COARSE_WEATHER_SHAPE_RESULTS.md",
+      "sha256": "cb5772250706a6e3d8ffda85cfec8271202af69db83639ca04ca4cbb268e9790",
+      "original": "docs/COARSE_WEATHER_SHAPE_RESULTS.md",
+      "original_sha256": "cb5772250706a6e3d8ffda85cfec8271202af69db83639ca04ca4cbb268e9790"
+    },
+    {
+      "file": "cohort_with_labels.csv.gz",
+      "sha256": "f945f79ee5942e3636f3697ccfbb68af0e46ffad0fe2ab0bcd4f79c5da958e62",
+      "original": "docs/evidence/weather-transfer-seasonal-r1/cohort_with_labels.csv.gz",
+      "original_sha256": "f945f79ee5942e3636f3697ccfbb68af0e46ffad0fe2ab0bcd4f79c5da958e62"
+    },
+    {
+      "file": "members.tar.gz",
+      "sha256": "e0413880ff9b456846dd1e1085ef13c166b59c25209c15d5c2947d730f1a9019",
+      "members": [
+        {
+          "member": "DE+GB_to_US_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_capacity_delta_full_members.npz",
+          "sha256": "ba5d6f01c2450e0fadd3ced33d17ecd119a217d934db3ff05f0aa71420b22061"
+        },
+        {
+          "member": "DE+GB_to_US_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_capacity_delta_half_members.npz",
+          "sha256": "1eae05875b20acc7b7e6019b54cc1f2ed1b0783df6726c233a7c452a7cf4326a"
+        },
+        {
+          "member": "DE+GB_to_US_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_capacity_head_no_weather_members.npz",
+          "sha256": "11e585d416601d66cb4270c835ce6d924480184edd19a57a905318cdb30278b5"
+        },
+        {
+          "member": "DE+GB_to_US_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_capacity_head_weather_members.npz",
+          "sha256": "0b0c395a932541e0ad81105f6e31e67d5ef75b9bcf6a38b8a1bea07139244cf9"
+        },
+        {
+          "member": "DE+GB_to_US_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_capacity_joint_original_members.npz",
+          "sha256": "695a9eb84bd41421c12a7610e7e37a2b23f8c099dfc2c8274ca294b25dccd897"
+        },
+        {
+          "member": "DE+GB_to_US_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_capacity_learned_zero_members.npz",
+          "sha256": "695a9eb84bd41421c12a7610e7e37a2b23f8c099dfc2c8274ca294b25dccd897"
+        },
+        {
+          "member": "DE+GB_to_US_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_capacity_physical_solar_members.npz",
+          "sha256": "4eae0c6037c1047cab97ba6108ec49bd4498866e1b952a271e6363ce730947a2"
+        },
+        {
+          "member": "DE+GB_to_US_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_capacity_physical_wind_solar_members.npz",
+          "sha256": "50d260355a6a0c36b67ba507ec5f43652ba6c1d40bc2faac21c409f87b513f51"
+        },
+        {
+          "member": "DE+GB_to_US_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_monthly_delta_full_members.npz",
+          "sha256": "aee88edde9bbc8bb0d5c55f8e19bc901c8a4233e03d8473cac903732d6935a2e"
+        },
+        {
+          "member": "DE+GB_to_US_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_monthly_delta_half_members.npz",
+          "sha256": "788054b48fe8618a5b5789b9008a72560244574b9609abfb58c78c2d02330729"
+        },
+        {
+          "member": "DE+GB_to_US_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_monthly_head_no_weather_members.npz",
+          "sha256": "ef6942d3612acf390475ff8d536e600fe3e25c533ff8c06f933560108b00bc42"
+        },
+        {
+          "member": "DE+GB_to_US_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_monthly_head_weather_members.npz",
+          "sha256": "360f996e0f6666a41cb0e2a489863387d13073ef538128ba4ade8f9bff96fdf6"
+        },
+        {
+          "member": "DE+GB_to_US_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_monthly_joint_original_members.npz",
+          "sha256": "b2765cf0e9c4507e6f5b2bd5ed18b7a063f97fae1b06a4cb2abcf913e948b9e4"
+        },
+        {
+          "member": "DE+GB_to_US_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_monthly_learned_zero_members.npz",
+          "sha256": "b2765cf0e9c4507e6f5b2bd5ed18b7a063f97fae1b06a4cb2abcf913e948b9e4"
+        },
+        {
+          "member": "DE+GB_to_US_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_monthly_physical_solar_members.npz",
+          "sha256": "cd899e1c284efd7217787457526294dd51322f7cdfe373e375969eedcbd29ab8"
+        },
+        {
+          "member": "DE+GB_to_US_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_monthly_physical_wind_solar_members.npz",
+          "sha256": "35373db89e602b73709f99603da5e98dda606d9c4ec7756351d958b4c77d7dec"
+        },
+        {
+          "member": "DE+US_to_GB_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_capacity_delta_full_members.npz",
+          "sha256": "1db78e9914cd0ebc8f1832df82d16b0d7ce457692d184345df216af2a640ed60"
+        },
+        {
+          "member": "DE+US_to_GB_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_capacity_delta_half_members.npz",
+          "sha256": "794a51c9793f766b6ae7212f11d015cada7784c0349f20cbb6f7fee242735e21"
+        },
+        {
+          "member": "DE+US_to_GB_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_capacity_head_no_weather_members.npz",
+          "sha256": "432ac8c237feccee242a3e7fce47055b7e632f8ebaf36a24995f24958a72e8af"
+        },
+        {
+          "member": "DE+US_to_GB_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_capacity_head_weather_members.npz",
+          "sha256": "817730a2dee52310921a68c55cbcb9adfca1491dd2f016a6ce38f73bb1464908"
+        },
+        {
+          "member": "DE+US_to_GB_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_capacity_joint_original_members.npz",
+          "sha256": "f72a7de2e51c0771bdbf8e0cb117de6de8fdea80b7453f2ea032a1c0f3426497"
+        },
+        {
+          "member": "DE+US_to_GB_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_capacity_learned_zero_members.npz",
+          "sha256": "f72a7de2e51c0771bdbf8e0cb117de6de8fdea80b7453f2ea032a1c0f3426497"
+        },
+        {
+          "member": "DE+US_to_GB_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_capacity_physical_solar_members.npz",
+          "sha256": "7d34d8c357185d12c607731ab207d5d198e425883420c84111a5a550c3c71976"
+        },
+        {
+          "member": "DE+US_to_GB_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_capacity_physical_wind_solar_members.npz",
+          "sha256": "3cb767f19c3a9e6bb409921bf6a706ee5607d82c0fd7299f73386656958f38f5"
+        },
+        {
+          "member": "DE+US_to_GB_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_monthly_delta_full_members.npz",
+          "sha256": "5509b3e0fed17a38e3355a5fe1dfe8f86bf3ac6c9a685eabbeaf2319879208d8"
+        },
+        {
+          "member": "DE+US_to_GB_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_monthly_delta_half_members.npz",
+          "sha256": "718398002d05737ab957becb75e0b8029863996142e910f637a2db11d342e8e0"
+        },
+        {
+          "member": "DE+US_to_GB_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_monthly_head_no_weather_members.npz",
+          "sha256": "2a0e74cee0442a70cfb0e4726f12cab8d1ca81fc2adfaaca08b1d47e1058735f"
+        },
+        {
+          "member": "DE+US_to_GB_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_monthly_head_weather_members.npz",
+          "sha256": "4f1bf0592e8c77f01d498804345afe23ac5070b8f33aa2200c8173321badc900"
+        },
+        {
+          "member": "DE+US_to_GB_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_monthly_joint_original_members.npz",
+          "sha256": "d71939aa0d13a2f6cdd402146886edec67389ee3aa4c0e85f02ef1c54b2c1568"
+        },
+        {
+          "member": "DE+US_to_GB_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_monthly_learned_zero_members.npz",
+          "sha256": "d71939aa0d13a2f6cdd402146886edec67389ee3aa4c0e85f02ef1c54b2c1568"
+        },
+        {
+          "member": "DE+US_to_GB_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_monthly_physical_solar_members.npz",
+          "sha256": "feab06ad7470cf55edc39e0e01a04c7ecc9545c028973ec051692183ee50573b"
+        },
+        {
+          "member": "DE+US_to_GB_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_monthly_physical_wind_solar_members.npz",
+          "sha256": "5642a3d1dfefa3c8ff7939c5f706df94f4345e80fcc3d743f8b0fca7741e90df"
+        },
+        {
+          "member": "DE_to_GB_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_capacity_delta_full_members.npz",
+          "sha256": "ebbcdb8b72bd601ab5970fca48f93a1635153f3e19d64794faf59cf02abfc883"
+        },
+        {
+          "member": "DE_to_GB_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_capacity_delta_half_members.npz",
+          "sha256": "ef0aafcd15c46ad07317cfc44be58c556ec2453685158e7c95f345441a83fc02"
+        },
+        {
+          "member": "DE_to_GB_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_capacity_head_no_weather_members.npz",
+          "sha256": "70a09fefaf1c394fe32587a3d6b0fb34bfeb3e00357305cf193decc332f96439"
+        },
+        {
+          "member": "DE_to_GB_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_capacity_head_weather_members.npz",
+          "sha256": "4ee3e8a0f2d5f0015e8ec45944fd5753d69dad97ba71f9c85fc28ef1b4363a62"
+        },
+        {
+          "member": "DE_to_GB_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_capacity_joint_original_members.npz",
+          "sha256": "895ab016d99f18bb4c54c8f592cdaad798659e2582c65fcf11e6820d95fd1e90"
+        },
+        {
+          "member": "DE_to_GB_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_capacity_learned_zero_members.npz",
+          "sha256": "895ab016d99f18bb4c54c8f592cdaad798659e2582c65fcf11e6820d95fd1e90"
+        },
+        {
+          "member": "DE_to_GB_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_capacity_physical_solar_members.npz",
+          "sha256": "a4cec9c2a07e6c57e99ff03bd2de5373be64b125365b4241b2b6a4547e88d452"
+        },
+        {
+          "member": "DE_to_GB_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_capacity_physical_wind_solar_members.npz",
+          "sha256": "56246687808626170052efa33da16a9cd2b8776af8169e76b326f33942f9a5f0"
+        },
+        {
+          "member": "DE_to_GB_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_monthly_delta_full_members.npz",
+          "sha256": "1b969b5b8e40815b711229d9d051545bcb5dc51ae8176df5f6b09db29b94fed1"
+        },
+        {
+          "member": "DE_to_GB_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_monthly_delta_half_members.npz",
+          "sha256": "4a8e1368c52d8b66eb2b961e0f43e631ca80d18961e7f7487b4c3527c0506ea0"
+        },
+        {
+          "member": "DE_to_GB_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_monthly_head_no_weather_members.npz",
+          "sha256": "3c253bf91ccd2e01615ceb58d844fb06465121d47f18555e927f1367c9173235"
+        },
+        {
+          "member": "DE_to_GB_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_monthly_head_weather_members.npz",
+          "sha256": "b78ca6c0e042ea8f9c8df34012d93397009eafb29997ab09b614d107226e7503"
+        },
+        {
+          "member": "DE_to_GB_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_monthly_joint_original_members.npz",
+          "sha256": "3d911914376d67d463b7e50c33dc1f8bdbebce1273629ba7f2b54462289afea7"
+        },
+        {
+          "member": "DE_to_GB_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_monthly_learned_zero_members.npz",
+          "sha256": "3d911914376d67d463b7e50c33dc1f8bdbebce1273629ba7f2b54462289afea7"
+        },
+        {
+          "member": "DE_to_GB_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_monthly_physical_solar_members.npz",
+          "sha256": "7568eed6159e594a5dd89322fc237dde30134ebd2bcd9886a264b40cdd653dd2"
+        },
+        {
+          "member": "DE_to_GB_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_monthly_physical_wind_solar_members.npz",
+          "sha256": "ff11b16f2318969ebabe094a0499a99c87436ef4bbf7e4cb341d500175077d02"
+        },
+        {
+          "member": "DE_to_US_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_capacity_delta_full_members.npz",
+          "sha256": "7bace511cd76f609c9dc20873322eaa958b9d8409eb27c8882f5c2a5e520b57f"
+        },
+        {
+          "member": "DE_to_US_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_capacity_delta_half_members.npz",
+          "sha256": "c21d3c52015ae9ba7f5783ddab9409953d69ae9c741d8dad4ee7f79e9df406ba"
+        },
+        {
+          "member": "DE_to_US_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_capacity_head_no_weather_members.npz",
+          "sha256": "0792b3fea67e13a4bd1de4683b4554996e350dcc636937efa96d650cce65cc61"
+        },
+        {
+          "member": "DE_to_US_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_capacity_head_weather_members.npz",
+          "sha256": "b92b743207bc827aa8d9ac967675d300a0417beefd64d3fabab4b3b83966505a"
+        },
+        {
+          "member": "DE_to_US_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_capacity_joint_original_members.npz",
+          "sha256": "d5ae6fc3b870ad031b60eccaf1886facc757ff8d40ab3b35a3e54b9d0bd7c580"
+        },
+        {
+          "member": "DE_to_US_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_capacity_learned_zero_members.npz",
+          "sha256": "d5ae6fc3b870ad031b60eccaf1886facc757ff8d40ab3b35a3e54b9d0bd7c580"
+        },
+        {
+          "member": "DE_to_US_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_capacity_physical_solar_members.npz",
+          "sha256": "cfa06e34c6e313dec1ead36753247b57dc475c77554fe4afc688400fbe21135c"
+        },
+        {
+          "member": "DE_to_US_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_capacity_physical_wind_solar_members.npz",
+          "sha256": "ea69b877b84de1f08a3fb6cb4a207c7aec00db4774bcc78f2aee7376fb58396c"
+        },
+        {
+          "member": "DE_to_US_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_monthly_delta_full_members.npz",
+          "sha256": "34905bfb1b4c80dfb9460d882c641750de0816a0d53b92bec8abd9b3e6dc36fb"
+        },
+        {
+          "member": "DE_to_US_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_monthly_delta_half_members.npz",
+          "sha256": "d1de038d64b9a1ad9b50271240bb86be049df855cdc366fc1ab49510bef3ccf3"
+        },
+        {
+          "member": "DE_to_US_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_monthly_head_no_weather_members.npz",
+          "sha256": "dd6068b6f68e4706cb42ed7dbf1370ab54cebbe1f92f15e1d2f67d34aa45fdd3"
+        },
+        {
+          "member": "DE_to_US_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_monthly_head_weather_members.npz",
+          "sha256": "cbb2bec4bb1df14adf295564acfe74abadc54d3c05970b9f19a93db0f7ea277e"
+        },
+        {
+          "member": "DE_to_US_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_monthly_joint_original_members.npz",
+          "sha256": "ecf1e15764283711116c0345a9c09486915f3781131ce4561164a9602a5823c2"
+        },
+        {
+          "member": "DE_to_US_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_monthly_learned_zero_members.npz",
+          "sha256": "ecf1e15764283711116c0345a9c09486915f3781131ce4561164a9602a5823c2"
+        },
+        {
+          "member": "DE_to_US_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_monthly_physical_solar_members.npz",
+          "sha256": "2ed3bb0aba3c89d88b28a1f7f2889d113e942d923330ebcfa50ce4bab37fcb8f"
+        },
+        {
+          "member": "DE_to_US_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_monthly_physical_wind_solar_members.npz",
+          "sha256": "ccd6b09c93cb2f3f6f8ecb6cf37fa7a8ba52c78da99b98b13c4312971e0561ba"
+        },
+        {
+          "member": "GB+US_to_DE_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_capacity_delta_full_members.npz",
+          "sha256": "36fa2d05c259205dd8f093602c94f58b66245d117ae514ceaa614ac701826abd"
+        },
+        {
+          "member": "GB+US_to_DE_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_capacity_delta_half_members.npz",
+          "sha256": "cdb0b426fd1294c80f4bc2edddcd6c12d3c537800922599811099dae62e934be"
+        },
+        {
+          "member": "GB+US_to_DE_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_capacity_head_no_weather_members.npz",
+          "sha256": "b3fd5614078a57a707264628b7fca1800b346d9be717938298ac0949f5bff8f9"
+        },
+        {
+          "member": "GB+US_to_DE_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_capacity_head_weather_members.npz",
+          "sha256": "2d4b983a6492797bdbeb737400fa8d9b4df975570b09933bf16b46f8fb69b549"
+        },
+        {
+          "member": "GB+US_to_DE_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_capacity_joint_original_members.npz",
+          "sha256": "633958563bde2ee17fd1bdced8eb99be0ddee2373c34a29b0a110f3564a44c03"
+        },
+        {
+          "member": "GB+US_to_DE_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_capacity_learned_zero_members.npz",
+          "sha256": "633958563bde2ee17fd1bdced8eb99be0ddee2373c34a29b0a110f3564a44c03"
+        },
+        {
+          "member": "GB+US_to_DE_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_capacity_physical_solar_members.npz",
+          "sha256": "06e0d6c533908237190e2654008adf04789d0a3a957e39b4877c4eb43a8dac70"
+        },
+        {
+          "member": "GB+US_to_DE_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_capacity_physical_wind_solar_members.npz",
+          "sha256": "a8850afb265c57cc11220b1cde2521e6ef88d3277a70eef1f5b3527331f7cf16"
+        },
+        {
+          "member": "GB+US_to_DE_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_monthly_delta_full_members.npz",
+          "sha256": "a4a1d169fbd6acd8f98b9a4f14125d643a32cf506085c156bf2ab5cbac0b487f"
+        },
+        {
+          "member": "GB+US_to_DE_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_monthly_delta_half_members.npz",
+          "sha256": "def4813af82e63b78bd136422d36b539d7734df0bf6a975ad5be8b948935e098"
+        },
+        {
+          "member": "GB+US_to_DE_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_monthly_head_no_weather_members.npz",
+          "sha256": "67e4be560a9149cc3be0199942bea161f42e29bd0d633dedf27a4453dae58e04"
+        },
+        {
+          "member": "GB+US_to_DE_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_monthly_head_weather_members.npz",
+          "sha256": "51fdb3e2a1cea1e5ae0c5e842e41882be006ae7f3dd8296de5b9175357c602e7"
+        },
+        {
+          "member": "GB+US_to_DE_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_monthly_joint_original_members.npz",
+          "sha256": "ac4b16925e3552c19b9fe8670b397398ea2f2b95b25359272658694c95cf36d6"
+        },
+        {
+          "member": "GB+US_to_DE_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_monthly_learned_zero_members.npz",
+          "sha256": "ac4b16925e3552c19b9fe8670b397398ea2f2b95b25359272658694c95cf36d6"
+        },
+        {
+          "member": "GB+US_to_DE_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_monthly_physical_solar_members.npz",
+          "sha256": "9d8df84218e0da9f7c0cef6666c1883db187b2a22cbbb3fa45fafd4af8be1337"
+        },
+        {
+          "member": "GB+US_to_DE_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_monthly_physical_wind_solar_members.npz",
+          "sha256": "a8fde55f046e876524eef0e84aa0ed5f4fb49c81f9d76566a1107d4ade92c7cc"
+        },
+        {
+          "member": "GB_to_DE_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_capacity_delta_full_members.npz",
+          "sha256": "a1fc22dbb2507ec3e6d8a64e012edb3617c87f70a69b324ff7294d231c16b00e"
+        },
+        {
+          "member": "GB_to_DE_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_capacity_delta_half_members.npz",
+          "sha256": "6385cb0dede163f2220d142820f0b334a927828962ab9d2af0bf8eb6c6f1f881"
+        },
+        {
+          "member": "GB_to_DE_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_capacity_head_no_weather_members.npz",
+          "sha256": "ba4beefc5d051dcac2848ed9b13e61c6a1703c9f7538a3ce31a7be2f748488f6"
+        },
+        {
+          "member": "GB_to_DE_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_capacity_head_weather_members.npz",
+          "sha256": "18e95be9b550ffab3993aaf1ee514298c0d1b07b1eca44a12a088fa72f3bdbc9"
+        },
+        {
+          "member": "GB_to_DE_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_capacity_joint_original_members.npz",
+          "sha256": "ecc32e8f59c280c682c859c83e92174e86a5bae999da8f165a609a8a73237436"
+        },
+        {
+          "member": "GB_to_DE_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_capacity_learned_zero_members.npz",
+          "sha256": "ecc32e8f59c280c682c859c83e92174e86a5bae999da8f165a609a8a73237436"
+        },
+        {
+          "member": "GB_to_DE_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_capacity_physical_solar_members.npz",
+          "sha256": "a746c94bc8d8789230224a59597125b54e322ad027fe6859195d24b4634b570e"
+        },
+        {
+          "member": "GB_to_DE_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_capacity_physical_wind_solar_members.npz",
+          "sha256": "d25049619d5e5ab26c2701a06b633f57a45f17b54a7bb539b7f8c4ed5ba9d692"
+        },
+        {
+          "member": "GB_to_DE_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_monthly_delta_full_members.npz",
+          "sha256": "afc32efc789a2e8d40fdf4e220c7cb6284ff6e7e17ae07cbadc7b3a511903f1b"
+        },
+        {
+          "member": "GB_to_DE_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_monthly_delta_half_members.npz",
+          "sha256": "d9a3ccf598ed220ec2ee114b49967f7bbbd26c26492f5addda8b01badd8388ea"
+        },
+        {
+          "member": "GB_to_DE_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_monthly_head_no_weather_members.npz",
+          "sha256": "c1cad12674ad8ed14281bc70e83390e61ca19732f2878d9f1569607f48fb6a08"
+        },
+        {
+          "member": "GB_to_DE_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_monthly_head_weather_members.npz",
+          "sha256": "80e39fdeb7a1c2cc2ea771c6d7cf7f06fe15ac999f418b5f8ed6309b41de78bb"
+        },
+        {
+          "member": "GB_to_DE_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_monthly_joint_original_members.npz",
+          "sha256": "d80b90df01ce2a2998541b89b8b0d37f8ba7d5faf00ea490bc7c077c56f55173"
+        },
+        {
+          "member": "GB_to_DE_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_monthly_learned_zero_members.npz",
+          "sha256": "d80b90df01ce2a2998541b89b8b0d37f8ba7d5faf00ea490bc7c077c56f55173"
+        },
+        {
+          "member": "GB_to_DE_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_monthly_physical_solar_members.npz",
+          "sha256": "4ec5693e04bca702dec8ca6acc7069bb23e081ee93eb6ede75451a77dede9fc9"
+        },
+        {
+          "member": "GB_to_DE_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_monthly_physical_wind_solar_members.npz",
+          "sha256": "93ff40242db216359584f17c9ca02a001573a65909d43305014fe9557a250653"
+        },
+        {
+          "member": "GB_to_US_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_capacity_delta_full_members.npz",
+          "sha256": "953ea6142f5c34d08315e8b0af28fcfef2b0270d7d2b1fdab673db984d0e52ac"
+        },
+        {
+          "member": "GB_to_US_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_capacity_delta_half_members.npz",
+          "sha256": "c904eaa48467855a95b1f1966e950211c86c542db1b884c47bf1ee147c3c24d8"
+        },
+        {
+          "member": "GB_to_US_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_capacity_head_no_weather_members.npz",
+          "sha256": "e7e244c90ad7384e3dda08266be485f667f53d05886aeb90ebfb84cd0216d79f"
+        },
+        {
+          "member": "GB_to_US_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_capacity_head_weather_members.npz",
+          "sha256": "a11c6e63a46c18624f156cfb716aef1068901ae66f2dccaa307e17addea38309"
+        },
+        {
+          "member": "GB_to_US_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_capacity_joint_original_members.npz",
+          "sha256": "9ebdca8e4ecd4011ac36ae6929e09c9e42895caa98c55b44c751e0ae5becfa93"
+        },
+        {
+          "member": "GB_to_US_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_capacity_learned_zero_members.npz",
+          "sha256": "9ebdca8e4ecd4011ac36ae6929e09c9e42895caa98c55b44c751e0ae5becfa93"
+        },
+        {
+          "member": "GB_to_US_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_capacity_physical_solar_members.npz",
+          "sha256": "6080a13f2d9ff6a03363dda3ac6cfa008aa96a3f1e860625f560b3106f5aecc0"
+        },
+        {
+          "member": "GB_to_US_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_capacity_physical_wind_solar_members.npz",
+          "sha256": "112911826afc96227c1d0ab1d85dc8f6d535ad4de86e51221640d0b7c5dfd92e"
+        },
+        {
+          "member": "GB_to_US_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_monthly_delta_full_members.npz",
+          "sha256": "2dd934d205f9e21f9a9bd72927e43f4e5fcaea24265af2e3dd1d9064a776c05d"
+        },
+        {
+          "member": "GB_to_US_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_monthly_delta_half_members.npz",
+          "sha256": "5ff561eb67764aa4a5cf805de5475129363bf572c3d408b37d848831b050557f"
+        },
+        {
+          "member": "GB_to_US_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_monthly_head_no_weather_members.npz",
+          "sha256": "872cd718f27ce7614fdda662c75481f2be39bfcf12e5153e387dd4bae084023d"
+        },
+        {
+          "member": "GB_to_US_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_monthly_head_weather_members.npz",
+          "sha256": "ad4f0e8134a5bccad701ec4aa633a474431f0e50eab95f2f17bc02cfc841247f"
+        },
+        {
+          "member": "GB_to_US_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_monthly_joint_original_members.npz",
+          "sha256": "125bacce249fcbb14975ce01ac72a39f11cc7a8c7a08f644b0c53ef15dd745c2"
+        },
+        {
+          "member": "GB_to_US_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_monthly_learned_zero_members.npz",
+          "sha256": "125bacce249fcbb14975ce01ac72a39f11cc7a8c7a08f644b0c53ef15dd745c2"
+        },
+        {
+          "member": "GB_to_US_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_monthly_physical_solar_members.npz",
+          "sha256": "77b7036d8b9d7b50b356d7d619e7989bf7326fdacd32335d06ecc8e9cc9d68fe"
+        },
+        {
+          "member": "GB_to_US_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_monthly_physical_wind_solar_members.npz",
+          "sha256": "d6eaf547ec0c1936de2abcfec5766193a99556fa0dcfa058a4e9ce0fcf9202ca"
+        },
+        {
+          "member": "US_to_DE_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_capacity_delta_full_members.npz",
+          "sha256": "4acabf01a6d45fe9f4e57387f360f553aec29b10a4788418d7d3ba539444598d"
+        },
+        {
+          "member": "US_to_DE_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_capacity_delta_half_members.npz",
+          "sha256": "5c214f0ae9b8f41d5a784ff8f988b10860e79152e806d519451dec041e34e34e"
+        },
+        {
+          "member": "US_to_DE_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_capacity_head_no_weather_members.npz",
+          "sha256": "2f7c0aaa481310403654e117619a31a9dd08bea3303a40731613e2e5585d2381"
+        },
+        {
+          "member": "US_to_DE_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_capacity_head_weather_members.npz",
+          "sha256": "fb6367b29ba48135136c15a876ec9f42110a1914f85bf8cca040647ef5763dd5"
+        },
+        {
+          "member": "US_to_DE_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_capacity_joint_original_members.npz",
+          "sha256": "e64ec9266a3cf05c38728fa05b3ca79fb40b2307e200e6302741462f1dd26349"
+        },
+        {
+          "member": "US_to_DE_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_capacity_learned_zero_members.npz",
+          "sha256": "e64ec9266a3cf05c38728fa05b3ca79fb40b2307e200e6302741462f1dd26349"
+        },
+        {
+          "member": "US_to_DE_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_capacity_physical_solar_members.npz",
+          "sha256": "07423f6dc0608f84f8e0291e04a5df544249e6005ec4a7eb1dab40e3ebd1c23d"
+        },
+        {
+          "member": "US_to_DE_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_capacity_physical_wind_solar_members.npz",
+          "sha256": "3cb4d722d140f39b60468106b858f4d1c7db3af688741b8073c39f6b85fa1836"
+        },
+        {
+          "member": "US_to_DE_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_monthly_delta_full_members.npz",
+          "sha256": "50893e168d65cc124bc9ca28bf01bd9b081419a9b60fe49444d6374ea0dfc5f9"
+        },
+        {
+          "member": "US_to_DE_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_monthly_delta_half_members.npz",
+          "sha256": "d14f7fe44a15f92ff20511d8a4c0836769815058f35d2603e9cf6f7b7ae692c2"
+        },
+        {
+          "member": "US_to_DE_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_monthly_head_no_weather_members.npz",
+          "sha256": "6f309963b06ef4db0359c8d3b8a56615e3e2c59c80cf315e160f54b53c668e96"
+        },
+        {
+          "member": "US_to_DE_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_monthly_head_weather_members.npz",
+          "sha256": "18edf542bf5e6bc4100d5ca471200c140ae72e4f298c40c82143cbef93e0cb19"
+        },
+        {
+          "member": "US_to_DE_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_monthly_joint_original_members.npz",
+          "sha256": "c95d75155804252703a2c8ed92a9fa041f566fecbe40e79a44c69da6171aaed7"
+        },
+        {
+          "member": "US_to_DE_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_monthly_learned_zero_members.npz",
+          "sha256": "c95d75155804252703a2c8ed92a9fa041f566fecbe40e79a44c69da6171aaed7"
+        },
+        {
+          "member": "US_to_DE_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_monthly_physical_solar_members.npz",
+          "sha256": "9ad7b0121e9111bc444047aa9fe1497f97f2e7b2698f3a66e41619f53598879a"
+        },
+        {
+          "member": "US_to_DE_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_monthly_physical_wind_solar_members.npz",
+          "sha256": "10a3696e5b244908c95fee43de61117bd7c4771efe77dddc8b397c4f64f95b81"
+        },
+        {
+          "member": "US_to_GB_capacity_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_capacity_delta_full_members.npz",
+          "sha256": "f57e9e70a21b80e55adc9acdae2842e799a56a9c2aea1497a58432a1bdd3f672"
+        },
+        {
+          "member": "US_to_GB_capacity_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_capacity_delta_half_members.npz",
+          "sha256": "181ab204a3b76c1d3946fa1228d85ccdab10261c0c0599881b0674bd6075267a"
+        },
+        {
+          "member": "US_to_GB_capacity_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_capacity_head_no_weather_members.npz",
+          "sha256": "f3d5a97a6615194d8a577841d8972197e28a4d548c51485efcbb353a89b2dd43"
+        },
+        {
+          "member": "US_to_GB_capacity_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_capacity_head_weather_members.npz",
+          "sha256": "2870cd9e1e511c630dd217c1be3d01391f12a33c4ca127cf373aadb0e69b46b5"
+        },
+        {
+          "member": "US_to_GB_capacity_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_capacity_joint_original_members.npz",
+          "sha256": "842e85d93e9f4e39e3effaec1876baad4aa466916f412a1fdbc60bc07edc655e"
+        },
+        {
+          "member": "US_to_GB_capacity_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_capacity_learned_zero_members.npz",
+          "sha256": "842e85d93e9f4e39e3effaec1876baad4aa466916f412a1fdbc60bc07edc655e"
+        },
+        {
+          "member": "US_to_GB_capacity_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_capacity_physical_solar_members.npz",
+          "sha256": "4abbcff067944eece0a2a889eb414ac3fec5df364eff077b7b703d3f60934db0"
+        },
+        {
+          "member": "US_to_GB_capacity_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_capacity_physical_wind_solar_members.npz",
+          "sha256": "adc1fed114f67c786ddef62b0d046764ddd62325fe62322e68bb2e7f4c2209c0"
+        },
+        {
+          "member": "US_to_GB_monthly_delta_full_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_monthly_delta_full_members.npz",
+          "sha256": "9700d0dcfa13bd4369a1e9e846d996b789ed50a07d222b4cd37a70b2397e951e"
+        },
+        {
+          "member": "US_to_GB_monthly_delta_half_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_monthly_delta_half_members.npz",
+          "sha256": "3738624cda7ceb2d24a387c4653eb9592792b15154b5c4cfc96e4cd2dd23bd28"
+        },
+        {
+          "member": "US_to_GB_monthly_head_no_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_monthly_head_no_weather_members.npz",
+          "sha256": "aedaa4ec48f41a613059611c30b03b5a5dedfdc2060060c32f1e2b1a3ab8a443"
+        },
+        {
+          "member": "US_to_GB_monthly_head_weather_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_monthly_head_weather_members.npz",
+          "sha256": "b38b1e4b786ade94dc20e60e62295ea7e47896f477ed885364705e0c113dd18e"
+        },
+        {
+          "member": "US_to_GB_monthly_joint_original_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_monthly_joint_original_members.npz",
+          "sha256": "b31336075ed1f128686f8957cafc68f6ea6f4027ee2aae645e571a91696d8199"
+        },
+        {
+          "member": "US_to_GB_monthly_learned_zero_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_monthly_learned_zero_members.npz",
+          "sha256": "b31336075ed1f128686f8957cafc68f6ea6f4027ee2aae645e571a91696d8199"
+        },
+        {
+          "member": "US_to_GB_monthly_physical_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_monthly_physical_solar_members.npz",
+          "sha256": "f83c94a8a12a8a5583c4ef90520a8bd07c8907539a96ec0fed14754026b0388a"
+        },
+        {
+          "member": "US_to_GB_monthly_physical_wind_solar_members.npz",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_monthly_physical_wind_solar_members.npz",
+          "sha256": "61256cc39c4012a53b0304c6cc892bcd5586192c2895eb049f7f8dbc9937f2a3"
+        }
+      ]
+    },
+    {
+      "file": "source_models.tar.gz",
+      "sha256": "602a2b7c04c86072f1aa32351de2e92f1154979297e9a6ae4ec2348fef9bc8a6",
+      "members": [
+        {
+          "member": "heads/DE+GB_to_US_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/DE+GB_to_US_heads.joblib",
+          "sha256": "010a98518b8035af0036e340d086bc0898ab3b6360f89669c0ba3006deca7a84"
+        },
+        {
+          "member": "heads/DE+US_to_GB_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/DE+US_to_GB_heads.joblib",
+          "sha256": "9c7f5ded0faaca57784bed559830f2ef2faac587d6a00c4cb1fb6d7aabdae342"
+        },
+        {
+          "member": "heads/DE_to_GB_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/DE_to_GB_heads.joblib",
+          "sha256": "e6f746e40ab9bf849a1de96cadf896b5b6becd481c8a2dbf843655c1857a404a"
+        },
+        {
+          "member": "heads/DE_to_US_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/DE_to_US_heads.joblib",
+          "sha256": "e6f746e40ab9bf849a1de96cadf896b5b6becd481c8a2dbf843655c1857a404a"
+        },
+        {
+          "member": "heads/GB+US_to_DE_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/GB+US_to_DE_heads.joblib",
+          "sha256": "197fc0b824c80fb076df6aefbf694b32ad43209dcb3cb06370c1e96701c417f6"
+        },
+        {
+          "member": "heads/GB_to_DE_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/GB_to_DE_heads.joblib",
+          "sha256": "3f75ff402f035d10c4e07d976ec31555d0e4e31e288c493125b0511da54654ca"
+        },
+        {
+          "member": "heads/GB_to_US_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/GB_to_US_heads.joblib",
+          "sha256": "3f75ff402f035d10c4e07d976ec31555d0e4e31e288c493125b0511da54654ca"
+        },
+        {
+          "member": "heads/US_to_DE_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/US_to_DE_heads.joblib",
+          "sha256": "0f8939c852add1b531c0260dbb4cb6e919538512d579cc0ccd1d80b6d38e4db0"
+        },
+        {
+          "member": "heads/US_to_GB_heads.joblib",
+          "original": "results/coarse-weather-shapes-r1/US_to_GB_heads.joblib",
+          "sha256": "0f8939c852add1b531c0260dbb4cb6e919538512d579cc0ccd1d80b6d38e4db0"
+        },
+        {
+          "member": "matched_banks/DE+GB_to_US_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/DE+GB_to_US_matched_bank.joblib",
+          "sha256": "0e75588ce1900f0dd3e8bafcd40d4117105785427654cce1345e33a8eae21545"
+        },
+        {
+          "member": "matched_banks/DE+US_to_GB_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/DE+US_to_GB_matched_bank.joblib",
+          "sha256": "2f93039a39831963ec8799235ea369d2eac1fe17b07c6d041a05794207061cd2"
+        },
+        {
+          "member": "matched_banks/DE_to_GB_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/DE_to_GB_matched_bank.joblib",
+          "sha256": "ef6ca7c779cdb4b3910045f3932d543a80c8f56b236deec67fdc8391bde4e2fd"
+        },
+        {
+          "member": "matched_banks/DE_to_US_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/DE_to_US_matched_bank.joblib",
+          "sha256": "ef6ca7c779cdb4b3910045f3932d543a80c8f56b236deec67fdc8391bde4e2fd"
+        },
+        {
+          "member": "matched_banks/GB+US_to_DE_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/GB+US_to_DE_matched_bank.joblib",
+          "sha256": "00fe4a64294c824198f15efab8c7fd283f6459d546c5c66836b8df5c74a744a5"
+        },
+        {
+          "member": "matched_banks/GB_to_DE_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/GB_to_DE_matched_bank.joblib",
+          "sha256": "5a08bf8bdf9b5a59752a2b5da5845d5f5a60bc869d69d5344d651da5b82fbb16"
+        },
+        {
+          "member": "matched_banks/GB_to_US_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/GB_to_US_matched_bank.joblib",
+          "sha256": "5a08bf8bdf9b5a59752a2b5da5845d5f5a60bc869d69d5344d651da5b82fbb16"
+        },
+        {
+          "member": "matched_banks/US_to_DE_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/US_to_DE_matched_bank.joblib",
+          "sha256": "927031bc6c35bd0baf5c2ce5fddfdf2d001b03af8c9463f023394215ab5001ca"
+        },
+        {
+          "member": "matched_banks/US_to_GB_matched_bank.joblib",
+          "original": "results/weather-transfer-seasonal-models-r1/US_to_GB_matched_bank.joblib",
+          "sha256": "927031bc6c35bd0baf5c2ce5fddfdf2d001b03af8c9463f023394215ab5001ca"
+        }
+      ]
+    },
+    {
+      "file": "climate_probe/receipt.json",
+      "sha256": "4e46135b49a65d459f47050040df0e79789c7edb631165b0dc474c2bf2fa8ef8",
+      "original": "results/weather-climatology-probe-r1/receipt.json",
+      "original_sha256": "4e46135b49a65d459f47050040df0e79789c7edb631165b0dc474c2bf2fa8ef8"
+    },
+    {
+      "file": "climate_probe/response.json",
+      "sha256": "40e39f1cc698f6d63a14252a3b004bb2f6660bdfa6edd86f6c844d9e3885725f",
+      "original": "results/weather-climatology-probe-r1/response.json",
+      "original_sha256": "40e39f1cc698f6d63a14252a3b004bb2f6660bdfa6edd86f6c844d9e3885725f"
+    },
+    {
+      "file": "snapshots/docs/RESOURCE_REFERENCE_DEVELOPMENT_PROTOCOL.md",
+      "sha256": "20d734970e8acddac2991bb896fd526b8ec14611cccde2f211d0c748c189975e",
+      "original": "docs/RESOURCE_REFERENCE_DEVELOPMENT_PROTOCOL.md",
+      "original_sha256": "20d734970e8acddac2991bb896fd526b8ec14611cccde2f211d0c748c189975e"
+    },
+    {
+      "file": "results/portable_review.json",
+      "sha256": "c527812781841446128d546ed7cc19c120b25993f4f47f1ff4e36d9276d309c4",
+      "original": "results/coarse-weather-shapes-r1/portable_review.json",
+      "original_sha256": "c527812781841446128d546ed7cc19c120b25993f4f47f1ff4e36d9276d309c4"
+    },
+    {
+      "file": "results/test_and_seal_receipt.json",
+      "sha256": "6615ad7a9380f7e352e03f2fc4eaa24a2e786cce1ab8b267cf9724176cfbc7ab",
+      "original": "results/coarse-weather-shapes-r1/test_and_seal_receipt.json",
+      "original_sha256": "6615ad7a9380f7e352e03f2fc4eaa24a2e786cce1ab8b267cf9724176cfbc7ab"
+    },
+    {
+      "file": "README.md",
+      "sha256": "aed81c7e92dba58984e443f2adfdc066b42d230d429f34f1aad38468090cdb96",
+      "original": "docs/evidence/coarse-weather-shapes-r1/README.md",
+      "original_sha256": "aed81c7e92dba58984e443f2adfdc066b42d230d429f34f1aad38468090cdb96"
+    }
+  ],
+  "final_root_agent_verification": "All final files and original mapped files/member hashes verified after documentation-only additions; independent numeric payload review is results/portable_review.json."
+}

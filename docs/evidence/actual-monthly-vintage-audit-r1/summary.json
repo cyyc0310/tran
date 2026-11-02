@@ -1,0 +1,109 @@
+{
+  "state_rows": 51,
+  "paired_numeric_state_fuel_cells": 524,
+  "changed_paired_cells": 217,
+  "changed_paired_cell_fraction": 0.41412213740458015,
+  "generation_total_numeric_pairs": 51,
+  "generation_total_median_absolute_revision_gwh": 55.0,
+  "generation_total_p90_absolute_revision_gwh": 148.0,
+  "generation_total_max_absolute_revision_gwh": 526.0,
+  "core_share_states": 43,
+  "core_share_fields": [
+    "coal",
+    "natural_gas",
+    "nuclear",
+    "hydro_conventional",
+    "renewables_ex_hydro"
+  ],
+  "core_share_l1_median_percentage_points": 1.5731072966011093,
+  "core_share_l1_mean_percentage_points": 2.6986758535184183,
+  "core_share_l1_p90_percentage_points": 5.2825237667869995,
+  "core_share_l1_max_percentage_points": 14.804138548495741,
+  "by_field": {
+    "total_generation": {
+      "numeric_pairs": 51,
+      "changed_pairs": 49,
+      "median_absolute_delta_gwh": 55.0,
+      "p90_absolute_delta_gwh": 148.0,
+      "max_absolute_delta_gwh": 526.0
+    },
+    "coal": {
+      "numeric_pairs": 50,
+      "changed_pairs": 13,
+      "median_absolute_delta_gwh": 0.0,
+      "p90_absolute_delta_gwh": 2.1000000000000014,
+      "max_absolute_delta_gwh": 45.0
+    },
+    "petroleum_liquids": {
+      "numeric_pairs": 26,
+      "changed_pairs": 11,
+      "median_absolute_delta_gwh": 0.0,
+      "p90_absolute_delta_gwh": 2.5,
+      "max_absolute_delta_gwh": 33.0
+    },
+    "petroleum_coke": {
+      "numeric_pairs": 50,
+      "changed_pairs": 1,
+      "median_absolute_delta_gwh": 0.0,
+      "p90_absolute_delta_gwh": 0.0,
+      "max_absolute_delta_gwh": 1.0
+    },
+    "natural_gas": {
+      "numeric_pairs": 49,
+      "changed_pairs": 44,
+      "median_absolute_delta_gwh": 31.0,
+      "p90_absolute_delta_gwh": 140.0000000000001,
+      "max_absolute_delta_gwh": 571.0
+    },
+    "other_fossil_gas": {
+      "numeric_pairs": 50,
+      "changed_pairs": 4,
+      "median_absolute_delta_gwh": 0.0,
+      "p90_absolute_delta_gwh": 0.0,
+      "max_absolute_delta_gwh": 21.0
+    },
+    "nuclear": {
+      "numeric_pairs": 51,
+      "changed_pairs": 1,
+      "median_absolute_delta_gwh": 0.0,
+      "p90_absolute_delta_gwh": 0.0,
+      "max_absolute_delta_gwh": 295.0
+    },
+    "hydro_conventional": {
+      "numeric_pairs": 46,
+      "changed_pairs": 41,
+      "median_absolute_delta_gwh": 18.5,
+      "p90_absolute_delta_gwh": 64.5,
+      "max_absolute_delta_gwh": 139.0
+    },
+    "renewables_ex_hydro": {
+      "numeric_pairs": 51,
+      "changed_pairs": 46,
+      "median_absolute_delta_gwh": 4.0,
+      "p90_absolute_delta_gwh": 41.0,
+      "max_absolute_delta_gwh": 97.0
+    },
+    "pumped_storage": {
+      "numeric_pairs": 51,
+      "changed_pairs": 1,
+      "median_absolute_delta_gwh": 0.0,
+      "p90_absolute_delta_gwh": 0.0,
+      "max_absolute_delta_gwh": 8.0
+    },
+    "other": {
+      "numeric_pairs": 49,
+      "changed_pairs": 6,
+      "median_absolute_delta_gwh": 0.0,
+      "p90_absolute_delta_gwh": 1.2000000000000028,
+      "max_absolute_delta_gwh": 7.0
+    }
+  },
+  "earlier_issue_year": 2024,
+  "later_issue_year": 2025,
+  "observation_year": 2024,
+  "target_observation_month": "April",
+  "earlier_archive_sha256": "a64e8cf81d7788b3cb652b59c762dfa1cb200a07c3ef727dc2f417b9fcaf465c",
+  "later_archive_sha256": "eb5de8682cab6f497bd0c10efd4ed5c21a1378a30255cc9fd47abf4816a92265",
+  "csv_sha256": "2931b787ae4ef7ff656817433097865ad04ad986ad300f42f389cc7a37ebb7e8",
+  "interpretation": "Preliminary EIA state fuel-table revision diagnostic; not a CIF forecast experiment."
+}

@@ -1,0 +1,85 @@
+{
+  "country_equal": {
+    "factor_history": {
+      "mae": 63.13442606986361,
+      "shape_mae": 17.832701321745887,
+      "coverage90": 0.893125907457025,
+      "width90": 375.25961477609644,
+      "winkler90": 497.11011655573225
+    },
+    "fuelshare_history": {
+      "mae": 54.801975835398395,
+      "shape_mae": 17.66693019717121,
+      "coverage90": 0.942974495714848,
+      "width90": 353.4329620505415,
+      "winkler90": 417.14981370816054
+    },
+    "ratio_recomposition": {
+      "mae": 62.1408089849302,
+      "shape_mae": 17.855529709975755,
+      "coverage90": 0.9031143501055566,
+      "width90": 389.93816349187034,
+      "winkler90": 534.5854957765739
+    },
+    "source_h1_global_bias": {
+      "mae": 56.779883645978586,
+      "shape_mae": 17.66693019717121,
+      "coverage90": 0.9375846428894496,
+      "width90": 360.8112959425388,
+      "winkler90": 434.0080039452328
+    },
+    "source_monthly_ridge": {
+      "mae": 61.21121664668303,
+      "shape_mae": 17.66693019717121,
+      "coverage90": 0.9275397078234333,
+      "width90": 337.5913716230595,
+      "winkler90": 414.5113830534003
+    }
+  },
+  "country_month_equal": {
+    "factor_history": {
+      "mae": 63.191619722524486,
+      "shape_mae": 17.824142556801213,
+      "coverage90": 0.892862310332472,
+      "width90": 375.2596147760964,
+      "winkler90": 497.75487404500154
+    },
+    "fuelshare_history": {
+      "mae": 54.84354665855102,
+      "shape_mae": 17.661065621094526,
+      "coverage90": 0.9429009942453095,
+      "width90": 353.4329620505415,
+      "winkler90": 417.3518267958855
+    },
+    "ratio_recomposition": {
+      "mae": 62.16389149027926,
+      "shape_mae": 17.84977689544562,
+      "coverage90": 0.9030773638018222,
+      "width90": 389.93816349187034,
+      "winkler90": 534.7702933032507
+    },
+    "source_h1_global_bias": {
+      "mae": 56.82827016825748,
+      "shape_mae": 17.661065621094526,
+      "coverage90": 0.9374954430711683,
+      "width90": 360.8112959425388,
+      "winkler90": 434.2381201466771
+    },
+    "source_monthly_ridge": {
+      "mae": 61.25679375593837,
+      "shape_mae": 17.661065621094526,
+      "coverage90": 0.9274530199175417,
+      "width90": 337.5913716230595,
+      "winkler90": 414.72717648758305
+    }
+  },
+  "status": "DEVELOPMENT_STRICT_CN5_LOCO_TARGETS_PREVIOUSLY_VIEWED",
+  "design": {
+    "base_head": "fuelshare_history",
+    "meta_fit": "2023H1 equal-country-weighted monthly mean residuals",
+    "meta_model": "five lagged shares + month sine/cosine; StandardScaler + Ridge(alpha=10)",
+    "interval_calibration": "2023H2 nested pseudo-target hourly absolute residual q90",
+    "target_score": "sealed 2024 outer-country hourly labels, fixed-factor production proxy",
+    "consumption_track": "not evaluated by this generation-proxy experiment"
+  }
+}

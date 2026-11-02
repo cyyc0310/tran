@@ -1,0 +1,290 @@
+[
+  {
+    "arm": "hourly_reconstruction",
+    "track": "generation_proxy",
+    "source": "US",
+    "target": "GB",
+    "sha256": "96cb1aec1d51a5013f169f50b1cd166216aab017e51396f94479589fdf83073c",
+    "path": "hourly_reconstruction_generation_proxy_US_to_GB_predictions.csv.gz",
+    "hours_predicted": 8784
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "BPAT",
+    "sha256": "821e4951d1498a6e534c693472d25d0d56d7932a9c7f47b6f8c90f4fa5dd4f58",
+    "path": "hourly_reconstruction_generation_proxy_GB_to_BPAT_predictions.csv.gz",
+    "hours_predicted": 5737
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "CISO",
+    "sha256": "f6448f3a7aa7ad9570ccd2a5c7bfa76f33967091404cf64c865b7ae9e1c2a37e",
+    "path": "hourly_reconstruction_generation_proxy_GB_to_CISO_predictions.csv.gz",
+    "hours_predicted": 7960
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "ERCO",
+    "sha256": "7a5a3e8cacd2b3e51cda1e932e155dd6a1dc84f41d63a7791f9ea5a6a9c610e3",
+    "path": "hourly_reconstruction_generation_proxy_GB_to_ERCO_predictions.csv.gz",
+    "hours_predicted": 4362
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "FPL",
+    "sha256": "41397235a66395532113ca4fa8dd9d5556a547b45281323c44ebc45f88f0b98e",
+    "path": "hourly_reconstruction_generation_proxy_GB_to_FPL_predictions.csv.gz",
+    "hours_predicted": 4896
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "ISNE",
+    "sha256": "b0153fc5bb71b4f3be40a69f641a381c6b2dcfc31a3f5e03d6478ce9c49e909a",
+    "path": "hourly_reconstruction_generation_proxy_GB_to_ISNE_predictions.csv.gz",
+    "hours_predicted": 4363
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "MISO",
+    "sha256": "295a0deeca2349fb636e3fd512272288ec30f0bd567fac68915041541fc14e6c",
+    "path": "hourly_reconstruction_generation_proxy_GB_to_MISO_predictions.csv.gz",
+    "hours_predicted": 8011
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "NYIS",
+    "sha256": "67274849908e378bb7824258e54cc5b5cce7f183a90ec947042480c3abba8cb9",
+    "path": "hourly_reconstruction_generation_proxy_GB_to_NYIS_predictions.csv.gz",
+    "hours_predicted": 7201
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "consumption_official",
+    "source": "US",
+    "target": "GB",
+    "sha256": "a17688b18ffa7cb80cbc5734a447cfdf3d0cbcaf41e3ffbe2a127b489d04838e",
+    "path": "hourly_reconstruction_consumption_official_US_to_GB_predictions.csv.gz",
+    "hours_predicted": 8784
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "BPAT",
+    "sha256": "6bde282858d67834f990b674e560e8a0b6dd2496952ca195de1154d6c643e410",
+    "path": "hourly_reconstruction_consumption_official_GB_to_BPAT_predictions.csv.gz",
+    "hours_predicted": 5737
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "CISO",
+    "sha256": "aabd7f3c998a081bc7b968167667307828eb12cae796342330661895c67ec876",
+    "path": "hourly_reconstruction_consumption_official_GB_to_CISO_predictions.csv.gz",
+    "hours_predicted": 7960
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "ERCO",
+    "sha256": "09aecefe05178f71675d56550f3a7d9c22795c3b75c88d96592d0119033ad5b5",
+    "path": "hourly_reconstruction_consumption_official_GB_to_ERCO_predictions.csv.gz",
+    "hours_predicted": 4362
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "FPL",
+    "sha256": "053ad5d1e84e54b064d2c350f86c1489413f3bb56e6d591706d980e30ee59d68",
+    "path": "hourly_reconstruction_consumption_official_GB_to_FPL_predictions.csv.gz",
+    "hours_predicted": 4896
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "ISNE",
+    "sha256": "ea0a46b1613e89e33a186c36f975662ea3df455610aa4ce1cb579641287f7ff5",
+    "path": "hourly_reconstruction_consumption_official_GB_to_ISNE_predictions.csv.gz",
+    "hours_predicted": 4363
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "MISO",
+    "sha256": "8d6ac8efecd1092406d908ba7252be9188d9f8937a8519c09e8611f6baea1688",
+    "path": "hourly_reconstruction_consumption_official_GB_to_MISO_predictions.csv.gz",
+    "hours_predicted": 8011
+  },
+  {
+    "arm": "hourly_reconstruction",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "NYIS",
+    "sha256": "8ad7dee60be91ba4b4e437fdda4b2f5561f874c0c2c6ff53a052f27ed2236b01",
+    "path": "hourly_reconstruction_consumption_official_GB_to_NYIS_predictions.csv.gz",
+    "hours_predicted": 7201
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "generation_proxy",
+    "source": "US",
+    "target": "GB",
+    "sha256": "bb33857ea6867d1ab4fbbbacee91f89ad90c078257ad4e24edb6fd3cb89b7546",
+    "path": "eia923_monthly_generation_proxy_US_to_GB_predictions.csv.gz",
+    "hours_predicted": 8784
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "BPAT",
+    "sha256": "827410f6dac1dfc4f4943787db3ece8f5356a6f47a0843df39ccf9a35371f82d",
+    "path": "eia923_monthly_generation_proxy_GB_to_BPAT_predictions.csv.gz",
+    "hours_predicted": 5737
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "CISO",
+    "sha256": "0c95b5e10a5975fc170033a5d91b44f3f7cbd9425b283b0bacea9ad20e4c4c75",
+    "path": "eia923_monthly_generation_proxy_GB_to_CISO_predictions.csv.gz",
+    "hours_predicted": 7960
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "ERCO",
+    "sha256": "7e80ccd1dba4c3b48d09d49a375a96a1d673ec1698233a71e42a26cca5c9e14b",
+    "path": "eia923_monthly_generation_proxy_GB_to_ERCO_predictions.csv.gz",
+    "hours_predicted": 4362
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "FPL",
+    "sha256": "2a441c4719d8da54740b7478df86dc3cc4a0b984a4cd5e921acdebf2ddbff8fe",
+    "path": "eia923_monthly_generation_proxy_GB_to_FPL_predictions.csv.gz",
+    "hours_predicted": 4896
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "ISNE",
+    "sha256": "4fa62b61a844992c38e03aa8fcea0a921ec7609e0014f84557b5a7889f70155a",
+    "path": "eia923_monthly_generation_proxy_GB_to_ISNE_predictions.csv.gz",
+    "hours_predicted": 4363
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "MISO",
+    "sha256": "ab50603c6b520f80eec4de04494853d43542752bebb440798c8cee0d689824f9",
+    "path": "eia923_monthly_generation_proxy_GB_to_MISO_predictions.csv.gz",
+    "hours_predicted": 8011
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "generation_proxy",
+    "source": "GB",
+    "target": "NYIS",
+    "sha256": "9104a805b01a1bee975ec71dcb74e373ccd63edf051154513e6183be29e2800f",
+    "path": "eia923_monthly_generation_proxy_GB_to_NYIS_predictions.csv.gz",
+    "hours_predicted": 7201
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "consumption_official",
+    "source": "US",
+    "target": "GB",
+    "sha256": "49f783d272b1a22758fd9db2532ce795af1d63d4e241df0fd78a1eb1b76aeaa1",
+    "path": "eia923_monthly_consumption_official_US_to_GB_predictions.csv.gz",
+    "hours_predicted": 8784
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "BPAT",
+    "sha256": "14e6c0c8f7c0928c2f82d2e6496490e5518961c3d6a94423018603cc437e6caf",
+    "path": "eia923_monthly_consumption_official_GB_to_BPAT_predictions.csv.gz",
+    "hours_predicted": 5737
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "CISO",
+    "sha256": "d45c75b39d0fbd99c3a1b7193afbfa7fc90ec9e0554e780565fef9d0d9058e60",
+    "path": "eia923_monthly_consumption_official_GB_to_CISO_predictions.csv.gz",
+    "hours_predicted": 7960
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "ERCO",
+    "sha256": "74c0651cfead72eb6939d224fe884e564d938c2293ba10d24dedcfc44c2e8126",
+    "path": "eia923_monthly_consumption_official_GB_to_ERCO_predictions.csv.gz",
+    "hours_predicted": 4362
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "FPL",
+    "sha256": "17ba88d8a31795fe13e9f5ad6cd0f6d9f5b67b858717fd5e68824973dab96785",
+    "path": "eia923_monthly_consumption_official_GB_to_FPL_predictions.csv.gz",
+    "hours_predicted": 4896
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "ISNE",
+    "sha256": "afb2917ff7e476c897d2832f63ead90b57f8c86e757ebc71324671f75be45490",
+    "path": "eia923_monthly_consumption_official_GB_to_ISNE_predictions.csv.gz",
+    "hours_predicted": 4363
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "MISO",
+    "sha256": "2460ad3b9a3f431f02ef5008fd3065245d24d1940d99fd02782efccc7506f360",
+    "path": "eia923_monthly_consumption_official_GB_to_MISO_predictions.csv.gz",
+    "hours_predicted": 8011
+  },
+  {
+    "arm": "eia923_monthly",
+    "track": "consumption_official",
+    "source": "GB",
+    "target": "NYIS",
+    "sha256": "564bfabbcca3ba6cd97aab9cd02af95c86708ea4a28766a16dc6a06817ebd621",
+    "path": "eia923_monthly_consumption_official_GB_to_NYIS_predictions.csv.gz",
+    "hours_predicted": 7201
+  }
+]

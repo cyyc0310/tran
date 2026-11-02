@@ -1,0 +1,37 @@
+[
+  {
+    "source": "results/shanghai-public-inference-r2/provenance.json",
+    "file": "provenance.json",
+    "sha256": "01205fda5c5b676fca7b8b1a7c9c81153cc68d5734f6c58310f84c946ed893f7"
+  },
+  {
+    "source": "results/shanghai-public-inference-r2/inference.json",
+    "file": "inference.json",
+    "sha256": "cd4e2651bb50c8383a532996086d4de3143f972344bd07b8278d0b99f73dc2ea"
+  },
+  {
+    "source": "results/shanghai-public-inference-r2/accepted_public_months.csv",
+    "file": "accepted_public_months.csv",
+    "sha256": "e14ad2cb1d652748c79f90ed774c062fe816d701b42a5781a6cb41f467bdf2f3"
+  },
+  {
+    "source": "results/shanghai-public-inference-r2/public_features.csv",
+    "file": "public_features.csv",
+    "sha256": "37c1779adf3b247c9a6b3fec694c7ccfaf5df524bc852c471decbe5bc0a0a574"
+  },
+  {
+    "source": "results/shanghai-public-inference-r2/predictions.csv",
+    "file": "predictions.csv",
+    "sha256": "9bf4fd9331442c3f8f66f572c54434c388c79835928e2e1e477a4d724f0d313a"
+  },
+  {
+    "source": "results/nbs-public-input-seal-r1.json",
+    "file": "nbs-public-input-seal-r1.json",
+    "sha256": "8805565189b63bbd7cac1579bad65d790a199f273ed85388a940e2c6f516c52d"
+  },
+  {
+    "source": "results/all-foreign-public-package-r1/model_metadata.json",
+    "file": "model_metadata.json",
+    "sha256": "c0c5fd1433b0b9e0a3c7e94473d378ae4b367c4cadcd02006d87fcc1417a559f"
+  }
+]

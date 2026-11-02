@@ -1,0 +1,152 @@
+[
+  {
+    "source": "results/three-country-coarse-trajectories-r1/DE+GB_to_US_bank_audit.json",
+    "file": "DE+GB_to_US_bank_audit.json",
+    "sha256": "b3e9cafc00718a861d0f6bc427a0871b690908a2ded87a5f7990d96e12c4f4c0"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/DE+GB_to_US_calibration.json",
+    "file": "DE+GB_to_US_calibration.json",
+    "sha256": "67b131b28a507785e9e8ff763b39b42acd83585c64eeab8ac10242ce6fe27013"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/DE+US_to_GB_bank_audit.json",
+    "file": "DE+US_to_GB_bank_audit.json",
+    "sha256": "bf4d29ea1cae22dd9dc3cefff9807e0187b03bb6ae1f30a0bb4aa763261b5866"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/DE+US_to_GB_calibration.json",
+    "file": "DE+US_to_GB_calibration.json",
+    "sha256": "13a2ca2df4110565441c312dbb19df969c01dd72c06abdb0f3c3a4836294ccd5"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/DE_to_GB_bank_audit.json",
+    "file": "DE_to_GB_bank_audit.json",
+    "sha256": "7cb3d542e7a0734490c2a0b200c07604af6bd6af81d10b680bdb873864393ed0"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/DE_to_GB_calibration.json",
+    "file": "DE_to_GB_calibration.json",
+    "sha256": "c2551eafb7cf8b70b2c529fe96e73662fe083d53cc2c7ed32b864ee19e603bd9"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/DE_to_US_bank_audit.json",
+    "file": "DE_to_US_bank_audit.json",
+    "sha256": "7cb3d542e7a0734490c2a0b200c07604af6bd6af81d10b680bdb873864393ed0"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/DE_to_US_calibration.json",
+    "file": "DE_to_US_calibration.json",
+    "sha256": "c2551eafb7cf8b70b2c529fe96e73662fe083d53cc2c7ed32b864ee19e603bd9"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/GB+US_to_DE_bank_audit.json",
+    "file": "GB+US_to_DE_bank_audit.json",
+    "sha256": "20a810dbe2d7d70c716273cda622302eaf9984b3032ddef5533fd171997e350c"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/GB+US_to_DE_calibration.json",
+    "file": "GB+US_to_DE_calibration.json",
+    "sha256": "0cb0621e38e61b886cd7f329244b99b6f1637debfc6472cef55dddcbc9c90319"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/GB_to_DE_bank_audit.json",
+    "file": "GB_to_DE_bank_audit.json",
+    "sha256": "78f335573389a666fa490f23d18fb7eba944acc16146995e7b1b9d0646461722"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/GB_to_DE_calibration.json",
+    "file": "GB_to_DE_calibration.json",
+    "sha256": "b799a0a90bd870acad557558213397476aededc085ef610faae256cd62063c0b"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/GB_to_US_bank_audit.json",
+    "file": "GB_to_US_bank_audit.json",
+    "sha256": "78f335573389a666fa490f23d18fb7eba944acc16146995e7b1b9d0646461722"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/GB_to_US_calibration.json",
+    "file": "GB_to_US_calibration.json",
+    "sha256": "b799a0a90bd870acad557558213397476aededc085ef610faae256cd62063c0b"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/US_to_DE_bank_audit.json",
+    "file": "US_to_DE_bank_audit.json",
+    "sha256": "180f23cb37707ca71565d08aa1464786bf86ac8baaedd48b22716b4a770c1e37"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/US_to_DE_calibration.json",
+    "file": "US_to_DE_calibration.json",
+    "sha256": "1fabdef92a898e370fe5840a58d56a72f61560a40039d77bd54b2e422be0ca9f"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/US_to_GB_bank_audit.json",
+    "file": "US_to_GB_bank_audit.json",
+    "sha256": "180f23cb37707ca71565d08aa1464786bf86ac8baaedd48b22716b4a770c1e37"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/US_to_GB_calibration.json",
+    "file": "US_to_GB_calibration.json",
+    "sha256": "1fabdef92a898e370fe5840a58d56a72f61560a40039d77bd54b2e422be0ca9f"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/input_code_seal.json",
+    "file": "input_code_seal.json",
+    "sha256": "1f8508ce590a8e1848df54fbbb9017da7669a4060da27cacd95b5e37297fcdbd"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/member_audit.json",
+    "file": "member_audit.json",
+    "sha256": "7ff45f7c9aae243017919ddd091eca6ab977d39c13ee6c9208b30fd6bc8c0499"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "69b1fa9b4b03ec1c984f22153e9df7f13b640b3d5a9d6eed7aca4fed6f586846"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/terminal_verification.json",
+    "file": "terminal_verification.json",
+    "sha256": "a9972f6ad6249961126a9ec785e38b12cb075732d54f136d07ce361b46366f17"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/country_metrics.csv",
+    "file": "country_metrics.csv",
+    "sha256": "d63146d07ec7f7508aca20c034333c19266c514dd6739d6ddaab823984cb0e29"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/macro_metrics.csv",
+    "file": "macro_metrics.csv",
+    "sha256": "59b11b8170c3c9e5e6b53b727cfd00a48a456e5349376d380a6f8e5edbe332a6"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "64048a3891c2275e83a049b686eff25b1a6cbe6c34b796b08319f18b08a9abdf"
+  },
+  {
+    "source": "results/three-country-coarse-trajectories-r1/region_metrics.csv",
+    "file": "region_metrics.csv",
+    "sha256": "890336d9ca0a6aa3f72f50e4715472f191d74c87849e14f4452198d1c933949b"
+  },
+  {
+    "source": "scripts/run_coarse_trajectories.py",
+    "file": "code/run_coarse_trajectories.py",
+    "sha256": "bd6c9176f67e934aec3e44d50a23bbd6a340f01ad1820e27e309dc9905b6d3a8"
+  },
+  {
+    "source": "src/transcif/research/coarse_trajectories.py",
+    "file": "code/coarse_trajectories.py",
+    "sha256": "075829fb09d2e0fd64fdecacb2d48f988d8d3e03a7e9c3eb8ac8cc2b072eb81e"
+  },
+  {
+    "source": "docs/COARSE_TRAJECTORY_PROTOCOL.md",
+    "file": "code/COARSE_TRAJECTORY_PROTOCOL.md",
+    "sha256": "bf3d7d73b5d463f7efe8a2b959759960e27c3b1d3460e63c3ce394e6691f6359"
+  },
+  {
+    "source": "tests/test_coarse_trajectories.py",
+    "file": "code/test_coarse_trajectories.py",
+    "sha256": "5b448730cfa307a78818e5ba8e554a302de32510a57b6935807abc1a714131d4"
+  }
+]

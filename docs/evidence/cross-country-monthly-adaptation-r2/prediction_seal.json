@@ -1,0 +1,226 @@
+[
+  {
+    "path": "US_persistence_to_GB.csv",
+    "sha256": "2a5c419db623a6207f33077a867c702e875a1e2ad523bf2e2ca7114edd915e86"
+  },
+  {
+    "path": "US_seasonal_to_GB.csv",
+    "sha256": "8c0ea441dbb1f0c31a9a10d51690238f401fa0329f5eee42b1cafa80659ce530"
+  },
+  {
+    "path": "US_damped_trend_to_GB.csv",
+    "sha256": "2a21ddfc31fd5b8a3a440295f8d3423ca98ce62efab4405ad703dc78adbe8925"
+  },
+  {
+    "path": "US_local_ridge_to_GB.csv",
+    "sha256": "80b130bbc5ac05bce0bda2eb8bac9e0b58adf8fbd6f41286be2582d44ba11d98"
+  },
+  {
+    "path": "US_source_ridge_to_GB.csv",
+    "sha256": "4212ed2f31f186445d7827273371b25db57c5796b5e67d4d10d442e6124a34b4"
+  },
+  {
+    "path": "US_local_bias_to_GB.csv",
+    "sha256": "26c44e7b998a37dbdd822a5acc072d04420722db9983d9b4c68c713841d2c608"
+  },
+  {
+    "path": "US_shrunk_bias_to_GB.csv",
+    "sha256": "b5826296299553a0797759d8f59941d6130c4439940a0990f75235ad5915dcb5"
+  },
+  {
+    "path": "GB_persistence_to_BPAT.csv",
+    "sha256": "b9d423d4c9566aedc0cf31d372cec5933dcb60504f21730227be9257769e187f"
+  },
+  {
+    "path": "GB_persistence_to_CISO.csv",
+    "sha256": "f261e94188e25d7c3cca5918ca7b278e7ad724871e609a2fdf1ddf8a68887f98"
+  },
+  {
+    "path": "GB_persistence_to_ERCO.csv",
+    "sha256": "af2c7a2c4f27b1e3d694bb02d208ebd3cf8834732fc4b201cb1af43787f24df5"
+  },
+  {
+    "path": "GB_persistence_to_FPL.csv",
+    "sha256": "8dcf170eddbae2b2ef264a419843b4108c258a61acf10616059815856d23e486"
+  },
+  {
+    "path": "GB_persistence_to_ISNE.csv",
+    "sha256": "3d50d285ab976fe05fbad39847b26224cf7df54f360ff7c7054de1b082c3954b"
+  },
+  {
+    "path": "GB_persistence_to_MISO.csv",
+    "sha256": "9ec7a148eb6b6896573dd6269a3ac6047e62818fcced33dec3231b84f00b4832"
+  },
+  {
+    "path": "GB_persistence_to_NYIS.csv",
+    "sha256": "089b7479e7d373ccfe8653e0da3a8bbf2e214751c9dcbe27b5334798ae31252c"
+  },
+  {
+    "path": "GB_seasonal_to_BPAT.csv",
+    "sha256": "3fcc6ea16627d4d3e2bc8f3d689a53e308f253146d69ac713081b94cded97ed1"
+  },
+  {
+    "path": "GB_seasonal_to_CISO.csv",
+    "sha256": "75bb1a48032c98d84bac435576d5e05038e050975afe3797ce5313e7cf774528"
+  },
+  {
+    "path": "GB_seasonal_to_ERCO.csv",
+    "sha256": "7ed9d5733c3e037b38614a704dfae42b288abe049a8df47d8ea9f3482de594bd"
+  },
+  {
+    "path": "GB_seasonal_to_FPL.csv",
+    "sha256": "8662abbb500193bc3779c65f12417e0dee24d72ca9557b698cf28d8f7bc956fc"
+  },
+  {
+    "path": "GB_seasonal_to_ISNE.csv",
+    "sha256": "e40179261dc601538f5a4e8d862e87b69c1adaac971be267f7208823bc136d80"
+  },
+  {
+    "path": "GB_seasonal_to_MISO.csv",
+    "sha256": "a5994d4d081ddacd4979b1d4f0ccdb51c7263e1eeb369734f16a03527d4b6a5b"
+  },
+  {
+    "path": "GB_seasonal_to_NYIS.csv",
+    "sha256": "e3a8470f931b42730604a855f9bb554fd2839a65574c497640926498a6f59751"
+  },
+  {
+    "path": "GB_damped_trend_to_BPAT.csv",
+    "sha256": "b49eeb983a92723d8f20114477cac7ac1cf66b182e456eb90516e6025957de4d"
+  },
+  {
+    "path": "GB_damped_trend_to_CISO.csv",
+    "sha256": "08cdd665597cb003e26282232e378d0dc88c23622e6e4242bf2ea699e351b301"
+  },
+  {
+    "path": "GB_damped_trend_to_ERCO.csv",
+    "sha256": "7adfbeace8a99332d962f036fe5c30ac3f2b9773da49f500b2c84e77ba5f8a16"
+  },
+  {
+    "path": "GB_damped_trend_to_FPL.csv",
+    "sha256": "369539f6bd9198ba0e01e4e8719f8b7a8a9cab0aae6b3afde280f20db2feffec"
+  },
+  {
+    "path": "GB_damped_trend_to_ISNE.csv",
+    "sha256": "c7ee857fbed60bb6e4d15c4765e9f590b3cdf9d89a11ddea7a47a0ad1dcc166c"
+  },
+  {
+    "path": "GB_damped_trend_to_MISO.csv",
+    "sha256": "94fa75dcaf431d84958ab699fede4abd7981ca827b51f820928e092501d120ce"
+  },
+  {
+    "path": "GB_damped_trend_to_NYIS.csv",
+    "sha256": "e887d15c9fad21b09b9cf67c44c3df45892580c639f7b308d492da299b06ecd5"
+  },
+  {
+    "path": "GB_local_ridge_to_BPAT.csv",
+    "sha256": "d71b2b1d3215bf512bdf62e03358b1e253e9685c143a5863b53e5fe9e6f6198c"
+  },
+  {
+    "path": "GB_local_ridge_to_CISO.csv",
+    "sha256": "c58c82208a7853b8f287dd1cf823d98f52d33232dad7abdc84a738342cf4dd5a"
+  },
+  {
+    "path": "GB_local_ridge_to_ERCO.csv",
+    "sha256": "8666e323e97054711fee391c8a9c92d518a39466bf129e44f3a3a2942a3f32f8"
+  },
+  {
+    "path": "GB_local_ridge_to_FPL.csv",
+    "sha256": "0e8317a34f6dccb9edf67200e623d2b9e70db86f535cce57531db57bed5184ac"
+  },
+  {
+    "path": "GB_local_ridge_to_ISNE.csv",
+    "sha256": "9b57a6efd370c7d679cd5aa6be2a85a4a868a6b0be66e5cba48da3331f076d66"
+  },
+  {
+    "path": "GB_local_ridge_to_MISO.csv",
+    "sha256": "545a41dbdd477b1751b5413e4ddb9f01fb08e6402733f25528055cbf26163f19"
+  },
+  {
+    "path": "GB_local_ridge_to_NYIS.csv",
+    "sha256": "b377e2da599f7e5de90b9d70b125e75df256b494d96d5644560b4e068bcdacd1"
+  },
+  {
+    "path": "GB_source_ridge_to_BPAT.csv",
+    "sha256": "0b38b26d6dcfed2d12984604788e70fc23cc07bdb905492eb6d20b242c548fe7"
+  },
+  {
+    "path": "GB_source_ridge_to_CISO.csv",
+    "sha256": "dbf25a7a2502bb9294e808c9ae5aaf5b66f1c2dd4b93b6407f772bbe161cf26a"
+  },
+  {
+    "path": "GB_source_ridge_to_ERCO.csv",
+    "sha256": "eb747125ddbb4b01944d511c586b56b69e2aa5f7e7180d4593b2b7b3e43d4c70"
+  },
+  {
+    "path": "GB_source_ridge_to_FPL.csv",
+    "sha256": "27b0573a8100b42bf37290d72c35561f2a51f9d5e1ef190fe761cfd01c5fa123"
+  },
+  {
+    "path": "GB_source_ridge_to_ISNE.csv",
+    "sha256": "94a4c28d96b58f7739e60851c4b37f1cb718e0d82bc5f62d24edf69f8c2ef6f4"
+  },
+  {
+    "path": "GB_source_ridge_to_MISO.csv",
+    "sha256": "075ac38afda8b7d8afbfb372029ecb2016cfa7460c41fdf4e94198ecbf93a111"
+  },
+  {
+    "path": "GB_source_ridge_to_NYIS.csv",
+    "sha256": "4381ff1dc65f1a6657f790f37777830e3d780a02f234b494783dfbe1f97117f0"
+  },
+  {
+    "path": "GB_local_bias_to_BPAT.csv",
+    "sha256": "25df65be9439e38a2a0099a9cc69318d3c11740923eb069fe959926f46d4bb10"
+  },
+  {
+    "path": "GB_local_bias_to_CISO.csv",
+    "sha256": "a670077c71a7a5ab7535a57b75251cfcf787308ac690de30d5443869b8ce3900"
+  },
+  {
+    "path": "GB_local_bias_to_ERCO.csv",
+    "sha256": "d7eaa0c0b4b7424af7094e1700f4776577f853200eed935547f0ab990a9c34c2"
+  },
+  {
+    "path": "GB_local_bias_to_FPL.csv",
+    "sha256": "47eefd1b940b745695f928bfec56a008757f25d3eb08ac56e19f4af37b872d8b"
+  },
+  {
+    "path": "GB_local_bias_to_ISNE.csv",
+    "sha256": "c6038b000540349ec79b9028ac89b2ccb08ab9592aa95fbab4e084c79394f91a"
+  },
+  {
+    "path": "GB_local_bias_to_MISO.csv",
+    "sha256": "40b15d658a9db151d6b607ad9978a402d6d338a878faa17b0c896ff968172a77"
+  },
+  {
+    "path": "GB_local_bias_to_NYIS.csv",
+    "sha256": "47ddd28432d83fb8028b1dbb3a9adb604a28c0976c768eacdf71307ced187d4e"
+  },
+  {
+    "path": "GB_shrunk_bias_to_BPAT.csv",
+    "sha256": "ccee79cbb3ddbc20d281a1c5a722aaf3aa68cb5814326712970d99ecf5200704"
+  },
+  {
+    "path": "GB_shrunk_bias_to_CISO.csv",
+    "sha256": "f0923df7756d701c62736efc43163441ddc5a6c52c026779c02ec71e8baf2cda"
+  },
+  {
+    "path": "GB_shrunk_bias_to_ERCO.csv",
+    "sha256": "754fe07d2bf8e66969b6f7dd62a65820523ed7aaae2821752b37f49d197c19e0"
+  },
+  {
+    "path": "GB_shrunk_bias_to_FPL.csv",
+    "sha256": "61c65e4bef94786b2746664eef08e329ccd05311449474dc510d9817c3753e7b"
+  },
+  {
+    "path": "GB_shrunk_bias_to_ISNE.csv",
+    "sha256": "dfde72117bb2c4ab47e505a7518c8b97afb11a198d4467d870b80622b7c6958c"
+  },
+  {
+    "path": "GB_shrunk_bias_to_MISO.csv",
+    "sha256": "bebbe93979d26d99421ed66bc0cbb423df1ebb56ba157edcea630ca6aed34655"
+  },
+  {
+    "path": "GB_shrunk_bias_to_NYIS.csv",
+    "sha256": "96189233f7602d012d6857001efc96c2d1b8fb4fb1bdd4c9477fefe7a6fb4535"
+  }
+]

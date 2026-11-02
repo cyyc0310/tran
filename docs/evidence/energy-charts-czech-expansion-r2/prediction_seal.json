@@ -1,0 +1,38 @@
+[
+  {
+    "target": "NL",
+    "file": "NL_heldout_predictions.csv.gz",
+    "sha256": "733c9cc558cdae4f7c7782c63956d4a5237a772fd47b18ae10d9e59bfe335ec1",
+    "hours": 8784
+  },
+  {
+    "target": "ES",
+    "file": "ES_heldout_predictions.csv.gz",
+    "sha256": "dcebc900489ac866745ceb0337ee3f8e7864628a50db2da59147fafdc3b7d060",
+    "hours": 8783
+  },
+  {
+    "target": "BE",
+    "file": "BE_heldout_predictions.csv.gz",
+    "sha256": "c5cd66fb3b4cac66a6204410cbac9267b5af35bb344ebcba7cd31e6db411bb0d",
+    "hours": 8784
+  },
+  {
+    "target": "AT",
+    "file": "AT_heldout_predictions.csv.gz",
+    "sha256": "77da34e396a82886ca8a6301c1fe4997d51e1ca721b3615875533ef01953b0b5",
+    "hours": 8784
+  },
+  {
+    "target": "SE",
+    "file": "SE_heldout_predictions.csv.gz",
+    "sha256": "0d11e5c10c0adb4de2bec5784c5c1c15c0f774df44e5be8c2a8d50d3fc4efe24",
+    "hours": 8783
+  },
+  {
+    "target": "CZ",
+    "file": "CZ_heldout_predictions.csv.gz",
+    "sha256": "2fc7391283901df848efc16cf86b4c3321a9725b090e95a9465548f4908ead31",
+    "hours": 8784
+  }
+]

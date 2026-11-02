@@ -1,0 +1,592 @@
+[
+  {
+    "source": "results/gfs-cross-country-pilot-r1/points.json",
+    "file": "points.json",
+    "sha256": "1b6e985d37d8e29ae59182d77f7b558cc577ffc7d2d298b71dc897ac2d3970f1"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/independent_audit_v2.json",
+    "file": "independent_audit_v2.json",
+    "sha256": "2cb780fe03f25860805c4199133e68a968f0e905188fa121c6bb26a5b88642a4"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact_audit.json",
+    "file": "compact_audit.json",
+    "sha256": "dd1cd299febc66ce14297de957fc4f24def37e1a80badd5c11b767dde17381bd"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f024_metadata.json",
+    "file": "compact-window-20220101/evidence/f024_metadata.json",
+    "sha256": "8653c3ee93575285a2de57ca81122d7a33926264f536f4df4c8f2a6aa3e6385c"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f024_source.idx",
+    "file": "compact-window-20220101/evidence/f024_source.idx",
+    "sha256": "05d83488963a9fba5bc74f3fa19c594a724edbdf7286b630f0e9ab699b1862d7"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f025_metadata.json",
+    "file": "compact-window-20220101/evidence/f025_metadata.json",
+    "sha256": "d644264aa977fd166836ed9e562f66d1ba0e5d099f1f3f29dbafdca8f42bb232"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f025_source.idx",
+    "file": "compact-window-20220101/evidence/f025_source.idx",
+    "sha256": "599113e3ee261730fd981cec7faf617c2c621bfdffbed523b6235cc592791a0f"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f026_metadata.json",
+    "file": "compact-window-20220101/evidence/f026_metadata.json",
+    "sha256": "899d0a371cc7c2ec349b841f7dbc00db8de2ddf25b50c3c2bb10704556ddd59b"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f026_source.idx",
+    "file": "compact-window-20220101/evidence/f026_source.idx",
+    "sha256": "abfbe7765751945ef47ddc52187a07ec2fbdd5bf69cd87f4c4cc372e314edb83"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f027_metadata.json",
+    "file": "compact-window-20220101/evidence/f027_metadata.json",
+    "sha256": "4ce823e3842cc9df640223ac9d46ca14b7f2deeac143b72879f0047390a1817b"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f027_source.idx",
+    "file": "compact-window-20220101/evidence/f027_source.idx",
+    "sha256": "6eeb2a2926c76f6a64e6ebd620270ac43fbb82feb91a1f9be7a490664c51b0eb"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f028_metadata.json",
+    "file": "compact-window-20220101/evidence/f028_metadata.json",
+    "sha256": "e3ebcb00bb8b7becdbde22d946680ba55502817245387d185f0ef482b4aac3c8"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f028_source.idx",
+    "file": "compact-window-20220101/evidence/f028_source.idx",
+    "sha256": "cde3635a29ef56a0511b93149b3468979ecad1d6a3524b893cf108975e8c4265"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f029_metadata.json",
+    "file": "compact-window-20220101/evidence/f029_metadata.json",
+    "sha256": "39a66a77c7635e135d894ed34c2da8483b56089e5c83bd479c507b6d54e2dead"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f029_source.idx",
+    "file": "compact-window-20220101/evidence/f029_source.idx",
+    "sha256": "4ad779ef6b2146bf32e8d28153dacfb7a9cee55cb866e974228b7480330874d9"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f030_metadata.json",
+    "file": "compact-window-20220101/evidence/f030_metadata.json",
+    "sha256": "91421a7c533482cbc63039c601f81fc5a8a79990eb454f5a664b5b3b33e22584"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f030_source.idx",
+    "file": "compact-window-20220101/evidence/f030_source.idx",
+    "sha256": "15cb137833bfdafcd363949fac22518683f25a0fc133cad0de3dc57764aa3d54"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f031_metadata.json",
+    "file": "compact-window-20220101/evidence/f031_metadata.json",
+    "sha256": "5619976b2e188ec41639529f35a0fa8caadeebbc074bf7645d06958f8ca487bc"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f031_source.idx",
+    "file": "compact-window-20220101/evidence/f031_source.idx",
+    "sha256": "09ee154a460458a3ddda85b613f99f180684c98ab61c62a73098dd0ac628faa7"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f032_metadata.json",
+    "file": "compact-window-20220101/evidence/f032_metadata.json",
+    "sha256": "662f6f399a15a5df08982b02482c8332750928a3bc46018a768fb3c0f0db61e4"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f032_source.idx",
+    "file": "compact-window-20220101/evidence/f032_source.idx",
+    "sha256": "104bb6ea36cd1ae4c0395ce81ee7d78c076595e25c33d89c0017290f40ec048b"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f033_metadata.json",
+    "file": "compact-window-20220101/evidence/f033_metadata.json",
+    "sha256": "158dae8de448936c939cb4fac70f854d0ba953ddc3559210ee9968daa8ff0985"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f033_source.idx",
+    "file": "compact-window-20220101/evidence/f033_source.idx",
+    "sha256": "ae1b246dd92216539f5937ffa2a3fb887616f71e0c044cb042613157063a432c"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f034_metadata.json",
+    "file": "compact-window-20220101/evidence/f034_metadata.json",
+    "sha256": "96597e01534caafb83f823cb5a2964044cdbcfbbef10dbbd2e34c0d28fc42dcc"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f034_source.idx",
+    "file": "compact-window-20220101/evidence/f034_source.idx",
+    "sha256": "4d9a912b0f6750db5f2687345ff4bb4d5a616961e65b0f1df97c3c8ef753ea53"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f035_metadata.json",
+    "file": "compact-window-20220101/evidence/f035_metadata.json",
+    "sha256": "56b2ec675b976be00e6dc18f2e4148498ca6fafe9f99e6e33402cef60d6f2e0b"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f035_source.idx",
+    "file": "compact-window-20220101/evidence/f035_source.idx",
+    "sha256": "cb6cf03d2e8f86aeb43f1ce7a1d6dfe7d7068360b64d89b8869dd6e6b2b4ee80"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f036_metadata.json",
+    "file": "compact-window-20220101/evidence/f036_metadata.json",
+    "sha256": "34dc77d848d7ec5bc2e570039e41a1842e91694c278966054429f74164d08f7c"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f036_source.idx",
+    "file": "compact-window-20220101/evidence/f036_source.idx",
+    "sha256": "1549d9ef03d7ba8610d6206dde3c93474abdea3b47cd87d83f20e079d668061b"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f037_metadata.json",
+    "file": "compact-window-20220101/evidence/f037_metadata.json",
+    "sha256": "15982e79cfb73526019728a3ff505ab64708fc883d8fe22e6b29a9b407d9e976"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f037_source.idx",
+    "file": "compact-window-20220101/evidence/f037_source.idx",
+    "sha256": "e1738f6ca99ba68720ed8e3f8cf8ca5cf1a49f2d5464cddcc677a94a596bf6d8"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f038_metadata.json",
+    "file": "compact-window-20220101/evidence/f038_metadata.json",
+    "sha256": "0a16df6ebaeac79ffbaf9a9fb0d3afbcb2f5b05ed9724126f36d4451b488e14e"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f038_source.idx",
+    "file": "compact-window-20220101/evidence/f038_source.idx",
+    "sha256": "2d60de6171a89132c331c93a9bc72fcc723ec84ae74f271c32996ebdaad3a2a7"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f039_metadata.json",
+    "file": "compact-window-20220101/evidence/f039_metadata.json",
+    "sha256": "a8ba3c6fb4eec4bedd3a9e9796d183860b488ea769354663d3af812a6d85292b"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f039_source.idx",
+    "file": "compact-window-20220101/evidence/f039_source.idx",
+    "sha256": "6ccf856fbb17531ab9bb5fdf802e587a3f4ef68ae93a0092ee62b4eaf79a190f"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f040_metadata.json",
+    "file": "compact-window-20220101/evidence/f040_metadata.json",
+    "sha256": "f1de8647c501f782e13274d417302c2f2366bc28dc2792792031448ba660acf4"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f040_source.idx",
+    "file": "compact-window-20220101/evidence/f040_source.idx",
+    "sha256": "37ecf97fa4598ffa2c255814c445b593e2a87783fa5ae04a4efa516f348a58a1"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f041_metadata.json",
+    "file": "compact-window-20220101/evidence/f041_metadata.json",
+    "sha256": "d93a92f6cf58d318ca7a6f0bdf69e5b43462eee88376e0548a8a665a4af059fa"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f041_source.idx",
+    "file": "compact-window-20220101/evidence/f041_source.idx",
+    "sha256": "b860eb0e21cdaca1573564eb1080879b7485e700fb8892f0f9b21665e5ccabe6"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f042_metadata.json",
+    "file": "compact-window-20220101/evidence/f042_metadata.json",
+    "sha256": "fc3ad7ad2bec05d175450ef3a331076cd896102fe4f833495d9b41f3e1f09a37"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f042_source.idx",
+    "file": "compact-window-20220101/evidence/f042_source.idx",
+    "sha256": "886c092ebc8f4855163df3136e9d87d2663d88c2aeeec342154ab65fda6f03cf"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f043_metadata.json",
+    "file": "compact-window-20220101/evidence/f043_metadata.json",
+    "sha256": "342708eda48d11f131bdecd82c977c2699498549569ecee6d325dc889889ccc0"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f043_source.idx",
+    "file": "compact-window-20220101/evidence/f043_source.idx",
+    "sha256": "9b8c7fafe99cafc00a89c246b03a34d0f3ad9d866eac70fc946125052aa3ef65"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f044_metadata.json",
+    "file": "compact-window-20220101/evidence/f044_metadata.json",
+    "sha256": "61074558fc859e94716ea83de9108e15817cff9a2e3fd1e78af4064a81a4015f"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f044_source.idx",
+    "file": "compact-window-20220101/evidence/f044_source.idx",
+    "sha256": "0bb00f0b89692f32258a6057e3475533a6097aef44f697cb9e457f69cbbda379"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f045_metadata.json",
+    "file": "compact-window-20220101/evidence/f045_metadata.json",
+    "sha256": "401e5917e2b6cc344538b477f03d9e1bd6d23f49a772310f95f02c414994e8ca"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f045_source.idx",
+    "file": "compact-window-20220101/evidence/f045_source.idx",
+    "sha256": "731f9117ba5c6884f35d1cd0699dec209a201ba620f66fde674c980a3f25b30a"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f046_metadata.json",
+    "file": "compact-window-20220101/evidence/f046_metadata.json",
+    "sha256": "43ef4bc76bd615ff0d53e7739dec7c34b12f63c741bf83b9887a4f1add4f9a3f"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f046_source.idx",
+    "file": "compact-window-20220101/evidence/f046_source.idx",
+    "sha256": "835f3f89693e0d4aa2874467365d6c972794f346dcc462e444bedc9781157730"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f047_metadata.json",
+    "file": "compact-window-20220101/evidence/f047_metadata.json",
+    "sha256": "358907e776ac87972c91b4b959cb5734bc97fb6dca438485328958651453924d"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f047_source.idx",
+    "file": "compact-window-20220101/evidence/f047_source.idx",
+    "sha256": "65ca3c555dd601f5a80782f759e422a306255c0f519f00d5e5c936abd4c4c12b"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f048_metadata.json",
+    "file": "compact-window-20220101/evidence/f048_metadata.json",
+    "sha256": "b58a7c520b5aa5331a57be0e05b2ac3f10cc50e227f219237683024ef370c663"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/evidence/f048_source.idx",
+    "file": "compact-window-20220101/evidence/f048_source.idx",
+    "sha256": "aab9c951b0f1727fa9af031bdceb896175374d3447beeb2208c7666e3bacc99c"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/hourly_points.json",
+    "file": "compact-window-20220101/hourly_points.json",
+    "sha256": "a81bfcd3ee284de802a7db30983d7bfa16bf42198836884ffca25774ff6e7e9e"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/manifest.json",
+    "file": "compact-window-20220101/manifest.json",
+    "sha256": "c7ef6fe89abd201aec7df8c28a337ef42cc40a8ca3817aab36bc88d437361fcf"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20220101/source_window_metadata.json",
+    "file": "compact-window-20220101/source_window_metadata.json",
+    "sha256": "4c0855b8c5090fa1cbe71fa55198403543d8a00dea56f9cf7a9e764fbfc27fd6"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f024_metadata.json",
+    "file": "compact-window-20230701/evidence/f024_metadata.json",
+    "sha256": "e4ab158df07f385701ed49279ea2564cac52a05001b48258ad902022e6afa1a7"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f024_source.idx",
+    "file": "compact-window-20230701/evidence/f024_source.idx",
+    "sha256": "a069657e42d65b7c94fddb00d75748de8b7d6168e74d76124f40b799dd502d31"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f025_metadata.json",
+    "file": "compact-window-20230701/evidence/f025_metadata.json",
+    "sha256": "d890bf1641a53d1b1ff951a2974e17698704eb33a423ec522fe3664042e12fe5"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f025_source.idx",
+    "file": "compact-window-20230701/evidence/f025_source.idx",
+    "sha256": "c32068b58e926263847226852a7b3da7e1ed8506f0df3091a9b6c1e746bb9d47"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f026_metadata.json",
+    "file": "compact-window-20230701/evidence/f026_metadata.json",
+    "sha256": "78114446b790de3810100f7a358f3d465aff49482ee59495794f8cf0174b7a23"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f026_source.idx",
+    "file": "compact-window-20230701/evidence/f026_source.idx",
+    "sha256": "4016a680e0a62afa9199c4195643bd7f113092901f98b114530d8b56912b34b2"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f027_metadata.json",
+    "file": "compact-window-20230701/evidence/f027_metadata.json",
+    "sha256": "8bddfd11dff1ed5a9759ede910db7c2ed35b97c8110860d401fd336ee2b74b55"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f027_source.idx",
+    "file": "compact-window-20230701/evidence/f027_source.idx",
+    "sha256": "7069da973978e82a94916e9932ea3f3fac970f03eca60c1df37b31bb2df175ba"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f028_metadata.json",
+    "file": "compact-window-20230701/evidence/f028_metadata.json",
+    "sha256": "a521e5ad3009af19a54956bbcb79a2bfb88a42fa0bce955d70949abd322ac60d"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f028_source.idx",
+    "file": "compact-window-20230701/evidence/f028_source.idx",
+    "sha256": "4a345cbc2a065f1838ec08286709d242dbed44dc1af73db4044eaa0637aedb58"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f029_metadata.json",
+    "file": "compact-window-20230701/evidence/f029_metadata.json",
+    "sha256": "cf69343a4814c20878e9ecf4a2ffba8cf0807eac86ac73145e81ba8ea9506b48"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f029_source.idx",
+    "file": "compact-window-20230701/evidence/f029_source.idx",
+    "sha256": "e8d21b35b54171e3be2d89a3b432604ce97c9f94fc8e2d628185c1bff50e57c6"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f030_metadata.json",
+    "file": "compact-window-20230701/evidence/f030_metadata.json",
+    "sha256": "a313349ad854625fb00d41e3bdb4855621352b188cf1dca70b9674a16574d9a7"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f030_source.idx",
+    "file": "compact-window-20230701/evidence/f030_source.idx",
+    "sha256": "a32420f4549d1768f0f0edf7071c47491832baa997edd1188051abc453b46b91"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f031_metadata.json",
+    "file": "compact-window-20230701/evidence/f031_metadata.json",
+    "sha256": "a1e5fc34d90fe265cc10ccdc2fc1b0f60f2ebc625754184c848b101498d01874"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f031_source.idx",
+    "file": "compact-window-20230701/evidence/f031_source.idx",
+    "sha256": "1f8420a522dc6b682e897db199139f20c5299385f9deb0b9c3ce24bd820697ac"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f032_metadata.json",
+    "file": "compact-window-20230701/evidence/f032_metadata.json",
+    "sha256": "6fcf540ee4efacc1bb3636f12d04895a155803aae29d7973f9e8959ba891d220"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f032_source.idx",
+    "file": "compact-window-20230701/evidence/f032_source.idx",
+    "sha256": "3fddd1db8d704e6ee05169ee36d8179409b64d47a3fbc6a4b982637835f32c85"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f033_metadata.json",
+    "file": "compact-window-20230701/evidence/f033_metadata.json",
+    "sha256": "e3d74d0cb8ba15b08123424e9585e3dc5abc8707c9d707ea220f2689f4f02843"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f033_source.idx",
+    "file": "compact-window-20230701/evidence/f033_source.idx",
+    "sha256": "d55206f476cf7e12ff9291d997d7a5984f6db1d04e9fdd113b71f08ee243542b"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f034_metadata.json",
+    "file": "compact-window-20230701/evidence/f034_metadata.json",
+    "sha256": "f7d3d065fae9d7a856b3f561565ef8db2214fd2a1efb788341d43379740abe7f"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f034_source.idx",
+    "file": "compact-window-20230701/evidence/f034_source.idx",
+    "sha256": "aef35687e3146eeeadbd176d0cc4498cfa7067f651c60021cad6c28a4cfa7c88"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f035_metadata.json",
+    "file": "compact-window-20230701/evidence/f035_metadata.json",
+    "sha256": "7709e93f59cebc2d925597d8643b5780206f1296bb222e31426e3263faea9f27"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f035_source.idx",
+    "file": "compact-window-20230701/evidence/f035_source.idx",
+    "sha256": "c742e091808dff63584cf36da50dd312e96967cee967ea055779821ff82fc5ef"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f036_metadata.json",
+    "file": "compact-window-20230701/evidence/f036_metadata.json",
+    "sha256": "e8d7584a835bb2eb08aa6b21e62e7d49b2462cdd5e67f1dddc9b34cd5f546eb9"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f036_source.idx",
+    "file": "compact-window-20230701/evidence/f036_source.idx",
+    "sha256": "e7cc1de129de4bd610772b5ffafbd628fc60de9f7b6883073f886aacbb0fe5ec"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f037_metadata.json",
+    "file": "compact-window-20230701/evidence/f037_metadata.json",
+    "sha256": "8fb8af31330a3f9c1e7737ed8478feb136754c3a2725eccaeac58c160a8ccd77"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f037_source.idx",
+    "file": "compact-window-20230701/evidence/f037_source.idx",
+    "sha256": "4565e2dd9d1f6e841c94a10abca73888fd89ef1cef8f703aef541a078a2a26e3"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f038_metadata.json",
+    "file": "compact-window-20230701/evidence/f038_metadata.json",
+    "sha256": "987d469bb34d0fc8804b80c712c8787cfca666188cad3a83a89994695cb81750"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f038_source.idx",
+    "file": "compact-window-20230701/evidence/f038_source.idx",
+    "sha256": "15dfa145012bb4f5ca2f7d67b2ff065da294c5bc82681fcfc115ec5a90d6cc66"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f039_metadata.json",
+    "file": "compact-window-20230701/evidence/f039_metadata.json",
+    "sha256": "97c91531f67d517f9aef60a06c8e988e079b317747ba2cd04263826c25e413c4"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f039_source.idx",
+    "file": "compact-window-20230701/evidence/f039_source.idx",
+    "sha256": "148034c631de65f6a49105fcbd19815d50f76bf8cee39c3523fa2f0b49e9e484"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f040_metadata.json",
+    "file": "compact-window-20230701/evidence/f040_metadata.json",
+    "sha256": "e8c7bd864fc85ccf44484200565646c91d1577a28f5629e5ff9c3a1d0c7f1127"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f040_source.idx",
+    "file": "compact-window-20230701/evidence/f040_source.idx",
+    "sha256": "b84ec3d2284fdf3dec2671a7e59e63faf4e2f9e041400f8c06f773dc0eb9a9bd"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f041_metadata.json",
+    "file": "compact-window-20230701/evidence/f041_metadata.json",
+    "sha256": "2238e5f5f35f3a7c308a55d63e9ddde512f5bb8f8e227487ae931afba4cb39d0"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f041_source.idx",
+    "file": "compact-window-20230701/evidence/f041_source.idx",
+    "sha256": "93194dc112e55b531b137333ae8cdff8968be4d917279bbd18b458f0084aee56"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f042_metadata.json",
+    "file": "compact-window-20230701/evidence/f042_metadata.json",
+    "sha256": "51f873ff94df7e601e1588be6e4b5c55ec394678b8ea20b2bf92dad2a2dbcecb"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f042_source.idx",
+    "file": "compact-window-20230701/evidence/f042_source.idx",
+    "sha256": "1de2730ad72b451136fbf99a7f6f2f8ae9022bdd369f9504865fbc5399c7508d"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f043_metadata.json",
+    "file": "compact-window-20230701/evidence/f043_metadata.json",
+    "sha256": "abe868846934bce46a5dca1c0ff0aecb8a52dc7f52d541177b065ead99b523fc"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f043_source.idx",
+    "file": "compact-window-20230701/evidence/f043_source.idx",
+    "sha256": "bf1fa19f1cb27a3b5ddf6732c4727f0d831252be2fada95595318ecabe0d08f9"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f044_metadata.json",
+    "file": "compact-window-20230701/evidence/f044_metadata.json",
+    "sha256": "4eb2466b21aab34b8c50906dfeb51433e6219c7b7678e2da42a5fa3dc415578c"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f044_source.idx",
+    "file": "compact-window-20230701/evidence/f044_source.idx",
+    "sha256": "7f7f63e38b6b016b8645b41ee3505ac51ee52d8f1412471e717e653e21c90aa4"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f045_metadata.json",
+    "file": "compact-window-20230701/evidence/f045_metadata.json",
+    "sha256": "56a5ffdb6a199d413ff8b9e6dc50472d90f7a1b589298e7ce9c00e33acaf7d4d"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f045_source.idx",
+    "file": "compact-window-20230701/evidence/f045_source.idx",
+    "sha256": "80038c9f71b61fcea3d485eebb02ae0ad373f52953f4727d53c70b425a637d2a"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f046_metadata.json",
+    "file": "compact-window-20230701/evidence/f046_metadata.json",
+    "sha256": "6913cfe27edfc7a7c8ae5498b8b679621aa3fd9818096569a5bb6e2ad7e324e7"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f046_source.idx",
+    "file": "compact-window-20230701/evidence/f046_source.idx",
+    "sha256": "0049b99078226e4121516eb2edc934880682f480932d786133f553557b667878"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f047_metadata.json",
+    "file": "compact-window-20230701/evidence/f047_metadata.json",
+    "sha256": "213c4754f67efb83d20da599a9f2b454c1de2cd47cdf30d09463e2ff54e7d692"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f047_source.idx",
+    "file": "compact-window-20230701/evidence/f047_source.idx",
+    "sha256": "9b6f6fdc307880fb228e194649f1fa2d03b88676f9341754dd39a2503900c453"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f048_metadata.json",
+    "file": "compact-window-20230701/evidence/f048_metadata.json",
+    "sha256": "1591cd7321d43bc7c037f502be60cd2b403a2f8b0e8fae57fb77f6612f5ad498"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/evidence/f048_source.idx",
+    "file": "compact-window-20230701/evidence/f048_source.idx",
+    "sha256": "6094b805413dc178b45c035664cf9f94e554a765cf2d30716a66c957817caf14"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/hourly_points.json",
+    "file": "compact-window-20230701/hourly_points.json",
+    "sha256": "a0e19253db09dac7c6003b0368fbf9ee790d17750fb538be8472b08f71379983"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/manifest.json",
+    "file": "compact-window-20230701/manifest.json",
+    "sha256": "f5422eade62422e19d419b1346e652c733ab8e276883ebc6f668a4b5e571a200"
+  },
+  {
+    "source": "results/gfs-cross-country-pilot-r1/compact-window-20230701/source_window_metadata.json",
+    "file": "compact-window-20230701/source_window_metadata.json",
+    "sha256": "8f7855891da9ec546fd1a3efa77559f51a35d244805c7b66d0ec04ae936bc495"
+  },
+  {
+    "source": "scripts/audit_gfs_pilot.py",
+    "file": "code/audit_gfs_pilot.py",
+    "sha256": "305a3a739ccec004936fa86a3ce4dbbcc46d64e9d1e3ee7c8faf36b3564ed233"
+  },
+  {
+    "source": "src/transcif/data/gfs.py",
+    "file": "code/gfs.py",
+    "sha256": "1c4e1218b5aa51a1d8d4da856d6e027f3127211e1585922c86899ac287f15cc6"
+  },
+  {
+    "source": "src/transcif/data/gfs_decode.py",
+    "file": "code/gfs_decode.py",
+    "sha256": "987057402729d15db121ad0507e0342365a10d0f2f019590235d9af28e9ee38e"
+  },
+  {
+    "source": "src/transcif/data/gfs_window.py",
+    "file": "code/gfs_window.py",
+    "sha256": "5cf1407811ad8bb5702ca2cdbc008da5d2f0bef6a29e503914854469f56babcb"
+  },
+  {
+    "source": "src/transcif/data/gfs_compact.py",
+    "file": "code/gfs_compact.py",
+    "sha256": "a572c14d538fc4716f5950b0e00c9e953de4a6967f28795a24aca2b343952077"
+  },
+  {
+    "source": "src/transcif/research/public_horizon.py",
+    "file": "code/public_horizon.py",
+    "sha256": "13629dc829cfc368d99c6d15f30e01902cf9199b40e536bfa32c23dfc46b17e8"
+  },
+  {
+    "source": "tests/test_audit_gfs_pilot.py",
+    "file": "code/test_audit_gfs_pilot.py",
+    "sha256": "150e0e10e2d1df4f4082d6ac550459e452d331567208baf6d998da688814384e"
+  },
+  {
+    "source": "tests/test_gfs_compact.py",
+    "file": "code/test_gfs_compact.py",
+    "sha256": "7538678de491df41056366ccd041f81e3ef0809a594eeae409aa10448914019f"
+  },
+  {
+    "source": "tests/test_public_horizon.py",
+    "file": "code/test_public_horizon.py",
+    "sha256": "378d7e785bec898f9d107479199f364bf27c6fff9d146ea678cf24e8118a4d34"
+  }
+]

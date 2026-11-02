@@ -1,0 +1,47 @@
+[
+  {
+    "source": "results/cross-country-budget-training-r2/common_country_metrics.csv",
+    "file": "common_country_metrics.csv",
+    "sha256": "8938eaff6ba38223d36d67c92d07fc86f9ad9141c7e0dc881d84a5ff5e328719"
+  },
+  {
+    "source": "results/cross-country-budget-training-r2/common_region_metrics.csv",
+    "file": "common_region_metrics.csv",
+    "sha256": "75b44056b4604c7f2b944abe1461dee95d4ea9b7539d92b273618baf82be04ba"
+  },
+  {
+    "source": "results/cross-country-budget-training-r2/monthly_metrics.csv",
+    "file": "monthly_metrics.csv",
+    "sha256": "b2c8ecbf41113f2927ffba6c1340eb75c7d3d53a6b8f4be7a70a8807d140b1c3"
+  },
+  {
+    "source": "results/cross-country-budget-training-r2/source_calibration.json",
+    "file": "source_calibration.json",
+    "sha256": "113f2fc769ab3ac6f3fdc7cf0b9e28c18f090f0573ae25d8178450d28f098fbd"
+  },
+  {
+    "source": "results/cross-country-budget-training-r2/training_inventory.json",
+    "file": "training_inventory.json",
+    "sha256": "f761e8824467e13d2c27734c4bdeac3d02286d21decd4c697a67d3c9030060dc"
+  },
+  {
+    "source": "results/cross-country-budget-training-r2/prediction_seal.json",
+    "file": "prediction_seal.json",
+    "sha256": "68b4d1bb15ec49c47389c26d0da4700c8dd24086c1388c1a1e9482adf79a61e4"
+  },
+  {
+    "source": "results/cross-country-budget-training-r2/provenance.json",
+    "file": "provenance.json",
+    "sha256": "d57a88fcde59d7aaa4a8fbd8e800d494b64c1c5d7a1af8cf7417bc218624f71b"
+  },
+  {
+    "source": "results/cross-country-budget-training-r2/US_cohort.json",
+    "file": "US_cohort.json",
+    "sha256": "b0763823d809166a31a430a73e24161037f7ecb512d8d13a169ead3675959a5d"
+  },
+  {
+    "source": "results/cross-country-budget-training-r2/GB_cohort.json",
+    "file": "GB_cohort.json",
+    "sha256": "e6b9f78bad64118bd331d80cbafb5e76f549566e91b982424a1472502ee3de23"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "target": "NL",
+    "path": "NL_heldout_predictions.csv.gz",
+    "sha256": "e00ccc83591d34ee28596f2a7f77eed7128240f369db8be73c6aa3616474fbf7",
+    "hours": 8784,
+    "selected_tau": "0.05"
+  },
+  {
+    "target": "ES",
+    "path": "ES_heldout_predictions.csv.gz",
+    "sha256": "c05b208f0ac03a94654082c3c44117b51321b83def92e555a1578fe608a6e085",
+    "hours": 8783,
+    "selected_tau": "0.2"
+  },
+  {
+    "target": "BE",
+    "path": "BE_heldout_predictions.csv.gz",
+    "sha256": "0ec9e68296e40cb35e533375b60657a1c64cb595799bf26e4ec0060f5deab49e",
+    "hours": 8784,
+    "selected_tau": "0.05"
+  },
+  {
+    "target": "AT",
+    "path": "AT_heldout_predictions.csv.gz",
+    "sha256": "050f7d5dd10595d8e4df4de20d448816d2c68eb1ffc746bba6eb8cdf33ad267e",
+    "hours": 8784,
+    "selected_tau": "0.2"
+  },
+  {
+    "target": "SE",
+    "path": "SE_heldout_predictions.csv.gz",
+    "sha256": "a9b84fc2647b226c8c715edcba2c3dc18abc6ef66839ae921af1fc1f6c603ee2",
+    "hours": 8783,
+    "selected_tau": "0.05"
+  }
+]

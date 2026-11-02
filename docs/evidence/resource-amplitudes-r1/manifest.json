@@ -1,0 +1,2638 @@
+{
+  "schema": "RESOURCE_AMPLITUDE_EVIDENCE_V1",
+  "unique_target_hours": 624,
+  "adaptive_development": true,
+  "new_country_opened": false,
+  "original_weather_public_availability_certified": false,
+  "files": [
+    {
+      "file": "results/DE+GB_to_US_training_audit.json",
+      "sha256": "87d72576a1f278a6a254e5de8baa00844a62662888f581346bba35775ad78228",
+      "original": "results/resource-amplitudes-r1/DE+GB_to_US_training_audit.json",
+      "original_sha256": "87d72576a1f278a6a254e5de8baa00844a62662888f581346bba35775ad78228"
+    },
+    {
+      "file": "results/DE+US_to_GB_training_audit.json",
+      "sha256": "21add70256662e8b53ee872ef2b5eb059d0b396b301af5dc7b8d13a4a55b10dc",
+      "original": "results/resource-amplitudes-r1/DE+US_to_GB_training_audit.json",
+      "original_sha256": "21add70256662e8b53ee872ef2b5eb059d0b396b301af5dc7b8d13a4a55b10dc"
+    },
+    {
+      "file": "results/DE_to_GB_training_audit.json",
+      "sha256": "4ca7d668c9ca6e3fb4c398902df875e319cda869810ca41a568f7a4e1ac676ab",
+      "original": "results/resource-amplitudes-r1/DE_to_GB_training_audit.json",
+      "original_sha256": "4ca7d668c9ca6e3fb4c398902df875e319cda869810ca41a568f7a4e1ac676ab"
+    },
+    {
+      "file": "results/DE_to_US_training_audit.json",
+      "sha256": "4ca7d668c9ca6e3fb4c398902df875e319cda869810ca41a568f7a4e1ac676ab",
+      "original": "results/resource-amplitudes-r1/DE_to_US_training_audit.json",
+      "original_sha256": "4ca7d668c9ca6e3fb4c398902df875e319cda869810ca41a568f7a4e1ac676ab"
+    },
+    {
+      "file": "results/GB+US_to_DE_training_audit.json",
+      "sha256": "b76ca8d62bffa8d79e85aece083e7528d994826b000ca3a9f5ed84ccb21a1d45",
+      "original": "results/resource-amplitudes-r1/GB+US_to_DE_training_audit.json",
+      "original_sha256": "b76ca8d62bffa8d79e85aece083e7528d994826b000ca3a9f5ed84ccb21a1d45"
+    },
+    {
+      "file": "results/GB_to_DE_training_audit.json",
+      "sha256": "21d467ef4643b6dd1928a7182b9ba726ce5db441a7c23100fbb7f280a6643165",
+      "original": "results/resource-amplitudes-r1/GB_to_DE_training_audit.json",
+      "original_sha256": "21d467ef4643b6dd1928a7182b9ba726ce5db441a7c23100fbb7f280a6643165"
+    },
+    {
+      "file": "results/GB_to_US_training_audit.json",
+      "sha256": "21d467ef4643b6dd1928a7182b9ba726ce5db441a7c23100fbb7f280a6643165",
+      "original": "results/resource-amplitudes-r1/GB_to_US_training_audit.json",
+      "original_sha256": "21d467ef4643b6dd1928a7182b9ba726ce5db441a7c23100fbb7f280a6643165"
+    },
+    {
+      "file": "results/US_to_DE_training_audit.json",
+      "sha256": "69db1a11e7794137788cd2258a011aedc7b79805b2695bc65c13a7da62860898",
+      "original": "results/resource-amplitudes-r1/US_to_DE_training_audit.json",
+      "original_sha256": "69db1a11e7794137788cd2258a011aedc7b79805b2695bc65c13a7da62860898"
+    },
+    {
+      "file": "results/US_to_GB_training_audit.json",
+      "sha256": "69db1a11e7794137788cd2258a011aedc7b79805b2695bc65c13a7da62860898",
+      "original": "results/resource-amplitudes-r1/US_to_GB_training_audit.json",
+      "original_sha256": "69db1a11e7794137788cd2258a011aedc7b79805b2695bc65c13a7da62860898"
+    },
+    {
+      "file": "results/calibration.json",
+      "sha256": "acc47fd41c0cdd3881626a583939fe21c410dde8e6e7381ac5d92adbe698d921",
+      "original": "results/resource-amplitudes-r1/calibration.json",
+      "original_sha256": "acc47fd41c0cdd3881626a583939fe21c410dde8e6e7381ac5d92adbe698d921"
+    },
+    {
+      "file": "results/completion.json",
+      "sha256": "af680a1e6891212cd66d4903a37a6762d4464afee88601535db53e8a02a6d365",
+      "original": "results/resource-amplitudes-r1/completion.json",
+      "original_sha256": "af680a1e6891212cd66d4903a37a6762d4464afee88601535db53e8a02a6d365"
+    },
+    {
+      "file": "results/execution_plan.json",
+      "sha256": "426e955e982b26b1cc32779a136489e0ba19b5327c9146b1d7a8dd56958bd94c",
+      "original": "results/resource-amplitudes-r1/execution_plan.json",
+      "original_sha256": "426e955e982b26b1cc32779a136489e0ba19b5327c9146b1d7a8dd56958bd94c"
+    },
+    {
+      "file": "results/independent_review.json",
+      "sha256": "2676fb01ff4e74b88f2c5567b672cf7f35bcccc22fb08fb6f3392bc0f0a6dc7d",
+      "original": "results/resource-amplitudes-r1/independent_review.json",
+      "original_sha256": "2676fb01ff4e74b88f2c5567b672cf7f35bcccc22fb08fb6f3392bc0f0a6dc7d"
+    },
+    {
+      "file": "results/input_code_seal.json",
+      "sha256": "70cd6e0d90cbb3c956672ca47e4c5c32e926aa8bad001f767e362e54961b9dda",
+      "original": "results/resource-amplitudes-r1/input_code_seal.json",
+      "original_sha256": "70cd6e0d90cbb3c956672ca47e4c5c32e926aa8bad001f767e362e54961b9dda"
+    },
+    {
+      "file": "results/model_seal.json",
+      "sha256": "366c151df09735f497dffd43fe6194d1876bf4ccf897b8547a626c339e1f108f",
+      "original": "results/resource-amplitudes-r1/model_seal.json",
+      "original_sha256": "366c151df09735f497dffd43fe6194d1876bf4ccf897b8547a626c339e1f108f"
+    },
+    {
+      "file": "results/posthoc_source_fixed_curve_diagnostic.json",
+      "sha256": "7bad459ce5b93d31a8d0096ed8e79b1cc4e3db9bed51e93ca0987d298b55c94c",
+      "original": "results/resource-amplitudes-r1/posthoc_source_fixed_curve_diagnostic.json",
+      "original_sha256": "7bad459ce5b93d31a8d0096ed8e79b1cc4e3db9bed51e93ca0987d298b55c94c"
+    },
+    {
+      "file": "results/prediction_seal.json",
+      "sha256": "7be03a87bf225b7b388b6faf65dc983794bcfcb7fb4e1561a8b946a132bf90aa",
+      "original": "results/resource-amplitudes-r1/prediction_seal.json",
+      "original_sha256": "7be03a87bf225b7b388b6faf65dc983794bcfcb7fb4e1561a8b946a132bf90aa"
+    },
+    {
+      "file": "results/runtime.json",
+      "sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5",
+      "original": "results/resource-amplitudes-r1/runtime.json",
+      "original_sha256": "9a6fd3da28115cca5c36aef99587108c97e908c0122f5ebc2ac9f81c323f17b5"
+    },
+    {
+      "file": "results/source_resource_diagnostic_audit.json",
+      "sha256": "29094907e950dced9918609549fc738a6c032144d59391942193b7d6ccfa0d1c",
+      "original": "results/resource-amplitudes-r1/source_resource_diagnostic_audit.json",
+      "original_sha256": "29094907e950dced9918609549fc738a6c032144d59391942193b7d6ccfa0d1c"
+    },
+    {
+      "file": "results/test_receipt.json",
+      "sha256": "f68896840ebd210c177e39e8528582272206a0b295fad06a58131689f2e95b71",
+      "original": "results/resource-amplitudes-r1/test_receipt.json",
+      "original_sha256": "f68896840ebd210c177e39e8528582272206a0b295fad06a58131689f2e95b71"
+    },
+    {
+      "file": "results/amplitude_diagnostics.csv",
+      "sha256": "49d82b6b8df2beeb6cae354f6df45a19b31f8db237a7d38405855260431819f1",
+      "original": "results/resource-amplitudes-r1/amplitude_diagnostics.csv",
+      "original_sha256": "49d82b6b8df2beeb6cae354f6df45a19b31f8db237a7d38405855260431819f1"
+    },
+    {
+      "file": "results/configuration_metrics.csv",
+      "sha256": "deba05064dc67769b5f57daa6c3e75f9a57e0682a7206cfdbf6f2e2a9c5d46b8",
+      "original": "results/resource-amplitudes-r1/configuration_metrics.csv",
+      "original_sha256": "deba05064dc67769b5f57daa6c3e75f9a57e0682a7206cfdbf6f2e2a9c5d46b8"
+    },
+    {
+      "file": "results/posthoc_fixed_curve_reference.csv",
+      "sha256": "247a847c69c1440edbaf6efe0bd489086afdedd0bc11f85c9cc24ef600b567e4",
+      "original": "results/resource-amplitudes-r1/posthoc_fixed_curve_reference.csv",
+      "original_sha256": "247a847c69c1440edbaf6efe0bd489086afdedd0bc11f85c9cc24ef600b567e4"
+    },
+    {
+      "file": "results/posthoc_source_fixed_curve_diagnostic.csv",
+      "sha256": "7b2869fafa1aa6cdbc3336dca9ae1e68afffea38b963d9941f0380baddc97818",
+      "original": "results/resource-amplitudes-r1/posthoc_source_fixed_curve_diagnostic.csv",
+      "original_sha256": "7b2869fafa1aa6cdbc3336dca9ae1e68afffea38b963d9941f0380baddc97818"
+    },
+    {
+      "file": "results/predictions.csv.gz",
+      "sha256": "a61a0cc24e5b2845d9c193c9411ceb3dcf83e77711d8d961266244200349b6a9",
+      "original": "results/resource-amplitudes-r1/predictions.csv",
+      "decompressed_sha256": "5f85a9da4cb53d1498e4ff7909a6bf2f6a89cb5fcd6d4e10ad03cc010492a257"
+    },
+    {
+      "file": "results/region_metrics.csv",
+      "sha256": "cd4866cea276f9e8c1e050a7c14afbaef1aef829c5e92e05baa37c0b7f5597d6",
+      "original": "results/resource-amplitudes-r1/region_metrics.csv",
+      "original_sha256": "cd4866cea276f9e8c1e050a7c14afbaef1aef829c5e92e05baa37c0b7f5597d6"
+    },
+    {
+      "file": "results/source_resource_diagnostic.csv",
+      "sha256": "166a5c6c4154afa65c3257f320eace1216dfd99c978c1af2ff4230d625c4eee4",
+      "original": "results/resource-amplitudes-r1/source_resource_diagnostic.csv",
+      "original_sha256": "166a5c6c4154afa65c3257f320eace1216dfd99c978c1af2ff4230d625c4eee4"
+    },
+    {
+      "file": "results/source_resource_diagnostic_summary.csv",
+      "sha256": "3d46aaad3bae89de05fc8cb0d58152a670507777a5a0f2fbc9ef450c7922f75d",
+      "original": "results/resource-amplitudes-r1/source_resource_diagnostic_summary.csv",
+      "original_sha256": "3d46aaad3bae89de05fc8cb0d58152a670507777a5a0f2fbc9ef450c7922f75d"
+    },
+    {
+      "file": "results/summary.csv",
+      "sha256": "26c5a7d3ad503e8b7f8f59686f88432184654eae43fff768806614b377a82e6a",
+      "original": "results/resource-amplitudes-r1/summary.csv",
+      "original_sha256": "26c5a7d3ad503e8b7f8f59686f88432184654eae43fff768806614b377a82e6a"
+    },
+    {
+      "file": "snapshots/src/transcif/data/weather_reference.py",
+      "sha256": "616036e93d59737dd8025311b4177dae1873ef9ff6f6f4a9decb72f0ce52be59",
+      "original": "src/transcif/data/weather_reference.py",
+      "original_sha256": "616036e93d59737dd8025311b4177dae1873ef9ff6f6f4a9decb72f0ce52be59"
+    },
+    {
+      "file": "snapshots/src/transcif/research/resource_amplitudes.py",
+      "sha256": "179becc1e20ed692fff1888890b113bd8b7698642e6bbb8f9d8dbbce7f525fda",
+      "original": "src/transcif/research/resource_amplitudes.py",
+      "original_sha256": "179becc1e20ed692fff1888890b113bd8b7698642e6bbb8f9d8dbbce7f525fda"
+    },
+    {
+      "file": "snapshots/scripts/collect_resource_reference.py",
+      "sha256": "297acbc1394d08951ac6c39d3a47ccd5780315daf5d4c8ff640df06e447e150c",
+      "original": "scripts/collect_resource_reference.py",
+      "original_sha256": "297acbc1394d08951ac6c39d3a47ccd5780315daf5d4c8ff640df06e447e150c"
+    },
+    {
+      "file": "snapshots/scripts/run_resource_amplitudes.py",
+      "sha256": "cf65cb61b7494bf032c022cffb3de7437558ad154e5068df87d648dc3b02b28c",
+      "original": "scripts/run_resource_amplitudes.py",
+      "original_sha256": "cf65cb61b7494bf032c022cffb3de7437558ad154e5068df87d648dc3b02b28c"
+    },
+    {
+      "file": "snapshots/tests/test_weather_reference.py",
+      "sha256": "0615328ca6a185949cbade01fa7f52c71c8ca1e9aff40abaca1728f2bcaa390a",
+      "original": "tests/test_weather_reference.py",
+      "original_sha256": "0615328ca6a185949cbade01fa7f52c71c8ca1e9aff40abaca1728f2bcaa390a"
+    },
+    {
+      "file": "snapshots/tests/test_resource_amplitudes.py",
+      "sha256": "7f40512159cf3dc7d5aaecb9eac8e100c0b693b67bd0300a0f28672de0236b1e",
+      "original": "tests/test_resource_amplitudes.py",
+      "original_sha256": "7f40512159cf3dc7d5aaecb9eac8e100c0b693b67bd0300a0f28672de0236b1e"
+    },
+    {
+      "file": "snapshots/docs/RESOURCE_REFERENCE_DEVELOPMENT_PROTOCOL.md",
+      "sha256": "6cb567288ef9bfde804b119d126ee9bdb5c0bc9367b5dadba44ac2d23ef4bd5b",
+      "original": "docs/RESOURCE_REFERENCE_DEVELOPMENT_PROTOCOL.md",
+      "original_sha256": "6cb567288ef9bfde804b119d126ee9bdb5c0bc9367b5dadba44ac2d23ef4bd5b"
+    },
+    {
+      "file": "snapshots/docs/RESOURCE_AMPLITUDE_RESULTS.md",
+      "sha256": "2f54e8483f96b09bd42940af42e506eb54981c9514708d57a4c2a206f23362b9",
+      "original": "docs/RESOURCE_AMPLITUDE_RESULTS.md",
+      "original_sha256": "2f54e8483f96b09bd42940af42e506eb54981c9514708d57a4c2a206f23362b9"
+    },
+    {
+      "file": "cohort_with_labels.csv.gz",
+      "sha256": "f945f79ee5942e3636f3697ccfbb68af0e46ffad0fe2ab0bcd4f79c5da958e62",
+      "original": "docs/evidence/weather-transfer-seasonal-r1/cohort_with_labels.csv.gz",
+      "original_sha256": "f945f79ee5942e3636f3697ccfbb68af0e46ffad0fe2ab0bcd4f79c5da958e62"
+    },
+    {
+      "file": "members.tar.gz",
+      "sha256": "974bc3bd2de13b48af1915f8de2db9824c51a5313e9bdf2f273bbaf0a074ee85",
+      "members": [
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "871b3e330b304b2275d9bb612362ba1bca4d825a95378cafe7960c70d65b55d7"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "ebd6c6e5824f19fec90d5526e63b068ec5aeaac227dc985c58ecf666d42de65e"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "f74c974157998eb22c34d7fe180b70d52a6977ff9ecc84ce8bfb30bf9adbd73c"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "4b93cdd2a1a194a4752ade2b8872c2f942c705e0a3407f43b4f4162b295ce26b"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "08e2d7175587255e76e3fd48ea84a9cd58e6103cfcfd29e2c19ab56924b785f7"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "6951978023eae77962e2d3182766fd4ce56819c008b6ed6745bcd6324e8d4e30"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "315bfed4830d869f8a6292c5d9659eae5adcc66e418364cd2cb81aac7644eef0"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "28bbab2fae13cb64e19f821c3ea40204f7e50d7baf92bcc10a531263ec942014"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "39a7846e9272ae6ad98171a23f200a44ec1be983978a2ae86498957b7b78dff5"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "08e0b41dd3683dc917010eb8596b1ac62abfef669b1cde925050e6267daf2b94"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "66bd05cd5fda752b1c00601504ff31e07d50064dc30df2afbb48aa143c7bbf69"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "a7d856d764d4b1c66d64ebf7b8fb590b5cf81f5f6e860226bc807daba218e888"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "30a6e7d72bbcccf6b92aeb61f21ccf0f316cfd8fc9f1262f44046b63e31e440d"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "d80e20bb85464475c39f9f834e382b7b6f2227ee71b6b78b37b1f46c2131dd0e"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "4ca27a7a8bc8feefd98cca75a415c9068f7aebcbd7a552d1ec330843393276b9"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "54b937311ec9208fc5c0245bd0d9494693ae8fba488a0a1f151bd6dfc4b6f1a5"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "84822f87327a2bf406217d810ec80d141f97a87ac34c1d8ab88ae3bb8c9d5d5f"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "dd6572108553ea7efa9adb55aef866526dedb0678e8f27b0569422065d7cab00"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "87a29ca1186dad114202533153d12a02c8ac2d42b25a8d15aeac6ffd8f81a399"
+        },
+        {
+          "member": "DE+GB_to_US_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "c73413c418771ec8ccdeb5311043c6742186281a9d0b77ad3a1d192cf30c1151"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "fdade606dcd0f7f0f9749392d5b23b09038d948ae59750051d6ee42494cbaddc"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_joint_original_members.npz",
+          "sha256": "695a9eb84bd41421c12a7610e7e37a2b23f8c099dfc2c8274ca294b25dccd897"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "a575c5254f2856cc1f9b2daa0e74470ed72039615184ff083f1c4cb6122e4b31"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_ridge_weather_members.npz",
+          "sha256": "8ffafec8fbec019aaf482da82085eb87c2ed21c81a272f1c41ac73ef9d53982a"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "62d7088c7e546dbfbbd8053cef675894c660d2b84414eb4cb27ace1d4223d449"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "0c1f07def5bf0cb17137916ef73651a432ff2ee0f03c563cd1904f9745f1d41f"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_weather_solar_members.npz",
+          "sha256": "5d271ef0ede001dfbe6eb6cf697c7679cb0a1b11031162fd58d08895bd9a78f4"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "43892d715574925d9847da9e818df6f1b230da67e9d21060f0f9e3d23f2f8451"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "56d5149d0e2526354f109a8606c4686894535bd6735ff3f03fdee3b976bcb1d0"
+        },
+        {
+          "member": "DE+GB_to_US_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "ec5b1e499c2d197ff0b7f705577972854b8fb7670262a5722f18ec5cd3ca893f"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "284b618abd94a25207d60fd9029017baa704adadf0969a92b31b328aa27192ed"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_joint_original_members.npz",
+          "sha256": "b2765cf0e9c4507e6f5b2bd5ed18b7a063f97fae1b06a4cb2abcf913e948b9e4"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "a14acd325f0dbd50f82d66cea4e30a4fa0b3da3436ed3f3161316da72fa91174"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_ridge_weather_members.npz",
+          "sha256": "c9571496985cbdfd6692005b5e0cc56095c9cec9db27c1c01c942f201d540c0d"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "5c7a256231e2ca5f60eccb915b2215a587ee71b514654144edeeec37736ad6a3"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "f3efd283ca156e9bd1b35110124005d578c2ef16f6ea13c769d7f339480b8867"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_weather_solar_members.npz",
+          "sha256": "8074acc27c6ff55637bf811a19a236542892908e76f165429f32a7684fdf5b60"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "bd57b62f0291c6d2d7ca18ab7a6a91c454c825557b470ec0bf3bf8f05a74b96e"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "6a403d10f9474a21c61fa7104ca84b84283ae0056af42735023b6df0bd78136d"
+        },
+        {
+          "member": "DE+GB_to_US_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "c3b74e3955612ee7bf91a81db4b684aba5de87ac55c75e576de2945b66995b42"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "0b94c6f60380fc07bac9f1f890060968ecf47c2800f04f48cc71dd1c94458535"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "cab4337d53a9d1f31549615cb8ceb5800c9d74c2649517e3215e3eef04fc6a2d"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "621250a3fc16d9c44adda6a3dff5e51f5a1ad6662d86b1b988cc7c667f049697"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "68869dbdb59441310b5bda73834f777c32b9988e8939db9ce5475c7aa9640fde"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "1a5e43aebf6a9b36d214bc403082c62a0e8b86a86ddefbc78c5b7269e0676b65"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "be638236d28e509e5d6999040dc8238c8901a91685fb23043b0fb76a4dfba1fb"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "588f8167fa44bbe98d2d9469726ecb6a0179465fad0734d22897f03ba4b16b5a"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "946896268ceb2e1ad2471f160afbff0b1deb721429585bfbe54bbb158d4caae2"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "3045014a7e4b796683edd865798cd21c075e0c45ba712f82b65d94f2b0fe5008"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "a45633e48cf9e3c8f87ea56f6e1c3173d07958cb9a7bb4b870695d07aec6caf5"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "43b55ed8fcd7eb759ddbb594319ec7e70f91345b7a5835a725d6b3b5dfd5d31d"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "6911f82e7c10d7dd37a2f18a47cd897d30d275dbc81b32f89be12bbb6ed893d3"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "251b07bc4aca854ed3952c8e1b06a3084e257d5cd9f23471beef7688f3f9585c"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "649f2cc0f9e9e39000f54989331d246199289bd4ddc130026072b894590a5565"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "252e10823e9539b84d51a3bcb5c0afb34069941a8dceb860b95ba21a2cd90336"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "5670a660941437805a1ead794fc21f4273010d0ac14b3ba5033204351de94275"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "5f750bf85320f3a2a6b292a2cc1d4ec6c97df1d07a668dfb1a7faf2672c6d89b"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "8031f30dd84661e602fc6862a5de67465b53efee8607287b7d89a81189bb6d95"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "0e796348c17b13455bea4b00066f2332bb4e2bf2429559c36741ad417b4dfc56"
+        },
+        {
+          "member": "DE+US_to_GB_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "7b2bd8d3d31503a7068cc609ae79df9308a796db9fd7912c7fb3d40e5f17c330"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "2c8a90dcc60a81ee257bd48fce7cc687aa51c2d291548fe4d7167bf3955c8044"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_joint_original_members.npz",
+          "sha256": "f72a7de2e51c0771bdbf8e0cb117de6de8fdea80b7453f2ea032a1c0f3426497"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "66005787e5b85d95dda04ce50c045d2c2c70081ce5ae773549ba143e366a40b4"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_ridge_weather_members.npz",
+          "sha256": "12b792257b839c0d8cc89626a2278f632924ae3c2b565296a1e599337197a192"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "e3ce82b69dd74c3447554fbd2baa975410447304bc80f1af073edbeef90a516c"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "52abd5c40160960a16086983e240e78bc8fdb0ee3147f33749775024a534381c"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_weather_solar_members.npz",
+          "sha256": "bc67897cc60fd132dc06e4f2a86516dbed8e39f50d1908e34906ff87450ce46d"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "2b032a43fdc3f5dd1aaede49f31eaf47b5b45fe638f784cdcba266bd7ff9ce49"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "5b7918d9db6a94909275324221eb154cacbc5ae4d7fee929706456b180c108b8"
+        },
+        {
+          "member": "DE+US_to_GB_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "16371ee631ab28593e00444ee738916d9fa294d41fc60593c52c145e256b70d6"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "51653976a6fd06ceeab6b7ff75869f92d4b051e629b89982f59e85a7764c4f90"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_joint_original_members.npz",
+          "sha256": "d71939aa0d13a2f6cdd402146886edec67389ee3aa4c0e85f02ef1c54b2c1568"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "a2ee04089c84c474f95bee0e6bd63e5624e4615439ecc55bd70de317b1b5ae04"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_ridge_weather_members.npz",
+          "sha256": "feb5392eb38bc61e1ce98cd1c4fb378c35cba4fc5849e7cec41a0505482ac84f"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "70eec8e45a30a39875d7994e903886e8000410c7c8f20b037d475b17a487c006"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "0b38a7e90e9de5fa619318fedf5f9a0478f93f7e092e512495412c2f979bc565"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_weather_solar_members.npz",
+          "sha256": "c6b9f0ea7efe4a0e2c8f98366ac6cf9875944589227ef0a1d3efc471067515f2"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "91c8aa3c5febfe8ebf36724ab516bfd6fdf1593de36fb8b6bfe0cf848e46077c"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "669e41812a1b9c65a951f031e0bf3b3f290423f89c3fbe0ab0153faac4d9e838"
+        },
+        {
+          "member": "DE+US_to_GB_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "e60dac481b2a1d36d03851be0844fb56c71c28bcb030da3cd1f1488b4d831c87"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "4234159ee0ae12019325bbe49a955325fdbdd3686bc8f79e1decf5da344f1c4e"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "8560f718687a20dfb04843a6f19be9ca5466d62f47df619493bace2af1bf38c2"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "d263cd629c40732e29a73397b53618b3d10517fdd282344c8612652e4fbd5053"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "7562747298c7ddb0dcd7b05f3fa8adcb136e0f707f0f6520c6de02b78fa371b1"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "9a1c2001b04aaa328320646b2f82e864244ecd088284f701a9a74ba02c256090"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "2f41e2ce19c8259dfea18c84d2b1bd5698e18e03e55676be9907ae55eb6dfcb6"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "442462af621eacff74fc10f7503c76fc1e07eecf8f3e6ca2bd34c363ccacb6eb"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "c8b11b45d46fafaa9b480f560e1ac93bec6b45a3855d66b06b110a1a308ec46a"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "89bb12a8daa2bd09f2c5fd7fa9ed181e464aa5bc2dd9c42fddcf1f03a74b9b78"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "8d0b0d3f2aea77be19d65c9911d98a85191bf4f07fea4ac0e94b5bfcbf44abb3"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "89b68606fdfc038b873e158e62bf68dd72b2110acf8b8d7e34646d58d54ee18b"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "e75dd20058fa47568d30db4e129a7b61de60f3aff5875fae7c7065c752291c91"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "17046948e0c9a3ae26958c4ffcd7f3a7cf54aaa0149baf1292bd3a2f578ec0b5"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "2de776054563f04680bb91efdff05ca8b757ed6b7abf026eae13ce69dae094a8"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "7e4f0d519922f268444312fac0e45c96f4c47b71652457b4b5b9feab8aa817c3"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "c98e7252ea3e1172093cba84558abc750abb1d4b9650db28a4ebac605a79e384"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "2e8f3053b11f9518cadb34d19ad70a3285351879b919ce87def4cd5b12b03f70"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "b46e9a2b4215a6f5510a49d47559c421ece69dea8206768ad4f1a8277053eb38"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "2d83a79da18303b3ffa7221943d1edabdc596cb71712be6ce9bed09b7bcd82d8"
+        },
+        {
+          "member": "DE_to_GB_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "e0ae80604a4825ce19d65052be13181148168fdc0c0b06a9d49bb9586fa23928"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "5b5104c485ade456dcb0641673335ff4f7c02e4c88ac9b674c1c299b0ee69b01"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_joint_original_members.npz",
+          "sha256": "895ab016d99f18bb4c54c8f592cdaad798659e2582c65fcf11e6820d95fd1e90"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "2cbf8b186c71d200cef8e2a0c41965affaeebf9b477d26493a216426b8eeac8c"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_ridge_weather_members.npz",
+          "sha256": "b68274beb9318a887b2200000aebe9c1a3b2fbff3cdf02a88a61af82c03c1e74"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "1f55fbf06a51af109b8414160228baca4d801db64b07ffa1cc0429e52329b42d"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "102416e054a24e9143f90a829faf6d926cec7c1ee234a6ed8ec18b1d00f8ccd3"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_weather_solar_members.npz",
+          "sha256": "de72f170b762a92c85824a6d9dd9543c884d29d1c9098017b02385d2cc690bad"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "ecce37058939fbfd7e485490905eee851692746005a0e902586745a0bdfdcf90"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "7ddfbf7166c07f6d4656560e269b4773afa3a20080c639e1033f798c517c25ed"
+        },
+        {
+          "member": "DE_to_GB_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "e553a6b0ae4463b52d72be9e807ff2a445cbf708c4fc79cf11e13b3bb900817f"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "4d6be20d3a112a37a49689f32e3b18086460aa460fe19a5397aa1e5b648c4711"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_joint_original_members.npz",
+          "sha256": "3d911914376d67d463b7e50c33dc1f8bdbebce1273629ba7f2b54462289afea7"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "ae671a20beeb6085ffd99059c3f23b9804b46c217de97c28afb52fecb79fb458"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_ridge_weather_members.npz",
+          "sha256": "94a81f09b36ba348c089e184e258016b4da5f91fc7d98eadedae4f99974f3447"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "45612cfd1f0e2a746bdd113b62ea48796b0f435ead809566d8a09f7916392868"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "1bbd043fc8ea3f6e954fcd9961e8f0167d2b63d05cdc90091511df1f2fbf2f28"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_weather_solar_members.npz",
+          "sha256": "d9f761f8dd304002588aa7f40c997e003c408847687361e8f80d41e65eb564e2"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "8e303443689b0f028983611e9aa1ff67fb6a0023bb56557734d9b4a15b37d2d0"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "8809e1bd2d4611b38da9b59b5e97bece1accefbf6dd31d7f462f51c0f9551099"
+        },
+        {
+          "member": "DE_to_GB_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "e2d5050fb00c6ca445f15ce72ff69db8c0bb5e315df80561c695cf4f19221e38"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "380360b846db10ee18d347871bc81f6acca3b057e9c53c07829883b7c08ba044"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "3619805936e637abfa24a37bba785f34e0de2b56153aa29d515f7344d0239c4d"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "b576bead2e13d0ea2a6be07893dfae69d9d87067e9f47dd3373ee54722af0489"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "aac55c26e6db70cefc8856cdcef3b12bcc29f4a2c70d11c00d8ed492436a04d3"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "604e7e66cdb54efdef88545eaa829c418dfe3d1a2b2aab4c7fc280debc0e68c4"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "155d7ad0d9621c25207a4d6f0ae0009b552eb6b37f19d737435807bace6adda4"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "d0c08ba791b1232ab5a88a0eb4f3bd5adf572ecc1ef5ff76b68a5eb8e54868af"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "813335d32ce01499d1e35259c64dbd53d81f74b5c4446fb0c23b3ed4cf4fc74e"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "58128b2be56554abe8ba40b39365fa1d615f3eed73dfa618a27d2b832484f939"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "f852c0e47605083d182a47bd903417d9ce84fa6299aafd24b35fc3e102ac5f27"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "9e3ff335d21bdc0279c5af858555eacf92ef1cea1f2abe0cfcbf46d2ded4c8de"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "7c16a27f14f6d6b8bba0e07161624f5e85547bf3d56ed96a884cced08bc16922"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "3491486f925663e2fe426f0f92b033f32f9dc0293f4859d5b9c6b14dd00c5d64"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "f107a19923202974da1e10348dcdbe80459277c77696bd55d1ea17cebc5d3ba3"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "a7d3f050ed7aca197653f137356234e1976376405f83a8b4c30bd5ff8f3320ac"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "39c7c48e5c8419916fa33a2365a00cfd7a3fcdced3552f0bd64d2caa04150711"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "5cacfa66f3d8baf2fe23600acbd0d3279760326d604bbbfe666e83505ee62f03"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "9c96e877b49c4fbbc0d6d1339709ab6b4c754b71f989d28224ade6ac24bbdea0"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "89576e0ecbe0d63d4324d8fe7989e4371067db231ec42006ac68c96310649367"
+        },
+        {
+          "member": "DE_to_US_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "7ba49316b38e3f95137b4f2faa556674bb4699133c514273e7704a2fc058919d"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "df9d1f4c5a723e36cf0c52be0dfe852e5790aa2fa7b71cab6a0b91a914f9e88d"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_joint_original_members.npz",
+          "sha256": "d5ae6fc3b870ad031b60eccaf1886facc757ff8d40ab3b35a3e54b9d0bd7c580"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "367d071f689f2284b44b424efdda80590b7ad95c3bfee2e5fd7b0acc42187944"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_ridge_weather_members.npz",
+          "sha256": "73deeac10ffab2925e9cfc24d73f8057634b34bc83e2ce5aa413bc5725756211"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "776d9ca0a4b892f889e76a5e6d697c09f6d369e959d331619a4a8c878b0ec781"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "90806fe48707f554f12522cf803aca2d9978b73773da7b086c1bdd0be227f474"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_weather_solar_members.npz",
+          "sha256": "ddd7cc387387fafcf77b9178e3796426472e6e937894765e235d7a8ebd5fe5e0"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "16deb80d7f3ca8ccf030e2407648c4c5621eef29610c6d7b996714c4bd67e1c9"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "d13dd6fecc65b5426ed39d42e13f8ccb7703a71bb149634a5b7b62dbff58281c"
+        },
+        {
+          "member": "DE_to_US_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "0c56fb8d4185dcbc56db518eb9e21a156b3df51323750dac65e6b2e61c7acb72"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "94b449d6a274c3806a1e909d4c3b875c1c4f84e5321f08eb62de97b2b0cb4f96"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_joint_original_members.npz",
+          "sha256": "ecf1e15764283711116c0345a9c09486915f3781131ce4561164a9602a5823c2"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "13e35ea7a877c0ad4f33dc9162a277853862abc471c582955207101ed0ec9b97"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_ridge_weather_members.npz",
+          "sha256": "e756aff312641fda62bdf79574a29a8045f106cfb8b1b6939b108dccbf7bd168"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "1d371d2b4a2d9434319b9a8f4c21d19ffa832bc509dcdb4e8019ac238c0a17dc"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "4c6c7c7d2f324247487feb6408e9c149624e2dff512db20fe1175fd587e5d4a6"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_weather_solar_members.npz",
+          "sha256": "0aaea278e85e6584de8d004839e06aae8be25393daf8a104729b2f0b7282a7b8"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "51ed524a497f78a98dcd1c712d44ff364dfa8603e73c35b3ed86c8fbe2fb53cc"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "d35bd95204b8a8a0b50a473c546f4fd31c4c2248c106d35677968402b186324a"
+        },
+        {
+          "member": "DE_to_US_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/DE_to_US_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "5d48ab77a7005503643b2f2c28da3335d32c9de974cb6bdb1d76fed6f4a95139"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "41439a82d3005425517830ad21274619696a27b04f606a2a6d93e87c0cdecb1d"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "2a92447cb9cb49ac6a25494e5980089725b16196feed88bf90be2173904d6c23"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "318b1dcf6296e16ed6198e2d75ee31eb3af24e28428744f36a5311cd91d1f420"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "caa214f00e6ff2ddd7d55912532b6cb7e3ec68b0c334fd4180e1ca2e93c606f9"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "5b6fb62087cb4c551715cc8a0c1abf796115f1587fb239f1153f36374e7b10a6"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "3ccf7ce650e858a10ef49ca1c0b24db3d1979838c578dcd1d3f489c59e0262bd"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "a710583a08baa5c6c8f44329cb1ed42be0917095bb48822517ad8b0caadcad86"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "ee821e892b0ab778c56a6a51145d215ae561bc42e2020d1065eb551a00f8bd13"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "2b916c91832b4a4b90b419c79989a71b1ff62dc9783f76ddbe607ddebc31dd93"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "bbf0a41d83b4e43f51c44b1efa27093367648b49ea4e45fe594637dd1759d86a"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "69a2833782a71385262d9f3266643895112573b0d0f7507e83ae9ad6f8babf19"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "5953f3be304dfb91af54790c879ab2ac3827f7d7802215545ef45badaf06e0ab"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "e2ce99a4c917fc4e8b8644830df5b491b6f4ffaab9acaac8feab1bf2b04ee71a"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "fbca883ea7b06e3a8a96ad9d909420cdf413cb9b770d3d8a2297d80e1b1440c6"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "a8f958cee60d74ebe5990ef05e53ca381a8786601c4d63488ac7db7471499ca0"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "676592e1f7844dbaba34f702a5794ff95f787124aca557252ca9960434329574"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "09ca9db91682ad9ee9c8675be24c089009242a7bddc9052be5c6a73e971a4cdb"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "e4d753a05da0020b29c73b760f257acc67a42ec72c094734dfeb50f3eebda6cb"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "025e2d625092f11cdd0ceccea6702e1423c19470ff91b7fcee359290dbd762d5"
+        },
+        {
+          "member": "GB+US_to_DE_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "2f4770d0b7427408efa85d5ea3654960a413f06eea516e1cf5fa1c03a080c316"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "e7dd4a5ee7b212d0b2b7d6a468761c7df72fbac45ebbdd1cf9f2565d0038bbc0"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_joint_original_members.npz",
+          "sha256": "633958563bde2ee17fd1bdced8eb99be0ddee2373c34a29b0a110f3564a44c03"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "5d6ae01b4fc412ad7b35d18b0fafa2ff61237219a9f9f465b5afc15b98674022"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_ridge_weather_members.npz",
+          "sha256": "592573d05df64a79be3aa72d3eccf58f14193dca14a2fc1777874a471a5c0175"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "26a13e94026f3b8fcec3f343fa2105e0f841a145eec3e469334bb497071db9fa"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "e92d230957c6bd6486c37755db147c435f08d28389535e51894741f435a67d51"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_weather_solar_members.npz",
+          "sha256": "7eaeac39976c55fbd82806514f031fdc6ded8656835d6d1e8a9a3acadfa531c7"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "3baab3711fc95a1a855a979f666306fa4f8c5028728bf424071139fe876c492b"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "2a8925b3a5df15816f4238575283ca4bae2d0a33043579b32b8fbd86e10dba0c"
+        },
+        {
+          "member": "GB+US_to_DE_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "86b109bc54a558379dd83141355c3899f60e8f07ccb267859f364209371ab77b"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "e523e2c9095c152552961e5136bed771133dc7be42fd335e50e4ea3763a2980d"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_joint_original_members.npz",
+          "sha256": "ac4b16925e3552c19b9fe8670b397398ea2f2b95b25359272658694c95cf36d6"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "908b2bf744a2b978d98c1f05a1a9b462774d2747a9ee7114a42540a4640afb1e"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_ridge_weather_members.npz",
+          "sha256": "e49d28230c7e011f20e8a0fa9b4b3ad3a457a84e0a579f9b45674bd5b0c260a4"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "0e77b05a850fb3b8cd25ace02f6fcfd4ba58f20e4f199aec552c184b803c28ff"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "99ee61d14a8ac0a1f8b685dec6a1ea5a600af44b4547055290f297cac3a84a77"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_weather_solar_members.npz",
+          "sha256": "83d7c602baf2854ccdc328b7959c5f0893a44c8b9d1953565b8d2e1a35685e6b"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "7c9a9e451a83613af21b1d8798b9562a5d3177e17f140b23858acbd628fad60d"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "a3387987a939bd18b76bda9c92375d1aa3f6be062b5ddf39fdd0c6fcd47aebd5"
+        },
+        {
+          "member": "GB+US_to_DE_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "01f824d2b9ebcd51eb6927b239f31043dfc68c3b54e2084a58320fa6171d03fb"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "0f7843e35a33d68ba641b776c5361418f7acb7bcb145d281b0ebd5e5a8fe364f"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "76c84aceccd5d46f44be85e23a1ffacaa4f0938aa94cb0b99e9123e96ee74582"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "dd4676c01393c06b08045fc821234bae489f6e927fb7ee683fc4b4e277abc612"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "bd1b5169fec6b95877fd83d3199ffb30ef89322dd00e2957e04b1220ee88e780"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "40575834274b4e919f5266e2c4d7297a14c66686430bb517e484d3a6d7295bf5"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "0e7b7c3a3df66e7e0f2849fbe8a0b1ea518789b95f161760bfb9d7e095cfabcc"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "bdff487134aac26c6f2e09ec6d6a898c34d9e781c83dad3923221303212b971b"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "b2b127a7c35cd38904f9332c465ce778e3becb0f92d0d8f30851034b020a5ce5"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "895f6af4430b428c53b566831ce3866a50336edfd855851536c16ec746fd5816"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "3b684cba082d46927ed303f3a9fabf46438be1370409fbbb07da28297a34c49c"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "06416a5726fabba3843c939f659b61deecd2c284f3e85838eed8459e4fc59f29"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "bab0ac2afc82717bbb4970379660999da819013ecd8b980ed2b02f4d910fa3e3"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "b331142d24c9dbfab0467a43b27cc6a912f4fe5c7008ef22092b3233d4a90cb3"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "c38d5348c513986c59dac950e58f03bac10f5b57d121b7a170d4ff4afc86105c"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "a7eb43fdeddd33fb6210bd49406a89043ecacab777fcb1abcda09a3838d64685"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "430c2aa0bd4b5f6325d62e5ed3b27fdfb931b35cff454738853f197d6900fa4e"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "d385edc73a10e1b94571d6593acffb4f8e3a29049802e84c5b22490c30e2302e"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "4b2d0793cd491c6f6c335b35ad4b95554d8068bec5e3ba736098f18bcd369a3f"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "2fba183e275ba74dc6d21fb6f26a39f676f049a30eea5870989e92b23cf11c17"
+        },
+        {
+          "member": "GB_to_DE_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "a1e77e1c828317857578f0f376049417281abc059964983add2ec6e9e597a327"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "7c91f92b98da21c82662b3d5b5ce40509354768a820e90ef54dbd532a1068488"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_joint_original_members.npz",
+          "sha256": "ecc32e8f59c280c682c859c83e92174e86a5bae999da8f165a609a8a73237436"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "0938e63f558186fbed2f6bac1219fb4cfec30d4054c9b30211fe7385f5f1bd92"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_ridge_weather_members.npz",
+          "sha256": "5aa85c25ef0deed29d79a11f911005c3aea71f8aa4f44a37ac2d29e5a6252666"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "a8ac4cead5aaf28e83567b99beff86f3f6e0e4aa213cfc09e61f3801a3140231"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "d4a43f0c0c5b9033c701390603e9704dccea287ccead8e975b3ffbc01a6e2772"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_weather_solar_members.npz",
+          "sha256": "60c96ae20a3b31e95fffd3ac3c0afe184b7a11ce37990d055bcd6ccb51553d2e"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "813995a430411d16e41c3f7f1cf6c9347eb18e1b171373d761e1f923211cde5d"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "3444c662ecdd442a5f0539d68d18127fd3980910dcde932bb5885d27e3d019d8"
+        },
+        {
+          "member": "GB_to_DE_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "ca7c0fa515b00f0c222054ab0c0e4ff7956b173677650f559d22a87a575dad9b"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "46d38dd55e131409c64b4596e152026abceb6b37c5936f999fde6f15d0a99eb1"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_joint_original_members.npz",
+          "sha256": "d80b90df01ce2a2998541b89b8b0d37f8ba7d5faf00ea490bc7c077c56f55173"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "b3dd992cb918da32370ae8ebaa36387b48677af6824d6de3a9b4fb5f9b6ae7b0"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_ridge_weather_members.npz",
+          "sha256": "1068b1c59766562bedb84ee5300041c553195f59205f8da037ca09e40ebd6548"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "7f7c4a79a3de95013e60361b187bda999baf78bbcdbde890ac3fb9a3e94e5592"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "230140e3e84db26782faf279f0b49171486aab4b7a3a1dc137d62a7f7d69f7d8"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_weather_solar_members.npz",
+          "sha256": "0f7b450a5b36fdeb4bdb9fe3e89b3b5680afce8f5b0a1d6d9f9c4fcdd24e1278"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "ad3b8e4000fc5b67adcc45bbcd5faac59376c5bcc2d948d030e052cbe45ab91d"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "0b66631f8275af13758b254d0d281e9a9b93ec3ed03f9f95e78659a3473d6f31"
+        },
+        {
+          "member": "GB_to_DE_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "dd98b427a4acb2a21147df778a8fbbfd23ce8ad60a712963854735387235383b"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "6ee48dcd550115d9eb2d0648ed452614f41f289a233c7220ceaea0a71bc054fa"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "fd9383bf4ccb105e664bf2ac0f461ba33da6771d95e2005328886465c1099070"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "5df527f926617a72adee2a0190fe9f3c2cd45db83e8880a2a13d2291ed95431d"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "1c715dad7e08a22a6e03a9b0414b2f5a27ba242cba0885aac663d51f8c2aabc9"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "e3942b7ba5ff8a603a2e37c1abeffbe259051991fb7a9a722265e20c44bab99f"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "c39a017270ba6261d77cc507eb9c796ed1385b143dfb735455d119155eb9183c"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "f041e93ed432fea5925eb2516f39ccf4199a26851310ec273d89d02ece46d711"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "8107d7d98fd89c2905c0f2bb34d8ff05e77c3995a469caee62503423dec9c379"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "5a131237ca983756f8a69e6d5b173b83ea3a56733ff4933ff790e22c763e663f"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "a6a2feecb027b4590a85dd6507b96bf0b777137e4b7e6df94903553c83bf6037"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "85df1f3c2fa871fef7384b59fde9e4ba156364bacaf2f4b3966b724ac70a185f"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "ebd3eba51e49e228d6110d5683af4493818fd72d5d41c70b65cb94560d73c1a0"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "9b55e2aa28f85dd291672b4ff93e6c35e87eee4217dd37bd59e32aff22b17346"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "89c106de391f65a23a1552e94cf533a350367685acf4ab4906c6d76f7e52782e"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "ef4b9300c951408cc1ac6a714f19a9626ebc83544f4278886439f6dd9717fd13"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "4fb0631838d6897b23a820958adbf3d0fb4eac2b503cd629bb26f3676c41088d"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "bbca2814e36ee4a80eafee27b26cf423a67ddb5ca31dd9fe7aa2c74b337b53a7"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "53b9ffa5b4928909c52df9acc7a06748e5867fe27aba842a31d934baa37c7534"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "c6e45065aa3f0c3075b661f0a375be09fd8eb58d61ae94470b14798183eeab44"
+        },
+        {
+          "member": "GB_to_US_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "5ea6b86c4fb1a961278306aa60d80d1dd8f96e7d4db299b6cfa87f0d658c318a"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "1c63825d6bb01267e58a5f39ba8560d0a775f1303772e7b25892d7adb115c124"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_joint_original_members.npz",
+          "sha256": "9ebdca8e4ecd4011ac36ae6929e09c9e42895caa98c55b44c751e0ae5becfa93"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "682d6a4a48434f69504607eebbfc42d30f8b90dba1571c55412153c81ad59632"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_ridge_weather_members.npz",
+          "sha256": "a3b2e61ed3653d2483da65852ae0169cb224457e8271be55c223faf1fc30585a"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "a14d89e9158460bb2815c57afc2fbdbc400c2451a1e0d596235b6917eb76dfb3"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "eb7f82e4a49c08cbd5b1458cbaa60ef4e29bb664e58592b94f890e697123ec1d"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_weather_solar_members.npz",
+          "sha256": "381b6773daf8f177d34ab57ae8e1307dbf28aace8fd869072799a71569b66981"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "45289354184bd7560e80260b56c1c23454621eb73f4cd15900a819224fb09de3"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "d32540fef9f10b199d87dbaa96349cad4f2106cbedf2c8efc1787bad3d14733e"
+        },
+        {
+          "member": "GB_to_US_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "db50a2c736b10a6a1c15e9a7b36c52af5b716dd674d109f225cf333805d572ba"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "729f8be1b557521cf50a8f2603a6213322e9d5251bc3a44f80a3cece5c2da768"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_joint_original_members.npz",
+          "sha256": "125bacce249fcbb14975ce01ac72a39f11cc7a8c7a08f644b0c53ef15dd745c2"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "e3219d25d4db77fd0c6d291157b5ab4b81c7a70ab2c05e0f67052cd8853aab42"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_ridge_weather_members.npz",
+          "sha256": "609457953a5354261d8748433ba47c685fb36830bf84eab8620db1668d98f04b"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "20292fd557a642fd23908cdd6965e296ea20e951b70a0539d4e9fd81c96c3711"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "68b37578947e22c8b903c5bd7dd3ada3f003b265420302def5c7ce2b5c1b8f29"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_weather_solar_members.npz",
+          "sha256": "f29f5500d8112cfb18b188d2ecdcb2135443b3750b29871a9a30495e574faebb"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "3a6930df1a45cb771af90092898bcb0602b49fecc90be16b88762f371259bd10"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "f5c58ffecd5031f7169327b068f8a6a0a01d23844048f8d88c8e8d64d42b4024"
+        },
+        {
+          "member": "GB_to_US_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/GB_to_US_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "32bd42c9b5426cf928ccfbf9c34b11d671fd674e2a63ca88a8d91b689be6066f"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "3624ed1807d6ab9478f9608149c74829a76f4c8b874d8621199b601e28e93cdf"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "6e175c7302434c37b1d59498125085f835da67dd7f500644d786edee98785e16"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "8d03a769e74889851c408c5d00467453df28e329bfaf87e9537c3ce6e6629da6"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "3c05a2c5b7da480b870c6996839d7328a25445f8894a068b3b27b32cd168853d"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "c9df6bad19a98b942a860fad1f767c4d233bbdaca581c2cba33ef6488c991c87"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "fb6e43f1c39da233109c264ed9179829c8c1959c5ba090d6e584265d81c36233"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "658d3b0c68ccb9ca5f70a7c14641f1d0fa57fed611dce18a4f549c641ac9afc3"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "7970f0a5ffc78cb5c3915eade925936e001a47261d87b1eb8f122333a106c029"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "374e3bb95bb192b133a84cbc32dfc53d400047a294f44377a2c80ea0c9fe78e5"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "5d4530ada04c826c7b31e9813b455a4c887ac18ed3b411ab6902347c2f36720b"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "98b859ff7c2bfa8fd5c1282dbfef804732d750ad5f350494ac4da4764c2338f7"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "3f5d8d5ab1a8f9ef04364ac3ada0e02d6fc1901e587da0fbe44d8459ff5f8e69"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "8179e984637c12bdeb97148a4f9395ec892b66f6eb17418b0a93d614a60838df"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "2690cfb552bdb1ab04fcdd6a66a890eb8e1142c8b5e19c5ace24c0b920a271f5"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "f665b25b78f3b8a68d4794ae215085782db05897b1cb5e805cdc46a092455c7d"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "a7e5db3730058a7a34c3c3d8851b5c490f1eabcb6a585012c12070de4b33585b"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "2d0c96fa182fc431c54b74d575eb1a0e131392689a251e072b8b91f581d391ca"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "aea943f9c443e63d08b50ad8fa438a65e08e3cd5190eaf2a0651ea98959d8416"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "cc079487f1bec0310d0c0725ea7fa3219500c8b2a0ed956815671ca414e3a326"
+        },
+        {
+          "member": "US_to_DE_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "abe56b266b2c0924fecef5459d443c712b960b3858246cf16cc115e9b00f4ded"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "1efcdecc67989a8d884ad467506ccce0329aaa30a3544eb170d7be32715bb789"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_joint_original_members.npz",
+          "sha256": "e64ec9266a3cf05c38728fa05b3ca79fb40b2307e200e6302741462f1dd26349"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "803b8bb1b261b1062a8e91fb1fd79db32d46731f464de133242a69bc12ab2679"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_ridge_weather_members.npz",
+          "sha256": "afa401e892071c2276ceed714fc13eab3af861abd4915ea950878bc58d771cb0"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "974ee7f56e41063b38762d8f17bb8bd98a8819a3e4f9385db82978627394d635"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "332aa2a1ec2d4190895c2086da96af3d4b5c6db2c1e9a6dc64d3af9133ff30e4"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_weather_solar_members.npz",
+          "sha256": "587711043c03bc1f9d84a379b531d7fadf82e123cb3480593c4ae62b917589f6"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "051db9adf8e9de40aa296c8d488e108b414551a585231c19ea11cadc1d1cc6d3"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "afcac8e735d5654ada90b43b1b0572f74a29c0f2bb6e8f55c513b14205ca6623"
+        },
+        {
+          "member": "US_to_DE_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "ee2dbdf0689fd2cf98de1ed42528fbd02d141d3e39f8ccae61b94017e1aa4184"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "41c64d91e72e926e6b22292ad4f4d7f73e4c0213fa7f1375af8935edae85f6bc"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_joint_original_members.npz",
+          "sha256": "c95d75155804252703a2c8ed92a9fa041f566fecbe40e79a44c69da6171aaed7"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "550a554d93b1e835cc5ef3eb119831b1ebb84f0774e5255ab5b7b641de8f2110"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_ridge_weather_members.npz",
+          "sha256": "543e9c4b3752dce18bf931a4e70743fff6fe41a7472b8ed30158579fcf972562"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "55d4625eff9d9e9ee8159681362c6c4e5761aac303bff96cacbfd2bd12de3a22"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "d1f979fc3e7a1ec07d522d9a2129d11d08869251bda44715405e26f948a2cab1"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_weather_solar_members.npz",
+          "sha256": "3e654773b50d2042bdb91a9983fa793e177f6dc7c173d0d68bf9417a0062e97e"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "0d5447c1640487f664135d57b87bf0e2dcfbb107dea333deaa1a0004f73b4b1e"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "4907332c56573fb4bc2a6de21d99cd7710b9296d29de810bf06483b54dc21f18"
+        },
+        {
+          "member": "US_to_DE_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_DE_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "860e3fb54cebb1556ec31b6425f0037f8636f276ebc5d589df5c4ab48a3da7b9"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "d3575eb794046bb4d46a6fd639e5c8f93df82910efa421f71f4e8c2f6e77b3ee"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_joint_original_members.npz",
+          "sha256": "2ff3dc9792813d383047c939bead491ec8b25c82ec4d693026d996ef19d3838c"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_ridge_no_weather_members.npz",
+          "sha256": "b080c09c6c82cb39e4373e7b8885b8f6a11953c9bf5209ea3d356bb60d653744"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_ridge_weather_members.npz",
+          "sha256": "b3df6a90198cffcb38003be93639c4d28af057e0aaa0af7e00015da473f2b259"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_seasonal_solar_members.npz",
+          "sha256": "79ecfa05ebd62d0dec4db2602e3fb356dadcd8519f875b4c101e375c04f5ee45"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "394aa5bf059c42f8875392720ba12cc5f4384aa12061bbbbcb3ab3d116bffb91"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_weather_solar_members.npz",
+          "sha256": "cc8c6cbafb053d891b40b12144de635b724ca9f02aedc41cd318790d572c78b8"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_weather_solar_shape_members.npz",
+          "sha256": "3ef2f431224d29e574cc5688365599a2519c65a7d11d64366c96ef6a2b822895"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_weather_wind_solar_members.npz",
+          "sha256": "f034887c942c8e2e87cab5e0c1ed95af619575601e636c74ab882f2f2c054b9f"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "69979f2011aebeb0e88ebe19b51e61425854dd249dd471dfe991fabcec27cc3f"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "350be84027f2a6e0a224d8ab4b2601771388e5f36f2ddf81e7ef109b73896a91"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_joint_original_members.npz",
+          "sha256": "6a4054ab9f02903f8dd6145cebf3242c3a8db36c30a9eb93efcf6d0e08eb710c"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_ridge_no_weather_members.npz",
+          "sha256": "1f70b351897f16cf238693926544b69f3b7f94dc838390eb0d63fdd6854f25d4"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_ridge_weather_members.npz",
+          "sha256": "a6d63385d29f5d0b51ba80699092ca6bbbbb45e1764087b3b2fa0e8d060e0394"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_seasonal_solar_members.npz",
+          "sha256": "1959d25088a8c055980c9d17b7accb8cc475ce25f3adb5b9ad492879f69ffe8f"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "c62778d1a1582fba0fa6a9b3e06cd4abcd1cf22bd0d308af0860a94f4c995b19"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_weather_solar_members.npz",
+          "sha256": "c7837a358d85ac8bfc8e60dd8b672adf3f1a69a726996ec558abaa8489f04521"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_weather_solar_shape_members.npz",
+          "sha256": "00e784fd7d91a256c0b1fa0f765a10bf29f4e597716c03b5878f6b98f08524fb"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_weather_wind_solar_members.npz",
+          "sha256": "2b001195861edcc3740499c21debb0b993eff849f9f692b669ecea4a87e2859b"
+        },
+        {
+          "member": "US_to_GB_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_full_source_extra_labels_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "b189ebb1749d86fc37724a94e94d9df11d1c09a78e38524aac4561ef8d6249f1"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_bias_weather_wind_solar_members.npz",
+          "sha256": "c9d5a421f118846a07cab9e2e92d2fb3fcf94c59bc838d2a9a5437a9c31f9a2d"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_joint_original_members.npz",
+          "sha256": "842e85d93e9f4e39e3effaec1876baad4aa466916f412a1fdbc60bc07edc655e"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_ridge_no_weather_members.npz",
+          "sha256": "704e38ac34af9a8bac4487ddacf77bbf5746b659ec38141c5fa20763ba1faa3c"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_ridge_weather_members.npz",
+          "sha256": "a8370abc43dc71c94f535773738f43a8e516909079f80d4109a535b793ead1ae"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_seasonal_solar_members.npz",
+          "sha256": "2a126956059f087351ebe83deea58bd2fb00651d2208b1f81cfd410b182f5019"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_seasonal_wind_solar_members.npz",
+          "sha256": "bc6ccd5d8fa89fe3d9fe270d8371cdd4b943dea9d5257615581ad1c65d465e0d"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_weather_solar_members.npz",
+          "sha256": "f0c5a8f2e45435552b0d8532990aefb2ae0e50de81e63e225d94c06b86b706e6"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_weather_solar_shape_members.npz",
+          "sha256": "578e0b8d6379bbc3570b19800ea79ffdf8c72b6e4dd76e7abb4071d1049412d2"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_weather_wind_solar_members.npz",
+          "sha256": "f193df131ed58b038a7e6cd323f0260e4729c937ccad59a81ca5fd5180b59c6a"
+        },
+        {
+          "member": "US_to_GB_matched_capacity_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_capacity_weather_wind_solar_shape_members.npz",
+          "sha256": "f3d49dfd2ea700af4b913b4070b49a59fb90893aec2f2b876141b0c61737b563"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_bias_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_bias_weather_wind_solar_members.npz",
+          "sha256": "a53f1ea0bc713b8485b7e71e1209c556c9efab88ec5fb275f7bc4ed8f89fa2e3"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_joint_original_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_joint_original_members.npz",
+          "sha256": "b31336075ed1f128686f8957cafc68f6ea6f4027ee2aae645e571a91696d8199"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_ridge_no_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_ridge_no_weather_members.npz",
+          "sha256": "b1b58a809422d467b19a708d55d2a398312b12840d4eaaca17124e01a170f501"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_ridge_weather_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_ridge_weather_members.npz",
+          "sha256": "45996f6b9ffe8ad0a9521c19e2d4a7e0d8a272b56ee170b28bdff858501386fe"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_seasonal_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_seasonal_solar_members.npz",
+          "sha256": "8d063fd3c7756bc56be3f2ab42a543d6c5c1bc805bde6d9e764f9f3602c2bf6d"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_seasonal_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_seasonal_wind_solar_members.npz",
+          "sha256": "ff851e7c8a6e8a87249fb426c49b93f104957c6b9e6b849a3df77ca910dea4d7"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_weather_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_weather_solar_members.npz",
+          "sha256": "36a1beda0ebbc23d38f74c75564c5a5780b4951ec7ad3f651adfe0255e9a275f"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_weather_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_weather_solar_shape_members.npz",
+          "sha256": "4dd0db24a7ba2ffc9b242c578ba81508f18b87766defea905f44b73e66a30c61"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_weather_wind_solar_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_weather_wind_solar_members.npz",
+          "sha256": "9826efb92a9b0764b2a65a697357318a7a53b5cfce362aad44517a6149ef4ba1"
+        },
+        {
+          "member": "US_to_GB_matched_monthly_weather_wind_solar_shape_members.npz",
+          "original": "results/resource-amplitudes-r1/US_to_GB_matched_monthly_weather_wind_solar_shape_members.npz",
+          "sha256": "12375df12a88ba499545a69eb092419f883f37d7a19abf0de516ee9578f8f16e"
+        }
+      ]
+    },
+    {
+      "file": "source_heads.tar.gz",
+      "sha256": "837b6a4bf5b8bba6d23a44c4d4a036a371e8def183ec9fc0d9509d33dce7dd2a",
+      "members": [
+        {
+          "member": "DE+GB_to_US_heads.joblib",
+          "original": "results/resource-amplitudes-r1/DE+GB_to_US_heads.joblib",
+          "sha256": "f2a753604502cd99e3386f1956913bb9c1a4a0c344408f1dc9c4ad0cb1e4b545"
+        },
+        {
+          "member": "DE+US_to_GB_heads.joblib",
+          "original": "results/resource-amplitudes-r1/DE+US_to_GB_heads.joblib",
+          "sha256": "cd0c6d1f96cb68f2cfc0740a388e5491a485c5e2c41d52d85f9cfa34ced07baf"
+        },
+        {
+          "member": "DE_to_GB_heads.joblib",
+          "original": "results/resource-amplitudes-r1/DE_to_GB_heads.joblib",
+          "sha256": "99bc6316a7e051f86035ab6f78836b7da8062b7f0dcfa1ed9db126b6bab2ab61"
+        },
+        {
+          "member": "DE_to_US_heads.joblib",
+          "original": "results/resource-amplitudes-r1/DE_to_US_heads.joblib",
+          "sha256": "99bc6316a7e051f86035ab6f78836b7da8062b7f0dcfa1ed9db126b6bab2ab61"
+        },
+        {
+          "member": "GB+US_to_DE_heads.joblib",
+          "original": "results/resource-amplitudes-r1/GB+US_to_DE_heads.joblib",
+          "sha256": "f7122cb39bdf94645d4946384b2950591e7d1507cae5f1f6b52b03759cac5255"
+        },
+        {
+          "member": "GB_to_DE_heads.joblib",
+          "original": "results/resource-amplitudes-r1/GB_to_DE_heads.joblib",
+          "sha256": "bffa6d1dde5d9495451c48c9ac7a940aa3bb27aadb542811ee852042b1cdfa50"
+        },
+        {
+          "member": "GB_to_US_heads.joblib",
+          "original": "results/resource-amplitudes-r1/GB_to_US_heads.joblib",
+          "sha256": "bffa6d1dde5d9495451c48c9ac7a940aa3bb27aadb542811ee852042b1cdfa50"
+        },
+        {
+          "member": "US_to_DE_heads.joblib",
+          "original": "results/resource-amplitudes-r1/US_to_DE_heads.joblib",
+          "sha256": "09252b6e24c11816aaea26de2cc441e52d33dbaa721b9e122535f4ae3c2a0677"
+        },
+        {
+          "member": "US_to_GB_heads.joblib",
+          "original": "results/resource-amplitudes-r1/US_to_GB_heads.joblib",
+          "sha256": "09252b6e24c11816aaea26de2cc441e52d33dbaa721b9e122535f4ae3c2a0677"
+        }
+      ]
+    },
+    {
+      "file": "historical_climate.tar.gz",
+      "sha256": "ce9076fafd378f12ee64f7cd7e599114842098a7f2fcb74f28e06639358e46bc",
+      "members": [
+        {
+          "member": "BPAT/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2016/receipt.json",
+          "sha256": "e8726218049ebc73410a988b6ee28200e6ac9d1bee86577a35d9d9b88e9b82e0"
+        },
+        {
+          "member": "BPAT/2016/response.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2016/response.json",
+          "sha256": "06554e73d818fabe8980728684f67042ae5226830fa99cd65e6a937d047a3d43"
+        },
+        {
+          "member": "BPAT/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2017/receipt.json",
+          "sha256": "b5a5b576aecc094f95955e6a20b243f5cce8478078b8bf622fe3b22cce7e4317"
+        },
+        {
+          "member": "BPAT/2017/response.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2017/response.json",
+          "sha256": "ad5ec48464041b3a507bd91a9baca8939a6fcd66ef4f43f84a3235497b0c188d"
+        },
+        {
+          "member": "BPAT/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2018/receipt.json",
+          "sha256": "9b7742ec6be2769644d77f1b8c99c42d4a5961d4749b9add2d83c44f6a0ce917"
+        },
+        {
+          "member": "BPAT/2018/response.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2018/response.json",
+          "sha256": "2baf05d22d94d8540c6e37a6ce4bccadea8d301f6ec43aa412890952ed037fb2"
+        },
+        {
+          "member": "BPAT/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2019/receipt.json",
+          "sha256": "19b074996c6e6b81dfad2e4e78f44d8b6eb2cc350a3d3ba2e15c3ce8cbb1b919"
+        },
+        {
+          "member": "BPAT/2019/response.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2019/response.json",
+          "sha256": "68da45e5412f8c63a9a7e7688c71e40eac71a98abf369de3d18b324ae90eb9eb"
+        },
+        {
+          "member": "BPAT/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2020/receipt.json",
+          "sha256": "e9a05a63a9b8292794c424d5742a4e7250bb24469d65eca84a0859be25489624"
+        },
+        {
+          "member": "BPAT/2020/response.json",
+          "original": "results/resource-reference-climate-r1/BPAT/2020/response.json",
+          "sha256": "ce9d93aca9bde3886189c256a5eedcb5092df1b6315e11a8fc8a6987d520f657"
+        },
+        {
+          "member": "CISO/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/CISO/2016/receipt.json",
+          "sha256": "a55191843f91f783f941e343312fe830ef4eefa1429b6fc4a6c91cbc734e0420"
+        },
+        {
+          "member": "CISO/2016/response.json",
+          "original": "results/resource-reference-climate-r1/CISO/2016/response.json",
+          "sha256": "c51d3ecffd7f77b4eb4366d7868dce09a143ba1fd7e3a4846157bcb11c651c54"
+        },
+        {
+          "member": "CISO/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/CISO/2017/receipt.json",
+          "sha256": "261d8e4f071cc861e66f5934733ad5f503d45b21c009fba60ed6f01c3542363e"
+        },
+        {
+          "member": "CISO/2017/response.json",
+          "original": "results/resource-reference-climate-r1/CISO/2017/response.json",
+          "sha256": "e3c9dbddc58c914f5ec9b1b2953ea8e971e078f1d294c1e32e5756ea1c9bf099"
+        },
+        {
+          "member": "CISO/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/CISO/2018/receipt.json",
+          "sha256": "54e80bbeb181876319562729162ce29917587bc989f0469700889018a3a94f1c"
+        },
+        {
+          "member": "CISO/2018/response.json",
+          "original": "results/resource-reference-climate-r1/CISO/2018/response.json",
+          "sha256": "2c0bc4fa6fdf21d2e24ecddb5d12ea464747ef5cc6fc6b6b0102f710ec3f652d"
+        },
+        {
+          "member": "CISO/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/CISO/2019/receipt.json",
+          "sha256": "0e803bb7cc549fff6128074659aa53b369253b6299a0dced4384a9811585abdb"
+        },
+        {
+          "member": "CISO/2019/response.json",
+          "original": "results/resource-reference-climate-r1/CISO/2019/response.json",
+          "sha256": "01f610f2a791842a7ee6b3800a0c927b9c3db81a2a60d0d0a28d0f4a1ce1efa2"
+        },
+        {
+          "member": "CISO/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/CISO/2020/receipt.json",
+          "sha256": "52d9f03722647ba4d79a88acb1cc7cad443ddff1e65c5d569a6c6d2b8f002356"
+        },
+        {
+          "member": "CISO/2020/response.json",
+          "original": "results/resource-reference-climate-r1/CISO/2020/response.json",
+          "sha256": "23aae2544ebf9bb8bba4a3ad47e5c6ef067beb6b451c280381927a14f6b93724"
+        },
+        {
+          "member": "DE/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/DE/2016/receipt.json",
+          "sha256": "df50a9e70c8b2c03aa2125efb2376303e69c99870eaf3476b8df1fcd83a54267"
+        },
+        {
+          "member": "DE/2016/response.json",
+          "original": "results/resource-reference-climate-r1/DE/2016/response.json",
+          "sha256": "c22fcda741e54d46a57d6bd13ddd4dca377fb3bf6857f1d1194f9b52eceeae77"
+        },
+        {
+          "member": "DE/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/DE/2017/receipt.json",
+          "sha256": "27e379e69f5b8f8ed63f99b12151ce3b083d5b9373b22e9fc000882b1026566c"
+        },
+        {
+          "member": "DE/2017/response.json",
+          "original": "results/resource-reference-climate-r1/DE/2017/response.json",
+          "sha256": "669ca73e890b547dee722ac00232b9c6a50c6b81e89316fde52e6d58d7d8b71f"
+        },
+        {
+          "member": "DE/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/DE/2018/receipt.json",
+          "sha256": "637325139312f40cbe3718d0500d500833fcf98ab1305eef146cd0039c3235cb"
+        },
+        {
+          "member": "DE/2018/response.json",
+          "original": "results/resource-reference-climate-r1/DE/2018/response.json",
+          "sha256": "6a367a81c8dc09c5826f312f38622fd2a00409427c12bd9785229452293489c9"
+        },
+        {
+          "member": "DE/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/DE/2019/receipt.json",
+          "sha256": "4bf402b62f703dc3904e1d1c0dc303390f017b5f68629b6f0f57a9a3acd2692d"
+        },
+        {
+          "member": "DE/2019/response.json",
+          "original": "results/resource-reference-climate-r1/DE/2019/response.json",
+          "sha256": "46a3c3ce76acc232ae1d77a43172495b49f2f6fc6146cee6db35b984c128a10d"
+        },
+        {
+          "member": "DE/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/DE/2020/receipt.json",
+          "sha256": "4c1592909db077c46051cafcd6e50b520e886498014742c1638927802bdd56f0"
+        },
+        {
+          "member": "DE/2020/response.json",
+          "original": "results/resource-reference-climate-r1/DE/2020/response.json",
+          "sha256": "01603a42c8b90da5ffee2b0b9dc70e27cd170c07b8947151316c2b1257735027"
+        },
+        {
+          "member": "ERCO/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2016/receipt.json",
+          "sha256": "d2d91aa90973994e36724e0dc82b425bf6d4823f1a08884526d22c4535465e59"
+        },
+        {
+          "member": "ERCO/2016/response.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2016/response.json",
+          "sha256": "c623304af689fb9728a0f95f84cf49c035c1f56a04d6c53668a94b3a9fa78b23"
+        },
+        {
+          "member": "ERCO/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2017/receipt.json",
+          "sha256": "46696ce8655fb7ea55b302c2d93e280de225a6951eae238f49f8cdfba65521a0"
+        },
+        {
+          "member": "ERCO/2017/response.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2017/response.json",
+          "sha256": "dab01625899eae202243e159b139e496ed49b9d50eaf325d413fe9cbd692d782"
+        },
+        {
+          "member": "ERCO/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2018/receipt.json",
+          "sha256": "7461562cba168dcb4f1fe4d30379eec7b0df2b02a302dbb8d2079dfcfc5d024e"
+        },
+        {
+          "member": "ERCO/2018/response.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2018/response.json",
+          "sha256": "60e3fbef9e0801ff70b36886e59e0ff24194731212f82c1f89c874173a3f0a82"
+        },
+        {
+          "member": "ERCO/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2019/receipt.json",
+          "sha256": "8f0b77ee9254c8fab3b8279bbca815dc78806a12afbc4120e2a0aab84139cd6e"
+        },
+        {
+          "member": "ERCO/2019/response.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2019/response.json",
+          "sha256": "8794c77d19a8dea3d15b72341b32c9d45b967dee3db3c482f3f75b2cc1208e23"
+        },
+        {
+          "member": "ERCO/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2020/receipt.json",
+          "sha256": "28715b6d91544db9dcb7830f1f3b62d38e52bab58b8389a033f521becc1a9428"
+        },
+        {
+          "member": "ERCO/2020/response.json",
+          "original": "results/resource-reference-climate-r1/ERCO/2020/response.json",
+          "sha256": "0fb2c8d61cdc05ed32f53b724ea81619438651ebdd93cae2e3b093fc2856d8f9"
+        },
+        {
+          "member": "FPL/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/FPL/2016/receipt.json",
+          "sha256": "e99c3dfad5709994214b8814eccf1d502e283cd95b550483086882bc0d661b27"
+        },
+        {
+          "member": "FPL/2016/response.json",
+          "original": "results/resource-reference-climate-r1/FPL/2016/response.json",
+          "sha256": "11f4a88ab8d93d6f3c19aaa66ac2f018120db5b5a4d90a557cb168c9c8b60e8b"
+        },
+        {
+          "member": "FPL/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/FPL/2017/receipt.json",
+          "sha256": "a56bd1075f37d689e68561e186dcc84596ea01da94dd054343e8ba771ca8ffc7"
+        },
+        {
+          "member": "FPL/2017/response.json",
+          "original": "results/resource-reference-climate-r1/FPL/2017/response.json",
+          "sha256": "c637e5ca458d90437117ad84ec330146cde7305a8845b814f194d63bd0fbba56"
+        },
+        {
+          "member": "FPL/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/FPL/2018/receipt.json",
+          "sha256": "1bff051972720307baae64dd1957d85684af87b99201aa37f2457cd99742ca41"
+        },
+        {
+          "member": "FPL/2018/response.json",
+          "original": "results/resource-reference-climate-r1/FPL/2018/response.json",
+          "sha256": "c7e43613d7db907eadf7ded8005df37a55c4c7b81a411a631cdeee5e2d28672f"
+        },
+        {
+          "member": "FPL/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/FPL/2019/receipt.json",
+          "sha256": "09c4e694fc554cb2c86563ce799bf8b72360349cc4901f47b0cc16bd24af461d"
+        },
+        {
+          "member": "FPL/2019/response.json",
+          "original": "results/resource-reference-climate-r1/FPL/2019/response.json",
+          "sha256": "b9ddcfa9abb6d332b2430a0cc56e3512fda13df499393d810fab5f7735124ddd"
+        },
+        {
+          "member": "FPL/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/FPL/2020/receipt.json",
+          "sha256": "a1554a3fb90faf6906b3358bea19e22952b9a54ee3a45528294c85f1e41fc83b"
+        },
+        {
+          "member": "FPL/2020/response.json",
+          "original": "results/resource-reference-climate-r1/FPL/2020/response.json",
+          "sha256": "0d8bd603b32a9e1e954e527997ffecf5210235a4fe924b648f38a2cf9a6969f9"
+        },
+        {
+          "member": "GB/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/GB/2016/receipt.json",
+          "sha256": "22e95acbcc786934284f71d3f340c887e9da3ebf25b0589dd2b7b9209f6d9ae3"
+        },
+        {
+          "member": "GB/2016/response.json",
+          "original": "results/resource-reference-climate-r1/GB/2016/response.json",
+          "sha256": "ec0080005dd137c4589687d9ec9cb605bf0547f90ba0821ffbb5a99ec39fe507"
+        },
+        {
+          "member": "GB/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/GB/2017/receipt.json",
+          "sha256": "b8335a440cc49637fadea93533805e5e6474e8ebe404203cc6b07c8db65ddfcb"
+        },
+        {
+          "member": "GB/2017/response.json",
+          "original": "results/resource-reference-climate-r1/GB/2017/response.json",
+          "sha256": "7489a08336b35a851753927d15b87a3c968d954ea335210b706044812391fde6"
+        },
+        {
+          "member": "GB/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/GB/2018/receipt.json",
+          "sha256": "d7f6d30347fc5f83f9af2e4a643e813f186966257383eccef4f5a58ef74c3e3a"
+        },
+        {
+          "member": "GB/2018/response.json",
+          "original": "results/resource-reference-climate-r1/GB/2018/response.json",
+          "sha256": "9997b9f4fa695827774ded18a360bca91a88a899a75ef2d6fa3e31ac867f8c50"
+        },
+        {
+          "member": "GB/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/GB/2019/receipt.json",
+          "sha256": "ce58d0e60552c3277e0321ec720fedfe928e6c13531bfbe00ec46b56b8755b52"
+        },
+        {
+          "member": "GB/2019/response.json",
+          "original": "results/resource-reference-climate-r1/GB/2019/response.json",
+          "sha256": "4e724a3f93a347fb6763dc4b2d3294490ceeeb5a97f7d488f7864e470f1d35eb"
+        },
+        {
+          "member": "GB/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/GB/2020/receipt.json",
+          "sha256": "0bf678102a059272a1c74c443c78ea971e6afee7d3c7231451d158db9880ac89"
+        },
+        {
+          "member": "GB/2020/response.json",
+          "original": "results/resource-reference-climate-r1/GB/2020/response.json",
+          "sha256": "0c799118ef728f90c9d450cacb6b68a9687a97222c14a60a36658b1bbb5d36ef"
+        },
+        {
+          "member": "ISNE/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2016/receipt.json",
+          "sha256": "5975e032196e9d9f2ad7619aa7db1f9ea74bf226a36c6f8355ccf99c31e9243b"
+        },
+        {
+          "member": "ISNE/2016/response.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2016/response.json",
+          "sha256": "c68890b9c4e8585c61d3fb76ff8e1985ab8003cd7b0d1fd8dad5c18d561d30bb"
+        },
+        {
+          "member": "ISNE/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2017/receipt.json",
+          "sha256": "41bd5d10268044dd5897915ce013bc2864542db0d987e44efcbd56b4fae2cea1"
+        },
+        {
+          "member": "ISNE/2017/response.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2017/response.json",
+          "sha256": "96c5265bbf3dbb1187c34b06787cf321c8cc4a2c6d39937e9cc42efde8a897f9"
+        },
+        {
+          "member": "ISNE/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2018/receipt.json",
+          "sha256": "c45e9cc5396b7ee98d1d5bc94b9a16a06293b2a57d36518605d1f0ce9afb1fce"
+        },
+        {
+          "member": "ISNE/2018/response.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2018/response.json",
+          "sha256": "e0f163aecf3b0daf33d3a78818c1601911916baa9487c5d26005adb469f01def"
+        },
+        {
+          "member": "ISNE/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2019/receipt.json",
+          "sha256": "224b9ede7ff96c36bebe219295220adfff2ba28fd17b74304c7a9165fb70c93b"
+        },
+        {
+          "member": "ISNE/2019/response.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2019/response.json",
+          "sha256": "a0d5d3485b7b0d6e471e7bc4a21ef3a3cf2158362e0061b7d414f03401123859"
+        },
+        {
+          "member": "ISNE/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2020/receipt.json",
+          "sha256": "fb7ba3412781dfd146210d2d546b5813d3a5e02a1faf279e4f8e3cd0286641d0"
+        },
+        {
+          "member": "ISNE/2020/response.json",
+          "original": "results/resource-reference-climate-r1/ISNE/2020/response.json",
+          "sha256": "d3960ab37f946291efa04e5cbafd651d36109e6d40dd3f3abbe5e8a01ecaaa71"
+        },
+        {
+          "member": "MISO/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/MISO/2016/receipt.json",
+          "sha256": "21aa20dd0b1bb60452b3a0618d4f7780afa16ecc539edd1d2c88c8b12351588c"
+        },
+        {
+          "member": "MISO/2016/response.json",
+          "original": "results/resource-reference-climate-r1/MISO/2016/response.json",
+          "sha256": "d9b79f2ff2c9b83eb2ca931675023130ab09031bded15b722d37b1e2ba0e1125"
+        },
+        {
+          "member": "MISO/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/MISO/2017/receipt.json",
+          "sha256": "0547265b07358a1f9dceceb964c73bb4628caf1b96270b649c1786de8a0abbdd"
+        },
+        {
+          "member": "MISO/2017/response.json",
+          "original": "results/resource-reference-climate-r1/MISO/2017/response.json",
+          "sha256": "705243ed2123d1c145de8425cfb0e9a9068ecd83fdff6f92f90f7aeb00bcb33e"
+        },
+        {
+          "member": "MISO/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/MISO/2018/receipt.json",
+          "sha256": "28850c594dbbcf73116d99d057318c49008fe962d73f130d170ba040f27e3330"
+        },
+        {
+          "member": "MISO/2018/response.json",
+          "original": "results/resource-reference-climate-r1/MISO/2018/response.json",
+          "sha256": "2c4cef675a9d903bb72073d33f14a714894d1fff4974a60d5696767e1de6c521"
+        },
+        {
+          "member": "MISO/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/MISO/2019/receipt.json",
+          "sha256": "c6b1e60791bb167c01c86b08116d30314eb426b385128c6ca4bd50e4bbef6376"
+        },
+        {
+          "member": "MISO/2019/response.json",
+          "original": "results/resource-reference-climate-r1/MISO/2019/response.json",
+          "sha256": "c983865da7a78ed88cc65ef48a576f0020526c4d0e9db6218d173d0e67a0663f"
+        },
+        {
+          "member": "MISO/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/MISO/2020/receipt.json",
+          "sha256": "25054a41dc798a6efbce4d22d01adad662d4645601be008209989d39cf821320"
+        },
+        {
+          "member": "MISO/2020/response.json",
+          "original": "results/resource-reference-climate-r1/MISO/2020/response.json",
+          "sha256": "de2e615676125b63c601d24030e41ef18c15c0dacfe286bca1c17021f5b294d7"
+        },
+        {
+          "member": "NYIS/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2016/receipt.json",
+          "sha256": "a339240bb877b566cd352e7b4bffec2baf45dcd9f1b9ba0ff9aa414a695ce654"
+        },
+        {
+          "member": "NYIS/2016/response.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2016/response.json",
+          "sha256": "a2cb761f150f6febac5b220c7a1fdfefac77a6b7318a86d49f654b53df7d88a7"
+        },
+        {
+          "member": "NYIS/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2017/receipt.json",
+          "sha256": "7f01ee5ec9d9874c955d4a90436a2ab0654ebd6951759cb7253ff3c04890219d"
+        },
+        {
+          "member": "NYIS/2017/response.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2017/response.json",
+          "sha256": "a8ec026021b02edb3877b7ec7fb6a8783533ff9da7e2727889466ec0c4a35dd1"
+        },
+        {
+          "member": "NYIS/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2018/receipt.json",
+          "sha256": "af2c6a2224c798b2c1cb1226e4f76bc79db8a1ee36dc1063709dfaef2c3f282a"
+        },
+        {
+          "member": "NYIS/2018/response.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2018/response.json",
+          "sha256": "460121a9c8f7fd1456ecc65c62a2989711b23fa73bbc2a5eb5456d6a84bf148d"
+        },
+        {
+          "member": "NYIS/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2019/receipt.json",
+          "sha256": "d4efcc81dbba58c48985724cbcc112332fa5bd75aec56413de3fadf537154f3a"
+        },
+        {
+          "member": "NYIS/2019/response.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2019/response.json",
+          "sha256": "981c8d49546ccca12c3576a737d53c9db263772a113d481710ce1f2a061df484"
+        },
+        {
+          "member": "NYIS/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2020/receipt.json",
+          "sha256": "c8c26ece25d8b4accdc414f4e2c89b82a0d4da3c18ead430be387b8353bd3c19"
+        },
+        {
+          "member": "NYIS/2020/response.json",
+          "original": "results/resource-reference-climate-r1/NYIS/2020/response.json",
+          "sha256": "20207b6f88926a0937a9a58baee74c0a023bf11852541307757e219aeb08833a"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2016/receipt.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2016/receipt.json",
+          "sha256": "33a25296cc301eea799528603707cdf210823382348252b5e7c380e69f191390"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2016/response.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2016/response.json",
+          "sha256": "74965558e7d82836314b190cae3e818853c5e31511844c801f2a9f6c5b16fcbc"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2017/receipt.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2017/receipt.json",
+          "sha256": "a00be5f31506cbbe5ffdce2bee0653d84b9002f6cbdf717d7761bf43015ec1d8"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2017/response.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2017/response.json",
+          "sha256": "cc94b692a1f876f7e405dc68e14a7a592076a049ec2cc0f672cd838d7eee48a3"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2018/receipt.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2018/receipt.json",
+          "sha256": "77b57fa5a920898d6a3aebdeb93cfbd9e0a5789ea05b1d451f055cfa25ea1aa2"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2018/response.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2018/response.json",
+          "sha256": "eacd40f1cbb6579ceb516c3780f63119b9eda2ab9819acb48fe916b5d01f9923"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2019/receipt.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2019/receipt.json",
+          "sha256": "fa5c19b79f05b9c5bd30b6d92690c8f3e1de18074a8f5d49521f4ec3a12ef406"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2019/response.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2019/response.json",
+          "sha256": "d829916472b0daf97bc7514f670152b7435742e493e43a492684590315563993"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2020/receipt.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2020/receipt.json",
+          "sha256": "bbbabb28b112f375ca4cc5d823c020bd9a42586ccadedfdb1e5954e60692a2c0"
+        },
+        {
+          "member": "Shanghai_deployment_probe/2020/response.json",
+          "original": "results/resource-reference-climate-r1/Shanghai_deployment_probe/2020/response.json",
+          "sha256": "a392ad1a6f4e08c83a7634bc48f6e01029a0da106d3ed40761c9c344abd03208"
+        },
+        {
+          "member": "annual_resources.csv",
+          "original": "results/resource-reference-climate-r1/annual_resources.csv",
+          "sha256": "dd382f78029461de88e9205f76f8d2d83b1f69ccc8068af721387ead069fe756"
+        },
+        {
+          "member": "climatology.csv",
+          "original": "results/resource-reference-climate-r1/climatology.csv",
+          "sha256": "760333f6bf5bda740cc04f8908662fe4e291fd8cb0bb645e025520733e1f3749"
+        },
+        {
+          "member": "collection_before_review.tar.gz",
+          "original": "results/resource-reference-climate-r1/collection_before_review.tar.gz",
+          "sha256": "513d1356c824558abce34a70cd9f56ca5b7c4a1828aaa695acf3195bc068cd11"
+        },
+        {
+          "member": "manifest.json",
+          "original": "results/resource-reference-climate-r1/manifest.json",
+          "sha256": "52eaea7b5673f60fa273bf044d32cdaed30717f2f89e2b1613bad2328272aa49"
+        },
+        {
+          "member": "plan.json",
+          "original": "results/resource-reference-climate-r1/plan.json",
+          "sha256": "39658cefc12caf43b2f902ab597b1d5b9c390694ddd368589cc5447f5b8428f8"
+        }
+      ]
+    },
+    {
+      "file": "results/portable_review.json",
+      "sha256": "8d84a07bf441e1a773b1e7112969369c0d236ff10c8fd17e6385985f118487be",
+      "original": "results/resource-amplitudes-r1/portable_review.json",
+      "original_sha256": "8d84a07bf441e1a773b1e7112969369c0d236ff10c8fd17e6385985f118487be"
+    },
+    {
+      "file": "README.md",
+      "sha256": "8ec6f0ac2a95102a34f32bdefd8d7117f82208266b317b02a6e3110661480024",
+      "original": "docs/evidence/resource-amplitudes-r1/README.md",
+      "original_sha256": "8ec6f0ac2a95102a34f32bdefd8d7117f82208266b317b02a6e3110661480024"
+    }
+  ],
+  "portable_scope": "Supports re-scoring all 360 ensembles, forecasts and interval outputs with included labels, and reconstruction of all fixed climate means from raw responses/receipts. Does not include full-country native hourly generation, old GFS caches or original matched/full-year banks, hence not a full clean-machine native-data retraining package. Joblib heads are own trusted artifacts. All source-only posthoc diagnostics use labels and are not deployed predictions."
+}

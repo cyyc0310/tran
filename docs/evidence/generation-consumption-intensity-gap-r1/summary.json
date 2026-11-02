@@ -1,0 +1,43 @@
+{
+  "status": "DEVELOPMENT_MEASUREMENT_BOUNDARY_AUDIT",
+  "year": 2024,
+  "source": "EIA-930 official intensity panel, current downloaded vintage",
+  "input_sha256": {
+    "data/eia930-hourly-co2-r1/BPAT_official_intensity_2022_2024.csv.gz": "66b59e45dcf9223604100a8504b68b44cf312bf2df406cfba62bffc2c5b0fe48",
+    "data/eia930-hourly-co2-r1/CISO_official_intensity_2022_2024.csv.gz": "e79358e47c07d2644406f21323ab7671f1fbb29e8311326e18849e85b0fc24ea",
+    "data/eia930-hourly-co2-r1/ERCO_official_intensity_2022_2024.csv.gz": "de6d0181c32f9167979fc44a15a6ebedde171a6206ea580a8db6c8beeca1ef15",
+    "data/eia930-hourly-co2-r1/FPL_official_intensity_2022_2024.csv.gz": "e5c1eb39458349eda625fab8bfe1bb1f5b82e99a7107604832e429555c476955",
+    "data/eia930-hourly-co2-r1/ISNE_official_intensity_2022_2024.csv.gz": "6ba7c5ed7780210f8890098a58c4490e29baeec3c8c23b5879d5f1c0c16c0f1b",
+    "data/eia930-hourly-co2-r1/MISO_official_intensity_2022_2024.csv.gz": "3d189f49fd905462f93b4416f388de28b0589120451696c91b9644263d1d7ecc",
+    "data/eia930-hourly-co2-r1/NYIS_official_intensity_2022_2024.csv.gz": "f9cdb9cbb84e8b475edbc5b4deb2cdc4d2a440f58f60fbd71180a6059d5ebb02"
+  },
+  "raw_hours": 61488,
+  "paired_complete_hours": 61134,
+  "balancing_authorities": [
+    "BPAT",
+    "CISO",
+    "ERCO",
+    "FPL",
+    "ISNE",
+    "MISO",
+    "NYIS"
+  ],
+  "generation_mean_g_kwh": 241.11632206522862,
+  "consumption_mean_g_kwh": 255.0787106125491,
+  "mean_signed_consumption_minus_generation_g_kwh": 13.96238854732044,
+  "mean_absolute_gap_g_kwh": 16.259999453846923,
+  "absolute_gap_quantiles_g_kwh": {
+    "0.5": 10.293361759188514,
+    "0.75": 18.37249447631133,
+    "0.9": 39.9408689768786,
+    "0.95": 66.2225198053658,
+    "0.99": 99.63353268076256
+  },
+  "official_column_conversion_max_abs_error_g_kwh": {
+    "generation": 0.0007368582471372065,
+    "consumption": 0.0007204711182566825
+  },
+  "identity_max_abs_error_g_kwh": 2.9132252166164108e-12,
+  "formula": "I_gen - I_cons = 1000*E_gen*(L-G)/(G*L) - 1000*(E_import-E_export)/L; E values are CO2 emissions, G=positive generation MWh, L=consumed electricity MWh.",
+  "interpretation": "Local generation intensity alone does not determine consumption intensity; hourly energy balance and flow-traced import/export emissions contribute. This is an EIA measurement decomposition, not a China performance estimate or causal analysis."
+}

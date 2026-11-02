@@ -1,0 +1,26 @@
+[
+  {
+    "arm": "hourly_reconstruction",
+    "source": "US",
+    "target": "GB",
+    "path": "hourly_reconstruction_US_to_GB_predictions.csv.gz",
+    "sha256": "29dd458a7346a22627fa4adf989e293e77d9448da9a4283008f9ba6846850ac4",
+    "hours_predicted": 8784,
+    "selected_shrink": {
+      "residual_ridge": 0.75,
+      "residual_hgb": 0.25
+    }
+  },
+  {
+    "arm": "eia923_monthly",
+    "source": "US",
+    "target": "GB",
+    "path": "eia923_monthly_US_to_GB_predictions.csv.gz",
+    "sha256": "9bd04de7e4ba0b7ac89219874a9df7cc63aac32d167317d44dfbc40353f971bf",
+    "hours_predicted": 8784,
+    "selected_shrink": {
+      "residual_ridge": 0.5,
+      "residual_hgb": 1.0
+    }
+  }
+]
