@@ -1,13 +1,27 @@
-# Clean-copy replay receipt
+# Replay receipts
 
-Status: **the earlier local clean-copy replay passed; this public-review candidate is not a tagged release**.
+## Earlier full InTaSet + Nano-Drone replay
 
-- Runtime: CPython 3.12.13 with the included pinned dependency lock.
-- Raw inputs used in that replay: 16 verified files: the included InTaSet Zenodo archive plus 15 Nano-Drone Git LFS CSVs obtained from the pinned author commit `2d921b57d166fe2debe08a5d39bd07297c5abc39`.
-- Reproduction: 148 InTaSet summary rows and 450 Nano-Drone scored rows; 22 output files have SHA-256 entries in the run manifest.
-- Comparison: all 11 scoring CSVs matched the historical clean replay byte-for-byte. Across all 22 output files, 15 were byte-identical; the other 7 differed only in run metadata or logs.
-- Privacy and log hygiene: workspace and virtual-environment paths were replaced in logs; one log line's trailing display padding was removed and the output hash refreshed. The scoring CSVs were not changed.
-- Recheck: the earlier candidate passed `scripts/reproduce_control_benchmark_v1.py --verify-only` after fetching the pinned inputs.
-- Recorded warnings: author StandardScaler checkpoints were serialized with scikit-learn 1.7.2 and loaded under 1.8.0; a separate 1.7.2 replay had identical output files. SINDYc reports multiplication overflow in its feature construction; affected predictions remain counted as numerical failures.
+The earlier candidate was fully rerun on macOS arm64 with CPython 3.12.13 and the pinned dependency lock. It verified 16 raw inputs (the included InTaSet ZIP plus 15 Nano-Drone Git LFS CSVs from pinned author commit `2d921b57d166fe2debe08a5d39bd07297c5abc39`) and generated 22 output files. All 11 scoring CSVs matched the prior clean replay byte-for-byte. Across the 22 outputs, 15 were identical; the remaining differences were run metadata or logs. After that run, local paths were redacted from logs and output hashes refreshed. During release packaging, one non-scoring log line's trailing display padding was removed and its hash refreshed; the scoring CSVs were not changed.
 
-This receipt documents a replay on the earlier candidate copy on macOS arm64. The current public-review candidate changes release documentation, licensing metadata, the file manifest, and one non-scoring log's whitespace; it has **not** been rescored after those packaging changes. No Nano-Drone source CSVs, author code, or checkpoints are included here. This receipt does not establish cross-platform bitwise reproducibility, blind confirmation, an InTaSet author Neural ODE reproduction, hardware safety bounds, or a stable algorithm winner.
+The earlier full run does not establish cross-platform bitwise reproducibility, blind confirmation, an InTaSet author Neural ODE reproduction, hardware safety bounds, or a stable algorithm winner. Nano-Drone inputs and author materials are not included in this package, and their specific license scope has not been verified. Its run receipt is preserved under `docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/`.
+
+## Cascaded Tanks clean-copy replay
+
+This replay was run from a clean copy of this public-review package, using only the included Cascaded Tanks archive and the dependencies already installed at the versions in the package lock. It was run after the replay CLI and result-verification CLI were added.
+
+- Runtime: CPython 3.12.13, NumPy 2.4.5, pandas 3.0.3, SciPy 1.17.1, scikit-learn 1.8.0.
+- Source: the included 7,520,592-byte archive passed ZIP CRC, record MD5 `f832776ed1efdca4572338f467b7baec`, and SHA-256 `eb0fa05851e8a7136846c2e3b61fbef87def78d0852c86ab91b02ac5db541b51`. The verified 4TU source license is CC BY-SA 4.0.
+- Results: 66 metric rows, 67,296 within-record prediction blocks, and 6 target-prefix calibration receipts. Predictions were finite. The result verifier passed.
+- Exact replay: the metrics, block-level scores, calibration receipts, and excitation diagnostics were each byte-identical to the previously archived files. Their SHA-256 values are recorded in `docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_metadata.json` and the release manifest.
+- Limit: this dataset has one estimation record and one public test record; the test output was inspected during source admission. This is a reproducible development result, not blind or independent confirmation. It uses recorded future pump inputs and block-start resets, not online control or full-run free rollout.
+
+Commands used:
+
+```bash
+python scripts/verify_cascaded_tanks_source_v1.py
+python scripts/cascaded_tanks_sparse_input_benchmark_v1.py \
+  --output-dir /tmp/cascaded_tanks_replay
+python scripts/verify_cascaded_tanks_sparse_input_benchmark_v1.py \
+  --output-dir /tmp/cascaded_tanks_replay
+```

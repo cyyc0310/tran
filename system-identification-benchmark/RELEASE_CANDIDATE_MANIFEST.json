@@ -5,15 +5,24 @@
   "repository_subdirectory": "system-identification-benchmark",
   "project_license": "MIT",
   "license_scope": "project-authored source code and prose documentation only; experiment outputs and third-party materials are separate",
-  "nanodrone_source_materials": "not included; specific upstream license terms were not verified",
-  "file_count_excluding_manifest": 44,
-  "total_bytes_excluding_manifest": 6986892,
+  "independently_reproducible_systems": [
+    "InTaSet M1<->M2",
+    "Cascaded Tanks"
+  ],
+  "nanodrone_source_materials": "not included; specific upstream license terms were not verified; its result is supplementary",
+  "file_count_excluding_manifest": 60,
+  "total_bytes_excluding_manifest": 23734867,
   "manifest_sha256_self_reference": "omitted by design",
   "files": [
     {
+      "path": ".gitignore",
+      "size_bytes": 56,
+      "sha256": "0e8b15f234a7651530f4445e2aebb8b637da37aecff75040b69d58d6b8b6a0d4"
+    },
+    {
       "path": "CLEAN_COPY_REPLAY_RECEIPT.md",
-      "size_bytes": 1916,
-      "sha256": "0914c81b3eeac33907ae487646debfcc424168789ff80f41efbb4de7553f205b"
+      "size_bytes": 2908,
+      "sha256": "b1f5bf33898b0d83a188c8901f92d7e24c0b55ba2e49c58a6a68c074fc306eaf"
     },
     {
       "path": "LICENSE",
@@ -22,23 +31,43 @@
     },
     {
       "path": "LICENSE_SCOPE.md",
-      "size_bytes": 657,
-      "sha256": "d05ecf97600de2aa6a73931063ddcf73e9d1effb3754d102e5c7ed4eaec47a7c"
+      "size_bytes": 777,
+      "sha256": "77ddcf89c57cd84a371df788664b1308b1bf70043c136b639648626e0ac8c907"
     },
     {
       "path": "README.md",
-      "size_bytes": 5436,
-      "sha256": "1f215ca7310e266107e30f7bdd39c11c957ee0e090b4a535efcc0cd6017a5ec1"
+      "size_bytes": 5954,
+      "sha256": "d54e705754b76a8ce24c91d84a8d8b0f365216af7d8dfca5143461c56fdeadbd"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "size_bytes": 3080,
-      "sha256": "efb34b74ac6062d6064add45cd5f67ccb5b1dff053ed34be4004bca3984a83f1"
+      "size_bytes": 3800,
+      "sha256": "c74c793257f8f91a8a42280d38292eb7b9489a7e34e3ff938c3beff2a5bbb8e2"
     },
     {
       "path": "docs/algorithmic-control-v1/ALIGNED_CONTROL_BENCHMARK_RESULTS_20261102.md",
       "size_bytes": 7515,
       "sha256": "e9f515499cfa5e772198ea31c425383f55e04c8c48b72cca058df14e5f7639b2"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_CLEAN_COPY_REPLAY_RECEIPT_20261103.md",
+      "size_bytes": 1759,
+      "sha256": "00b0d52f37aedd75fd1a554da4b3e12d368cb797164cfc0ad5c5fc8d95a70fe2"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_SOURCE_ADMISSION_AUDIT_20261103.md",
+      "size_bytes": 4245,
+      "sha256": "b15352f57be226616451466fae2829dbf165910c4f4ffe3fdb398b31336be79e"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_SPARSE_INPUT_PROTOCOL_V1_20261103.md",
+      "size_bytes": 4106,
+      "sha256": "5bbdbc904286d2dec7e2c2d084e8dd065d65091a3f1237fcb17f7fb3a01e84d5"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_SPARSE_INPUT_RESULTS_20261103.md",
+      "size_bytes": 5981,
+      "sha256": "c35d7c3b6e661d6cbecb1478e4c930e3815e7679ee395f2fb8c80f6ea5e1780c"
     },
     {
       "path": "docs/algorithmic-control-v1/NANODRONE_DATA_AUDIT_20261103.md",
@@ -61,9 +90,49 @@
       "sha256": "f7b559dd88f855b980bb9d83c97cdfd0c36c399866c4dddbe7053e338d6fbf93"
     },
     {
+      "path": "docs/algorithmic-control-v1/external-source/cascaded_tanks/CascadedTanksFiles.zip",
+      "size_bytes": 7520592,
+      "sha256": "eb0fa05851e8a7136846c2e3b61fbef87def78d0852c86ab91b02ac5db541b51"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/cascaded_tanks/README.md",
+      "size_bytes": 1170,
+      "sha256": "eddcf5b1a2ddaafd8a39c6add3b0928ac1caceeeb11d3242009f7e89ffe34ef8"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/cascaded_tanks/acquisition_manifest.json",
+      "size_bytes": 4005,
+      "sha256": "2e703e34b7a2b5d61bdfe5119385baef66d7539c51fb98db7e3401c3467885b0"
+    },
+    {
       "path": "docs/algorithmic-control-v1/nanodrone_data_manifest_20261103.json",
       "size_bytes": 5216,
       "sha256": "3451d28b429e8b24f99c8d7918b272a439f13bfd09ae133f9d1bea41bce01caf"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_blocks.csv",
+      "size_bytes": 9135031,
+      "sha256": "3c4e14cb3c756db1d5718e39000e24a303ab0589a0bd15c19dd7c166c94f401d"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_excitation_diagnostics.json",
+      "size_bytes": 5848,
+      "sha256": "89db96c764e000a0a3614404306de6c771c370c22a23830afb181faf15c2ad67"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_gamma_receipts.csv",
+      "size_bytes": 1066,
+      "sha256": "651279bbf36856aa42e14330c2d69e5d7793f8c2f8fc52269d1842cbe76e362d"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_metadata.json",
+      "size_bytes": 13615,
+      "sha256": "595fb9cfb399f6efeaf33f1e6e6d1ac8ff07f4e5994eda2637e3edabdf00ce7f"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_metrics.csv",
+      "size_bytes": 12013,
+      "sha256": "95a8500c2abbe454513854b8bc00b4e7e2ba3f30735d3d5166b0ad7556cf48d0"
     },
     {
       "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/control_benchmark_run_manifest.json",
@@ -196,6 +265,11 @@
       "sha256": "dfcd038d8b2f944d58fc12bc01361f5b64c6285db8e18897ea4694556df318d9"
     },
     {
+      "path": "scripts/cascaded_tanks_sparse_input_benchmark_v1.py",
+      "size_bytes": 24298,
+      "sha256": "ba18644bd429394d33b3a4a1380778eb382532324f56a2361c5d68a8c4e636d0"
+    },
+    {
       "path": "scripts/fetch_control_benchmark_v1_data.py",
       "size_bytes": 15681,
       "sha256": "c616ca3510758264650dc2f6fb42be66a2e391f5a9d41bbf69588dded7a9f350"
@@ -229,6 +303,16 @@
       "path": "scripts/run_intaset_aligned_budget_v1.py",
       "size_bytes": 12084,
       "sha256": "1568efc237296ae74586c9a87fd194d900ce26a34850eed61dc51c9c051bc9e5"
+    },
+    {
+      "path": "scripts/verify_cascaded_tanks_source_v1.py",
+      "size_bytes": 6008,
+      "sha256": "69f285a810da59f6ecb2dc49767475dbe289e6385e1e1dc72f1e9baf4900b72f"
+    },
+    {
+      "path": "scripts/verify_cascaded_tanks_sparse_input_benchmark_v1.py",
+      "size_bytes": 5832,
+      "sha256": "435991f4df7e265f14dda3a5270f33beed4c200d34498da0cf31b1392402862e"
     }
   ]
 }

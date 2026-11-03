@@ -1,0 +1,64 @@
+{
+  "dataset": "Cascaded Tanks Benchmark Combining Soft and Hard Nonlinearities",
+  "creators": ["Maarten Schoukens", "J. P. Noël"],
+  "doi": "10.4121/12960104",
+  "record_url": "https://research.tue.nl/en/datasets/cascaded-tanks-benchmark-combining-soft-and-hard-nonlinearities/",
+  "benchmark_url": "https://www.nonlinearbenchmark.org/benchmarks/cascaded-tanks",
+  "accessed": "2026-11-03",
+  "license": "CC BY-SA 4.0",
+  "citation": "Schoukens, M., Mattsson, P., Wigren, T., & Noël, J. P. (2020). Cascaded Tanks Benchmark Combining Soft and Hard Nonlinearities [Dataset]. 4TU.ResearchData. https://doi.org/10.4121/12960104",
+  "download": {
+    "primary_4tu_url": "https://data.4tu.nl/file/d4810b78-6cdd-48fe-8950-9bd601e5f47f/3b697e42-01a4-4979-a370-813a456c36f5",
+    "retrieval_route": "Google Drive mirror URL listed in the official nonlinear_benchmarks dataloader; downloaded through docs.google.com/uc?export=download&id=1HnQf_gu0g_UlggoBqy2s34l9YJiFdN01",
+    "dataloader_repository": "https://github.com/MaartenSchoukens/nonlinear_benchmarks",
+    "dataloader_commit": "f9fb3883086870a27b31917ccde1f78c95d53cb2",
+    "primary_endpoint_status": "TLS handshake timed out during this audit; mirrored archive retrieved successfully"
+  },
+  "archive": {
+    "path": "CascadedTanksFiles.zip",
+    "bytes": 7520592,
+    "expected_bytes_from_official_dataloader": 7520592,
+    "md5": "f832776ed1efdca4572338f467b7baec",
+    "expected_md5_from_4tu_record": "f832776ed1efdca4572338f467b7baec",
+    "sha256": "eb0fa05851e8a7136846c2e3b61fbef87def78d0852c86ab91b02ac5db541b51",
+    "zip_integrity": "verified; all members passed CRC check"
+  },
+  "verified_members": {
+    "CascadedTanksFiles/dataBenchmark.csv": {
+      "bytes": 30014,
+      "sha256": "ef2388ed822f3aef4aa80d6b0f2b466dd80b361786b3eafc7a2957c31ea323a7"
+    },
+    "CascadedTanksFiles/dataBenchmark.mat": {
+      "bytes": 24401,
+      "sha256": "cb2f88d4388be4d3f2a24c6402fba804976aac5f2e1f26cda59ea0a38d016eab"
+    },
+    "CascadedTanksFiles/TanksBenchmark.pdf": {
+      "bytes": 2169671,
+      "sha256": "91597add858efdec98cc1bfabd7b87867c5c3cb8a0ec10976ceed9acdee81b39"
+    }
+  },
+  "data_contract": {
+    "native_sampling_interval_seconds": 4.0,
+    "samples_per_record": 1024,
+    "source_record_columns": ["uEst", "uVal", "yEst", "yVal", "Ts"],
+    "control_input": "pump voltage; zero-order hold between samples",
+    "measured_output": "lower-tank water level, with capacitive sensor noise",
+    "input_design": "multisine; paper reports excitation from 0 to 0.0144 Hz",
+    "official_split": "uEst/yEst are estimation data; uVal/yVal are test data; benchmark specification says the test record must not be used for model estimation",
+    "initial_state": "unknown at record start; the benchmark document says estimation and test records share the same unknown initial state",
+    "noise_and_nonlinearity": "benchmark document reports about 40 dB output SNR and overflow-related hard saturation plus input-dependent process noise",
+    "physical_boundaries": "overflow is documented, but an engineering water-level limit, units for the CSV y values, and safety envelope were not independently established"
+  },
+  "observed_data_summary": {
+    "uEst": {"count": 1024, "min": 0.40936826060393905, "max": 6.471210099744564, "mean": 2.8},
+    "uVal": {"count": 1024, "min": 0.5051156392227587, "max": 6.349953911214941, "mean": 2.8},
+    "yEst": {"count": 1024, "min": 2.911573968108644, "max": 10.0, "mean": 5.582729231040664, "count_equal_10": 47},
+    "yVal": {"count": 1024, "min": 2.1638818951705194, "max": 10.0, "mean": 5.736466856927595, "count_equal_10": 37},
+    "Ts_seconds": 4.0,
+    "csv_and_mat_arrays_correspond_with_csv_rounding": true,
+    "maximum_csv_to_mat_absolute_difference": 0.00004999273871364451,
+    "csv_to_mat_absolute_tolerance": 0.000051,
+    "missing_values_in_mat_arrays": false
+  },
+  "benchmark_status": "source admitted and hashed; no models trained or benchmark scores generated in this audit"
+}
