@@ -1,0 +1,13 @@
+{
+  "dataset": "InTaSet",
+  "record_url": "https://zenodo.org/records/17652851",
+  "doi": "10.5281/zenodo.17652851",
+  "accessed": "2026-11-02",
+  "license": "CC BY 4.0",
+  "citation": "Putri, S. A., Villacrés, D., Raza, N., Iwakin, O., & Moazeni, F. (2025). InTaSet: A Benchmark Dataset for Data-Driven System Identification and Fault Detection in an Interconnected Water System [Data set]. Zenodo. https://doi.org/10.5281/zenodo.17652851",
+  "file": "InTaSet.zip",
+  "size_bytes": 6107043,
+  "zenodo_md5_expected": "0fe80940a3c9520e665b769f4b8d5ab8",
+  "md5_actual": "0fe80940a3c9520e665b769f4b8d5ab8",
+  "sha256_actual": "a0aac3b0985bec232afa8f9e95cd87612515904f5e574bc483777e4d532e8c85"
+}

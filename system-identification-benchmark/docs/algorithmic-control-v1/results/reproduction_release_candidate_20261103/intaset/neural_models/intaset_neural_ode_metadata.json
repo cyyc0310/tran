@@ -1,0 +1,1214 @@
+{
+  "experiment": "InTaSet M1<->M2 controlled Neural ODE and additive four-tank hybrid baselines",
+  "source_archive": {
+    "path": "algorithmic-control-v1/source/InTaSet.zip",
+    "zenodo_md5": "0fe80940a3c9520e665b769f4b8d5ab8",
+    "sha256": "a0aac3b0985bec232afa8f9e95cd87612515904f5e574bc483777e4d532e8c85",
+    "recorded_manifest_sha256": "f52712fb927870b1492190d8f163ddddb5f68f9a772c746fc3bcb325e1f73b81"
+  },
+  "task_contract": {
+    "source_fit_and_model_selection": "Each source configuration's complete training file is split chronologically 80/20 for width selection, then the chosen model is refit on the complete source training file.",
+    "target_state_observation_intervals_seconds": [
+      0.5,
+      1.0
+    ],
+    "target_pump_input_interval_seconds": 0.1,
+    "target_test": "Target testing files are used only for teacher-forced diagnostics and final blockwise causal rollouts. The recorded pump path is supplied throughout each rollout.",
+    "target_calibration": "Calibration uses only the target configuration's separate training file, only at sparse interval endpoints, and only for the first 1, 3, or 5 seconds. Evaluation remains on the separate target testing file.",
+    "calibration_parameter_budget": "Four positive per-state vector-field rate multipliers are fitted; all source-trained Neural ODE and hybrid model weights remain frozen.",
+    "offline_endpoint_task": "Not included in this neural-model runner; existing endpoint-interpolation scores remain a separate offline task in the linear benchmark.",
+    "input_availability": "Recorded target pump paths condition the evaluation. This is a conditional prediction benchmark, not a forecast of unknown future pump commands or a closed-loop stability test."
+  },
+  "models": {
+    "controlled_neural_ode": "Independent controlled Neural ODE: a one-hidden-layer tanh MLP parameterizes d(h)/dt = f(h,u); the measured pump signal is held constant over each 0.1-second integration interval; RK4 is used for training and inference.",
+    "four_tank_hybrid_neural_ode": "Independent additive grey-box model: d(h)/dt = f_reduced_four_tank(h,u;theta) + f_neural(h,u). Positive drainage, upper-to-lower transfer, and pump path coefficients parameterize the reduced phenomenological structure. Source training adds a per-trajectory cosine-correlation regularizer inspired by Osaka et al.; the implementation is not the InTaSet authors' code.",
+    "four_tank_physics_only": "Same reduced four-tank ODE without a neural residual; positive coefficients are fit from source training trajectories.",
+    "author_neural_ode_status": "The published InTaSet abstract confirms an author Neural ODE baseline, but the public author repository contains only the data archive and README. The present methods are independent implementations and are not claimed to reproduce the unavailable author model."
+  },
+  "selection_and_training": {
+    "candidate_hidden_widths": [
+      16,
+      32
+    ],
+    "training_horizon_seconds": 1.0,
+    "epochs": 40,
+    "batch_size": 64,
+    "batches_per_epoch": 4,
+    "optimizer": "Adam, learning rate 1e-3, weight decay 1e-5, gradient norm clipped at 5.",
+    "hybrid_correlation_regularizer_weight": 0.01,
+    "selection_rule": "Minimum equal-weight normalized 0.5/1-second free-rollout RMSE on the source chronological validation tail; candidates with any diverged horizon are ineligible.",
+    "training_seeds": [
+      20261102,
+      20261103,
+      20261104
+    ],
+    "calibration_budgets_seconds": [
+      1,
+      3,
+      5
+    ],
+    "calibration_gain_bounds": [
+      0.1,
+      5.0
+    ]
+  },
+  "tuning_by_seed": {
+    "20261102": {
+      "M1": {
+        "source_configuration": "M1",
+        "fit_rows_before_refit": 16617,
+        "validation_rows": 4156,
+        "final_refit_rows": 20772,
+        "source_state_mean_cm": [
+          5.726867304456204,
+          2.6685099377143944,
+          3.1382260074822104,
+          2.5871254374417534
+        ],
+        "source_state_scale_cm": [
+          2.77811487607628,
+          0.844324483110967,
+          1.8494489936316032,
+          1.0613844117468385
+        ],
+        "source_input_mean_percent": [
+          77.35872901245712,
+          55.06950713125113
+        ],
+        "source_input_scale_percent": [
+          29.267783557717024,
+          35.975847212707336
+        ],
+        "source_rate_scale_cm_per_second": [
+          0.17620595920745044,
+          0.16183088914121038,
+          0.18134712795459335,
+          0.29659825131093237
+        ],
+        "models": {
+          "controlled_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": 0.0003718538209795952,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.01747601896423238,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.015712262513792357
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.019239775414672405
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261129
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": 0.00039152543467935175,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.017370466031398784,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.015662468317818458
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.01907846374497911
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261145
+              }
+            ],
+            "refit_seed": 20271102,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.0006922182074049488,
+            "final_refit_training_objective": 0.0007651790583622642
+          },
+          "four_tank_hybrid_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": -0.009549784241244197,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.021343977127299442,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.01782998001695595
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.02485797423764293
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261141
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": -0.009577491786330938,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.01912735598128152,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.016582226069721942
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.021672485892841094
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261157
+              }
+            ],
+            "refit_seed": 20271103,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": -0.006060458952561021,
+            "final_refit_training_objective": -0.009615747258067131
+          },
+          "four_tank_physics_only": {
+            "selected_width": 0,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 0,
+                "training_epochs": 40,
+                "final_training_objective": 0.0025370614021085203,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.04984610407105929,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.036123924942894445
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.06356828319922414
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261139
+              }
+            ],
+            "refit_seed": 20271104,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.003797273791860789,
+            "final_refit_training_objective": 0.0022975103347562253
+          }
+        }
+      },
+      "M2": {
+        "source_configuration": "M2",
+        "fit_rows_before_refit": 16800,
+        "validation_rows": 4201,
+        "final_refit_rows": 21000,
+        "source_state_mean_cm": [
+          5.835137350119055,
+          2.736897701488102,
+          4.047565035119019,
+          1.9326471683023845
+        ],
+        "source_state_scale_cm": [
+          1.47709524762151,
+          1.4660952776113383,
+          1.6900235948197464,
+          0.9540437979102976
+        ],
+        "source_input_mean_percent": [
+          68.26107142857143,
+          76.50196428571428
+        ],
+        "source_input_scale_percent": [
+          28.710178364287604,
+          22.28280878996697
+        ],
+        "source_rate_scale_cm_per_second": [
+          0.17782802369617934,
+          0.17263050851397566,
+          0.19911162542121616,
+          0.1465805260517494
+        ],
+        "models": {
+          "controlled_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": 0.00020804731320822611,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.01366158430010532,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012866859022018772
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.014456309578191866
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262129
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": 0.00020007748389616609,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.013481295636748516,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012786119298952611
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.014176471974544419
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262145
+              }
+            ],
+            "refit_seed": 20272102,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.0005072773419669829,
+            "final_refit_training_objective": 0.00019642393817775883
+          },
+          "four_tank_hybrid_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": -0.009747678181156516,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.014215074831672385,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.013137043409004448
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.015293106254340324
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262141
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": -0.009494697907939553,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.013285682348618811,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012686032077143418
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.013885332620094202
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262157
+              }
+            ],
+            "refit_seed": 20272103,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": -0.007911567576229572,
+            "final_refit_training_objective": -0.009785403963178396
+          },
+          "four_tank_physics_only": {
+            "selected_width": 0,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 0,
+                "training_epochs": 40,
+                "final_training_objective": 0.0028484074282459915,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.02679005491297726,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.020498395836942997
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.033081713989011524
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262139
+              }
+            ],
+            "refit_seed": 20272104,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.002142822602763772,
+            "final_refit_training_objective": 0.0017367847030982375
+          }
+        }
+      }
+    },
+    "20261103": {
+      "M1": {
+        "source_configuration": "M1",
+        "fit_rows_before_refit": 16617,
+        "validation_rows": 4156,
+        "final_refit_rows": 20772,
+        "source_state_mean_cm": [
+          5.726867304456204,
+          2.6685099377143944,
+          3.1382260074822104,
+          2.5871254374417534
+        ],
+        "source_state_scale_cm": [
+          2.77811487607628,
+          0.844324483110967,
+          1.8494489936316032,
+          1.0613844117468385
+        ],
+        "source_input_mean_percent": [
+          77.35872901245712,
+          55.06950713125113
+        ],
+        "source_input_scale_percent": [
+          29.267783557717024,
+          35.975847212707336
+        ],
+        "source_rate_scale_cm_per_second": [
+          0.17620595920745044,
+          0.16183088914121038,
+          0.18134712795459335,
+          0.29659825131093237
+        ],
+        "models": {
+          "controlled_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": 0.0004461692660697736,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.017346357276886153,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.015635279197315225
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.019057435356457077
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261130
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": 0.0003671704471344128,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.01715708832251934,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.01553720145921941
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.01877697518581927
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261146
+              }
+            ],
+            "refit_seed": 20271103,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.0008364988607354462,
+            "final_refit_training_objective": 0.0003542352278600447
+          },
+          "four_tank_hybrid_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": -0.009455225896090269,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.020839241463648142,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.017529858484329856
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.02414862444296643
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261142
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": -0.00945918238721788,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.018928444353533462,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.016485707188481233
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.021371181518585688
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261158
+              }
+            ],
+            "refit_seed": 20271104,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": -0.006298157968558371,
+            "final_refit_training_objective": -0.009561744751408696
+          },
+          "four_tank_physics_only": {
+            "selected_width": 0,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 0,
+                "training_epochs": 40,
+                "final_training_objective": 0.0022958587505854666,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.04976207959539674,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.03606758430960792
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.06345657488118556
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261140
+              }
+            ],
+            "refit_seed": 20271105,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.003938854904845357,
+            "final_refit_training_objective": 0.002589115931186825
+          }
+        }
+      },
+      "M2": {
+        "source_configuration": "M2",
+        "fit_rows_before_refit": 16800,
+        "validation_rows": 4201,
+        "final_refit_rows": 21000,
+        "source_state_mean_cm": [
+          5.835137350119055,
+          2.736897701488102,
+          4.047565035119019,
+          1.9326471683023845
+        ],
+        "source_state_scale_cm": [
+          1.47709524762151,
+          1.4660952776113383,
+          1.6900235948197464,
+          0.9540437979102976
+        ],
+        "source_input_mean_percent": [
+          68.26107142857143,
+          76.50196428571428
+        ],
+        "source_input_scale_percent": [
+          28.710178364287604,
+          22.28280878996697
+        ],
+        "source_rate_scale_cm_per_second": [
+          0.17782802369617934,
+          0.17263050851397566,
+          0.19911162542121616,
+          0.1465805260517494
+        ],
+        "models": {
+          "controlled_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": 0.00019582776803872548,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.013604896620885825,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012844068523821328
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.014365724717950322
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262130
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": 0.00018925460972241126,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.01345833096682739,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012771070923308831
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.014145591010345949
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262146
+              }
+            ],
+            "refit_seed": 20272103,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.00050055483734468,
+            "final_refit_training_objective": 0.00019508580226101913
+          },
+          "four_tank_hybrid_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": -0.009701222646981478,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.014440439695185717,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.013244184272204808
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.01563669511816663
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262142
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": -0.00978768733330071,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.013339830266970488,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012717435506506211
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.013962225027434763
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262158
+              }
+            ],
+            "refit_seed": 20272104,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": -0.007910903659649193,
+            "final_refit_training_objective": -0.009395382832735777
+          },
+          "four_tank_physics_only": {
+            "selected_width": 0,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 0,
+                "training_epochs": 40,
+                "final_training_objective": 0.0014446692075580359,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.026794698490794022,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.020501514556683427
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.03308788242490462
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262140
+              }
+            ],
+            "refit_seed": 20272105,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.0024225416127592325,
+            "final_refit_training_objective": 0.0013306167093105614
+          }
+        }
+      }
+    },
+    "20261104": {
+      "M1": {
+        "source_configuration": "M1",
+        "fit_rows_before_refit": 16617,
+        "validation_rows": 4156,
+        "final_refit_rows": 20772,
+        "source_state_mean_cm": [
+          5.726867304456204,
+          2.6685099377143944,
+          3.1382260074822104,
+          2.5871254374417534
+        ],
+        "source_state_scale_cm": [
+          2.77811487607628,
+          0.844324483110967,
+          1.8494489936316032,
+          1.0613844117468385
+        ],
+        "source_input_mean_percent": [
+          77.35872901245712,
+          55.06950713125113
+        ],
+        "source_input_scale_percent": [
+          29.267783557717024,
+          35.975847212707336
+        ],
+        "source_rate_scale_cm_per_second": [
+          0.17620595920745044,
+          0.16183088914121038,
+          0.18134712795459335,
+          0.29659825131093237
+        ],
+        "models": {
+          "controlled_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": 0.0007911369248176925,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.017493706622215936,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.015722948001502316
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.01926446524292956
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261131
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": 0.0003498571604723111,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.017241309556847446,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.015585049009909473
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.01889757010378542
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261147
+              }
+            ],
+            "refit_seed": 20271104,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.0006105524516897276,
+            "final_refit_training_objective": 0.00040715066279517487
+          },
+          "four_tank_hybrid_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": -0.009517216123640537,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.021695984610584182,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.018018161332146922
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.025373807889021445
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261143
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": -0.00961878476664424,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.01848161376257798,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.01623369153982052
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.020729535985335442
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261159
+              }
+            ],
+            "refit_seed": 20271105,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": -0.006149358581751585,
+            "final_refit_training_objective": -0.009584983577951789
+          },
+          "four_tank_physics_only": {
+            "selected_width": 0,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 0,
+                "training_epochs": 40,
+                "final_training_objective": 0.002098727331031114,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.049858146461999805,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 831,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.03613137593776868
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 415,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.06358491698623092
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20261141
+              }
+            ],
+            "refit_seed": 20271106,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.0042280336492694914,
+            "final_refit_training_objective": 0.0023628210183233023
+          }
+        }
+      },
+      "M2": {
+        "source_configuration": "M2",
+        "fit_rows_before_refit": 16800,
+        "validation_rows": 4201,
+        "final_refit_rows": 21000,
+        "source_state_mean_cm": [
+          5.835137350119055,
+          2.736897701488102,
+          4.047565035119019,
+          1.9326471683023845
+        ],
+        "source_state_scale_cm": [
+          1.47709524762151,
+          1.4660952776113383,
+          1.6900235948197464,
+          0.9540437979102976
+        ],
+        "source_input_mean_percent": [
+          68.26107142857143,
+          76.50196428571428
+        ],
+        "source_input_scale_percent": [
+          28.710178364287604,
+          22.28280878996697
+        ],
+        "source_rate_scale_cm_per_second": [
+          0.17782802369617934,
+          0.17263050851397566,
+          0.19911162542121616,
+          0.1465805260517494
+        ],
+        "models": {
+          "controlled_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": 0.00032347791420761496,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.013567113971857779,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012820394305100532
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.014313833638615025
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262131
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": 0.0006904843394295312,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.013457053518217726,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012769299370780267
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.014144807665655184
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262147
+              }
+            ],
+            "refit_seed": 20272104,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.00047641647688578814,
+            "final_refit_training_objective": 0.0005868051594006829
+          },
+          "four_tank_hybrid_neural_ode": {
+            "selected_width": 32,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 16,
+                "training_epochs": 40,
+                "final_training_objective": -0.00974675826728344,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.01438825584030523,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.013235242341625672
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.015541269338984788
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262143
+              },
+              {
+                "width": 32,
+                "training_epochs": 40,
+                "final_training_objective": -0.009783142479136586,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.013389529585899989,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.012737226139885992
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.014041833031913985
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262159
+              }
+            ],
+            "refit_seed": 20272105,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": -0.007625019061379135,
+            "final_refit_training_objective": -0.009778028121218085
+          },
+          "four_tank_physics_only": {
+            "selected_width": 0,
+            "selection_rule": "minimum equal-weight normalized free-rollout RMSE over 0.5/1-second source chronological validation blocks; any diverged horizon is ineligible",
+            "candidate_results": [
+              {
+                "width": 0,
+                "training_epochs": 40,
+                "final_training_objective": 0.0012724907719530165,
+                "mean_validation_normalized_rollout_rmse_0.5_1s": 0.026780879757562423,
+                "validation_horizons": [
+                  {
+                    "stride_samples": 5,
+                    "horizon_seconds": 0.5,
+                    "blocks": 840,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.020492828068386693
+                  },
+                  {
+                    "stride_samples": 10,
+                    "horizon_seconds": 1.0,
+                    "blocks": 420,
+                    "diverged_blocks": 0,
+                    "validation_normalized_rmse": 0.03306893144673815
+                  }
+                ],
+                "eligible": true,
+                "candidate_seed": 20262141
+              }
+            ],
+            "refit_seed": 20272106,
+            "refit_epochs": 40,
+            "initial_refit_training_objective": 0.002131829154677689,
+            "final_refit_training_objective": 0.0019023276108782738
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Each configuration has one training and one testing trajectory; training seeds quantify initialization sensitivity only, while block scores are not independent hardware replicates.",
+    "The future pump path is taken from the recorded target test trajectory, so the task is conditional prediction with known recorded input.",
+    "The reduced physical equation is a transparent grey-box approximation; its parameters and missing terms are not independently established from hardware documentation.",
+    "Target calibration changes only four per-state vector-field gains; it does not fine-tune the Neural ODE weights or establish broad adaptation performance.",
+    "No unverified upper water-level bound is imposed; negative levels and numerical divergence are reported as diagnostics."
+  ],
+  "software": {
+    "python": "3.12.13",
+    "torch": "2.12.0",
+    "numpy": "2.4.5",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.8.0",
+    "openpyxl": "3.1.5",
+    "script_sha256": "a09c749ce076efa026375c74c85342997b34acd93ef975b91e8c6b05dbaa0ebf",
+    "loader_sha256": "89c7b619d5e41c58d38c8e00e3279946d9e9f4929917e28977d9d1d551feea81",
+    "deterministic_algorithms": true,
+    "device": "cpu"
+  },
+  "fit_wall_seconds_across_seeds": 48.725213750003604,
+  "calibration_wall_seconds_across_seeds": 6.427801461919444,
+  "output_sha256": {
+    "intaset_neural_ode_metrics.csv": "a8db28d759d701d74263e80a417c75e55a589824e582837056cbc0440794de9f",
+    "intaset_neural_ode_summary.csv": "a8a4520434d57350ef411b58e8e863ddc75441da06e1d221b34b303bb9a925cb",
+    "intaset_neural_ode_calibration.csv": "54503f57edaffe1c14725e58329f76da493a8b1045eb4434d12adcf2f0e85929"
+  },
+  "aligned_budget_wrapper": {
+    "script": "scripts/run_intaset_aligned_budget_v1.py",
+    "script_sha256": "1568efc237296ae74586c9a87fd194d900ce26a34850eed61dc51c9c051bc9e5",
+    "runner": "neural_models",
+    "horizon_strides_native_samples": [
+      5,
+      10
+    ],
+    "target_state_observation_intervals_seconds": [
+      0.5,
+      1.0
+    ],
+    "target_calibration_budgets_seconds": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "note": "The base runner source is unchanged; this wrapper sets the global experiment constants before invoking its run() function."
+  }
+}

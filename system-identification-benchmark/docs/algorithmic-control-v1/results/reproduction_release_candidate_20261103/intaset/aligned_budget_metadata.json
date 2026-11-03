@@ -1,0 +1,45 @@
+{
+  "experiment": "InTaSet aligned to external motor sparse-state horizons and calibration budgets",
+  "task_contract": {
+    "horizons_seconds": [
+      0.5,
+      1.0
+    ],
+    "target_calibration_budgets_seconds": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "target_pump_input_interval_seconds": 0.1,
+    "target_input_availability": "full recorded future pump path is conditionally supplied; this is not an online command-availability claim",
+    "directional_split": "M1->M2 and M2->M1, with the target test trace held out from fitting and calibration",
+    "baseline_and_offline_tasks": "endpoint interpolation remains offline; teacher-forced one-step metrics remain diagnostics; neither is mixed with causal sparse rollouts",
+    "calibration": "source model weights frozen; linear and discrete sparse methods use per-state delta gains; neural/grey-box models use per-state vector-field rate gains"
+  },
+  "seeds": [
+    20261102,
+    20261103,
+    20261104
+  ],
+  "wrapper_sha256": "1568efc237296ae74586c9a87fd194d900ce26a34850eed61dc51c9c051bc9e5",
+  "base_runners": {
+    "causal": "89c7b619d5e41c58d38c8e00e3279946d9e9f4929917e28977d9d1d551feea81",
+    "sparse_calibration": "8a9a88cc80da0c1accbb9ee87fdb4a054d3f7a8a824b7bf29f49f2ffc2a17d6f",
+    "neural": "a09c749ce076efa026375c74c85342997b34acd93ef975b91e8c6b05dbaa0ebf"
+  },
+  "runner_metadata": {
+    "causal_baselines": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/causal_baselines/causal_transfer_metadata.json",
+    "sparse_calibration": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/sparse_calibration/sparse_calibration_metadata.json",
+    "neural_models": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/neural_models/intaset_neural_ode_metadata.json"
+  },
+  "master_summary": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/intaset_aligned_master_summary.csv",
+  "master_summary_sha256": "54906670e1dc8ec626c692bbef8e507722d0725f5cc6a8b451c4687e598cd3b6",
+  "wall_seconds": 83.74614095687866,
+  "software": {
+    "python": "3.12.13",
+    "numpy": "2.4.5",
+    "pandas": "3.0.3"
+  },
+  "interpretation": "This run aligns time horizons and observed target-data budgets across datasets; it does not remove the recorded-future-input limitation or make water and motor raw errors directly comparable."
+}

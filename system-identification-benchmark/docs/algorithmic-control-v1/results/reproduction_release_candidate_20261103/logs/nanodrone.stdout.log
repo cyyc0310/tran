@@ -1,0 +1,8 @@
+{
+  "status": "NANODRONE_EXTERNAL_BENCHMARK_COMPLETE",
+  "output_dir": "/private<WORKSPACE_ROOT>/docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/nanodrone_external_v1",
+  "rows_scored": 450,
+  "selected_arx_alpha": 100.0,
+  "selected_sindyc_threshold": 0.002,
+  "pytorch3d_compatibility_shim_used": true
+}
