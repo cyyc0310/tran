@@ -1,6 +1,6 @@
 {
   "candidate_created_date": "2026-11-03",
-  "status": "PUBLIC_REVIEW_CANDIDATE_NOT_RELEASED",
+  "status": "PUBLIC_MAIN_BRANCH_UNTAGGED",
   "repository": "https://github.com/cyyc0310/tran",
   "repository_subdirectory": "system-identification-benchmark",
   "project_license": "MIT",
@@ -11,7 +11,7 @@
   ],
   "nanodrone_source_materials": "not included; specific upstream license terms were not verified; its result is supplementary",
   "file_count_excluding_manifest": 60,
-  "total_bytes_excluding_manifest": 23735573,
+  "total_bytes_excluding_manifest": 23735605,
   "manifest_sha256_self_reference": "omitted by design",
   "files": [
     {
@@ -36,8 +36,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 5954,
-      "sha256": "d54e705754b76a8ce24c91d84a8d8b0f365216af7d8dfca5143461c56fdeadbd"
+      "size_bytes": 5986,
+      "sha256": "6d60303ed07492589334a37fee131bb68f94327e4c265e3c28baf6ac43af87c0"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
