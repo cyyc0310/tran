@@ -6,6 +6,10 @@ The earlier candidate was fully rerun on macOS arm64 with CPython 3.12.13 and th
 
 The earlier full run does not establish cross-platform bitwise reproducibility, blind confirmation, an InTaSet author Neural ODE reproduction, hardware safety bounds, or a stable algorithm winner. Nano-Drone inputs and author materials are not included in this package, and their specific license scope has not been verified. Its run receipt is preserved under `docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/`.
 
+## InTaSet core replay from the public package ZIP
+
+The InTaSet-only runner was executed from a clean extraction of the public package ZIP with CPython 3.12.13 and seeds `20261102,20261103,20261104`. It completed in 85.7 seconds and produced 148 master-summary rows. The included InTaSet ZIP passed its recorded source SHA-256 `a0aac3b0985bec232afa8f9e95cd87612515904f5e574bc483777e4d532e8c85`. All eight CSV outputs were byte-identical to the archived InTaSet results. This runner uses the included InTaSet data and does not fetch Nano-Drone sources. The package README and release manifest were updated afterward to include this receipt; the benchmark scripts, inputs, and score files were not changed.
+
 ## Cascaded Tanks clean-copy replay
 
 This replay was run from a clean copy of this public-review package, using only the included Cascaded Tanks archive and the dependencies already installed at the versions in the package lock. It was run after the replay CLI and result-verification CLI were added.

@@ -11,7 +11,7 @@
   ],
   "nanodrone_source_materials": "not included; specific upstream license terms were not verified; its result is supplementary",
   "file_count_excluding_manifest": 60,
-  "total_bytes_excluding_manifest": 23734867,
+  "total_bytes_excluding_manifest": 23735573,
   "manifest_sha256_self_reference": "omitted by design",
   "files": [
     {
@@ -21,8 +21,8 @@
     },
     {
       "path": "CLEAN_COPY_REPLAY_RECEIPT.md",
-      "size_bytes": 2908,
-      "sha256": "b1f5bf33898b0d83a188c8901f92d7e24c0b55ba2e49c58a6a68c074fc306eaf"
+      "size_bytes": 3614,
+      "sha256": "3bc781e96506dfcf466f36c74b4be05885c110b012575159ffcb5ed4ef253561"
     },
     {
       "path": "LICENSE",
