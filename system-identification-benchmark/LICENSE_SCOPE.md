@@ -8,6 +8,7 @@ It does not relicense:
 - the included InTaSet archive, which is attributed separately under CC BY 4.0;
 - the included Cascaded Tanks archive or its derived result tables, which are attributed separately under CC BY-SA 4.0;
 - the vendored NFourSID source code, which retains its upstream MIT license and copyright notice in its source directory;
+- the pinned Forgione–Piga model source, which retains its upstream Apache-2.0 license and notices in its source directory;
 - generated CSV/JSON result tables, run logs, and other experiment artifacts, whose reuse may depend on the source data and applicable terms.
 
 See `THIRD_PARTY_NOTICES.md` for material-specific attribution and status. A file being present in this research package does not by itself grant rights beyond the license identified for that file or source.

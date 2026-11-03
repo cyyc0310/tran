@@ -2,15 +2,17 @@
   "status": "PUBLIC_VERSIONED_RELEASE",
   "repository": "https://github.com/cyyc0310/tran",
   "repository_subdirectory": "system-identification-benchmark",
+  "release_version": "control-benchmark-v1.2.0",
   "project_license": "MIT",
   "license_scope": "project-authored source code and prose documentation only; experiment outputs and third-party materials are separate",
   "independently_reproducible_systems": [
     "InTaSet M1<->M2",
     "Cascaded Tanks"
   ],
+  "author_hybrid_baseline": "Forgione-Piga model structure and main training recipe adapted to sparse-output prediction; upstream Apache-2.0 files and license are included",
   "nanodrone_source_materials": "not included; specific upstream license terms were not verified; its result is supplementary",
-  "file_count_excluding_manifest": 86,
-  "total_bytes_excluding_manifest": 24289947,
+  "file_count_excluding_manifest": 114,
+  "total_bytes_excluding_manifest": 39074953,
   "manifest_sha256_self_reference": "omitted by design",
   "files": [
     {
@@ -29,19 +31,24 @@
       "sha256": "3bc781e96506dfcf466f36c74b4be05885c110b012575159ffcb5ed4ef253561"
     },
     {
+      "path": "CLEAN_COPY_REPLAY_RECEIPT_v1.2.0.md",
+      "size_bytes": 2507,
+      "sha256": "2366d3bcb85fc7f240db75b6e92ea121a6ab56efd7a815fbf91037ba7ccbd417"
+    },
+    {
       "path": "LICENSE",
       "size_bytes": 1065,
       "sha256": "7defdbb6d0b354b530dca96e8f464c8c9cc34908d8bd082ba0c9a7ce89725cb5"
     },
     {
       "path": "LICENSE_SCOPE.md",
-      "size_bytes": 899,
-      "sha256": "ec6e80288358f38b6da5837a49039aa270d129c0108905ca8e78377c85fe4ecc"
+      "size_bytes": 1025,
+      "sha256": "7f905027d6f361f05d8a4b081f6cd59500b38ed20de645ff1e35406064185247"
     },
     {
       "path": "README.md",
-      "size_bytes": 7777,
-      "sha256": "47e3d41cb22c67221919ba32c47dbd7e049ec80fa3a1d26f812be671feebe0f0"
+      "size_bytes": 9885,
+      "sha256": "2a41efbe69f232c7128966e05d399e0ff04914d02ee74915e94840e3831eeb3d"
     },
     {
       "path": "RELEASE_NOTES_v1.0.0.md",
@@ -54,14 +61,34 @@
       "sha256": "e199367121f275b1f1e2fde35889dbf7a0bb10edb1496244444b0d9a50870afe"
     },
     {
+      "path": "RELEASE_NOTES_v1.2.0.md",
+      "size_bytes": 5593,
+      "sha256": "7d31fb3056e4084460aead08eedff9d7fd2a6ca615dd8f1b08223905a8772eac"
+    },
+    {
       "path": "THIRD_PARTY_NOTICES.md",
-      "size_bytes": 4339,
-      "sha256": "f01c0752167ce5443f8b81265d66b7e83de1c38e7847686f500ed4f2583530d5"
+      "size_bytes": 5415,
+      "sha256": "2434c41cfb669b1d4f90a4f832f838f68e10a41c9138bbfadc5966bec7cd9b40"
     },
     {
       "path": "docs/algorithmic-control-v1/ALIGNED_CONTROL_BENCHMARK_RESULTS_20261102.md",
       "size_bytes": 7515,
       "sha256": "e9f515499cfa5e772198ea31c425383f55e04c8c48b72cca058df14e5f7639b2"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_ARX2_REGULARIZED_PROTOCOL_V1_20261103.md",
+      "size_bytes": 2220,
+      "sha256": "9d8934fa9069484d0e95fdbe1596aa9d3f59d1617cfb2dcc1375a5ba2b096d72"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_AUTHOR_HYBRID_SPARSE_PROTOCOL_V1_20261103.md",
+      "size_bytes": 4390,
+      "sha256": "9f9d479cf55e1d27fa7391e4ea00ff90332dbb3fa7d990ef5db7b91c2a8edd49"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_AUTHOR_HYBRID_SPARSE_RESULTS_20261103.md",
+      "size_bytes": 8145,
+      "sha256": "28cda82ff1118e423c1f8d2cc7d6171d4fae135f0a240d79d3e37b76b6b844bc"
     },
     {
       "path": "docs/algorithmic-control-v1/CASCADED_TANKS_CLEAN_COPY_REPLAY_RECEIPT_20261103.md",
@@ -75,8 +102,8 @@
     },
     {
       "path": "docs/algorithmic-control-v1/CASCADED_TANKS_PYTHON_N4SID_SPARSE_RESULTS_20261103.md",
-      "size_bytes": 6759,
-      "sha256": "ee1dfc8c321181b056c5ae908479ab2e28b9b3ef417d1a0c3535c8dcfaafe748"
+      "size_bytes": 6881,
+      "sha256": "54122ab1d6c768c3c41d66c98aa015241acaae56b3562daf51ffc93840a6d55a"
     },
     {
       "path": "docs/algorithmic-control-v1/CASCADED_TANKS_SOURCE_ADMISSION_AUDIT_20261103.md",
@@ -127,6 +154,26 @@
       "path": "docs/algorithmic-control-v1/external-source/cascaded_tanks/acquisition_manifest.json",
       "size_bytes": 4005,
       "sha256": "2e703e34b7a2b5d61bdfe5119385baef66d7539c51fb98db7e3401c3467885b0"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/forgione_piga_sysid_neural_continuous/LICENSE.md",
+      "size_bytes": 11347,
+      "sha256": "fc7e8ab1c7a5059c25186b88b1c8768c9b5d8ed088e45af07c6d5e1674f94a2d"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/forgione_piga_sysid_neural_continuous/README.md",
+      "size_bytes": 1485,
+      "sha256": "8f73bccbba4ac3d0b10ff417ebe8e223848e37a1087661d3c6ae3044cf35b2dd"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/forgione_piga_sysid_neural_continuous/examples/CTS/CTS_fit_truncated.py",
+      "size_bytes": 9375,
+      "sha256": "02576aa7908d0f3e2cd6664dfa4c0a3314c67fa76f5d616e779ff3e5a7e1aca0"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/forgione_piga_sysid_neural_continuous/torchid/ssmodels_ct.py",
+      "size_bytes": 9324,
+      "sha256": "cc15c6f5be2849b3d52a7488344cf8cb832a371fc97dcd5bdfae520d4ad920d7"
     },
     {
       "path": "docs/algorithmic-control-v1/external-source/nfoursid/LICENSE",
@@ -197,6 +244,81 @@
       "path": "docs/algorithmic-control-v1/nanodrone_data_manifest_20261103.json",
       "size_bytes": 5216,
       "sha256": "3451d28b429e8b24f99c8d7918b272a439f13bfd09ae133f9d1bea41bce01caf"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_arx2_regularized_v1/arx2_coefficients.json",
+      "size_bytes": 868,
+      "sha256": "bd543e366ff4dcc7be83e86efbeeeb42d8d6873b4a10a10c3ba18622302b7fc0"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_arx2_regularized_v1/arx2_ridge_metadata.json",
+      "size_bytes": 2192,
+      "sha256": "3c8f61638f7d26467257f07b1d8fd691bd16d78110f02f987de423ce17f6baea"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_arx2_regularized_v1/arx2_ridge_selection.csv",
+      "size_bytes": 1091,
+      "sha256": "42c2d52fedf9d5e2e54bc2bcba87a8c966c24de191f8476319e84fa8edca477c"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_arx2_regularized_v1/arx2_sparse_blocks.csv",
+      "size_bytes": 609577,
+      "sha256": "a1eaec042f206bf874f1ffe7ecd3c1a5456d48bff8126a74379a58c987f4f8ad"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_arx2_regularized_v1/arx2_sparse_metrics.csv",
+      "size_bytes": 653,
+      "sha256": "a2c5311c237e12f99211aa0ece0cbed58427aa8a45c589c3da4f0fd353739995"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/author_hybrid_blocks.csv",
+      "size_bytes": 13967367,
+      "sha256": "6c2679807e56f8b85186050567dd1cf1256daf68d01bd9bd93f303fdd366bc9e"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/author_hybrid_calibration_receipts.csv",
+      "size_bytes": 1900,
+      "sha256": "81c3f0013d2e1d90bd45c229356ebed4590ff23af50c51e7456cd3882b52484b"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/author_hybrid_metadata.json",
+      "size_bytes": 2999,
+      "sha256": "46c6ac5a22b7c4cc888a92f36b92ad26bdbd737a66e9647974cce5156ddf8ef7"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/author_hybrid_metrics.csv",
+      "size_bytes": 13550,
+      "sha256": "4218e91e512fe3416ed74c9d74a1d27541b66f6728560033c66d7fadece9594c"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/author_hybrid_summary.csv",
+      "size_bytes": 5708,
+      "sha256": "66cda5c00a203372650ba553409990d5f8596983f3eac8a3d5a5f47be1545d09"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/author_hybrid_training_history.csv",
+      "size_bytes": 17404,
+      "sha256": "e2174729926567dbfe021c3b1a06612b3230cbacc3e91dfb29bc69a571b90ba9"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/author_hybrid_training_receipts.csv",
+      "size_bytes": 1923,
+      "sha256": "a648cb5de121474399aaae8057bdcb11aad7dfc6bc28f279ac289302f577bffc"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/models/author_cts_hybrid_seed_0.pt",
+      "size_bytes": 16009,
+      "sha256": "e975d9acfe57499fbc48fcef2e38c5e5f6414eccd4e8cde80d0d679cb0b16a43"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/models/author_cts_hybrid_seed_1.pt",
+      "size_bytes": 16009,
+      "sha256": "355409a8337d93257a9b42eb8e7c900947efec6e41c6de9e80275b7eb923f465"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_author_hybrid_sparse_v1/models/author_cts_hybrid_seed_2.pt",
+      "size_bytes": 16009,
+      "sha256": "2b9195edb803f68c0ba414f7aa95867c963c34b46b5e89924c526d0fdbcf53f1"
     },
     {
       "path": "docs/algorithmic-control-v1/results/cascaded_tanks_python_n4sid_sparse_v1/python_n4sid_metadata.json",
@@ -384,6 +506,16 @@
       "sha256": "dfcd038d8b2f944d58fc12bc01361f5b64c6285db8e18897ea4694556df318d9"
     },
     {
+      "path": "scripts/cascaded_tanks_arx2_regularized_ablation_v1.py",
+      "size_bytes": 14335,
+      "sha256": "91cf0e522556b2dddda6eb3a7c9c021fc10692580be191c4e92b35e3c5e4a56c"
+    },
+    {
+      "path": "scripts/cascaded_tanks_author_hybrid_sparse_benchmark_v1.py",
+      "size_bytes": 24646,
+      "sha256": "6299ba8657aab6025d0081cd4517ddb62fa20169421c718027ef64f8f252b3a3"
+    },
+    {
       "path": "scripts/cascaded_tanks_python_n4sid_sparse_benchmark_v1.py",
       "size_bytes": 20702,
       "sha256": "8c70346cb9bbe5dd9bcbfd0c5d57e59b5773859a6534f05d05a88e79b0b2bcb7"
@@ -429,6 +561,16 @@
       "sha256": "1568efc237296ae74586c9a87fd194d900ce26a34850eed61dc51c9c051bc9e5"
     },
     {
+      "path": "scripts/verify_cascaded_tanks_arx2_regularized_ablation_v1.py",
+      "size_bytes": 5032,
+      "sha256": "8bb72073fa7b6577c91517d290d88b81292dfa7a3c037e062af089b88bd87ae1"
+    },
+    {
+      "path": "scripts/verify_cascaded_tanks_author_hybrid_sparse_benchmark_v1.py",
+      "size_bytes": 9916,
+      "sha256": "8b56f88e94cdc33a0f7c3d07875514638a7ffc77bb2ae01524e10b5a793f7d34"
+    },
+    {
       "path": "scripts/verify_cascaded_tanks_python_n4sid_sparse_benchmark_v1.py",
       "size_bytes": 16743,
       "sha256": "646024ee92b68780473d2c59ec3a45c67c72f7efbf00b3fd92cf95ea55a8ceb2"
@@ -443,8 +585,5 @@
       "size_bytes": 5832,
       "sha256": "435991f4df7e265f14dda3a5270f33beed4c200d34498da0cf31b1392402862e"
     }
-  ],
-  "release_version": "1.1.0",
-  "release_tag": "control-benchmark-v1.1.0",
-  "release_date": "2026-11-03"
+  ]
 }
