@@ -1,6 +1,6 @@
 # Cross-Condition Control System Identification Benchmark v1
 
-**Status:** merged into the public `main` branch through [PR #1](https://github.com/cyyc0310/tran/pull/1) on 2026-11-03; not yet a tagged, versioned release. The package lives in its own subdirectory and leaves the repository's existing files intact.
+**Versioned release:** [`control-benchmark-v1.0.0`](https://github.com/cyyc0310/tran/releases/tag/control-benchmark-v1.0.0), published 2026-11-03. The package lives in its own subdirectory and leaves the repository's existing files intact. See [`RELEASE_NOTES_v1.0.0.md`](RELEASE_NOTES_v1.0.0.md) and [`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json).
 
 This benchmark compares system-identification and prediction methods when observations are sparse and the applied inputs are recorded. It is a benchmark package and evidence report, not a claim that a new algorithm has already won across systems.
 
