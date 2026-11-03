@@ -1,0 +1,82 @@
+{
+  "status": "COMPLETED_PUBLIC_TEST_DEVELOPMENT_BASELINE",
+  "target_labels_previously_seen": true,
+  "independent_or_blind_confirmation": false,
+  "physical_target_records": 1,
+  "matlab_author_n4sid_exact_reproduction": false,
+  "upstream_commit": "1e306879f9e697cd275f17d01dc96182b74ac97d",
+  "protocol_sha256": "7a95a2e5669fe0ace5edf007a944c6f3b255daadae7a23b593923c5487a0f57b",
+  "script_sha256": "8c70346cb9bbe5dd9bcbfd0c5d57e59b5773859a6534f05d05a88e79b0b2bcb7",
+  "verification_script_sha256": "646024ee92b68780473d2c59ec3a45c67c72f7efbf00b3fd92cf95ea55a8ceb2",
+  "data_receipt": {
+    "archive_sha256": "eb0fa05851e8a7136846c2e3b61fbef87def78d0852c86ab91b02ac5db541b51",
+    "mat_member": "CascadedTanksFiles/dataBenchmark.mat",
+    "mat_member_sha256": "cb2f88d4388be4d3f2a24c6402fba804976aac5f2e1f26cda59ea0a38d016eab",
+    "sampling_interval_seconds": 4.0,
+    "source_samples": 1024,
+    "target_samples": 1024
+  },
+  "source_selection": {
+    "split_transition_index": 818,
+    "candidate_num_block_rows": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      10,
+      12,
+      16
+    ],
+    "fixed_state_order": 2,
+    "selected_num_block_rows": 3,
+    "horizons_transitions": [
+      1,
+      3,
+      5
+    ],
+    "selection_rule": "minimum source-validation macro NRMSE over h=1,3,5; ties choose smaller num_block_rows"
+  },
+  "target_protocol": {
+    "observation_budget_transitions": 0,
+    "horizons_and_sparse_output_intervals_transitions": [
+      1,
+      3,
+      5
+    ],
+    "sampling_interval_seconds": 4.0,
+    "known_recorded_input_path_within_each_block": true
+  },
+  "upstream_source_files": {
+    "kalman.py": "f3ae6d2f597a682313159c202575b3b5f0e5341eff816f719d1948e70ff4bfec",
+    "nfoursid.py": "a3e32e6d08c4ca7ea7d247111841b3e5bbd44f0b4daf05686615ab892f309565",
+    "state_space.py": "75d2febc24b145dc566bdc0824b9660c85d794200256384677f7b7515aebfdb8",
+    "utils.py": "bcc555ae51fd96ae522880d934cb3d475309a03c0ce78f6bb92158fc72918d25",
+    "license": "c0615b31b9d61f4359b332390b5920b921e73ad5ea324a9df129ee28b9f89637"
+  },
+  "software": {
+    "python": "3.12.13",
+    "numpy": "2.4.5",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "platform": "macOS-15.7.4-arm64-arm-64bit"
+  },
+  "output_files": {
+    "python_n4sid_source_validation.csv": {
+      "bytes": 1244,
+      "sha256": "4a1521cc13b980e84a5d326040c205bf28b99e3244f9faacb33f8745e7e517b4"
+    },
+    "python_n4sid_model.json": {
+      "bytes": 1938,
+      "sha256": "8ec76de2312c5733977a183d0a7544f3418c00347f609d4cf709cb4c01e309e1"
+    },
+    "python_n4sid_sparse_blocks.csv": {
+      "bytes": 432751,
+      "sha256": "0c159b08e26a425abe0bf285bf9d6e007f690bc4269fd39adfe2783da78fe764"
+    },
+    "python_n4sid_sparse_metrics.csv": {
+      "bytes": 841,
+      "sha256": "e75e4b9e409206aa02c86a4d59212d96a4cfac121357c0275b0bfdc1a7978c96"
+    }
+  }
+}
