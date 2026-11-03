@@ -1,0 +1,24 @@
+{
+  "model": "ARX(2,2): y[k+1] = c + a1*y[k] + a2*y[k-1] + b0*u[k] + b1*u[k-1]",
+  "feature_order": [
+    "y[k]",
+    "y[k-1]",
+    "u[k]",
+    "u[k-1]"
+  ],
+  "intercept": -0.06522584338655868,
+  "coefficients": [
+    1.462595906454568,
+    -0.4692882609938201,
+    -0.1584762893895468,
+    0.19484606340381913
+  ],
+  "selected_ridge_alpha": 0.1,
+  "fit_rows": 1022,
+  "design_rank": 5,
+  "design_condition_number_column_normalized": 72.16162102937994,
+  "training_record": "uEst/yEst only; refit on the full official estimation record after source-only alpha selection",
+  "target_test_labels_previously_seen": true,
+  "sparse_block_output_initialization": "overwrite y[k] with the allowed block-start measurement; carry the y[k-1] estimate propagated from prior model steps",
+  "input_lag_boundary": "u[k-1] is read from the recorded input path; at k=0 use u[0]"
+}
