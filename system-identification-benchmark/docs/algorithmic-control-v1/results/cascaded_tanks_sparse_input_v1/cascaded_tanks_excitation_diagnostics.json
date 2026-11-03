@@ -1,0 +1,211 @@
+{
+  "interpretation": "matrix rank and condition describe these regressors and records only; 10.0 is observed saturation, not an independently verified physical limit",
+  "sampling_interval_seconds": 4.0,
+  "source_input_and_regressor_diagnostics": {
+    "dominant_input_fft_bins": [
+      {
+        "amplitude": 0.16775682023716454,
+        "frequency_hz": 0.0039100684261974585
+      },
+      {
+        "amplitude": 0.1648771602164871,
+        "frequency_hz": 0.002688172043010753
+      },
+      {
+        "amplitude": 0.1627735344371346,
+        "frequency_hz": 0.0009775171065493646
+      },
+      {
+        "amplitude": 0.16267651608202655,
+        "frequency_hz": 0.001710654936461388
+      },
+      {
+        "amplitude": 0.16169748529393396,
+        "frequency_hz": 0.0024437927663734115
+      },
+      {
+        "amplitude": 0.16151611442642597,
+        "frequency_hz": 0.0036656891495601175
+      },
+      {
+        "amplitude": 0.16151365896384634,
+        "frequency_hz": 0.004643206256109482
+      },
+      {
+        "amplitude": 0.161279471725083,
+        "frequency_hz": 0.0007331378299120235
+      },
+      {
+        "amplitude": 0.16073574475875038,
+        "frequency_hz": 0.002932551319648094
+      },
+      {
+        "amplitude": 0.16053950381884358,
+        "frequency_hz": 0.0004887585532746823
+      }
+    ],
+    "input_max": 6.471210099744564,
+    "input_min": 0.40936826060393905,
+    "input_std": 0.999895815552598,
+    "linear_algebra_diagnostics": {
+      "linear_arx_update": {
+        "columns": 3,
+        "condition_2_if_full_column_rank": 7.603573549546407,
+        "rank": 3,
+        "rows": 1023,
+        "singular_values_column_normalized": [
+          1.6876612013347678,
+          0.320210964321175,
+          0.22195631966175242
+        ]
+      },
+      "sindy_c_style_poly2": {
+        "columns": 6,
+        "condition_2_if_full_column_rank": 56.872972774564765,
+        "rank": 6,
+        "rows": 1023,
+        "singular_values_column_normalized": [
+          2.3178966009176243,
+          0.626834161297055,
+          0.4656565152669137,
+          0.1103461978818009,
+          0.06132685176787671,
+          0.04075567862621478
+        ]
+      }
+    },
+    "output_observations": 1024,
+    "record": "estimation",
+    "transitions": 1023
+  },
+  "source_output_range": [
+    2.911573968108644,
+    10.0
+  ],
+  "target_observed_value_10_count": 37,
+  "target_output_range": [
+    2.1638818951705194,
+    10.0
+  ],
+  "target_prefix_diagnostics": {
+    "1": {
+      "dominant_input_fft_bins": [],
+      "input_max": 0.9761919656163469,
+      "input_min": 0.9761919656163469,
+      "input_std": 0.0,
+      "linear_algebra_diagnostics": {
+        "linear_arx_update": {
+          "columns": 3,
+          "condition_2_if_full_column_rank": null,
+          "rank": 1,
+          "rows": 1,
+          "singular_values_column_normalized": [
+            1.7320508075688772
+          ]
+        },
+        "sindy_c_style_poly2": {
+          "columns": 6,
+          "condition_2_if_full_column_rank": null,
+          "rank": 1,
+          "rows": 1,
+          "singular_values_column_normalized": [
+            2.449489742783178
+          ]
+        }
+      },
+      "output_observations": 2,
+      "record": "validation_prefix_1_transitions",
+      "transitions": 1
+    },
+    "3": {
+      "dominant_input_fft_bins": [
+        {
+          "amplitude": 0.011872361012620526,
+          "frequency_hz": 0.08333333333333333
+        },
+        {
+          "amplitude": 7.401486830834377e-17,
+          "frequency_hz": 0.0
+        }
+      ],
+      "input_max": 1.0172168359245766,
+      "input_min": 0.9761919656163469,
+      "input_std": 0.01679005396143752,
+      "linear_algebra_diagnostics": {
+        "linear_arx_update": {
+          "columns": 3,
+          "condition_2_if_full_column_rank": 34289.58347284993,
+          "rank": 3,
+          "rows": 3,
+          "singular_values_column_normalized": [
+            1.731995655220318,
+            0.013822002264357274,
+            5.051083973042981e-05
+          ]
+        },
+        "sindy_c_style_poly2": {
+          "columns": 6,
+          "condition_2_if_full_column_rank": null,
+          "rank": 3,
+          "rows": 3,
+          "singular_values_column_normalized": [
+            2.4492953120307694,
+            0.030861789143055256,
+            0.0001563169471860031
+          ]
+        }
+      },
+      "output_observations": 4,
+      "record": "validation_prefix_3_transitions",
+      "transitions": 3
+    },
+    "5": {
+      "dominant_input_fft_bins": [
+        {
+          "amplitude": 0.014463121261504461,
+          "frequency_hz": 0.05
+        },
+        {
+          "amplitude": 0.009376739440246893,
+          "frequency_hz": 0.1
+        },
+        {
+          "amplitude": 4.4408920985006264e-17,
+          "frequency_hz": 0.0
+        }
+      ],
+      "input_max": 1.0455837241091501,
+      "input_min": 0.9761919656163469,
+      "input_std": 0.024376427923519225,
+      "linear_algebra_diagnostics": {
+        "linear_arx_update": {
+          "columns": 3,
+          "condition_2_if_full_column_rank": 2396.4080580603863,
+          "rank": 3,
+          "rows": 5,
+          "singular_values_column_normalized": [
+            1.7319436898219118,
+            0.019249232577731923,
+            0.0007227248648227794
+          ]
+        },
+        "sindy_c_style_poly2": {
+          "columns": 6,
+          "condition_2_if_full_column_rank": null,
+          "rank": 5,
+          "rows": 5,
+          "singular_values_column_normalized": [
+            2.4491138258051848,
+            0.04288108906783895,
+            0.0016191348634256204,
+            0.0002425887724084873,
+            1.7964292912227895e-06
+          ]
+        }
+      },
+      "output_observations": 6,
+      "record": "validation_prefix_5_transitions",
+      "transitions": 5
+    }
+  }
+}

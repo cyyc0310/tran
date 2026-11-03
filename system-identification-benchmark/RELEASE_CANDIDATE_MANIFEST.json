@@ -1,0 +1,318 @@
+{
+  "candidate_created_date": "2026-11-03",
+  "status": "PUBLIC_REVIEW_CANDIDATE_NOT_RELEASED",
+  "repository": "https://github.com/cyyc0310/tran",
+  "repository_subdirectory": "system-identification-benchmark",
+  "project_license": "MIT",
+  "license_scope": "project-authored source code and prose documentation only; experiment outputs and third-party materials are separate",
+  "independently_reproducible_systems": [
+    "InTaSet M1<->M2",
+    "Cascaded Tanks"
+  ],
+  "nanodrone_source_materials": "not included; specific upstream license terms were not verified; its result is supplementary",
+  "file_count_excluding_manifest": 60,
+  "total_bytes_excluding_manifest": 23735573,
+  "manifest_sha256_self_reference": "omitted by design",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 56,
+      "sha256": "0e8b15f234a7651530f4445e2aebb8b637da37aecff75040b69d58d6b8b6a0d4"
+    },
+    {
+      "path": "CLEAN_COPY_REPLAY_RECEIPT.md",
+      "size_bytes": 3614,
+      "sha256": "3bc781e96506dfcf466f36c74b4be05885c110b012575159ffcb5ed4ef253561"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1065,
+      "sha256": "7defdbb6d0b354b530dca96e8f464c8c9cc34908d8bd082ba0c9a7ce89725cb5"
+    },
+    {
+      "path": "LICENSE_SCOPE.md",
+      "size_bytes": 777,
+      "sha256": "77ddcf89c57cd84a371df788664b1308b1bf70043c136b639648626e0ac8c907"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 5954,
+      "sha256": "d54e705754b76a8ce24c91d84a8d8b0f365216af7d8dfca5143461c56fdeadbd"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size_bytes": 3800,
+      "sha256": "c74c793257f8f91a8a42280d38292eb7b9489a7e34e3ff938c3beff2a5bbb8e2"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/ALIGNED_CONTROL_BENCHMARK_RESULTS_20261102.md",
+      "size_bytes": 7515,
+      "sha256": "e9f515499cfa5e772198ea31c425383f55e04c8c48b72cca058df14e5f7639b2"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_CLEAN_COPY_REPLAY_RECEIPT_20261103.md",
+      "size_bytes": 1759,
+      "sha256": "00b0d52f37aedd75fd1a554da4b3e12d368cb797164cfc0ad5c5fc8d95a70fe2"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_SOURCE_ADMISSION_AUDIT_20261103.md",
+      "size_bytes": 4245,
+      "sha256": "b15352f57be226616451466fae2829dbf165910c4f4ffe3fdb398b31336be79e"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_SPARSE_INPUT_PROTOCOL_V1_20261103.md",
+      "size_bytes": 4106,
+      "sha256": "5bbdbc904286d2dec7e2c2d084e8dd065d65091a3f1237fcb17f7fb3a01e84d5"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_SPARSE_INPUT_RESULTS_20261103.md",
+      "size_bytes": 5981,
+      "sha256": "c35d7c3b6e661d6cbecb1478e4c930e3815e7679ee395f2fb8c80f6ea5e1780c"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/NANODRONE_DATA_AUDIT_20261103.md",
+      "size_bytes": 4696,
+      "sha256": "aba4446364c5f6109fe221dbec5029fad211ad031b2661e849269594942061bf"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/NANODRONE_EXTERNAL_PROTOCOL_V1_20261103.md",
+      "size_bytes": 6330,
+      "sha256": "1fcd16e07f1704a390933b3e5345c4795f0ed862a8e5d3633415c9797548da62"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/NANODRONE_EXTERNAL_RESULTS_20261103.md",
+      "size_bytes": 9579,
+      "sha256": "9595de43b4e89d3b7cadc7b9a31e352446e899e1fd67304ffc990b84ede4c99c"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/NANODRONE_PHYSICAL_CONSTRAINTS_AUDIT_20261103.md",
+      "size_bytes": 5233,
+      "sha256": "f7b559dd88f855b980bb9d83c97cdfd0c36c399866c4dddbe7053e338d6fbf93"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/cascaded_tanks/CascadedTanksFiles.zip",
+      "size_bytes": 7520592,
+      "sha256": "eb0fa05851e8a7136846c2e3b61fbef87def78d0852c86ab91b02ac5db541b51"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/cascaded_tanks/README.md",
+      "size_bytes": 1170,
+      "sha256": "eddcf5b1a2ddaafd8a39c6add3b0928ac1caceeeb11d3242009f7e89ffe34ef8"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/cascaded_tanks/acquisition_manifest.json",
+      "size_bytes": 4005,
+      "sha256": "2e703e34b7a2b5d61bdfe5119385baef66d7539c51fb98db7e3401c3467885b0"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/nanodrone_data_manifest_20261103.json",
+      "size_bytes": 5216,
+      "sha256": "3451d28b429e8b24f99c8d7918b272a439f13bfd09ae133f9d1bea41bce01caf"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_blocks.csv",
+      "size_bytes": 9135031,
+      "sha256": "3c4e14cb3c756db1d5718e39000e24a303ab0589a0bd15c19dd7c166c94f401d"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_excitation_diagnostics.json",
+      "size_bytes": 5848,
+      "sha256": "89db96c764e000a0a3614404306de6c771c370c22a23830afb181faf15c2ad67"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_gamma_receipts.csv",
+      "size_bytes": 1066,
+      "sha256": "651279bbf36856aa42e14330c2d69e5d7793f8c2f8fc52269d1842cbe76e362d"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_metadata.json",
+      "size_bytes": 13615,
+      "sha256": "595fb9cfb399f6efeaf33f1e6e6d1ac8ff07f4e5994eda2637e3edabdf00ce7f"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_metrics.csv",
+      "size_bytes": 12013,
+      "sha256": "95a8500c2abbe454513854b8bc00b4e7e2ba3f30735d3d5166b0ad7556cf48d0"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/control_benchmark_run_manifest.json",
+      "size_bytes": 8940,
+      "sha256": "53f0b1be2de20da77df450501e3887c0f3473d2907688ca060a5996b63a2226f"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/aligned_budget_metadata.json",
+      "size_bytes": 2430,
+      "sha256": "4e61d3313ecc4fd91ce06b8eb87642ec4adef9cd716a374c7577d014ed0f5d16"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/causal_baselines/causal_transfer_metadata.json",
+      "size_bytes": 9420,
+      "sha256": "c722c95c24377e2669ce6b626cad516cf173086455e291b3823b91e49eb6bc21"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/causal_baselines/causal_transfer_metrics.csv",
+      "size_bytes": 31939,
+      "sha256": "464363508e5714116c377884cde4dc8030308a0e6572ac78a9563a57f8e3a001"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/causal_baselines/causal_transfer_summary.csv",
+      "size_bytes": 13679,
+      "sha256": "8cf630300bb2ac46ed7520a1ef271f210ba3fc360450fe234441e004c061078c"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/intaset_aligned_master_summary.csv",
+      "size_bytes": 24460,
+      "sha256": "54906670e1dc8ec626c692bbef8e507722d0725f5cc6a8b451c4687e598cd3b6"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/neural_models/intaset_neural_ode_calibration.csv",
+      "size_bytes": 22262,
+      "sha256": "54503f57edaffe1c14725e58329f76da493a8b1045eb4434d12adcf2f0e85929"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/neural_models/intaset_neural_ode_metadata.json",
+      "size_bytes": 49028,
+      "sha256": "8fd43a44c3c98e22eb6022cc671049fc6816dd7c7382ac639cc4f5c32b15aa4e"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/neural_models/intaset_neural_ode_metrics.csv",
+      "size_bytes": 167170,
+      "sha256": "a8db28d759d701d74263e80a417c75e55a589824e582837056cbc0440794de9f"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/neural_models/intaset_neural_ode_summary.csv",
+      "size_bytes": 54882,
+      "sha256": "a8a4520434d57350ef411b58e8e863ddc75441da06e1d221b34b303bb9a925cb"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/sparse_calibration/sparse_calibration_metadata.json",
+      "size_bytes": 37073,
+      "sha256": "ca9009648e475b587840be349f97e6778d111fc155824326d1ef462571498ebf"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/sparse_calibration/sparse_calibration_metrics.csv",
+      "size_bytes": 57549,
+      "sha256": "61668c701f5ca992aba3693a58b31344bacfbc389539bd6ebecfeefdf0c22a18"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/intaset/sparse_calibration/sparse_calibration_summary.csv",
+      "size_bytes": 18249,
+      "sha256": "045f9db12dbd47455f9de20a0eba7ff2b5978e8317b0f1f68b226aecdc112389"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/logs/intaset.stderr.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/logs/intaset.stdout.log",
+      "size_bytes": 44453,
+      "sha256": "db0b9dd8f06611324697d320c8fc430eb7e6ceb7dbd47ac6ece3e7cdcffc7c9f"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/logs/nanodrone.stderr.log",
+      "size_bytes": 1768,
+      "sha256": "65999e063cf3b85720bf0d20ad49c2872e51b1ef18722f7d807135c19ce31986"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/logs/nanodrone.stdout.log",
+      "size_bytes": 334,
+      "sha256": "7919f8cf01270796f41bdb5bca06f388e0779d6c33f2d1153a01798ff324a6f6"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/nanodrone_external_v1/nanodrone_excitation_diagnostics.json",
+      "size_bytes": 2091,
+      "sha256": "5e27b24dba39a311ffde51a665d93b795743fd48864018fc5a6513161c81a05d"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/nanodrone_external_v1/nanodrone_metrics_by_run.csv",
+      "size_bytes": 85346,
+      "sha256": "75c5b528786bea51f22fb5098096462c99188b535a53bfa14f99432e3e28df7f"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/nanodrone_external_v1/nanodrone_run_manifest.json",
+      "size_bytes": 3642,
+      "sha256": "44101c915b55b477a65e04057daa8b5b0497312d2e079e7568d34ecb6ed08185"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/nanodrone_external_v1/nanodrone_source_validation.json",
+      "size_bytes": 1012,
+      "sha256": "64cf242ab0e1cd3836ac7245f7a2209495c6573051cb60e098ff4d499bc94dfb"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/nanodrone_external_v1/nanodrone_summary.csv",
+      "size_bytes": 27154,
+      "sha256": "a129d2f8f391685bc7221b2a7727ccc4a93814e38174646a69c8705038f57d35"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/reproduction_release_candidate_20261103/nanodrone_external_v1/nanodrone_target_calibration.csv",
+      "size_bytes": 4105,
+      "sha256": "18f45073e576a69fca985f134c3120ba888c2f58ef401c9246ca540d7da1bc12"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/source/InTaSet.zip",
+      "size_bytes": 6107043,
+      "sha256": "a0aac3b0985bec232afa8f9e95cd87612515904f5e574bc483777e4d532e8c85"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/source_manifest.json",
+      "size_bytes": 694,
+      "sha256": "f52712fb927870b1492190d8f163ddddb5f68f9a772c746fc3bcb325e1f73b81"
+    },
+    {
+      "path": "requirements-control-benchmark-v1.lock.txt",
+      "size_bytes": 769,
+      "sha256": "dfcd038d8b2f944d58fc12bc01361f5b64c6285db8e18897ea4694556df318d9"
+    },
+    {
+      "path": "scripts/cascaded_tanks_sparse_input_benchmark_v1.py",
+      "size_bytes": 24298,
+      "sha256": "ba18644bd429394d33b3a4a1380778eb382532324f56a2361c5d68a8c4e636d0"
+    },
+    {
+      "path": "scripts/fetch_control_benchmark_v1_data.py",
+      "size_bytes": 15681,
+      "sha256": "c616ca3510758264650dc2f6fb42be66a2e391f5a9d41bbf69588dded7a9f350"
+    },
+    {
+      "path": "scripts/intaset_causal_transfer_benchmark_v1.py",
+      "size_bytes": 21224,
+      "sha256": "89c7b619d5e41c58d38c8e00e3279946d9e9f4929917e28977d9d1d551feea81"
+    },
+    {
+      "path": "scripts/intaset_neural_ode_transfer_benchmark_v1.py",
+      "size_bytes": 35418,
+      "sha256": "a09c749ce076efa026375c74c85342997b34acd93ef975b91e8c6b05dbaa0ebf"
+    },
+    {
+      "path": "scripts/intaset_sparse_target_calibration_v1.py",
+      "size_bytes": 16305,
+      "sha256": "8a9a88cc80da0c1accbb9ee87fdb4a054d3f7a8a824b7bf29f49f2ffc2a17d6f"
+    },
+    {
+      "path": "scripts/nanodrone_external_control_benchmark_v1.py",
+      "size_bytes": 41384,
+      "sha256": "16e6aa4a6656958acac3bd58b934fd7646216824256120067b7dca1821b1bcdf"
+    },
+    {
+      "path": "scripts/reproduce_control_benchmark_v1.py",
+      "size_bytes": 18581,
+      "sha256": "4d47896d19007ee6995b66cb35a1cede75a7fc6f872b4468e24c7b5527165af0"
+    },
+    {
+      "path": "scripts/run_intaset_aligned_budget_v1.py",
+      "size_bytes": 12084,
+      "sha256": "1568efc237296ae74586c9a87fd194d900ce26a34850eed61dc51c9c051bc9e5"
+    },
+    {
+      "path": "scripts/verify_cascaded_tanks_source_v1.py",
+      "size_bytes": 6008,
+      "sha256": "69f285a810da59f6ecb2dc49767475dbe289e6385e1e1dc72f1e9baf4900b72f"
+    },
+    {
+      "path": "scripts/verify_cascaded_tanks_sparse_input_benchmark_v1.py",
+      "size_bytes": 5832,
+      "sha256": "435991f4df7e265f14dda3a5270f33beed4c200d34498da0cf31b1392402862e"
+    }
+  ]
+}

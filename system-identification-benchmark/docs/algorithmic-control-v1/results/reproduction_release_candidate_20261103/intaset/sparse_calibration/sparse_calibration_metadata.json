@@ -1,0 +1,1277 @@
+{
+  "experiment": "InTaSet sparse target calibration for cross-configuration dynamics",
+  "task_contract": {
+    "target_configuration_directions": [
+      "M1->M2",
+      "M2->M1"
+    ],
+    "target_state_observation_intervals_seconds": [
+      0.5,
+      1.0
+    ],
+    "pump_input_interval_seconds": 0.1,
+    "target_calibration_budgets_seconds": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "calibration_data": "Only the target configuration training prefix is used. Four target states are exposed at the same sparse cadence as evaluation; pump inputs remain at native 0.1 s resolution. Between boundary states, only recorded control inputs are used by the model rollout.",
+    "test_data": "The target testing file is used only for final teacher-forced one-step diagnostics and causal sparse-start rollouts; never used to fit rate gains or select hyperparameters."
+  },
+  "source_model_selection": "The linear ARX and degree-two discrete SINDYc-style source models use the existing chronological source-only final-20% validation procedure, with mean free-rollout error across 0.5/1-second horizons.",
+  "target_adapter": {
+    "form": "delta_x_adapted = gain_elementwise * delta_x_source",
+    "trainable_parameter_count": 4,
+    "bounds": [
+      0.1,
+      5.0
+    ],
+    "fit_objective": "Least squares of normalized endpoint state errors across sparse target calibration blocks. No target interior state labels are used.",
+    "budget_zero": "gain is fixed to one and represents the zero-shot source model.",
+    "interpretation": "This is a deliberately low-dimensional calibration reference, not a proposed novel algorithm and not a full target fine-tune."
+  },
+  "tuning": {
+    "M1": {
+      "config": "M1",
+      "fit_rows": 16617,
+      "validation_rows": 4156,
+      "source_state_scale_cm": [
+        2.77811487607628,
+        0.844324483110967,
+        1.8494489936316032,
+        1.0613844117468385
+      ],
+      "models": {
+        "linear_state_space_arx": {
+          "selected_parameter": 100.0,
+          "parameter_name": "ridge_alpha",
+          "selection": "minimum mean 0.5/1-second free-rollout RMSE on chronological final 20% of training trace",
+          "validation_candidates": [
+            {
+              "parameter": 1e-06,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017650061800005244
+            },
+            {
+              "parameter": 0.0001,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017650061732214478
+            },
+            {
+              "parameter": 0.01,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.0176500549532162
+            },
+            {
+              "parameter": 1.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017649377827222344
+            },
+            {
+              "parameter": 100.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017588622820066367
+            }
+          ],
+          "active_coefficient_count_after_refit": 24
+        },
+        "discrete_sindy_c_stlsq_degree2": {
+          "selected_parameter": 0.1,
+          "parameter_name": "stlsq_threshold",
+          "selection": "minimum mean 0.5/1-second free-rollout RMSE on chronological final 20% of training trace",
+          "validation_candidates": [
+            {
+              "parameter": 0.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.01774803561557617
+            },
+            {
+              "parameter": 0.01,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017686741794033276
+            },
+            {
+              "parameter": 0.03,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017783092709514975
+            },
+            {
+              "parameter": 0.1,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017294976591876565
+            },
+            {
+              "parameter": 0.3,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.021037407628632408
+            },
+            {
+              "parameter": 1.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.0226396368574545
+            }
+          ],
+          "active_coefficient_count_after_refit": 8
+        }
+      }
+    },
+    "M2": {
+      "config": "M2",
+      "fit_rows": 16800,
+      "validation_rows": 4201,
+      "source_state_scale_cm": [
+        1.47709524762151,
+        1.4660952776113383,
+        1.6900235948197464,
+        0.9540437979102976
+      ],
+      "models": {
+        "linear_state_space_arx": {
+          "selected_parameter": 100.0,
+          "parameter_name": "ridge_alpha",
+          "selection": "minimum mean 0.5/1-second free-rollout RMSE on chronological final 20% of training trace",
+          "validation_candidates": [
+            {
+              "parameter": 1e-06,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013245806057652115
+            },
+            {
+              "parameter": 0.0001,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013245806048821255
+            },
+            {
+              "parameter": 0.01,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013245805165768017
+            },
+            {
+              "parameter": 1.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013245717181968961
+            },
+            {
+              "parameter": 100.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013239791190909574
+            }
+          ],
+          "active_coefficient_count_after_refit": 24
+        },
+        "discrete_sindy_c_stlsq_degree2": {
+          "selected_parameter": 0.03,
+          "parameter_name": "stlsq_threshold",
+          "selection": "minimum mean 0.5/1-second free-rollout RMSE on chronological final 20% of training trace",
+          "validation_candidates": [
+            {
+              "parameter": 0.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013582534163646527
+            },
+            {
+              "parameter": 0.01,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013481427670440266
+            },
+            {
+              "parameter": 0.03,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.01321155596398449
+            },
+            {
+              "parameter": 0.1,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013263501469005243
+            },
+            {
+              "parameter": 0.3,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.0195331445134257
+            },
+            {
+              "parameter": 1.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.0195331445134257
+            }
+          ],
+          "active_coefficient_count_after_refit": 28
+        }
+      }
+    }
+  },
+  "calibration_fits": [
+    {
+      "budget_seconds": 0,
+      "sparse_state_observations": 1,
+      "transition_blocks": 0,
+      "gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_performed": false,
+      "jacobian_rank": 0,
+      "jacobian_condition_2": null,
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 0,
+      "sparse_state_observations": 1,
+      "transition_blocks": 0,
+      "gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_performed": false,
+      "jacobian_rank": 0,
+      "jacobian_condition_2": null,
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 1,
+      "sparse_state_observations": 3,
+      "transition_blocks": 2,
+      "gain": [
+        1.901177398943201,
+        0.41602893303007377,
+        0.24294700062452218,
+        3.03309749546713
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.0005397986772111057,
+      "optimality": 2.5473562862233872e-11,
+      "function_evaluations": 8,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.5617009341217076,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 1,
+      "sparse_state_observations": 3,
+      "transition_blocks": 2,
+      "gain": [
+        2.101723889932587,
+        0.25205386341583524,
+        0.24056194487042734,
+        1.2163450544791694
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.0005376329337844256,
+      "optimality": 9.645803443969335e-11,
+      "function_evaluations": 8,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 5.676582268015163,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 3,
+      "sparse_state_observations": 7,
+      "transition_blocks": 6,
+      "gain": [
+        1.899869173456861,
+        0.301047537914032,
+        1.9466208697081337,
+        3.436225349763909
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.009789465790733674,
+      "optimality": 2.7422175805115373e-10,
+      "function_evaluations": 10,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.48831755976021,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 3,
+      "sparse_state_observations": 7,
+      "transition_blocks": 6,
+      "gain": [
+        2.112216135680659,
+        0.18780213941082005,
+        1.8974788651820802,
+        1.399567423029664
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.010093708134626523,
+      "optimality": 1.001452847716515e-09,
+      "function_evaluations": 9,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 5.343337950310621,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 5,
+      "sparse_state_observations": 11,
+      "transition_blocks": 10,
+      "gain": [
+        1.6268048372807562,
+        0.570922098039957,
+        2.1215265570612174,
+        3.6361753412594995
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.01933622771163527,
+      "optimality": 3.3725493696431437e-09,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.4622248948969627,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 5,
+      "sparse_state_observations": 11,
+      "transition_blocks": 10,
+      "gain": [
+        1.8229947241730808,
+        0.36094175392528777,
+        2.0436132369974795,
+        1.4984755905185083
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.019885395980494634,
+      "optimality": 7.702204461044279e-09,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 5.083145952409127,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 0,
+      "sparse_state_observations": 1,
+      "transition_blocks": 0,
+      "gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_performed": false,
+      "jacobian_rank": 0,
+      "jacobian_condition_2": null,
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 0,
+      "sparse_state_observations": 1,
+      "transition_blocks": 0,
+      "gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_performed": false,
+      "jacobian_rank": 0,
+      "jacobian_condition_2": null,
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 1,
+      "sparse_state_observations": 2,
+      "transition_blocks": 1,
+      "gain": [
+        1.903883044328126,
+        0.4158205356561792,
+        0.2304821643548741,
+        3.0289090894402513
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 2.882205719946035e-24,
+      "optimality": 4.746782249417338e-15,
+      "function_evaluations": 8,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.54389129872675,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 1,
+      "sparse_state_observations": 2,
+      "transition_blocks": 1,
+      "gain": [
+        2.1052731517888574,
+        0.2510534785692823,
+        0.2262194651439734,
+        1.2164158085901362
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 1.8733299149925936e-23,
+      "optimality": 1.851191925446043e-14,
+      "function_evaluations": 8,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 5.680960713163867,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 3,
+      "sparse_state_observations": 4,
+      "transition_blocks": 3,
+      "gain": [
+        1.9020815299331515,
+        0.3006853067611759,
+        1.9406270831374677,
+        3.4419234506116716
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.003996086233075667,
+      "optimality": 3.1772999689336454e-10,
+      "function_evaluations": 8,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.4823777644564506,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 3,
+      "sparse_state_observations": 4,
+      "transition_blocks": 3,
+      "gain": [
+        2.1161461631911056,
+        0.18729401335628568,
+        1.8910489386987481,
+        1.4031437446189197
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.004326738763202505,
+      "optimality": 1.3405428940650822e-09,
+      "function_evaluations": 9,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 5.366295825856785,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 5,
+      "sparse_state_observations": 6,
+      "transition_blocks": 5,
+      "gain": [
+        1.6266626546801102,
+        0.5701834260403422,
+        2.11946416719276,
+        3.6397517075429366
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.013689192008475844,
+      "optimality": 8.295260564436084e-09,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.468803805605559,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 5,
+      "sparse_state_observations": 6,
+      "transition_blocks": 5,
+      "gain": [
+        1.8237800752599755,
+        0.3589178039481606,
+        2.039992612074132,
+        1.5004297273456497
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.014459551436065624,
+      "optimality": 3.433723867311592e-09,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 5.126260131852007,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M2->M1",
+      "target_configuration": "M1",
+      "source_configuration": "M2",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 0,
+      "sparse_state_observations": 1,
+      "transition_blocks": 0,
+      "gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_performed": false,
+      "jacobian_rank": 0,
+      "jacobian_condition_2": null,
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 0,
+      "sparse_state_observations": 1,
+      "transition_blocks": 0,
+      "gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_performed": false,
+      "jacobian_rank": 0,
+      "jacobian_condition_2": null,
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 1,
+      "sparse_state_observations": 3,
+      "transition_blocks": 2,
+      "gain": [
+        0.7866402926867665,
+        2.572236419492702,
+        0.5934804424816338,
+        1.6923362877786512
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.00043870584832787155,
+      "optimality": 9.815469896111115e-11,
+      "function_evaluations": 6,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 1.9223348593158898,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 1,
+      "sparse_state_observations": 3,
+      "transition_blocks": 2,
+      "gain": [
+        0.8693057952275443,
+        4.999999999999359,
+        1.3895396096938326,
+        3.225768400939755
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.0017706142363051055,
+      "optimality": 8.308119434291514e-13,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.1126306573928413,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 3,
+      "sparse_state_observations": 7,
+      "transition_blocks": 6,
+      "gain": [
+        0.7586431050319816,
+        2.933176216093444,
+        0.46772339396823975,
+        1.682306741561425
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.0031079107430647974,
+      "optimality": 5.163623584425315e-10,
+      "function_evaluations": 9,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 1.8316685429137332,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 3,
+      "sparse_state_observations": 7,
+      "transition_blocks": 6,
+      "gain": [
+        0.8325755748377162,
+        4.9999999999999885,
+        1.0457132387485009,
+        3.0271344863889906
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.008978749518102505,
+      "optimality": 8.256320255149634e-11,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.1126315204857464,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 5,
+      "sparse_state_observations": 11,
+      "transition_blocks": 10,
+      "gain": [
+        0.7417576925352375,
+        3.2609283506972293,
+        0.5327882476305411,
+        1.7897427272209856
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.008001061588208545,
+      "optimality": 1.3226457184430926e-09,
+      "function_evaluations": 9,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 1.746195957195081,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 5,
+      "sparse_state_observations": 11,
+      "transition_blocks": 10,
+      "gain": [
+        0.8080629134260027,
+        4.999999999999999,
+        1.1501761010982807,
+        3.060261995296015
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.01834389326198497,
+      "optimality": 7.091929191360598e-11,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.1126307184150406,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 0.5,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 0,
+      "sparse_state_observations": 1,
+      "transition_blocks": 0,
+      "gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_performed": false,
+      "jacobian_rank": 0,
+      "jacobian_condition_2": null,
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 0,
+      "sparse_state_observations": 1,
+      "transition_blocks": 0,
+      "gain": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fit_performed": false,
+      "jacobian_rank": 0,
+      "jacobian_condition_2": null,
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 1,
+      "sparse_state_observations": 2,
+      "transition_blocks": 1,
+      "gain": [
+        0.7866630557860989,
+        2.578366720799577,
+        0.5922638759041977,
+        1.7004196903154918
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 5.553074341595594e-26,
+      "optimality": 6.3818330091272895e-15,
+      "function_evaluations": 6,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 1.9030920442594994,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 1,
+      "sparse_state_observations": 2,
+      "transition_blocks": 1,
+      "gain": [
+        0.8693057953357072,
+        4.999999999999359,
+        1.3895396096938282,
+        3.2257684015348422
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.0027465162131848505,
+      "optimality": 7.125534645045297e-16,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.1126308903690547,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 3,
+      "sparse_state_observations": 4,
+      "transition_blocks": 3,
+      "gain": [
+        0.7588823425864866,
+        2.9189724820814464,
+        0.4678313529807114,
+        1.6842283040053414
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.0008535919824535426,
+      "optimality": 9.363704157940235e-11,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 1.8181925056482222,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 3,
+      "sparse_state_observations": 4,
+      "transition_blocks": 3,
+      "gain": [
+        0.8325755701513464,
+        4.9999999999999885,
+        1.0457132372441025,
+        3.027134491635523
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 1,
+      "fit_message": "`gtol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.012146750650318382,
+      "optimality": 7.174305044763055e-11,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.1126303367460415,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    },
+    {
+      "budget_seconds": 5,
+      "sparse_state_observations": 6,
+      "transition_blocks": 5,
+      "gain": [
+        0.742926304674886,
+        3.2557272166002647,
+        0.5327130884990371,
+        1.7938758701608688
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 2,
+      "fit_message": "`ftol` termination condition is satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.009252259812304523,
+      "optimality": 1.9118517371993146e-09,
+      "function_evaluations": 7,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 1.7314259089231951,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "linear_state_space_arx"
+    },
+    {
+      "budget_seconds": 5,
+      "sparse_state_observations": 6,
+      "transition_blocks": 5,
+      "gain": [
+        0.8080629041599691,
+        4.999999999999999,
+        1.150176099567057,
+        3.0602621022208627
+      ],
+      "fit_performed": true,
+      "fit_success": true,
+      "fit_status": 4,
+      "fit_message": "Both `ftol` and `xtol` termination conditions are satisfied.",
+      "endpoint_residual_sum_squares_normalized": 0.02980842726269455,
+      "optimality": 2.4440251060560957e-09,
+      "function_evaluations": 12,
+      "jacobian_rank": 4,
+      "jacobian_condition_2": 2.112630604274611,
+      "gain_at_lower_bound": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "gain_at_upper_bound": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "direction": "M1->M2",
+      "target_configuration": "M2",
+      "source_configuration": "M1",
+      "sensor_interval_seconds": 1.0,
+      "model_family": "discrete_sindy_c_stlsq_degree2"
+    }
+  ],
+  "source_training_wall_seconds": 8.17486016699695,
+  "calibration_and_evaluation_wall_seconds": 5.670634416979738,
+  "source_manifest": {
+    "dataset": "InTaSet",
+    "record_url": "https://zenodo.org/records/17652851",
+    "doi": "10.5281/zenodo.17652851",
+    "accessed": "2026-11-02",
+    "license": "CC BY 4.0",
+    "citation": "Putri, S. A., Villacrés, D., Raza, N., Iwakin, O., & Moazeni, F. (2025). InTaSet: A Benchmark Dataset for Data-Driven System Identification and Fault Detection in an Interconnected Water System [Data set]. Zenodo. https://doi.org/10.5281/zenodo.17652851",
+    "file": "InTaSet.zip",
+    "size_bytes": 6107043,
+    "zenodo_md5_expected": "0fe80940a3c9520e665b769f4b8d5ab8",
+    "md5_actual": "0fe80940a3c9520e665b769f4b8d5ab8",
+    "sha256_actual": "a0aac3b0985bec232afa8f9e95cd87612515904f5e574bc483777e4d532e8c85"
+  },
+  "limitations": [
+    "This is the first target-calibration baseline; the InTaSet author Neural ODE, four-tank kernel method, and hybrid model are not included.",
+    "A positive scalar gain per state cannot express configuration changes that alter the structure or direction of individual flow couplings.",
+    "The target training and test files contain one short record per configuration; score differences are descriptive, not independent-trial significance claims.",
+    "The target calibration objective uses sparse block endpoints and can be weakly identified when few blocks are available; Jacobian rank and conditioning are recorded."
+  ],
+  "software": {
+    "python": "3.12.13",
+    "numpy": "2.4.5",
+    "pandas": "3.0.3",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.17.1",
+    "openpyxl": "3.1.5",
+    "script_sha256": "8a9a88cc80da0c1accbb9ee87fdb4a054d3f7a8a824b7bf29f49f2ffc2a17d6f",
+    "source_benchmark_script_sha256": "89c7b619d5e41c58d38c8e00e3279946d9e9f4929917e28977d9d1d551feea81"
+  },
+  "detail_csv_sha256": "61668c701f5ca992aba3693a58b31344bacfbc389539bd6ebecfeefdf0c22a18",
+  "summary_csv_sha256": "045f9db12dbd47455f9de20a0eba7ff2b5978e8317b0f1f68b226aecdc112389",
+  "aligned_budget_wrapper": {
+    "script": "scripts/run_intaset_aligned_budget_v1.py",
+    "script_sha256": "1568efc237296ae74586c9a87fd194d900ce26a34850eed61dc51c9c051bc9e5",
+    "runner": "sparse_calibration",
+    "horizon_strides_native_samples": [
+      5,
+      10
+    ],
+    "target_state_observation_intervals_seconds": [
+      0.5,
+      1.0
+    ],
+    "target_calibration_budgets_seconds": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "note": "The base runner source is unchanged; this wrapper sets the global experiment constants before invoking its run() function."
+  }
+}

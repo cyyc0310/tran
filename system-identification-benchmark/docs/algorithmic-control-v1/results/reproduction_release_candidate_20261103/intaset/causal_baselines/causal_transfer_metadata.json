@@ -1,0 +1,222 @@
+{
+  "experiment": "InTaSet M1<->M2 causal cross-configuration system identification",
+  "task_contract": {
+    "native_sample_interval_seconds": 0.1,
+    "target_state_observation_intervals_seconds": [
+      0.5,
+      1.0
+    ],
+    "pump_input_interval_seconds": 0.1,
+    "causal_rollout": "At each sparse test block start, expose the four measured states and then the recorded high-rate pump sequence. Score every prediction through the block before using the next sparse state.",
+    "offline_bridge": "Separately scores interpolation using both observed endpoints; endpoint-conditioned bridges are not causal forecasts.",
+    "teacher_forced_one_step": "Diagnostic only: each next-state prediction uses the previous true test state; not a sparse-observation deployment score.",
+    "target_dense_reference": "Trained with the full target configuration training trace; an upper reference, not limited target calibration."
+  },
+  "models": {
+    "linear_state_space_arx": "Fully observed first-order discrete state-space/ARX model x[t+1]=x[t]+g(x[t],u[t]); Ridge regularization is selected on source validation rollouts.",
+    "discrete_sindy_c_stlsq_degree2": "Degree-two polynomial library over four states and two pump inputs; sequential thresholded least squares on state increments. This is a discrete SINDYc-style baseline, not a continuous-time SINDYc replication.",
+    "zero_order_hold": "Causal reference that keeps the last sparse observed state constant until the next observation.",
+    "linear_endpoint_interpolation": "Offline-only interpolation between observed boundary states."
+  },
+  "selection": "Each configuration's final 20% training segment is a chronological validation tail. Hyperparameters are selected by the mean normalized 0.5/1-second free-rollout RMSE, then refit on the full configuration training trace.",
+  "metrics": "Raw cm errors, errors normalized by source training state standard deviations, negative-prediction fractions, and minimum predicted level are reported. No unverified upper water-level limit is imposed.",
+  "tuning": {
+    "M1": {
+      "config": "M1",
+      "fit_rows": 16617,
+      "validation_rows": 4156,
+      "source_state_scale_cm": [
+        2.77811487607628,
+        0.844324483110967,
+        1.8494489936316032,
+        1.0613844117468385
+      ],
+      "models": {
+        "linear_state_space_arx": {
+          "selected_parameter": 100.0,
+          "parameter_name": "ridge_alpha",
+          "selection": "minimum mean 0.5/1-second free-rollout RMSE on chronological final 20% of training trace",
+          "validation_candidates": [
+            {
+              "parameter": 1e-06,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017650061800005244
+            },
+            {
+              "parameter": 0.0001,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017650061732214478
+            },
+            {
+              "parameter": 0.01,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.0176500549532162
+            },
+            {
+              "parameter": 1.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017649377827222344
+            },
+            {
+              "parameter": 100.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017588622820066367
+            }
+          ],
+          "active_coefficient_count_after_refit": 24
+        },
+        "discrete_sindy_c_stlsq_degree2": {
+          "selected_parameter": 0.1,
+          "parameter_name": "stlsq_threshold",
+          "selection": "minimum mean 0.5/1-second free-rollout RMSE on chronological final 20% of training trace",
+          "validation_candidates": [
+            {
+              "parameter": 0.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.01774803561557617
+            },
+            {
+              "parameter": 0.01,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017686741794033276
+            },
+            {
+              "parameter": 0.03,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017783092709514975
+            },
+            {
+              "parameter": 0.1,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.017294976591876565
+            },
+            {
+              "parameter": 0.3,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.021037407628632408
+            },
+            {
+              "parameter": 1.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.0226396368574545
+            }
+          ],
+          "active_coefficient_count_after_refit": 8
+        }
+      }
+    },
+    "M2": {
+      "config": "M2",
+      "fit_rows": 16800,
+      "validation_rows": 4201,
+      "source_state_scale_cm": [
+        1.47709524762151,
+        1.4660952776113383,
+        1.6900235948197464,
+        0.9540437979102976
+      ],
+      "models": {
+        "linear_state_space_arx": {
+          "selected_parameter": 100.0,
+          "parameter_name": "ridge_alpha",
+          "selection": "minimum mean 0.5/1-second free-rollout RMSE on chronological final 20% of training trace",
+          "validation_candidates": [
+            {
+              "parameter": 1e-06,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013245806057652115
+            },
+            {
+              "parameter": 0.0001,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013245806048821255
+            },
+            {
+              "parameter": 0.01,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013245805165768017
+            },
+            {
+              "parameter": 1.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013245717181968961
+            },
+            {
+              "parameter": 100.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013239791190909574
+            }
+          ],
+          "active_coefficient_count_after_refit": 24
+        },
+        "discrete_sindy_c_stlsq_degree2": {
+          "selected_parameter": 0.03,
+          "parameter_name": "stlsq_threshold",
+          "selection": "minimum mean 0.5/1-second free-rollout RMSE on chronological final 20% of training trace",
+          "validation_candidates": [
+            {
+              "parameter": 0.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013582534163646527
+            },
+            {
+              "parameter": 0.01,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013481427670440266
+            },
+            {
+              "parameter": 0.03,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.01321155596398449
+            },
+            {
+              "parameter": 0.1,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.013263501469005243
+            },
+            {
+              "parameter": 0.3,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.0195331445134257
+            },
+            {
+              "parameter": 1.0,
+              "mean_normalized_rollout_rmse_0.5_1s": 0.0195331445134257
+            }
+          ],
+          "active_coefficient_count_after_refit": 28
+        }
+      }
+    }
+  },
+  "source_manifest": {
+    "dataset": "InTaSet",
+    "record_url": "https://zenodo.org/records/17652851",
+    "doi": "10.5281/zenodo.17652851",
+    "accessed": "2026-11-02",
+    "license": "CC BY 4.0",
+    "citation": "Putri, S. A., Villacrés, D., Raza, N., Iwakin, O., & Moazeni, F. (2025). InTaSet: A Benchmark Dataset for Data-Driven System Identification and Fault Detection in an Interconnected Water System [Data set]. Zenodo. https://doi.org/10.5281/zenodo.17652851",
+    "file": "InTaSet.zip",
+    "size_bytes": 6107043,
+    "zenodo_md5_expected": "0fe80940a3c9520e665b769f4b8d5ab8",
+    "md5_actual": "0fe80940a3c9520e665b769f4b8d5ab8",
+    "sha256_actual": "a0aac3b0985bec232afa8f9e95cd87612515904f5e574bc483777e4d532e8c85"
+  },
+  "training_wall_seconds_for_both_configs": 8.04718320799293,
+  "limitations": [
+    "The InTaSet author Neural ODE and the 2024 four-tank kernel interpolation methods are not yet reproduced in this runner.",
+    "Target calibration is not included. Target dense training is clearly labeled as an upper reference.",
+    "Only two configurations of one water-tank testbed are evaluated here; motor data remain a separate external system.",
+    "A full-rank sampled regression matrix does not prove practical or structural identifiability.",
+    "The provided test traces are short; block-level scores are descriptive and are not independent experimental replicates."
+  ],
+  "software": {
+    "python": "3.12.13",
+    "numpy": "2.4.5",
+    "pandas": "3.0.3",
+    "scikit_learn": "1.8.0",
+    "openpyxl": "3.1.5",
+    "script_sha256": "89c7b619d5e41c58d38c8e00e3279946d9e9f4929917e28977d9d1d551feea81"
+  },
+  "detail_csv_sha256": "464363508e5714116c377884cde4dc8030308a0e6572ac78a9563a57f8e3a001",
+  "summary_csv_sha256": "8cf630300bb2ac46ed7520a1ef271f210ba3fc360450fe234441e004c061078c",
+  "aligned_budget_wrapper": {
+    "script": "scripts/run_intaset_aligned_budget_v1.py",
+    "script_sha256": "1568efc237296ae74586c9a87fd194d900ce26a34850eed61dc51c9c051bc9e5",
+    "runner": "causal_baselines",
+    "horizon_strides_native_samples": [
+      5,
+      10
+    ],
+    "target_state_observation_intervals_seconds": [
+      0.5,
+      1.0
+    ],
+    "target_calibration_budgets_seconds": [
+      0,
+      1,
+      3,
+      5
+    ],
+    "note": "The base runner source is unchanged; this wrapper sets the global experiment constants before invoking its run() function."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "arx_alpha_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "arx_validation_normalized_mse_h50": [
+    0.700849184530532,
+    0.6990440663116173,
+    0.6818923530206874,
+    0.5788810614304333
+  ],
+  "selected_arx_alpha": 100.0,
+  "sindyc_threshold_grid": [
+    0.0005,
+    0.001,
+    0.002,
+    0.005,
+    0.01,
+    0.02,
+    0.05
+  ],
+  "sindyc_validation_normalized_mse_h50": [
+    4.083435465448006,
+    4.089343076741188,
+    4.043548663040415,
+    4.068867406929445,
+    5.464932146869413,
+    5.248128082699062,
+    4.853463822141246
+  ],
+  "selected_sindyc_threshold": 0.002,
+  "candidate_model_validation_normalized_mse_h50": {
+    "arx": 0.5788810614304333,
+    "sindyc_degree2": 4.043548663040415,
+    "author_mlp": 0.10941907199042371,
+    "author_lstm": 1.743047122444117,
+    "author_hybrid": 0.705536797601063,
+    "author_physics": 3.388988970920607
+  },
+  "source_validation_selected_model": "author_mlp",
+  "source_model_selection_metric": "equal_mean_per_run_normalized_mse_at_h50"
+}

@@ -1,0 +1,7 @@
+model,method,calibration_budget_transitions,calibration_budget_seconds,target_state_indices_used,target_input_indices_used,gamma,fallback,prefix_base_rmse,prefix_calibrated_rmse
+source_linear_arx_1_0,source_linear_arx_1_0_gamma_calibrated,1,4,"[0, 1]",[0],0.00539053226685,,0.112617952332,0
+source_sindy_c_style_poly2_stlsq,source_sindy_c_style_poly2_stlsq_gamma_calibrated,1,4,"[0, 1]",[0],0.00900538067672,,0.0671669933282,0
+source_linear_arx_1_0,source_linear_arx_1_0_gamma_calibrated,3,12,"[0, 1, 2, 3]","[0, 1, 2]",-0.0256389246266,,0.24752567333,0.00643914390918
+source_sindy_c_style_poly2_stlsq,source_sindy_c_style_poly2_stlsq_gamma_calibrated,3,12,"[0, 1, 2, 3]","[0, 1, 2]",-0.042612017426,,0.151914330557,0.00642209169019
+source_linear_arx_1_0,source_linear_arx_1_0_gamma_calibrated,5,20,"[0, 1, 2, 3, 4, 5]","[0, 1, 2, 3, 4]",-0.00962041970704,,0.369745897795,0.00762570529098
+source_sindy_c_style_poly2_stlsq,source_sindy_c_style_poly2_stlsq_gamma_calibrated,5,20,"[0, 1, 2, 3, 4, 5]","[0, 1, 2, 3, 4]",-0.0157687358341,,0.226061873022,0.00763266022525

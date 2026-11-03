@@ -1,0 +1,79 @@
+{
+  "protocol": "NANODRONE_EXTERNAL_PROTOCOL_V1_20261103.md",
+  "protocol_sha256": "1fcd16e07f1704a390933b3e5345c4795f0ed862a8e5d3633415c9797548da62",
+  "benchmark_script_sha256": "16e6aa4a6656958acac3bd58b934fd7646216824256120067b7dca1821b1bcdf",
+  "source_repository_commit": "2d921b57d166fe2debe08a5d39bd07297c5abc39",
+  "data_manifest_sha256": "3451d28b429e8b24f99c8d7918b272a439f13bfd09ae133f9d1bea41bce01caf",
+  "author_models": {
+    "author_mlp": {
+      "checkpoint_sha256": "453cb291328861b45c98683e3d91af362cf990940844dc436a7a026accf288bb",
+      "scaler_x_sha256": "5a084faa34d6d0c9e40258b1402cf4ae78714da5b7fa4c9681085cc8e443bed7",
+      "scaler_u_sha256": "07b0219df627bc030be827af562cc1e8e80b7399f9f0613a5a386b58683a1374",
+      "checkpoint_epoch": 4302,
+      "checkpoint_val_loss": 0.0006512939168014334
+    },
+    "author_lstm": {
+      "checkpoint_sha256": "0add20cb9a944f5f8b6a1638fbda9f9810eb5e5d2d9a65a7fffdd2de6ce65a97",
+      "scaler_x_sha256": "5a084faa34d6d0c9e40258b1402cf4ae78714da5b7fa4c9681085cc8e443bed7",
+      "scaler_u_sha256": "e9d82ba50eb7ccb75bbf0ce08155fbbdc3e6729a3323fef7d307aacb43ead645",
+      "checkpoint_epoch": 8,
+      "checkpoint_val_loss": 0.004110114045842137
+    },
+    "author_hybrid": {
+      "checkpoint_sha256": "657b09a39b601974f29f7a5ab80d2697c0c89ca44b0e89140d678affb6909a62",
+      "scaler_x_sha256": "5a084faa34d6d0c9e40258b1402cf4ae78714da5b7fa4c9681085cc8e443bed7",
+      "scaler_u_sha256": "07b0219df627bc030be827af562cc1e8e80b7399f9f0613a5a386b58683a1374",
+      "checkpoint_epoch": 18,
+      "checkpoint_val_loss": 0.0025334429328244083
+    },
+    "author_physics": {
+      "checkpoint_sha256": null,
+      "scaler_x_sha256": null,
+      "scaler_u_sha256": null,
+      "checkpoint_epoch": null,
+      "checkpoint_val_loss": null
+    }
+  },
+  "author_checkpoint_hashes": {
+    "residual_random_square_chirp.pt": "453cb291328861b45c98683e3d91af362cf990940844dc436a7a026accf288bb",
+    "lstm_random_square_chirp.pt": "0add20cb9a944f5f8b6a1638fbda9f9810eb5e5d2d9a65a7fffdd2de6ce65a97",
+    "phys+res_random_square_chirp.pt": "657b09a39b601974f29f7a5ab80d2697c0c89ca44b0e89140d678affb6909a62"
+  },
+  "author_physics_baseline_limitation": "As-released PhysQuad sets omega_dot to zero; it is retained only as an implementation diagnostic.",
+  "pytorch3d_compatibility_shim_used": true,
+  "model_metrics_sha256": "75c5b528786bea51f22fb5098096462c99188b535a53bfa14f99432e3e28df7f",
+  "calibration_metrics_sha256": "18f45073e576a69fca985f134c3120ba888c2f58ef401c9246ca540d7da1bc12",
+  "summary_sha256": "a129d2f8f391685bc7221b2a7727ccc4a93814e38174646a69c8705038f57d35",
+  "excitation_diagnostics_sha256": "5e27b24dba39a311ffde51a665d93b795743fd48864018fc5a6513161c81a05d",
+  "source_validation_sha256": "64cf242ab0e1cd3836ac7245f7a2209495c6573051cb60e098ff4d499bc94dfb",
+  "split_counts": {
+    "train_source_runs": 9,
+    "source_validation_runs": 3,
+    "target_melon_runs": 3
+  },
+  "source_validation_selected_model": "author_mlp",
+  "target_budgets_seconds": [
+    0,
+    1,
+    3,
+    5
+  ],
+  "target_observation_step_seconds": 0.5,
+  "scoring_horizons_steps": [
+    1,
+    10,
+    50
+  ],
+  "runtime_versions": {
+    "python": "3.12.13",
+    "numpy": "2.4.5",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.8.0",
+    "joblib": "1.5.3",
+    "torch": "2.12.0"
+  },
+  "scaler_pickle_source_version": "1.7.2",
+  "scaler_pickle_runtime_version_matches": false,
+  "scaler_pickle_version_warning": "Author StandardScaler pickles were saved with scikit-learn 1.7.2; this run uses the runtime version recorded above. Only fitted mean_ and scale_ arrays are read."
+}
