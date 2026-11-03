@@ -9,10 +9,15 @@
     "Cascaded Tanks"
   ],
   "nanodrone_source_materials": "not included; specific upstream license terms were not verified; its result is supplementary",
-  "file_count_excluding_manifest": 61,
-  "total_bytes_excluding_manifest": 23738926,
+  "file_count_excluding_manifest": 86,
+  "total_bytes_excluding_manifest": 24289947,
   "manifest_sha256_self_reference": "omitted by design",
   "files": [
+    {
+      "path": ".gitattributes",
+      "size_bytes": 102,
+      "sha256": "f1d1f2ce783ce0a0595115299d132677d12fd1c9c2fea970529d552499377dda"
+    },
     {
       "path": ".gitignore",
       "size_bytes": 56,
@@ -30,13 +35,13 @@
     },
     {
       "path": "LICENSE_SCOPE.md",
-      "size_bytes": 777,
-      "sha256": "77ddcf89c57cd84a371df788664b1308b1bf70043c136b639648626e0ac8c907"
+      "size_bytes": 899,
+      "sha256": "ec6e80288358f38b6da5837a49039aa270d129c0108905ca8e78377c85fe4ecc"
     },
     {
       "path": "README.md",
-      "size_bytes": 6086,
-      "sha256": "35567a43a74a5c31bee727aad9be3a1c35aca87527f232dd8f57626c9abcc08c"
+      "size_bytes": 7777,
+      "sha256": "47e3d41cb22c67221919ba32c47dbd7e049ec80fa3a1d26f812be671feebe0f0"
     },
     {
       "path": "RELEASE_NOTES_v1.0.0.md",
@@ -44,9 +49,14 @@
       "sha256": "e0450489acdd06acd48303addc6d717b9ea18748de0933d1d9ec410159c96242"
     },
     {
+      "path": "RELEASE_NOTES_v1.1.0.md",
+      "size_bytes": 3857,
+      "sha256": "e199367121f275b1f1e2fde35889dbf7a0bb10edb1496244444b0d9a50870afe"
+    },
+    {
       "path": "THIRD_PARTY_NOTICES.md",
-      "size_bytes": 3790,
-      "sha256": "937af50c0f78b1417f7359737b668765f485a4f2b7f907e0cc5504610357aef8"
+      "size_bytes": 4339,
+      "sha256": "f01c0752167ce5443f8b81265d66b7e83de1c38e7847686f500ed4f2583530d5"
     },
     {
       "path": "docs/algorithmic-control-v1/ALIGNED_CONTROL_BENCHMARK_RESULTS_20261102.md",
@@ -57,6 +67,16 @@
       "path": "docs/algorithmic-control-v1/CASCADED_TANKS_CLEAN_COPY_REPLAY_RECEIPT_20261103.md",
       "size_bytes": 1759,
       "sha256": "00b0d52f37aedd75fd1a554da4b3e12d368cb797164cfc0ad5c5fc8d95a70fe2"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_PYTHON_N4SID_SPARSE_PROTOCOL_V1_20261103.md",
+      "size_bytes": 3531,
+      "sha256": "7a95a2e5669fe0ace5edf007a944c6f3b255daadae7a23b593923c5487a0f57b"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/CASCADED_TANKS_PYTHON_N4SID_SPARSE_RESULTS_20261103.md",
+      "size_bytes": 6759,
+      "sha256": "ee1dfc8c321181b056c5ae908479ab2e28b9b3ef417d1a0c3535c8dcfaafe748"
     },
     {
       "path": "docs/algorithmic-control-v1/CASCADED_TANKS_SOURCE_ADMISSION_AUDIT_20261103.md",
@@ -109,9 +129,99 @@
       "sha256": "2e703e34b7a2b5d61bdfe5119385baef66d7539c51fb98db7e3401c3467885b0"
     },
     {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/LICENSE",
+      "size_bytes": 1073,
+      "sha256": "c0615b31b9d61f4359b332390b5920b921e73ad5ea324a9df129ee28b9f89637"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/README.md",
+      "size_bytes": 1755,
+      "sha256": "8ad4e45a2bc3232e386952884a9be82f2eba2ab44142b94e7a5eb03a7dca96b7"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/kalman.py",
+      "size_bytes": 18713,
+      "sha256": "f3ae6d2f597a682313159c202575b3b5f0e5341eff816f719d1948e70ff4bfec"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/nfoursid.py",
+      "size_bytes": 8918,
+      "sha256": "a3e32e6d08c4ca7ea7d247111841b3e5bbd44f0b4daf05686615ab892f309565"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/state_space.py",
+      "size_bytes": 7374,
+      "sha256": "75d2febc24b145dc566bdc0824b9660c85d794200256384677f7b7515aebfdb8"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/tests/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/tests/test_end_to_end.py",
+      "size_bytes": 4100,
+      "sha256": "aa0f817465a2d26b18e5d52ce005029250c465aa691eb54523f5f36a1b3ee70b"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/tests/test_kalman.py",
+      "size_bytes": 4667,
+      "sha256": "042819afe9fc722db61f19150d4d112f7a7cd5619ab52a1758af27d8feedebc2"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/tests/test_nfoursid.py",
+      "size_bytes": 1229,
+      "sha256": "db93e712b3b05d4f75e758fa16381c31e22b7f981a94737740cb87721426cfca"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/tests/test_state_space.py",
+      "size_bytes": 2250,
+      "sha256": "103c5e4d56a702ab11d49d260dc946d3d01348c6fccfeb674936e0ec65b93e5f"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/tests/test_utils.py",
+      "size_bytes": 2739,
+      "sha256": "31cd4bd18a6c2cae9166f85410087d1d988c5433b7f00f5b482d1335aefa48dc"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/external-source/nfoursid/src/nfoursid/utils.py",
+      "size_bytes": 4235,
+      "sha256": "bcc555ae51fd96ae522880d934cb3d475309a03c0ce78f6bb92158fc72918d25"
+    },
+    {
       "path": "docs/algorithmic-control-v1/nanodrone_data_manifest_20261103.json",
       "size_bytes": 5216,
       "sha256": "3451d28b429e8b24f99c8d7918b272a439f13bfd09ae133f9d1bea41bce01caf"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_python_n4sid_sparse_v1/python_n4sid_metadata.json",
+      "size_bytes": 2850,
+      "sha256": "2ebd0281021410fb71ac2fce7702260f3544a0a62572f6de15199ba2e33d5813"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_python_n4sid_sparse_v1/python_n4sid_model.json",
+      "size_bytes": 1938,
+      "sha256": "8ec76de2312c5733977a183d0a7544f3418c00347f609d4cf709cb4c01e309e1"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_python_n4sid_sparse_v1/python_n4sid_source_validation.csv",
+      "size_bytes": 1244,
+      "sha256": "4a1521cc13b980e84a5d326040c205bf28b99e3244f9faacb33f8745e7e517b4"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_python_n4sid_sparse_v1/python_n4sid_sparse_blocks.csv",
+      "size_bytes": 432751,
+      "sha256": "0c159b08e26a425abe0bf285bf9d6e007f690bc4269fd39adfe2783da78fe764"
+    },
+    {
+      "path": "docs/algorithmic-control-v1/results/cascaded_tanks_python_n4sid_sparse_v1/python_n4sid_sparse_metrics.csv",
+      "size_bytes": 841,
+      "sha256": "e75e4b9e409206aa02c86a4d59212d96a4cfac121357c0275b0bfdc1a7978c96"
     },
     {
       "path": "docs/algorithmic-control-v1/results/cascaded_tanks_sparse_input_v1/cascaded_tanks_blocks.csv",
@@ -264,9 +374,19 @@
       "sha256": "f52712fb927870b1492190d8f163ddddb5f68f9a772c746fc3bcb325e1f73b81"
     },
     {
+      "path": "requirements-cascaded-tanks-n4sid-v1.lock.txt",
+      "size_bytes": 288,
+      "sha256": "c057b2b392668e8c3d90c1f266d0b0b84a06b177b11d5ac3eaba2c864cc8487d"
+    },
+    {
       "path": "requirements-control-benchmark-v1.lock.txt",
       "size_bytes": 769,
       "sha256": "dfcd038d8b2f944d58fc12bc01361f5b64c6285db8e18897ea4694556df318d9"
+    },
+    {
+      "path": "scripts/cascaded_tanks_python_n4sid_sparse_benchmark_v1.py",
+      "size_bytes": 20702,
+      "sha256": "8c70346cb9bbe5dd9bcbfd0c5d57e59b5773859a6534f05d05a88e79b0b2bcb7"
     },
     {
       "path": "scripts/cascaded_tanks_sparse_input_benchmark_v1.py",
@@ -309,6 +429,11 @@
       "sha256": "1568efc237296ae74586c9a87fd194d900ce26a34850eed61dc51c9c051bc9e5"
     },
     {
+      "path": "scripts/verify_cascaded_tanks_python_n4sid_sparse_benchmark_v1.py",
+      "size_bytes": 16743,
+      "sha256": "646024ee92b68780473d2c59ec3a45c67c72f7efbf00b3fd92cf95ea55a8ceb2"
+    },
+    {
       "path": "scripts/verify_cascaded_tanks_source_v1.py",
       "size_bytes": 6008,
       "sha256": "69f285a810da59f6ecb2dc49767475dbe289e6385e1e1dc72f1e9baf4900b72f"
@@ -319,7 +444,7 @@
       "sha256": "435991f4df7e265f14dda3a5270f33beed4c200d34498da0cf31b1392402862e"
     }
   ],
-  "release_version": "1.0.0",
-  "release_tag": "control-benchmark-v1.0.0",
+  "release_version": "1.1.0",
+  "release_tag": "control-benchmark-v1.1.0",
   "release_date": "2026-11-03"
 }

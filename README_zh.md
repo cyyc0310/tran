@@ -6,14 +6,14 @@
 
 ## 当前基准
 
-**跨工况控制系统辨识基准 v1.0.0** 包含 InTaSet 的 M1↔M2 工况迁移，以及独立的 Cascaded Tanks 物理系统。仓库提供评测协议、数据来源凭据、脚本、归档结果和可独立复现的核心实验包。
+**跨工况控制系统辨识基准 v1.1.0** 包含 InTaSet 的 M1↔M2 工况迁移，以及独立的 Cascaded Tanks 物理系统。仓库提供评测协议、数据来源凭据、脚本、归档结果和可独立复现的核心实验包。
 
 - [基准简介与复现说明](system-identification-benchmark/README.md)
-- [下载 v1.0.0 发布包](https://github.com/cyyc0310/tran/releases/tag/control-benchmark-v1.0.0)
-- [发布说明与证据边界](system-identification-benchmark/RELEASE_NOTES_v1.0.0.md)
+- [下载 v1.1.0 发布包](https://github.com/cyyc0310/tran/releases/tag/control-benchmark-v1.1.0)
+- [发布说明与证据边界](system-identification-benchmark/RELEASE_NOTES_v1.1.0.md)
 - [逐文件哈希清单](system-identification-benchmark/RELEASE_MANIFEST.json)
 
-比较的方法包括 ARX/线性状态空间、SINDYc 风格模型、独立实现的受控 Neural ODE/混合模型，以及有限目标前缀校准。端点插值作为离线参照单独报告。
+比较的方法包括 ARX/线性状态空间、SINDYc 风格模型、独立实现的受控 Neural ODE/混合模型、二状态 Python N4SID，以及有限目标前缀校准。端点插值作为离线参照单独报告。N4SID 是在一条已查看记录上的开发期对照，不是 MATLAB 原样复现，也不能据此评价 N4SID 的一般表现。
 
 ## 证据状态
 
