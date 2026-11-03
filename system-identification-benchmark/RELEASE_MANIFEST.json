@@ -1,6 +1,5 @@
 {
-  "candidate_created_date": "2026-11-03",
-  "status": "PUBLIC_MAIN_BRANCH_UNTAGGED",
+  "status": "PUBLIC_VERSIONED_RELEASE",
   "repository": "https://github.com/cyyc0310/tran",
   "repository_subdirectory": "system-identification-benchmark",
   "project_license": "MIT",
@@ -10,8 +9,8 @@
     "Cascaded Tanks"
   ],
   "nanodrone_source_materials": "not included; specific upstream license terms were not verified; its result is supplementary",
-  "file_count_excluding_manifest": 60,
-  "total_bytes_excluding_manifest": 23735605,
+  "file_count_excluding_manifest": 61,
+  "total_bytes_excluding_manifest": 23738926,
   "manifest_sha256_self_reference": "omitted by design",
   "files": [
     {
@@ -36,13 +35,18 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 5986,
-      "sha256": "6d60303ed07492589334a37fee131bb68f94327e4c265e3c28baf6ac43af87c0"
+      "size_bytes": 6086,
+      "sha256": "35567a43a74a5c31bee727aad9be3a1c35aca87527f232dd8f57626c9abcc08c"
+    },
+    {
+      "path": "RELEASE_NOTES_v1.0.0.md",
+      "size_bytes": 3231,
+      "sha256": "e0450489acdd06acd48303addc6d717b9ea18748de0933d1d9ec410159c96242"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "size_bytes": 3800,
-      "sha256": "c74c793257f8f91a8a42280d38292eb7b9489a7e34e3ff938c3beff2a5bbb8e2"
+      "size_bytes": 3790,
+      "sha256": "937af50c0f78b1417f7359737b668765f485a4f2b7f907e0cc5504610357aef8"
     },
     {
       "path": "docs/algorithmic-control-v1/ALIGNED_CONTROL_BENCHMARK_RESULTS_20261102.md",
@@ -314,5 +318,8 @@
       "size_bytes": 5832,
       "sha256": "435991f4df7e265f14dda3a5270f33beed4c200d34498da0cf31b1392402862e"
     }
-  ]
+  ],
+  "release_version": "1.0.0",
+  "release_tag": "control-benchmark-v1.0.0",
+  "release_date": "2026-11-03"
 }
